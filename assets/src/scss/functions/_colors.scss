@@ -1,0 +1,23 @@
+@function bs-light( $bs-color ) {
+	@return lighten( $bs-color, 6% );
+}
+
+@function bs-lighter( $bs-color ) {
+	@return lighten( $bs-color, 12% );
+}
+
+@function bs-lightest( $bs-color ) {
+	@return lighten( $bs-color, 24% );
+}
+
+@function bs-dark( $bs-color ) {
+	@return darken( $bs-color, 6% );
+}
+
+@function bs-darker( $bs-color ) {
+	@return darken( $bs-color, 12% );
+}
+
+@function bs-darkest( $bs-color ) {
+	@return  darken( $bs-color, 24% );
+}

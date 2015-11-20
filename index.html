@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>HTML 5 complete</title>
+	<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+	<link rel="stylesheet" href="./assets/dest/css/style.min.css" />
+	
+	<style>
+	#container {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+	}
+	#contents {
+		flex-grow: 1;
+	}
+	
+	header h1 {
+		text-align: center;
+		padding: 50px 0;
+		margin: 0;
+	}
+	header h1 small {
+		color: #ccc;
+		display: block;
+		font-weight: normal;
+		font-size: 18px;
+		margin-top: 8px;
+	}
+	
+	footer {
+		text-align: center;
+		color: #666;
+		background-color: #222;
+		margin-top: 24px;
+		padding: 24px 0;
+	}
+	footer a {
+		color: #666;
+	}
+	
+	.sample {
+		background-color: #2ecc71;
+		color: #fff;
+		margin: 8px 0;
+		padding: 16px;
+	}
+	.section {
+		margin-bottom: 16px;
+	}
+	section > h1:first-child {
+		border-bottom: 2px solid #2ecc71;
+		padding-bottom: 8px;
+	}
+	</style>
+</head>
+<body>
+<div id="container">
+	
+<header>
+	<div class="bs-wrapper">
+		<h1>Basis<small>The flexbox based CSS framework.</small></h1>
+	</div>
+</header>
+
+<div id="contents">
+	<div class="bs-wrapper">
+		<section>
+			<h1>Heading</h1>
+			<h1>h1. heading</h1>
+			<h2>h2. heading</h2>
+			<h3>h3. heading</h3>
+			<h4>h4. heading</h4>
+			<h5>h5. heading</h5>
+			<h6>h6. heading</h6>
+		</section>
+			
+		<section>
+			<h1>Wrappers</h1>
+			<pre><code>&lt;div class="bs-wrapper"&gt;
+			...
+		&lt/div&gt;</code></pre>
+			
+			<pre><code>&lt;div class="bs-wrapper-fluid"&gt;
+			...
+		&lt/div&gt;</code></pre>
+		</section>
+
+		<section>
+			<h1>Grid system</h1>
+			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			
+			<div class="bs-container">
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			</div>
+			
+			<h2>Nested</h2>
+			
+			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-5&quot;&gt;
+				&lt;div class=&quot;bs-container&quot;&gt;
+					&lt;div class=&quot;bs-item--md-1-2&quot;&gt;1/2&lt;/div&gt;
+					&lt;div class=&quot;bs-item--md-1-2&quot;&gt;1/2&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-5&quot;&gt;1/5&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-5&quot;&gt;1/5&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-5&quot;&gt;1/5&lt;/div&gt;&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-5&quot;&gt;1/5&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			
+			<div class="bs-container">
+				<div class="bs-item--md-1-5">
+					<div class="bs-container">
+						<div class="bs-item--md-1-2">
+							<div class="sample">1/2</div>
+						</div>
+						<div class="bs-item--md-1-2">
+							<div class="sample">1/2</div>
+						</div>
+					</div>
+				</div>
+				<div class="bs-item--md-1-5">
+					<div class="sample">1/5</div>
+				</div>
+				<div class="bs-item--md-1-5">
+					<div class="sample">1/5</div>
+				</div>
+				<div class="bs-item--md-1-5">
+					<div class="sample">1/5</div>
+				</div>
+				<div class="bs-item--md-1-5">
+					<div class="sample">1/5</div>
+				</div>
+			</div>
+			
+			<h2>Justify height</h2>
+			
+			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-flex&quot;&gt;1/3&lt;br /&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-flex&quot;&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-flex&quot;&gt;1/3&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			
+			<div class="bs-container">
+				<div class="bs-item--md-1-3 bs-item--md-flex"><div class="sample">1/3<br />1/3<br />1/3</div></div>
+				<div class="bs-item--md-1-3 bs-item--md-flex"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3 bs-item--md-flex"><div class="sample">1/3</div></div>
+			</div>
+			
+			<h2>Offsets</h2>
+			
+			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-4&quot;&gt;1/4&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-4&quot;&gt;1/4&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-4 bs-item--md-offset-1-4&quot;&gt;1/4&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			
+			<div class="bs-container">
+				<div class="bs-item--md-1-4">
+					<div class="sample">1/4</div>
+				</div>
+				<div class="bs-item--md-1-4">
+					<div class="sample">1/4</div>
+				</div>
+				<div class="bs-item--md-1-4 bs-item--md-offset-1-4">
+					<div class="sample">1/4</div>
+				</div>
+			</div>
+			
+			<h2>Devided in mobile, full in Desktop</h2>
+			
+			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
+			&lt;div class=&quot;bs-item--xs-1-2 bs-item--md-full&quot;&gt;1&lt;/div&gt;
+			&lt;div class=&quot;bs-item--xs-1-2 bs-item--md-full&quot;&gt;1&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			
+			<div class="bs-container">
+				<div class="bs-item--xs-1-2 bs-item--md-full">
+					<div class="sample">1</div>
+				</div>
+				<div class="bs-item--xs-1-2 bs-item--md-full">
+					<div class="sample">1</div>
+				</div>
+			</div>
+			
+			<h2>Alignment</h2>
+			
+			<h3>Align left</h3>
+			<pre><code>&lt;div class=&quot;bs-container bs-container--md-justify-start&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			<div class="bs-container bs-container--md-justify-start">
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			</div>
+			
+			<h3>Align right</h3>
+			<pre><code>&lt;div class=&quot;bs-container bs-container--md-justify-end&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			<div class="bs-container bs-container--md-justify-end">
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			</div>
+			
+			<h3>Centering</h3>
+			<pre><code>&lt;div class=&quot;bs-container bs-container--md-justify-center&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			<div class="bs-container bs-container--md-justify-center">
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			</div>
+			
+			<h3>Between</h3>
+			<pre><code>&lt;div class=&quot;bs-container bs-container--md-justify-between&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			<div class="bs-container bs-container--md-justify-between">
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			</div>
+			
+			<h3>Around</h3>
+			<pre><code>&lt;div class=&quot;bs-container bs-container--md-justify-around&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			<div class="bs-container bs-container--md-justify-around">
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			</div>
+			
+			<h2>Vertial alignment</h2>
+			
+			<h3>Top</h3>
+			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-start&quot;&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-start&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-start&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			<div class="bs-container">
+				<div class="bs-item--md-1-3 bs-item--md-align-start">
+					<div class="sample">1/3</div>
+				</div>
+				<div class="bs-item--md-1-3 bs-item--md-align-start">
+					<div class="sample">1/3<br />1/3</br />1/3</div>
+				</div>
+				<div class="bs-item--md-1-3 bs-item--md-align-start">
+					<div class="sample">1/3<br />1/3</div>
+				</div>
+			</div>
+			
+			<h3>Bottom</h3>
+			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-end&quot;&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-end&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-end&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			<div class="bs-container">
+				<div class="bs-item--md-1-3 bs-item--md-align-end">
+					<div class="sample">1/3</div>
+				</div>
+				<div class="bs-item--md-1-3 bs-item--md-align-end">
+					<div class="sample">1/3<br />1/3</br />1/3</div>
+				</div>
+				<div class="bs-item--md-1-3 bs-item--md-align-end">
+					<div class="sample">1/3<br />1/3</div>
+				</div>
+			</div>
+			
+			<h3>Middle</h3>
+			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-center&quot;&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-center&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-center&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			<div class="bs-container">
+				<div class="bs-item--md-1-3 bs-item--md-align-center">
+					<div class="sample">1/3</div>
+				</div>
+				<div class="bs-item--md-1-3 bs-item--md-align-center">
+					<div class="sample">1/3<br />1/3</br />1/3</div>
+				</div>
+				<div class="bs-item--md-1-3 bs-item--md-align-center">
+					<div class="sample">1/3<br />1/3</div>
+				</div>
+			</div>
+			
+			<h3>Baseline</h3>
+			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-baseline&quot;&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-baseline&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-baseline&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			<div class="bs-container">
+				<div class="bs-item--md-1-3 bs-item--md-align-baseline">
+					<div class="sample">1/3</div>
+				</div>
+				<div class="bs-item--md-1-3 bs-item--md-align-baseline">
+					<div class="sample">1/3<br />1/3</br />1/3</div>
+				</div>
+				<div class="bs-item--md-1-3 bs-item--md-align-baseline">
+					<div class="sample">1/3<br />1/3</div>
+				</div>
+			</div>
+			
+			<h3>Stretch ( .bs-item height is 100% )</h3>
+			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-stretch&quot;&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-stretch&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
+			&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-stretch&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+			<div class="bs-container">
+				<div class="bs-item--md-1-3 bs-item--md-align-stretch">
+					<div class="sample">1/3</div>
+				</div>
+				<div class="bs-item--md-1-3 bs-item--md-align-stretch">
+					<div class="sample">1/3<br />1/3</br />1/3</div>
+				</div>
+				<div class="bs-item--md-1-3 bs-item--md-align-stretch">
+					<div class="sample">1/3<br />1/3</div>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h1>Buttons</h1>
+			
+			<h2>Tags</h2>
+			
+			<pre><code>&lt;a class=&quot;bs-btn&quot;&gt;default&lt;/a&gt;
+		&lt;input type=&quot;submit&quot; class=&quot;bs-btn&quot; value=&quot;default&quot; /&gt;
+		&lt;button class=&quot;bs-btn&quot;&gt;default&lt;/button&gt;</code></pre>
+			
+			<div class="section">
+				<a class="bs-btn">default</a>
+				<input type="submit" class="bs-btn" value="default" />
+				<button class="bs-btn">default</button>
+			</div>
+			
+			<h2>Colors</h2>
+
+			<pre><code>&lt;a class=&quot;bs-btn&quot;&gt;default&lt;/a&gt;
+		&lt;a class=&quot;bs-btn bs-btn--primary&quot;&gt;primary&lt;/a&gt;
+		&lt;a class=&quot;bs-btn bs-btn--info&quot;&gt;info&lt;/a&gt;
+		&lt;a class=&quot;bs-btn bs-btn--success&quot;&gt;success&lt;/a&gt;
+		&lt;a class=&quot;bs-btn bs-btn--warning&quot;&gt;warning&lt;/a&gt;
+		&lt;a class=&quot;bs-btn bs-btn--danger&quot;&gt;danger&lt;/a&gt;</code></pre>
+
+			<div class="section">
+				<a class="bs-btn">default</a>
+				<a class="bs-btn bs-btn--primary">primary</a>
+				<a class="bs-btn bs-btn--info">info</a>
+				<a class="bs-btn bs-btn--success">success</a>
+				<a class="bs-btn bs-btn--warning">warning</a>
+				<a class="bs-btn bs-btn--danger">danger</a>
+			</div>
+		</section>
+
+		<section>
+			<h1>Alerts</h1>
+			
+			<pre><code>&lt;div class=&quot;bs-alert bs-alert--info&quot;&gt;info&lt;/div&gt;
+		&lt;div class=&quot;bs-alert bs-alert--success&quot;&gt;success&lt;/div&gt;
+		&lt;div class=&quot;bs-alert bs-alert--warning&quot;&gt;warning&lt;/div&gt;
+		&lt;div class=&quot;bs-alert bs-alert--danger&quot;&gt;danger&lt;/div&gt;</code></pre>
+			
+			<div class="section">
+				<div class="bs-alert bs-alert--info">info</div>
+				<div class="bs-alert bs-alert--success">success</div>
+				<div class="bs-alert bs-alert--warning">warning</div>
+				<div class="bs-alert bs-alert--danger">danger</div>
+			</div>
+		</section>
+		
+		<section>
+			<h1>Code</h1>
+			
+			<h2>Inline</h2>
+			<pre><code>This is a &lt;code&gt;code&lt;/code&gt; !</code></pre>
+			<div class="section">
+				This is a <code>code</code> !
+			</div>
+			
+			<h2>Block</h2>
+			<p>
+				Block level code using <code>&lt;pre&gt;&lt;/pre&gt;</code> .
+			<pre><code>&lt;pre&gt;$val = '10';&lt;/pre&gt;</code></pre>
+		</section>
+	</div>
+</div>
+
+<footer>
+	<div class="bs-wrapper">
+		Created and maintened by <a href="http://2inc.org" target="_blank">Takashi Kitajima</a>.<br />
+		Source code and examples released under the GPLv2 or later.
+	</div>
+</footer>
+
+</div>
+</body>
+</html>

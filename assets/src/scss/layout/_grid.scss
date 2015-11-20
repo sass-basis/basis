@@ -1,0 +1,176 @@
+.bs-wrapper--fluid, .bs-wrapper {
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: $bs-gutter * 2;
+	padding-left: $bs-gutter * 2;
+}
+
+.bs-wrapper {
+	@each $bs-size, $bs-screen-min in $bs-sizes {
+		@include bs-bp-min( $bs-screen-min ) {
+			width: $bs-screen-min;
+		}
+	}
+}
+
+/**
+ * flex container
+ */
+.bs-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -($bs-gutter * 2);
+	margin-left: -($bs-gutter * 2);
+	overflow: hidden;
+	
+	@each $bs-size, $bs-screen-min in $bs-sizes {
+		@include bs-bp-min( $bs-screen-min ) {
+			&--#{$bs-size}-row {
+				flex-direction: row;
+			}
+			
+			&--#{$bs-size}-column {
+				flex-direction: column;
+			}
+			
+			&--#{$bs-size}-justify-start {
+				justify-content: flex-start;
+			}
+			
+			&--#{$bs-size}-justify-end {
+				justify-content: flex-end;
+			}
+			
+			&--#{$bs-size}-justify-center {
+				justify-content: center;
+			}
+			
+			&--#{$bs-size}-justify-between {
+				justify-content: space-between;
+			}
+			
+			&--#{$bs-size}-justify-around {
+				justify-content: space-around;
+			}
+			
+			&--#{$bs-size}-align-stretch {
+				align-content: stretch;
+			}
+			
+			&--#{$bs-size}-align-start {
+				align-content: flex-start;
+			}
+			
+			&--#{$bs-size}-align-end {
+				align-content: flex-end;
+			}
+			
+			&--#{$bs-size}-align-center {
+				align-content: center;
+			}
+			
+			&--#{$bs-size}-align-between {
+				align-content: space-between;
+			}
+			
+			&--#{$bs-size}-align-around {
+				align-content: space-around;
+			}
+		}
+	}
+}
+
+/**
+ * flex item
+ */
+[class^="bs-item--"] {
+	padding-right: $bs-gutter * 2;
+	padding-left: $bs-gutter * 2;
+	flex-basis: 100%;
+}
+
+@each $bs-size, $bs-screen-min in $bs-sizes {
+	@include bs-bp-min( $bs-screen-min ) {
+		@for $bs-max_columns from 2 through 12 {
+			@for $bs-i from 1 through $bs-max_columns {
+				.bs-item--#{$bs-size}-#{$bs-i}-#{$bs-max_columns} {
+					flex-basis: #{$bs-i / $bs-max_columns * 100}%;
+				}
+			}
+		}
+	}
+}
+
+/**
+ * flex item offset
+ */
+@each $bs-size, $bs-screen-min in $bs-sizes {
+	@include bs-bp-min( $bs-screen-min ) {
+		@for $bs-max_columns from 2 through 12 {
+			@for $bs-i from 1 through $bs-max_columns - 1 {
+				.bs-item--#{$bs-size}-offset-#{$bs-i}-#{$bs-max_columns} {
+					margin-left: #{$bs-i / $bs-max_columns * 100}%;
+				}
+			}
+		}
+	}
+}
+
+@each $bs-size, $bs-screen-min in $bs-sizes {
+	@include bs-bp-min( $bs-screen-min ) {
+		.bs-item--#{$bs-size}-offset-0 {
+			margin-left: 0;
+		}
+	}
+}
+
+/**
+ * flex item utilities
+ */
+@each $bs-size, $bs-screen-min in $bs-sizes {
+	@include bs-bp-min( $bs-screen-min ) {
+		/**
+		 * full width
+		 */
+		.bs-item--#{$bs-size}-full {
+			flex-basis: 100%;
+		}
+		
+		/**
+		 * auto width
+		 */
+		.bs-item--#{$bs-size} {
+			flex-basis: auto;
+		}
+		
+		/**
+		 * child element height 100%
+		 */
+		.bs-item--#{$bs-size}-flex {
+			display: flex;
+			
+			> * {
+				flex-basis: 100%;
+			}
+		}
+		
+		/**
+		 * vertical alignment
+		 */
+		.bs-item--#{$bs-size}-align-start {
+			align-self: flex-start;
+		}
+		.bs-item--#{$bs-size}-align-end {
+			align-self: flex-end;
+		}
+		.bs-item--#{$bs-size}-align-center {
+			align-self: center;
+		}
+		.bs-item--#{$bs-size}-align-baseline {
+			align-self: baseline;
+		}
+		.bs-item--#{$bs-size}-align-stretch {
+			align-self: stretch;
+		}
+	}
+}

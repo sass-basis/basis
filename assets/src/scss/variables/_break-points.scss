@@ -1,0 +1,15 @@
+$bs-screen-xs-min: 480px;
+$bs-screen-sm-min: 768px;
+$bs-screen-md-min: 992px;
+$bs-screen-lg-min: 1200px;
+$bs-screen-xs-max: ($bs-screen-sm-min - 1);
+$bs-screen-sm-max: ($bs-screen-md-min - 1);
+$bs-screen-md-max: ($bs-screen-lg-min - 1);
+$bs-sizes: (
+	xs: $bs-screen-xs-min,
+	sm: $bs-screen-sm-min,
+	md: $bs-screen-md-min,
+	lg: $bs-screen-lg-min
+);
+
+$bs-gutter: 8px;
