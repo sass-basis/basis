@@ -445,6 +445,7 @@ h5, h6 {
 }
 
 p, ul, ol, dl, table, pre {
+  margin-top: 0;
   margin-bottom: 16px;
 }
 
@@ -496,6 +497,24 @@ dt {
 
 dd {
   margin-left: 0;
+}
+
+/**
+ * blockquote
+ */
+blockquote {
+  border-left: 5px solid #f8f8f8;
+  margin-left: 0;
+  padding: 8px 0 8px 16px;
+}
+
+blockquote :last-child {
+  margin-bottom: 0;
+}
+
+blockquote footer {
+  color: #9c9c9c;
+  font-size: 80%;
 }
 
 /**

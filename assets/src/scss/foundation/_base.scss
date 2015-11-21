@@ -31,6 +31,7 @@ h5, h6 {
 }
 
 p, ul, ol, dl, table, pre {
+	margin-top: 0;
 	margin-bottom: ($bs-gutter * 2);
 }
 
@@ -75,6 +76,24 @@ dt {
 }
 dd {
 	margin-left: 0;
+}
+
+/**
+ * blockquote
+ */
+blockquote {
+	border-left: 5px solid bs-lightest( $bs-color-gray );
+	margin-left: 0;
+	padding: $bs-gutter 0 $bs-gutter ($bs-gutter * 2);
+	
+	:last-child {
+		margin-bottom: 0;
+	}
+	
+	footer {
+		color: bs-darker( $bs-color-gray );
+		font-size: 80%;
+	}
 }
 
 /**
