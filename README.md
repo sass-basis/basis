@@ -13,5 +13,8 @@ http://inc2734.github.io/basis/
 
 ## Changelog
 
+### November 21, 2015 v1.1.0
+* Added normalize.css
+
 ### November 20, 2015 v1.0.0
 * Release
