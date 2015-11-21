@@ -64,6 +64,20 @@ h6, .h6 {
 }
 
 /**
+ * Lists
+ */
+ol ol, ol ul, ul ol, ul ul {
+	margin-bottom: 0;
+}
+
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-left: 0;
+}
+
+/**
  * code
  */
 code {
