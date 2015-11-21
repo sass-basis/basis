@@ -1,4 +1,4 @@
-/**
+/*!
  * Name: Basis
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
@@ -21,13 +21,13 @@
 /* ========================================
  * mixins
  ======================================= */
-@import 'mixins/alerts';
 @import 'mixins/break-points';
 @import 'mixins/effects';
 
 /* ========================================
  * founcation
  ======================================= */
+@import 'foundation/normalize';
 @import 'foundation/base';
 
 /* ========================================
@@ -38,4 +38,5 @@
 /* ========================================
  * object
  ======================================= */
+@import 'objects/alerts';
 @import 'objects/buttons'

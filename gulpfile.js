@@ -8,7 +8,9 @@ var autoprefixer = require( 'gulp-autoprefixer' );
 
 gulp.task( 'sass', function() {
 	return gulp.src( './assets/src/scss/*.scss' )
-		.pipe( sass() )
+		.pipe( sass( {
+			outputStyle: 'expanded'
+		} ) )
 		.pipe( autoprefixer( {
 			browsers: ['last 2 versions'],
 			cascade: false
@@ -16,9 +18,7 @@ gulp.task( 'sass', function() {
 		.pipe( gulp.dest( './assets/dest/css/' ) )
 		.on( 'end', function() {
 			gulp.src( ['./assets/dest/css/*.css', '!./assets/dest/css/*.min.css'] )
-				.pipe( cssmin( {
-					keepSpecialComments: 0
-				} ) )
+				.pipe( cssmin() )
 				.pipe( rename( { suffix: '.min' } ) )
 				.pipe( gulp.dest( './assets/dest/css/' ) );
 		} );

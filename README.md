@@ -5,6 +5,12 @@ The flexbox based CSS framework.
 
 http://inc2734.github.io/basis/
 
+## Third party licenses
+
+### normalize.css v3.0.3
+* MIT License
+* github.com/necolas/normalize.css
+
 ## Changelog
 
 ### November 20, 2015 v1.0.0
