@@ -18,12 +18,12 @@
 		flex-grow: 1;
 	}
 	
-	header h1 {
+	.header h1 {
 		text-align: center;
 		padding: 50px 0;
 		margin: 0;
 	}
-	header h1 small {
+	.header h1 small {
 		color: #ccc;
 		display: block;
 		font-weight: normal;
@@ -31,14 +31,14 @@
 		margin-top: 8px;
 	}
 	
-	footer {
+	.footer {
 		text-align: center;
 		color: #666;
 		background-color: #222;
 		margin-top: 24px;
 		padding: 24px 0;
 	}
-	footer a {
+	.footer a {
 		color: #666;
 	}
 	
@@ -60,7 +60,7 @@
 <body>
 <div id="container">
 	
-<header>
+<header class="header">
 	<div class="bs-wrapper">
 		<h1>Basis<small>The flexbox based CSS framework.</small></h1>
 	</div>
@@ -455,7 +455,7 @@
 	</div>
 </div>
 
-<footer>
+<footer class="footer">
 	<div class="bs-wrapper">
 		Created and maintened by <a href="http://2inc.org" target="_blank">Takashi Kitajima</a>.<br />
 		Source code and examples released under the GPLv2 or later.
