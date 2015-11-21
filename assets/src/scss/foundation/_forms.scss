@@ -41,3 +41,46 @@ label.bs-checkbox, label.bs-radio,
 .bs-checkbox label, .bs-radio label {
 	cursor: pointer;
 }
+
+/**
+ * input group
+ */
+.bs-input-group {
+	border-radius: $bs-border-radius-lg;
+	display: flex;
+	
+	* {
+		height: auto;
+	}
+	
+	:first-child {
+		border-radius: $bs-border-radius-lg 0 0 $bs-border-radius-lg;
+	}
+	
+	:last-child {
+		border-radius: 0 $bs-border-radius-lg $bs-border-radius-lg 0;
+	}
+	
+	&__addon {
+		background-color: #eee;
+		border: 1px solid $bs-color-gray;
+		color: bs-light( $bs-color-text );
+		padding: $bs-gutter;
+	}
+	
+	&__field {
+		border-radius: 0;
+		flex-grow: 1;
+		
+		&:not(:last-child) {
+			border-right: 0;
+		}
+		
+		&:not(:first-child) {
+			border-left: 0;
+		}
+	}
+	
+	&__btn {
+	}
+}

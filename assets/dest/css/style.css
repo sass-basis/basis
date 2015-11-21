@@ -591,6 +591,50 @@ label.bs-checkbox, label.bs-radio,
   cursor: pointer;
 }
 
+/**
+ * input group
+ */
+.bs-input-group {
+  border-radius: 4px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bs-input-group * {
+  height: auto;
+}
+
+.bs-input-group :first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.bs-input-group :last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.bs-input-group__addon {
+  background-color: #eee;
+  border: 1px solid #bbb;
+  color: #424242;
+  padding: 8px;
+}
+
+.bs-input-group__field {
+  border-radius: 0;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.bs-input-group__field:not(:last-child) {
+  border-right: 0;
+}
+
+.bs-input-group__field:not(:first-child) {
+  border-left: 0;
+}
+
 /* ========================================
  * layout
  ======================================= */
