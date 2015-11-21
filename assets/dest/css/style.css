@@ -3518,6 +3518,7 @@ pre code {
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
+  line-height: 1.5;
   padding: 8px 16px;
   vertical-align: middle;
   white-space: nowrap;
