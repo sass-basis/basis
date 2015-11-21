@@ -3,5 +3,6 @@ $bs-font-size-md: 14px;
 $bs-font-size-lg: 16px;
 
 $bs-line-height: 1.5;
+$bs-line-height-computed: floor($bs-font-size-md * $bs-line-height);
 
 $bs-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

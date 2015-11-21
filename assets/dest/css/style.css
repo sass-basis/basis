@@ -545,6 +545,52 @@ pre code {
   padding: 0;
 }
 
+/**
+ * base form control
+ */
+.bs-form-control {
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  height: 31px;
+  padding: 8px;
+}
+
+textarea.bs-form-control {
+  height: auto;
+  width: 100%;
+}
+
+/**
+ * checkbox, radio
+ */
+.bs-checkbox, .bs-radio {
+  display: inline-block;
+}
+
+.bs-checkbox + .bs-checkbox, .bs-checkbox + .bs-radio, .bs-radio + .bs-checkbox, .bs-radio + .bs-radio {
+  margin-left: 8px;
+}
+
+.bs-checkbox--block, .bs-radio--block {
+  display: block;
+}
+
+.bs-checkbox--block + .bs-checkbox--block, .bs-checkbox--block + .bs-radio--block, .bs-radio--block + .bs-checkbox--block, .bs-radio--block + .bs-radio--block {
+  margin-top: 4px;
+  margin-left: 0;
+}
+
+.bs-checkbox [type="checkbox"], .bs-checkbox [type="radio"], .bs-radio [type="checkbox"], .bs-radio [type="radio"] {
+  margin-right: 4px;
+}
+
+label.bs-checkbox, label.bs-radio,
+.bs-checkbox label, .bs-radio label {
+  cursor: pointer;
+}
+
 /* ========================================
  * layout
  ======================================= */
