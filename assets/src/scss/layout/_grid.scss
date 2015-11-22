@@ -7,8 +7,10 @@
 
 .bs-wrapper {
 	@each $bs-size, $bs-screen-min in $bs-sizes {
-		@include bs-bp-min( $bs-screen-min ) {
-			width: $bs-screen-min;
+		@if $bs-size == 'md' or $bs-size == 'lg' {
+			@include bs-bp-min( $bs-screen-min ) {
+				width: $bs-screen-min;
+			}
 		}
 	}
 }
@@ -19,8 +21,6 @@
 .bs-container {
 	display: flex;
 	flex-wrap: wrap;
-	margin-right: -($bs-gutter * 2);
-	margin-left: -($bs-gutter * 2);
 	overflow: hidden;
 	
 	@each $bs-size, $bs-screen-min in $bs-sizes {
@@ -76,6 +76,42 @@
 			&--#{$bs-size}-align-around {
 				align-content: space-around;
 			}
+			
+			&--#{$bs-size}-gutter {
+				margin-right: -($bs-gutter * 2);
+				margin-left: -($bs-gutter * 2);
+				margin-bottom: -($bs-gutter * 2);
+				
+				> [class^="bs-item--"] {
+					padding-right: ($bs-gutter * 2);
+					padding-left: ($bs-gutter * 2);
+					margin-bottom: ($bs-gutter * 2);
+				}
+				
+				&-sm {
+					margin-right: -($bs-gutter);
+					margin-left: -($bs-gutter);
+					margin-bottom: -($bs-gutter);
+					
+					> [class^="bs-item--"] {
+						padding-right: $bs-gutter;
+						padding-left: $bs-gutter;
+						margin-bottom: $bs-gutter;
+					}
+				}
+				
+				&-lg {
+					margin-right: -($bs-gutter * 3);
+					margin-left: -($bs-gutter * 3);
+					margin-bottom: -($bs-gutter * 3);
+					
+					> [class^="bs-item--"] {
+						padding-right: ($bs-gutter * 3);
+						padding-left: ($bs-gutter * 3);
+						margin-bottom: ($bs-gutter * 3);
+					}
+				}
+			}
 		}
 	}
 }
@@ -84,17 +120,15 @@
  * flex item
  */
 [class^="bs-item--"] {
-	padding-right: $bs-gutter * 2;
-	padding-left: $bs-gutter * 2;
 	flex-basis: 100%;
 }
 
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
-		@for $bs-max_columns from 2 through 12 {
-			@for $bs-i from 1 through $bs-max_columns {
-				.bs-item--#{$bs-size}-#{$bs-i}-#{$bs-max_columns} {
-					flex-basis: #{$bs-i / $bs-max_columns * 100}%;
+		@for $max_columns from 2 through 12 {
+			@for $i from 1 through $max_columns {
+				.bs-item--#{$bs-size}-#{$i}-#{$max_columns} {
+					flex-basis: #{$i / $max_columns * 100}%;
 				}
 			}
 		}
@@ -106,10 +140,10 @@
  */
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
-		@for $bs-max_columns from 2 through 12 {
-			@for $bs-i from 1 through $bs-max_columns - 1 {
-				.bs-item--#{$bs-size}-offset-#{$bs-i}-#{$bs-max_columns} {
-					margin-left: #{$bs-i / $bs-max_columns * 100}%;
+		@for $max_columns from 2 through 12 {
+			@for $i from 1 through $max_columns - 1 {
+				.bs-item--#{$bs-size}-offset-#{$i}-#{$max_columns} {
+					margin-left: #{$i / $max_columns * 100}%;
 				}
 			}
 		}

@@ -646,18 +646,6 @@ label.bs-checkbox, label.bs-radio,
   padding-left: 16px;
 }
 
-@media (min-width: 480px) {
-  .bs-wrapper {
-    width: 480px;
-  }
-}
-
-@media (min-width: 768px) {
-  .bs-wrapper {
-    width: 768px;
-  }
-}
-
 @media (min-width: 992px) {
   .bs-wrapper {
     width: 992px;
@@ -680,8 +668,6 @@ label.bs-checkbox, label.bs-radio,
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -16px;
-  margin-left: -16px;
   overflow: hidden;
 }
 
@@ -751,6 +737,36 @@ label.bs-checkbox, label.bs-radio,
     -ms-flex-line-pack: distribute;
     align-content: space-around;
   }
+  .bs-container--xs-gutter {
+    margin-right: -16px;
+    margin-left: -16px;
+    margin-bottom: -16px;
+  }
+  .bs-container--xs-gutter > [class^="bs-item--"] {
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-bottom: 16px;
+  }
+  .bs-container--xs-gutter-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+    margin-bottom: -8px;
+  }
+  .bs-container--xs-gutter-sm > [class^="bs-item--"] {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 8px;
+  }
+  .bs-container--xs-gutter-lg {
+    margin-right: -24px;
+    margin-left: -24px;
+    margin-bottom: -24px;
+  }
+  .bs-container--xs-gutter-lg > [class^="bs-item--"] {
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -818,6 +834,36 @@ label.bs-checkbox, label.bs-radio,
     -webkit-align-content: space-around;
     -ms-flex-line-pack: distribute;
     align-content: space-around;
+  }
+  .bs-container--sm-gutter {
+    margin-right: -16px;
+    margin-left: -16px;
+    margin-bottom: -16px;
+  }
+  .bs-container--sm-gutter > [class^="bs-item--"] {
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-bottom: 16px;
+  }
+  .bs-container--sm-gutter-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+    margin-bottom: -8px;
+  }
+  .bs-container--sm-gutter-sm > [class^="bs-item--"] {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 8px;
+  }
+  .bs-container--sm-gutter-lg {
+    margin-right: -24px;
+    margin-left: -24px;
+    margin-bottom: -24px;
+  }
+  .bs-container--sm-gutter-lg > [class^="bs-item--"] {
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-bottom: 24px;
   }
 }
 
@@ -887,6 +933,36 @@ label.bs-checkbox, label.bs-radio,
     -ms-flex-line-pack: distribute;
     align-content: space-around;
   }
+  .bs-container--md-gutter {
+    margin-right: -16px;
+    margin-left: -16px;
+    margin-bottom: -16px;
+  }
+  .bs-container--md-gutter > [class^="bs-item--"] {
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-bottom: 16px;
+  }
+  .bs-container--md-gutter-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+    margin-bottom: -8px;
+  }
+  .bs-container--md-gutter-sm > [class^="bs-item--"] {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 8px;
+  }
+  .bs-container--md-gutter-lg {
+    margin-right: -24px;
+    margin-left: -24px;
+    margin-bottom: -24px;
+  }
+  .bs-container--md-gutter-lg > [class^="bs-item--"] {
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -955,14 +1031,42 @@ label.bs-checkbox, label.bs-radio,
     -ms-flex-line-pack: distribute;
     align-content: space-around;
   }
+  .bs-container--lg-gutter {
+    margin-right: -16px;
+    margin-left: -16px;
+    margin-bottom: -16px;
+  }
+  .bs-container--lg-gutter > [class^="bs-item--"] {
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-bottom: 16px;
+  }
+  .bs-container--lg-gutter-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+    margin-bottom: -8px;
+  }
+  .bs-container--lg-gutter-sm > [class^="bs-item--"] {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 8px;
+  }
+  .bs-container--lg-gutter-lg {
+    margin-right: -24px;
+    margin-left: -24px;
+    margin-bottom: -24px;
+  }
+  .bs-container--lg-gutter-lg > [class^="bs-item--"] {
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 /**
  * flex item
  */
 [class^="bs-item--"] {
-  padding-right: 16px;
-  padding-left: 16px;
   -webkit-flex-basis: 100%;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;

@@ -42,10 +42,14 @@
 		color: #666;
 	}
 	
+	.show-grid [class^="bs-item--"] {
+		background-color: #2ecc71;
+		border: 1px solid #29B967;
+		color: #fff;
+	}
 	.sample {
 		background-color: #2ecc71;
 		color: #fff;
-		margin: 8px 0;
 		padding: 16px;
 	}
 	.section {
@@ -228,7 +232,45 @@
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			
-			<div class="bs-container">
+			<div class="bs-container show-grid">
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			</div>
+			
+			<h2>Gutter</h2>
+
+			<h3>Standard gutter</h3>
+			<pre><code>&lt;div class=&quot;bs-container bs-container--xs-gutter&quot;&gt;
+	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="bs-container bs-container--xs-gutter">
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			</div>
+
+			<h3>Small gutter</h3>
+			<pre><code>&lt;div class=&quot;bs-container bs-container--xs-gutter-sm&quot;&gt;
+	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="bs-container bs-container--xs-gutter-sm">
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			</div>
+
+			<h3>Large gutter</h3>
+			<pre><code>&lt;div class=&quot;bs-container bs-container--xs-gutter-lg&quot;&gt;
+	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="bs-container bs-container--xs-gutter-lg">
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
@@ -249,7 +291,7 @@
 	&lt;div class=&quot;bs-item--md-1-5&quot;&gt;1/5&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			
-			<div class="bs-container">
+			<div class="bs-container show-grid">
 				<div class="bs-item--md-1-5">
 					<div class="bs-container">
 						<div class="bs-item--md-1-2">
@@ -282,7 +324,7 @@
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-flex&quot;&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			
-			<div class="bs-container">
+			<div class="bs-container show-grid">
 				<div class="bs-item--md-1-3 bs-item--md-flex"><div class="sample">1/3<br />1/3<br />1/3</div></div>
 				<div class="bs-item--md-1-3 bs-item--md-flex"><div class="sample">1/3</div></div>
 				<div class="bs-item--md-1-3 bs-item--md-flex"><div class="sample">1/3</div></div>
@@ -296,7 +338,7 @@
 	&lt;div class=&quot;bs-item--md-1-4 bs-item--md-offset-1-4&quot;&gt;1/4&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			
-			<div class="bs-container">
+			<div class="bs-container show-grid">
 				<div class="bs-item--md-1-4">
 					<div class="sample">1/4</div>
 				</div>
@@ -315,7 +357,7 @@
 	&lt;div class=&quot;bs-item--xs-1-2 bs-item--md-full&quot;&gt;1&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			
-			<div class="bs-container">
+			<div class="bs-container show-grid">
 				<div class="bs-item--xs-1-2 bs-item--md-full">
 					<div class="sample">1</div>
 				</div>
@@ -331,7 +373,7 @@
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--md-justify-start">
+			<div class="bs-container bs-container--md-justify-start show-grid">
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 			</div>
@@ -341,7 +383,7 @@
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--md-justify-end">
+			<div class="bs-container bs-container--md-justify-end show-grid">
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 			</div>
@@ -351,7 +393,7 @@
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--md-justify-center">
+			<div class="bs-container bs-container--md-justify-center show-grid">
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 			</div>
@@ -361,7 +403,7 @@
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--md-justify-between">
+			<div class="bs-container bs-container--md-justify-between show-grid">
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 			</div>
@@ -371,7 +413,7 @@
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--md-justify-around">
+			<div class="bs-container bs-container--md-justify-around show-grid">
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
 			</div>
@@ -384,7 +426,7 @@
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-start&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-start&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container">
+			<div class="bs-container show-grid">
 				<div class="bs-item--md-1-3 bs-item--md-align-start">
 					<div class="sample">1/3</div>
 				</div>
@@ -402,7 +444,7 @@
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-end&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-end&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container">
+			<div class="bs-container show-grid">
 				<div class="bs-item--md-1-3 bs-item--md-align-end">
 					<div class="sample">1/3</div>
 				</div>
@@ -420,7 +462,7 @@
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-center&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-center&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container">
+			<div class="bs-container show-grid">
 				<div class="bs-item--md-1-3 bs-item--md-align-center">
 					<div class="sample">1/3</div>
 				</div>
@@ -438,7 +480,7 @@
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-baseline&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-baseline&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container">
+			<div class="bs-container show-grid">
 				<div class="bs-item--md-1-3 bs-item--md-align-baseline">
 					<div class="sample">1/3</div>
 				</div>
@@ -456,7 +498,7 @@
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-stretch&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
 	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-stretch&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container">
+			<div class="bs-container show-grid">
 				<div class="bs-item--md-1-3 bs-item--md-align-stretch">
 					<div class="sample">1/3</div>
 				</div>

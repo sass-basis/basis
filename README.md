@@ -16,6 +16,7 @@ http://inc2734.github.io/basis/
 #### November 21, 2015 v1.1.0
 * Added normalize.css
 * Added styles: Lists, Blockquote, Forms.
+* Added container-gutter style.
 * Fixed button style.
 
 #### November 20, 2015 v1.0.0
