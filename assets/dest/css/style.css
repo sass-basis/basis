@@ -468,26 +468,26 @@ h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .sma
 }
 
 h1, .h1 {
-  font-size: 36.4px;
+  font-size: 33px;
   line-height: 1.07143;
 }
 
 h2, .h2 {
-  font-size: 29.4px;
+  font-size: 28px;
   line-height: 1.15385;
 }
 
 h3, .h3 {
-  font-size: 23.8px;
+  font-size: 23px;
   line-height: 1.25;
 }
 
 h4, .h4 {
-  font-size: 19.6px;
+  font-size: 19px;
 }
 
 h5, .h5 {
-  font-size: 16.8px;
+  font-size: 16px;
 }
 
 h6, .h6 {
