@@ -459,17 +459,17 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 42px;
+  font-size: 36.4px;
   line-height: 1.07143;
 }
 
 h2, .h2 {
-  font-size: 36.4px;
+  font-size: 29.4px;
   line-height: 1.15385;
 }
 
 h3, .h3 {
-  font-size: 25.2px;
+  font-size: 23.8px;
   line-height: 1.25;
 }
 
