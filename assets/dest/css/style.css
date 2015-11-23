@@ -3833,3 +3833,18 @@ label.bs-checkbox, label.bs-radio,
 .bs-btn--danger:hover, .bs-btn--danger:active, .bs-btn--danger:focus {
   background-color: #ea6557;
 }
+
+/* ========================================
+ * utilities
+ ======================================= */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
