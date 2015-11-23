@@ -107,7 +107,7 @@ blockquote {
  * code
  */
 code {
-	background-color: bs-lightest( $bs-color-danger );
+	background-color: lighten( $bs-color-danger, 34% );
 	border-radius: $bs-border-radius-md;
 	color: bs-dark( $bs-color-danger );
 	font-size: 90%;
