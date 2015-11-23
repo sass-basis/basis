@@ -645,6 +645,27 @@ label.bs-checkbox, label.bs-radio,
   border-left: 0;
 }
 
+.table {
+  max-width: 100%;
+  width: 100%;
+}
+
+.table th, .table td {
+  padding: 8px;
+}
+
+.table--bordered, .table--bordered th, .table--bordered td {
+  border: 1px solid #bbb;
+}
+
+.table--horizontal-bordered th, .table--horizontal-bordered td {
+  border-bottom: 1px solid #bbb;
+}
+
+.table--striped tbody tr:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
 /* ========================================
  * layout
  ======================================= */
