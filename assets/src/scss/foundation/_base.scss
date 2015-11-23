@@ -41,6 +41,12 @@ p, ul, ol, dl, table, pre {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-weight: bold;
+	
+	small, .small {
+		color: bs-lightest( $bs-color-text );
+		font-size: 65%;
+		font-weight: normal;
+	}
 }
 h1, .h1 {
 	font-size: ($bs-font-size-md * 2.6);
