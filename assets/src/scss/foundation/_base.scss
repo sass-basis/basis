@@ -8,6 +8,8 @@ body {
 	font-family: $bs-font-family;
 	font-size: $bs-font-size-md;
 	line-height: $bs-line-height;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 input, textarea, keygen, select, button {
@@ -16,6 +18,15 @@ input, textarea, keygen, select, button {
 
 * {
 	box-sizing: border-box;
+}
+
+/**
+ * image
+ */
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
 }
 
 /**

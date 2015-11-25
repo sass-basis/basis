@@ -423,6 +423,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 input, textarea, keygen, select, button {
@@ -431,6 +433,15 @@ input, textarea, keygen, select, button {
 
 * {
   box-sizing: border-box;
+}
+
+/**
+ * image
+ */
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 /**
