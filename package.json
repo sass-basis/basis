@@ -1,8 +1,13 @@
 {
-  "name": "Basis",
+  "name": "sass-basis",
   "version": "1.2.1",
   "author": "inc2734",
   "license": "GPLv2 or later",
+  "homepage": "http://inc2734.github.io/basis/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inc2734/basis"
+  },
   "devDependencies": {
     "browser-sync": "^2.9.10",
     "gulp": "^3.9.0",
