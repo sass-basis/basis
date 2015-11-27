@@ -1,8 +1,8 @@
-$bs-font-size-sm: 12px;
-$bs-font-size-md: 14px;
-$bs-font-size-lg: 16px;
+$bs-font-size-sm: 12px !default;
+$bs-font-size-md: 14px !default;
+$bs-font-size-lg: 16px !default;
 
-$bs-line-height: 1.5;
-$bs-line-height-computed: floor($bs-font-size-md * $bs-line-height);
+$bs-line-height: 1.5 !default;
+$bs-line-height-computed: floor($bs-font-size-md * $bs-line-height) !default;
 
-$bs-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$bs-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;

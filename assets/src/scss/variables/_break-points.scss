@@ -1,7 +1,7 @@
-$bs-screen-xs-min: 480px;
-$bs-screen-sm-min: 768px;
-$bs-screen-md-min: 992px;
-$bs-screen-lg-min: 1200px;
+$bs-screen-xs-min: 480px !default;
+$bs-screen-sm-min: 768px !default;
+$bs-screen-md-min: 992px !default;
+$bs-screen-lg-min: 1200px !default;
 $bs-screen-xs-max: ($bs-screen-sm-min - 1);
 $bs-screen-sm-max: ($bs-screen-md-min - 1);
 $bs-screen-md-max: ($bs-screen-lg-min - 1);
@@ -12,4 +12,4 @@ $bs-sizes: (
 	lg: $bs-screen-lg-min
 );
 
-$bs-gutter: 8px;
+$bs-gutter: 8px !default;
