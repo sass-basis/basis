@@ -17,6 +17,14 @@ https://github.com/inc2734/basis
 <link rel="stylesheet" href="/PATH/TO/basis/assets/dest/css/style.min.css" />
 ```
 
+### or
+
+1. ```npm install sass-basis```
+2. Just this link.
+```html
+<link rel="stylesheet" href="/PATH/TO/node_modules/basis/assets/dest/css/style.min.css" />
+```
+
 ## Browser support
 Modern Browser and IE10+
 
