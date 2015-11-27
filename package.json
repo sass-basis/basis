@@ -1,8 +1,8 @@
 {
-  "name": "flexbox",
-  "version": "1.0.0",
+  "name": "Basis",
+  "version": "1.2.1",
   "author": "inc2734",
-  "license": "GPLv2",
+  "license": "GPLv2 or later",
   "devDependencies": {
     "browser-sync": "^2.9.10",
     "gulp": "^3.9.0",
