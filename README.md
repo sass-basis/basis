@@ -36,7 +36,7 @@ Modern Browser and IE10+
 
 ## Changelog
 
-#### November 27, 2015 v1.2.1
+#### November 27, 2015 v1.2.2
 * Added default flags.
 
 #### November 25, 2015 v1.2.0
