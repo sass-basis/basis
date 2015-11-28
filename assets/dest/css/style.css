@@ -3805,7 +3805,7 @@ label.bs-checkbox, label.bs-radio,
   display: inline-block;
   font-size: 14px;
   line-height: 1.5;
-  padding: 8px 16px;
+  padding: 8px 24px;
   vertical-align: middle;
   white-space: nowrap;
   overflow: hidden;
@@ -3819,6 +3819,20 @@ label.bs-checkbox, label.bs-radio,
 .bs-btn--primary, .bs-btn--info, .bs-btn--success, .bs-btn--warning, .bs-btn--danger {
   border: none;
   color: #fff;
+}
+
+.bs-btn--sm {
+  font-size: 12px;
+  padding: 8px 16px;
+}
+
+.bs-btn--lg {
+  font-size: 16px;
+  padding: 9.6px 32px;
+}
+
+.bs-btn--block {
+  display: block;
 }
 
 .bs-btn--primary {
@@ -3859,6 +3873,16 @@ label.bs-checkbox, label.bs-radio,
 
 .bs-btn--danger:hover, .bs-btn--danger:active, .bs-btn--danger:focus {
   background-color: #ea6557;
+}
+
+.bs-btn--ghost {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.bs-btn--ghost:hover, .bs-btn--ghost:active, .bs-btn--ghost:focus {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ========================================
