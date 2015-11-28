@@ -656,24 +656,24 @@ label.bs-checkbox, label.bs-radio,
   border-left: 0;
 }
 
-.table {
+.bs-table {
   max-width: 100%;
   width: 100%;
 }
 
-.table th, .table td {
+.bs-table th, .bs-table td {
   padding: 8px;
 }
 
-.table--bordered, .table--bordered th, .table--bordered td {
+.bs-table--bordered, .bs-table--bordered th, .bs-table--bordered td {
   border: 1px solid #bbb;
 }
 
-.table--horizontal-bordered th, .table--horizontal-bordered td {
+.bs-table--horizontal-bordered th, .bs-table--horizontal-bordered td {
   border-bottom: 1px solid #bbb;
 }
 
-.table--striped tbody tr:nth-child(odd) {
+.bs-table--striped tbody tr:nth-child(odd) {
   background-color: #f8f8f8;
 }
 
@@ -3870,14 +3870,14 @@ label.bs-checkbox, label.bs-radio,
 /* ========================================
  * utilities
  ======================================= */
-.text-left {
+.bs-text-left {
   text-align: left;
 }
 
-.text-center {
+.bs-text-center {
   text-align: center;
 }
 
-.text-right {
+.bs-text-right {
   text-align: right;
 }
