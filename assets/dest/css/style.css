@@ -3766,7 +3766,6 @@ label.bs-checkbox, label.bs-radio,
  ======================================= */
 .bs-alert {
   border-radius: 3px;
-  border: 1px solid transparent;
   display: block;
   margin-bottom: 8px;
   padding: 16px;
@@ -3774,31 +3773,26 @@ label.bs-checkbox, label.bs-radio,
 
 .bs-alert--primary {
   background-color: #7bb9e2;
-  border-color: #499ed7;
   color: #133b55;
 }
 
 .bs-alert--info {
   background-color: #9ccded;
-  border-color: #68b2e4;
   color: #16557e;
 }
 
 .bs-alert--success {
   background-color: #8fe6b4;
-  border-color: #5dda92;
   color: #17683a;
 }
 
 .bs-alert--warning {
   background-color: #f8e083;
-  border-color: #f4d249;
   color: #7e6707;
 }
 
 .bs-alert--danger {
   background-color: #f4b0a9;
-  border-color: #ee7e72;
   color: #961f12;
 }
 

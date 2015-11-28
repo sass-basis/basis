@@ -1,6 +1,5 @@
 .bs-alert {
 	border-radius: $bs-border-radius-md;
-	border: 1px solid transparent;
 	display: block;
 	margin-bottom: $bs-gutter;
 	padding: ($bs-gutter * 2);
@@ -8,7 +7,6 @@
 	@each $bs-color, $bs-color-code in $bs-colors {
 		&--#{$bs-color} {
 			background-color: bs-lightest( $bs-color-code );
-			border-color: bs-lighter( $bs-color-code );
 			color: bs-darkest( $bs-color-code );
 		}
 	}
