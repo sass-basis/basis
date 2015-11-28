@@ -182,13 +182,6 @@
 		$prefix: bs-bp-prefix( $bs-size );
 		
 		/**
-		 * full width
-		 */
-		.bs-item#{$prefix}-full {
-			flex-basis: 100%;
-		}
-		
-		/**
 		 * auto width
 		 */
 		.bs-item#{$prefix}-auto {
