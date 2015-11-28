@@ -27,65 +27,67 @@
 	
 	@each $bs-size, $bs-screen-min in $bs-sizes {
 		@include bs-bp-min( $bs-screen-min ) {
-			&--#{$bs-size}-row {
+			$prefix: bs-bp-prefix( $bs-size );
+			
+			&#{$prefix}-row {
 				flex-direction: row;
 			}
 			
-			&--#{$bs-size}-column {
+			&#{$prefix}-column {
 				flex-direction: column;
 			}
 			
-			&--#{$bs-size}-justify-start {
+			&#{$prefix}-justify-start {
 				justify-content: flex-start;
 			}
 			
-			&--#{$bs-size}-justify-end {
+			&#{$prefix}-justify-end {
 				justify-content: flex-end;
 			}
 			
-			&--#{$bs-size}-justify-center {
+			&#{$prefix}-justify-center {
 				justify-content: center;
 			}
 			
-			&--#{$bs-size}-justify-between {
+			&#{$prefix}-justify-between {
 				justify-content: space-between;
 			}
 			
-			&--#{$bs-size}-justify-around {
+			&#{$prefix}-justify-around {
 				justify-content: space-around;
 			}
 			
-			&--#{$bs-size}-align-stretch {
+			&#{$prefix}-align-stretch {
 				align-content: stretch;
 			}
 			
-			&--#{$bs-size}-align-start {
+			&#{$prefix}-align-start {
 				align-content: flex-start;
 			}
 			
-			&--#{$bs-size}-align-end {
+			&#{$prefix}-align-end {
 				align-content: flex-end;
 			}
 			
-			&--#{$bs-size}-align-center {
+			&#{$prefix}-align-center {
 				align-content: center;
 			}
 			
-			&--#{$bs-size}-align-between {
+			&#{$prefix}-align-between {
 				align-content: space-between;
 			}
 			
-			&--#{$bs-size}-align-around {
+			&#{$prefix}-align-around {
 				align-content: space-around;
 			}
 			
-			&--#{$bs-size}-no-gutter {
+			&#{$prefix}-no-gutter {
 				margin-right: 0;
 				margin-left: 0;
 				margin-bottom: 0;
 			}
 			
-			&--#{$bs-size}-gutter {
+			&#{$prefix}-gutter {
 				margin-right: -($bs-gutter * 2);
 				margin-left: -($bs-gutter * 2);
 				margin-bottom: -($bs-gutter * 2);
@@ -133,9 +135,11 @@
 
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
+		$prefix: bs-bp-prefix( $bs-size );
+		
 		@for $max_columns from 2 through 12 {
 			@for $i from 1 through $max_columns {
-				.bs-item--#{$bs-size}-#{$i}-#{$max_columns} {
+				.bs-item#{$prefix}-#{$i}-#{$max_columns} {
 					flex-basis: #{$i / $max_columns * 100}%;
 				}
 			}
@@ -149,8 +153,10 @@
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
 		@for $max_columns from 2 through 12 {
+			$prefix: bs-bp-prefix( $bs-size );
+			
 			@for $i from 1 through $max_columns - 1 {
-				.bs-item--#{$bs-size}-offset-#{$i}-#{$max_columns} {
+				.bs-item#{$prefix}-offset-#{$i}-#{$max_columns} {
 					margin-left: #{$i / $max_columns * 100}%;
 				}
 			}
@@ -160,7 +166,9 @@
 
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
-		.bs-item--#{$bs-size}-offset-0 {
+		$prefix: bs-bp-prefix( $bs-size );
+		
+		.bs-item#{$prefix}-offset-0 {
 			margin-left: 0;
 		}
 	}
@@ -171,24 +179,26 @@
  */
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
+		$prefix: bs-bp-prefix( $bs-size );
+		
 		/**
 		 * full width
 		 */
-		.bs-item--#{$bs-size}-full {
+		.bs-item#{$prefix}-full {
 			flex-basis: 100%;
 		}
 		
 		/**
 		 * auto width
 		 */
-		.bs-item--#{$bs-size} {
+		.bs-item#{$prefix}-auto {
 			flex-basis: auto;
 		}
 		
 		/**
 		 * child element height 100%
 		 */
-		.bs-item--#{$bs-size}-flex {
+		.bs-item#{$prefix}-flex {
 			display: flex;
 			
 			> * {
@@ -199,19 +209,19 @@
 		/**
 		 * vertical alignment
 		 */
-		.bs-item--#{$bs-size}-align-start {
+		.bs-item#{$prefix}-align-start {
 			align-self: flex-start;
 		}
-		.bs-item--#{$bs-size}-align-end {
+		.bs-item#{$prefix}-align-end {
 			align-self: flex-end;
 		}
-		.bs-item--#{$bs-size}-align-center {
+		.bs-item#{$prefix}-align-center {
 			align-self: center;
 		}
-		.bs-item--#{$bs-size}-align-baseline {
+		.bs-item#{$prefix}-align-baseline {
 			align-self: baseline;
 		}
-		.bs-item--#{$bs-size}-align-stretch {
+		.bs-item#{$prefix}-align-stretch {
 			align-self: stretch;
 		}
 	}

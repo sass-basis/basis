@@ -39,6 +39,7 @@ Modern Browser and IE10+
 #### November 28, 2015 v1.2.3
 * Changed wrapper styles.
 * Added .bs-container--size-no-gutter
+* Removed xs prefix.
 
 #### November 27, 2015 v1.2.2
 * Added default flags.
