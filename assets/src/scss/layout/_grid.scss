@@ -1,17 +1,19 @@
-.bs-wrapper--fluid, .bs-wrapper {
+.bs-wrapper, .bs-wrapper-fluid {
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: $bs-gutter * 2;
 	padding-left: $bs-gutter * 2;
+	overflow: hidden;
 }
 
 .bs-wrapper {
-	@each $bs-size, $bs-screen-min in $bs-sizes {
-		@if $bs-size == 'md' or $bs-size == 'lg' {
-			@include bs-bp-min( $bs-screen-min ) {
-				width: $bs-screen-min;
-			}
-		}
+	@include bs-bp-min( $bs-screen-md-min ) {
+		padding-right: $bs-gutter * 3;
+		padding-left: $bs-gutter * 3;
+	}
+	
+	@include bs-bp-min( $bs-screen-lg-min ) {
+		max-width: $bs-screen-lg-min;
 	}
 }
 

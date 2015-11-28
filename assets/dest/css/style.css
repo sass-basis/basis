@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v1.2.2
+ * Name: Basis v1.2.3
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -680,22 +680,24 @@ label.bs-checkbox, label.bs-radio,
 /* ========================================
  * layout
  ======================================= */
-.bs-wrapper--fluid, .bs-wrapper {
+.bs-wrapper, .bs-wrapper-fluid {
   margin-right: auto;
   margin-left: auto;
   padding-right: 16px;
   padding-left: 16px;
+  overflow: hidden;
 }
 
 @media (min-width: 992px) {
   .bs-wrapper {
-    width: 992px;
+    padding-right: 24px;
+    padding-left: 24px;
   }
 }
 
 @media (min-width: 1200px) {
   .bs-wrapper {
-    width: 1200px;
+    max-width: 1200px;
   }
 }
 
