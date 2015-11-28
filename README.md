@@ -40,6 +40,9 @@ Modern Browser and IE10+
 * Changed wrapper styles.
 * Added .bs-container--size-no-gutter
 * Removed xs prefix.
+* Added button styles.
+* Updated alert style.
+* Updated wrapper style.
 
 #### November 27, 2015 v1.2.2
 * Added default flags.
