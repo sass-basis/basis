@@ -690,8 +690,8 @@ label.bs-checkbox, label.bs-radio,
 
 @media (min-width: 992px) {
   .bs-wrapper {
-    padding-right: 24px;
-    padding-left: 24px;
+    padding-right: 40px;
+    padding-left: 40px;
   }
 }
 

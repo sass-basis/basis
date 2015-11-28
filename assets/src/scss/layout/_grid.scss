@@ -8,8 +8,8 @@
 
 .bs-wrapper {
 	@include bs-bp-min( $bs-screen-md-min ) {
-		padding-right: $bs-gutter * 3;
-		padding-left: $bs-gutter * 3;
+		padding-right: $bs-gutter * 5;
+		padding-left: $bs-gutter * 5;
 	}
 	
 	@include bs-bp-min( $bs-screen-lg-min ) {
