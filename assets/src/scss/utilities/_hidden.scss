@@ -1,0 +1,23 @@
+@media ( max-width: $bs-screen-xs-max ) {
+	.bs-hidden--xs {
+		display: none;
+	}
+}
+
+@media ( max-width: $bs-screen-sm-max ) {
+	.bs-hidden--sm {
+		display: none;
+	}
+}
+
+@media ( max-width: $bs-screen-md-max ) {
+	.bs-hidden--md {
+		display: none;
+	}
+}
+
+@media ( min-width: $bs-screen-lg-min ) {
+	.bs-hidden--lg {
+		display: none;
+	}
+}

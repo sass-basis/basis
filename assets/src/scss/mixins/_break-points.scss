@@ -1,11 +1,15 @@
-@mixin bs-bp-min( $bs-min ) {
-	@media (min-width: $bs-min ) {
+@mixin bs-bp-min( $min ) {
+	@if ( $min == $bs-screen-xs-min ) {
 		@content;
+	} @else {
+		@media (min-width: $min) {
+			@content;
+		}
 	}
 }
 
-@mixin bs-bp-max( $bs-max ) {
-	@media (max-width: $bs-max ) {
+@mixin bs-bp-max( $max ) {
+	@media (max-width: $max) {
 		@content;
 	}
 }
