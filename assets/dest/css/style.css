@@ -3091,6 +3091,30 @@ label.bs-checkbox, label.bs-radio,
 /* ========================================
  * utilities
  ======================================= */
+@media (max-width: 767px) {
+  .bs-hidden--xs {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .bs-hidden--sm {
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .bs-hidden--md {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bs-hidden--lg {
+    display: none;
+  }
+}
+
 .bs-text-left {
   text-align: left;
 }
