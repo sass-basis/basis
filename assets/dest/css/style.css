@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v1.2.3
+ * Name: Basis v1.2.4
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -418,10 +418,14 @@ html, body {
   padding: 0;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   color: #333;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -479,30 +483,30 @@ h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .sma
 }
 
 h1, .h1 {
-  font-size: 33px;
+  font-size: 3.36rem;
   line-height: 1.07143;
 }
 
 h2, .h2 {
-  font-size: 28px;
+  font-size: 2.8rem;
   line-height: 1.15385;
 }
 
 h3, .h3 {
-  font-size: 23px;
+  font-size: 2.38rem;
   line-height: 1.25;
 }
 
 h4, .h4 {
-  font-size: 19px;
+  font-size: 1.96rem;
 }
 
 h5, .h5 {
-  font-size: 16px;
+  font-size: 1.68rem;
 }
 
 h6, .h6 {
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 /**
@@ -3006,7 +3010,7 @@ label.bs-checkbox, label.bs-radio,
   color: #333;
   cursor: pointer;
   display: inline-block;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.5;
   padding: 8px 24px;
   vertical-align: middle;
@@ -3025,12 +3029,12 @@ label.bs-checkbox, label.bs-radio,
 }
 
 .bs-btn--sm {
-  font-size: 12px;
+  font-size: 1.2rem;
   padding: 8px 16px;
 }
 
 .bs-btn--lg {
-  font-size: 16px;
+  font-size: 1.6rem;
   padding: 9.6px 32px;
 }
 
