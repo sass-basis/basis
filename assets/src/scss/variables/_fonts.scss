@@ -1,10 +1,12 @@
-$bs-font-size-sm: 1.2rem !default;
-$bs-font-size-md: 1.4rem !default;
-$bs-font-size-lg: 1.6rem !default;
+$bs-font-size-xs: 1.2rem !default;
+$bs-font-size-sm: 1.4rem !default;
+$bs-font-size-md: 1.6rem !default;
+$bs-font-size-lg: 1.8rem !default;
 
-$bs-font-size-px-sm: 12px !default;
-$bs-font-size-px-md: 14px !default;
-$bs-font-size-px-lg: 16px !default;
+$bs-font-size-px-xs: 12px !default;
+$bs-font-size-px-sm: 14px !default;
+$bs-font-size-px-md: 16px !default;
+$bs-font-size-px-lg: 18px !default;
 
 $bs-line-height: 1.5 !default;
 $bs-line-height-computed: floor($bs-font-size-px-md * $bs-line-height) !default;

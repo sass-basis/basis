@@ -425,7 +425,7 @@ html {
 body {
   color: #333;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -483,30 +483,30 @@ h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .sma
 }
 
 h1, .h1 {
-  font-size: 3.36rem;
+  font-size: 3.84rem;
   line-height: 1.07143;
 }
 
 h2, .h2 {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   line-height: 1.15385;
 }
 
 h3, .h3 {
-  font-size: 2.38rem;
+  font-size: 2.72rem;
   line-height: 1.25;
 }
 
 h4, .h4 {
-  font-size: 1.96rem;
+  font-size: 2.24rem;
 }
 
 h5, .h5 {
-  font-size: 1.68rem;
+  font-size: 1.92rem;
 }
 
 h6, .h6 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 /**
@@ -578,7 +578,7 @@ pre code {
   border: 1px solid #bbb;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  height: 31px;
+  height: 34px;
   padding: 8px;
 }
 
@@ -3010,7 +3010,7 @@ label.bs-checkbox, label.bs-radio,
   color: #333;
   cursor: pointer;
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.5;
   padding: 8px 24px;
   vertical-align: middle;
@@ -3029,12 +3029,12 @@ label.bs-checkbox, label.bs-radio,
 }
 
 .bs-btn--sm {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 8px 16px;
 }
 
 .bs-btn--lg {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   padding: 9.6px 32px;
 }
 
