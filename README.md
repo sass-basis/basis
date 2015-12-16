@@ -37,6 +37,9 @@ Modern Browser and IE10+
 ## Changelog
 
 #### December 16, 2015 v1.2.4
+* Remove .bs-item--full
+* Refactoring grid system.
+* Added hidden classes.
 * Changed font size unit. px to rem.
 
 #### November 28, 2015 v1.2.3
