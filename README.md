@@ -41,6 +41,7 @@ Modern Browser and IE10+
 * Refactoring grid system.
 * Added hidden classes.
 * Changed font size unit. px to rem.
+* Changed base font size.
 
 #### November 28, 2015 v1.2.3
 * Changed wrapper styles.
