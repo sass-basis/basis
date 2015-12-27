@@ -40,7 +40,11 @@
 		color: #666;
 	}
 	
-	.show-grid [class^="bs-item--"] {
+	.bs-item > :first-child {
+		margin-top: 0;
+	}
+	
+	.show-grid .bs-item {
 		background-color: #2ecc71;
 		border: 1px solid #29B967;
 		color: #fff;
@@ -71,6 +75,12 @@
 	.table--bordered th, .table--bordered td {
 		border-bottom: 1px solid #ddd;
 		border-left: 1px solid #ddd;
+	}
+	
+	.bs-media__figure .dummy-image {
+		background-color: #333;
+		height: 80px;
+		width: 100px;
 	}
 	</style>
 </head>
@@ -246,6 +256,127 @@
 			<pre><code>&lt;div class="bs-wrapper-fluid"&gt;
 	...
 &lt/div&gt;</code></pre>
+		</section>
+		
+		<section>
+			<h1>Media</h1>
+			<h2>Standard</h2>
+			<pre><code>&lt;div class=&quot;bs-media&quot;&gt;
+	&lt;div class=&quot;bs-media__figure&quot;&gt;
+		&lt;div class=&quot;dummy-image&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;bs-media__body&quot;&gt;
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="bs-container bs-container--margin">
+				<div class="bs-item bs-item--md-1-2">
+					<div class="bs-media">
+						<div class="bs-media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="bs-media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						</div>
+					</div>
+				</div>
+				<div class="bs-item bs-item--md-1-2">
+					<div class="bs-media">
+						<div class="bs-media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="bs-media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						</div>
+					</div>
+				</div>
+			</div>
+					
+			<h2>Reverse</h2>
+			<pre><code>&lt;div class=&quot;bs-media bs-media--reverse&quot;&gt;
+	&lt;div class=&quot;bs-media__figure&quot;&gt;
+		&lt;div class=&quot;dummy-image&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;bs-media__body&quot;&gt;
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="bs-container bs-container--margin">
+				<div class="bs-item bs-item--md-1-2">
+					<div class="bs-media bs-media--reverse">
+						<div class="bs-media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="bs-media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						</div>
+					</div>
+				</div>
+				<div class="bs-item bs-item--md-1-2">
+					<div class="bs-media bs-media--reverse">
+						<div class="bs-media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="bs-media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<h2>Nested</h2>
+			<pre><code>&lt;div class=&quot;bs-media&quot;&gt;
+	&lt;div class=&quot;bs-media__figure&quot;&gt;
+		&lt;div class=&quot;dummy-image&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;bs-media__body&quot;&gt;
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+		
+		&lt;div class=&quot;bs-media&quot;&gt;
+			&lt;div class=&quot;bs-media__figure&quot;&gt;
+				&lt;div class=&quot;dummy-image&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;bs-media__body&quot;&gt;
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+			&lt;/div&gt;
+		&lt;/div&gt;
+		
+		&lt;div class=&quot;bs-media&quot;&gt;
+			&lt;div class=&quot;bs-media__figure&quot;&gt;
+				&lt;div class=&quot;dummy-image&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;bs-media__body&quot;&gt;
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="bs-media">
+				<div class="bs-media__figure">
+					<div class="dummy-image"></div>
+				</div>
+				<div class="bs-media__body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+					
+					<div class="bs-media">
+						<div class="bs-media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="bs-media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+						</div>
+					</div>
+					
+					<div class="bs-media">
+						<div class="bs-media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="bs-media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<section>

@@ -1,0 +1,24 @@
+.bs-media {
+	display: flex;
+	
+	&__figure {
+		margin-right: $bs-font-size-md;
+		
+		.bs-media--reverse & {
+			order: 1;
+		}
+		
+		> * {
+			vertical-align: top;
+			margin-top: 0.4rem;
+		}
+	}
+	
+	&__body {
+		flex-grow: 1;
+		
+		> .bs-media {
+			margin-top: $bs-font-size-md;
+		}
+	}
+}
