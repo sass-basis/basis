@@ -45,9 +45,8 @@ gulp.task( 'release', ['build'], function() {
 	return gulp.src(
 		[
 			'./**/*.html',
-			'./assets/dist/**',
-			"!./assets/src",
-			"!./release",
+			'./assets/**',
+			"!./release/**",
 			"!./node_modules/**/*.*"
 		],
 		{ base: './' }
