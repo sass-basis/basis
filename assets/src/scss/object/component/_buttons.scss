@@ -1,7 +1,7 @@
 .bs-btn {
 	background-color: #fff;
 	border-radius: $bs-border-radius-md;
-	border: 1px solid $bs-color-gray;
+	border: 1px solid bs-lighter($bs-color-gray);
 	color: $bs-color-text;
 	cursor: pointer;
 	display: inline-block;
@@ -11,39 +11,9 @@
 	vertical-align: middle;
 	white-space: nowrap;
 	overflow: hidden;
-	transition: .3s;
-	
-	@include bs-hover() {
-		background-color: bs-lighter( $bs-color-gray );
-	}
-	
-	&--primary, &--info, &--success, &--warning, &--danger {
-		border: none;
-		color: #fff;
-	}
-	
-	&--sm {
-		font-size: $bs-font-size-sm;
-		padding: $bs-margin ($bs-margin * 2);
-	}
-	
-	&--lg {
-		font-size: $bs-font-size-lg;
-		padding: ($bs-margin * 1.2) ($bs-margin * 4);
-	}
 	
 	&--block {
 		display: block;
-	}
-	
-	@each $bs-color, $bs-color-code in $bs-colors {
-		&--#{$bs-color} {
-			background-color: $bs-color-code;
-			
-			@include bs-hover() {
-				background-color: bs-light( $bs-color-code );
-			}
-		}
 	}
 	
 	&--ghost {
