@@ -14,7 +14,7 @@ https://github.com/inc2734/basis
 1. Download the basis from https://github.com/inc2734/basis/releases
 2. Just this link.
 ```html
-<link rel="stylesheet" href="/PATH/TO/basis/assets/dest/css/style.min.css" />
+<link rel="stylesheet" href="/PATH/TO/basis/assets/dist/css/style.min.css" />
 ```
 
 ### or
@@ -22,7 +22,7 @@ https://github.com/inc2734/basis
 1. ```npm install sass-basis```
 2. Just this link.
 ```html
-<link rel="stylesheet" href="/PATH/TO/node_modules/basis/assets/dest/css/style.min.css" />
+<link rel="stylesheet" href="/PATH/TO/node_modules/basis/assets/dist/css/style.min.css" />
 ```
 
 ## Browser support
