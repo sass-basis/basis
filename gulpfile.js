@@ -7,7 +7,7 @@ var browser_sync = require( 'browser-sync' );
 var autoprefixer = require( 'gulp-autoprefixer' );
 
 gulp.task( 'sass', function() {
-	return gulp.src( './assets/src/scss/*.scss' )
+	gulp.src( './assets/src/scss/*.scss' )
 		.pipe( sass( {
 			outputStyle: 'expanded'
 		} ) )
@@ -17,7 +17,7 @@ gulp.task( 'sass', function() {
 		} ) )
 		.pipe( gulp.dest( './assets/dist/css/' ) )
 		.on( 'end', function() {
-			gulp.src( ['./assets/dist/css/*.css', '!./assets/dist/css/*.min.css'] )
+			return gulp.src( ['./assets/dist/css/*.css', '!./assets/dist/css/*.min.css'] )
 				.pipe( cssmin() )
 				.pipe( rename( { suffix: '.min' } ) )
 				.pipe( gulp.dest( './assets/dist/css/' ) );
@@ -43,13 +43,13 @@ gulp.task( 'build', ['sass'] );
 
 gulp.task( 'release', ['build'], function() {
 	return gulp.src(
-		[
-			'./**/*.html',
-			'./assets/**',
-			"!./release/**",
-			"!./node_modules/**/*.*"
-		],
-		{ base: './' }
+			[
+				'./**/*.html',
+				'./assets/**',
+				"!./release/**",
+				"!./node_modules/**/*.*"
+			],
+			{ base: './' }
 		)
 		.pipe( gulp.dest( 'release' ) );
 } );
