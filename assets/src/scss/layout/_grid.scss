@@ -92,7 +92,7 @@
 				margin-left: -($bs-margin * 2);
 				margin-bottom: -($bs-margin * 2);
 				
-				> [class^="bs-item--"] {
+				> .bs-item {
 					padding-right: ($bs-margin * 2);
 					padding-left: ($bs-margin * 2);
 					margin-bottom: ($bs-margin * 2);
@@ -103,7 +103,7 @@
 					margin-left: -($bs-margin);
 					margin-bottom: -($bs-margin);
 					
-					> [class^="bs-item--"] {
+					> .bs-item {
 						padding-right: $bs-margin;
 						padding-left: $bs-margin;
 						margin-bottom: $bs-margin;
@@ -115,7 +115,7 @@
 					margin-left: -($bs-margin * 3);
 					margin-bottom: -($bs-margin * 3);
 					
-					> [class^="bs-item--"] {
+					> .bs-item {
 						padding-right: ($bs-margin * 3);
 						padding-left: ($bs-margin * 3);
 						margin-bottom: ($bs-margin * 3);
@@ -129,7 +129,7 @@
 /**
  * flex item
  */
-[class^="bs-item--"] {
+.bs-item {
 	flex-basis: 100%;
 }
 
