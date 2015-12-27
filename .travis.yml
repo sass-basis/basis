@@ -12,6 +12,7 @@ env:
 before_script:
 - git clone -b gh-pages --quiet https://github.com/inc2734/basis.git release
 script:
+- ls release | grep -v '.git' | xargs rm -rf
 - npm run release
 after_success:
 - bash ./bin/deploy.sh
