@@ -61,6 +61,12 @@
 				margin-right: 0;
 				margin-left: 0;
 				margin-bottom: 0;
+				
+				> .bs-item {
+					padding-right: 0;
+					padding-left: 0;
+					margin-bottom: 0;
+				}
 			}
 			
 			&#{$prefix}-margin {
