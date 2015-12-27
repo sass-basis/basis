@@ -46,6 +46,10 @@ Modern Browser and IE10+
 
 ## Changelog
 
+#### December 27, 2015 v1.3.0
+* Remove text alignment classes.
+* Changed directory structure.
+
 #### December 16, 2015 v1.2.4
 * Remove .bs-item--full
 * Refactoring grid system.
