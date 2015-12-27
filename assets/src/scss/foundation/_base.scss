@@ -123,7 +123,7 @@ dd {
 blockquote {
 	border-left: 5px solid bs-lightest( $bs-color-gray );
 	margin-left: 0;
-	padding: $bs-gutter 0 $bs-gutter ($bs-gutter * 2);
+	padding: $bs-margin 0 $bs-margin ($bs-margin * 2);
 	
 	:last-child {
 		margin-bottom: 0;
@@ -153,7 +153,7 @@ pre {
 	background-color: bs-lightest( $bs-color-gray );
 	border: 1px solid bs-lighter( $bs-color-gray );
 	border-radius: $bs-border-radius-md;
-	padding: ($bs-gutter * 2);
+	padding: ($bs-margin * 2);
 	
 	code {
 		background-color: transparent;

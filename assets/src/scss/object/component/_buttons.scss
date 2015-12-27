@@ -7,7 +7,7 @@
 	display: inline-block;
 	font-size: $bs-font-size-md;
 	line-height: $bs-line-height;
-	padding: $bs-gutter ($bs-gutter * 3);
+	padding: $bs-margin ($bs-margin * 3);
 	vertical-align: middle;
 	white-space: nowrap;
 	overflow: hidden;
@@ -24,12 +24,12 @@
 	
 	&--sm {
 		font-size: $bs-font-size-sm;
-		padding: $bs-gutter ($bs-gutter * 2);
+		padding: $bs-margin ($bs-margin * 2);
 	}
 	
 	&--lg {
 		font-size: $bs-font-size-lg;
-		padding: ($bs-gutter * 1.2) ($bs-gutter * 4);
+		padding: ($bs-margin * 1.2) ($bs-margin * 4);
 	}
 	
 	&--block {

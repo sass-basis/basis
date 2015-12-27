@@ -1,15 +1,15 @@
 .bs-wrapper, .bs-wrapper-fluid {
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: $bs-gutter * 2;
-	padding-left: $bs-gutter * 2;
+	padding-right: $bs-margin * 2;
+	padding-left: $bs-margin * 2;
 	overflow: hidden;
 }
 
 .bs-wrapper {
 	@include bs-bp-min( $bs-screen-md-min ) {
-		padding-right: $bs-gutter * 5;
-		padding-left: $bs-gutter * 5;
+		padding-right: $bs-margin * 5;
+		padding-left: $bs-margin * 5;
 	}
 	
 	@include bs-bp-min( $bs-screen-lg-min ) {
@@ -81,44 +81,44 @@
 				align-content: space-around;
 			}
 			
-			&#{$prefix}-no-gutter {
+			&#{$prefix}-no-margin {
 				margin-right: 0;
 				margin-left: 0;
 				margin-bottom: 0;
 			}
 			
-			&#{$prefix}-gutter {
-				margin-right: -($bs-gutter * 2);
-				margin-left: -($bs-gutter * 2);
-				margin-bottom: -($bs-gutter * 2);
+			&#{$prefix}-margin {
+				margin-right: -($bs-margin * 2);
+				margin-left: -($bs-margin * 2);
+				margin-bottom: -($bs-margin * 2);
 				
 				> [class^="bs-item--"] {
-					padding-right: ($bs-gutter * 2);
-					padding-left: ($bs-gutter * 2);
-					margin-bottom: ($bs-gutter * 2);
+					padding-right: ($bs-margin * 2);
+					padding-left: ($bs-margin * 2);
+					margin-bottom: ($bs-margin * 2);
 				}
 				
 				&-sm {
-					margin-right: -($bs-gutter);
-					margin-left: -($bs-gutter);
-					margin-bottom: -($bs-gutter);
+					margin-right: -($bs-margin);
+					margin-left: -($bs-margin);
+					margin-bottom: -($bs-margin);
 					
 					> [class^="bs-item--"] {
-						padding-right: $bs-gutter;
-						padding-left: $bs-gutter;
-						margin-bottom: $bs-gutter;
+						padding-right: $bs-margin;
+						padding-left: $bs-margin;
+						margin-bottom: $bs-margin;
 					}
 				}
 				
 				&-lg {
-					margin-right: -($bs-gutter * 3);
-					margin-left: -($bs-gutter * 3);
-					margin-bottom: -($bs-gutter * 3);
+					margin-right: -($bs-margin * 3);
+					margin-left: -($bs-margin * 3);
+					margin-bottom: -($bs-margin * 3);
 					
 					> [class^="bs-item--"] {
-						padding-right: ($bs-gutter * 3);
-						padding-left: ($bs-gutter * 3);
-						margin-bottom: ($bs-gutter * 3);
+						padding-right: ($bs-margin * 3);
+						padding-left: ($bs-margin * 3);
+						margin-bottom: ($bs-margin * 3);
 					}
 				}
 			}
