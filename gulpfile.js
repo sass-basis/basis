@@ -39,6 +39,20 @@ gulp.task( 'watch', function() {
 	} );
 } );
 
+gulp.task( 'release', function() {
+	return gulp.src(
+		[
+			'./**/*.html',
+			'./assets/dist',
+			"!./assets/src",
+			"!./release",
+			"!./node_modules"
+		],
+		{ base: './' }
+		)
+		.pipe( gulp.dest( 'release' ) );
+} );
+
 gulp.task( 'build', ['sass'] );
 
 gulp.task( 'default', ['sass', 'browsersync', 'watch'] );

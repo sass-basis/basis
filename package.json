@@ -16,5 +16,9 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "gulp-watch": "^4.3.5"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "release": "gulp release"
   }
 }
