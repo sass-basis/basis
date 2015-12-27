@@ -42,13 +42,13 @@
 @import 'layout/grid';
 
 /* ========================================
- * object
+ * object - component
  ======================================= */
-@import 'objects/alerts';
-@import 'objects/buttons';
+@import 'object/component/alerts';
+@import 'object/component/buttons';
 
 /* ========================================
- * utilities
+ * object - utility
  ======================================= */
-@import 'utilities/hidden';
-@import 'utilities/text-align';
+@import 'object/utility/hidden';
+@import 'object/utility/text-align';

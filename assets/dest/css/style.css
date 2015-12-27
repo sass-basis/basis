@@ -2969,7 +2969,7 @@ label.bs-checkbox, label.bs-radio,
 }
 
 /* ========================================
- * object
+ * object - component
  ======================================= */
 .bs-alert {
   border-radius: 3px;
@@ -3093,7 +3093,7 @@ label.bs-checkbox, label.bs-radio,
 }
 
 /* ========================================
- * utilities
+ * object - utility
  ======================================= */
 @media (max-width: 767px) {
   .bs-hidden--xs {
