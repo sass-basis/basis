@@ -12,17 +12,27 @@ https://github.com/inc2734/basis
 ## Get started
 
 1. Download the basis from https://github.com/inc2734/basis/releases
-2. Just this link.
+2. Build basis
+```shell
+$ cd /PATH/TO/basis
+$ gulp build
+```
+3. Just this link.
 ```html
-<link rel="stylesheet" href="/PATH/TO/basis/assets/dest/css/style.min.css" />
+<link rel="stylesheet" href="/PATH/TO/basis/assets/dist/css/style.min.css" />
 ```
 
 ### or
 
-1. ```npm install sass-basis```
-2. Just this link.
+1. ```$ npm install sass-basis```
+2. Build basis
+```shell
+$ cd /PATH/TO/basis
+$ gulp build
+```
+3. Just this link.
 ```html
-<link rel="stylesheet" href="/PATH/TO/node_modules/basis/assets/dest/css/style.min.css" />
+<link rel="stylesheet" href="/PATH/TO/node_modules/basis/assets/dist/css/style.min.css" />
 ```
 
 ## Browser support
@@ -35,6 +45,10 @@ Modern Browser and IE10+
 * github.com/necolas/normalize.css
 
 ## Changelog
+
+#### December 27, 2015 v1.3.0
+* Remove text alignment classes.
+* Changed directory structure.
 
 #### December 16, 2015 v1.2.4
 * Remove .bs-item--full
