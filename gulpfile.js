@@ -7,7 +7,7 @@ var browser_sync = require( 'browser-sync' );
 var autoprefixer = require( 'gulp-autoprefixer' );
 
 gulp.task( 'sass', function() {
-	gulp.src( './assets/src/scss/*.scss' )
+	return gulp.src( './assets/src/scss/*.scss' )
 		.pipe( sass( {
 			outputStyle: 'expanded'
 		} ) )
@@ -15,13 +15,14 @@ gulp.task( 'sass', function() {
 			browsers: ['last 2 versions'],
 			cascade: false
 		} ) )
-		.pipe( gulp.dest( './assets/dist/css/' ) )
-		.on( 'end', function() {
-			return gulp.src( ['./assets/dist/css/*.css', '!./assets/dist/css/*.min.css'] )
-				.pipe( cssmin() )
-				.pipe( rename( { suffix: '.min' } ) )
-				.pipe( gulp.dest( './assets/dist/css/' ) );
-		} );
+		.pipe( gulp.dest( './assets/dist/css/' ) );
+} );
+
+gulp.task( 'sass:build', ['sass'], function() {
+	return gulp.src( ['./assets/dist/css/*.css', '!./assets/dist/css/*.min.css'] )
+		.pipe( cssmin() )
+		.pipe( rename( { suffix: '.min' } ) )
+		.pipe( gulp.dest( './assets/dist/css/' ) );
 } );
 
 gulp.task( 'browsersync', function() {
@@ -39,13 +40,13 @@ gulp.task( 'watch', function() {
 	} );
 } );
 
-gulp.task( 'build', ['sass'] );
+gulp.task( 'build', ['sass:build'] );
 
 gulp.task( 'release', ['build'], function() {
 	return gulp.src(
 			[
 				'./**/*.html',
-				'./assets/**',
+				'./assets/dist',
 				"!./release/**",
 				"!./node_modules/**/*.*"
 			],
