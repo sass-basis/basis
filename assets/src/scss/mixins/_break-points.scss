@@ -1,5 +1,5 @@
 @mixin bs-bp-min( $min ) {
-	@if ( $min == $bs-screen-xs-min ) {
+	@if ( $min == $bs-screen-sm-min ) {
 		@content;
 	} @else {
 		@media (min-width: $min) {

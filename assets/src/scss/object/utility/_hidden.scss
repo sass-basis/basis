@@ -1,10 +1,4 @@
-@media ( max-width: $bs-screen-xs-max ) {
-	.#{$bs-prefix}hidden--xs {
-		display: none;
-	}
-}
-
-@media ( min-width: $bs-screen-sm-min ) and ( max-width: $bs-screen-sm-max ) {
+@media ( max-width: $bs-screen-sm-max ) {
 	.#{$bs-prefix}hidden--sm {
 		display: none;
 	}

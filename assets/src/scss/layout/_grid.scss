@@ -7,13 +7,8 @@
 }
 
 .#{$bs-prefix}container {
-	@include bs-bp-min( $bs-screen-md-min ) {
-		padding-right: $bs-margin * 5;
-		padding-left: $bs-margin * 5;
-	}
-	
 	@include bs-bp-min( $bs-screen-lg-min ) {
-		max-width: $bs-screen-lg-min;
+		max-width: $bs-max-width;
 	}
 }
 
