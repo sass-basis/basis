@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v1.3.0
+ * Name: Basis v1.4.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -10,6 +10,7 @@
 /* ========================================
  * variables
  ======================================= */
+@import 'variables/settings';
 @import 'variables/border-radius';
 @import 'variables/break-points';
 @import 'variables/colors';
@@ -34,7 +35,6 @@
 @import 'foundation/normalize';
 @import 'foundation/base';
 @import 'foundation/forms';
-@import 'foundation/tables';
 
 /* ========================================
  * layout
@@ -46,6 +46,7 @@
  ======================================= */
 @import 'object/component/alerts';
 @import 'object/component/buttons';
+@import 'object/component/media';
 
 /* ========================================
  * object - utility

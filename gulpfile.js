@@ -34,7 +34,7 @@ gulp.task( 'browsersync', function() {
 } );
 
 gulp.task( 'watch', function() {
-	gulp.watch( ['assets/*.scss', 'assets/**/*.scss'], ['sass'] );
+	gulp.watch( ['assets/**/*.scss'], ['sass:build'] );
 	gulp.watch( ['**/*.html', 'assets/dist/css/*.css'], function() {
 		browser_sync.reload();
 	} );
@@ -55,4 +55,4 @@ gulp.task( 'release', ['build'], function() {
 		.pipe( gulp.dest( 'release' ) );
 } );
 
-gulp.task( 'default', ['sass', 'browsersync', 'watch'] );
+gulp.task( 'default', ['build', 'browsersync', 'watch'] );

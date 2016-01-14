@@ -46,6 +46,17 @@ Modern Browser and IE10+
 
 ## Changelog
 
+#### January 14, 2016 v1.4.0
+* Changed prefix of class name.
+* Changed grid system classes name.
+* Changed break points.
+* Changed form control classes.
+* Changed heading elements margin.
+* Removed table classes.
+* Removed button size classes.
+* Removed colors classes.
+* Added media object class.
+
 #### December 27, 2015 v1.3.0
 * Remove text alignment classes.
 * Changed directory structure.

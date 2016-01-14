@@ -6,6 +6,11 @@
 	<!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/railscasts.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	
 	<link rel="stylesheet" href="./assets/dist/css/style.min.css" />
 	
 	<style>
@@ -40,7 +45,11 @@
 		color: #666;
 	}
 	
-	.show-grid [class^="bs-item--"] {
+	._col > :first-child {
+		margin-top: 0;
+	}
+	
+	.show-grid ._col {
 		background-color: #2ecc71;
 		border: 1px solid #29B967;
 		color: #fff;
@@ -57,19 +66,45 @@
 		border-bottom: 2px solid #2ecc71;
 		padding-bottom: 8px;
 	}
+	
+	.table {
+		width: 100%;
+	}
+	.table th, .table td {
+		padding: 8px;
+	}
+	.table--bordered {
+		border-top: 1px solid #ddd;
+		border-right: 1px solid #ddd;
+	}
+	.table--bordered th, .table--bordered td {
+		border-bottom: 1px solid #ddd;
+		border-left: 1px solid #ddd;
+	}
+	
+	._media__figure .dummy-image {
+		background-color: #333;
+		height: 80px;
+		width: 100px;
+	}
+	
+	pre {
+		background-color: #232323;
+		border: none;
+	}
 	</style>
 </head>
 <body>
 <div id="container">
 	
 <header class="header">
-	<div class="bs-wrapper">
+	<div class="_container">
 		<h1>Basis<small>The flexbox based CSS framework.</small></h1>
 	</div>
 </header>
 
 <div id="contents">
-	<div class="bs-wrapper">
+	<div class="_container">
 		<section>
 			<h1>Typography</h1>
 			
@@ -81,6 +116,7 @@
 			<h4>h4. heading <small>Small text</small></h4>
 			<h5>h5. heading <small>Small text</small></h5>
 			<h6>h6. heading <small>Small text</small></h6>
+			<br />
 			
 			<h2>Body text</h2>
 			<p>
@@ -92,120 +128,6 @@
 			<p>
 				Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
 			</p>
-			
-			<h2>Tables</h2>
-			
-			<h3>Standard table</h3>
-			<table class="bs-table">
-				<thead>
-					<tr>
-						<th>Nullam</th>
-						<th>quis</th>
-						<th>risus</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>eget</td>
-						<td>urna</td>
-						<td>mollis</td>
-					</tr>
-					<tr>
-						<td>ornare</td>
-						<td>vel eu leo</td>
-						<td>Cum sociis</td>
-					</tr>
-					<tr>
-						<td>natoque</td>
-						<td>penatibus</td>
-						<td>magnis</td>
-					</tr>
-				</tbody>
-			</table>
-			
-			<h3>Bordered table</h3>
-			<table class="bs-table bs-table--bordered">
-				<thead>
-					<tr>
-						<th>Nullam</th>
-						<th>quis</th>
-						<th>risus</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>eget</td>
-						<td>urna</td>
-						<td>mollis</td>
-					</tr>
-					<tr>
-						<td>ornare</td>
-						<td>vel eu leo</td>
-						<td>Cum sociis</td>
-					</tr>
-					<tr>
-						<td>natoque</td>
-						<td>penatibus</td>
-						<td>magnis</td>
-					</tr>
-				</tbody>
-			</table>
-			
-			<h3>Horizontal bordered table</h3>
-			<table class="bs-table bs-table--horizontal-bordered">
-				<thead>
-					<tr>
-						<th>Nullam</th>
-						<th>quis</th>
-						<th>risus</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>eget</td>
-						<td>urna</td>
-						<td>mollis</td>
-					</tr>
-					<tr>
-						<td>ornare</td>
-						<td>vel eu leo</td>
-						<td>Cum sociis</td>
-					</tr>
-					<tr>
-						<td>natoque</td>
-						<td>penatibus</td>
-						<td>magnis</td>
-					</tr>
-				</tbody>
-			</table>
-			
-			<h3>Striped table</h3>
-			<table class="bs-table bs-table--striped">
-				<thead>
-					<tr>
-						<th>Nullam</th>
-						<th>quis</th>
-						<th>risus</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>eget</td>
-						<td>urna</td>
-						<td>mollis</td>
-					</tr>
-					<tr>
-						<td>ornare</td>
-						<td>vel eu leo</td>
-						<td>Cum sociis</td>
-					</tr>
-					<tr>
-						<td>natoque</td>
-						<td>penatibus</td>
-						<td>magnis</td>
-					</tr>
-				</tbody>
-			</table>
 			
 			<h2>Lists</h2>
 			
@@ -275,13 +197,13 @@
 			
 			<form>
 				<p>
-					<input type="text" class="bs-form-control" placeholder="text" />
+					<input type="text" class="_form-control" placeholder="text" />
 				</p>
 				<p>
-					<textarea class="bs-form-control" placeholder="textarea"></textarea>
+					<textarea class="_form-control" placeholder="textarea"></textarea>
 				</p>
 				<p>
-					<select class="bs-form-control">
+					<select class="_form-control">
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
@@ -290,35 +212,35 @@
 					</select>
 				</p>
 				<p>
-					<label class="bs-checkbox"><input type="checkbox" /> checkbox1</label>
-					<label class="bs-checkbox"><input type="checkbox" /> checkbox2</label>
+					<label class="_checkbox"><input type="checkbox" /> checkbox1</label>
+					<label class="_checkbox"><input type="checkbox" /> checkbox2</label>
 				</p>
 				<p>
-					<span class="bs-checkbox bs-checkbox--block">
+					<span class="_checkbox _checkbox--block">
 						<label><input type="checkbox" /> checkbox1</label>
 					</span>
-					<span class="bs-checkbox bs-checkbox--block">
+					<span class="_checkbox _checkbox--block">
 						<label><input type="checkbox" /> checkbox2</label>
 					</span>
 				</p>
 				<p>
-					<label class="bs-radio"><input type="radio" name="radio-inline" /> radio1</label>
-					<label class="bs-radio"><input type="radio" name="radio-inline" /> radio2</label>
+					<label class="_radio"><input type="radio" name="radio-inline" /> radio1</label>
+					<label class="_radio"><input type="radio" name="radio-inline" /> radio2</label>
 				</p>
 				<p>
-					<span class="bs-radio bs-radio--block">
+					<span class="_radio _radio--block">
 						<label><input type="radio" name="radio-block" /> radio1</label>
 					</span>
-					<span class="bs-radio bs-radio--block">
+					<span class="_radio _radio--block">
 						<label><input type="radio" name="radio-block" /> radio2</label>
 					</span>
 				</p>
-				<div class="bs-input-group">
-					<div class="bs-input-group__addon">
+				<div class="_input-group">
+					<div class="_input-group__addon">
 						@
 					</div>
-					<input type="text" class="bs-input-group__field bs-form-control" placeholder="text" />
-					<input type="submit" class="bs-input-group__btn bs-btn bs-btn--primary" value="Go" />
+					<input type="text" class="_input-group__field _form-control" placeholder="text" />
+					<input type="submit" class="_input-group__btn _btn _btn--primary" value="Go" />
 				</div>
 			</form>
 			
@@ -338,22 +260,143 @@
 			
 		<section>
 			<h1>Wrappers</h1>
-			<pre><code>&lt;div class="bs-wrapper"&gt;
+			<pre><code>&lt;div class="_container"&gt;
 	...
 &lt/div&gt;</code></pre>
 			
-			<pre><code>&lt;div class="bs-wrapper-fluid"&gt;
+			<pre><code>&lt;div class="_container-fluid"&gt;
 	...
 &lt/div&gt;</code></pre>
+		</section>
+		
+		<section>
+			<h1>Media</h1>
+			<h2>Standard</h2>
+			<pre><code>&lt;div class=&quot;_media&quot;&gt;
+	&lt;div class=&quot;_media__figure&quot;&gt;
+		&lt;div class=&quot;dummy-image&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;_media__body&quot;&gt;
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="_row _row--margin">
+				<div class="_col _col--md-1-2">
+					<div class="_media">
+						<div class="_media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="_media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						</div>
+					</div>
+				</div>
+				<div class="_col _col--md-1-2">
+					<div class="_media">
+						<div class="_media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="_media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						</div>
+					</div>
+				</div>
+			</div>
+					
+			<h2>Reverse</h2>
+			<pre><code>&lt;div class=&quot;_media _media--reverse&quot;&gt;
+	&lt;div class=&quot;_media__figure&quot;&gt;
+		&lt;div class=&quot;dummy-image&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;_media__body&quot;&gt;
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="_row _row--margin">
+				<div class="_col _col--md-1-2">
+					<div class="_media _media--reverse">
+						<div class="_media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="_media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						</div>
+					</div>
+				</div>
+				<div class="_col _col--md-1-2">
+					<div class="_media _media--reverse">
+						<div class="_media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="_media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<h2>Nested</h2>
+			<pre><code>&lt;div class=&quot;_media&quot;&gt;
+	&lt;div class=&quot;_media__figure&quot;&gt;
+		&lt;div class=&quot;dummy-image&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;_media__body&quot;&gt;
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+		
+		&lt;div class=&quot;_media&quot;&gt;
+			&lt;div class=&quot;_media__figure&quot;&gt;
+				&lt;div class=&quot;dummy-image&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;_media__body&quot;&gt;
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+			&lt;/div&gt;
+		&lt;/div&gt;
+		
+		&lt;div class=&quot;_media&quot;&gt;
+			&lt;div class=&quot;_media__figure&quot;&gt;
+				&lt;div class=&quot;dummy-image&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;_media__body&quot;&gt;
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="_media">
+				<div class="_media__figure">
+					<div class="dummy-image"></div>
+				</div>
+				<div class="_media__body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+					
+					<div class="_media">
+						<div class="_media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="_media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+						</div>
+					</div>
+					
+					<div class="_media">
+						<div class="_media__figure">
+							<div class="dummy-image"></div>
+						</div>
+						<div class="_media__body">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<section>
 			<h1>Grid system</h1>
 			<p>
-				Basis has 2 - 12 based grid system. For example <code>.bs-item--1-2</code>, <code>.bs-item--12-12</code>. When using responsive Grids, Adding the specific breakpoints at class names.  For example <code>.bs-item--md-1-2</code>, <code>.bs-item--md-12-12</code>.
+				Basis has 2 - 12 based grid system. For example <code>._col--1-2</code>, <code>._col--12-12</code>. When using responsive Grids, Adding the specific breakpoints at class names.  For example <code>._col--md-1-2</code>, <code>._col--md-12-12</code>.
 			</p>
 			
-			<table class="bs-table bs-table--bordered">
+			<table class="table table--bordered">
 				<thead>
 					<tr>
 						<th>Key</th>
@@ -365,184 +408,219 @@
 					<tr>
 						<th>None</th>
 						<td>Always</td>
-						<td>.bs-item--1-12</td>
-					</tr>
-					<tr>
-						<th>sm</th>
-						<td>>= 768px</td>
-						<td>.bs-item--sm-1-12</td>
+						<td>._col--1-12</td>
 					</tr>
 					<tr>
 						<th>md</th>
-						<td>>= 992px</td>
-						<td>.bs-item--md-1-12</td>
+						<td>>= 640px</td>
+						<td>._col--md-1-12</td>
 					</tr>
 					<tr>
 						<th>lg</th>
-						<td>>= 1200px</td>
-						<td>.bs-item--lg-1-12</td>
+						<td>>= 1024px</td>
+						<td>._col--lg-1-12</td>
 					</tr>
 				</tbody>
 			</table>
 			
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-2"><div class="sample">1/2</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-2"><div class="sample">1/2</div></div>
 			</div>
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-3"><div class="sample">1/3</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-3"><div class="sample">1/3</div></div>
 			</div>
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-4"><div class="sample">1/4</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-4"><div class="sample">1/4</div></div>
 			</div>
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-5"><div class="sample">1/5</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-5"><div class="sample">1/5</div></div>
 			</div>
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-6"><div class="sample">1/6</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-6"><div class="sample">1/6</div></div>
 			</div>
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-7"><div class="sample">1/7</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-7"><div class="sample">1/7</div></div>
 			</div>
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-8"><div class="sample">1/8</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-8"><div class="sample">1/8</div></div>
 			</div>
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-9"><div class="sample">1/9</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-9"><div class="sample">1/9</div></div>
 			</div>
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-10"><div class="sample">1/10</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-10"><div class="sample">1/10</div></div>
 			</div>
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-11"><div class="sample">1/11</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-11"><div class="sample">1/11</div></div>
 			</div>
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-12"><div class="sample">1/12</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--1-12"><div class="sample">1/12</div></div>
 			</div>
 			
-			<h2>Gutter</h2>
-
-			<h3>Standard gutter</h3>
-			<pre><code>&lt;div class=&quot;bs-container bs-container--gutter&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+			<h2>Equal columns size</h2>
+			
+			<pre><code>&lt;div class=&quot;_row&quot;&gt;
+	&lt;div class=&quot;_col&quot;&gt;Lorem ipsum dolor sit amet&lt;/div&gt;
+	&lt;div class=&quot;_col&quot;&gt;Consectetur&lt;/div&gt;
+	&lt;div class=&quot;_col&quot;&gt;adipiscing&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--gutter">
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			
+			<div class="_row show-grid">
+				<div class="_col"><div class="sample">Lorem ipsum dolor sit amet</div></div>
+				<div class="_col"><div class="sample">Consectetur</div></div>
+				<div class="_col"><div class="sample">adipiscing</div></div>
+			</div>
+			
+			<h2>Auto columns size</h2>
+			
+			<pre><code>&lt;div class=&quot;_row _row--auto&quot;&gt;
+	&lt;div class=&quot;_col&quot;&gt;Lorem ipsum dolor sit amet&lt;/div&gt;
+	&lt;div class=&quot;_col&quot;&gt;Consectetur&lt;/div&gt;
+	&lt;div class=&quot;_col&quot;&gt;adipiscing&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			
+			<div class="_row _row--auto show-grid">
+				<div class="_col"><div class="sample">Lorem ipsum dolor sit amet</div></div>
+				<div class="_col"><div class="sample">Consectetur</div></div>
+				<div class="_col"><div class="sample">adipiscing</div></div>
+			</div>
+			
+			<h2>Margin</h2>
+			
+			<h3>No margin</h3>
+			<pre><code>&lt;div class=&quot;_row _row--md-collapse&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="_row _row--md-collapse">
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
 			</div>
 
-			<h3>Small gutter</h3>
-			<pre><code>&lt;div class=&quot;bs-container bs-container--gutter-sm&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+			<h3>Standard margin</h3>
+			<pre><code>&lt;div class=&quot;_row _row--md-margin&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--gutter-sm">
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			<div class="_row _row--md-margin">
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
 			</div>
 
-			<h3>Large gutter</h3>
-			<pre><code>&lt;div class=&quot;bs-container bs-container--gutter-lg&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;1/3&lt;/div&gt;
+			<h3>Small margin</h3>
+			<pre><code>&lt;div class=&quot;_row _row--md-margin-s&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--gutter-lg">
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			<div class="_row _row--md-margin-s">
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+			</div>
+
+			<h3>Large margin</h3>
+			<pre><code>&lt;div class=&quot;_row _row--md-margin-l&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			<div class="_row _row--md-margin-l">
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
 			</div>
 			
 			<h2>Nested</h2>
 			
-			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-5&quot;&gt;
-		&lt;div class=&quot;bs-container&quot;&gt;
-			&lt;div class=&quot;bs-item--md-1-2&quot;&gt;1/2&lt;/div&gt;
-			&lt;div class=&quot;bs-item--md-1-2&quot;&gt;1/2&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-5&quot;&gt;
+		&lt;div class=&quot;_row&quot;&gt;
+			&lt;div class=&quot;_col _col--md-1-2&quot;&gt;1/2&lt;/div&gt;
+			&lt;div class=&quot;_col _col--md-1-2&quot;&gt;1/2&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-5&quot;&gt;1/5&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-5&quot;&gt;1/5&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-5&quot;&gt;1/5&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-5&quot;&gt;1/5&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-5&quot;&gt;1/5&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-5&quot;&gt;1/5&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-5&quot;&gt;1/5&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-5&quot;&gt;1/5&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			
-			<div class="bs-container show-grid">
-				<div class="bs-item--md-1-5">
-					<div class="bs-container">
-						<div class="bs-item--md-1-2">
+			<div class="_row show-grid">
+				<div class="_col _col--md-1-5">
+					<div class="_row">
+						<div class="_col _col--md-1-2">
 							<div class="sample">1/2</div>
 						</div>
-						<div class="bs-item--md-1-2">
+						<div class="_col _col--md-1-2">
 							<div class="sample">1/2</div>
 						</div>
 					</div>
 				</div>
-				<div class="bs-item--md-1-5">
+				<div class="_col _col--md-1-5">
 					<div class="sample">1/5</div>
 				</div>
-				<div class="bs-item--md-1-5">
+				<div class="_col _col--md-1-5">
 					<div class="sample">1/5</div>
 				</div>
-				<div class="bs-item--md-1-5">
+				<div class="_col _col--md-1-5">
 					<div class="sample">1/5</div>
 				</div>
-				<div class="bs-item--md-1-5">
+				<div class="_col _col--md-1-5">
 					<div class="sample">1/5</div>
 				</div>
 			</div>
 			
 			<h2>Justify height</h2>
 			
-			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-flex&quot;&gt;1/3&lt;br /&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-flex&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-flex&quot;&gt;1/3&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3 _col--md-flex&quot;&gt;1/3&lt;br /&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3 _col--md-flex&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3 _col--md-flex&quot;&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			
-			<div class="bs-container show-grid">
-				<div class="bs-item--md-1-3 bs-item--md-flex"><div class="sample">1/3<br />1/3<br />1/3</div></div>
-				<div class="bs-item--md-1-3 bs-item--md-flex"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3 bs-item--md-flex"><div class="sample">1/3</div></div>
+			<div class="_row show-grid">
+				<div class="_col _col--md-1-3 _col--md-flex"><div class="sample">1/3<br />1/3<br />1/3</div></div>
+				<div class="_col _col--md-1-3 _col--md-flex"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3 _col--md-flex"><div class="sample">1/3</div></div>
 			</div>
 			
 			<h2>Offsets</h2>
 			
-			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-4&quot;&gt;1/4&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-4&quot;&gt;1/4&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-4 bs-item--md-offset-1-4&quot;&gt;1/4&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-4&quot;&gt;1/4&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-4&quot;&gt;1/4&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-4 _col--md-offset-1-4&quot;&gt;1/4&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			
-			<div class="bs-container show-grid">
-				<div class="bs-item--md-1-4">
+			<div class="_row show-grid">
+				<div class="_col _col--md-1-4">
 					<div class="sample">1/4</div>
 				</div>
-				<div class="bs-item--md-1-4">
+				<div class="_col _col--md-1-4">
 					<div class="sample">1/4</div>
 				</div>
-				<div class="bs-item--md-1-4 bs-item--md-offset-1-4">
+				<div class="_col _col--md-1-4 _col--md-offset-1-4">
 					<div class="sample">1/4</div>
 				</div>
 			</div>
 			
 			<h2>Devided in mobile, full in Desktop</h2>
 			
-			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
-	&lt;div class=&quot;bs-item--1-2 bs-item--md-2-2&quot;&gt;1&lt;/div&gt;
-	&lt;div class=&quot;bs-item--1-2 bs-item--md-2-2&quot;&gt;1&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row&quot;&gt;
+	&lt;div class=&quot;_col _col--1-2 _col--md-2-2&quot;&gt;1&lt;/div&gt;
+	&lt;div class=&quot;_col _col--1-2 _col--md-2-2&quot;&gt;1&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			
-			<div class="bs-container show-grid">
-				<div class="bs-item--1-2 bs-item--md-2-2">
+			<div class="_row show-grid">
+				<div class="_col _col--1-2 _col--md-2-2">
 					<div class="sample">1</div>
 				</div>
-				<div class="bs-item--1-2 bs-item--md-2-2">
+				<div class="_col _col--1-2 _col--md-2-2">
 					<div class="sample">1</div>
 				</div>
 			</div>
@@ -550,143 +628,125 @@
 			<h2>Alignment</h2>
 			
 			<h3>Align left</h3>
-			<pre><code>&lt;div class=&quot;bs-container bs-container--md-justify-start&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row _row--md-left&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--md-justify-start show-grid">
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			<div class="_row _row--md-left show-grid">
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
 			</div>
 			
 			<h3>Align right</h3>
-			<pre><code>&lt;div class=&quot;bs-container bs-container--md-justify-end&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row _row--md-right&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--md-justify-end show-grid">
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			<div class="_row _row--md-right show-grid">
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
 			</div>
 			
 			<h3>Centering</h3>
-			<pre><code>&lt;div class=&quot;bs-container bs-container--md-justify-center&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row _row--md-center&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--md-justify-center show-grid">
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			<div class="_row _row--md-center show-grid">
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
 			</div>
 			
 			<h3>Between</h3>
-			<pre><code>&lt;div class=&quot;bs-container bs-container--md-justify-between&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row _row--md-between&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--md-justify-between show-grid">
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			<div class="_row _row--md-between show-grid">
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
 			</div>
 			
 			<h3>Around</h3>
-			<pre><code>&lt;div class=&quot;bs-container bs-container--md-justify-around&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row _row--md-around&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;&lt;div class=&quot;sample&quot;&gt;1/3&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container bs-container--md-justify-around show-grid">
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
-				<div class="bs-item--md-1-3"><div class="sample">1/3</div></div>
+			<div class="_row _row--md-around show-grid">
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
+				<div class="_col _col--md-1-3"><div class="sample">1/3</div></div>
 			</div>
 			
 			<h2>Vertial alignment</h2>
 			
 			<h3>Top</h3>
-			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-start&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-start&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-start&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row _row--md-top&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container show-grid">
-				<div class="bs-item--md-1-3 bs-item--md-align-start">
+			<div class="_row _row--md-top show-grid">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3</div>
 				</div>
-				<div class="bs-item--md-1-3 bs-item--md-align-start">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3<br />1/3</br />1/3</div>
 				</div>
-				<div class="bs-item--md-1-3 bs-item--md-align-start">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3<br />1/3</div>
 				</div>
 			</div>
 			
 			<h3>Bottom</h3>
-			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-end&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-end&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-end&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row _row--md-bottom&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container show-grid">
-				<div class="bs-item--md-1-3 bs-item--md-align-end">
+			<div class="_row _row--md-bottom show-grid">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3</div>
 				</div>
-				<div class="bs-item--md-1-3 bs-item--md-align-end">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3<br />1/3</br />1/3</div>
 				</div>
-				<div class="bs-item--md-1-3 bs-item--md-align-end">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3<br />1/3</div>
 				</div>
 			</div>
 			
 			<h3>Middle</h3>
-			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-center&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-center&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-center&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row _row--md-middle&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container show-grid">
-				<div class="bs-item--md-1-3 bs-item--md-align-center">
+			<div class="_row _row--md-middle show-grid">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3</div>
 				</div>
-				<div class="bs-item--md-1-3 bs-item--md-align-center">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3<br />1/3</br />1/3</div>
 				</div>
-				<div class="bs-item--md-1-3 bs-item--md-align-center">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3<br />1/3</div>
 				</div>
 			</div>
 			
 			<h3>Baseline</h3>
-			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-baseline&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-baseline&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-baseline&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row _row--md-baseline&quot;&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
+	&lt;div class=&quot;_col _col--md-1-3&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<div class="bs-container show-grid">
-				<div class="bs-item--md-1-3 bs-item--md-align-baseline">
+			<div class="_row _row--md-baseline show-grid">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3</div>
 				</div>
-				<div class="bs-item--md-1-3 bs-item--md-align-baseline">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3<br />1/3</br />1/3</div>
 				</div>
-				<div class="bs-item--md-1-3 bs-item--md-align-baseline">
-					<div class="sample">1/3<br />1/3</div>
-				</div>
-			</div>
-			
-			<h3>Stretch ( .bs-item height is 100% )</h3>
-			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-stretch&quot;&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-stretch&quot;&gt;1/3&lt;br /&gt;1/3&lt;/br /&gt;1/3&lt;/div&gt;
-	&lt;div class=&quot;bs-item--md-1-3 bs-item--md-align-stretch&quot;&gt;1/3&lt;br /&gt;1/3&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-			<div class="bs-container show-grid">
-				<div class="bs-item--md-1-3 bs-item--md-align-stretch">
-					<div class="sample">1/3</div>
-				</div>
-				<div class="bs-item--md-1-3 bs-item--md-align-stretch">
-					<div class="sample">1/3<br />1/3</br />1/3</div>
-				</div>
-				<div class="bs-item--md-1-3 bs-item--md-align-stretch">
+				<div class="_col _col--md-1-3">
 					<div class="sample">1/3<br />1/3</div>
 				</div>
 			</div>
@@ -697,103 +757,65 @@
 			
 			<h2>Tags</h2>
 			
-			<pre><code>&lt;a class=&quot;bs-btn&quot;&gt;default&lt;/a&gt;
-&lt;input type=&quot;submit&quot; class=&quot;bs-btn&quot; value=&quot;default&quot; /&gt;
-&lt;button class=&quot;bs-btn&quot;&gt;default&lt;/button&gt;</code></pre>
+			<pre><code>&lt;a class=&quot;_btn&quot;&gt;default&lt;/a&gt;
+&lt;input type=&quot;submit&quot; class=&quot;_btn&quot; value=&quot;default&quot; /&gt;
+&lt;button class=&quot;_btn&quot;&gt;default&lt;/button&gt;</code></pre>
 			
 			<div class="section">
-				<a class="bs-btn">default</a>
-				<input type="submit" class="bs-btn" value="default" />
-				<button class="bs-btn">default</button>
-			</div>
-			
-			<h2>Colors</h2>
-
-			<pre><code>&lt;a class=&quot;bs-btn&quot;&gt;default&lt;/a&gt;
-&lt;a class=&quot;bs-btn bs-btn--primary&quot;&gt;primary&lt;/a&gt;
-&lt;a class=&quot;bs-btn bs-btn--info&quot;&gt;info&lt;/a&gt;
-&lt;a class=&quot;bs-btn bs-btn--success&quot;&gt;success&lt;/a&gt;
-&lt;a class=&quot;bs-btn bs-btn--warning&quot;&gt;warning&lt;/a&gt;
-&lt;a class=&quot;bs-btn bs-btn--danger&quot;&gt;danger&lt;/a&gt;</code></pre>
-
-			<div class="section">
-				<a class="bs-btn">default</a>
-				<a class="bs-btn bs-btn--primary">primary</a>
-				<a class="bs-btn bs-btn--info">info</a>
-				<a class="bs-btn bs-btn--success">success</a>
-				<a class="bs-btn bs-btn--warning">warning</a>
-				<a class="bs-btn bs-btn--danger">danger</a>
+				<a class="_btn">default</a>
+				<input type="submit" class="_btn" value="default" />
+				<button class="_btn">default</button>
 			</div>
 			
 			<h2>Ghost Button</h2>
 			
-			<pre><code>&lt;a class=&quot;bs-btn bs-btn--ghost&quot;&gt;ghost&lt;/a&gt;</code></pre>
+			<pre><code>&lt;a class=&quot;_btn _btn--ghost&quot;&gt;ghost&lt;/a&gt;</code></pre>
 			
 			<div class="section" style="text-align: center">
 				<div style="padding: 100px; background-color: #202020">
-					<a class="bs-btn bs-btn--ghost">ghost</a>
+					<a class="_btn _btn--ghost">ghost</a>
 				</div>
-			</div>
-			
-			<h2>Sizes</h2>
-			
-			<pre><code>&lt;a class=&quot;bs-btn bs-btn--sm&quot;&gt;small&lt;/a&gt;
-&lt;a class=&quot;bs-btn&quot;&gt;small&lt;/a&gt;
-&lt;a class=&quot;bs-btn bs-btn--lg&quot;&gt;large&lt;/a&gt;</code></pre>
-			
-			<div class="section">
-				<a class="bs-btn bs-btn--sm">small</a>
-				<a class="bs-btn">normal</a>
-				<a class="bs-btn bs-btn--lg">large</a>
 			</div>
 			
 			<h2>Block buttons</h2>
 			
-			<pre><code>&lt;a class=&quot;bs-btn bs-btn--block&quot;&gt;block&lt;/a&gt;</code></pre>
+			<pre><code>&lt;a class=&quot;_btn _btn--block&quot;&gt;block&lt;/a&gt;</code></pre>
 			
 			<div class="section">
-				<a class="bs-btn bs-btn--block">block</a>
+				<a class="_btn _btn--block">block</a>
 			</div>
 		</section>
 
 		<section>
 			<h1>Alerts</h1>
 			
-			<pre><code>&lt;div class=&quot;bs-alert bs-alert--info&quot;&gt;info&lt;/div&gt;
-&lt;div class=&quot;bs-alert bs-alert--success&quot;&gt;success&lt;/div&gt;
-&lt;div class=&quot;bs-alert bs-alert--warning&quot;&gt;warning&lt;/div&gt;
-&lt;div class=&quot;bs-alert bs-alert--danger&quot;&gt;danger&lt;/div&gt;</code></pre>
+			<pre><code>&lt;div class=&quot;_alert&quot;&gt;This is alert !&lt;/div&gt;</code></pre>
 			
 			<div class="section">
-				<div class="bs-alert bs-alert--info">info</div>
-				<div class="bs-alert bs-alert--success">success</div>
-				<div class="bs-alert bs-alert--warning">warning</div>
-				<div class="bs-alert bs-alert--danger">danger</div>
+				<div class="_alert">This is alert !</div>
 			</div>
 		</section>
 		
 		<section>
 			<h1>Hidden</h1>
 			
-			<pre><code>&lt;div class=&quot;bs-container&quot;&gt;
-	&lt;div class=&quot;bs-item--1-1 bs-hidden--xs&quot;&gt;&lt;div class=&quot;sample&quot;&gt;Hidden &lt; 768&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;bs-item--1-1 bs-hidden--sm&quot;&gt;&lt;div class=&quot;sample&quot;&gt;Hidden 768 - 991&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;bs-item--1-1 bs-hidden--md&quot;&gt;&lt;div class=&quot;sample&quot;&gt;Hidden 992 - 1199&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;bs-item--1-1 bs-hidden--lg&quot;&gt;&lt;div class=&quot;sample&quot;&gt;Hidden &gt;= 1200&lt;/div&gt;&lt;/div&gt;
+			<pre><code>&lt;div class=&quot;_row&quot;&gt;
+	&lt;div class=&quot;_col _col--1-1 _hidden--sm&quot;&gt;&lt;div class=&quot;sample&quot;&gt;Hidden &lt; 640&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;_col _col--1-1 _hidden--md&quot;&gt;&lt;div class=&quot;sample&quot;&gt;Hidden 640 - 1023&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;_col _col--1-1 _hidden--lg&quot;&gt;&lt;div class=&quot;sample&quot;&gt;Hidden &gt;= 1024&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			
-			<div class="bs-container">
-				<div class="bs-item--1-1 bs-hidden--xs"><div class="sample">Hidden < 768</div></div>
-				<div class="bs-item--1-1 bs-hidden--sm"><div class="sample">Hidden 768 - 991</div></div>
-				<div class="bs-item--1-1 bs-hidden--md"><div class="sample">Hidden 992 - 1199</div></div>
-				<div class="bs-item--1-1 bs-hidden--lg"><div class="sample">Hidden >= 1200</div></div>
+			<div class="_row">
+				<div class="_col _col--1-1 _hidden--sm"><div class="sample">Hidden < 640</div></div>
+				<div class="_col _col--1-1 _hidden--md"><div class="sample">Hidden 640 - 1023</div></div>
+				<div class="_col _col--1-1 _hidden--lg"><div class="sample">Hidden >= 1024</div></div>
 			</div>
 		</section>
 	</div>
 </div>
 
 <footer class="footer">
-	<div class="bs-wrapper">
+	<div class="_container">
 		Created and maintened by <a href="http://2inc.org" target="_blank">Takashi Kitajima</a>.<br />
 		Source code and examples released under the GPLv2 or later.
 	</div>

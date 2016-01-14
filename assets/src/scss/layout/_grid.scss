@@ -1,29 +1,30 @@
-.bs-wrapper, .bs-wrapper-fluid {
+.#{$bs-prefix}container, .#{$bs-prefix}container-fluid {
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: $bs-gutter * 2;
-	padding-left: $bs-gutter * 2;
+	padding-right: $bs-margin * 2;
+	padding-left: $bs-margin * 2;
 	overflow: hidden;
 }
 
-.bs-wrapper {
-	@include bs-bp-min( $bs-screen-md-min ) {
-		padding-right: $bs-gutter * 5;
-		padding-left: $bs-gutter * 5;
-	}
-	
+.#{$bs-prefix}container {
 	@include bs-bp-min( $bs-screen-lg-min ) {
-		max-width: $bs-screen-lg-min;
+		max-width: $bs-max-width;
 	}
 }
 
 /**
  * flex container
  */
-.bs-container {
+.#{$bs-prefix}row {
 	display: flex;
 	flex-wrap: wrap;
 	overflow: hidden;
+	
+	&--auto {
+		> .#{$bs-prefix}col {
+			flex: auto;
+		}
+	}
 	
 	@each $bs-size, $bs-screen-min in $bs-sizes {
 		@include bs-bp-min( $bs-screen-min ) {
@@ -37,88 +38,86 @@
 				flex-direction: column;
 			}
 			
-			&#{$prefix}-justify-start {
+			&#{$prefix}-left {
 				justify-content: flex-start;
 			}
 			
-			&#{$prefix}-justify-end {
+			&#{$prefix}-right {
 				justify-content: flex-end;
 			}
 			
-			&#{$prefix}-justify-center {
+			&#{$prefix}-center {
 				justify-content: center;
 			}
 			
-			&#{$prefix}-justify-between {
+			&#{$prefix}-between {
 				justify-content: space-between;
 			}
 			
-			&#{$prefix}-justify-around {
+			&#{$prefix}-around {
 				justify-content: space-around;
 			}
 			
-			&#{$prefix}-align-stretch {
-				align-content: stretch;
+			&#{$prefix}-top {
+				align-items: flex-start;
 			}
 			
-			&#{$prefix}-align-start {
-				align-content: flex-start;
+			&#{$prefix}-bottom {
+				align-items: flex-end;
 			}
 			
-			&#{$prefix}-align-end {
-				align-content: flex-end;
+			&#{$prefix}-middle {
+				align-items: center;
 			}
 			
-			&#{$prefix}-align-center {
-				align-content: center;
+			&#{$prefix}-baseline {
+				align-items: baseline;
 			}
 			
-			&#{$prefix}-align-between {
-				align-content: space-between;
-			}
-			
-			&#{$prefix}-align-around {
-				align-content: space-around;
-			}
-			
-			&#{$prefix}-no-gutter {
+			&#{$prefix}-collapse {
 				margin-right: 0;
 				margin-left: 0;
 				margin-bottom: 0;
+				
+				> .#{$bs-prefix}col {
+					padding-right: 0;
+					padding-left: 0;
+					margin-bottom: 0;
+				}
 			}
 			
-			&#{$prefix}-gutter {
-				margin-right: -($bs-gutter * 2);
-				margin-left: -($bs-gutter * 2);
-				margin-bottom: -($bs-gutter * 2);
+			&#{$prefix}-margin {
+				margin-right: -($bs-margin * 2);
+				margin-left: -($bs-margin * 2);
+				margin-bottom: -($bs-margin * 2);
 				
-				> [class^="bs-item--"] {
-					padding-right: ($bs-gutter * 2);
-					padding-left: ($bs-gutter * 2);
-					margin-bottom: ($bs-gutter * 2);
+				> .#{$bs-prefix}col {
+					padding-right: ($bs-margin * 2);
+					padding-left: ($bs-margin * 2);
+					margin-bottom: ($bs-margin * 2);
 				}
 				
-				&-sm {
-					margin-right: -($bs-gutter);
-					margin-left: -($bs-gutter);
-					margin-bottom: -($bs-gutter);
+				&-s {
+					margin-right: -($bs-margin);
+					margin-left: -($bs-margin);
+					margin-bottom: -($bs-margin);
 					
-					> [class^="bs-item--"] {
-						padding-right: $bs-gutter;
-						padding-left: $bs-gutter;
-						margin-bottom: $bs-gutter;
+					> .#{$bs-prefix}col {
+						padding-right: $bs-margin;
+						padding-left: $bs-margin;
+						margin-bottom: $bs-margin;
 					}
 				}
 				
-				&-lg {
-					margin-right: -($bs-gutter * 3);
-					margin-left: -($bs-gutter * 3);
-					margin-bottom: -($bs-gutter * 3);
+				&-l {
+					margin-right: -($bs-margin * 3);
+					margin-left: -($bs-margin * 3);
+					margin-bottom: -($bs-margin * 3);
 					
-					> [class^="bs-item--"] {
-						padding-right: ($bs-gutter * 3);
-						padding-left: ($bs-gutter * 3);
-						margin-bottom: ($bs-gutter * 3);
+					> .#{$bs-prefix}col {
+						padding-right: ($bs-margin * 3);
+						padding-left: ($bs-margin * 3);
+						margin-bottom: ($bs-margin * 3);
 					}
 				}
 			}
@@ -129,19 +128,19 @@
 /**
  * flex item
  */
-[class^="bs-item--"] {
-	flex-basis: 100%;
+.#{$bs-prefix}col {
+	flex: 1;
 }
 
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
 		
-		@for $max_columns from 2 through 12 {
+		@for $max_columns from 1 through 12 {
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
 				
-				.bs-item#{$prefix}-#{$i}-#{$max_columns} {
+				.#{$bs-prefix}col#{$prefix}-#{$i}-#{$max_columns} {
 					@if $i != $max_columns {
 						@extend %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
 					} @else {
@@ -164,14 +163,14 @@
 				
 				@if $gcd == 1 {
 					%bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-						flex-basis: #{$i / $max_columns * 100}%;
+						flex: 0 1 #{$i / $max_columns * 100}%;
 					}
 				}
 			}
 		}
 		
 		%bs-item#{$prefix}-full {
-			flex-basis: 100%;
+			flex: 0 1 100%;
 		}
 	}
 }
@@ -187,7 +186,7 @@
 			@for $i from 1 through $max_columns - 1 {
 				$gcd: bs-gcd( $i, $max_columns );
 			
-				.bs-item#{$prefix}-offset-#{$i}-#{$max_columns} {
+				.#{$bs-prefix}col#{$prefix}-offset-#{$i}-#{$max_columns} {
 					@extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
 				}
 			}
@@ -218,7 +217,7 @@
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
 		
-		.bs-item#{$prefix}-offset-0 {
+		.#{$bs-prefix}col#{$prefix}-offset-0 {
 			margin-left: 0;
 		}
 	}
@@ -232,40 +231,14 @@
 		$prefix: bs-bp-prefix( $bs-size );
 		
 		/**
-		 * auto width
-		 */
-		.bs-item#{$prefix}-auto {
-			flex-basis: auto;
-		}
-		
-		/**
 		 * child element height 100%
 		 */
-		.bs-item#{$prefix}-flex {
+		.#{$bs-prefix}col#{$prefix}-flex {
 			display: flex;
 			
 			> * {
-				flex-basis: 100%;
+				flex: 0 1 100%;
 			}
-		}
-		
-		/**
-		 * vertical alignment
-		 */
-		.bs-item#{$prefix}-align-start {
-			align-self: flex-start;
-		}
-		.bs-item#{$prefix}-align-end {
-			align-self: flex-end;
-		}
-		.bs-item#{$prefix}-align-center {
-			align-self: center;
-		}
-		.bs-item#{$prefix}-align-baseline {
-			align-self: baseline;
-		}
-		.bs-item#{$prefix}-align-stretch {
-			align-self: stretch;
 		}
 	}
 }

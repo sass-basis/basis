@@ -1,7 +1,7 @@
 @function bs-bp-prefix( $size ) {
 	$prefix: '-';
 	
-	@if $size != 'xs' {
+	@if $size != 'sm' {
 		$prefix: --#{$size};
 	}
 	@return $prefix;

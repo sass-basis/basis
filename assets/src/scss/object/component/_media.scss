@@ -1,0 +1,26 @@
+.#{$bs-prefix}media {
+	display: flex;
+	
+	&__figure {
+		margin-right: $bs-font-size-md;
+		
+		.#{$bs-prefix}media--reverse & {
+			margin-right: 0;
+			margin-left: $bs-font-size-md;
+			order: 1;
+		}
+		
+		> * {
+			vertical-align: top;
+			margin-top: 0.4rem;
+		}
+	}
+	
+	&__body {
+		flex-grow: 1;
+		
+		> .#{$bs-prefix}media {
+			margin-top: $bs-font-size-md;
+		}
+	}
+}
