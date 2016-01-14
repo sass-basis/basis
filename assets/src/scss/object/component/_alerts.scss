@@ -1,13 +1,8 @@
 .#{$bs-prefix}alert {
+	background-color: #fff;
 	border-radius: $bs-border-radius-md;
+	border: 1px solid bs-lighter($bs-color-gray);
 	display: block;
 	margin-bottom: $bs-margin;
 	padding: ($bs-margin * 2);
-	
-	@each $bs-color, $bs-color-code in $bs-colors {
-		&--#{$bs-color} {
-			background-color: bs-lightest( $bs-color-code );
-			color: bs-darkest( $bs-color-code );
-		}
-	}
 }

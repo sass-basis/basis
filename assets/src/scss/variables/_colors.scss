@@ -1,16 +1,4 @@
-$bs-color-primary: #2980b9 !default;
-$bs-color-info   : #3498db !default;
-$bs-color-success: #2ecc71 !default;
-$bs-color-warning: #f1c40f !default;
-$bs-color-danger : #e74c3c !default;
-$bs-colors: (
-	primary: $bs-color-primary,
-	info   : $bs-color-info,
-	success: $bs-color-success,
-	warning: $bs-color-warning,
-	danger : $bs-color-danger
-);
-
 $bs-color-text : #333 !default;
 $bs-color-black: #111 !default;
 $bs-color-gray : #bbb !default;
+$bs-color-red : #e74c3c !default;
