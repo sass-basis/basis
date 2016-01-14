@@ -32,27 +32,43 @@
 				flex-direction: column;
 			}
 			
-			&#{$prefix}-justify-start {
+			&#{$prefix}-left {
 				justify-content: flex-start;
 			}
 			
-			&#{$prefix}-justify-end {
+			&#{$prefix}-right {
 				justify-content: flex-end;
 			}
 			
-			&#{$prefix}-justify-center {
+			&#{$prefix}-center {
 				justify-content: center;
 			}
 			
-			&#{$prefix}-justify-between {
+			&#{$prefix}-between {
 				justify-content: space-between;
 			}
 			
-			&#{$prefix}-justify-around {
+			&#{$prefix}-around {
 				justify-content: space-around;
 			}
 			
-			&#{$prefix}-no-margin {
+			&#{$prefix}-top {
+				align-items: flex-start;
+			}
+			
+			&#{$prefix}-bottom {
+				align-items: flex-end;
+			}
+			
+			&#{$prefix}-middle {
+				align-items: center;
+			}
+			
+			&#{$prefix}-baseline {
+				align-items: baseline;
+			}
+			
+			&#{$prefix}-collapse {
 				margin-right: 0;
 				margin-left: 0;
 				margin-bottom: 0;
@@ -75,7 +91,7 @@
 					margin-bottom: ($bs-margin * 2);
 				}
 				
-				&-sm {
+				&-s {
 					margin-right: -($bs-margin);
 					margin-left: -($bs-margin);
 					margin-bottom: -($bs-margin);
@@ -87,7 +103,7 @@
 					}
 				}
 				
-				&-lg {
+				&-l {
 					margin-right: -($bs-margin * 3);
 					margin-left: -($bs-margin * 3);
 					margin-bottom: -($bs-margin * 3);
@@ -224,22 +240,6 @@
 			> * {
 				flex-basis: 100%;
 			}
-		}
-		
-		/**
-		 * vertical alignment
-		 */
-		.#{$bs-prefix}col#{$prefix}-align-start {
-			align-self: flex-start;
-		}
-		.#{$bs-prefix}col#{$prefix}-align-end {
-			align-self: flex-end;
-		}
-		.#{$bs-prefix}col#{$prefix}-align-center {
-			align-self: center;
-		}
-		.#{$bs-prefix}col#{$prefix}-align-baseline {
-			align-self: baseline;
 		}
 	}
 }
