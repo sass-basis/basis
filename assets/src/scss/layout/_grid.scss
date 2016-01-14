@@ -123,7 +123,8 @@
  * flex item
  */
 .#{$bs-prefix}col {
-	flex-basis: 100%;
+	flex: 1;
+	// flex-basis: 100%;
 }
 
 @each $bs-size, $bs-screen-min in $bs-sizes {
@@ -157,14 +158,14 @@
 				
 				@if $gcd == 1 {
 					%bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-						flex-basis: #{$i / $max_columns * 100}%;
+						flex: 0 1 #{$i / $max_columns * 100}%;
 					}
 				}
 			}
 		}
 		
 		%bs-item#{$prefix}-full {
-			flex-basis: 100%;
+			flex: 0 1 100%;
 		}
 	}
 }
@@ -228,7 +229,7 @@
 		 * auto width
 		 */
 		.#{$bs-prefix}col#{$prefix}-auto {
-			flex-basis: auto;
+			flex: auto;
 		}
 		
 		/**
@@ -238,7 +239,7 @@
 			display: flex;
 			
 			> * {
-				flex-basis: 100%;
+				flex: 0 1 100%;
 			}
 		}
 	}
