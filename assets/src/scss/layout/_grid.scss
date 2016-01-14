@@ -20,6 +20,12 @@
 	flex-wrap: wrap;
 	overflow: hidden;
 	
+	&--auto {
+		> .#{$bs-prefix}col {
+			flex: auto;
+		}
+	}
+	
 	@each $bs-size, $bs-screen-min in $bs-sizes {
 		@include bs-bp-min( $bs-screen-min ) {
 			$prefix: bs-bp-prefix( $bs-size );
@@ -124,7 +130,6 @@
  */
 .#{$bs-prefix}col {
 	flex: 1;
-	// flex-basis: 100%;
 }
 
 @each $bs-size, $bs-screen-min in $bs-sizes {
@@ -224,13 +229,6 @@
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
-		
-		/**
-		 * auto width
-		 */
-		.#{$bs-prefix}col#{$prefix}-auto {
-			flex: auto;
-		}
 		
 		/**
 		 * child element height 100%
