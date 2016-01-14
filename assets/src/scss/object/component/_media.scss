@@ -5,6 +5,8 @@
 		margin-right: $bs-font-size-md;
 		
 		.#{$bs-prefix}media--reverse & {
+			margin-right: 0;
+			margin-left: $bs-font-size-md;
 			order: 1;
 		}
 		
