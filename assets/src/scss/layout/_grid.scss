@@ -1,4 +1,4 @@
-.#{$bs-prefix}wrapper, .#{$bs-prefix}wrapper-fluid {
+.#{$bs-prefix}container, .#{$bs-prefix}container-fluid {
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: $bs-margin * 2;
@@ -6,7 +6,7 @@
 	overflow: hidden;
 }
 
-.#{$bs-prefix}wrapper {
+.#{$bs-prefix}container {
 	@include bs-bp-min( $bs-screen-md-min ) {
 		padding-right: $bs-margin * 5;
 		padding-left: $bs-margin * 5;
@@ -20,7 +20,7 @@
 /**
  * flex container
  */
-.#{$bs-prefix}container {
+.#{$bs-prefix}row {
 	display: flex;
 	flex-wrap: wrap;
 	overflow: hidden;
@@ -62,7 +62,7 @@
 				margin-left: 0;
 				margin-bottom: 0;
 				
-				> .#{$bs-prefix}item {
+				> .#{$bs-prefix}col {
 					padding-right: 0;
 					padding-left: 0;
 					margin-bottom: 0;
@@ -74,7 +74,7 @@
 				margin-left: -($bs-margin * 2);
 				margin-bottom: -($bs-margin * 2);
 				
-				> .#{$bs-prefix}item {
+				> .#{$bs-prefix}col {
 					padding-right: ($bs-margin * 2);
 					padding-left: ($bs-margin * 2);
 					margin-bottom: ($bs-margin * 2);
@@ -85,7 +85,7 @@
 					margin-left: -($bs-margin);
 					margin-bottom: -($bs-margin);
 					
-					> .#{$bs-prefix}item {
+					> .#{$bs-prefix}col {
 						padding-right: $bs-margin;
 						padding-left: $bs-margin;
 						margin-bottom: $bs-margin;
@@ -97,7 +97,7 @@
 					margin-left: -($bs-margin * 3);
 					margin-bottom: -($bs-margin * 3);
 					
-					> .#{$bs-prefix}item {
+					> .#{$bs-prefix}col {
 						padding-right: ($bs-margin * 3);
 						padding-left: ($bs-margin * 3);
 						margin-bottom: ($bs-margin * 3);
@@ -111,7 +111,7 @@
 /**
  * flex item
  */
-.#{$bs-prefix}item {
+.#{$bs-prefix}col {
 	flex-basis: 100%;
 }
 
@@ -123,7 +123,7 @@
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
 				
-				.#{$bs-prefix}item#{$prefix}-#{$i}-#{$max_columns} {
+				.#{$bs-prefix}col#{$prefix}-#{$i}-#{$max_columns} {
 					@if $i != $max_columns {
 						@extend %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
 					} @else {
@@ -169,7 +169,7 @@
 			@for $i from 1 through $max_columns - 1 {
 				$gcd: bs-gcd( $i, $max_columns );
 			
-				.#{$bs-prefix}item#{$prefix}-offset-#{$i}-#{$max_columns} {
+				.#{$bs-prefix}col#{$prefix}-offset-#{$i}-#{$max_columns} {
 					@extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
 				}
 			}
@@ -200,7 +200,7 @@
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
 		
-		.#{$bs-prefix}item#{$prefix}-offset-0 {
+		.#{$bs-prefix}col#{$prefix}-offset-0 {
 			margin-left: 0;
 		}
 	}
@@ -216,14 +216,14 @@
 		/**
 		 * auto width
 		 */
-		.#{$bs-prefix}item#{$prefix}-auto {
+		.#{$bs-prefix}col#{$prefix}-auto {
 			flex-basis: auto;
 		}
 		
 		/**
 		 * child element height 100%
 		 */
-		.#{$bs-prefix}item#{$prefix}-flex {
+		.#{$bs-prefix}col#{$prefix}-flex {
 			display: flex;
 			
 			> * {
@@ -234,16 +234,16 @@
 		/**
 		 * vertical alignment
 		 */
-		.#{$bs-prefix}item#{$prefix}-align-start {
+		.#{$bs-prefix}col#{$prefix}-align-start {
 			align-self: flex-start;
 		}
-		.#{$bs-prefix}item#{$prefix}-align-end {
+		.#{$bs-prefix}col#{$prefix}-align-end {
 			align-self: flex-end;
 		}
-		.#{$bs-prefix}item#{$prefix}-align-center {
+		.#{$bs-prefix}col#{$prefix}-align-center {
 			align-self: center;
 		}
-		.#{$bs-prefix}item#{$prefix}-align-baseline {
+		.#{$bs-prefix}col#{$prefix}-align-baseline {
 			align-self: baseline;
 		}
 	}
