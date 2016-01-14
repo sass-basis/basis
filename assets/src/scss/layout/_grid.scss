@@ -136,7 +136,7 @@
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
 		
-		@for $max_columns from 2 through 12 {
+		@for $max_columns from 1 through 12 {
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
 				
