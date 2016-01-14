@@ -1,4 +1,4 @@
-.bs-btn {
+.#{$bs-prefix}btn {
 	background-color: #fff;
 	border-radius: $bs-border-radius-md;
 	border: 1px solid bs-lighter($bs-color-gray);

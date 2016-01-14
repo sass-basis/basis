@@ -1,10 +1,10 @@
-.bs-media {
+.#{$bs-prefix}media {
 	display: flex;
 	
 	&__figure {
 		margin-right: $bs-font-size-md;
 		
-		.bs-media--reverse & {
+		.#{$bs-prefix}media--reverse & {
 			order: 1;
 		}
 		
@@ -17,7 +17,7 @@
 	&__body {
 		flex-grow: 1;
 		
-		> .bs-media {
+		> .#{$bs-prefix}media {
 			margin-top: $bs-font-size-md;
 		}
 	}

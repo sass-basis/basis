@@ -1,14 +1,14 @@
 /**
  * base form control
  */
-.bs-form-control {
+.#{$bs-prefix}form-control {
 	background-color: #fff;
 	border: 1px solid $bs-color-gray;
 	border-radius: $bs-border-radius-lg;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 	padding: $bs-margin;
 }
-textarea.bs-form-control {
+textarea.#{$bs-prefix}form-control {
 	height: auto;
 	width: 100%;
 }
@@ -16,17 +16,17 @@ textarea.bs-form-control {
 /**
  * checkbox, radio
  */
-.bs-checkbox, .bs-radio {
+.#{$bs-prefix}checkbox, .#{$bs-prefix}radio {
 	display: inline-block;
 	
-	+ .bs-checkbox, + .bs-radio {
+	+ .#{$bs-prefix}checkbox, + .#{$bs-prefix}radio {
 		margin-left: $bs-margin;
 	}
 	
 	&--block {
 		display: block;
 		
-		+ .bs-checkbox--block, + .bs-radio--block {
+		+ .#{$bs-prefix}checkbox--block, + .#{$bs-prefix}radio--block {
 			margin-top: ($bs-margin / 2);
 			margin-left: 0;
 		}
@@ -36,15 +36,15 @@ textarea.bs-form-control {
 		margin-right: ($bs-margin / 2);
 	}
 }
-label.bs-checkbox, label.bs-radio,
-.bs-checkbox label, .bs-radio label {
+label.#{$bs-prefix}checkbox, label.#{$bs-prefix}radio,
+.#{$bs-prefix}checkbox label, .#{$bs-prefix}radio label {
 	cursor: pointer;
 }
 
 /**
  * input group
  */
-.bs-input-group {
+.#{$bs-prefix}input-group {
 	border-radius: $bs-border-radius-lg;
 	display: flex;
 	

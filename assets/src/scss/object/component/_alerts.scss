@@ -1,4 +1,4 @@
-.bs-alert {
+.#{$bs-prefix}alert {
 	border-radius: $bs-border-radius-md;
 	display: block;
 	margin-bottom: $bs-margin;
