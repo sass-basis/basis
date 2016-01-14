@@ -36,19 +36,19 @@ img {
 /**
  * margin
  */
-h1, .h1, h2, .h2, h3, .h3 {
+h1, h2, h3 {
 	margin-top: ($bs-font-size-md * 2);
 	margin-bottom: $bs-font-size-md;
 }
 
-h4, .h4 {
+h4 {
 	margin-top: $bs-font-size-md;
 	margin-bottom: $bs-font-size-md;
 }
 
-h5, .h5, h6, .h6 {
+h5, h6 {
 	margin-top: $bs-font-size-md;
-	margin-bottom: 0;
+	margin-bottom: ($bs-font-size-md / 2);
 }
 
 p, ul, ol, dl, table, pre {
@@ -59,9 +59,16 @@ p, ul, ol, dl, table, pre {
 /**
  * heading
  */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
+	
+	:first-child {
+		margin-top: 0;
+	}
+	
+	+ h1, + h2, + h3, + h4, + h5, + h6 {
+		margin-top: 0;
+	}
 	
 	small, .small {
 		color: bs-lightest( $bs-color-text );
@@ -69,38 +76,26 @@ h1, h2, h3, h4, h5, h6,
 		font-weight: normal;
 	}
 }
-h1, .h1 {
+h1 {
 	font-size: ($bs-font-size-md * 2.4);
 	line-height: ($bs-line-height / 1.4);
-	margin-top: ($bs-font-size-md * 2.4);
-	margin-bottom: ($bs-font-size-md * 1.4);
 }
-h2, .h2 {
+h2 {
 	font-size: ($bs-font-size-md * 2.0);
 	line-height: ($bs-line-height / 1.3);
-	margin-top: ($bs-font-size-md * 2.0);
-	margin-bottom: ($bs-font-size-md * 1.3);
 }
-h3, .h3 {
+h3 {
 	font-size: ($bs-font-size-md * 1.7);
 	line-height: ($bs-line-height / 1.2);
-	margin-top: ($bs-font-size-md * 1.7);
-	margin-bottom: ($bs-font-size-md * 1.2);
 }
-h4, .h4 {
+h4 {
 	font-size: ($bs-font-size-md * 1.4);
-	margin-top: ($bs-font-size-md * 1.4);
-	margin-bottom: ($bs-font-size-md * 1);
 }
-h5, .h5 {
+h5 {
 	font-size: ($bs-font-size-md * 1.2);
-	margin-top: ($bs-font-size-md * 1.2);
-	margin-bottom: 0;
 }
-h6, .h6 {
+h6 {
 	font-size: $bs-font-size-md;
-	margin-top: $bs-font-size-md;
-	margin-bottom: 0;
 }
 
 /**
