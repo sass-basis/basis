@@ -7,7 +7,6 @@
  *
  */
 var gulp         = require( 'gulp' );
-var watch        = require( 'gulp-watch' );
 var sass         = require( 'gulp-sass' );
 var cssmin       = require( 'gulp-minify-css' );
 var rename       = require( 'gulp-rename' );
