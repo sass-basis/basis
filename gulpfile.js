@@ -12,9 +12,15 @@ var sass         = require( 'gulp-sass' );
 var cssmin       = require( 'gulp-minify-css' );
 var rename       = require( 'gulp-rename' );
 var browser_sync = require( 'browser-sync' );
-var autoprefixer = require( 'gulp-autoprefixer' );
+var postcss      = require( 'gulp-postcss' );
+var autoprefixer = require( 'autoprefixer' );
 
-
+var processors = [
+	autoprefixer( {
+		browsers: ['last 2 versions'],
+		cascade: false
+	})
+];
 /**
  *
  * Sass to CSS
@@ -25,10 +31,7 @@ gulp.task( 'sass', function() {
 		.pipe( sass( {
 			outputStyle: 'expanded'
 		} ) )
-		.pipe( autoprefixer( {
-			browsers: ['last 2 versions'],
-			cascade: false
-		} ) )
+		.pipe( postcss( processors ) )
 		.pipe( gulp.dest( './assets/dist/css/' ))
 		.pipe( cssmin() )
 		.pipe( rename( { suffix: '.min' } ) )
