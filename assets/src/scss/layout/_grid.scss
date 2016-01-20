@@ -21,7 +21,7 @@
 	overflow: hidden;
 	
 	&--auto {
-		> .#{$bs-prefix}col {
+		> .#{$bs-prefix}row__col {
 			flex: auto;
 		}
 	}
@@ -79,7 +79,7 @@
 				margin-left: 0;
 				margin-bottom: 0;
 				
-				> .#{$bs-prefix}col {
+				> .#{$bs-prefix}row__col {
 					padding-right: 0;
 					padding-left: 0;
 					margin-bottom: 0;
@@ -91,7 +91,7 @@
 				margin-left: -($bs-margin * 2);
 				margin-bottom: -($bs-margin * 2);
 				
-				> .#{$bs-prefix}col {
+				> .#{$bs-prefix}row__col {
 					padding-right: ($bs-margin * 2);
 					padding-left: ($bs-margin * 2);
 					margin-bottom: ($bs-margin * 2);
@@ -102,7 +102,7 @@
 					margin-left: -($bs-margin);
 					margin-bottom: -($bs-margin);
 					
-					> .#{$bs-prefix}col {
+					> .#{$bs-prefix}row__col {
 						padding-right: $bs-margin;
 						padding-left: $bs-margin;
 						margin-bottom: $bs-margin;
@@ -114,7 +114,7 @@
 					margin-left: -($bs-margin * 3);
 					margin-bottom: -($bs-margin * 3);
 					
-					> .#{$bs-prefix}col {
+					> .#{$bs-prefix}row__col {
 						padding-right: ($bs-margin * 3);
 						padding-left: ($bs-margin * 3);
 						margin-bottom: ($bs-margin * 3);
@@ -128,7 +128,7 @@
 /**
  * flex item
  */
-.#{$bs-prefix}col {
+.#{$bs-prefix}row__col {
 	flex: 1;
 }
 
@@ -140,7 +140,7 @@
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
 				
-				.#{$bs-prefix}col#{$prefix}-#{$i}-#{$max_columns} {
+				.#{$bs-prefix}row__col#{$prefix}-#{$i}-#{$max_columns} {
 					@if $i != $max_columns {
 						@extend %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
 					} @else {
@@ -186,7 +186,7 @@
 			@for $i from 1 through $max_columns - 1 {
 				$gcd: bs-gcd( $i, $max_columns );
 			
-				.#{$bs-prefix}col#{$prefix}-offset-#{$i}-#{$max_columns} {
+				.#{$bs-prefix}row__col#{$prefix}-offset-#{$i}-#{$max_columns} {
 					@extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
 				}
 			}
@@ -217,7 +217,7 @@
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
 		
-		.#{$bs-prefix}col#{$prefix}-offset-0 {
+		.#{$bs-prefix}row__col#{$prefix}-offset-0 {
 			margin-left: 0;
 		}
 	}
@@ -233,7 +233,7 @@
 		/**
 		 * child element height 100%
 		 */
-		.#{$bs-prefix}col#{$prefix}-flex {
+		.#{$bs-prefix}row__col#{$prefix}-flex {
 			display: flex;
 			
 			> * {
