@@ -13,12 +13,14 @@ var rename       = require( 'gulp-rename' );
 var browser_sync = require( 'browser-sync' );
 var postcss      = require( 'gulp-postcss' );
 var autoprefixer = require( 'autoprefixer' );
+var atImport     = require( 'postcss-import' );
 
 var processors = [
 	autoprefixer( {
 		browsers: ['last 2 versions'],
 		cascade: false
-	})
+	}),
+	atImport()
 ];
 /**
  *
