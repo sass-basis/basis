@@ -25,99 +25,95 @@
 			flex: auto;
 		}
 	}
-	
+
+	@mixin row-gutter( $gutter ) {
+		margin-right: $gutter;
+		margin-left: $gutter;
+		margin-bottom: $gutter;
+	}
+
+	@mixin col-gutter( $gutter ) {
+		padding-right: $gutter;
+		padding-left: $gutter;
+		margin-bottom: $gutter;
+	}
+
 	@each $bs-size, $bs-screen-min in $bs-sizes {
 		@include bs-bp-min( $bs-screen-min ) {
 			$prefix: bs-bp-prefix( $bs-size );
-			
+
 			&#{$prefix}-row {
 				flex-direction: row;
 			}
-			
+
 			&#{$prefix}-column {
 				flex-direction: column;
 			}
-			
+
 			&#{$prefix}-left {
 				justify-content: flex-start;
 			}
-			
+
 			&#{$prefix}-right {
 				justify-content: flex-end;
 			}
-			
+
 			&#{$prefix}-center {
 				justify-content: center;
 			}
-			
+
 			&#{$prefix}-between {
 				justify-content: space-between;
 			}
-			
+
 			&#{$prefix}-around {
 				justify-content: space-around;
 			}
-			
+
 			&#{$prefix}-top {
 				align-items: flex-start;
 			}
-			
+
 			&#{$prefix}-bottom {
 				align-items: flex-end;
 			}
-			
+
 			&#{$prefix}-middle {
 				align-items: center;
 			}
-			
+
 			&#{$prefix}-baseline {
 				align-items: baseline;
 			}
-			
+
 			&#{$prefix}-collapse {
-				margin-right: 0;
-				margin-left: 0;
-				margin-bottom: 0;
+				@include row-gutter(0);
 				
 				> .#{$bs-prefix}row__col {
-					padding-right: 0;
-					padding-left: 0;
-					margin-bottom: 0;
+					@include col-gutter(0);
 				}
 			}
 			
 			&#{$prefix}-margin {
-				margin-right: -($bs-margin * 2);
-				margin-left: -($bs-margin * 2);
-				margin-bottom: -($bs-margin * 2);
-				
+				@include row-gutter($bs-margin * -2);
+
 				> .#{$bs-prefix}row__col {
-					padding-right: ($bs-margin * 2);
-					padding-left: ($bs-margin * 2);
-					margin-bottom: ($bs-margin * 2);
+					@include col-gutter($bs-margin * 2);
 				}
 				
 				&-s {
-					margin-right: -($bs-margin);
-					margin-left: -($bs-margin);
-					margin-bottom: -($bs-margin);
+					@include row-gutter($bs-margin * -1);
 					
 					> .#{$bs-prefix}row__col {
-						padding-right: $bs-margin;
-						padding-left: $bs-margin;
-						margin-bottom: $bs-margin;
+						@include col-gutter($bs-margin * 1);
 					}
 				}
 				
 				&-l {
-					margin-right: -($bs-margin * 3);
-					margin-left: -($bs-margin * 3);
-					margin-bottom: -($bs-margin * 3);
+					@include row-gutter($bs-margin * -3);
 					
 					> .#{$bs-prefix}row__col {
-						padding-right: ($bs-margin * 3);
-						padding-left: ($bs-margin * 3);
-						margin-bottom: ($bs-margin * 3);
+						@include col-gutter($bs-margin * 3);
 					}
 				}
 			}
