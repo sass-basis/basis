@@ -160,10 +160,10 @@
 		@for $max_columns from 2 through 12 {
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
-				
+
 				@if $gcd == 1 {
 					%bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-						flex: 0 1 #{$i / $max_columns * 100}%;
+						flex: 0 1 percentage($i / $max_columns);
 					}
 				}
 			}
@@ -205,7 +205,7 @@
 				
 				@if $gcd == 1 {
 					%bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-						margin-left: #{$i / $max_columns * 100}%;
+						margin-left: percentage($i / $max_columns);
 					}
 				}
 			}
