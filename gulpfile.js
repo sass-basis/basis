@@ -1,4 +1,3 @@
-
 'use strict';
 
 /**
@@ -22,26 +21,25 @@ var processors = [
 	}),
 	atImport()
 ];
+
 /**
  *
  * Sass to CSS
  *
  */
 gulp.task( 'sass', function() {
-	return gulp.src( './assets/src/scss/*.scss' )
+	return gulp.src( './assets/src/scss/**/*.scss' )
 		.pipe( sass( {
 			outputStyle: 'expanded'
 		} ) )
 		.pipe( postcss( processors ) )
-		.pipe( gulp.dest( './assets/dist/css/' ))
+		.pipe( gulp.dest( './assets/dist/css/' ) )
 		.pipe( cssmin() )
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( gulp.dest( './assets/dist/css/' ) );
 } );
 
 gulp.task( 'sass:build', ['sass'] );
-
-
 
 /**
  *
@@ -50,7 +48,6 @@ gulp.task( 'sass:build', ['sass'] );
  * Auto reload setting.
  *
  */
-
 gulp.task( 'browsersync', function() {
 	browser_sync.init( {
 		server: {
@@ -58,13 +55,12 @@ gulp.task( 'browsersync', function() {
 		},
 		files: [
 			'**/*.html',
-			'assets/dist/css/*.css'
+			'assets/dist/css/**/*.css'
 		]
 
 
 	} );
 } );
-
 
 /**
  *
