@@ -1,5 +1,9 @@
 .#{$bs-prefix}media {
 	display: flex;
+
+	&--middle {
+		align-items: center;
+	}
 	
 	&__figure {
 		margin-right: $bs-font-size-md;
