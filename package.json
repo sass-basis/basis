@@ -21,7 +21,9 @@
   },
   "scripts": {
     "build": "gulp build",
-    "release": "gulp release"
+    "release": "gulp release",
+    "install": "gulp build",
+    "update": "gulp build"
   },
   "dependencies": {
     "normalize.css": "^3.0.3"
