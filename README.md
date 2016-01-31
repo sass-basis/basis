@@ -22,7 +22,7 @@ https://github.com/inc2734/basis
 1. ```$ npm install sass-basis```
 2. Just this link.
 ```html
-<link rel="stylesheet" href="/PATH/TO/node_modules/basis/dist/css/style.min.css" />
+<link rel="stylesheet" href="/PATH/TO/node_modules/basis/dist/css/basis.min.css" />
 ```
 
 ### or
@@ -36,7 +36,7 @@ $ gulp build
 ```
 3. Just this link.
 ```html
-<link rel="stylesheet" href="/PATH/TO/basis/dist/css/style.min.css" />
+<link rel="stylesheet" href="/PATH/TO/basis/dist/css/basis.min.css" />
 ```
 
 ## Browser support
