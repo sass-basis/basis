@@ -57,8 +57,6 @@ gulp.task( 'browsersync', function() {
 			'**/*.html',
 			'assets/dist/css/**/*.css'
 		]
-
-
 	} );
 } );
 
@@ -71,19 +69,24 @@ gulp.task( 'watch', function() {
 	gulp.watch( ['assets/**/*.scss'], ['sass:build'] );
 } );
 
-gulp.task( 'build', ['sass:build'] );
-
-gulp.task( 'release', ['build'], function() {
+gulp.task( 'build', ['sass:build'], function() {
 	return gulp.src(
 			[
-				'./**/*.html',
-				'./assets/dist/**',
-				"!./release/**",
-				"!./node_modules/**/*.*"
+				'assets/dist/**'
 			],
-			{ base: './' }
+			{ base: 'assets' }
 		)
-		.pipe( gulp.dest( 'release' ) );
+		.pipe( gulp.dest( 'doc/assets' ) );
+} );
+
+/**
+ *
+ * Deploy GitHub Pages
+ *
+ */
+gulp.task( 'release', ['build'], function() {
+	return gulp.src( 'doc/**' )
+			.pipe( gulp.dest( 'release' ) );
 } );
 
 gulp.task( 'default', ['build', 'browsersync', 'watch'] );
