@@ -25,12 +25,8 @@ $ gulp build
 ### or
 
 1. ```$ npm install sass-basis```
-2. Build basis
-```shell
-$ cd /PATH/TO/basis
-$ gulp build
 ```
-3. Just this link.
+2. Just this link.
 ```html
 <link rel="stylesheet" href="/PATH/TO/node_modules/basis/assets/dist/css/style.min.css" />
 ```
