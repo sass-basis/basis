@@ -28,15 +28,15 @@ var processors = [
  *
  */
 gulp.task( 'sass', function() {
-	return gulp.src( './assets/src/scss/**/*.scss' )
+	return gulp.src( './scss/**/*.scss' )
 		.pipe( sass( {
 			outputStyle: 'expanded'
 		} ) )
 		.pipe( postcss( processors ) )
-		.pipe( gulp.dest( './assets/dist/css/' ) )
+		.pipe( gulp.dest( './dist/css/' ) )
 		.pipe( cssmin() )
 		.pipe( rename( { suffix: '.min' } ) )
-		.pipe( gulp.dest( './assets/dist/css/' ) );
+		.pipe( gulp.dest( './dist/css/' ) );
 } );
 
 gulp.task( 'sass:build', ['sass'] );
@@ -55,7 +55,7 @@ gulp.task( 'browsersync', function() {
 		},
 		files: [
 			'**/*.html',
-			'assets/dist/css/**/*.css'
+			'dist/css/**/*.css'
 		]
 
 
@@ -68,7 +68,7 @@ gulp.task( 'browsersync', function() {
  *
  */
 gulp.task( 'watch', function() {
-	gulp.watch( ['assets/**/*.scss'], ['sass:build'] );
+	gulp.watch( ['**/*.scss'], ['sass:build'] );
 } );
 
 gulp.task( 'build', ['sass:build'] );
@@ -77,7 +77,7 @@ gulp.task( 'release', ['build'], function() {
 	return gulp.src(
 			[
 				'./**/*.html',
-				'./assets/dist/**',
+				'./dist/**',
 				"!./release/**",
 				"!./node_modules/**/*.*"
 			],
