@@ -51,11 +51,10 @@ gulp.task( 'sass:build', ['sass'] );
 gulp.task( 'browsersync', function() {
 	browser_sync.init( {
 		server: {
-			baseDir: "./"
+			baseDir: "./doc"
 		},
 		files: [
-			'**/*.html',
-			'dist/css/**/*.css'
+			'doc/**'
 		]
 	} );
 } );
@@ -66,7 +65,7 @@ gulp.task( 'browsersync', function() {
  *
  */
 gulp.task( 'watch', function() {
-	gulp.watch( ['src/**/*.scss'], ['sass:build'] );
+	gulp.watch( ['src/**/*.scss'], ['build'] );
 } );
 
 gulp.task( 'build', ['sass:build'], function() {
