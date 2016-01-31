@@ -46,6 +46,15 @@ Modern Browser and IE10+
 
 ## Changelog
 
+#### January 31, 2015 v2.0.0
+* Refactoring gulpfile.js
+* Refactoring the grid gutter.
+* Changed directories and files name.
+* Changed the col class name.
+* Changed to use normalize.css of npm.
+* Added vertical mode for the media module.
+* Added FLOCSS object type prefix.
+
 #### January 14, 2016 v1.4.0
 * Changed prefix of class name.
 * Changed grid system classes name.

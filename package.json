@@ -1,7 +1,8 @@
 {
   "name": "sass-basis",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "author": "inc2734",
+  "contributors": ["Toro_Unit"],
   "license": "GPL-2.0+",
   "homepage": "http://inc2734.github.io/basis/",
   "repository": {
