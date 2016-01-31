@@ -1,14 +1,15 @@
 /**
  * base form control
  */
-.#{$bs-prefix}form-control {
+.#{$bs-prefix}c-form-control {
 	background-color: #fff;
 	border: 1px solid $bs-color-gray;
 	border-radius: $bs-border-radius-lg;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 	padding: $bs-margin;
 }
-textarea.#{$bs-prefix}form-control {
+
+textarea.#{$bs-prefix}c-form-control {
 	height: auto;
 	width: 100%;
 }
@@ -16,70 +17,71 @@ textarea.#{$bs-prefix}form-control {
 /**
  * checkbox, radio
  */
-.#{$bs-prefix}checkbox, .#{$bs-prefix}radio {
+.#{$bs-prefix}c-checkbox, .#{$bs-prefix}c-radio {
 	display: inline-block;
-	
-	+ .#{$bs-prefix}checkbox, + .#{$bs-prefix}radio {
+
+	+ .#{$bs-prefix}c-checkbox, + .#{$bs-prefix}c-radio {
 		margin-left: $bs-margin;
 	}
-	
+
 	&--block {
 		display: block;
-		
-		+ .#{$bs-prefix}checkbox--block, + .#{$bs-prefix}radio--block {
+
+		+ .#{$bs-prefix}c-checkbox--block, + .#{$bs-prefix}c-radio--block {
 			margin-top: ($bs-margin / 2);
 			margin-left: 0;
 		}
 	}
-	
+
 	[type="checkbox"], [type="radio"] {
 		margin-right: ($bs-margin / 2);
 	}
 }
-label.#{$bs-prefix}checkbox, label.#{$bs-prefix}radio,
-.#{$bs-prefix}checkbox label, .#{$bs-prefix}radio label {
+label.#{$bs-prefix}c-checkbox, label.#{$bs-prefix}c-radio,
+.#{$bs-prefix}c-checkbox label, .#{$bs-prefix}c-radio label {
 	cursor: pointer;
 }
 
 /**
  * input group
  */
-.#{$bs-prefix}input-group {
+.#{$bs-prefix}c-input-group {
 	border-radius: $bs-border-radius-lg;
 	display: flex;
-	
+
 	* {
 		height: auto;
 	}
-	
+
 	:first-child {
 		border-radius: $bs-border-radius-lg 0 0 $bs-border-radius-lg;
 	}
-	
+
 	:last-child {
 		border-radius: 0 $bs-border-radius-lg $bs-border-radius-lg 0;
 	}
-	
+
 	&__addon {
 		background-color: #eee;
 		border: 1px solid $bs-color-gray;
 		color: bs-light( $bs-color-text );
 		padding: $bs-margin;
 	}
-	
+
 	&__field {
 		border-radius: 0;
 		flex-grow: 1;
-		
+
 		&:not(:last-child) {
 			border-right: 0;
 		}
-		
+
 		&:not(:first-child) {
 			border-left: 0;
 		}
 	}
-	
+
 	&__btn {
+		border-color: $bs-color-gray;
 	}
 }

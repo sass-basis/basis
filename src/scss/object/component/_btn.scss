@@ -1,6 +1,5 @@
-.#{$bs-prefix}btn {
+.#{$bs-prefix}c-btn {
 	background-color: #fff;
-	border-radius: $bs-border-radius-md;
 	border: 1px solid bs-lighter($bs-color-gray);
 	color: $bs-color-text;
 	cursor: pointer;
@@ -12,16 +11,16 @@
 	vertical-align: middle;
 	white-space: nowrap;
 	overflow: hidden;
-	
+
 	&--block {
 		display: block;
 	}
-	
+
 	&--ghost {
 		background-color: transparent;
 		border: 1px solid #fff;
 		color: #fff;
-		
+
 		@include bs-hover() {
 			background-color: rgba(255, 255, 255, 0.2);
 		}

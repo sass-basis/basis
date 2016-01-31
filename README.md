@@ -11,29 +11,38 @@ https://github.com/inc2734/basis
 
 ## Get started
 
-1. Download the basis from https://github.com/inc2734/basis/releases
-2. Build basis
-```shell
-$ cd /PATH/TO/basis
-$ gulp build
+
+1. ```$ npm install sass-basis```
 ```
-3. Just this link.
-```html
-<link rel="stylesheet" href="/PATH/TO/basis/assets/dist/css/style.min.css" />
+2.Import basis.scss your Sass/SCSS.
+```scss
+@import /PATH/TO/node_modules/basis/src/scss/basis;
 ```
 
 ### or
 
+
 1. ```$ npm install sass-basis```
+```
+2. Just this link.
+```html
+<link rel="stylesheet" href="/PATH/TO/node_modules/basis/dist/css/style.min.css" />
+```
+
+### or
+
+1. Download the basis from https://github.com/inc2734/basis/releases
 2. Build basis
 ```shell
 $ cd /PATH/TO/basis
+$ npm install
 $ gulp build
 ```
 3. Just this link.
 ```html
-<link rel="stylesheet" href="/PATH/TO/node_modules/basis/assets/dist/css/style.min.css" />
+<link rel="stylesheet" href="/PATH/TO/basis/dist/css/style.min.css" />
 ```
+
 
 ## Browser support
 Modern Browser and IE10+
@@ -45,6 +54,15 @@ Modern Browser and IE10+
 * github.com/necolas/normalize.css
 
 ## Changelog
+
+#### January 31, 2015 v2.0.0
+* Refactoring gulpfile.js
+* Refactoring the grid gutter.
+* Changed directories and files name.
+* Changed the col class name.
+* Changed to use normalize.css of npm.
+* Added vertical mode for the media module.
+* Added FLOCSS object type prefix.
 
 #### January 14, 2016 v1.4.0
 * Changed prefix of class name.
