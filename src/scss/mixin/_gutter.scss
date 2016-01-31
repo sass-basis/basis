@@ -1,0 +1,12 @@
+
+@mixin bs-row-gutter( $gutter ) {
+	margin-right: $gutter;
+	margin-left: $gutter;
+	margin-bottom: $gutter;
+}
+
+@mixin bs-col-gutter( $gutter ) {
+	padding-right: $gutter;
+	padding-left: $gutter;
+	margin-bottom: $gutter;
+}

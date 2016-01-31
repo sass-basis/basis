@@ -1,4 +1,4 @@
-.#{$bs-prefix}container, .#{$bs-prefix}container-fluid {
+.#{$bs-prefix}c-container, .#{$bs-prefix}c-container-fluid {
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: $bs-margin * 2;
@@ -6,7 +6,7 @@
 	overflow: hidden;
 }
 
-.#{$bs-prefix}container {
+.#{$bs-prefix}c-container {
 	@include bs-bp-min( $bs-screen-lg-min ) {
 		max-width: $bs-max-width;
 	}
@@ -15,109 +15,93 @@
 /**
  * flex container
  */
-.#{$bs-prefix}row {
+.#{$bs-prefix}c-row {
 	display: flex;
 	flex-wrap: wrap;
 	overflow: hidden;
 	
 	&--auto {
-		> .#{$bs-prefix}col {
+		> .#{$bs-prefix}c-row__col {
 			flex: auto;
 		}
 	}
-	
+
 	@each $bs-size, $bs-screen-min in $bs-sizes {
 		@include bs-bp-min( $bs-screen-min ) {
 			$prefix: bs-bp-prefix( $bs-size );
-			
+
 			&#{$prefix}-row {
 				flex-direction: row;
 			}
-			
+
 			&#{$prefix}-column {
 				flex-direction: column;
 			}
-			
+
 			&#{$prefix}-left {
 				justify-content: flex-start;
 			}
-			
+
 			&#{$prefix}-right {
 				justify-content: flex-end;
 			}
-			
+
 			&#{$prefix}-center {
 				justify-content: center;
 			}
-			
+
 			&#{$prefix}-between {
 				justify-content: space-between;
 			}
-			
+
 			&#{$prefix}-around {
 				justify-content: space-around;
 			}
-			
+
 			&#{$prefix}-top {
 				align-items: flex-start;
 			}
-			
+
 			&#{$prefix}-bottom {
 				align-items: flex-end;
 			}
-			
+
 			&#{$prefix}-middle {
 				align-items: center;
 			}
-			
+
 			&#{$prefix}-baseline {
 				align-items: baseline;
 			}
-			
+
 			&#{$prefix}-collapse {
-				margin-right: 0;
-				margin-left: 0;
-				margin-bottom: 0;
+				@include bs-row-gutter(0);
 				
-				> .#{$bs-prefix}col {
-					padding-right: 0;
-					padding-left: 0;
-					margin-bottom: 0;
+				> .#{$bs-prefix}c-row__col {
+					@include bs-col-gutter(0);
 				}
 			}
 			
 			&#{$prefix}-margin {
-				margin-right: -($bs-margin * 2);
-				margin-left: -($bs-margin * 2);
-				margin-bottom: -($bs-margin * 2);
-				
-				> .#{$bs-prefix}col {
-					padding-right: ($bs-margin * 2);
-					padding-left: ($bs-margin * 2);
-					margin-bottom: ($bs-margin * 2);
+				@include bs-row-gutter($bs-margin * -2);
+
+				> .#{$bs-prefix}c-row__col {
+					@include bs-col-gutter($bs-margin * 2);
 				}
 				
 				&-s {
-					margin-right: -($bs-margin);
-					margin-left: -($bs-margin);
-					margin-bottom: -($bs-margin);
+					@include bs-row-gutter($bs-margin * -1);
 					
-					> .#{$bs-prefix}col {
-						padding-right: $bs-margin;
-						padding-left: $bs-margin;
-						margin-bottom: $bs-margin;
+					> .#{$bs-prefix}c-row__col {
+						@include bs-col-gutter($bs-margin * 1);
 					}
 				}
 				
 				&-l {
-					margin-right: -($bs-margin * 3);
-					margin-left: -($bs-margin * 3);
-					margin-bottom: -($bs-margin * 3);
+					@include bs-row-gutter($bs-margin * -3);
 					
-					> .#{$bs-prefix}col {
-						padding-right: ($bs-margin * 3);
-						padding-left: ($bs-margin * 3);
-						margin-bottom: ($bs-margin * 3);
+					> .#{$bs-prefix}c-row__col {
+						@include bs-col-gutter($bs-margin * 3);
 					}
 				}
 			}
@@ -128,7 +112,7 @@
 /**
  * flex item
  */
-.#{$bs-prefix}col {
+.#{$bs-prefix}c-row__col {
 	flex: 1;
 }
 
@@ -140,7 +124,7 @@
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
 				
-				.#{$bs-prefix}col#{$prefix}-#{$i}-#{$max_columns} {
+				.#{$bs-prefix}c-row__col#{$prefix}-#{$i}-#{$max_columns} {
 					@if $i != $max_columns {
 						@extend %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
 					} @else {
@@ -160,10 +144,10 @@
 		@for $max_columns from 2 through 12 {
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
-				
+
 				@if $gcd == 1 {
 					%bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-						flex: 0 1 #{$i / $max_columns * 100}%;
+						flex: 0 1 percentage($i / $max_columns);
 					}
 				}
 			}
@@ -186,7 +170,7 @@
 			@for $i from 1 through $max_columns - 1 {
 				$gcd: bs-gcd( $i, $max_columns );
 			
-				.#{$bs-prefix}col#{$prefix}-offset-#{$i}-#{$max_columns} {
+				.#{$bs-prefix}c-row__col#{$prefix}-offset-#{$i}-#{$max_columns} {
 					@extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
 				}
 			}
@@ -205,7 +189,7 @@
 				
 				@if $gcd == 1 {
 					%bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-						margin-left: #{$i / $max_columns * 100}%;
+						margin-left: percentage($i / $max_columns);
 					}
 				}
 			}
@@ -217,7 +201,7 @@
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
 		
-		.#{$bs-prefix}col#{$prefix}-offset-0 {
+		.#{$bs-prefix}c-row__col#{$prefix}-offset-0 {
 			margin-left: 0;
 		}
 	}
@@ -233,7 +217,7 @@
 		/**
 		 * child element height 100%
 		 */
-		.#{$bs-prefix}col#{$prefix}-flex {
+		.#{$bs-prefix}c-row__col#{$prefix}-flex {
 			display: flex;
 			
 			> * {
