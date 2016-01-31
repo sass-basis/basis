@@ -35,6 +35,7 @@ https://github.com/inc2734/basis
 2. Build basis
 ```shell
 $ cd /PATH/TO/basis
+$ npm install
 $ gulp build
 ```
 3. Just this link.
