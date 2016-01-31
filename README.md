@@ -11,6 +11,26 @@ https://github.com/inc2734/basis
 
 ## Get started
 
+
+1. ```$ npm install sass-basis```
+```
+2.Import basis.scss
+```scss
+@import /PATH/TO/node_modules/basis/src/scss/basis;
+```
+
+### or
+
+
+1. ```$ npm install sass-basis```
+```
+2. Just this link.
+```html
+<link rel="stylesheet" href="/PATH/TO/node_modules/basis/dist/css/style.min.css" />
+```
+
+### or
+
 1. Download the basis from https://github.com/inc2734/basis/releases
 2. Build basis
 ```shell
@@ -19,17 +39,9 @@ $ gulp build
 ```
 3. Just this link.
 ```html
-<link rel="stylesheet" href="/PATH/TO/basis/assets/dist/css/style.min.css" />
+<link rel="stylesheet" href="/PATH/TO/basis/dist/css/style.min.css" />
 ```
 
-### or
-
-1. ```$ npm install sass-basis```
-```
-2. Just this link.
-```html
-<link rel="stylesheet" href="/PATH/TO/node_modules/basis/assets/dist/css/style.min.css" />
-```
 
 ## Browser support
 Modern Browser and IE10+
