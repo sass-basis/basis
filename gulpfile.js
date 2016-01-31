@@ -7,7 +7,7 @@
  */
 var gulp         = require( 'gulp' );
 var sass         = require( 'gulp-sass' );
-var cssmin       = require( 'gulp-minify-css' );
+var cssmin       = require( 'gulp-cssnano' );
 var rename       = require( 'gulp-rename' );
 var browser_sync = require( 'browser-sync' );
 var postcss      = require( 'gulp-postcss' );
