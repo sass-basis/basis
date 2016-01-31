@@ -14,7 +14,7 @@ https://github.com/inc2734/basis
 
 1. ```$ npm install sass-basis```
 ```
-2.Import basis.scss
+2.Import basis.scss your Sass/SCSS.
 ```scss
 @import /PATH/TO/node_modules/basis/src/scss/basis;
 ```
