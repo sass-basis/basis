@@ -22,7 +22,7 @@
   "scripts": {
     "build": "gulp build",
     "release": "gulp release",
-    "install": "gulp build",
+    "postuninstall": "gulp build",
     "update": "gulp build"
   },
   "dependencies": {
