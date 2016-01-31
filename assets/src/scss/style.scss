@@ -36,10 +36,6 @@
 @import 'foundation/normalize';
 @import 'foundation/base';
 
-/* ========================================
- * layout
- ======================================= */
-@import 'layout/grid';
 
 /* ========================================
  * object - component
@@ -48,6 +44,7 @@
 @import 'object/component/btn';
 @import 'object/component/media';
 @import 'object/component/form';
+@import 'object/component/grid';
 
 /* ========================================
  * object - utility
