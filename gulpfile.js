@@ -1,10 +1,10 @@
-var gulp         = require( 'gulp' );
-var watch        = require( 'gulp-watch' );
-var sass         = require( 'gulp-sass' );
-var cssmin       = require( 'gulp-minify-css' );
-var rename       = require( 'gulp-rename' );
-var browser_sync = require( 'browser-sync' );
-var autoprefixer = require( 'gulp-autoprefixer' );
+const gulp         = require( 'gulp' );
+const watch        = require( 'gulp-watch' );
+const sass         = require( 'gulp-sass' );
+const cssmin       = require( 'gulp-minify-css' );
+const rename       = require( 'gulp-rename' );
+const browser_sync = require( 'browser-sync' );
+const autoprefixer = require( 'gulp-autoprefixer' );
 
 gulp.task( 'sass', function() {
 	return gulp.src( './assets/src/scss/*.scss' )
