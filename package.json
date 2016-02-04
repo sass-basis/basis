@@ -1,6 +1,7 @@
 {
   "name": "sass-basis",
   "version": "2.0.0",
+  "main": "src/scss/basis.scss",
   "author": "inc2734",
   "contributors": [
     "Toro_Unit"
