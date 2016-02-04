@@ -13,6 +13,7 @@ var postcss      = require( 'gulp-postcss' );
 var autoprefixer = require( 'autoprefixer' );
 var cssnano      = require( 'cssnano' );
 
+
 var processors = [
 	autoprefixer( {
 		browsers: ['last 2 versions'],
@@ -28,6 +29,9 @@ var processors = [
 gulp.task( 'sass', function() {
 	return gulp.src( 'src/scss/**/*.scss' )
 		.pipe( sass( {
+			includePaths: [
+				"node_modules/"
+			],
 			outputStyle: 'expanded'
 		} ) )
 		.pipe( postcss( processors ) )
