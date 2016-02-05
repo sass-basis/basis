@@ -7,19 +7,17 @@
  */
 var gulp         = require( 'gulp' );
 var sass         = require( 'gulp-sass' );
-var cssmin       = require( 'gulp-cssnano' );
 var rename       = require( 'gulp-rename' );
 var browser_sync = require( 'browser-sync' );
 var postcss      = require( 'gulp-postcss' );
 var autoprefixer = require( 'autoprefixer' );
-var atImport     = require( 'postcss-import' );
+var cssnano      = require( 'cssnano' );
 
 var processors = [
 	autoprefixer( {
 		browsers: ['last 2 versions'],
 		cascade: false
-	}),
-	atImport()
+	})
 ];
 
 /**
@@ -34,7 +32,7 @@ gulp.task( 'sass', function() {
 		} ) )
 		.pipe( postcss( processors ) )
 		.pipe( gulp.dest( 'dist/css/' ) )
-		.pipe( cssmin() )
+		.pipe( postcss( [cssnano()] ) )
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( gulp.dest( 'dist/css/' ) );
 } );

@@ -1,6 +1,7 @@
 {
   "name": "sass-basis",
   "version": "2.0.0",
+  "main": "src/scss/basis.scss",
   "author": "inc2734",
   "contributors": [
     "Toro_Unit"
@@ -14,12 +15,11 @@
   "dependencies": {
     "autoprefixer": "^6.3.1",
     "browser-sync": "^2.11.1",
+    "cssnano": "^3.4.0",
     "gulp": "^3.9.0",
-    "gulp-cssnano": "^2.1.0",
     "gulp-postcss": "^6.0.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.1.1",
-    "postcss-import": "^8.0.2"
+    "gulp-sass": "^2.1.1"
   },
   "scripts": {
     "build": "gulp build",
