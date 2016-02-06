@@ -20,8 +20,10 @@
 @import '../../mixin/break-point';
 @import '../../mixin/effect';
 @import '../../mixin/gutter';
+@import '../../mixin/clearfix';
 
 /* ========================================
  * object - component
  ======================================= */
+@import 'object/component/media';
 @import 'object/component/grid';
