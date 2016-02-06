@@ -113,6 +113,7 @@
  */
 .#{$bs-prefix}c-row__col {
 	flex: 1;
+	max-width: 100%;
 }
 
 @each $bs-size, $bs-screen-min in $bs-sizes {
@@ -146,14 +147,18 @@
 
 				@if $gcd == 1 {
 					%bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-						flex: 0 1 percentage($i / $max_columns);
+						$width: percentage($i / $max_columns);
+						flex: 0 1 $width;
+						max-width: $width;
 					}
 				}
 			}
 		}
 
 		%bs-item#{$prefix}-full {
-			flex: 0 1 100%;
+			$width: 100%;
+			flex: 0 1 $width;
+			max-width: $width;
 		}
 	}
 }
@@ -220,7 +225,9 @@
 			display: flex;
 
 			> * {
-				flex: 0 1 100%;
+				$width: 100%;
+				flex: 0 1 $width;
+				max-width: $width;
 			}
 		}
 	}
