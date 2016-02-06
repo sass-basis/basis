@@ -19,7 +19,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	overflow: hidden;
-	
+
 	&--auto {
 		> .#{$bs-prefix}c-row__col {
 			flex: auto;
@@ -76,30 +76,30 @@
 
 			&#{$prefix}-collapse {
 				@include bs-row-gutter(0);
-				
+
 				> .#{$bs-prefix}c-row__col {
 					@include bs-col-gutter(0);
 				}
 			}
-			
+
 			&#{$prefix}-margin {
 				@include bs-row-gutter($bs-margin * -2);
 
 				> .#{$bs-prefix}c-row__col {
 					@include bs-col-gutter($bs-margin * 2);
 				}
-				
+
 				&-s {
 					@include bs-row-gutter($bs-margin * -1);
-					
+
 					> .#{$bs-prefix}c-row__col {
 						@include bs-col-gutter($bs-margin * 1);
 					}
 				}
-				
+
 				&-l {
 					@include bs-row-gutter($bs-margin * -3);
-					
+
 					> .#{$bs-prefix}c-row__col {
 						@include bs-col-gutter($bs-margin * 3);
 					}
@@ -114,16 +114,17 @@
  */
 .#{$bs-prefix}c-row__col {
 	flex: 1;
+	max-width: 100%;
 }
 
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
-		
+
 		@for $max_columns from 1 through 12 {
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
-				
+
 				.#{$bs-prefix}c-row__col#{$prefix}-#{$i}-#{$max_columns} {
 					@if $i != $max_columns {
 						@extend %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
@@ -140,21 +141,25 @@
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
-		
+
 		@for $max_columns from 2 through 12 {
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
 
 				@if $gcd == 1 {
 					%bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-						flex: 0 1 percentage($i / $max_columns);
+						$width: percentage($i / $max_columns);
+						flex: 0 1 $width;
+						max-width: $width;
 					}
 				}
 			}
 		}
-		
+
 		%bs-item#{$prefix}-full {
-			flex: 0 1 100%;
+			$width: 100%;
+			flex: 0 1 $width;
+			max-width: $width;
 		}
 	}
 }
@@ -165,11 +170,11 @@
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
-		
+
 		@for $max_columns from 2 through 12 {
 			@for $i from 1 through $max_columns - 1 {
 				$gcd: bs-gcd( $i, $max_columns );
-			
+
 				.#{$bs-prefix}c-row__col#{$prefix}-offset-#{$i}-#{$max_columns} {
 					@extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
 				}
@@ -182,11 +187,11 @@
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
-		
+
 		@for $max_columns from 2 through 12 {
 			@for $i from 1 through $max_columns - 1 {
 				$gcd: bs-gcd( $i, $max_columns );
-				
+
 				@if $gcd == 1 {
 					%bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
 						margin-left: percentage($i / $max_columns);
@@ -200,7 +205,7 @@
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
-		
+
 		.#{$bs-prefix}c-row__col#{$prefix}-offset-0 {
 			margin-left: 0;
 		}
@@ -213,15 +218,17 @@
 @each $bs-size, $bs-screen-min in $bs-sizes {
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
-		
+
 		/**
 		 * child element height 100%
 		 */
 		.#{$bs-prefix}c-row__col#{$prefix}-flex {
 			display: flex;
-			
+
 			> * {
-				flex: 0 1 100%;
+				$width: 100%;
+				flex: 0 1 $width;
+				max-width: $width;
 			}
 		}
 	}
