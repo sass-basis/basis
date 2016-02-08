@@ -39,6 +39,16 @@ $ gulp build
 <link rel="stylesheet" href="/PATH/TO/basis/dist/css/basis.min.css" />
 ```
 
+### Option
+
+Support IE9 ( Not perfect )
+
+```html
+<!--[if lt IE 10]>
+<link rel="stylesheet" href="/PATH/TO/basis/dist/css/plugin/basis-ie9/basis-ie9.min.css" />
+<![endif]-->
+```
+
 ## Browser support
 Modern Browser and IE10+
 
@@ -50,14 +60,18 @@ Modern Browser and IE10+
 
 ## Changelog
 
-#### January 31, 2015 v2.0.0
+#### February 8, 2015 v2.0.0
 * Refactoring gulpfile.js
 * Refactoring the grid gutter.
+* Fixed grid system bugs.
 * Changed directories and files name.
 * Changed the col class name.
 * Changed to use normalize.css of npm.
 * Added vertical mode for the media module.
 * Added FLOCSS object type prefix.
+* Added IE9 Support ( optional )
+* Added clearfix
+* Removed `._c-row__col--flex` and added `._c-row--fill`
 
 #### January 14, 2016 v1.4.0
 * Changed prefix of class name.
