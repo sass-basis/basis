@@ -11,44 +11,28 @@
 /* ========================================
  * variables
  ======================================= */
-@import 'variable/setting';
-@import 'variable/border-radius';
-@import 'variable/break-point';
-@import 'variable/color';
-@import 'variable/font';
+@import 'variable';
+
 
 /* ========================================
  * functions
  ======================================= */
-@import 'function/break-point';
-@import 'function/color';
-@import 'function/utility';
+@import 'function/function';
+
 
 /* ========================================
  * mixins
  ======================================= */
-@import 'mixin/break-point';
-@import 'mixin/effect';
-@import 'mixin/gutter';
-@import 'mixin/clearfix';
+@import 'mixin/mixin';
+
 
 /* ========================================
  * founcation
  ======================================= */
-@import 'foundation/normalize';
-@import 'foundation/base';
+@import 'foundation/foundation';
 
 /* ========================================
- * object - component
+ * object
  ======================================= */
-@import 'object/component/alert';
-@import 'object/component/btn';
-@import 'object/component/media';
-@import 'object/component/form';
-@import 'object/component/grid';
+@import 'object/object';
 
-/* ========================================
- * object - utility
- ======================================= */
-@import 'object/utility/clearfix';
-@import 'object/utility/hidden';
