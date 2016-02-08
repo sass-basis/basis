@@ -82,14 +82,14 @@
 			}
 
 			&#{$prefix}-margin {
-				@include bs-row-gutter($bs-margin * -2);
+				@include bs-row-gutter($bs-margin * 2);
 
 				> .#{$bs-prefix}c-row__col {
 					@include bs-col-gutter($bs-margin * 2);
 				}
 
 				&-s {
-					@include bs-row-gutter($bs-margin * -1);
+					@include bs-row-gutter($bs-margin * 1);
 
 					> .#{$bs-prefix}c-row__col {
 						@include bs-col-gutter($bs-margin * 1);
@@ -97,7 +97,7 @@
 				}
 
 				&-l {
-					@include bs-row-gutter($bs-margin * -3);
+					@include bs-row-gutter($bs-margin * 3);
 
 					> .#{$bs-prefix}c-row__col {
 						@include bs-col-gutter($bs-margin * 3);
