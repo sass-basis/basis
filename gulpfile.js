@@ -24,10 +24,25 @@ var processors = [
 
 /**
  *
+ * Copy the normalize.css
+ *
+ */
+gulp.task( 'normalize', function() {
+	return gulp.src( 'bin/normalize.scss' )
+		.pipe( sass( {
+			importer: moduleImporter(),
+			outputStyle: 'expanded'
+		} ) )
+		.pipe( rename( '_normalize.scss' ) )
+		.pipe( gulp.dest( 'src/scss/foundation/' ) )
+} );
+
+/**
+ *
  * Sass to CSS
  *
  */
-gulp.task( 'sass', function() {
+gulp.task( 'sass', ['normalize'], function() {
 	return gulp.src( 'src/scss/**/*.scss' )
 		.pipe( sass( {
 			importer: moduleImporter(),
@@ -39,8 +54,6 @@ gulp.task( 'sass', function() {
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( gulp.dest( 'dist/css/' ) );
 } );
-
-gulp.task( 'sass:build', ['sass'] );
 
 /**
  *
@@ -69,7 +82,7 @@ gulp.task( 'watch', function() {
 	gulp.watch( ['src/**/*.scss'], ['build'] );
 } );
 
-gulp.task( 'build', ['sass:build'], function() {
+gulp.task( 'build', ['sass'], function() {
 	return gulp.src(
 			[
 				'dist/**'
