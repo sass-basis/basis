@@ -12,7 +12,6 @@ var browser_sync = require( 'browser-sync' );
 var postcss      = require( 'gulp-postcss' );
 var autoprefixer = require( 'autoprefixer' );
 var cssnano      = require( 'cssnano' );
-var moduleImporter = require('sass-module-importer');
 
 
 var processors = [
@@ -30,7 +29,6 @@ var processors = [
 gulp.task( 'sass', function() {
 	return gulp.src( 'src/scss/**/*.scss' )
 		.pipe( sass( {
-			importer: moduleImporter(),
 			outputStyle: 'expanded'
 		} ) )
 		.pipe( postcss( processors ) )
