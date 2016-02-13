@@ -1,3 +1,9 @@
+* {
+	&, &:before, &:after {
+		box-sizing: border-box;
+	}
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -18,10 +24,6 @@ body {
 
 input, textarea, keygen, select, button {
 	font-family: $bs-font-family;
-}
-
-* {
-	box-sizing: border-box;
 }
 
 /**
