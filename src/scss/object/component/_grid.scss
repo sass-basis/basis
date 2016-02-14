@@ -132,7 +132,7 @@
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
 
-		@for $max_columns from 1 through 12 {
+		@for $max_columns from $bs-min-columns through $bs-max-columns {
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
 
@@ -153,7 +153,7 @@
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
 
-		@for $max_columns from 2 through 12 {
+		@for $max_columns from 1 through $bs-max-columns {
 			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
 
@@ -182,12 +182,14 @@
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
 
-		@for $max_columns from 2 through 12 {
-			@for $i from 1 through $max_columns - 1 {
-				$gcd: bs-gcd( $i, $max_columns );
+		@for $max_columns from $bs-min-columns through $bs-max-columns {
+			@for $i from 1 through $max_columns {
+				@if $i < $max_columns {
+					$gcd: bs-gcd( $i, $max_columns );
 
-				.#{$bs-prefix}c-row__col#{$prefix}-offset-#{$i}-#{$max_columns} {
-					@extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
+					.#{$bs-prefix}c-row__col#{$prefix}-offset-#{$i}-#{$max_columns} {
+						@extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
+					}
 				}
 			}
 		}
@@ -199,8 +201,8 @@
 	@include bs-bp-min( $bs-screen-min ) {
 		$prefix: bs-bp-prefix( $bs-size );
 
-		@for $max_columns from 2 through 12 {
-			@for $i from 1 through $max_columns - 1 {
+		@for $max_columns from 1 through $bs-max-columns {
+			@for $i from 1 through $max_columns {
 				$gcd: bs-gcd( $i, $max_columns );
 
 				@if $gcd == 1 {
