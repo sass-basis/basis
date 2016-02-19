@@ -70,7 +70,7 @@ label.#{$bs-prefix}c-checkbox, label.#{$bs-prefix}c-radio,
 
 	&__field {
 		border-radius: 0;
-		flex-grow: 1;
+		flex: 1;
 
 		&:not(:last-child) {
 			border-right: 0;

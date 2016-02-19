@@ -21,7 +21,7 @@
 	}
 
 	&__body {
-		flex-grow: 1;
+		flex: 1;
 
 		> .#{$bs-prefix}c-media {
 			margin-top: $bs-font-size-md;
