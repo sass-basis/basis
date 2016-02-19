@@ -37,7 +37,6 @@ jQuery( function( $ ) {
 				unfixed();
 				return;
 			}
-			console.log( scroll + ' > ' + offset_top );
 			if ( scroll >= offset_top ) {
 				fix_area.addClass( 'fixed' );
 				fix_area.width( fix_area.parent().width() );
