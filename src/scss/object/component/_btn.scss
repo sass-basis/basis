@@ -21,9 +21,5 @@
 		background-color: transparent;
 		border: 1px solid #fff;
 		color: #fff;
-
-		@include bs-hover() {
-			background-color: rgba(255, 255, 255, 0.2);
-		}
 	}
 }
