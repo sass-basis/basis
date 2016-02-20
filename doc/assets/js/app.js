@@ -28,6 +28,7 @@ jQuery( function( $ ) {
 		}
 
 		function unfixed() {
+			fix_area.removeClass( 'fit-bottom' );
 			fix_area.removeClass( 'fixed' );
 			fix_area.width( '' );
 		}
@@ -37,6 +38,16 @@ jQuery( function( $ ) {
 				unfixed();
 				return;
 			}
+
+			if ( $( window ).height() - $( '.l-footer' ).outerHeight() < fix_area.height() ) {
+				if ( $( document ).height() - $( window ).height() - $( '.l-footer' ).outerHeight() <= scroll ) {
+					unfixed();
+					fix_area.addClass( 'fit-bottom' );
+					return;
+				}
+			}
+
+			fix_area.removeClass( 'fit-bottom' );
 			if ( scroll >= offset_top ) {
 				fix_area.addClass( 'fixed' );
 				fix_area.width( fix_area.parent().width() );

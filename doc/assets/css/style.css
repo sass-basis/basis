@@ -110,9 +110,9 @@ pre {
 }
 
 /**
- * _c-media
+ * c-dummy-image
  */
-._c-media__figure .dummy-image {
+.c-dummy-image {
 	background-color: #333;
 	height: 80px;
 	width: 100px;
@@ -224,6 +224,10 @@ pre {
 .fixed {
 	position: fixed;
 	top: 0;
+}
+.fit-bottom {
+	position: absolute;
+	bottom: 0;
 }
 
 /** ==================================================
