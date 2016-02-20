@@ -70,7 +70,7 @@ Modern Browser and IE10+
 * Added vertical mode for the media module.
 * Added FLOCSS object type prefix.
 * Added IE9 Support ( optional )
-* Added clearfix
+* Added some utility classes.
 * Removed `._c-row__col--flex` and added `._c-row--fill`
 
 #### January 14, 2016 v1.4.0
