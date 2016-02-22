@@ -1,5 +1,5 @@
 # basis
-The Flexible Box (flexbox) based CSS framework.
+A lightweight responsive CSS framework based on flexible box ( flexbox )
 
 ## Website
 

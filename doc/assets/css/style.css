@@ -1,8 +1,10 @@
 /** ==================================================
  * foundation
  * ================================================ */
+.hljs, pre {
+	background-color: #15191d;
+}
 pre {
-	background-color: #232323;
 	border: none;
 }
 
@@ -38,6 +40,7 @@ pre {
 	text-align: center;
 	color: #666;
 	background-color: #222;
+	font-size: 1.4rem;
 	margin-top: 24px;
 	padding: 24px 0;
 }
@@ -54,7 +57,7 @@ pre {
 .c-hero {
 	background-color: #00DAE6;
 	color: #fff;
-	height: 500px;
+	height: 600px;
 	max-height: 100vh;
 	display: flex;
 	flex-direction: row;
@@ -65,19 +68,26 @@ pre {
 	font-weight: normal;
 }
 .c-hero__title {
+	font-family: 'Noto Sans', sans-serif;
 	font-size: 5rem;
-	margin: 0 0 30px;
+	margin: 0 0 20px;
 }
 .c-hero__lead {
-	font-size: 2.4rem;
+	font-size: 2rem;
 	margin: 0 0 35px;
+}
+.c-hero__version {
+	margin: 0 0 30px;
+	font-size: 1.3rem;
+	opacity: .8;
 }
 .c-hero ._c-btn {
 	transition: all .25s;
+	margin: 0 5px;
+	padding: 1.2rem 4rem;
 }
 .c-hero ._c-btn:hover,
-.c-hero ._c-btn:active,
-.c-hero ._c-btn:focus {
+.c-hero ._c-btn:active {
 	background-color: #fff;
 	color: #00DAE6;
 }
@@ -102,12 +112,11 @@ pre {
 	font-size: 3rem;
 }
 .c-section__h1--toplevel {
-	border: 2px solid #00DAE6;
+	border: 3px solid #00DAE6;
 	margin: 40px 0;
 	padding: 16px;
 	color: #00DAE6;
 	font-size: 3rem;
-	font-weight: normal;
 }
 .c-section__h2 {
 	border-bottom: 1px solid #ddd;
