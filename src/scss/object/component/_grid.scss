@@ -29,14 +29,6 @@
 		@include bs-bp-min( $bs-screen-min ) {
 			$prefix: bs-bp-prefix( $bs-size );
 
-			&#{$prefix}-row {
-				flex-direction: row;
-			}
-
-			&#{$prefix}-column {
-				flex-direction: column;
-			}
-
 			&#{$prefix}-left {
 				justify-content: flex-start;
 			}

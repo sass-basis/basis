@@ -74,6 +74,7 @@ Modern Browser and IE10+
 * Added IE9 Support ( optional )
 * Added some utility classes.
 * Removed `._c-row__col--flex` and added `._c-row--fill`
+* Removed `._c-row--row`, `._c-row--column`
 
 #### January 14, 2016 v1.4.0
 * Changed prefix of class name.
