@@ -1,5 +1,5 @@
 # basis
-The flexbox based CSS framework.
+A lightweight responsive CSS framework based on flexible box ( flexbox )
 
 ## Website
 
@@ -11,28 +11,44 @@ https://github.com/inc2734/basis
 
 ## Get started
 
+### Using npm
+
+1. ```$ npm install sass-basis```
+2. Import basis.scss your Sass/SCSS.
+```scss
+@import /PATH/TO/node_modules/basis/src/scss/basis;
+```
+or Just this link.
+```html
+<link rel="stylesheet" href="/PATH/TO/node_modules/basis/dist/css/basis.min.css" />
+```
+
+### Download from GitHub
+
 1. Download the basis from https://github.com/inc2734/basis/releases
 2. Build basis
 ```shell
 $ cd /PATH/TO/basis
+$ npm install
 $ gulp build
 ```
-3. Just this link.
+3. Import basis.scss your Sass/SCSS.
+```scss
+@import /PATH/TO/basis/src/scss/basis;
+```
+or Just this link.
 ```html
-<link rel="stylesheet" href="/PATH/TO/basis/assets/dist/css/style.min.css" />
+<link rel="stylesheet" href="/PATH/TO/basis/dist/css/basis.min.css" />
 ```
 
-### or
+### Option
 
-1. ```$ npm install sass-basis```
-2. Build basis
-```shell
-$ cd /PATH/TO/basis
-$ gulp build
-```
-3. Just this link.
+Support IE9 ( Not perfect )
+
 ```html
-<link rel="stylesheet" href="/PATH/TO/node_modules/basis/assets/dist/css/style.min.css" />
+<!--[if lt IE 10]>
+<link rel="stylesheet" href="/PATH/TO/basis/dist/css/plugin/basis-ie9/basis-ie9.min.css" />
+<![endif]-->
 ```
 
 ## Browser support
@@ -45,6 +61,20 @@ Modern Browser and IE10+
 * github.com/necolas/normalize.css
 
 ## Changelog
+
+#### February 27, 2016 v2.0.0
+* Refactoring gulpfile.js
+* Refactoring the grid gutter.
+* Fixed grid system bugs.
+* Changed directories and files name.
+* Changed the col class name.
+* Changed to use normalize.css of npm.
+* Added vertical mode for the media module.
+* Added FLOCSS object type prefix.
+* Added IE9 Support ( optional )
+* Added some utility classes.
+* Removed `._c-row__col--flex` and added `._c-row--fill`
+* Removed `._c-row--row`, `._c-row--column`
 
 #### January 14, 2016 v1.4.0
 * Changed prefix of class name.

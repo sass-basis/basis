@@ -1,58 +1,90 @@
+'use strict';
+
+/**
+ *
+ * Import node modules
+ *
+ */
 var gulp         = require( 'gulp' );
-var watch        = require( 'gulp-watch' );
 var sass         = require( 'gulp-sass' );
-var cssmin       = require( 'gulp-minify-css' );
 var rename       = require( 'gulp-rename' );
 var browser_sync = require( 'browser-sync' );
-var autoprefixer = require( 'gulp-autoprefixer' );
+var postcss      = require( 'gulp-postcss' );
+var autoprefixer = require( 'autoprefixer' );
+var cssnano      = require( 'cssnano' );
 
+
+var processors = [
+	autoprefixer( {
+		browsers: ['last 2 versions'],
+		cascade: false
+	})
+];
+
+/**
+ *
+ * Sass to CSS
+ *
+ */
 gulp.task( 'sass', function() {
-	return gulp.src( './assets/src/scss/*.scss' )
+	return gulp.src( 'src/scss/**/*.scss' )
 		.pipe( sass( {
 			outputStyle: 'expanded'
 		} ) )
-		.pipe( autoprefixer( {
-			browsers: ['last 2 versions'],
-			cascade: false
-		} ) )
-		.pipe( gulp.dest( './assets/dist/css/' ) );
-} );
-
-gulp.task( 'sass:build', ['sass'], function() {
-	return gulp.src( ['./assets/dist/css/*.css', '!./assets/dist/css/*.min.css'] )
-		.pipe( cssmin() )
+		.pipe( postcss( processors ) )
+		.pipe( gulp.dest( 'dist/css/' ) )
+		.pipe( postcss( [cssnano()] ) )
 		.pipe( rename( { suffix: '.min' } ) )
-		.pipe( gulp.dest( './assets/dist/css/' ) );
+		.pipe( gulp.dest( 'dist/css/' ) );
 } );
 
+gulp.task( 'sass:build', ['sass'] );
+
+/**
+ *
+ * Browsersync.
+ *
+ * Auto reload setting.
+ *
+ */
 gulp.task( 'browsersync', function() {
 	browser_sync.init( {
 		server: {
-			baseDir: "./"
-		}
+			baseDir: "./doc"
+		},
+		files: [
+			'doc/**'
+		]
 	} );
 } );
 
+/**
+ *
+ * Auto Compile Sass.
+ *
+ */
 gulp.task( 'watch', function() {
-	gulp.watch( ['assets/**/*.scss'], ['sass:build'] );
-	gulp.watch( ['**/*.html', 'assets/dist/css/*.css'], function() {
-		browser_sync.reload();
-	} );
+	gulp.watch( ['src/**/*.scss'], ['build'] );
 } );
 
-gulp.task( 'build', ['sass:build'] );
-
-gulp.task( 'release', ['build'], function() {
+gulp.task( 'build', ['sass:build'], function() {
 	return gulp.src(
 			[
-				'./**/*.html',
-				'./assets/dist/**',
-				"!./release/**",
-				"!./node_modules/**/*.*"
+				'dist/**'
 			],
-			{ base: './' }
+			{ base: 'dist' }
 		)
-		.pipe( gulp.dest( 'release' ) );
+		.pipe( gulp.dest( 'doc/dist' ) );
+} );
+
+/**
+ *
+ * Deploy GitHub Pages
+ *
+ */
+gulp.task( 'release', ['build'], function() {
+	return gulp.src( 'doc/**' )
+			.pipe( gulp.dest( 'release' ) );
 } );
 
 gulp.task( 'default', ['build', 'browsersync', 'watch'] );
