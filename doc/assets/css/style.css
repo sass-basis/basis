@@ -71,6 +71,12 @@ pre {
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 5rem;
 	margin: 0 0 20px;
+	line-height: 1;
+}
+.c-hero__title img {
+	height: 36px;
+	vertical-align: baseline;
+	margin-right: 8px;
 }
 .c-hero__lead {
 	font-size: 2rem;
