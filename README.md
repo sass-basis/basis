@@ -62,7 +62,7 @@ Modern Browser and IE10+
 
 ## Changelog
 
-#### February 8, 2015 v2.0.0
+#### February 27, 2016 v2.0.0
 * Refactoring gulpfile.js
 * Refactoring the grid gutter.
 * Fixed grid system bugs.
