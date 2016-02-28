@@ -1,0 +1,33 @@
+@mixin bs-bp-min( $min ) {
+	@if ( $min == $bs-screen-sm-min ) {
+		@content;
+	} @else {
+		@media (min-width: $min) {
+			@content;
+		}
+	}
+}
+
+@mixin bs-bp-max( $max ) {
+	@media (max-width: $max) {
+		@content;
+	}
+}
+
+@mixin bs-bp-sm-only() {
+	@media (max-width: $bs-screen-sm-max) {
+		@content;
+	}
+}
+
+@mixin bs-bp-md-only() {
+	@media (min-width: $bs-screen-sm-min) and (max-width: $bs-screen-md-max) {
+		@content;
+	}
+}
+
+@mixin bs-bp-lg-only() {
+	@media (min-width: $bs-screen-md-min) {
+		@content;
+	}
+}

@@ -1,0 +1,8 @@
+@function bs-bp-prefix( $size ) {
+	$prefix: '-';
+	
+	@if $size != 'sm' {
+		$prefix: --#{$size};
+	}
+	@return $prefix;
+}

@@ -1,0 +1,5 @@
+@mixin bs-hover() {
+	&:hover, &:active, &:focus {
+		@content;
+	}
+}
