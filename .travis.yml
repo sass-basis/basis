@@ -25,7 +25,6 @@ script:
   - ls | xargs rm -rf
   - cd ../
   - npm run release
-  - ls -la release
 after_success:
   - bash ../bin/deploy-doc.sh
   - cd ../
