@@ -62,6 +62,9 @@ Modern Browser and IE10+
 
 ## Changelog
 
+#### February 28, 2016 v2.1.0
+* Added release branch from Travis CI
+
 #### February 27, 2016 v2.0.0
 * Refactoring gulpfile.js
 * Refactoring the grid gutter.
