@@ -25,6 +25,10 @@ script:
   - ls | xargs rm -rf
   - cd ../
   - npm run release
-  - sed -e 's|dist/||' release/.gitignore
+  - sed -i '' -e 's|dist/||' release/.gitignore
 after_success:
+  - cd gh-pages
+  - bash ./bin/deploy-doc.sh
+  - cd ../
+  - cd release
   - bash ./bin/deploy.sh
