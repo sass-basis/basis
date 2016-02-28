@@ -27,5 +27,4 @@ script:
   - npm run release
 after_success:
   - bash ./bin/deploy-doc.sh
-  - cd ../
   - bash ./bin/deploy.sh
