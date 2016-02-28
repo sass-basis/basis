@@ -64,6 +64,7 @@ Modern Browser and IE10+
 
 #### February 28, 2016 v2.1.1
 * Added release branch from Travis CI
+* Added viewport at the doc.
 
 #### February 27, 2016 v2.0.0
 * Refactoring gulpfile.js
