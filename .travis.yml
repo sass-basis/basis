@@ -27,8 +27,6 @@ script:
   - npm run release
   - ls -la release
 after_success:
-  - cd gh-pages
-  - bash ./bin/deploy-doc.sh
+  - bash ../bin/deploy-doc.sh
   - cd ../
-  - cd release
-  - bash ./bin/deploy.sh
+  - bash ../bin/deploy.sh

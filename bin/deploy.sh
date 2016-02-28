@@ -12,6 +12,8 @@ if [[ "master" != "$TRAVIS_BRANCH" ]]; then
 	exit
 fi
 
+cd release
+
 git add -A
 git commit -m "[ci skip] release branch update from travis $TRAVIS_COMMIT"
 git push --quiet "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" release 2> /dev/null
