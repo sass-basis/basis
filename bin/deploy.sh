@@ -12,8 +12,16 @@ if [[ "master" != "$TRAVIS_BRANCH" ]]; then
 	exit
 fi
 
-cd release
+cd gh-pages
 
 git add -A
 git commit -m "Update from travis $TRAVIS_COMMIT"
 git push --quiet "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" gh-pages 2> /dev/null
+
+cd ../
+
+cd release
+
+git add -A
+git commit -m "Update from travis $TRAVIS_COMMIT"
+git push --quiet "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" release 2> /dev/null

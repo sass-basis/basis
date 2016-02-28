@@ -10,11 +10,17 @@ env:
   - GIT_AUTHOR_EMAIL=inc@2inc.org
   - secure: "EW2fbMK4w8CubYzjtyiNxS/CG4EdL8hJUMJDyAskzEWefRE+zWj8dapFtT8H4LBBC23nVubwsjb9JJsSR2cbLhU6wdIeYWZolxgL6ORuwCRp6UxCE8jAxIUAuE3pzIK4jXeQ74+oPD8wdmPD6IKRWyOUGbF4akjTY6j/9MEsIjsD8IaJcNWP+6x9BmmdcJQHhfNZjO1uEPc7nGYCeLUyFPHIbr+zppT4QTCemjIkcD7KuQ0huyMUNzZlWf5NPs/3nnbyG4pqIyPCAtDsgqirXIM6UQUrFLQFvyXNOCuTDCDI+rHFGIqgyCpOuwF0l2TgbarZEXXt7j0FCCdn+bPrFvF6sXkMJOvXULgsb8bbGdr/regz2eraimakTY56KfeiBf9ElK1FtRHthOn5GZo4Zki3JQZD6duQmOB3dHV7XPTNuEsBSSkEEQc47ZY3dmrcC2CMlRIuuzJVuvbKVP8hafoESN+MiRLRgpVYIjI6z0Wh+3JlcXrwh1m8ICKbBsvUjz6XY7b/9eytGhYri7HkQRnxbCaKNleUHzyLQDAfdYg9TRy249Vsfh5qED6IJ/t9c68RFdKmVbxnO/aABkvZRb6Iu5o/hZ0l/urGfdR73NN748zrUhEJbsYusoC82jVTAiCHC0f/OcPzCNBm6ltZdjNUrr+Sl+AuX7DF22JoFEc="
 before_script:
-- git clone -b gh-pages --quiet https://github.com/inc2734/basis.git release
+- git clone -b gh-pages --quiet https://github.com/inc2734/basis.git gh-pages
+- git clone -b release --quiet https://github.com/inc2734/basis.git release
 script:
+- cd gh-pages
+- ls | xargs rm -rf
+- cd ../
+- npm run deploy_gh_pages
 - cd release
 - ls | xargs rm -rf
 - cd ../
 - npm run release
+- sed '/dist' release/.gitignore
 after_success:
 - bash ./bin/deploy.sh

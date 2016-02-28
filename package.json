@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "gulp build",
+    "deploy_gh_pages": "gulp deploy_gh_pages",
     "release": "gulp release",
     "postinstall": "gulp build"
   }

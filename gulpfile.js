@@ -82,8 +82,18 @@ gulp.task( 'build', ['sass:build'], function() {
  * Deploy GitHub Pages
  *
  */
-gulp.task( 'release', ['build'], function() {
+gulp.task( 'deploy_gh_pages', ['build'], function() {
 	return gulp.src( 'doc/**' )
+			.pipe( gulp.dest( 'gh-pages' ) );
+} );
+
+/**
+ *
+ * Release
+ *
+ */
+gulp.task( 'release', ['build'], function() {
+	return gulp.src( './**' )
 			.pipe( gulp.dest( 'release' ) );
 } );
 
