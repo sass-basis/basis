@@ -62,6 +62,9 @@ Modern Browser and IE10+
 
 ## Changelog
 
+#### February 28, 2016 v2.1.2
+* Travis CI only master and develop.
+
 #### February 28, 2016 v2.1.1
 * Added release branch from Travis CI
 * Added viewport at the doc.
