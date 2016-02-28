@@ -15,7 +15,7 @@ fi
 cd gh-pages
 
 git add -A
-git commit -m "Update from travis $TRAVIS_COMMIT"
+git commit -m "gh-pages branch update from travis $TRAVIS_COMMIT"
 git push --quiet "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" gh-pages 2> /dev/null
 
 cd ../
@@ -23,5 +23,5 @@ cd ../
 cd release
 
 git add -A
-git commit -m "Update from travis $TRAVIS_COMMIT"
+git commit -m "release branch update from travis $TRAVIS_COMMIT"
 git push --quiet "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" release 2> /dev/null
