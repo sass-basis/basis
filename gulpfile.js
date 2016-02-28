@@ -96,6 +96,8 @@ gulp.task( 'release', ['build'], function() {
 	return gulp.src(
 			[
 				'./**',
+				'./.gitignore',
+				'./.travis.yml',
 				'!node_modules',
 				'!node_modules/**',
 				'!gh-pages',
