@@ -25,6 +25,7 @@ script:
   - ls | xargs rm -rf
   - cd ../
   - npm run release
-  - sed -e 's|dist/||' release/.gitignore
 after_success:
-  - bash ./bin/deploy.sh
+  - bash ../bin/deploy-doc.sh
+  - cd ../
+  - bash ../bin/deploy.sh
