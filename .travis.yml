@@ -26,9 +26,6 @@ script:
   - cd ../
   - npm run release
   - ls -la release
-  - cd release
-  - sed -i '' -e 's|dist/||' .gitignore
-  - cd ../
 after_success:
   - cd gh-pages
   - bash ./bin/deploy-doc.sh
