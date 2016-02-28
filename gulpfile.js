@@ -93,7 +93,14 @@ gulp.task( 'deploy_gh_pages', ['build'], function() {
  *
  */
 gulp.task( 'release', ['build'], function() {
-	return gulp.src( './**' )
+	return gulp.src(
+			[
+				'./**',
+				'!node_modules',
+				'!node_modules/**',
+				'!gh-pages',
+				'!gh-pages/**'
+			] )
 			.pipe( gulp.dest( 'release' ) );
 } );
 
