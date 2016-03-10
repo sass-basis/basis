@@ -278,3 +278,7 @@ a {
 #getstarted .c-section__h1--toplevel {
 	margin-top: 0;
 }
+
+.github-fork-ribbon {
+	background-color: #f3540c !important;
+}
