@@ -78,6 +78,12 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### March 10, 2016 v2.2.0
+* Fixed a bug that characters aren't displayed on IE8
+* Fixed bugs bs-bp-md-only and bs-bp-lg-only
+* Added visible classes.
+* Added how to contribute section in readme.md
+
 #### February 28, 2016 v2.1.2
 * Fire Travis CI only master and develop.
 
