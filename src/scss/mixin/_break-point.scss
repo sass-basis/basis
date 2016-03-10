@@ -21,13 +21,13 @@
 }
 
 @mixin bs-bp-md-only() {
-	@media (min-width: $bs-screen-sm-min) and (max-width: $bs-screen-md-max) {
+	@media (min-width: $bs-screen-md-min) and (max-width: $bs-screen-md-max) {
 		@content;
 	}
 }
 
 @mixin bs-bp-lg-only() {
-	@media (min-width: $bs-screen-md-min) {
+	@media (min-width: $bs-screen-lg-min) {
 		@content;
 	}
 }
