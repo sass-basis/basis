@@ -51,8 +51,24 @@ Support IE9 ( Not perfect )
 <![endif]-->
 ```
 
+And support IE8 ( Not perfect )
+
+```html
+<!--[if lt IE 9]>
+<script src="/PATH/TO/basis/vendor/html5.js"></script>
+<![endif]-->
+```
+
 ## Browser support
 Modern Browser and IE10+
+
+## How to contribute
+
+Please make an issue if there is a problem and needs.
+Please don't make the new issue if the issue of the same content already exists.
+If you can coding, please give me a pull request.
+But, please do not send in the master branch.
+Pull request sent to the master branch doesn't merge.
 
 ## Third party licenses
 
@@ -61,6 +77,12 @@ Modern Browser and IE10+
 * github.com/necolas/normalize.css
 
 ## Changelog
+
+#### March 10, 2016 v2.2.0
+* Fixed a bug that characters aren't displayed on IE8
+* Fixed bugs bs-bp-md-only and bs-bp-lg-only
+* Added visible classes.
+* Added how to contribute section in readme.md
 
 #### February 28, 2016 v2.1.2
 * Fire Travis CI only master and develop.

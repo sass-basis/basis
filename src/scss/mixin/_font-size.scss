@@ -1,0 +1,4 @@
+@mixin bs-font-size( $rem ) {
+	font-size: bs-rem2px( $rem );
+	font-size: $rem;
+}
