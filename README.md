@@ -51,6 +51,14 @@ Support IE9 ( Not perfect )
 <![endif]-->
 ```
 
+And support IE8 ( Not perfect )
+
+```html
+<!--[if lt IE 9]>
+<script src="/PATH/TO/basis/vendor/html5.js"></script>
+<![endif]-->
+```
+
 ## Browser support
 Modern Browser and IE10+
 
