@@ -70,11 +70,12 @@ gulp.task( 'watch', function() {
 gulp.task( 'build', ['sass:build'], function() {
 	return gulp.src(
 			[
-				'dist/**'
+				'dist/**',
+				'vendor/**'
 			],
-			{ base: 'dist' }
+			{ base: './' }
 		)
-		.pipe( gulp.dest( 'doc/dist' ) );
+		.pipe( gulp.dest( 'doc/' ) );
 } );
 
 /**

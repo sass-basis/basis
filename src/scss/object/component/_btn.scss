@@ -4,7 +4,7 @@
 	color: $bs-color-text;
 	cursor: pointer;
 	display: inline-block;
-	font-size: $bs-font-size-md;
+	@include bs-font-size( $bs-font-size-md );
 	line-height: $bs-line-height;
 	padding: $bs-margin ($bs-margin * 3);
 	text-align: center;
