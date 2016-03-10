@@ -1,4 +1,4 @@
-@media ( max-width: $bs-screen-sm-max ) {
+@include bs-bp-sm-only() {
 	.#{$bs-prefix}u-visible-sm-inline {
 		display: inline !important;
 	}
@@ -10,7 +10,7 @@
 	}
 }
 
-@media ( min-width: $bs-screen-md-min ) and ( max-width: $bs-screen-md-max ) {
+@include bs-bp-md-only() {
 	.#{$bs-prefix}u-visible-md-inline {
 		display: inline !important;
 	}
@@ -22,7 +22,7 @@
 	}
 }
 
-@media ( min-width: $bs-screen-lg-min ) {
+@include bs-bp-lg-only() {
 	.#{$bs-prefix}u-visible-lg-inline {
 		display: inline !important;
 	}
