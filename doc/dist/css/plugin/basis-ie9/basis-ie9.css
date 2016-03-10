@@ -34,7 +34,7 @@
 
 ._c-input-group__addon, ._c-input-group__field, ._c-input-group__btn {
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 16px;
   vertical-align: top;
 }
 
@@ -151,7 +151,7 @@
  * flex item
  */
 ._c-row__col {
-  font-size: 1.6rem;
+  font-size: 16px;
   display: inline-block;
   text-align: left;
   vertical-align: top;

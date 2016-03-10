@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v2.1.2
+ * Name: Basis v2.2.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -441,6 +441,7 @@ html {
 body {
   color: #333;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -478,29 +479,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  font-size: 38.4px;
   font-size: 3.84rem;
   line-height: 1.07143;
 }
 
 h2 {
+  font-size: 32px;
   font-size: 3.2rem;
   line-height: 1.15385;
 }
 
 h3 {
+  font-size: 27.2px;
   font-size: 2.72rem;
   line-height: 1.25;
 }
 
 h4 {
+  font-size: 22.4px;
   font-size: 2.24rem;
 }
 
 h5 {
+  font-size: 19.2px;
   font-size: 1.92rem;
 }
 
 h6 {
+  font-size: 16px;
   font-size: 1.6rem;
 }
 
@@ -588,6 +595,7 @@ pre code {
   color: #333;
   cursor: pointer;
   display: inline-block;
+  font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.5;
   padding: 8px 24px;
@@ -2492,6 +2500,42 @@ label._c-checkbox, label._c-radio,
 @media (min-width: 1024px) {
   ._u-hidden-lg {
     display: none !important;
+  }
+}
+
+@media (max-width: 639px) {
+  ._u-visible-sm-inline {
+    display: inline !important;
+  }
+  ._u-visible-sm-inline-block {
+    display: inline-block !important;
+  }
+  ._u-visible-sm-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  ._u-visible-md-inline {
+    display: inline !important;
+  }
+  ._u-visible-md-inline-block {
+    display: inline-block !important;
+  }
+  ._u-visible-md-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  ._u-visible-lg-inline {
+    display: inline !important;
+  }
+  ._u-visible-lg-inline-block {
+    display: inline-block !important;
+  }
+  ._u-visible-lg-block {
+    display: block !important;
   }
 }
 

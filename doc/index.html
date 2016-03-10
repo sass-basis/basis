@@ -10,12 +10,15 @@
 	<script>hljs.initHighlightingOnLoad();</script>
 
 	<link rel="stylesheet" href="./dist/css/basis.min.css" />
+	<!--[if lt IE 9]>
+	<script src="./vendor/html5.js"></script>
+	<![endif]-->
 	<!--[if lt IE 10]>
 	<link rel="stylesheet" href="./dist/css/plugin/basis-ie9/basis-ie9.min.css" />
 	<![endif]-->
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="./assets/css/style.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
 	<link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="./favicon.ico">
 </head>
@@ -27,7 +30,7 @@
 	<div class="_c-container">
 		<h1 class="c-hero__title"><img src="./assets/images/logo.svg" alt="" />Basis</h1>
 		<div class="c-hero__version">
-			Currently v2.1.2　Licence GPL-2.0+
+			Currently v2.2.0　Licence GPL-2.0+
 		</div>
 		<div class="c-hero__lead">
 			A lightweight responsive CSS framework based on flexible box ( flexbox )
@@ -62,6 +65,7 @@
 						<li class="p-local-nav__item"><a href="#utility"><i class="fa fa-angle-right"></i>Utility</a>
 							<ul class="p-local-nav__sub-list">
 								<li class="p-local-nav__sub-item"><a href="#hidden"><i class="fa fa-angle-right"></i>Hidden</a></li>
+								<li class="p-local-nav__sub-item"><a href="#visible"><i class="fa fa-angle-right"></i>Visible</a></li>
 								<li class="p-local-nav__sub-item"><a href="#text"><i class="fa fa-angle-right"></i>Text</a></li>
 								<li class="p-local-nav__sub-item"><a href="#clearfix"><i class="fa fa-angle-right"></i>Clearfix</a></li>
 								<li class="p-local-nav__sub-item"><a href="#img"><i class="fa fa-angle-right"></i>Img</a></li>
@@ -116,6 +120,13 @@ $ gulp build</code></pre>
 						</p>
 						<pre><code>&lt;!--[if lt IE 10]&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;/PATH/TO/basis/dist/css/plugin/basis-ie9/basis-ie9.min.css&quot; /&gt;
+&lt;![endif]--&gt;</code></pre>
+
+						<p>
+							And support IE8 ( Not perfect )
+						</p>
+						<pre><code>&lt;!--[if lt IE 9]&gt;
+&lt;script src=&quot;/PATH/TO/basis/vendor/html5.js&quot;&gt;&lt;/script&gt;
 &lt;![endif]--&gt;</code></pre>
 					</section>
 				</section>
@@ -963,6 +974,82 @@ $ gulp build</code></pre>
 							<div class="_c-row__col _c-row__col--1-1 _u-hidden-sm"><div class="p-show-grid__item">Hidden < 640</div></div>
 							<div class="_c-row__col _c-row__col--1-1 _u-hidden-md"><div class="p-show-grid__item">Hidden 640 - 1023</div></div>
 							<div class="_c-row__col _c-row__col--1-1 _u-hidden-lg"><div class="p-show-grid__item">Hidden >= 1024</div></div>
+						</div>
+					</section>
+
+					<section class="c-section" id="visible">
+						<h1 class="c-section__h1">Visible</h1>
+
+						<pre><code>&lt;div class=&quot;_c-row&quot;&gt;
+	&lt;div class=&quot;_c-row__col _c-row__col--1-1&quot;&gt;
+		&lt;span class=&quot;p-show-grid__item _u-visible-sm-inline&quot; hidden&gt;
+			Visible &lt; 640
+		&lt;/span&gt;
+		&lt;div class=&quot;p-show-grid__item _u-visible-sm-inline-block&quot; hidden&gt;
+			Visible &lt; 640
+		&lt;/div&gt;
+		&lt;div class=&quot;p-show-grid__item _u-visible-sm-block&quot; hidden&gt;
+			Visible &lt; 640
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;_c-row__col _c-row__col--1-1&quot;&gt;
+		&lt;span class=&quot;p-show-grid__item _u-visible-md-inline&quot; hidden&gt;
+			Visible 640 - 1023
+		&lt;/span&gt;
+		&lt;div class=&quot;p-show-grid__item _u-visible-md-inline-block&quot; hidden&gt;
+			Visible 640 - 1023
+		&lt;/div&gt;
+		&lt;div class=&quot;p-show-grid__item _u-visible-md-block&quot; hidden&gt;
+			Visible 640 - 1023
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;_c-row__col _c-row__col--1-1&quot;&gt;
+		&lt;span class=&quot;p-show-grid__item _u-visible-lg-inline&quot; hidden&gt;
+			Visible &gt;= 1024
+		&lt;/span&gt;
+		&lt;div class=&quot;p-show-grid__item _u-visible-lg-inline-block&quot; hidden&gt;
+			Visible &gt;= 1024
+		&lt;/div&gt;
+		&lt;div class=&quot;p-show-grid__item _u-visible-lg-block&quot; hidden&gt;
+			Visible &gt;= 1024
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+						<div class="_c-row p-show-grid">
+							<div class="_c-row__col _c-row__col--1-1">
+								<span class="p-show-grid__item _u-visible-sm-inline" hidden>
+									Visible < 640
+								</span>
+								<div class="p-show-grid__item _u-visible-sm-inline-block" hidden>
+									Visible < 640
+								</div>
+								<div class="p-show-grid__item _u-visible-sm-block" hidden>
+									Visible < 640
+								</div>
+							</div>
+							<div class="_c-row__col _c-row__col--1-1">
+								<span class="p-show-grid__item _u-visible-md-inline" hidden>
+									Visible 640 - 1023
+								</span>
+								<div class="p-show-grid__item _u-visible-md-inline-block" hidden>
+									Visible 640 - 1023
+								</div>
+								<div class="p-show-grid__item _u-visible-md-block" hidden>
+									Visible 640 - 1023
+								</div>
+							</div>
+							<div class="_c-row__col _c-row__col--1-1">
+								<span class="p-show-grid__item _u-visible-lg-inline" hidden>
+									Visible >= 1024
+								</span>
+								<div class="p-show-grid__item _u-visible-lg-inline-block" hidden>
+									Visible >= 1024
+								</div>
+								<div class="p-show-grid__item _u-visible-lg-block" hidden>
+									Visible >= 1024
+								</div>
+							</div>
 						</div>
 					</section>
 

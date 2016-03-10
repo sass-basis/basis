@@ -16,7 +16,7 @@ html {
 body {
 	color: $bs-color-text;
 	font-family: $bs-font-family;
-	font-size: $bs-font-size-md;
+	@include bs-font-size( $bs-font-size-md );
 	line-height: $bs-line-height;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -53,30 +53,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: ($bs-font-size-md * 2.4);
+	@include bs-font-size( $bs-font-size-md * 2.4 );
 	line-height: ($bs-line-height / 1.4);
 }
 
 h2 {
-	font-size: ($bs-font-size-md * 2.0);
+	@include bs-font-size( $bs-font-size-md * 2.0 );
 	line-height: ($bs-line-height / 1.3);
 }
 
 h3 {
-	font-size: ($bs-font-size-md * 1.7);
+	@include bs-font-size( $bs-font-size-md * 1.7 );
 	line-height: ($bs-line-height / 1.2);
 }
 
 h4 {
-	font-size: ($bs-font-size-md * 1.4);
+	@include bs-font-size( $bs-font-size-md * 1.4 );
 }
 
 h5 {
-	font-size: ($bs-font-size-md * 1.2);
+	@include bs-font-size( $bs-font-size-md * 1.2 );
 }
 
 h6 {
-	font-size: $bs-font-size-md;
+	@include bs-font-size( $bs-font-size-md );
 }
 
 /**

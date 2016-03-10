@@ -34,26 +34,26 @@ jQuery( function( $ ) {
 		}
 
 		function fix() {
-			if ( $( '.l-sub' ).css( 'max-width' ) == '100%' ) {
+			if ( $( '.l-sub' ).css( 'max-width' ) == '25%' ) {
+				if ( $( window ).height() - $( '.l-footer' ).outerHeight() < fix_area.height() ) {
+					if ( $( document ).height() - $( window ).height() - $( '.l-footer' ).outerHeight() <= scroll ) {
+						unfixed();
+						fix_area.addClass( 'fit-bottom' );
+						return;
+					}
+				}
+
+				fix_area.removeClass( 'fit-bottom' );
+				if ( scroll >= offset_top ) {
+					fix_area.addClass( 'fixed' );
+					fix_area.width( fix_area.parent().width() );
+				} else {
+					update_offset_top();
+					unfixed();
+				}
+			} else {
 				unfixed();
 				return;
-			}
-
-			if ( $( window ).height() - $( '.l-footer' ).outerHeight() < fix_area.height() ) {
-				if ( $( document ).height() - $( window ).height() - $( '.l-footer' ).outerHeight() <= scroll ) {
-					unfixed();
-					fix_area.addClass( 'fit-bottom' );
-					return;
-				}
-			}
-
-			fix_area.removeClass( 'fit-bottom' );
-			if ( scroll >= offset_top ) {
-				fix_area.addClass( 'fixed' );
-				fix_area.width( fix_area.parent().width() );
-			} else {
-				update_offset_top();
-				unfixed();
 			}
 		}
 	} )();
