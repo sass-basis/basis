@@ -78,6 +78,9 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### March 10, 2016 v2.3.0
+* Added the hero component.
+
 #### March 10, 2016 v2.2.0
 * Fixed a bug that characters aren't displayed on IE8
 * Fixed bugs bs-bp-md-only and bs-bp-lg-only

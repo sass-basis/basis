@@ -30,7 +30,7 @@
 	<div class="_c-container">
 		<h1 class="c-hero__title"><img src="./assets/images/logo.svg" alt="" />Basis</h1>
 		<div class="c-hero__version">
-			Currently v2.2.0　Licence GPL-2.0+
+			Currently v2.3.0　Licence GPL-2.0+
 		</div>
 		<div class="c-hero__lead">
 			A lightweight responsive CSS framework based on flexible box ( flexbox )
@@ -60,6 +60,7 @@
 								<li class="p-local-nav__sub-item"><a href="#grid-system"><i class="fa fa-angle-right"></i>Grid System</a></li>
 								<li class="p-local-nav__sub-item"><a href="#buttons"><i class="fa fa-angle-right"></i>Buttons</a></li>
 								<li class="p-local-nav__sub-item"><a href="#alerts"><i class="fa fa-angle-right"></i>Alerts</a></li>
+								<li class="p-local-nav__sub-item"><a href="#hero"><i class="fa fa-angle-right"></i>Hero</a></li>
 							</ul>
 						</li>
 						<li class="p-local-nav__item"><a href="#utility"><i class="fa fa-angle-right"></i>Utility</a>
@@ -954,6 +955,104 @@ $ gulp build</code></pre>
 
 						<div class="section">
 							<div class="_c-alert">This is alert !</div>
+						</div>
+					</section>
+
+					<section class="c-section" id="hero">
+						<h1 class="c-section__h1">Hero</h1>
+
+						<h2 class="c-section__h2">Using header and footer</h2>
+
+						<pre><code>&lt;div class=&quot;_c-hero&quot; style=&quot;background-color: #00DAE6; color: #fff;&quot;&gt;
+	&lt;div class=&quot;_c-hero__header&quot;&gt;header&lt;/div&gt;
+	&lt;div class=&quot;_c-hero__content _u-text-center&quot;&gt;
+		&lt;h2&gt;Lorem ipsum dolor sit amet&lt;/h2&gt;
+		&lt;a class=&quot;_c-btn _c-btn--ghost&quot;&gt;btn&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;_c-hero__footer&quot;&gt;footer&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+						<div class="section">
+							<div class="_c-hero" style="background-color: #00DAE6; color: #fff;">
+								<div class="_c-hero__header">header</div>
+								<div class="_c-hero__content _u-text-center">
+									<h2>Lorem ipsum dolor sit amet</h2>
+									<a class="_c-btn _c-btn--ghost">btn</a>
+								</div>
+								<div class="_c-hero__footer">footer</div>
+							</div>
+						</div>
+
+						<h2 class="c-section__h2">Using background image</h2>
+
+						<pre><code>&lt;div class=&quot;_c-hero _c-hero--cover&quot; style=&quot;background-image: url( /path/to/image ); color: #fff;&quot;&gt;
+	&lt;div class=&quot;_c-hero__content _u-text-center&quot;&gt;
+		&lt;h2&gt;Lorem ipsum dolor sit amet&lt;/h2&gt;
+		&lt;a class=&quot;_c-btn _c-btn--ghost&quot;&gt;btn&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+						<div class="section">
+							<div class="_c-hero _c-hero--cover" style="background-image: url( http://2inc.org/wp-content/themes/inc20/images/sample/SDIM4376_2.jpg ); color: #fff;">
+								<div class="_c-hero__content _u-text-center">
+									<h2>Lorem ipsum dolor sit amet</h2>
+									<a class="_c-btn _c-btn--ghost">btn</a>
+								</div>
+							</div>
+						</div>
+
+						<h2 class="c-section__h2">Using overlay</h2>
+
+						<pre><code>&lt;div class=&quot;_c-hero _c-hero--cover _c-hero--overlay&quot; style=&quot;background-image: url( /path/to/image ); color: #fff;&quot;&gt;
+	&lt;div class=&quot;_c-hero__content _u-text-center&quot;&gt;
+		&lt;h2&gt;Lorem ipsum dolor sit amet&lt;/h2&gt;
+		&lt;a class=&quot;_c-btn _c-btn--ghost&quot;&gt;btn&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+						<div class="section">
+							<div class="_c-hero _c-hero--cover _c-hero--overlay" style="background-image: url( http://2inc.org/wp-content/themes/inc20/images/sample/SDIM4376_2.jpg ); color: #fff;">
+								<div class="_c-hero__content _u-text-center">
+									<h2>Lorem ipsum dolor sit amet</h2>
+									<a class="_c-btn _c-btn--ghost">btn</a>
+								</div>
+							</div>
+						</div>
+
+						<h2 class="c-section__h2">Using fixed background image ( PC size only )</h2>
+
+						<pre><code>&lt;div class=&quot;_c-hero _c-hero--cover _c-hero--fixed&quot; style=&quot;background-image: url( /path/to/image ); color: #fff;&quot;&gt;
+	&lt;div class=&quot;_c-hero__content _u-text-center&quot;&gt;
+		&lt;h2&gt;Lorem ipsum dolor sit amet&lt;/h2&gt;
+		&lt;a class=&quot;_c-btn _c-btn--ghost&quot;&gt;btn&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+						<div class="section">
+							<div class="_c-hero _c-hero--cover _c-hero--fixed" style="background-image: url( http://2inc.org/wp-content/themes/inc20/images/sample/SDIM4376_2.jpg ); color: #fff;">
+								<div class="_c-hero__content _u-text-center">
+									<h2>Lorem ipsum dolor sit amet</h2>
+									<a class="_c-btn _c-btn--ghost">btn</a>
+								</div>
+							</div>
+						</div>
+
+						<h2 class="c-section__h2">Full size</h2>
+
+						<pre><code>&lt;div class=&quot;_c-hero _c-hero--full&quot; style=&quot;background-color: #00DAE6; color: #fff;&quot;&gt;
+	&lt;div class=&quot;_c-hero__content _u-text-center&quot;&gt;
+		&lt;h2&gt;Lorem ipsum dolor sit amet&lt;/h2&gt;
+		&lt;a class=&quot;_c-btn _c-btn--ghost&quot;&gt;btn&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+						<div class="section">
+							<div class="_c-hero _c-hero--full" style="background-color: #00DAE6; color: #fff;">
+								<div class="_c-hero__content _u-text-center">
+									<h2>Lorem ipsum dolor sit amet</h2>
+									<a class="_c-btn _c-btn--ghost">btn</a>
+								</div>
+							</div>
 						</div>
 					</section>
 				</section>
