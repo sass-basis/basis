@@ -1,8 +1,8 @@
 .#{$bs-prefix}c-container, .#{$bs-prefix}c-container-fluid {
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: $bs-margin * 2;
-	padding-left: $bs-margin * 2;
+	padding-right: $bs-font-size;
+	padding-left: $bs-font-size;
 	overflow: hidden;
 }
 

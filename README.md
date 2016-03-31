@@ -78,9 +78,10 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
-#### March 10, 2016 v2.3.0
+#### March 10, 2016 v3.0.0
 * Added the hero component.
 * Updated normalize.css
+* Refactorng around the margin.
 
 #### March 10, 2016 v2.2.0
 * Fixed a bug that characters aren't displayed on IE8

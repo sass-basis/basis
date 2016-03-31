@@ -3,6 +3,6 @@
 	border-radius: $bs-border-radius-md;
 	border: 1px solid bs-lighter($bs-color-gray);
 	display: block;
-	margin-bottom: $bs-margin;
-	padding: ($bs-margin * 2);
+	margin-bottom: $bs-base-line-height;
+	padding: $bs-font-size;
 }

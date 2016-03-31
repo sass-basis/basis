@@ -6,7 +6,7 @@
 	border: 1px solid $bs-color-gray;
 	border-radius: $bs-border-radius-lg;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-	padding: $bs-margin;
+	padding: $bs-font-size / 2;
 }
 
 textarea.#{$bs-prefix}c-form-control {
@@ -21,20 +21,20 @@ textarea.#{$bs-prefix}c-form-control {
 	display: inline-block;
 
 	+ .#{$bs-prefix}c-checkbox, + .#{$bs-prefix}c-radio {
-		margin-left: $bs-margin;
+		margin-left: $bs-font-size / 2;
 	}
 
 	&--block {
 		display: block;
 
 		+ .#{$bs-prefix}c-checkbox--block, + .#{$bs-prefix}c-radio--block {
-			margin-top: ($bs-margin / 2);
+			margin-top: $bs-font-size / 2;
 			margin-left: 0;
 		}
 	}
 
 	[type="checkbox"], [type="radio"] {
-		margin-right: ($bs-margin / 2);
+		margin-right: $bs-font-size / 2;
 	}
 }
 label.#{$bs-prefix}c-checkbox, label.#{$bs-prefix}c-radio,
@@ -65,7 +65,7 @@ label.#{$bs-prefix}c-checkbox, label.#{$bs-prefix}c-radio,
 		background-color: #eee;
 		border: 1px solid $bs-color-gray;
 		color: bs-light( $bs-color-text );
-		padding: $bs-margin;
+		padding: $bs-font-size / 2;
 	}
 
 	&__field {

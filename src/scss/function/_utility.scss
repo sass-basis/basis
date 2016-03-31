@@ -8,6 +8,6 @@
 	@return $b;
 }
 
-@function bs-numeric( $x ) {
-	@return $x / (1 + $x - $x);
+@function bs-numeric( $value ) {
+	@return $value / ($value * 0 + 1);
 }

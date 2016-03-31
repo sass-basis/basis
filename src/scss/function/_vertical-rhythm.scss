@@ -1,0 +1,11 @@
+@function bs-vertical-rhythm( $value, $coefficient: 1 ) {
+	$base-line-height-px: bs-numeric( bs-rem2px( $bs-base-line-height ) );
+	$font-size-px       : bs-numeric( bs-rem2px( $bs-font-size ) );
+
+	$base: bs-numeric( bs-rem2px( $bs-base-line-height ) ) * $coefficient;
+	@if ( bs-numeric( $value ) > $base - ( ( $base-line-height-px - $font-size-px ) / 2 * $coefficient ) ) {
+		@return bs-vertical-rhythm( $value, ($coefficient + 1) );
+	} @else {
+		@return $base;
+	}
+}
