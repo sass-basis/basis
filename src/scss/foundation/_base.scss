@@ -40,7 +40,7 @@ img {
  */
 p, ul, ol, dl, table, pre {
 	margin-top: 0;
-	margin-bottom: $bs-font-size-md;
+	margin-bottom: bs-rem2px( $bs-font-size-md );
 }
 
 /**
@@ -48,8 +48,8 @@ p, ul, ol, dl, table, pre {
  */
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
-	margin-top: $bs-font-size-md;
-	margin-bottom: $bs-font-size-md;
+	margin-top: bs-rem2px( $bs-font-size-md );
+	margin-bottom: bs-rem2px( $bs-font-size-md );
 }
 
 h1 {
