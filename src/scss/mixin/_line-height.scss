@@ -1,3 +1,8 @@
+/**
+ * Return line-height for vertical rhythum
+ *
+ * @param  rem  $rem  font size
+ */
 @mixin bs-line-height( $rem ) {
 	$px: bs-rem2px( $rem );
 	line-height: bs-vertical-rhythm( bs-numeric( $px ) ) / bs-numeric( $px );
