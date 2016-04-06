@@ -4,9 +4,9 @@
  * @param  length  $gutter  gutter size
  */
 @mixin bs-row-gutter( $gutter ) {
-	margin-right: ($gutter * -1);
-	margin-left: ($gutter * -1);
-	margin-bottom: ($gutter * 2 * -1);
+	margin-right: round($gutter / 2 * -1);
+	margin-left: round($gutter / 2 * -1);
+	margin-bottom: ($gutter * -1);
 }
 
 /**
@@ -15,7 +15,7 @@
  * @param  length  $gutter  gutter size
  */
 @mixin bs-col-gutter( $gutter ) {
-	padding-right: $gutter;
-	padding-left: $gutter;
-	margin-bottom: ($gutter * 2);
+	padding-right: round($gutter / 2);
+	padding-left: round($gutter / 2);
+	margin-bottom: $gutter;
 }
