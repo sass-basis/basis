@@ -6,6 +6,7 @@ $bs-prefix: '_' !default;
 
 /**
  * Max container width
+ * 1200px / 16px
  * @type  length
  */
-$bs-max-width: 1200px !default;
+$bs-max-width: 75em !default;
