@@ -109,30 +109,29 @@ pre {
  * c-section
  */
 .c-section {
-	margin-bottom: 16px;
+	margin-bottom: 4.8rem;
 }
 .c-section__h1 {
 	border-bottom: 2px solid #00DAE6;
-	margin: 40px 0 30px;
-	padding-bottom: 8px;
-	font-size: 3rem;
+	padding-bottom: 4px;
+	font-size: 4rem;
+	margin-bottom: 2.4rem;
 }
 .c-section__h1--toplevel {
-	border: 3px solid #00DAE6;
-	margin: 40px 0;
-	padding: 16px;
-	color: #00DAE6;
-	font-size: 3rem;
+	background-color: #00DAE6;
+	padding: 1.6rem 2.4rem;
+	color: #fff;
+	font-weight: normal;
+	font-size: 4rem;
+	margin-bottom: 4.8rem;
 }
 .c-section__h2 {
 	border-bottom: 1px solid #ddd;
-	margin: 30px 0;
-	padding-bottom: 8px;
-	font-size: 2.8rem;
+	padding-bottom: 4px;
+	font-size: 3.2rem;
 }
 .c-section__h3 {
-	margin: 30px 0;
-	font-size: 2.6rem;
+	font-size: 2.4rem;
 }
 a {
 	color: #00DAE6;
@@ -145,6 +144,45 @@ a {
 	background-color: #333;
 	height: 80px;
 	width: 100px;
+}
+
+/**
+ * c-animate-image
+ */
+.c-animate-image {
+	background-color: #e74c3c;
+	height: 150px;
+	width: 150px;
+	opacity: 1;
+}
+.c-animate-image:hover, .c-animate-image:active, .c-animate-image:focus {
+	width: 100%;
+	opacity: 0.5;
+}
+
+/**
+ * c-progress-bar
+ */
+.c-progress-bar {
+	background-color: #e74c3c;
+	width: 25%;
+	height: 20px;
+}
+.c-progress-bar:hover, .c-progress-bar:active, .c-progress-bar:focus {
+	width: 100%;
+}
+
+/**
+ * c-fade-image
+ */
+.c-fade-image {
+	background-color: #e74c3c;
+	height: 150px;
+	width: 150px;
+	opacity: 1;
+}
+.c-fade-image:hover, .c-fade-image:active, .c-fade-image:focus {
+	opacity: 0.5;
 }
 
 /**

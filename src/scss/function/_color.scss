@@ -1,23 +1,59 @@
-@function bs-light( $bs-color ) {
-	@return lighten( $bs-color, 6% );
+/**
+ * A little brighten
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+@function bs-light( $hex ) {
+	@return lighten( $hex, 6% );
 }
 
-@function bs-lighter( $bs-color ) {
-	@return lighten( $bs-color, 12% );
+/**
+ * Brighten
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+@function bs-lighter( $hex ) {
+	@return lighten( $hex, 12% );
 }
 
-@function bs-lightest( $bs-color ) {
-	@return lighten( $bs-color, 24% );
+/**
+ * To very brighten
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+@function bs-lightest( $hex ) {
+	@return lighten( $hex, 24% );
 }
 
-@function bs-dark( $bs-color ) {
-	@return darken( $bs-color, 6% );
+/**
+ * A little darken
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+@function bs-dark( $hex ) {
+	@return darken( $hex, 6% );
 }
 
-@function bs-darker( $bs-color ) {
-	@return darken( $bs-color, 12% );
+/**
+ * Darken
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+@function bs-darker( $hex ) {
+	@return darken( $hex, 12% );
 }
 
-@function bs-darkest( $bs-color ) {
-	@return  darken( $bs-color, 24% );
+/**
+ * To very darken
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+@function bs-darkest( $hex ) {
+	@return  darken( $hex, 24% );
 }
