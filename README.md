@@ -80,6 +80,7 @@ Pull request sent to the master branch doesn't merge.
 
 #### March 10, 2016 v3.0.0
 * Added the hero component.
+* Added transition and animation utility classes.
 * Updated normalize.css
 * Changed base margin.
 * Changed breakpoint unit px to em.

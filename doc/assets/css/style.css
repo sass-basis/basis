@@ -147,6 +147,45 @@ a {
 }
 
 /**
+ * c-animate-image
+ */
+.c-animate-image {
+	background-color: #e74c3c;
+	height: 150px;
+	width: 150px;
+	opacity: 1;
+}
+.c-animate-image:hover, .c-animate-image:active, .c-animate-image:focus {
+	width: 100%;
+	opacity: 0.5;
+}
+
+/**
+ * c-progress-bar
+ */
+.c-progress-bar {
+	background-color: #e74c3c;
+	width: 25%;
+	height: 20px;
+}
+.c-progress-bar:hover, .c-progress-bar:active, .c-progress-bar:focus {
+	width: 100%;
+}
+
+/**
+ * c-fade-image
+ */
+.c-fade-image {
+	background-color: #e74c3c;
+	height: 150px;
+	width: 150px;
+	opacity: 1;
+}
+.c-fade-image:hover, .c-fade-image:active, .c-fade-image:focus {
+	opacity: 0.5;
+}
+
+/**
  * table
  */
 .table {
