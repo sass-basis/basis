@@ -78,6 +78,9 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### April 6, 2016 v3.0.1
+* Fixed grid margin.
+
 #### April 6, 2016 v3.0.0
 * Added the hero component.
 * Added transition and animation utility classes.
