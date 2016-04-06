@@ -78,7 +78,7 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
-#### March 10, 2016 v3.0.0
+#### April 6, 2016 v3.0.0
 * Added the hero component.
 * Added transition and animation utility classes.
 * Updated normalize.css
