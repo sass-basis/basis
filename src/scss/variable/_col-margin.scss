@@ -1,3 +1,17 @@
-$bs-col-margin: $bs-margin * 2 !default;
-$bs-col-margin-s: $bs-margin * 1 !default;
-$bs-col-margin-l: $bs-margin * 3 !default;
+/**
+ * Normal size column margin
+ * @type  length
+ */
+$bs-col-margin: $bs-base-line-height !default;
+
+/**
+ * Small size column margin
+ * @type  length
+ */
+$bs-col-margin-s: ($bs-base-line-height / 2) !default;
+
+/**
+ * Large size column margin
+ * @type  length
+ */
+$bs-col-margin-l: ($bs-base-line-height * 2) !default;

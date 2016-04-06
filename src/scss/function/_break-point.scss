@@ -1,6 +1,12 @@
+/**
+ * Return prefix for the device size
+ *
+ * @param   string  $size  sm|md|lg
+ * @return  string
+ */
 @function bs-bp-prefix( $size ) {
 	$prefix: '-';
-	
+
 	@if $size != 'sm' {
 		$prefix: --#{$size};
 	}

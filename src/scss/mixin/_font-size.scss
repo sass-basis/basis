@@ -1,3 +1,8 @@
+/**
+ * Return px and rem font-sizes
+ *
+ * @param  rem  $rem
+ */
 @mixin bs-font-size( $rem ) {
 	font-size: bs-rem2px( $rem );
 	font-size: $rem;

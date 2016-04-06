@@ -1,3 +1,6 @@
+/**
+ * Clearfix mixin
+ */
 @mixin clearfix() {
 	&:before, &:after {
 		content: " ";

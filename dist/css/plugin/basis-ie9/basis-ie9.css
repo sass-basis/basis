@@ -4,18 +4,262 @@
 /* ========================================
  * variables
  ======================================= */
+/**
+ * Prefix of basis classes
+ * @type  string
+ */
+/**
+ * Max container width
+ * 1200px / 16px
+ * @type  length
+ */
+/**
+ * Default font size
+ * @type  rem
+ */
+/**
+ * Between the character and line of line-height
+ * @type  rem
+ */
+/**
+ * Default line height
+ * @type  rem
+ */
+/**
+ * Default font family
+ * @type  string
+ */
+/**
+ * Min base grid size
+ * @type  int
+ */
+/**
+ * Max base grid size
+ * @type  int
+ */
+/**
+ * Break point for smartphone
+ * @type  length
+ */
+/**
+ * Break point for smartphone and tablet
+ * 640px / 16px
+ * @type  length
+ */
+/**
+ * Break point for tablet and pc
+ * 1024px / 16px
+ * @type  length
+ */
+/**
+ * Array of breakpoints
+ * @type  array
+ */
+/**
+ * Default text color
+ * @type  hex
+ */
+/**
+ * Default black color
+ * @type  hex
+ */
+/**
+ * Default gray color
+ * @type  hex
+ */
+/**
+ * Default red color
+ * @type  hex
+ */
+/**
+ * Normal size column margin
+ * @type  length
+ */
+/**
+ * Small size column margin
+ * @type  length
+ */
+/**
+ * Large size column margin
+ * @type  length
+ */
+/**
+ * Animation time
+ * @type  second|milisecond
+ */
+/**
+ * Transition function timing
+ * @type  string
+ * @see  http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
+ */
 /* ========================================
  * function
  ======================================= */
 /* ========================================
  * function
  ======================================= */
+/**
+ * Return prefix for the device size
+ *
+ * @param   string  $size  sm|md|lg
+ * @return  string
+ */
+/**
+ * A little brighten
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * Brighten
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * To very brighten
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * A little darken
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * Darken
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * To very darken
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * Return rem from px
+ * @param   rem  $rem
+ * @return  px
+ */
+/**
+ * Return greatest common divisor
+ *
+ * @param   int  $a  The number to be divided
+ * @param   int  $b  The number to divide
+ * @return  int  The number of the remainder
+ */
+/**
+ * Return numeric value that doesn't have the unit.
+ *
+ * @param   length  $value  numeric value
+ * @return  int
+ */
+/**
+ * Return line height ( px ) for vertical rhythum
+ *
+ * @param   px   $value
+ * @param   int  $coefficient
+ * @return  int
+ */
 /* ========================================
  * mixin
  ======================================= */
 /* ========================================
  * mixin
  ======================================= */
+/**
+ * Return min-width media query
+ *
+ * @param   length  $min  width
+ * @return  string  min-width media query
+ */
+/**
+ * Return max-width media query
+ *
+ * @param   length  $max  width
+ * @return  string  max-width media query
+ */
+/**
+ * Return media query for smartphone size
+ *
+ * @return  length  media query
+ */
+/**
+ * Return media query for tablet size
+ *
+ * @return  length  media query
+ */
+/**
+ * Return media query for pc size
+ *
+ * @return  string  media query
+ */
+/**
+ * Return selectors for hover
+ */
+/**
+ * Adding gutter for the row
+ *
+ * @param  length  $gutter  gutter size
+ */
+/**
+ * Adding gutter for the column
+ *
+ * @param  length  $gutter  gutter size
+ */
+/**
+ * Clearfix mixin
+ */
+/**
+ * Return px and rem font-sizes
+ *
+ * @param  rem  $rem
+ */
+/**
+ * Return line-height for vertical rhythum
+ *
+ * @param  rem  $rem  font size
+ */
+/**
+ * Bounce vertical
+ *
+ * @param   length             $px        bounce size
+ * @param   second|milisecond  $delay: 0  animate time
+ */
+/**
+ * Shake vertical
+ */
+/**
+ * Vibrate vertical
+ */
+/**
+ * Bounce horizontal
+ *
+ * @param   length             $px        bounce size
+ * @param   second|milisecond  $delay: 0  animate time
+ */
+/**
+ * Shake horizontal
+ */
+/**
+ * Vibrate horizontal
+ */
+/**
+ * Bounce scale
+ *
+ * @param   float              $px        bounce size
+ * @param   second|milisecond  $delay: 0  animate time
+ */
+/**
+ * Shake scale
+ */
+/**
+ * Vibrate scale
+ */
 /* ========================================
  * object
  ======================================= */
@@ -99,7 +343,7 @@
   vertical-align: baseline;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 40em) {
   ._c-row--md-left {
     text-align: left;
   }
@@ -123,7 +367,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
   ._c-row--lg-left {
     text-align: left;
   }
@@ -343,7 +587,7 @@
   width: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 40em) {
   ._c-row__col--md-1-2, ._c-row__col--md-2-4, ._c-row__col--md-3-6, ._c-row__col--md-4-8, ._c-row__col--md-5-10, ._c-row__col--md-6-12 {
     width: 50%;
   }
@@ -484,7 +728,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
   ._c-row__col--lg-1-2, ._c-row__col--lg-2-4, ._c-row__col--lg-3-6, ._c-row__col--lg-4-8, ._c-row__col--lg-5-10, ._c-row__col--lg-6-12 {
     width: 50%;
   }

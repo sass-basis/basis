@@ -72,11 +72,18 @@ Pull request sent to the master branch doesn't merge.
 
 ## Third party licenses
 
-#### normalize.css v3.0.3
+#### normalize.css v4.0.0
 * MIT License
 * github.com/necolas/normalize.css
 
 ## Changelog
+
+#### April 6, 2016 v3.0.0
+* Added the hero component.
+* Added transition and animation utility classes.
+* Updated normalize.css
+* Changed base margin.
+* Changed breakpoint unit px to em.
 
 #### March 10, 2016 v2.2.0
 * Fixed a bug that characters aren't displayed on IE8
