@@ -67,7 +67,7 @@
 /**
  * Bounce scale
  *
- * @param   float             $px        bounce size
+ * @param   float              $px        bounce size
  * @param   second|milisecond  $delay: 0  animate time
  */
 @mixin bs-bounce-scale( $float, $delay: 0 ) {
