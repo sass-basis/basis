@@ -127,7 +127,7 @@ blockquote {
  */
 code {
 	background-color: lighten( $bs-color-red, 34% );
-	border-radius: $bs-border-radius-md;
+	border-radius: $bs-border-radius-m;
 	color: bs-dark( $bs-color-red );
 	padding: 2px 4px;
 }
@@ -138,7 +138,7 @@ code {
 pre {
 	background-color: bs-lightest( $bs-color-gray );
 	border: 1px solid bs-lighter( $bs-color-gray );
-	border-radius: $bs-border-radius-md;
+	border-radius: $bs-border-radius-m;
 	padding: $bs-font-size;
 
 	code {
