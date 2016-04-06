@@ -1,3 +1,6 @@
+/**
+ * Return selectors for hover
+ */
 @mixin bs-hover() {
 	&:hover, &:active, &:focus {
 		@content;

@@ -1,8 +1,8 @@
 /**
  * Return line height ( px ) for vertical rhythum
  *
- * @param   string|int  $value        px
- * @param   int         $coefficient
+ * @param   px   $value
+ * @param   int  $coefficient
  * @return  int
  */
 @function bs-vertical-rhythm( $value, $coefficient: 1 ) {

@@ -1,6 +1,21 @@
+/**
+ * Break point for smartphone
+ * @type  length
+ */
 $bs-screen-sm-min: 0 !default;
+
+/**
+ * Break point for smartphone and tablet
+ * @type  length
+ */
 $bs-screen-md-min: 640px !default;
+
+/**
+ * Break point for tablet and pc
+ * @type  length
+ */
 $bs-screen-lg-min: 1024px !default;
+
 $bs-screen-sm-max: ($bs-screen-md-min - 1);
 $bs-screen-md-max: ($bs-screen-lg-min - 1);
 $bs-sizes: (

@@ -4,7 +4,7 @@
 .#{$bs-prefix}c-form-control {
 	background-color: #fff;
 	border: 1px solid $bs-color-gray;
-	border-radius: $bs-border-radius-lg;
+	border-radius: $bs-border-radius-l;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 	padding: $bs-font-size / 2;
 }
@@ -46,7 +46,7 @@ label.#{$bs-prefix}c-checkbox, label.#{$bs-prefix}c-radio,
  * input group
  */
 .#{$bs-prefix}c-input-group {
-	border-radius: $bs-border-radius-lg;
+	border-radius: $bs-border-radius-l;
 	display: flex;
 
 	* {
@@ -54,11 +54,11 @@ label.#{$bs-prefix}c-checkbox, label.#{$bs-prefix}c-radio,
 	}
 
 	:first-child {
-		border-radius: $bs-border-radius-lg 0 0 $bs-border-radius-lg;
+		border-radius: $bs-border-radius-l 0 0 $bs-border-radius-l;
 	}
 
 	:last-child {
-		border-radius: 0 $bs-border-radius-lg $bs-border-radius-lg 0;
+		border-radius: 0 $bs-border-radius-l $bs-border-radius-l 0;
 	}
 
 	&__addon {

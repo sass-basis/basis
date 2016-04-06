@@ -1,11 +1,21 @@
+/**
+ * Adding gutter for the row
+ *
+ * @param  length  $gutter  gutter size
+ */
 @mixin bs-row-gutter( $gutter ) {
 	margin-right: ($gutter * -1);
 	margin-left: ($gutter * -1);
 	margin-bottom: ($gutter * 2 * -1);
 }
 
+/**
+ * Adding gutter for the column
+ *
+ * @param  length  $gutter  gutter size
+ */
 @mixin bs-col-gutter( $gutter ) {
 	padding-right: $gutter;
 	padding-left: $gutter;
-	margin-bottom: $gutter * 2;
+	margin-bottom: ($gutter * 2);
 }
