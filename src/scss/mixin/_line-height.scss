@@ -1,4 +1,29 @@
 /**
+ * Return line height ( px ) for vertical rhythum
+ *
+ * @param   px   $value
+ * @param   int  $coefficient
+ * @return  int
+ */
+@function bs-vertical-rhythm( $value, $coefficient: 1 ) {
+	$between-lines-px   : bs-numeric( bs-rem2px( $bs-between-lines ) );
+	$base-line-height-px: bs-numeric( bs-rem2px( $bs-base-line-height ) );
+	$font-size-px       : bs-numeric( bs-rem2px( $bs-font-size ) );
+	$value-px           : bs-numeric( $value );
+
+	$base: $base-line-height-px / 3 * $coefficient;
+	@if ( $value-px < $base-line-height-px ) {
+		@return $value-px / $font-size-px * $base-line-height-px;
+	} @elseif ( $base == $value-px ) {
+		@return $base + $between-lines-px * 2;
+	} @elseif ( $value-px > $base - 1 ) {
+		@return bs-vertical-rhythm( $value-px, ($coefficient + 1) );
+	} @else {
+		@return $base;
+	}
+}
+
+/**
  * Return line-height for vertical rhythum
  *
  * @param  rem  $rem  font size

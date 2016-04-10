@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v3.0.1
+ * Name: Basis v3.1.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -7,8 +7,74 @@
  * License: GPLv2 or later
  */
 /* ========================================
- * variable
+ * function
  ======================================= */
+/* ========================================
+ * function
+ ======================================= */
+/**
+ * Return prefix for the device size
+ *
+ * @param   string  $size  sm|md|lg
+ * @return  string
+ */
+/**
+ * A little brighten
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * Brighten
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * To very brighten
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * A little darken
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * Darken
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * To very darken
+ *
+ * @param   hex  $hex
+ * @return  hex
+ */
+/**
+ * Return rem from px
+ * @param   rem  $rem
+ * @return  px
+ */
+/**
+ * Return greatest common divisor
+ *
+ * @param   int  $a  The number to be divided
+ * @param   int  $b  The number to divide
+ * @return  int  The number of the remainder
+ */
+/**
+ * Return numeric value that doesn't have the unit.
+ *
+ * @param   length  $value  numeric value
+ * @return  int
+ */
+/* ========================================
+* variable
+======================================= */
 /* ========================================
  * variables
  ======================================= */
@@ -101,79 +167,6 @@
  * @see  http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
  */
 /* ========================================
- * function
- ======================================= */
-/* ========================================
- * function
- ======================================= */
-/**
- * Return prefix for the device size
- *
- * @param   string  $size  sm|md|lg
- * @return  string
- */
-/**
- * A little brighten
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * Brighten
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * To very brighten
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * A little darken
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * Darken
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * To very darken
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * Return rem from px
- * @param   rem  $rem
- * @return  px
- */
-/**
- * Return greatest common divisor
- *
- * @param   int  $a  The number to be divided
- * @param   int  $b  The number to divide
- * @return  int  The number of the remainder
- */
-/**
- * Return numeric value that doesn't have the unit.
- *
- * @param   length  $value  numeric value
- * @return  int
- */
-/**
- * Return line height ( px ) for vertical rhythum
- *
- * @param   px   $value
- * @param   int  $coefficient
- * @return  int
- */
-/* ========================================
  * mixin
  ======================================= */
 /* ========================================
@@ -226,6 +219,13 @@
  * Return px and rem font-sizes
  *
  * @param  rem  $rem
+ */
+/**
+ * Return line height ( px ) for vertical rhythum
+ *
+ * @param   px   $value
+ * @param   int  $coefficient
+ * @return  int
  */
 /**
  * Return line-height for vertical rhythum
@@ -793,7 +793,7 @@ dd {
  * blockquote
  */
 blockquote {
-  border-left: 0.8rem solid #f8f8f8;
+  border-left: 0.8rem solid #dedede;
   margin-left: 0;
   padding: 1.6rem 0 1.6rem 1.6rem;
 }
@@ -803,7 +803,7 @@ blockquote :last-child {
 }
 
 blockquote footer {
-  color: #9c9c9c;
+  color: #a0a0a0;
   font-size: 90%;
 }
 
@@ -821,8 +821,8 @@ code {
  * pre
  */
 pre {
-  background-color: #f8f8f8;
-  border: 1px solid #dadada;
+  background-color: #fcfcfc;
+  border: 1px solid #dedede;
   border-radius: 3px;
   padding: 1.6rem;
 }
@@ -832,6 +832,13 @@ pre code {
   border: none;
   color: #333;
   padding: 0;
+}
+
+/**
+ * WAI-ARIA
+ */
+[aria-hidden="true"] {
+  display: none;
 }
 
 /* ========================================
@@ -846,7 +853,7 @@ pre code {
 ._c-alert {
   background-color: #fff;
   border-radius: 3px;
-  border: 1px solid #dadada;
+  border: 1px solid #dedede;
   display: block;
   margin-bottom: 2.4rem;
   padding: 1.6rem;
@@ -854,7 +861,7 @@ pre code {
 
 ._c-btn {
   background-color: #fff;
-  border: 1px solid #dadada;
+  border: 1px solid #dedede;
   color: #333;
   cursor: pointer;
   display: inline-block;
@@ -924,10 +931,19 @@ pre code {
  */
 ._c-form-control {
   background-color: #fff;
-  border: 1px solid #bbb;
+  border: 1px solid #bfbfbf;
   border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  padding: 0.8rem;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
+  padding: 0.6rem 1.2rem;
+}
+
+._c-form-control[disabled] {
+  background-color: #dedede;
+  cursor: not-allowed;
+}
+
+._c-form-control[readonly] {
+  background-color: #dedede;
 }
 
 textarea._c-form-control {
@@ -988,7 +1004,7 @@ label._c-checkbox, label._c-radio,
 
 ._c-input-group__addon {
   background-color: #eee;
-  border: 1px solid #bbb;
+  border: 1px solid #bfbfbf;
   color: #424242;
   padding: 0.8rem;
 }
@@ -1009,7 +1025,7 @@ label._c-checkbox, label._c-radio,
 }
 
 ._c-input-group__btn {
-  border-color: #bbb;
+  border-color: #bfbfbf;
 }
 
 ._c-container, ._c-container-fluid {
@@ -2812,13 +2828,13 @@ label._c-checkbox, label._c-radio,
   clear: both;
 }
 
-@media (max-width: 39em) {
+@media (max-width: 39.9375em) {
   ._u-hidden-sm {
     display: none !important;
   }
 }
 
-@media (min-width: 40em) and (max-width: 63em) {
+@media (min-width: 40em) and (max-width: 63.9375em) {
   ._u-hidden-md {
     display: none !important;
   }
@@ -2830,7 +2846,7 @@ label._c-checkbox, label._c-radio,
   }
 }
 
-@media (max-width: 39em) {
+@media (max-width: 39.9375em) {
   ._u-visible-sm-inline {
     display: inline !important;
   }
@@ -2842,7 +2858,7 @@ label._c-checkbox, label._c-radio,
   }
 }
 
-@media (min-width: 40em) and (max-width: 63em) {
+@media (min-width: 40em) and (max-width: 63.9375em) {
   ._u-visible-md-inline {
     display: inline !important;
   }

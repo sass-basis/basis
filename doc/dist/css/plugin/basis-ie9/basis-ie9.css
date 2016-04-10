@@ -158,13 +158,6 @@
  * @param   length  $value  numeric value
  * @return  int
  */
-/**
- * Return line height ( px ) for vertical rhythum
- *
- * @param   px   $value
- * @param   int  $coefficient
- * @return  int
- */
 /* ========================================
  * mixin
  ======================================= */
@@ -218,6 +211,13 @@
  * Return px and rem font-sizes
  *
  * @param  rem  $rem
+ */
+/**
+ * Return line height ( px ) for vertical rhythum
+ *
+ * @param   px   $value
+ * @param   int  $coefficient
+ * @return  int
  */
 /**
  * Return line-height for vertical rhythum

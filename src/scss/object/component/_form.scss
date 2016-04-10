@@ -5,8 +5,17 @@
 	background-color: #fff;
 	border: 1px solid $bs-color-gray;
 	border-radius: $bs-border-radius-l;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-	padding: $bs-font-size / 2;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
+	padding: ($bs-base-line-height / 4) ($bs-base-line-height / 2);
+
+	&[disabled] {
+		background-color: bs-lighter( $bs-color-gray );
+		cursor: not-allowed;
+	}
+
+	&[readonly] {
+		background-color: bs-lighter( $bs-color-gray );
+	}
 }
 
 textarea.#{$bs-prefix}c-form-control {
