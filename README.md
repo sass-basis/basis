@@ -78,6 +78,11 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### April 6, 2016 v3.1.0
+* Fixed hidden and visible classes bug.
+* Added styles of readonly, disabled and aria-hidden.
+* Changed blockquote and form-control styles.
+
 #### April 6, 2016 v3.0.1
 * Fixed grid margin.
 

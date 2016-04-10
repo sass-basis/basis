@@ -2,7 +2,7 @@
  * Break point for smartphone
  * @type  length
  */
-$bs-screen-sm-min: 0 !default;
+$bs-screen-sm-min: 0;
 
 /**
  * Break point for smartphone and tablet
@@ -10,7 +10,7 @@ $bs-screen-sm-min: 0 !default;
  * @type  length
  */
 $bs-screen-md-min: 40em !default;
-$bs-screen-sm-max: ($bs-screen-md-min - 1);
+$bs-screen-sm-max: ($bs-screen-md-min - (1em / bs-numeric( bs-rem2px( $bs-font-size ) )));
 
 /**
  * Break point for tablet and pc
@@ -18,7 +18,7 @@ $bs-screen-sm-max: ($bs-screen-md-min - 1);
  * @type  length
  */
 $bs-screen-lg-min: 64em !default;
-$bs-screen-md-max: ($bs-screen-lg-min - 1);
+$bs-screen-md-max: ($bs-screen-lg-min - (1em / bs-numeric( bs-rem2px( $bs-font-size ) )));
 
 /**
  * Array of breakpoints
