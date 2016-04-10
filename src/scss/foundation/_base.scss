@@ -148,3 +148,10 @@ pre {
 		padding: 0;
 	}
 }
+
+/**
+ * WAI-ARIA
+ */
+[aria-hidden="true"] {
+	display: none;
+}
