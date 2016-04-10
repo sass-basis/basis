@@ -108,7 +108,7 @@ dd {
  * blockquote
  */
 blockquote {
-	border-left: ($bs-font-size / 2) solid bs-lightest( $bs-color-gray );
+	border-left: ($bs-font-size / 2) solid bs-lighter( $bs-color-gray );
 	margin-left: 0;
 	padding: $bs-font-size 0 $bs-font-size $bs-font-size;
 
