@@ -25,6 +25,10 @@
 		}
 	}
 
+	&--nowrap {
+		flex-wrap: nowrap;
+	}
+
 	@each $bs-size, $bs-screen-min in $bs-sizes {
 		@include bs-bp-min( $bs-screen-min ) {
 			$prefix: bs-bp-prefix( $bs-size );
