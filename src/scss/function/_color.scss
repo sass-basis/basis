@@ -5,7 +5,7 @@
  * @return  hex
  */
 @function bs-light( $hex ) {
-	@return lighten( $hex, 6% );
+	@return lighten( $hex, 20% );
 }
 
 /**
@@ -15,7 +15,7 @@
  * @return  hex
  */
 @function bs-lighter( $hex ) {
-	@return lighten( $hex, 12% );
+	@return lighten( $hex, 33.5% );
 }
 
 /**
@@ -25,7 +25,7 @@
  * @return  hex
  */
 @function bs-lightest( $hex ) {
-	@return lighten( $hex, 24% );
+	@return lighten( $hex, 37% );
 }
 
 /**
@@ -35,7 +35,7 @@
  * @return  hex
  */
 @function bs-dark( $hex ) {
-	@return darken( $hex, 6% );
+	@return darken( $hex, 20% );
 }
 
 /**
@@ -45,7 +45,7 @@
  * @return  hex
  */
 @function bs-darker( $hex ) {
-	@return darken( $hex, 12% );
+	@return darken( $hex, 33.5% );
 }
 
 /**
@@ -55,5 +55,5 @@
  * @return  hex
  */
 @function bs-darkest( $hex ) {
-	@return  darken( $hex, 24% );
+	@return darken( $hex, 37% );
 }

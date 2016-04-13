@@ -3,7 +3,7 @@
  */
 .#{$bs-prefix}c-form-control {
 	background-color: #fff;
-	border: 1px solid $bs-color-gray;
+	border: 1px solid bs-light( $bs-color-gray );
 	border-radius: $bs-border-radius-l;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
 	padding: ($bs-base-line-height / 4) ($bs-base-line-height / 2);
@@ -72,7 +72,7 @@ label.#{$bs-prefix}c-checkbox, label.#{$bs-prefix}c-radio,
 
 	&__addon {
 		background-color: #eee;
-		border: 1px solid $bs-color-gray;
+		border: 1px solid bs-light( $bs-color-gray );
 		color: bs-light( $bs-color-text );
 		padding: $bs-font-size / 2;
 	}
@@ -91,6 +91,6 @@ label.#{$bs-prefix}c-checkbox, label.#{$bs-prefix}c-radio,
 	}
 
 	&__btn {
-		border-color: $bs-color-gray;
+		border-color: bs-light( $bs-color-gray );
 	}
 }
