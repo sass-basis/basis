@@ -5,6 +5,17 @@
 $bs-font-size: 1.6rem !default;
 
 /**
+ * Heading element font size scale;
+ * @type  int
+ */
+$bs-h1-font-size-scale: 3   !default;
+$bs-h2-font-size-scale: 2.5 !default;
+$bs-h3-font-size-scale: 2   !default;
+$bs-h4-font-size-scale: 1.5 !default;
+$bs-h5-font-size-scale: 1   !default;
+$bs-h6-font-size-scale: 1   !default;
+
+/**
  * Between the character and line of line-height
  * @type  rem
  */

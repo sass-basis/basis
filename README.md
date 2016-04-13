@@ -83,6 +83,8 @@ Pull request sent to the master branch doesn't merge.
 * Added `._c-row--nowrap` class.
 * Changed color settings.
 * Added the coefficient variable for margin.
+* Added the heading element scale variable.
+* Added mixin `bs-font-size-line-height`
 
 #### April 6, 2016 v3.1.0
 * Fixed hidden and visible classes bug.

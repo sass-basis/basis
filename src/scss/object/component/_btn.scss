@@ -4,8 +4,7 @@
 	color: $bs-color-text;
 	cursor: pointer;
 	display: inline-block;
-	@include bs-font-size( $bs-font-size );
-	line-height: $bs-base-line-height;
+	@include bs-font-size-line-height( $bs-font-size );
 	padding: ($bs-font-size / 2) ($bs-font-size * 2);
 	text-align: center;
 	text-decoration: none;

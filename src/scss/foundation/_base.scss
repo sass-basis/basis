@@ -16,8 +16,7 @@ html {
 body {
 	color: $bs-color-text;
 	font-family: $bs-font-family;
-	@include bs-font-size( $bs-font-size );
-	@include bs-line-height( $bs-font-size );
+	@include bs-font-size-line-height( $bs-font-size );
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -51,41 +50,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	@include bs-font-size( $bs-font-size * 3 );
-	@include bs-line-height( $bs-font-size * 3 );
+	@include bs-font-size-line-height( $bs-font-size * $bs-h1-font-size-scale );
 	margin-top: 0;
 	@include bs-margin-bottom( 2 );
 }
 
 h2 {
-	@include bs-font-size( $bs-font-size * 2.5 );
-	@include bs-line-height( $bs-font-size * 2.5 );
+	@include bs-font-size-line-height( $bs-font-size * $bs-h2-font-size-scale );
 	@include bs-margin-top( 2 );
 	@include bs-margin-bottom( 1 );
 }
 
 h3 {
-	@include bs-font-size( $bs-font-size * 2 );
-	@include bs-line-height( $bs-font-size * 2 );
+	@include bs-font-size-line-height( $bs-font-size * $bs-h3-font-size-scale );
 	@include bs-margin-top( 2 );
 	@include bs-margin-bottom( 1 );
 }
 
 h4 {
-	@include bs-font-size( $bs-font-size * 1.5 );
-	@include bs-line-height( $bs-font-size * 1.5 );
+	@include bs-font-size-line-height( $bs-font-size * $bs-h4-font-size-scale );
 	@include bs-margin-top( 2 );
 	@include bs-margin-bottom( 1 );
 }
 
 h5 {
-	@include bs-font-size( $bs-font-size );
+	@include bs-font-size-line-height( $bs-font-size * $bs-h5-font-size-scale );
 	@include bs-margin-top( 1 );
 	@include bs-margin-bottom( .5 );
 }
 
 h6 {
-	@include bs-font-size( $bs-font-size );
+	@include bs-font-size-line-height( $bs-font-size * $bs-h6-font-size-scale );
 	@include bs-margin-top( 1 );
 	@include bs-margin-bottom( .5 );
 }
