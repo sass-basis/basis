@@ -82,6 +82,7 @@ Pull request sent to the master branch doesn't merge.
 * Fixed a grid margin bug.
 * Added `._c-row--nowrap` class.
 * Changed color settings.
+* Added the coefficient variable for margin.
 
 #### April 6, 2016 v3.1.0
 * Fixed hidden and visible classes bug.

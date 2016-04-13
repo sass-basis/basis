@@ -40,7 +40,7 @@ img {
  */
 p, ul, ol, dl, table, pre, blockquote {
 	margin-top: 0;
-	margin-bottom: $bs-base-line-height;
+	@include bs-margin-bottom( 1 );
 }
 
 /**
@@ -54,40 +54,40 @@ h1 {
 	@include bs-font-size( $bs-font-size * 3 );
 	@include bs-line-height( $bs-font-size * 3 );
 	margin-top: 0;
-	margin-bottom: $bs-base-line-height * 2;
+	@include bs-margin-bottom( 2 );
 }
 
 h2 {
 	@include bs-font-size( $bs-font-size * 2.5 );
 	@include bs-line-height( $bs-font-size * 2.5 );
-	margin-top: $bs-base-line-height * 2;
-	margin-bottom: $bs-base-line-height;
+	@include bs-margin-top( 2 );
+	@include bs-margin-bottom( 1 );
 }
 
 h3 {
 	@include bs-font-size( $bs-font-size * 2 );
 	@include bs-line-height( $bs-font-size * 2 );
-	margin-top: $bs-base-line-height * 2;
-	margin-bottom: $bs-base-line-height;
+	@include bs-margin-top( 2 );
+	@include bs-margin-bottom( 1 );
 }
 
 h4 {
 	@include bs-font-size( $bs-font-size * 1.5 );
 	@include bs-line-height( $bs-font-size * 1.5 );
-	margin-top: $bs-base-line-height * 2;
-	margin-bottom: $bs-base-line-height;
+	@include bs-margin-top( 2 );
+	@include bs-margin-bottom( 1 );
 }
 
 h5 {
 	@include bs-font-size( $bs-font-size );
-	margin-top: $bs-base-line-height;
-	margin-bottom: $bs-font-size * .5;
+	@include bs-margin-top( 1 );
+	@include bs-margin-bottom( .5 );
 }
 
 h6 {
 	@include bs-font-size( $bs-font-size );
-	margin-top: $bs-base-line-height;
-	margin-bottom: $bs-font-size * .5;
+	@include bs-margin-top( 1 );
+	@include bs-margin-bottom( .5 );
 }
 
 /**

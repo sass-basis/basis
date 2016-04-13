@@ -17,6 +17,12 @@ $bs-between-lines: .4rem !default;
 $bs-base-line-height: ($bs-font-size + $bs-between-lines * 2) !default;
 
 /**
+ * Margin coefficient
+ * @type  int
+ */
+$bs-margin-coefficient: 1 !default;
+
+/**
  * Default font family
  * @type  string
  */

@@ -1,8 +1,7 @@
 .#{$bs-prefix}c-alert {
 	background-color: #fff;
 	border-radius: $bs-border-radius-m;
-	border: 1px solid bs-light($bs-color-gray);
+	border: 1px solid bs-light( $bs-color-gray );
 	display: block;
-	margin-bottom: $bs-base-line-height;
 	padding: $bs-font-size;
 }
