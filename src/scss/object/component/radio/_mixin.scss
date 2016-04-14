@@ -1,13 +1,20 @@
 // @import '../../../core/core';
 
+/**
+ * Radio component
+ *
+ * .c-radio {
+ *     @include bs-c-radio();
+ * }
+ *
+ * <span class="c-radio">
+ *     <input type="radio" />
+ * </span>
+ */
 @mixin bs-c-radio() {
 	$bs-c-radio-margin: ($bs-font-size / 2) !default;
 
 	display: inline-block;
-
-	&--block {
-		display: block;
-	}
 
 	[type="radio"] {
 		margin-right: $bs-c-radio-margin;
