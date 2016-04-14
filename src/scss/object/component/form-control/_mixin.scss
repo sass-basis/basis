@@ -1,5 +1,14 @@
 // @import '../../../core/core';
 
+/**
+ * Form control component
+ *
+ * .c-form-control {
+ *     @include bs-c-form-control();
+ * }
+ *
+ * <input type="text" class="c-form-control" />
+ */
 @mixin bs-c-form-control {
 	$bs-c-form-control-border-color: bs-light($bs-color-gray) !default;
 	$bs-c-form-control-border-radius: $bs-border-radius !default;
