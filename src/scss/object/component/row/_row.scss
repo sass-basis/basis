@@ -1,0 +1,8 @@
+$bs-prefix: '' !default;
+
+.#{$bs-prefix}c-row {
+	@if (mixin-exists(bs-c-row) == false) {
+		@import 'mixin';
+	}
+	@include bs-c-row();
+}

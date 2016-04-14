@@ -1,8 +1,0 @@
-/**
- * Return rem from px
- * @param   rem  $rem
- * @return  px
- */
-@function bs-rem2px( $rem ) {
-	@return bs-numeric( $rem ) * 10px;
-}

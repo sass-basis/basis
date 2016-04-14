@@ -1,0 +1,13 @@
+$bs-prefix: '' !default;
+
+.#{$bs-prefix}c-form-control {
+	@if (mixin-exists(bs-c-form-control) == false) {
+		@import 'mixin';
+	}
+	@include bs-c-form-control();
+}
+
+textarea.#{$bs-prefix}c-form-control {
+	height: auto;
+	width: 100%;
+}

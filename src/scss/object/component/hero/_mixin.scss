@@ -1,0 +1,53 @@
+// @import '../../../core/core';
+
+@mixin bs-c-hero() {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: relative;
+
+	&--full {
+		height: 100vh;
+	}
+
+	&--cover {
+		background-size: cover;
+		background-position: 50% 50%;
+	}
+
+	&--overlay {
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-color: rgba( 0, 0, 0, .7 );
+		}
+	}
+
+	&--fixed {
+		@include bs-bp-min($bs-screen-lg-min) {
+			background-attachment: fixed;
+		}
+	}
+
+	&__header, &__content, &__footer {
+		flex: 0 1 100%;
+		max-width: 100%;
+		position: relative;
+	}
+
+	&__header {
+		align-self: flex-start;
+	}
+
+	&__content {
+		align-self: center;
+	}
+
+	&__footer {
+		align-self: flex-end;
+	}
+}

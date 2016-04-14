@@ -1,0 +1,8 @@
+$bs-prefix: '' !default;
+
+.#{$bs-prefix}c-btn {
+	@if (mixin-exists(bs-c-btn) == false) {
+		@import 'mixin';
+	}
+	@include bs-c-btn();
+}

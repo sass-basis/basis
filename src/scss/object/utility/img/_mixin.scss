@@ -1,0 +1,7 @@
+// @import '../../../core/core';
+
+@mixin bs-u-img() {
+	&-2x {
+		zoom: 0.5 !important;
+	}
+}

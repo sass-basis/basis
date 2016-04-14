@@ -1,0 +1,47 @@
+// @import '../../../core/core';
+
+@mixin bs-c-input-group() {
+	$bs-c-input-group-border-radius: $bs-border-radius !default;
+	$bs-c-input-group-border-color: bs-light($bs-color-gray) !default;
+	$bs-c-input-group-addon-background-color: bs-lighter($bs-color-gray) !default;
+	$bs-c-input-group-addon-padding: ($bs-font-size / 2) !default;
+
+	border-radius: $bs-c-input-group-border-radius;
+	display: flex;
+
+	* {
+		height: auto;
+	}
+
+	:first-child {
+		border-radius: $bs-c-input-group-border-radius 0 0 $bs-c-input-group-border-radius;
+	}
+
+	:last-child {
+		border-radius: 0 $bs-c-input-group-border-radius $bs-c-input-group-border-radius 0;
+	}
+
+	&__addon {
+		background-color: $bs-c-input-group-addon-background-color;
+		border: 1px solid $bs-c-input-group-border-color;
+		padding: $bs-c-input-group-addon-padding;
+	}
+
+	&__field {
+		border-color: $bs-c-input-group-border-color;
+		border-radius: 0;
+		flex: 1;
+
+		&:not(:last-child) {
+			border-right: 0;
+		}
+
+		&:not(:first-child) {
+			border-left: 0;
+		}
+	}
+
+	&__btn {
+		border-color: $bs-c-input-group-border-color;
+	}
+}

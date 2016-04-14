@@ -1,0 +1,9 @@
+// @import '../../../core/core';
+
+@mixin bs-c-container() {
+	$bs-c-container-max-width: 75em !default;
+
+	@include bs-bp-min($bs-screen-lg-min) {
+		max-width: $bs-c-container-max-width;
+	}
+}

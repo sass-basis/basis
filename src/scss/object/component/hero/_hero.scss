@@ -1,0 +1,8 @@
+$bs-prefix: '' !default;
+
+.#{$bs-prefix}c-hero {
+	@if (mixin-exists(bs-c-hero) == false) {
+		@import 'mixin';
+	}
+	@include bs-c-hero();
+}

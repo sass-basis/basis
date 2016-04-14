@@ -1,0 +1,24 @@
+%bs-c-container {
+	$bs-container-margin: 24px !default;
+
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: $bs-container-margin;
+	padding-left: $bs-container-margin;
+	overflow: hidden;
+}
+
+$bs-prefix: '' !default;
+
+.#{$bs-prefix}c-container-fluid {
+	@extend %bs-c-container;
+}
+
+.#{$bs-prefix}c-container {
+	@extend %bs-c-container;
+
+	@if (mixin-exists(bs-c-container) == false) {
+		@import 'mixin';
+	}
+	@include bs-c-container();
+}

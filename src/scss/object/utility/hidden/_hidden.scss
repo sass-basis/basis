@@ -1,0 +1,8 @@
+$bs-prefix: '' !default;
+
+.#{$bs-prefix}u-hidden {
+	@if (mixin-exists(bs-u-hidden) == false) {
+		@import 'mixin';
+	}
+	@include bs-u-hidden();
+}

@@ -1,0 +1,199 @@
+// @import '../../../core/core';
+@import 'function/function';
+
+/**
+ * Adding margin for the row
+ *
+ * @param  length  $margin  margin size
+ */
+@mixin bs-row-margin($margin) {
+	margin-right: ($margin / 2 * -1);
+	margin-left: ($margin / 2 * -1);
+	margin-bottom: ($margin * -1);
+}
+
+/**
+ * Adding margin for the column
+ *
+ * @param  length  $margin  margin size
+ */
+@mixin bs-col-margin($margin) {
+	padding-right: ($margin / 2);
+	padding-left: ($margin / 2);
+	margin-bottom: $margin;
+}
+
+@mixin bs-c-row() {
+	$bs-prefix: '' !default;
+	$bs-col-margin: 24px !default;
+	$bs-col-margin-s: 12px !default;
+	$bs-col-margin-l: 48px !default;
+	$bs-min-columns: 1 !default;
+	$bs-max-columns: 12 !default;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	&--auto {
+		> .#{$bs-prefix}c-row__col {
+			flex: auto;
+		}
+	}
+
+	&--nowrap {
+		flex-wrap: nowrap;
+	}
+
+	@each $size, $screen-min in $bs-sizes {
+		@include bs-bp-min( $screen-min ) {
+			$prefix: bs-bp-prefix( $size );
+
+			&#{$prefix}-left {
+				justify-content: flex-start;
+			}
+
+			&#{$prefix}-right {
+				justify-content: flex-end;
+			}
+
+			&#{$prefix}-center {
+				justify-content: center;
+			}
+
+			&#{$prefix}-between {
+				justify-content: space-between;
+			}
+
+			&#{$prefix}-around {
+				justify-content: space-around;
+			}
+
+			&#{$prefix}-top {
+				align-items: flex-start;
+			}
+
+			&#{$prefix}-bottom {
+				align-items: flex-end;
+			}
+
+			&#{$prefix}-middle {
+				align-items: center;
+			}
+
+			&#{$prefix}-baseline {
+				align-items: baseline;
+			}
+
+			&#{$prefix}-collapse {
+				@include bs-row-margin(0);
+
+				> .#{$bs-prefix}c-row__col {
+					@include bs-col-margin(0);
+				}
+			}
+
+			&#{$prefix}-margin {
+				@include bs-row-margin($bs-col-margin);
+
+				> .#{$bs-prefix}c-row__col {
+					@include bs-col-margin($bs-col-margin);
+				}
+
+				&-s {
+					@include bs-row-margin($bs-col-margin-s);
+
+					> .#{$bs-prefix}c-row__col {
+						@include bs-col-margin($bs-col-margin-s);
+					}
+				}
+
+				&-l {
+					@include bs-row-margin($bs-col-margin-l);
+
+					> .#{$bs-prefix}c-row__col {
+						@include bs-col-margin($bs-col-margin-l);
+					}
+				}
+			}
+
+			&#{$prefix}-fill {
+				> .#{$bs-prefix}c-row__col {
+					display: flex;
+
+					> * {
+						$width: 100%;
+						flex: 0 1 $width;
+						max-width: $width;
+					}
+				}
+			}
+
+			@for $max_columns from $bs-min-columns through $bs-max-columns {
+				@for $i from 1 through $max_columns {
+					$gcd: bs-gcd( $i, $max_columns );
+
+					.#{$bs-prefix}c-row__col#{$prefix}-#{$i}-#{$max_columns} {
+						@if $i != $max_columns {
+							@extend %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
+						} @else {
+							@extend %bs-item#{$prefix}-full;
+						}
+					}
+				}
+			}
+
+			@for $max_columns from 1 through $bs-max-columns {
+				@for $i from 1 through $max_columns {
+					$gcd: bs-gcd( $i, $max_columns );
+
+					@if $gcd == 1 {
+						%bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
+							$width: percentage($i / $max_columns);
+							flex: 0 1 $width;
+							max-width: $width;
+						}
+					}
+				}
+			}
+
+			%bs-item#{$prefix}-full {
+				$width: 100%;
+				flex: 0 1 $width;
+				max-width: $width;
+			}
+
+			.#{$bs-prefix}c-row__col#{$prefix}-offset-0 {
+				margin-left: 0;
+			}
+
+			@for $max_columns from $bs-min-columns through $bs-max-columns {
+				@for $i from 1 through $max_columns {
+					@if $i < $max_columns {
+						$gcd: bs-gcd( $i, $max_columns );
+
+						.#{$bs-prefix}c-row__col#{$prefix}-offset-#{$i}-#{$max_columns} {
+							@extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
+						}
+					}
+				}
+			}
+
+			@for $max_columns from 1 through $bs-max-columns {
+				@for $i from 1 through $max_columns {
+					$gcd: bs-gcd( $i, $max_columns );
+
+					@if $gcd == 1 {
+						%bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
+							margin-left: percentage($i / $max_columns);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__col {
+		flex: 1;
+		max-width: 100%;
+	}
+}

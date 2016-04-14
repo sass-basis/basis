@@ -1,0 +1,8 @@
+$bs-prefix: '' !default;
+
+.#{$bs-prefix}u-animate {
+	@if (mixin-exists(bs-u-animate) == false) {
+		@import 'mixin';
+	}
+	@include bs-u-animate();
+}

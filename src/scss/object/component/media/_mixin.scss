@@ -1,0 +1,34 @@
+// @import '../../../core/core';
+
+@mixin bs-c-media() {
+	$bs-c-media-margin: $bs-base-line-height !default;
+
+	display: flex;
+
+	&--middle {
+		align-items: center;
+	}
+
+	&__figure {
+		margin-right: $bs-c-media-margin;
+
+		.#{$bs-prefix}c-media--reverse & {
+			margin-right: 0;
+			margin-left: $bs-c-media-margin;
+			order: 1;
+		}
+
+		> * {
+			vertical-align: top;
+			margin-top: 0.4rem;
+		}
+	}
+
+	&__body {
+		flex: 1;
+
+		> .#{$bs-prefix}c-media {
+			margin-top: $bs-c-media-margin;
+		}
+	}
+}
