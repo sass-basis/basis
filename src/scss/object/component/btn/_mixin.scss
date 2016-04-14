@@ -6,6 +6,8 @@
  * .c-btn {
  *     @include bs-c-btn();
  * }
+ *
+ * <a class="c-btn">btn</a>
  */
 @mixin bs-c-btn {
 	$bs-c-btn-border-color: bs-light($bs-color-gray) !default;
