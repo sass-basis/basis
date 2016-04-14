@@ -1,5 +1,12 @@
 // @import '../../../core/core';
 
+/**
+ * Button component
+ *
+ * .c-btn {
+ *     @include bs-c-btn();
+ * }
+ */
 @mixin bs-c-btn {
 	$bs-c-btn-border-color: bs-light($bs-color-gray) !default;
 	$bs-c-btn-text-color: $bs-color-text !default;
@@ -16,14 +23,4 @@
 	vertical-align: middle;
 	white-space: nowrap;
 	overflow: hidden;
-
-	&--block {
-		display: block;
-	}
-
-	&--ghost {
-		background-color: transparent;
-		border-color: #fff;
-		color: #fff;
-	}
 }
