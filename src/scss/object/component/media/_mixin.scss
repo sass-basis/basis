@@ -1,34 +1,43 @@
 // @import '../../../core/core';
 
+/**
+ * Media component
+ *
+ * .c-media {
+ *     @include bs-c-media();
+ *     &__figure {
+ *         @include bs-c-media__figure();
+ *     }
+ *     &__body {
+ *         @include bs-c-media__body();
+ *     }
+ * }
+ *
+ * <div class="c-media">
+ *    <div class="c-media__figure">
+ *        <img ... />
+ *    </div>
+ *    <div class="c-media__body">
+ *        ...
+ *    </div>
+ * </div>
+ */
+
+$bs-c-media-margin: $bs-base-line-height !default;
+
 @mixin bs-c-media() {
-	$bs-c-media-margin: $bs-base-line-height !default;
-
 	display: flex;
+}
 
-	&--middle {
-		align-items: center;
+@mixin bs-c-media__figure() {
+	margin-right: $bs-c-media-margin;
+
+	> * {
+		vertical-align: top;
+		margin-top: 0.4rem;
 	}
+}
 
-	&__figure {
-		margin-right: $bs-c-media-margin;
-
-		.#{$bs-prefix}c-media--reverse & {
-			margin-right: 0;
-			margin-left: $bs-c-media-margin;
-			order: 1;
-		}
-
-		> * {
-			vertical-align: top;
-			margin-top: 0.4rem;
-		}
-	}
-
-	&__body {
-		flex: 1;
-
-		> .#{$bs-prefix}c-media {
-			margin-top: $bs-c-media-margin;
-		}
-	}
+@mixin bs-c-media__body() {
+	flex: 1;
 }
