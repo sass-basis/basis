@@ -1,5 +1,17 @@
 // @import '../../../core/core';
 
+/**
+ * Clearfix helper
+ *
+ * .clerfix {
+ *     @include bs-u-clearfix();
+ * }
+ *
+ * <div class="clearfix">
+ *     <img style="float: right" />
+ *     ....
+ * </div>
+ */
 @mixin bs-u-clearfix() {
 	&:before, &:after {
 		content: " ";
