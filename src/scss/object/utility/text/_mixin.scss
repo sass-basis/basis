@@ -1,15 +1,46 @@
 // @import '../../../core/core';
 
-@mixin bs-u-text() {
-	&-center {
-		text-align: center !important;
-	}
+/**
+ * Text center helper
+ *
+ * .u-text-center {
+ *     @include bs-u-text-center();
+ * }
+ *
+ * <div class="u-text-center">
+ *     ...
+ * </div>
+ */
+@mixin bs-u-text-center() {
+	text-align: center !important;
+}
 
-	&-right {
-		text-align: right !important;
-	}
+/**
+ * Text right helper
+ *
+ * .u-text-right {
+ *     @include bs-u-text-right();
+ * }
+ *
+ * <div class="u-text-right">
+ *     ...
+ * </div>
+ */
+@mixin bs-u-text-right() {
+	text-align: right !important;
+}
 
-	&-left {
-		text-align: left !important;
-	}
+/**
+ * Text left helper
+ *
+ * .u-text-left {
+ *     @include bs-u-text-left();
+ * }
+ *
+ * <div class="u-text-left">
+ *     ...
+ * </div>
+ */
+@mixin bs-u-text-left() {
+	text-align: left !important;
 }
