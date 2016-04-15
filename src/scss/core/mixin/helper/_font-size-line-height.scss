@@ -1,0 +1,13 @@
+/**
+ * Return px and rem font-sizes and line-height for vertical rhythum
+ *
+ * @param  rem  $rem
+ *
+ * h1 {
+ *     @include bs-font-size-line-height( 2.4rem );
+ * }
+ */
+@mixin bs-font-size-line-height( $rem ) {
+	@include bs-font-size( $rem );
+	@include bs-line-height( $rem );
+}

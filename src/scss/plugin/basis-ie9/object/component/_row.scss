@@ -10,8 +10,8 @@
 	}
 
 	@each $bs-size, $bs-screen-min in $bs-sizes {
-		@include bs-bp-min( $bs-screen-min ) {
-			$prefix: bs-bp-prefix( $bs-size );
+		@include bs-bp-min($bs-screen-min) {
+			$prefix: bs-bp-prefix($bs-size);
 
 			&#{$prefix}-row {
 				// Not supported.
@@ -67,7 +67,7 @@
 
 			@for $max_columns from 1 through 12 {
 				@for $i from 1 through $max_columns {
-					$gcd: bs-gcd( $i, $max_columns );
+					$gcd: bs-gcd($i, $max_columns);
 
 					.#{$bs-prefix}c-row__col#{$prefix}-#{$i}-#{$max_columns} {
 						@if $i != $max_columns {
@@ -81,7 +81,7 @@
 
 			@for $max_columns from 2 through 12 {
 				@for $i from 1 through $max_columns {
-					$gcd: bs-gcd( $i, $max_columns );
+					$gcd: bs-gcd($i, $max_columns);
 
 					@if $gcd == 1 {
 						%bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
@@ -98,7 +98,7 @@
 	}
 
 	&__col {
-		font-size: bs-rem2px( $bs-font-size );
+		font-size: bs-rem2px($bs-font-size);
 		display: inline-block;
 		text-align: left;
 		vertical-align: top;

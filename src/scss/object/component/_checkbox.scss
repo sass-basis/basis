@@ -1,0 +1,7 @@
+.#{$bs-prefix}c-checkbox {
+	@include bs-c-checkbox();
+
+	&--block {
+		display: block;
+	}
+}

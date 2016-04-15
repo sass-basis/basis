@@ -1,9 +1,0 @@
-/**
- * Return px and rem font-sizes and line-height for vertical rhythum
- *
- * @param  rem  $rem
- */
-@mixin bs-font-size-line-height( $rem ) {
-	@include bs-font-size( $rem );
-	@include bs-line-height( $rem );
-}

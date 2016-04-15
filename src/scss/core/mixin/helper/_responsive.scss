@@ -1,0 +1,60 @@
+/**
+ * Return min-width media query
+ *
+ * @param   length  $min  width
+ * @return  string  min-width media query
+ */
+@mixin bs-bp-min($min) {
+	@if ($min == $bs-screen-sm-min) {
+		@content;
+	} @else {
+		@media (min-width: $min) {
+			@content;
+		}
+	}
+}
+
+/**
+ * Return max-width media query
+ *
+ * @param   length  $max  width
+ * @return  string  max-width media query
+ */
+@mixin bs-bp-max($max) {
+	@media (max-width: $max) {
+		@content;
+	}
+}
+
+/**
+ * Return media query for smartphone size
+ *
+ * @return  length  media query
+ */
+@mixin bs-bp-sm-only() {
+	@media (max-width: $bs-screen-sm-max) {
+		@content;
+	}
+}
+
+/**
+ * Return media query for tablet size
+ *
+ * @return  length  media query
+ */
+@mixin bs-bp-md-only() {
+	@media (min-width: $bs-screen-md-min) and (max-width: $bs-screen-md-max) {
+		@content;
+	}
+}
+
+/**
+ * Return media query for pc size
+ *
+ * @return  string  media query
+ */
+@mixin bs-bp-lg-only() {
+	@media (min-width: $bs-screen-lg-min) {
+		@content;
+	}
+}

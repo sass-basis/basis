@@ -1,8 +1,0 @@
-$bs-prefix: '' !default;
-
-.#{$bs-prefix}u-clearfix {
-	@if (mixin-exists(bs-u-clearfix) == false) {
-		@import 'mixin';
-	}
-	@include bs-u-clearfix();
-}

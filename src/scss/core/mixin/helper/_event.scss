@@ -1,0 +1,14 @@
+/**
+ * Event helper
+ *
+ * img {
+ *     @bs-hover() {
+ *         opacity: .8;
+ *     }
+ * }
+ */
+@mixin bs-hover() {
+	&:hover, &:active, &:focus {
+		@content;
+	}
+}

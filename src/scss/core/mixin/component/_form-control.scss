@@ -1,0 +1,30 @@
+/**
+ * Form control component
+ *
+ * .c-form-control {
+ *     @include bs-c-form-control();
+ * }
+ *
+ * <input type="text" class="c-form-control" />
+ */
+@mixin bs-c-form-control {
+	$bs-c-form-control-border-color: bs-light($bs-color-gray) !default;
+	$bs-c-form-control-border-radius: $bs-border-radius !default;
+	$bs-c-form-control-padding: ($bs-base-line-height / 4) ($bs-base-line-height / 2) !default;
+	$bs-c-form-control-disabled-background-color: bs-lighter($bs-color-gray) !default;
+
+	background-color: #fff;
+	border: 1px solid $bs-c-form-control-border-color;
+	border-radius: $bs-c-form-control-border-radius;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
+	padding: $bs-c-form-control-padding;
+
+	&[disabled] {
+		background-color: $bs-c-form-control-disabled-background-color;
+		cursor: not-allowed;
+	}
+
+	&[readonly] {
+		background-color: $bs-c-form-control-disabled-background-color;
+	}
+}

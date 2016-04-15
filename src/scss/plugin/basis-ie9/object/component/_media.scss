@@ -1,5 +1,5 @@
 .#{$bs-prefix}c-media {
-	@include bs-u-clearfix();
+	@include bs-clearfix();
 
 	&--middle {
 		// Not Supported.
