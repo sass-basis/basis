@@ -9,14 +9,15 @@
  *     ...
  * </alert>
  */
-@mixin bs-c-alert() {
-	$bs-c-alert-border-radius: $bs-border-radius !default;
-	$bs-c-alert-border-color: bs-light($bs-color-gray) !default;
-	$bs-c-alert-padding: $bs-font-size !default;
 
+$bs-c-alert-border-radius: $bs-border-radius !default;
+$bs-c-alert-border: 1px solid bs-light($bs-color-gray) !default;
+$bs-c-alert-padding: $bs-font-size !default;
+
+@mixin bs-c-alert() {
 	background-color: #fff;
 	border-radius: $bs-c-alert-border-radius;
-	border: 1px solid $bs-c-alert-border-color;
+	border: $bs-c-alert-border;
 	display: block;
 	padding: $bs-c-alert-padding;
 }

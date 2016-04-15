@@ -4,7 +4,7 @@
  * @param   length             $px        bounce size
  * @param   second|milisecond  $delay: 0  animate time
  */
-@mixin bs-bounce-vertical( $px, $delay: 0 ) {
+@mixin bs-bounce-vertical($px, $delay: 0) {
 	position: relative;
 	animation: bs-bounce-vertical-#{$px} $delay;
 
@@ -70,7 +70,7 @@
  * @param   float              $px        bounce size
  * @param   second|milisecond  $delay: 0  animate time
  */
-@mixin bs-bounce-scale( $float, $delay: 0 ) {
+@mixin bs-bounce-scale($float, $delay: 0) {
 	$suffix: bs-strip-unit(percentage($float));
 	animation: bs-bounce-scale-#{$suffix} $delay ease-out;
 	$scale: ($float - 1);

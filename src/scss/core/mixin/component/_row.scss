@@ -4,7 +4,7 @@
  * @param   string  $size  sm|md|lg
  * @return  string
  */
-@function bs-bp-prefix( $size ) {
+@function bs-bp-prefix($size) {
 	$prefix: '-';
 
 	@if $size != 'sm' {
@@ -20,7 +20,7 @@
  * @param   int  $b  The number to divide
  * @return  int  The number of the remainder
  */
-@function bs-gcd( $a, $b ) {
+@function bs-gcd($a, $b) {
 	$r: $a % $b;
 	@while $r != 0 {
 		$a: $b;
@@ -74,6 +74,7 @@
  *    </div>
  * </div>
  */
+
 $bs-col-margin: $bs-base-line-height !default;
 $bs-col-margin-s: ($bs-base-line-height / 2) !default;
 $bs-col-margin-l: ($bs-base-line-height * 2) !default;
