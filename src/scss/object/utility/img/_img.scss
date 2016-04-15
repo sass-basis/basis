@@ -1,8 +1,8 @@
 $bs-prefix: '' !default;
 
-.#{$bs-prefix}u-img {
-	@if (mixin-exists(bs-u-img) == false) {
+.#{$bs-prefix}u-img-2x {
+	@if (mixin-exists(bs-u-2x) == false) {
 		@import 'mixin';
 	}
-	@include bs-u-img();
+	@include bs-u-2x();
 }
