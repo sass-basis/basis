@@ -1,8 +1,61 @@
 $bs-prefix: '' !default;
 
 .#{$bs-prefix}u-visible {
-	@if (mixin-exists(bs-u-visible) == false) {
+	@if (mixin-exists(bs-u-visible-inline) == false) {
 		@import 'mixin';
 	}
-	@include bs-u-visible();
+
+	&-sm-inline {
+		@include bs-bp-sm-only() {
+			@include bs-u-visible-inline();
+		}
+	}
+
+	&-sm-inline-block {
+		@include bs-bp-sm-only() {
+			@include bs-u-visible-inline-block();
+		}
+	}
+
+	&-sm-block {
+		@include bs-bp-sm-only() {
+			@include bs-u-visible-block();
+		}
+	}
+
+	&-md-inline {
+		@include bs-bp-md-only() {
+			@include bs-u-visible-inline();
+		}
+	}
+
+	&-md-inline-block {
+		@include bs-bp-md-only() {
+			@include bs-u-visible-inline-block();
+		}
+	}
+
+	&-md-block {
+		@include bs-bp-md-only() {
+			@include bs-u-visible-block();
+		}
+	}
+
+	&-lg-inline {
+		@include bs-bp-lg-only() {
+			@include bs-u-visible-inline();
+		}
+	}
+
+	&-lg-inline-block {
+		@include bs-bp-lg-only() {
+			@include bs-u-visible-inline-block();
+		}
+	}
+
+	&-lg-block {
+		@include bs-bp-lg-only() {
+			@include bs-u-visible-block();
+		}
+	}
 }

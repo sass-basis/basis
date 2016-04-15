@@ -1,57 +1,42 @@
 // @import '../../../core/core';
 
-@mixin bs-u-visible() {
-	&-sm-inline {
-		@include bs-bp-sm-only() {
-			display: inline !important;
-		}
-	}
+/**
+ * Display inline helper
+ *
+ * .u-visible-inline {
+ *     @include bs-u-visible-inline();
+ * }
+ *
+ * <span class="u-visible-inline">...</span>
+ */
+@mixin bs-u-visible-inline() {
+	display: inline !important;
+}
 
-	&-sm-inline-block {
-		@include bs-bp-sm-only() {
-			display: inline-block !important;
-		}
-	}
+/**
+ * Display inline-block helper
+ *
+ * .u-visible-inline-block {
+ *     @include bs-u-visible-inline-block();
+ * }
+ *
+ * <span class="u-visible-inline-block">...</span>
+ */
+@mixin bs-u-visible-inline-block() {
+	display: inline-block !important;
+}
 
-	&-sm-block {
-		@include bs-bp-sm-only() {
-			display: block !important;
-		}
-	}
-
-	&-md-inline {
-		@include bs-bp-md-only() {
-			display: inline !important;
-		}
-	}
-
-	&-md-inline-block {
-		@include bs-bp-md-only() {
-			display: inline-block !important;
-		}
-	}
-
-	&-md-block {
-		@include bs-bp-md-only() {
-			display: block !important;
-		}
-	}
-
-	&-lg-inline {
-		@include bs-bp-lg-only() {
-			display: inline !important;
-		}
-	}
-
-	&-lg-inline-block {
-		@include bs-bp-lg-only() {
-			display: inline-block !important;
-		}
-	}
-
-	&-lg-block {
-		@include bs-bp-lg-only() {
-			display: block !important;
-		}
-	}
+/**
+ * Display block helper
+ *
+ * .u-visible-block {
+ *     @include bs-u-visible-block();
+ * }
+ *
+ * <div class="u-visible-block">
+ *     ...
+ * </div>
+ */
+@mixin bs-u-visible-block() {
+	display: block !important;
 }
