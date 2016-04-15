@@ -1,11 +1,23 @@
 // @import '../../../core/core';
 
-@mixin bs-u-pull() {
-	&-right {
-		float: right !important;
-	}
+/**
+ * .u-pull-right {
+ *     @include bs-u-pull-right();
+ * }
+ *
+ * <img class="u-pull-right" />
+ */
+@mixin bs-u-pull-right() {
+	float: right !important;
+}
 
-	&-left {
-		float: left !important;
-	}
+/**
+ * .u-pull-left {
+ *     @include bs-u-pull-left();
+ * }
+ *
+ * <img class="u-pull-left" />
+ */
+@mixin bs-u-pull-left() {
+	float: left !important;
 }

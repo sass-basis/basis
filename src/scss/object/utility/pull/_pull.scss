@@ -1,8 +1,15 @@
 $bs-prefix: '' !default;
 
 .#{$bs-prefix}u-pull {
-	@if (mixin-exists(bs-u-pull) == false) {
+	@if (mixin-exists(bs-u-pull-right) == false) {
 		@import 'mixin';
 	}
-	@include bs-u-pull();
+
+	&-right {
+		@include bs-u-pull-right();
+	}
+
+	&-left {
+		@include bs-u-pull-left();
+	}
 }
