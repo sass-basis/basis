@@ -23,14 +23,14 @@
  * Shake vertical
  */
 @mixin bs-shake-vertical() {
-	@include bs-bounce-vertical( 4px, .5s );
+	@include bs-bounce-vertical(4px, .5s);
 }
 
 /**
  * Vibrate vertical
  */
 @mixin bs-vibrate-vertical() {
-	@include bs-bounce-vertical( 2px, .2s );
+	@include bs-bounce-vertical(2px, .2s);
 }
 
 /**
@@ -39,7 +39,7 @@
  * @param   length             $px        bounce size
  * @param   second|milisecond  $delay: 0  animate time
  */
-@mixin bs-bounce-horizontal( $px, $delay: 0 ) {
+@mixin bs-bounce-horizontal($px, $delay: 0) {
 	position: relative;
 	animation: bs-bounce-horizontal-#{$px} $delay;
 
@@ -56,14 +56,14 @@
  * Shake horizontal
  */
 @mixin bs-shake-horizontal() {
-	@include bs-bounce-horizontal( 4px, .5s );
+	@include bs-bounce-horizontal(4px, .5s);
 }
 
 /**
  * Vibrate horizontal
  */
 @mixin bs-vibrate-horizontal() {
-	@include bs-bounce-horizontal( 2px, .2s );
+	@include bs-bounce-horizontal(2px, .2s);
 }
 
 /**
@@ -73,16 +73,16 @@
  * @param   second|milisecond  $delay: 0  animate time
  */
 @mixin bs-bounce-scale( $float, $delay: 0 ) {
-	$suffix: bs-strip-unit( percentage( $float ) );
+	$suffix: bs-strip-unit(percentage($float));
 	animation: bs-bounce-scale-#{$suffix} $delay ease-out;
 	$scale: ($float - 1);
 
 	@keyframes bs-bounce-scale-#{$suffix} {
-		0%   { transform: scale( 1 ); }
-		25%  { transform: scale( $float ); }
-		50%  { transform: scale( 1 ); }
-		75%  { transform: scale( (1 + ($float - 1) / 2) ); }
-		100% { transform: scale( 1 ); }
+		0%   { transform: scale(1); }
+		25%  { transform: scale($float); }
+		50%  { transform: scale(1); }
+		75%  { transform: scale((1 + ($float - 1) / 2)); }
+		100% { transform: scale(1); }
 	}
 }
 
@@ -90,64 +90,40 @@
  * Shake scale
  */
 @mixin bs-shake-scale() {
-	@include bs-bounce-scale( 1.2, .5s );
+	@include bs-bounce-scale(1.2, .5s);
 }
 
 /**
  * Vibrate scale
  */
 @mixin bs-vibrate-scale() {
-	@include bs-bounce-scale( 1.1, .2s );
+	@include bs-bounce-scale(1.1, .2s);
 }
 
-
+/**
+ * Animate helper
+ *
+ * .u-animate {
+ *     @include bs-u-animate();
+ * }
+ *
+ * .foo {
+ *     @include bs-u-animate-size();
+ *     width: 10px;
+ *     &:hover {
+ *         width: 20px;
+ *     }
+ * }
+ */
 @mixin bs-u-animate() {
-	& {
-		transition: all $bs-transition-duration $bs-transition-function-timing;
-	}
+	transition: all $bs-transition-duration $bs-transition-function-timing;
+}
 
-	&-size {
-		transition: width $bs-transition-duration $bs-transition-function-timing,
-					height $bs-transition-duration $bs-transition-function-timing;
-	}
+@mixin bs-u-animate-size() {
+	transition: width $bs-transition-duration $bs-transition-function-timing,
+				height $bs-transition-duration $bs-transition-function-timing;
+}
 
-	&-opacity {
-		transition: opacity $bs-transition-duration $bs-transition-function-timing;
-	}
-
-	&-shake-vertical {
-		@include bs-hover() {
-			@include bs-shake-vertical();
-		}
-	}
-
-	&-vibrate-vertical {
-		@include bs-hover() {
-			@include bs-vibrate-vertical();
-		}
-	}
-
-	&-shake-horizontal {
-		@include bs-hover() {
-			@include bs-shake-horizontal();
-		}
-	}
-
-	&-vibrate-horizontal {
-		@include bs-hover() {
-			@include bs-vibrate-horizontal();
-		}
-	}
-
-	&-shake-scale {
-		@include bs-hover() {
-			@include bs-shake-scale();
-		}
-	}
-
-	&-vibrate-scale {
-		@include bs-hover() {
-			@include bs-vibrate-scale();
-		}
-	}
+@mixin bs-u-animate-opacity() {
+	transition: opacity $bs-transition-duration $bs-transition-function-timing;
 }
