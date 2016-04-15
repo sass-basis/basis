@@ -1,0 +1,16 @@
+// @import '../../../core/core';
+
+/**
+ * Hidden helper
+ *
+ * .u-hidden {
+ *     @include bs-u-hidden();
+ * }
+ *
+ * <div class="u-hidden">
+ *     ....
+ * </div>
+ */
+@mixin bs-u-hidden() {
+	display: none !important;
+}

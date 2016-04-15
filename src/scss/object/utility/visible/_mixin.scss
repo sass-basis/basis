@@ -1,0 +1,42 @@
+// @import '../../../core/core';
+
+/**
+ * Display inline helper
+ *
+ * .u-visible-inline {
+ *     @include bs-u-visible-inline();
+ * }
+ *
+ * <span class="u-visible-inline">...</span>
+ */
+@mixin bs-u-visible-inline() {
+	display: inline !important;
+}
+
+/**
+ * Display inline-block helper
+ *
+ * .u-visible-inline-block {
+ *     @include bs-u-visible-inline-block();
+ * }
+ *
+ * <span class="u-visible-inline-block">...</span>
+ */
+@mixin bs-u-visible-inline-block() {
+	display: inline-block !important;
+}
+
+/**
+ * Display block helper
+ *
+ * .u-visible-block {
+ *     @include bs-u-visible-block();
+ * }
+ *
+ * <div class="u-visible-block">
+ *     ...
+ * </div>
+ */
+@mixin bs-u-visible-block() {
+	display: block !important;
+}

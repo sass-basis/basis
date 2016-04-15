@@ -1,0 +1,26 @@
+// @import '../../../core/core';
+
+/**
+ * Checkbox component
+ *
+ * .c-checkbox {
+ *     @include bs-c-checkbox();
+ * }
+ *
+ * <span class="c-checkbox">
+ *     <input type="checkbox" />
+ * </span>
+ */
+@mixin bs-c-checkbox() {
+	$bs-c-checkbox-margin: ($bs-font-size / 2) !default;
+
+	display: inline-block;
+
+	[type="checkbox"] {
+		margin-right: $bs-c-checkbox-margin;
+	}
+
+	label {
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,28 @@
+// @import '../../../core/core';
+
+/**
+ * Button component
+ *
+ * .c-btn {
+ *     @include bs-c-btn();
+ * }
+ *
+ * <a class="c-btn">btn</a>
+ */
+@mixin bs-c-btn {
+	$bs-c-btn-border-color: bs-light($bs-color-gray) !default;
+	$bs-c-btn-text-color: $bs-color-text !default;
+	$bs-c-btn-padding: ($bs-font-size / 2) ($bs-font-size * 2) !default;
+
+	background-color: #fff;
+	border: 1px solid $bs-c-btn-border-color;
+	color: $bs-c-btn-text-color;
+	cursor: pointer;
+	display: inline-block;
+	padding: $bs-c-btn-padding;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	overflow: hidden;
+}

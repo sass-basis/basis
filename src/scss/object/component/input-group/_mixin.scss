@@ -1,0 +1,71 @@
+// @import '../../../core/core';
+
+/**
+ * Input group component
+ *
+ * .c-input-group {
+ *     @include bs-c-input-group();
+ *     &__addon {
+ *         @include bs-c-input-group__addon();
+ *     }
+ *     &__field {
+ *         @include bs-c-input-group__field();
+ *     }
+ *     &__btn {
+ *         @include bs-c-input-group__btn();
+ *     }
+ * }
+ *
+ * <div class="c-input-group">
+ *     <div class="c-input-group__addon">@</div>
+ *     <input type="text" class="c-input-group__field" />
+ *     <input type="submit" class="c-input-group__btn" />
+ * </div>
+ */
+
+$bs-c-input-group-border-radius: $bs-border-radius !default;
+$bs-c-input-group-border-color: bs-light($bs-color-gray) !default;
+
+@mixin bs-c-input-group() {
+	border-radius: $bs-c-input-group-border-radius;
+	display: flex;
+
+	* {
+		height: auto;
+	}
+
+	:first-child {
+		border-radius: $bs-c-input-group-border-radius 0 0 $bs-c-input-group-border-radius;
+	}
+
+	:last-child {
+		border-radius: 0 $bs-c-input-group-border-radius $bs-c-input-group-border-radius 0;
+	}
+}
+
+@mixin bs-c-input-group__addon() {
+	$bs-c-input-group-addon-background-color: bs-lighter($bs-color-gray) !default;
+	$bs-c-input-group-addon-padding: ($bs-font-size / 2) !default;
+
+	background-color: $bs-c-input-group-addon-background-color;
+	border: 1px solid $bs-c-input-group-border-color;
+	padding: $bs-c-input-group-addon-padding;
+}
+
+@mixin bs-c-input-group__field() {
+	border-color: $bs-c-input-group-border-color;
+	border-radius: 0;
+	flex: 1;
+
+	&:not(:last-child) {
+		border-right: 0;
+	}
+
+	&:not(:first-child) {
+		border-left: 0;
+	}
+}
+
+@mixin bs-c-input-group__btn {
+	border-color: $bs-c-input-group-border-color;
+}

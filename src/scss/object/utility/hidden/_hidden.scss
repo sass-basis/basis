@@ -1,0 +1,25 @@
+$bs-prefix: '' !default;
+
+.#{$bs-prefix}u-hidden {
+	@if (mixin-exists(bs-u-hidden) == false) {
+		@import 'mixin';
+	}
+
+	&-sm {
+		@include bs-bp-sm-only() {
+			display: none !important;
+		}
+	}
+
+	&-md {
+		@include bs-bp-md-only() {
+			display: none !important;
+		}
+	}
+
+	&-lg {
+		@include bs-bp-lg-only() {
+			display: none !important;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+// @import '../../../core/core';
+
+/**
+ * Fluid container component
+ *
+ * .c-container-fluid {
+ *     @include bs-c-container-fluid();
+ * }
+ *
+ * <div class="c-container-fluid">
+ *    ...
+ * </div>
+ */
+@mixin bs-c-container-fluid() {
+	$bs-container-margin: $bs-base-line-height !default;
+
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: $bs-container-margin;
+	padding-left: $bs-container-margin;
+	overflow: hidden;
+}
+
+/**
+ * Container component
+ *
+ * .c-container {
+ *     @include bs-c-container();
+ * }
+ *
+ * <div class="c-container">
+ *    ...
+ * </div>
+ */
+@mixin bs-c-container() {
+	$bs-c-container-max-width: 75em !default;
+
+	@include bs-c-container-fluid();
+
+	@include bs-bp-min($bs-screen-lg-min) {
+		max-width: $bs-c-container-max-width;
+	}
+}
