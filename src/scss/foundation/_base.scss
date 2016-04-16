@@ -121,9 +121,9 @@ blockquote {
  * code
  */
 code {
-	background-color: lighten($bs-color-red, 34%);
+	background-color: bs-lighter($bs-color-red);
 	border-radius: $bs-border-radius;
-	color: bs-dark($bs-color-red);
+	color: $bs-color-red;
 	padding: 2px 4px;
 }
 
