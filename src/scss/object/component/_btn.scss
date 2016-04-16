@@ -1,0 +1,13 @@
+.#{$bs-prefix}c-btn {
+	@include bs-c-btn();
+
+	&--block {
+		display: block;
+	}
+
+	&--ghost {
+		background-color: transparent;
+		border-color: #fff;
+		color: #fff;
+	}
+}

@@ -1,0 +1,44 @@
+/**
+ * Hero component
+ *
+ * .c-hero {
+ *     @include bs-c-hero();
+ *     &__header {
+ *         @include bs-c-hero__header();
+ *     }
+ *     &__content {
+ *         @include bs-c-hero__content();
+ *     }
+ *     &__footer {
+ *         @include bs-c-hero__footer();
+ *     }
+ * }
+ */
+
+@mixin bs-c-hero() {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+@mixin bs-c-hero__part() {
+	flex: 0 1 100%;
+	max-width: 100%;
+	position: relative;
+}
+
+@mixin bs-c-hero__header() {
+	@include bs-c-hero__part();
+	align-self: flex-start;
+}
+
+@mixin bs-c-hero__content() {
+	@include bs-c-hero__part();
+	align-self: center;
+}
+
+@mixin bs-c-hero__footer() {
+	@include bs-c-hero__part();
+	align-self: flex-end;
+}

@@ -1,8 +1,0 @@
-$bs-prefix: '' !default;
-
-.#{$bs-prefix}c-alert {
-	@if (mixin-exists(bs-c-alert) == false) {
-		@import 'mixin';
-	}
-	@include bs-c-alert();
-}

@@ -1,0 +1,15 @@
+.#{$bs-prefix}c-input-group {
+	@include bs-c-input-group();
+
+	&__addon {
+		@include bs-c-input-group__addon();
+	}
+
+	&__field {
+		@include bs-c-input-group__field();
+	}
+
+	&__btn {
+		@include bs-c-input-group__btn();
+	}
+}

@@ -1,0 +1,21 @@
+/**
+ * Radio component
+ *
+ * .c-radio {
+ *     @include bs-c-radio();
+ * }
+ *
+ * <span class="c-radio">
+ *     <input type="radio" />
+ * </span>
+ */
+
+$bs-c-radio-margin: ($bs-font-size / 2) !default;
+
+@mixin bs-c-radio() {
+	display: inline-block;
+
+	[type="radio"] {
+		margin-right: $bs-c-radio-margin;
+	}
+}

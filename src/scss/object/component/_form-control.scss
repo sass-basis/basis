@@ -1,0 +1,8 @@
+.#{$bs-prefix}c-form-control {
+	@include bs-c-form-control();
+}
+
+textarea.#{$bs-prefix}c-form-control {
+	height: auto;
+	width: 100%;
+}

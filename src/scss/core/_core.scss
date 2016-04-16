@@ -1,3 +1,9 @@
+/**
+ * Prefix of basis classes
+ * @type  string
+ */
+$bs-prefix: '_' !default;
+
 @import 'function/function';
 @import 'variable/variable';
 @import 'mixin/mixin';
