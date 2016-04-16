@@ -78,6 +78,12 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### April 16, 2016 v4.0.0
+* Refactoring directory structure.
+* Added variable `$bs-use-mixin-only`. If you don't need classes of the Basis, set to true.
+* Added mixins to make the Basis components.
+* Added variables for the components of style.
+
 #### April 12, 2016 v3.2.0
 * Fixed a grid margin bug.
 * Added `._c-row--nowrap` class.
