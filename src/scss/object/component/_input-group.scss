@@ -9,6 +9,10 @@
 		@include bs-c-input-group__field();
 	}
 
+	&__control {
+		@include bs-c-input-group__control();
+	}
+
 	&__btn {
 		@include bs-c-input-group__btn();
 	}
