@@ -1,40 +1,61 @@
 .#{$bs-prefix}c-row {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
 	font-size: 0;
 
 	&--auto {
-		// Not supported.
+		table-layout: auto;
 	}
 
-	&--nowrap {
-		// Not supported.
-	}
+	@each $size, $screen-min in $bs-sizes {
+		@include bs-bp-min($screen-min) {
+			$prefix: bs-bp-prefix($size);
 
-	@each $bs-size, $bs-screen-min in $bs-sizes {
-		@include bs-bp-min($bs-screen-min) {
-			$prefix: bs-bp-prefix($bs-size);
-
-			&#{$prefix}-row {
-				// Not supported.
-			}
-
-			&#{$prefix}-column {
-				// Not supported.
+			&#{$prefix}-nowrap {
+				> .#{$bs-prefix}c-row__col {
+					display: table-cell;
+				}
 			}
 
 			&#{$prefix}-left {
 				text-align: left;
+
+				> .#{$bs-prefix}c-row__col {
+					display: inline-block;
+				}
 			}
 
 			&#{$prefix}-right {
 				text-align: right;
+
+				> .#{$bs-prefix}c-row__col {
+					display: inline-block;
+				}
 			}
 
 			&#{$prefix}-center {
 				text-align: center;
+
+				> .#{$bs-prefix}c-row__col {
+					display: inline-block;
+				}
 			}
 
 			&#{$prefix}-between {
-				// Not supported.
+				display: block;
+				text-align: justify;
+				text-justify: distribute-all-lines;
+
+				&:after {
+					content: '';
+					display: inline-block;
+					width: 100%;
+				}
+
+				> .#{$bs-prefix}c-row__col {
+					display: inline-block;
+				}
 			}
 
 			&#{$prefix}-around {
@@ -43,65 +64,116 @@
 
 			&#{$prefix}-top {
 				> .#{$bs-prefix}c-row__col {
+					display: inline-block;
 					vertical-align: top;
 				}
 			}
 
 			&#{$prefix}-bottom {
 				> .#{$bs-prefix}c-row__col {
+					display: inline-block;
 					vertical-align: bottom;
 				}
 			}
 
 			&#{$prefix}-middle {
 				> .#{$bs-prefix}c-row__col {
+					display: inline-block;
 					vertical-align: middle;
 				}
 			}
 
 			&#{$prefix}-baseline {
 				> .#{$bs-prefix}c-row__col {
+					display: inline-block;
 					vertical-align: baseline;
 				}
 			}
 
-			@for $max_columns from 1 through 12 {
-				@for $i from 1 through $max_columns {
-					$gcd: bs-gcd($i, $max_columns);
+			&#{$prefix}-collapse {
+				// Depending on the base style.
+			}
 
-					.#{$bs-prefix}c-row__col#{$prefix}-#{$i}-#{$max_columns} {
-						@if $i != $max_columns {
-							@extend %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
-						} @else {
-							@extend %bs-item#{$prefix}-full;
-						}
-					}
+			&#{$prefix}-margin {
+				// Depending on the base style.
+				&, &-s, &-l {
+					display: block;
+					width: auto;
 				}
 			}
 
-			@for $max_columns from 2 through 12 {
-				@for $i from 1 through $max_columns {
-					$gcd: bs-gcd($i, $max_columns);
-
-					@if $gcd == 1 {
-						%bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-							width: percentage($i / $max_columns);
-						}
-					}
+			&#{$prefix}-fill {
+				// Not supported.
+				> .#{$bs-prefix}c-row__col {
+					display: inline-block;
 				}
-			}
-
-			%bs-item#{$prefix}-full {
-				width: 100%;
 			}
 		}
 	}
 
 	&__col {
 		font-size: bs-rem2px($bs-font-size);
-		display: inline-block;
+		// display: inline-block;
+		display: table-cell;
 		text-align: left;
 		vertical-align: top;
-		width: 100%;
+
+		@each $size, $screen-min in $bs-sizes {
+			@include bs-bp-min($screen-min) {
+				$prefix: bs-bp-prefix($size);
+
+				@for $max_columns from $bs-min-columns through $bs-max-columns {
+					@for $i from 1 through $max_columns {
+						$gcd: bs-gcd($i, $max_columns);
+
+						&#{$prefix}-#{$i}-#{$max_columns} {
+							@if $i != $max_columns {
+								@extend %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
+							} @else {
+								@extend %bs-item#{$prefix}-full;
+							}
+						}
+
+						@if $i < $max_columns {
+							&#{$prefix}-offset-#{$i}-#{$max_columns} {
+								@extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
+							}
+						}
+					}
+				}
+
+				&#{$prefix}-offset-0 {
+					// Depending on the base style.
+				}
+			}
+		}
+	}
+}
+
+@each $size, $screen-min in $bs-sizes {
+	@include bs-bp-min($screen-min) {
+		$prefix: bs-bp-prefix($size);
+
+		@for $max_columns from 1 through $bs-max-columns {
+			@for $i from 1 through $max_columns {
+				$gcd: bs-gcd($i, $max_columns);
+
+				@if $gcd == 1 {
+					%bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
+						display: inline-block;
+						width: percentage($i / $max_columns);
+					}
+
+					%bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
+						// Depending on the base style.
+					}
+				}
+			}
+		}
+
+		%bs-item#{$prefix}-full {
+			display: inline-block;
+			width: 100%;
+		}
 	}
 }

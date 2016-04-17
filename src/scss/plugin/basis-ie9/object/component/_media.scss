@@ -1,19 +1,39 @@
 .#{$bs-prefix}c-media {
-	@include bs-clearfix();
-
-	&--middle {
-		// Not Supported.
-	}
+	display: table;
+	width: 100%;
 
 	&__figure {
-		float: left;
-
-		.#{$bs-prefix}c-media--reverse & {
-			float: right;
-		}
+		display: table-cell;
+		vertical-align: top;
+		margin-right: 0;
+		padding-right: $bs-c-media-margin;
 	}
 
 	&__body {
-		overflow: hidden;
+		display: table-cell;
+		vertical-align: top;
+		width: 100%;
+	}
+
+	&--middle {
+		> .#{$bs-prefix}c-media__figure,
+		> .#{$bs-prefix}c-media__body {
+			vertical-align: middle;
+		}
+
+		#{$bs-prefix}c-media__figure {
+			margin-left: 0;
+			padding-left: $bs-c-media-margin;
+		}
+	}
+
+	&--reverse {
+		text-align: left;
+		direction: rtl;
+
+		> .#{$bs-prefix}c-media__body {
+			text-align: left;
+			direction: ltl;
+		}
 	}
 }
