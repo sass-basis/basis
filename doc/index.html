@@ -146,6 +146,43 @@ $ gulp build</code></pre>
 					<section class="c-section" id="typograpy">
 						<h1 class="c-section__h1">Typography</h1>
 
+						<p>
+							Basis offers a typography that respects the vertical rhythm. If you are Sass user, by overwriting the following variables, it is possible to customize the typography of taste without breaking the vertical rhythm.
+						</p>
+
+						<pre><code>/**
+ * Base font size
+ * @type  rem
+ */
+$bs-font-size: 1.6rem;
+
+/**
+ * Heading element font size scale;
+ * @type  int
+ */
+$bs-h1-font-size-scale: 3;
+$bs-h2-font-size-scale: 2.5;
+$bs-h3-font-size-scale: 2;
+$bs-h4-font-size-scale: 1.5;
+$bs-h5-font-size-scale: 1;
+$bs-h6-font-size-scale: 1;
+
+/**
+ * Between the character and line of line-height
+ * In the case of multibytes characters might be a good is about 0.6em.
+ * @type  rem
+ */
+$bs-between-lines: .4rem;
+
+/**
+ * Margin coefficient
+ * If you want to take the margin larger between elements than the standard, please try to 2 or more.
+ * @type  int
+ */
+$bs-margin-coefficient: 1;
+
+@import /PATH/TO/basis/src/scss/basis;</code></pre>
+
 						<blockquote>
 							<h1>h1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
 
