@@ -1,109 +1,13 @@
-/* ========================================
- * variable
- ======================================= */
-/* ========================================
- * variables
- ======================================= */
 /**
  * Prefix of basis classes
  * @type  string
  */
 /**
- * Max container width
- * 1200px / 16px
- * @type  length
- */
-/**
- * Default font size
- * @type  rem
- */
-/**
- * Between the character and line of line-height
- * @type  rem
- */
-/**
- * Default line height
- * @type  rem
- */
-/**
- * Default font family
- * @type  string
- */
-/**
- * Min base grid size
- * @type  int
- */
-/**
- * Max base grid size
- * @type  int
- */
-/**
- * Break point for smartphone
- * @type  length
- */
-/**
- * Break point for smartphone and tablet
- * 640px / 16px
- * @type  length
- */
-/**
- * Break point for tablet and pc
- * 1024px / 16px
- * @type  length
- */
-/**
- * Array of breakpoints
- * @type  array
- */
-/**
- * Default text color
- * @type  hex
- */
-/**
- * Default black color
- * @type  hex
- */
-/**
- * Default gray color
- * @type  hex
- */
-/**
- * Default red color
- * @type  hex
- */
-/**
- * Normal size column margin
- * @type  length
- */
-/**
- * Small size column margin
- * @type  length
- */
-/**
- * Large size column margin
- * @type  length
- */
-/**
- * Animation time
- * @type  second|milisecond
- */
-/**
- * Transition function timing
- * @type  string
- * @see  http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
+ * If you don't need classes of the Basis, set to true.
  */
 /* ========================================
  * function
  ======================================= */
-/* ========================================
- * function
- ======================================= */
-/**
- * Return prefix for the device size
- *
- * @param   string  $size  sm|md|lg
- * @return  string
- */
 /**
  * A little brighten
  *
@@ -146,11 +50,12 @@
  * @return  px
  */
 /**
- * Return greatest common divisor
+ * Return the margin conforming to the rhythm
  *
- * @param   int  $a  The number to be divided
- * @param   int  $b  The number to divide
- * @return  int  The number of the remainder
+ * @param   length  $base-margin
+ * @param   int     $base-coefficient
+ * @param   int     $add-coefficient
+ * @return  length
  */
 /**
  * Return numeric value that doesn't have the unit.
@@ -158,12 +63,77 @@
  * @param   length  $value  numeric value
  * @return  int
  */
-/* ========================================
- * mixin
- ======================================= */
-/* ========================================
- * mixin
- ======================================= */
+/**
+ * Default font size
+ * @type  rem
+ */
+/**
+ * Heading element font size scale;
+ * @type  int
+ */
+/**
+ * Between the character and line of line-height
+ * @type  rem
+ */
+/**
+ * Default line height
+ * @type  rem
+ */
+/**
+ * Margin coefficient
+ * @type  int
+ */
+/**
+ * Default font family
+ * @type  string
+ */
+/**
+ * Break point for smartphone
+ * @type  length
+ */
+/**
+ * Break point for smartphone and tablet
+ * 640px / 16px
+ * @type  length
+ */
+/**
+ * Break point for tablet and pc
+ * 1024px / 16px
+ * @type  length
+ */
+/**
+ * Array of breakpoints
+ * @type  array
+ */
+/**
+ * Default text color
+ * @type  hex
+ */
+/**
+ * Default black color
+ * @type  hex
+ */
+/**
+ * Default gray color
+ * @type  hex
+ */
+/**
+ * Default red color
+ * @type  hex
+ */
+/**
+ * Animation time
+ * @type  second|milisecond
+ */
+/**
+ * Transition function timing
+ * @type  string
+ * @see  http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
+ */
+/**
+ * Border radius
+ * @type  length
+ */
 /**
  * Return min-width media query
  *
@@ -192,20 +162,13 @@
  * @return  string  media query
  */
 /**
- * Return selectors for hover
- */
-/**
- * Adding gutter for the row
+ * Event helper
  *
- * @param  length  $gutter  gutter size
- */
-/**
- * Adding gutter for the column
- *
- * @param  length  $gutter  gutter size
- */
-/**
- * Clearfix mixin
+ * img {
+ *     @bs-hover() {
+ *         opacity: .8;
+ *     }
+ * }
  */
 /**
  * Return px and rem font-sizes
@@ -223,6 +186,35 @@
  * Return line-height for vertical rhythum
  *
  * @param  rem  $rem  font size
+ */
+/**
+ * Return px and rem font-sizes and line-height for vertical rhythum
+ *
+ * @param  rem  $rem
+ *
+ * h1 {
+ *     @include bs-font-size-line-height(2.4rem);
+ * }
+ */
+/**
+ * Retrun margin-top
+ *
+ * @param  int  $coefficient
+ */
+/**
+ * Retrun margin-right
+ *
+ * @param  int  $coefficient
+ */
+/**
+ * Retrun margin-bottom
+ *
+ * @param  int  $coefficient
+ */
+/**
+ * Retrun margin-left
+ *
+ * @param  int  $coefficient
  */
 /**
  * Bounce vertical
@@ -260,611 +252,1103 @@
 /**
  * Vibrate scale
  */
-/* ========================================
- * object
- ======================================= */
-/* ========================================
- * object
- ======================================= */
-/* ========================================
- * object - component
- ======================================= */
 /**
- * input group
+ * Clearfix helper
+ *
+ * .clerfix {
+ *     @include bs-u-clearfix();
+ * }
+ *
+ * <div class="clearfix">
+ *     <img style="float: right" />
+ *     ....
+ * </div>
+ */
+/**
+ * Transition helper
+ *
+ * a {
+ *     @include bs-transition-all();
+ *     color: #f00;
+ *     &:hover {
+ *         color: #f9c;
+ *     }
+ * }
+ */
+/**
+ * Transition helper
+ *
+ * .c-progress-bar {
+ *     @include bs-transition-size();
+ *     height: 10px;
+ *     width: 10px;
+ *     &:hover {
+ *         width: 20px;
+ *     }
+ * }
+ */
+/**
+ * Transition helper
+ *
+ * img {
+ *     @include bs-transition-opacity();
+ *     opacity: 1;
+ *     &:hover {
+ *         opacity: .8;
+ *     }
+ * }
+ */
+/**
+ * Alert component
+ *
+ * .c-alert {
+ *     @include bs-c-alert();
+ * }
+ *
+ * <alert class="c-alert">
+ *     ...
+ * </alert>
+ */
+/**
+ * Button component
+ *
+ * .c-btn {
+ *     @include bs-c-btn();
+ * }
+ *
+ * <a class="c-btn">btn</a>
+ */
+/**
+ * Checkbox component
+ *
+ * .c-checkbox {
+ *     @include bs-c-checkbox();
+ * }
+ *
+ * <span class="c-checkbox">
+ *     <input type="checkbox" />
+ * </span>
+ */
+/**
+ * Fluid container component
+ *
+ * .c-container-fluid {
+ *     @include bs-c-container-fluid();
+ * }
+ *
+ * <div class="c-container-fluid">
+ *    ...
+ * </div>
+ */
+/**
+ * Container component
+ *
+ * .c-container {
+ *     @include bs-c-container();
+ * }
+ *
+ * <div class="c-container">
+ *    ...
+ * </div>
+ */
+/**
+ * Form control component
+ *
+ * .c-form-control {
+ *     @include bs-c-form-control();
+ * }
+ *
+ * <input type="text" class="c-form-control" />
+ */
+/**
+ * Hero component
+ *
+ * .c-hero {
+ *     @include bs-c-hero();
+ *     &__header {
+ *         @include bs-c-hero__header();
+ *     }
+ *     &__content {
+ *         @include bs-c-hero__content();
+ *     }
+ *     &__footer {
+ *         @include bs-c-hero__footer();
+ *     }
+ * }
+ */
+/**
+ * Input group component
+ *
+ * .c-input-group {
+ *     @include bs-c-input-group();
+ *     &__addon {
+ *         @include bs-c-input-group__addon();
+ *     }
+ *     &__field {
+ *         @include bs-c-input-group__field();
+ *     }
+ *     &__control {
+ *         @include bs-c-input-group__control();
+ *     }
+ *     &__btn {
+ *         @include bs-c-input-group__btn();
+ *     }
+ * }
+ *
+ * <div class="c-input-group">
+ *     <div class="c-input-group__addon">@</div>
+ *     <div class="c-input-group__field">
+ *         <input type="text" class="c-input-group__control" />
+ *     </div>
+ *     <button class="c-input-group__btn">Go</button>
+ * </div>
+ */
+/**
+ * Media component
+ *
+ * .c-media {
+ *     @include bs-c-media();
+ *     &__figure {
+ *         @include bs-c-media__figure();
+ *     }
+ *     &__body {
+ *         @include bs-c-media__body();
+ *     }
+ * }
+ *
+ * <div class="c-media">
+ *    <div class="c-media__figure">
+ *        <img ... />
+ *    </div>
+ *    <div class="c-media__body">
+ *        ...
+ *    </div>
+ * </div>
+ */
+/**
+ * Radio component
+ *
+ * .c-radio {
+ *     @include bs-c-radio();
+ * }
+ *
+ * <span class="c-radio">
+ *     <input type="radio" />
+ * </span>
+ */
+/**
+ * Return prefix for the device size
+ *
+ * @param   string  $size  sm|md|lg
+ * @return  string
+ */
+/**
+ * Return greatest common divisor
+ *
+ * @param   int  $a  The number to be divided
+ * @param   int  $b  The number to divide
+ * @return  int  The number of the remainder
+ */
+/**
+ * Adding margin for the row
+ *
+ * @param  length  $margin  margin size
+ */
+/**
+ * Adding margin for the column
+ *
+ * @param  length  $margin  margin size
+ */
+/**
+ * Grid component
+ *
+ * .c-row {
+ *     @include bs-c-row();
+ *     &__col {
+ *         @include bs-c-row__col();
+ *         &--1-3 {
+ *             @include bs-c-row__col(1, 3);
+ *         }
+ *         &--offset-1-3 {
+ *             @include bs-c-row__col--offset(1, 3);
+ *         }
+ *     }
+ * }
+ *
+ * <div class="c-row">
+ *    <div class="c-row__col">
+ *        ...
+ *    </div>
+ * </div>
  */
 ._c-input-group {
-  font-size: 0;
+  display: table;
+  width: 100%;
 }
 
 ._c-input-group__addon, ._c-input-group__field, ._c-input-group__btn {
-  display: inline-block;
-  font-size: 16px;
-  vertical-align: top;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 ._c-input-group__field {
-  padding-top: 10.5px;
-  padding-bottom: 10.5px;
+  width: 100%;
 }
 
-._c-media:before, ._c-media:after {
-  content: " ";
+._c-input-group__control {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+._c-media {
   display: table;
-}
-
-._c-media:after {
-  clear: both;
+  width: 100%;
 }
 
 ._c-media__figure {
-  float: left;
-}
-
-._c-media--reverse ._c-media__figure {
-  float: right;
+  display: table-cell;
+  vertical-align: top;
+  margin-right: 0;
+  padding-right: 2.4rem;
 }
 
 ._c-media__body {
-  overflow: hidden;
+  display: table-cell;
+  vertical-align: top;
+  width: 100%;
 }
 
-/**
- * flex container
- */
+._c-media--middle > ._c-media__figure,
+._c-media--middle > ._c-media__body {
+  vertical-align: middle;
+}
+
+._c-media--middle _c-media__figure {
+  margin-left: 0;
+  padding-left: 2.4rem;
+}
+
+._c-media--reverse {
+  text-align: left;
+  direction: rtl;
+}
+
+._c-media--reverse > ._c-media__body {
+  text-align: left;
+  direction: ltl;
+}
+
 ._c-row {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
   font-size: 0;
+}
+
+._c-row--auto {
+  table-layout: auto;
+}
+
+._c-row--nowrap > ._c-row__col {
+  display: table-cell;
 }
 
 ._c-row--left {
   text-align: left;
 }
 
+._c-row--left > ._c-row__col {
+  display: inline-block;
+}
+
 ._c-row--right {
   text-align: right;
+}
+
+._c-row--right > ._c-row__col {
+  display: inline-block;
 }
 
 ._c-row--center {
   text-align: center;
 }
 
+._c-row--center > ._c-row__col {
+  display: inline-block;
+}
+
+._c-row--between {
+  display: block;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
+
+._c-row--between:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+._c-row--between > ._c-row__col {
+  display: inline-block;
+}
+
 ._c-row--top > ._c-row__col {
+  display: inline-block;
   vertical-align: top;
 }
 
 ._c-row--bottom > ._c-row__col {
+  display: inline-block;
   vertical-align: bottom;
 }
 
 ._c-row--middle > ._c-row__col {
+  display: inline-block;
   vertical-align: middle;
 }
 
 ._c-row--baseline > ._c-row__col {
+  display: inline-block;
   vertical-align: baseline;
 }
 
+._c-row--margin, ._c-row--margin-s, ._c-row--margin-l {
+  display: block;
+  width: auto;
+}
+
+._c-row--fill > ._c-row__col {
+  display: inline-block;
+}
+
 @media (min-width: 40em) {
+  ._c-row--md-nowrap > ._c-row__col {
+    display: table-cell;
+  }
   ._c-row--md-left {
     text-align: left;
+  }
+  ._c-row--md-left > ._c-row__col {
+    display: inline-block;
   }
   ._c-row--md-right {
     text-align: right;
   }
+  ._c-row--md-right > ._c-row__col {
+    display: inline-block;
+  }
   ._c-row--md-center {
     text-align: center;
   }
+  ._c-row--md-center > ._c-row__col {
+    display: inline-block;
+  }
+  ._c-row--md-between {
+    display: block;
+    text-align: justify;
+    text-justify: distribute-all-lines;
+  }
+  ._c-row--md-between:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+  ._c-row--md-between > ._c-row__col {
+    display: inline-block;
+  }
   ._c-row--md-top > ._c-row__col {
+    display: inline-block;
     vertical-align: top;
   }
   ._c-row--md-bottom > ._c-row__col {
+    display: inline-block;
     vertical-align: bottom;
   }
   ._c-row--md-middle > ._c-row__col {
+    display: inline-block;
     vertical-align: middle;
   }
   ._c-row--md-baseline > ._c-row__col {
+    display: inline-block;
     vertical-align: baseline;
+  }
+  ._c-row--md-margin, ._c-row--md-margin-s, ._c-row--md-margin-l {
+    display: block;
+    width: auto;
+  }
+  ._c-row--md-fill > ._c-row__col {
+    display: inline-block;
   }
 }
 
 @media (min-width: 64em) {
+  ._c-row--lg-nowrap > ._c-row__col {
+    display: table-cell;
+  }
   ._c-row--lg-left {
     text-align: left;
+  }
+  ._c-row--lg-left > ._c-row__col {
+    display: inline-block;
   }
   ._c-row--lg-right {
     text-align: right;
   }
+  ._c-row--lg-right > ._c-row__col {
+    display: inline-block;
+  }
   ._c-row--lg-center {
     text-align: center;
   }
+  ._c-row--lg-center > ._c-row__col {
+    display: inline-block;
+  }
+  ._c-row--lg-between {
+    display: block;
+    text-align: justify;
+    text-justify: distribute-all-lines;
+  }
+  ._c-row--lg-between:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+  ._c-row--lg-between > ._c-row__col {
+    display: inline-block;
+  }
   ._c-row--lg-top > ._c-row__col {
+    display: inline-block;
     vertical-align: top;
   }
   ._c-row--lg-bottom > ._c-row__col {
+    display: inline-block;
     vertical-align: bottom;
   }
   ._c-row--lg-middle > ._c-row__col {
+    display: inline-block;
     vertical-align: middle;
   }
   ._c-row--lg-baseline > ._c-row__col {
+    display: inline-block;
     vertical-align: baseline;
+  }
+  ._c-row--lg-margin, ._c-row--lg-margin-s, ._c-row--lg-margin-l {
+    display: block;
+    width: auto;
+  }
+  ._c-row--lg-fill > ._c-row__col {
+    display: inline-block;
   }
 }
 
-/**
- * flex item
- */
 ._c-row__col {
   font-size: 16px;
-  display: inline-block;
+  display: table-cell;
   text-align: left;
   vertical-align: top;
-  width: 100%;
 }
 
-/* multiple placeholder */
 ._c-row__col--1-2, ._c-row__col--2-4, ._c-row__col--3-6, ._c-row__col--4-8, ._c-row__col--5-10, ._c-row__col--6-12 {
+  display: inline-block;
   width: 50%;
 }
 
 ._c-row__col--1-3, ._c-row__col--2-6, ._c-row__col--3-9, ._c-row__col--4-12 {
+  display: inline-block;
   width: 33.33333%;
 }
 
 ._c-row__col--2-3, ._c-row__col--4-6, ._c-row__col--6-9, ._c-row__col--8-12 {
+  display: inline-block;
   width: 66.66667%;
 }
 
 ._c-row__col--1-4, ._c-row__col--2-8, ._c-row__col--3-12 {
+  display: inline-block;
   width: 25%;
 }
 
 ._c-row__col--3-4, ._c-row__col--6-8, ._c-row__col--9-12 {
+  display: inline-block;
   width: 75%;
 }
 
 ._c-row__col--1-5, ._c-row__col--2-10 {
+  display: inline-block;
   width: 20%;
 }
 
 ._c-row__col--2-5, ._c-row__col--4-10 {
+  display: inline-block;
   width: 40%;
 }
 
 ._c-row__col--3-5, ._c-row__col--6-10 {
+  display: inline-block;
   width: 60%;
 }
 
 ._c-row__col--4-5, ._c-row__col--8-10 {
+  display: inline-block;
   width: 80%;
 }
 
 ._c-row__col--1-6, ._c-row__col--2-12 {
+  display: inline-block;
   width: 16.66667%;
 }
 
 ._c-row__col--5-6, ._c-row__col--10-12 {
+  display: inline-block;
   width: 83.33333%;
 }
 
 ._c-row__col--1-7 {
+  display: inline-block;
   width: 14.28571%;
 }
 
 ._c-row__col--2-7 {
+  display: inline-block;
   width: 28.57143%;
 }
 
 ._c-row__col--3-7 {
+  display: inline-block;
   width: 42.85714%;
 }
 
 ._c-row__col--4-7 {
+  display: inline-block;
   width: 57.14286%;
 }
 
 ._c-row__col--5-7 {
+  display: inline-block;
   width: 71.42857%;
 }
 
 ._c-row__col--6-7 {
+  display: inline-block;
   width: 85.71429%;
 }
 
 ._c-row__col--1-8 {
+  display: inline-block;
   width: 12.5%;
 }
 
 ._c-row__col--3-8 {
+  display: inline-block;
   width: 37.5%;
 }
 
 ._c-row__col--5-8 {
+  display: inline-block;
   width: 62.5%;
 }
 
 ._c-row__col--7-8 {
+  display: inline-block;
   width: 87.5%;
 }
 
 ._c-row__col--1-9 {
+  display: inline-block;
   width: 11.11111%;
 }
 
 ._c-row__col--2-9 {
+  display: inline-block;
   width: 22.22222%;
 }
 
 ._c-row__col--4-9 {
+  display: inline-block;
   width: 44.44444%;
 }
 
 ._c-row__col--5-9 {
+  display: inline-block;
   width: 55.55556%;
 }
 
 ._c-row__col--7-9 {
+  display: inline-block;
   width: 77.77778%;
 }
 
 ._c-row__col--8-9 {
+  display: inline-block;
   width: 88.88889%;
 }
 
 ._c-row__col--1-10 {
+  display: inline-block;
   width: 10%;
 }
 
 ._c-row__col--3-10 {
+  display: inline-block;
   width: 30%;
 }
 
 ._c-row__col--7-10 {
+  display: inline-block;
   width: 70%;
 }
 
 ._c-row__col--9-10 {
+  display: inline-block;
   width: 90%;
 }
 
 ._c-row__col--1-11 {
+  display: inline-block;
   width: 9.09091%;
 }
 
 ._c-row__col--2-11 {
+  display: inline-block;
   width: 18.18182%;
 }
 
 ._c-row__col--3-11 {
+  display: inline-block;
   width: 27.27273%;
 }
 
 ._c-row__col--4-11 {
+  display: inline-block;
   width: 36.36364%;
 }
 
 ._c-row__col--5-11 {
+  display: inline-block;
   width: 45.45455%;
 }
 
 ._c-row__col--6-11 {
+  display: inline-block;
   width: 54.54545%;
 }
 
 ._c-row__col--7-11 {
+  display: inline-block;
   width: 63.63636%;
 }
 
 ._c-row__col--8-11 {
+  display: inline-block;
   width: 72.72727%;
 }
 
 ._c-row__col--9-11 {
+  display: inline-block;
   width: 81.81818%;
 }
 
 ._c-row__col--10-11 {
+  display: inline-block;
   width: 90.90909%;
 }
 
 ._c-row__col--1-12 {
+  display: inline-block;
   width: 8.33333%;
 }
 
 ._c-row__col--5-12 {
+  display: inline-block;
   width: 41.66667%;
 }
 
 ._c-row__col--7-12 {
+  display: inline-block;
   width: 58.33333%;
 }
 
 ._c-row__col--11-12 {
+  display: inline-block;
   width: 91.66667%;
 }
 
 ._c-row__col--1-1, ._c-row__col--2-2, ._c-row__col--3-3, ._c-row__col--4-4, ._c-row__col--5-5, ._c-row__col--6-6, ._c-row__col--7-7, ._c-row__col--8-8, ._c-row__col--9-9, ._c-row__col--10-10, ._c-row__col--11-11, ._c-row__col--12-12 {
+  display: inline-block;
   width: 100%;
 }
 
 @media (min-width: 40em) {
   ._c-row__col--md-1-2, ._c-row__col--md-2-4, ._c-row__col--md-3-6, ._c-row__col--md-4-8, ._c-row__col--md-5-10, ._c-row__col--md-6-12 {
+    display: inline-block;
     width: 50%;
   }
   ._c-row__col--md-1-3, ._c-row__col--md-2-6, ._c-row__col--md-3-9, ._c-row__col--md-4-12 {
+    display: inline-block;
     width: 33.33333%;
   }
   ._c-row__col--md-2-3, ._c-row__col--md-4-6, ._c-row__col--md-6-9, ._c-row__col--md-8-12 {
+    display: inline-block;
     width: 66.66667%;
   }
   ._c-row__col--md-1-4, ._c-row__col--md-2-8, ._c-row__col--md-3-12 {
+    display: inline-block;
     width: 25%;
   }
   ._c-row__col--md-3-4, ._c-row__col--md-6-8, ._c-row__col--md-9-12 {
+    display: inline-block;
     width: 75%;
   }
   ._c-row__col--md-1-5, ._c-row__col--md-2-10 {
+    display: inline-block;
     width: 20%;
   }
   ._c-row__col--md-2-5, ._c-row__col--md-4-10 {
+    display: inline-block;
     width: 40%;
   }
   ._c-row__col--md-3-5, ._c-row__col--md-6-10 {
+    display: inline-block;
     width: 60%;
   }
   ._c-row__col--md-4-5, ._c-row__col--md-8-10 {
+    display: inline-block;
     width: 80%;
   }
   ._c-row__col--md-1-6, ._c-row__col--md-2-12 {
+    display: inline-block;
     width: 16.66667%;
   }
   ._c-row__col--md-5-6, ._c-row__col--md-10-12 {
+    display: inline-block;
     width: 83.33333%;
   }
   ._c-row__col--md-1-7 {
+    display: inline-block;
     width: 14.28571%;
   }
   ._c-row__col--md-2-7 {
+    display: inline-block;
     width: 28.57143%;
   }
   ._c-row__col--md-3-7 {
+    display: inline-block;
     width: 42.85714%;
   }
   ._c-row__col--md-4-7 {
+    display: inline-block;
     width: 57.14286%;
   }
   ._c-row__col--md-5-7 {
+    display: inline-block;
     width: 71.42857%;
   }
   ._c-row__col--md-6-7 {
+    display: inline-block;
     width: 85.71429%;
   }
   ._c-row__col--md-1-8 {
+    display: inline-block;
     width: 12.5%;
   }
   ._c-row__col--md-3-8 {
+    display: inline-block;
     width: 37.5%;
   }
   ._c-row__col--md-5-8 {
+    display: inline-block;
     width: 62.5%;
   }
   ._c-row__col--md-7-8 {
+    display: inline-block;
     width: 87.5%;
   }
   ._c-row__col--md-1-9 {
+    display: inline-block;
     width: 11.11111%;
   }
   ._c-row__col--md-2-9 {
+    display: inline-block;
     width: 22.22222%;
   }
   ._c-row__col--md-4-9 {
+    display: inline-block;
     width: 44.44444%;
   }
   ._c-row__col--md-5-9 {
+    display: inline-block;
     width: 55.55556%;
   }
   ._c-row__col--md-7-9 {
+    display: inline-block;
     width: 77.77778%;
   }
   ._c-row__col--md-8-9 {
+    display: inline-block;
     width: 88.88889%;
   }
   ._c-row__col--md-1-10 {
+    display: inline-block;
     width: 10%;
   }
   ._c-row__col--md-3-10 {
+    display: inline-block;
     width: 30%;
   }
   ._c-row__col--md-7-10 {
+    display: inline-block;
     width: 70%;
   }
   ._c-row__col--md-9-10 {
+    display: inline-block;
     width: 90%;
   }
   ._c-row__col--md-1-11 {
+    display: inline-block;
     width: 9.09091%;
   }
   ._c-row__col--md-2-11 {
+    display: inline-block;
     width: 18.18182%;
   }
   ._c-row__col--md-3-11 {
+    display: inline-block;
     width: 27.27273%;
   }
   ._c-row__col--md-4-11 {
+    display: inline-block;
     width: 36.36364%;
   }
   ._c-row__col--md-5-11 {
+    display: inline-block;
     width: 45.45455%;
   }
   ._c-row__col--md-6-11 {
+    display: inline-block;
     width: 54.54545%;
   }
   ._c-row__col--md-7-11 {
+    display: inline-block;
     width: 63.63636%;
   }
   ._c-row__col--md-8-11 {
+    display: inline-block;
     width: 72.72727%;
   }
   ._c-row__col--md-9-11 {
+    display: inline-block;
     width: 81.81818%;
   }
   ._c-row__col--md-10-11 {
+    display: inline-block;
     width: 90.90909%;
   }
   ._c-row__col--md-1-12 {
+    display: inline-block;
     width: 8.33333%;
   }
   ._c-row__col--md-5-12 {
+    display: inline-block;
     width: 41.66667%;
   }
   ._c-row__col--md-7-12 {
+    display: inline-block;
     width: 58.33333%;
   }
   ._c-row__col--md-11-12 {
+    display: inline-block;
     width: 91.66667%;
   }
   ._c-row__col--md-1-1, ._c-row__col--md-2-2, ._c-row__col--md-3-3, ._c-row__col--md-4-4, ._c-row__col--md-5-5, ._c-row__col--md-6-6, ._c-row__col--md-7-7, ._c-row__col--md-8-8, ._c-row__col--md-9-9, ._c-row__col--md-10-10, ._c-row__col--md-11-11, ._c-row__col--md-12-12 {
+    display: inline-block;
     width: 100%;
   }
 }
 
 @media (min-width: 64em) {
   ._c-row__col--lg-1-2, ._c-row__col--lg-2-4, ._c-row__col--lg-3-6, ._c-row__col--lg-4-8, ._c-row__col--lg-5-10, ._c-row__col--lg-6-12 {
+    display: inline-block;
     width: 50%;
   }
   ._c-row__col--lg-1-3, ._c-row__col--lg-2-6, ._c-row__col--lg-3-9, ._c-row__col--lg-4-12 {
+    display: inline-block;
     width: 33.33333%;
   }
   ._c-row__col--lg-2-3, ._c-row__col--lg-4-6, ._c-row__col--lg-6-9, ._c-row__col--lg-8-12 {
+    display: inline-block;
     width: 66.66667%;
   }
   ._c-row__col--lg-1-4, ._c-row__col--lg-2-8, ._c-row__col--lg-3-12 {
+    display: inline-block;
     width: 25%;
   }
   ._c-row__col--lg-3-4, ._c-row__col--lg-6-8, ._c-row__col--lg-9-12 {
+    display: inline-block;
     width: 75%;
   }
   ._c-row__col--lg-1-5, ._c-row__col--lg-2-10 {
+    display: inline-block;
     width: 20%;
   }
   ._c-row__col--lg-2-5, ._c-row__col--lg-4-10 {
+    display: inline-block;
     width: 40%;
   }
   ._c-row__col--lg-3-5, ._c-row__col--lg-6-10 {
+    display: inline-block;
     width: 60%;
   }
   ._c-row__col--lg-4-5, ._c-row__col--lg-8-10 {
+    display: inline-block;
     width: 80%;
   }
   ._c-row__col--lg-1-6, ._c-row__col--lg-2-12 {
+    display: inline-block;
     width: 16.66667%;
   }
   ._c-row__col--lg-5-6, ._c-row__col--lg-10-12 {
+    display: inline-block;
     width: 83.33333%;
   }
   ._c-row__col--lg-1-7 {
+    display: inline-block;
     width: 14.28571%;
   }
   ._c-row__col--lg-2-7 {
+    display: inline-block;
     width: 28.57143%;
   }
   ._c-row__col--lg-3-7 {
+    display: inline-block;
     width: 42.85714%;
   }
   ._c-row__col--lg-4-7 {
+    display: inline-block;
     width: 57.14286%;
   }
   ._c-row__col--lg-5-7 {
+    display: inline-block;
     width: 71.42857%;
   }
   ._c-row__col--lg-6-7 {
+    display: inline-block;
     width: 85.71429%;
   }
   ._c-row__col--lg-1-8 {
+    display: inline-block;
     width: 12.5%;
   }
   ._c-row__col--lg-3-8 {
+    display: inline-block;
     width: 37.5%;
   }
   ._c-row__col--lg-5-8 {
+    display: inline-block;
     width: 62.5%;
   }
   ._c-row__col--lg-7-8 {
+    display: inline-block;
     width: 87.5%;
   }
   ._c-row__col--lg-1-9 {
+    display: inline-block;
     width: 11.11111%;
   }
   ._c-row__col--lg-2-9 {
+    display: inline-block;
     width: 22.22222%;
   }
   ._c-row__col--lg-4-9 {
+    display: inline-block;
     width: 44.44444%;
   }
   ._c-row__col--lg-5-9 {
+    display: inline-block;
     width: 55.55556%;
   }
   ._c-row__col--lg-7-9 {
+    display: inline-block;
     width: 77.77778%;
   }
   ._c-row__col--lg-8-9 {
+    display: inline-block;
     width: 88.88889%;
   }
   ._c-row__col--lg-1-10 {
+    display: inline-block;
     width: 10%;
   }
   ._c-row__col--lg-3-10 {
+    display: inline-block;
     width: 30%;
   }
   ._c-row__col--lg-7-10 {
+    display: inline-block;
     width: 70%;
   }
   ._c-row__col--lg-9-10 {
+    display: inline-block;
     width: 90%;
   }
   ._c-row__col--lg-1-11 {
+    display: inline-block;
     width: 9.09091%;
   }
   ._c-row__col--lg-2-11 {
+    display: inline-block;
     width: 18.18182%;
   }
   ._c-row__col--lg-3-11 {
+    display: inline-block;
     width: 27.27273%;
   }
   ._c-row__col--lg-4-11 {
+    display: inline-block;
     width: 36.36364%;
   }
   ._c-row__col--lg-5-11 {
+    display: inline-block;
     width: 45.45455%;
   }
   ._c-row__col--lg-6-11 {
+    display: inline-block;
     width: 54.54545%;
   }
   ._c-row__col--lg-7-11 {
+    display: inline-block;
     width: 63.63636%;
   }
   ._c-row__col--lg-8-11 {
+    display: inline-block;
     width: 72.72727%;
   }
   ._c-row__col--lg-9-11 {
+    display: inline-block;
     width: 81.81818%;
   }
   ._c-row__col--lg-10-11 {
+    display: inline-block;
     width: 90.90909%;
   }
   ._c-row__col--lg-1-12 {
+    display: inline-block;
     width: 8.33333%;
   }
   ._c-row__col--lg-5-12 {
+    display: inline-block;
     width: 41.66667%;
   }
   ._c-row__col--lg-7-12 {
+    display: inline-block;
     width: 58.33333%;
   }
   ._c-row__col--lg-11-12 {
+    display: inline-block;
     width: 91.66667%;
   }
   ._c-row__col--lg-1-1, ._c-row__col--lg-2-2, ._c-row__col--lg-3-3, ._c-row__col--lg-4-4, ._c-row__col--lg-5-5, ._c-row__col--lg-6-6, ._c-row__col--lg-7-7, ._c-row__col--lg-8-8, ._c-row__col--lg-9-9, ._c-row__col--lg-10-10, ._c-row__col--lg-11-11, ._c-row__col--lg-12-12 {
+    display: inline-block;
     width: 100%;
   }
 }

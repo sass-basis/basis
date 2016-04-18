@@ -30,7 +30,7 @@
 	<div class="_c-container">
 		<h1 class="c-hero__title"><img src="./assets/images/logo.svg" alt="" />Basis</h1>
 		<div class="c-hero__version">
-			Currently v3.1.0　Licence GPL-2.0+
+			Currently v4.0.0　Licence GPL-2.0+
 		</div>
 		<div class="c-hero__lead">
 			A lightweight responsive CSS framework based on flexible box ( flexbox )
@@ -130,6 +130,13 @@ $ gulp build</code></pre>
 						<pre><code>&lt;!--[if lt IE 9]&gt;
 &lt;script src=&quot;/PATH/TO/basis/vendor/html5.js&quot;&gt;&lt;/script&gt;
 &lt;![endif]--&gt;</code></pre>
+
+						<p>
+							If you are Sass user and you want to use only mixins, set <code>$bs-use-mixin-only</code> to <code>true</code>.
+						</p>
+						<pre><code>$bs-use-mixin-only: true;
+
+@import /PATH/TO/basis/src/scss/basis;</code></pre>
 					</section>
 				</section>
 
@@ -138,6 +145,43 @@ $ gulp build</code></pre>
 
 					<section class="c-section" id="typograpy">
 						<h1 class="c-section__h1">Typography</h1>
+
+						<p>
+							Basis offers a typography that respects the vertical rhythm. If you are Sass user, by overwriting the following variables, it is possible to customize the typography of taste without breaking the vertical rhythm.
+						</p>
+
+						<pre><code>/**
+ * Base font size
+ * @type  rem
+ */
+$bs-font-size: 1.6rem;
+
+/**
+ * Heading element font size scale;
+ * @type  int
+ */
+$bs-h1-font-size-scale: 3;
+$bs-h2-font-size-scale: 2.5;
+$bs-h3-font-size-scale: 2;
+$bs-h4-font-size-scale: 1.5;
+$bs-h5-font-size-scale: 1;
+$bs-h6-font-size-scale: 1;
+
+/**
+ * Between the character and line of line-height
+ * In the case of multibytes characters might be a good is about 0.6em.
+ * @type  rem
+ */
+$bs-between-lines: .4rem;
+
+/**
+ * Margin coefficient
+ * If you want to take the margin larger between elements than the standard, please try to 2 or more.
+ * @type  int
+ */
+$bs-margin-coefficient: 1;
+
+@import /PATH/TO/basis/src/scss/basis;</code></pre>
 
 						<blockquote>
 							<h1>h1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
@@ -340,8 +384,10 @@ $ gulp build</code></pre>
 								<div class="_c-input-group__addon">
 									@
 								</div>
-								<input type="text" class="_c-input-group__field _c-form-control" placeholder="text" />
-								<input type="submit" class="_c-input-group__btn _c-btn" value="Go" />
+								<div class="_c-input-group__field">
+									<input type="text" class="_c-input-group__control" placeholder="text" />
+								</div>
+								<button class="_c-input-group__btn">Go</button>
 							</div>
 						</form>
 					</section>

@@ -1,11 +1,13 @@
-.#{$bs-prefix}u-text-center {
-	text-align: center !important;
-}
+.#{$bs-prefix}u-text {
+	&-center {
+		text-align: center !important;
+	}
 
-.#{$bs-prefix}u-text-left {
-	text-align: left !important;
-}
+	&-right {
+		text-align: right !important;
+	}
 
-.#{$bs-prefix}u-text-right {
-	text-align: right !important;
+	&-left {
+		text-align: left !important;
+	}
 }

@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v3.1.0
+ * Name: Basis v4.0.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -7,27 +7,9 @@
  * License: GPLv2 or later
  */
 
-/* ========================================
- * function
- ======================================= */
-@import 'function/function';
+@import 'core/core';
 
-/* ========================================
-* variable
-======================================= */
-@import 'variable/variable';
-
-/* ========================================
- * mixin
- ======================================= */
-@import 'mixin/mixin';
-
-/* ========================================
- * foundation
- ======================================= */
-@import 'foundation/foundation';
-
-/* ========================================
- * object
- ======================================= */
-@import 'object/object';
+@if ($bs-use-mixin-only != true) {
+	@import 'foundation/foundation';
+	@import 'object/object';
+}

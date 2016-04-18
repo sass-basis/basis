@@ -1,0 +1,7 @@
+.#{$bs-prefix}c-radio {
+	@include bs-c-radio();
+
+	&--block {
+		display: block;
+	}
+}

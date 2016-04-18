@@ -78,6 +78,21 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### April 18, 2016 v4.0.0
+* Refactoring directory structure.
+* Refactoring input-group style.
+* Added variable `$bs-use-mixin-only`. If you don't need classes of the Basis, set to true.
+* Added mixins to make the Basis components.
+* Added variables for the components of style.
+
+#### April 12, 2016 v3.2.0
+* Fixed a grid margin bug.
+* Added `._c-row--nowrap` class.
+* Changed color settings.
+* Added the coefficient variable for margin.
+* Added the heading element scale variable.
+* Added mixin `bs-font-size-line-height`
+
 #### April 6, 2016 v3.1.0
 * Fixed hidden and visible classes bug.
 * Added styles of readonly, disabled and aria-hidden.

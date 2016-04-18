@@ -1,7 +1,9 @@
-.#{$bs-prefix}u-pull-left {
-	float: left !important;
-}
+.#{$bs-prefix}u-pull {
+	&-right {
+		float: right !important;
+	}
 
-.#{$bs-prefix}u-pull-right {
-	float: right !important;
+	&-left {
+		float: left !important;
+	}
 }

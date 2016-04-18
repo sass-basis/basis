@@ -1,0 +1,13 @@
+/**
+ * Return the margin conforming to the rhythm
+ *
+ * @param   length  $base-margin
+ * @param   int     $base-coefficient
+ * @param   int     $add-coefficient
+ * @return  length
+ */
+@function bs-margin($base-margin, $base-coefficient, $add-coefficient) {
+	$margin: $base-margin * $base-coefficient;
+	$add-margin: ($base-margin * ($add-coefficient - 1));
+	@return $margin + $add-margin;
+}

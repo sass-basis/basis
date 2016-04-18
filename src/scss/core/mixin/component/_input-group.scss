@@ -1,0 +1,80 @@
+/**
+ * Input group component
+ *
+ * .c-input-group {
+ *     @include bs-c-input-group();
+ *     &__addon {
+ *         @include bs-c-input-group__addon();
+ *     }
+ *     &__field {
+ *         @include bs-c-input-group__field();
+ *     }
+ *     &__control {
+ *         @include bs-c-input-group__control();
+ *     }
+ *     &__btn {
+ *         @include bs-c-input-group__btn();
+ *     }
+ * }
+ *
+ * <div class="c-input-group">
+ *     <div class="c-input-group__addon">@</div>
+ *     <div class="c-input-group__field">
+ *         <input type="text" class="c-input-group__control" />
+ *     </div>
+ *     <button class="c-input-group__btn">Go</button>
+ * </div>
+ */
+
+$bs-c-input-group-border-radius: $bs-border-radius !default;
+$bs-c-input-group-border-color: bs-light($bs-color-gray) !default;
+$bs-c-input-group-addon-background-color: bs-lighter($bs-color-gray) !default;
+$bs-c-input-group-addon-padding: ($bs-font-size / 2) !default;
+
+@mixin bs-c-input-group() {
+	border-radius: $bs-c-input-group-border-radius;
+	display: flex;
+	flex-wrap: nowrap;
+
+	> :nth-child(n+2) {
+		border-left: none;
+	}
+
+	> :first-child {
+		border-radius: $bs-c-input-group-border-radius 0 0 $bs-c-input-group-border-radius;
+	}
+
+	> :last-child {
+		border-radius: 0 $bs-c-input-group-border-radius $bs-c-input-group-border-radius 0;
+	}
+}
+
+@mixin bs-c-input-group__addon() {
+	flex: 0 1 0;
+	padding: $bs-c-input-group-addon-padding;
+	background-color: $bs-c-input-group-addon-background-color;
+	border: 1px solid $bs-c-input-group-border-color;
+	border-radius: 0;
+}
+
+@mixin bs-c-input-group__field() {
+	display: flex;
+	flex: 1;
+	border: 1px solid $bs-c-input-group-border-color;
+}
+
+@mixin bs-c-input-group__control() {
+	@include bs-c-form-control();
+	flex: 1;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+}
+
+@mixin bs-c-input-group__btn {
+	@include bs-c-btn();
+	flex: 0 1 0;
+	overflow: visible;
+	border: 1px solid $bs-c-input-group-border-color;
+	border-radius: 0;
+}

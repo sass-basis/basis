@@ -1,0 +1,8 @@
+/**
+ * Return rem from px
+ * @param   rem  $rem
+ * @return  px
+ */
+@function bs-rem2px($rem) {
+	@return bs-strip-unit($rem) * 10px;
+}

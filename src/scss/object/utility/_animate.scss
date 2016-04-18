@@ -1,48 +1,47 @@
 .#{$bs-prefix}u-animate {
-	transition: all $bs-transition-duration $bs-transition-function-timing;
-}
+	@include bs-transition-all();
 
-.#{$bs-prefix}u-animate-size {
-	transition: width $bs-transition-duration $bs-transition-function-timing,
-				height $bs-transition-duration $bs-transition-function-timing;
-}
-
-.#{$bs-prefix}u-animate-opacity {
-	transition: opacity $bs-transition-duration $bs-transition-function-timing;
-}
-
-.#{$bs-prefix}u-animate-shake-vertical {
-	@include bs-hover() {
-		@include bs-shake-vertical();
+	&-size {
+		@include bs-transition-size();
 	}
-}
 
-.#{$bs-prefix}u-animate-vibrate-vertical {
-	@include bs-hover() {
-		@include bs-vibrate-vertical();
+	&-opacity {
+		@include bs-transition-opacity();
 	}
-}
 
-.#{$bs-prefix}u-animate-shake-horizontal {
-	@include bs-hover() {
-		@include bs-shake-horizontal();
+	&-shake-vertical {
+		@include bs-hover() {
+			@include bs-shake-vertical();
+		}
 	}
-}
 
-.#{$bs-prefix}u-animate-vibrate-horizontal {
-	@include bs-hover() {
-		@include bs-vibrate-horizontal();
+	&-vibrate-vertical {
+		@include bs-hover() {
+			@include bs-vibrate-vertical();
+		}
 	}
-}
 
-.#{$bs-prefix}u-animate-shake-scale {
-	@include bs-hover() {
-		@include bs-shake-scale();
+	&-shake-horizontal {
+		@include bs-hover() {
+			@include bs-shake-horizontal();
+		}
 	}
-}
 
-.#{$bs-prefix}u-animate-vibrate-scale {
-	@include bs-hover() {
-		@include bs-vibrate-scale();
+	&-vibrate-horizontal {
+		@include bs-hover() {
+			@include bs-vibrate-horizontal();
+		}
+	}
+
+	&-shake-scale {
+		@include bs-hover() {
+			@include bs-shake-scale();
+		}
+	}
+
+	&-vibrate-scale {
+		@include bs-hover() {
+			@include bs-vibrate-scale();
+		}
 	}
 }
