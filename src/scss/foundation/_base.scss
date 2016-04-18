@@ -21,6 +21,11 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+code, kbd, pre, samp {
+	@include bs-font-size-line-height($bs-font-size * 0.9);
+	font-family: '_', monospace;
+}
+
 input, textarea, keygen, select, button {
 	font-family: $bs-font-family;
 }
@@ -140,6 +145,7 @@ pre {
 		background-color: transparent;
 		border: none;
 		color: $bs-color-text;
+		font-size: 100%;
 		padding: 0;
 	}
 }
