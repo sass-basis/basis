@@ -34,7 +34,7 @@ jQuery( function( $ ) {
 		}
 
 		function fix() {
-			if ( $( '.l-sub' ).css( 'max-width' ) == '25%' ) {
+			if ( $( '.l-sub' ).css( 'flex-basis' ) == '25%' ) {
 				if ( $( window ).height() - $( '.l-footer' ).outerHeight() < fix_area.height() ) {
 					if ( $( document ).height() - $( window ).height() - $( '.l-footer' ).outerHeight() <= scroll ) {
 						unfixed();
