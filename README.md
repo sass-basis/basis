@@ -78,8 +78,9 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
-#### April 16, 2016 v4.0.0
+#### April 18, 2016 v4.0.0
 * Refactoring directory structure.
+* Refactoring input-group style.
 * Added variable `$bs-use-mixin-only`. If you don't need classes of the Basis, set to true.
 * Added mixins to make the Basis components.
 * Added variables for the components of style.
