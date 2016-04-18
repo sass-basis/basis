@@ -1,0 +1,7 @@
+.#{$bs-prefix}c-container-fluid {
+	@include bs-c-container-fluid();
+}
+
+.#{$bs-prefix}c-container {
+	@include bs-c-container();
+}

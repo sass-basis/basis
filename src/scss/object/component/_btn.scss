@@ -1,17 +1,5 @@
 .#{$bs-prefix}c-btn {
-	background-color: #fff;
-	border: 1px solid bs-lighter($bs-color-gray);
-	color: $bs-color-text;
-	cursor: pointer;
-	display: inline-block;
-	@include bs-font-size( $bs-font-size );
-	line-height: $bs-base-line-height;
-	padding: ($bs-font-size / 2) ($bs-font-size * 2);
-	text-align: center;
-	text-decoration: none;
-	vertical-align: middle;
-	white-space: nowrap;
-	overflow: hidden;
+	@include bs-c-btn();
 
 	&--block {
 		display: block;
@@ -19,7 +7,7 @@
 
 	&--ghost {
 		background-color: transparent;
-		border: 1px solid #fff;
+		border-color: #fff;
 		color: #fff;
 	}
 }

@@ -1,8 +1,3 @@
 .#{$bs-prefix}c-alert {
-	background-color: #fff;
-	border-radius: $bs-border-radius-m;
-	border: 1px solid bs-lighter($bs-color-gray);
-	display: block;
-	margin-bottom: $bs-base-line-height;
-	padding: $bs-font-size;
+	@include bs-c-alert();
 }
