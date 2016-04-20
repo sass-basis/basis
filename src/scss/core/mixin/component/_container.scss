@@ -17,7 +17,6 @@ $bs-container-margin: $bs-base-line-height !default;
 	margin-left: auto;
 	padding-right: $bs-container-margin;
 	padding-left: $bs-container-margin;
-	overflow: hidden;
 }
 
 /**
@@ -32,7 +31,7 @@ $bs-container-margin: $bs-base-line-height !default;
  * </div>
  */
 
-$bs-c-container-max-width: 75em !default;
+$bs-c-container-max-width: 75rem !default;
 
 @mixin bs-c-container() {
 	@include bs-c-container-fluid();

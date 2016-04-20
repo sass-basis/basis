@@ -78,6 +78,9 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### April 21, 2016 v4.0.1
+* Fixed a `._c-container` bug.
+
 #### April 18, 2016 v4.0.0
 * Refactoring directory structure.
 * Refactoring input-group style.
