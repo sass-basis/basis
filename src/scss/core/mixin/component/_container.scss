@@ -31,7 +31,7 @@ $bs-container-margin: $bs-base-line-height !default;
  * </div>
  */
 
-$bs-c-container-max-width: 75rem !default;
+$bs-c-container-max-width: 120rem !default;
 
 @mixin bs-c-container() {
 	@include bs-c-container-fluid();
