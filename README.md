@@ -3,11 +3,11 @@ A lightweight responsive CSS framework based on flexible box ( flexbox )
 
 ## Website
 
-http://inc2734.github.io/basis/
+http://sass-basis.github.io/basis/
 
 ## GitHub
 
-https://github.com/inc2734/basis
+https://github.com/sass-basis/basis
 
 ## Get started
 
@@ -25,7 +25,7 @@ or Just this link.
 
 ### Download from GitHub
 
-1. Download the basis from https://github.com/inc2734/basis/releases
+1. Download the basis from https://github.com/sass-basis/basis/releases
 2. Build basis
 ```shell
 $ cd /PATH/TO/basis
@@ -77,6 +77,9 @@ Pull request sent to the master branch doesn't merge.
 * github.com/necolas/normalize.css
 
 ## Changelog
+
+#### April 24, 2016 v4.1.0
+* Changed GitHub repository.
 
 #### April 21, 2016 v4.0.2
 * Fixed a `._c-container` bug.

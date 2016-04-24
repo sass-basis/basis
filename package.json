@@ -7,10 +7,10 @@
     "Toro_Unit"
   ],
   "license": "GPL-2.0+",
-  "homepage": "http://inc2734.github.io/basis/",
+  "homepage": "http://sass-basis.github.io/basis/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/inc2734/basis"
+    "url": "https://github.com/sass-basis/basis"
   },
   "dependencies": {
     "autoprefixer": "^6.3.1",
