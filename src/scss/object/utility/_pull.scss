@@ -1,9 +1,11 @@
-.#{$bs-prefix}u-pull {
-	&-right {
-		float: right !important;
-	}
+@if (not bs-is-use-mixin-only()) {
+	.#{$bs-prefix}u-pull {
+		&-right {
+			float: right !important;
+		}
 
-	&-left {
-		float: left !important;
+		&-left {
+			float: left !important;
+		}
 	}
 }

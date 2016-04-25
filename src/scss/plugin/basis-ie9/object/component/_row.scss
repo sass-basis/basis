@@ -136,7 +136,8 @@
 
 						@if $i < $max_columns {
 							&#{$prefix}-offset-#{$i}-#{$max_columns} {
-								@extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
+								// Depending on the base style.
+								// @extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
 							}
 						}
 					}

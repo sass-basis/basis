@@ -8,8 +8,5 @@
  */
 
 @import 'core/core';
-
-@if ($bs-use-mixin-only != true) {
-	@import 'foundation/foundation';
-	@import 'object/object';
-}
+@import 'foundation/foundation';
+@import 'object/object';

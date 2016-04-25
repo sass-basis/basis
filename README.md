@@ -81,6 +81,7 @@ Pull request sent to the master branch doesn't merge.
 #### April 24, 2016 v4.1.0
 * Changed GitHub repository.
 * Changed license.
+* Move imports out of if statement.
 
 #### April 21, 2016 v4.0.2
 * Fixed a `._c-container` bug.
