@@ -1,3 +1,5 @@
-.#{$bs-prefix}c-alert {
-	@include bs-c-alert();
+@if (not bs-is-use-mixin-only()) {
+	.#{$bs-prefix}c-alert {
+		@include bs-c-alert();
+	}
 }

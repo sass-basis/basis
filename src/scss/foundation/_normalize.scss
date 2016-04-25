@@ -1,3 +1,5 @@
+@if (not bs-is-use-mixin-only()) {
+
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /**
@@ -421,4 +423,6 @@ textarea {
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
+}
+
 }

@@ -1,13 +1,15 @@
-.#{$bs-prefix}c-btn {
-	@include bs-c-btn();
+@if (not bs-is-use-mixin-only()) {
+	.#{$bs-prefix}c-btn {
+		@include bs-c-btn();
 
-	&--block {
-		display: block;
-	}
+		&--block {
+			display: block;
+		}
 
-	&--ghost {
-		background-color: transparent;
-		border-color: #fff;
-		color: #fff;
+		&--ghost {
+			background-color: transparent;
+			border-color: #fff;
+			color: #fff;
+		}
 	}
 }

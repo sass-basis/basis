@@ -1,55 +1,57 @@
-.#{$bs-prefix}u-visible {
-	&-sm-inline {
-		@include bs-bp-sm-only() {
-			display: inline !important;
+@if (not bs-is-use-mixin-only()) {
+	.#{$bs-prefix}u-visible {
+		&-sm-inline {
+			@include bs-bp-sm-only() {
+				display: inline !important;
+			}
 		}
-	}
 
-	&-sm-inline-block {
-		@include bs-bp-sm-only() {
-			display: inline-block !important;
+		&-sm-inline-block {
+			@include bs-bp-sm-only() {
+				display: inline-block !important;
+			}
 		}
-	}
 
-	&-sm-block {
-		@include bs-bp-sm-only() {
-			display: block !important;
+		&-sm-block {
+			@include bs-bp-sm-only() {
+				display: block !important;
+			}
 		}
-	}
 
-	&-md-inline {
-		@include bs-bp-md-only() {
-			display: inline !important;
+		&-md-inline {
+			@include bs-bp-md-only() {
+				display: inline !important;
+			}
 		}
-	}
 
-	&-md-inline-block {
-		@include bs-bp-md-only() {
-			display: inline-block !important;
+		&-md-inline-block {
+			@include bs-bp-md-only() {
+				display: inline-block !important;
+			}
 		}
-	}
 
-	&-md-block {
-		@include bs-bp-md-only() {
-			display: block !important;
+		&-md-block {
+			@include bs-bp-md-only() {
+				display: block !important;
+			}
 		}
-	}
 
-	&-lg-inline {
-		@include bs-bp-lg-only() {
-			display: inline !important;
+		&-lg-inline {
+			@include bs-bp-lg-only() {
+				display: inline !important;
+			}
 		}
-	}
 
-	&-lg-inline-block {
-		@include bs-bp-lg-only() {
-			display: inline-block !important;
+		&-lg-inline-block {
+			@include bs-bp-lg-only() {
+				display: inline-block !important;
+			}
 		}
-	}
 
-	&-lg-block {
-		@include bs-bp-lg-only() {
-			display: block !important;
+		&-lg-block {
+			@include bs-bp-lg-only() {
+				display: block !important;
+			}
 		}
 	}
 }

@@ -1,25 +1,27 @@
-.#{$bs-prefix}c-media {
-	@include bs-c-media();
+@if (not bs-is-use-mixin-only()) {
+	.#{$bs-prefix}c-media {
+		@include bs-c-media();
 
-	&--middle {
-		align-items: center;
-	}
-
-	&__figure {
-		@include bs-c-media__figure();
-
-		.#{$bs-prefix}c-media--reverse & {
-			margin-right: 0;
-			margin-left: $bs-c-media-margin;
-			order: 1;
+		&--middle {
+			align-items: center;
 		}
-	}
 
-	&__body {
-		@include bs-c-media__body();
+		&__figure {
+			@include bs-c-media__figure();
 
-		> .#{$bs-prefix}c-media {
-			margin-top: $bs-c-media-margin;
+			.#{$bs-prefix}c-media--reverse & {
+				margin-right: 0;
+				margin-left: $bs-c-media-margin;
+				order: 1;
+			}
+		}
+
+		&__body {
+			@include bs-c-media__body();
+
+			> .#{$bs-prefix}c-media {
+				margin-top: $bs-c-media-margin;
+			}
 		}
 	}
 }

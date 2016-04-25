@@ -1,25 +1,27 @@
 {
   "name": "sass-basis",
-  "version": "4.0.2",
+  "version": "4.1.0",
   "main": "src/scss/basis.scss",
   "author": "inc2734",
   "contributors": [
     "Toro_Unit"
   ],
-  "license": "GPL-2.0+",
-  "homepage": "http://inc2734.github.io/basis/",
+  "license": "MIT",
+  "homepage": "http://sass-basis.github.io/basis/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/inc2734/basis"
+    "url": "https://github.com/sass-basis/basis"
+  },
+  "devDependencies": {
+  	"browser-sync": "^2.12.3"
   },
   "dependencies": {
-    "autoprefixer": "^6.3.1",
-    "browser-sync": "^2.11.1",
-    "cssnano": "^3.4.0",
-    "gulp": "^3.9.0",
-    "gulp-postcss": "^6.0.1",
+    "autoprefixer": "^6.3.6",
+    "cssnano": "^3.5.2",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.1.1"
+    "gulp-sass": "^2.3.1"
   },
   "scripts": {
     "build": "gulp build",

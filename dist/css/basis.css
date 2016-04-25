@@ -1,10 +1,10 @@
 /*!
- * Name: Basis v4.0.2
+ * Name: Basis v4.1.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
- * GitHub Repository: https://github.com/inc2734/basis
- * License: GPLv2 or later
+ * GitHub Repository: https://github.com/sass-basis/basis
+ * License: MIT
  */
 /**
  * Prefix of basis classes
@@ -489,9 +489,6 @@
  *    </div>
  * </div>
  */
-/* ========================================
- * foundation
- ======================================= */
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -1076,9 +1073,6 @@ label {
   display: none;
 }
 
-/* ========================================
- * object
- ======================================= */
 ._c-alert {
   background-color: #fff;
   border-radius: 3px;

@@ -1,15 +1,12 @@
 /*!
- * Name: Basis v4.0.2
+ * Name: Basis v4.1.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
- * GitHub Repository: https://github.com/inc2734/basis
- * License: GPLv2 or later
+ * GitHub Repository: https://github.com/sass-basis/basis
+ * License: MIT
  */
 
 @import 'core/core';
-
-@if ($bs-use-mixin-only != true) {
-	@import 'foundation/foundation';
-	@import 'object/object';
-}
+@import 'foundation/foundation';
+@import 'object/object';

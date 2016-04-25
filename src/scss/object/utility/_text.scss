@@ -1,13 +1,15 @@
-.#{$bs-prefix}u-text {
-	&-center {
-		text-align: center !important;
-	}
+@if (not bs-is-use-mixin-only()) {
+	.#{$bs-prefix}u-text {
+		&-center {
+			text-align: center !important;
+		}
 
-	&-right {
-		text-align: right !important;
-	}
+		&-right {
+			text-align: right !important;
+		}
 
-	&-left {
-		text-align: left !important;
+		&-left {
+			text-align: left !important;
+		}
 	}
 }
