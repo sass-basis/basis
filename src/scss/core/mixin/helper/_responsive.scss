@@ -1,7 +1,7 @@
 //
 // Return min-width media query
 //
-// @param   length  $min  width
+// @param  length  $min  width
 //
 @mixin bs-bp-min($min) {
 	@if ($min == $bs-screen-sm-min) {
@@ -16,7 +16,7 @@
 //
 // Return max-width media query
 //
-// @param   length  $max  width
+// @param  length  $max  width
 //
 @mixin bs-bp-max($max) {
 	@media (max-width: $max) {
