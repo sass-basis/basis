@@ -1,15 +1,7 @@
-/* ========================================
- * function
- ======================================= */
 @import 'color';
 @import 'rem2px';
 @import 'margin';
 @import 'strip-unit';
-
-
-@function bs-is-use-mixin-only() {
-	@if ($bs-use-mixin-only == true) {
-		@return true;
-	}
-	@return false;
-}
+@import 'is-use-mixin-only';
+@import 'gcd';
+@import 'bp-prefix';

@@ -1,20 +1,20 @@
-/**
- * Return px and rem font-sizes
- *
- * @param  rem  $rem
- */
+//
+// Return px and rem font-sizes
+//
+// @param  rem  $rem
+//
 @mixin bs-font-size($rem) {
 	font-size: bs-rem2px($rem);
 	font-size: $rem;
 }
 
-/**
- * Return line height ( px ) for vertical rhythum
- *
- * @param   px   $value
- * @param   int  $coefficient
- * @return  int
- */
+//
+// Return line height ( px ) for vertical rhythum
+//
+// @param   px   $value
+// @param   int  $coefficient
+// @return  int
+//
 @function bs-vertical-rhythm($value, $coefficient: 1) {
 	$between-lines-px   : bs-strip-unit(bs-rem2px($bs-between-lines));
 	$base-line-height-px: bs-strip-unit(bs-rem2px($bs-base-line-height));
@@ -33,25 +33,25 @@
 	}
 }
 
-/**
- * Return line-height for vertical rhythum
- *
- * @param  rem  $rem  font size
- */
+//
+// Return line-height for vertical rhythum
+//
+// @param  rem  $rem  font size
+//
 @mixin bs-line-height($rem) {
 	$px: bs-rem2px($rem);
 	line-height: bs-vertical-rhythm(bs-strip-unit($px)) / bs-strip-unit($px);
 }
 
-/**
- * Return px and rem font-sizes and line-height for vertical rhythum
- *
- * @param  rem  $rem
- *
- * h1 {
- *     @include bs-font-size-line-height(2.4rem);
- * }
- */
+//
+// Return px and rem font-sizes and line-height for vertical rhythum
+//
+// @param  rem  $rem
+//
+// h1 {
+//     @include bs-font-size-line-height(2.4rem);
+// }
+//
 @mixin bs-font-size-line-height($rem) {
 	@include bs-font-size($rem);
 	@include bs-line-height($rem);

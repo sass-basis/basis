@@ -1,9 +1,9 @@
-/**
- * Bounce vertical
- *
- * @param   length             $px        bounce size
- * @param   second|milisecond  $delay: 0  animate time
- */
+//
+// Bounce vertical
+//
+// @param   length             $px        bounce size
+// @param   second|milisecond  $delay: 0  animate time
+//
 @mixin bs-bounce-vertical($px, $delay: 0) {
 	position: relative;
 	animation: bs-bounce-vertical-#{$px} $delay;
@@ -17,26 +17,26 @@
 	}
 }
 
-/**
- * Shake vertical
- */
+//
+// Shake vertical
+//
 @mixin bs-shake-vertical() {
 	@include bs-bounce-vertical(4px, .5s);
 }
 
-/**
- * Vibrate vertical
- */
+//
+// Vibrate vertical
+//
 @mixin bs-vibrate-vertical() {
 	@include bs-bounce-vertical(2px, .2s);
 }
 
-/**
- * Bounce horizontal
- *
- * @param   length             $px        bounce size
- * @param   second|milisecond  $delay: 0  animate time
- */
+//
+// Bounce horizontal
+//
+// @param   length             $px        bounce size
+// @param   second|milisecond  $delay: 0  animate time
+//
 @mixin bs-bounce-horizontal($px, $delay: 0) {
 	position: relative;
 	animation: bs-bounce-horizontal-#{$px} $delay;
@@ -50,26 +50,26 @@
 	}
 }
 
-/**
- * Shake horizontal
- */
+//
+// Shake horizontal
+//
 @mixin bs-shake-horizontal() {
 	@include bs-bounce-horizontal(4px, .5s);
 }
 
-/**
- * Vibrate horizontal
- */
+//
+// Vibrate horizontal
+//
 @mixin bs-vibrate-horizontal() {
 	@include bs-bounce-horizontal(2px, .2s);
 }
 
-/**
- * Bounce scale
- *
- * @param   float              $px        bounce size
- * @param   second|milisecond  $delay: 0  animate time
- */
+//
+// Bounce scale
+//
+// @param   float              $px        bounce size
+// @param   second|milisecond  $delay: 0  animate time
+//
 @mixin bs-bounce-scale($float, $delay: 0) {
 	$suffix: bs-strip-unit(percentage($float));
 	animation: bs-bounce-scale-#{$suffix} $delay ease-out;
@@ -84,16 +84,16 @@
 	}
 }
 
-/**
- * Shake scale
- */
+//
+// Shake scale
+//
 @mixin bs-shake-scale() {
 	@include bs-bounce-scale(1.2, .5s);
 }
 
-/**
- * Vibrate scale
- */
+//
+// Vibrate scale
+//
 @mixin bs-vibrate-scale() {
 	@include bs-bounce-scale(1.1, .2s);
 }

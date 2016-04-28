@@ -1,15 +1,15 @@
-/**
- * Event helper
- *
- * img {
- *     @bs-hover() {
- *         opacity: .8;
- *     }
- * }
- */
+//
+// Event helper
+//
+// img {
+//     @bs-hover() {
+//         opacity: .8;
+//     }
+// }
+//
 
 @mixin bs-hover() {
-	&:hover, &:active, &:focus {
+	&:hover, &:focus {
 		@content;
 	}
 }

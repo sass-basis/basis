@@ -1,19 +1,19 @@
-/**
- * Hero component
- *
- * .c-hero {
- *     @include bs-c-hero();
- *     &__header {
- *         @include bs-c-hero__header();
- *     }
- *     &__content {
- *         @include bs-c-hero__content();
- *     }
- *     &__footer {
- *         @include bs-c-hero__footer();
- *     }
- * }
- */
+//
+// Hero component
+//
+// .c-hero {
+//     @include bs-c-hero();
+//     &__header {
+//         @include bs-c-hero__header();
+//     }
+//     &__content {
+//         @include bs-c-hero__content();
+//     }
+//     &__footer {
+//         @include bs-c-hero__footer();
+//     }
+// }
+//
 
 @mixin bs-c-hero() {
 	display: flex;
