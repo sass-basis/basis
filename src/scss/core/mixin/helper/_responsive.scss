@@ -46,7 +46,7 @@
 // Return media query for smartphone size
 //
 @mixin bs-bp-sm-only() {
-	@media (max-width: $bs-screen-sm-max) {
+	@include bs-bp-max($bs-screen-sm-max) {
 		@content;
 	}
 }
@@ -60,13 +60,13 @@
 	}
 }
 
-/**
- * Return media query for pc size
- *
- * @return  string  media query
- */
+//
+// Return media query for pc size
+//
+// @return  string  media query
+//
 @mixin bs-bp-lg-only() {
-	@media (min-width: $bs-screen-lg-min) {
+	@include bs-bp-min($bs-screen-lg-min) {
 		@content;
 	}
 }

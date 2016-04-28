@@ -36,7 +36,7 @@ $bs-c-container-max-width: 120rem !default;
 @mixin bs-c-container() {
 	@include bs-c-container-fluid();
 
-	@include bs-bp-min($bs-screen-lg-min) {
+	@include bs-bp-lg-only() {
 		max-width: $bs-c-container-max-width;
 	}
 }
