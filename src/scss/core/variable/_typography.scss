@@ -25,7 +25,7 @@ $bs-between-lines: .4rem !default;
 // Default line height
 // @type  rem
 //
-$bs-base-line-height: ($bs-font-size + $bs-between-lines// 2) !default;
+$bs-base-line-height: ($bs-font-size + $bs-between-lines * 2) !default;
 
 //
 // Margin coefficient
