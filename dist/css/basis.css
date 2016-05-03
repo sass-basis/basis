@@ -1,88 +1,10 @@
 /*!
- * Name: Basis v4.2.3
+ * Name: Basis v4.2.6
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
  * GitHub Repository: https://github.com/sass-basis/basis
  * License: MIT
- */
-/**
- * Prefix of basis classes
- * @type  string
- */
-/**
- * If you don't need classes of the Basis, set to true.
- */
-/**
- * Default font size
- * @type  rem
- */
-/**
- * Heading element font size scale;
- * @type  int
- */
-/**
- * Between the character and line of line-height
- * @type  rem
- */
-/**
- * Default line height
- * @type  rem
- */
-/**
- * Margin coefficient
- * @type  int
- */
-/**
- * Default font family
- * @type  string
- */
-/**
- * Break point for smartphone
- * @type  length
- */
-/**
- * Break point for smartphone and tablet
- * 640px / 16px
- * @type  length
- */
-/**
- * Break point for tablet and pc
- * 1024px / 16px
- * @type  length
- */
-/**
- * Array of breakpoints
- * @type  array
- */
-/**
- * Default text color
- * @type  hex
- */
-/**
- * Default black color
- * @type  hex
- */
-/**
- * Default gray color
- * @type  hex
- */
-/**
- * Default red color
- * @type  hex
- */
-/**
- * Animation time
- * @type  second|milisecond
- */
-/**
- * Transition function timing
- * @type  string
- * @see  http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
- */
-/**
- * Border radius
- * @type  length
  */
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
 /**

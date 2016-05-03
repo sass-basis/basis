@@ -1,29 +1,29 @@
-/**
- * Break point for smartphone
- * @type  length
- */
+//
+// Break point for smartphone
+// @type  length
+//
 $bs-screen-sm-min: 0;
 
-/**
- * Break point for smartphone and tablet
- * 640px / 16px
- * @type  length
- */
+//
+// Break point for smartphone and tablet
+// 640px / 16px
+// @type  length
+//
 $bs-screen-md-min: 40em !default;
 $bs-screen-sm-max: ($bs-screen-md-min - (1em / bs-strip-unit(bs-rem2px($bs-font-size))));
 
-/**
- * Break point for tablet and pc
- * 1024px / 16px
- * @type  length
- */
+//
+// Break point for tablet and pc
+// 1024px / 16px
+// @type  length
+//
 $bs-screen-lg-min: 64em !default;
 $bs-screen-md-max: ($bs-screen-lg-min - (1em / bs-strip-unit(bs-rem2px($bs-font-size))));
 
-/**
- * Array of breakpoints
- * @type  array
- */
+//
+// Array of breakpoints
+// @type  array
+//
 $bs-sizes: (
 	sm: $bs-screen-sm-min,
 	md: $bs-screen-md-min,
