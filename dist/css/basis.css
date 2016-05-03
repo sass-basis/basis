@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v4.2.1
+ * Name: Basis v4.2.2
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -898,6 +898,9 @@ textarea._c-form-control {
 
 ._c-media__figure {
   margin-right: 2.4rem;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
 }
 
 ._c-media__figure > * {

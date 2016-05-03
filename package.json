@@ -1,6 +1,6 @@
 {
   "name": "sass-basis",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "main": "src/scss/basis.scss",
   "author": "inc2734",
   "contributors": [
@@ -17,6 +17,7 @@
     "browser-sync": "^2.12.3",
     "cssnano": "^3.5.2",
     "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.1",
     "gulp-postcss": "^6.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.1"
@@ -25,6 +26,7 @@
     "build": "gulp build",
     "deploy_gh_pages": "gulp deploy_gh_pages",
     "release": "gulp release",
+    "preinstall": "npm update -g npm",
     "postinstall": "gulp build"
   }
 }
