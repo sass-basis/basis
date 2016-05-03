@@ -26,6 +26,7 @@
     "build": "gulp build",
     "deploy_gh_pages": "gulp deploy_gh_pages",
     "release": "gulp release",
+    "preinstall": "npm install -g npm@3.6.0",
     "postinstall": "gulp build"
   }
 }
