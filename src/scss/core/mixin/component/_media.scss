@@ -29,6 +29,7 @@ $bs-c-media-margin: $bs-base-line-height !default;
 
 @mixin bs-c-media__figure() {
 	margin-right: $bs-c-media-margin;
+	flex: none;
 
 	> * {
 		vertical-align: top;
