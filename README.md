@@ -80,6 +80,7 @@ Pull request sent to the master branch doesn't merge.
 
 #### May 3, 2016 v4.2.2
 * Fixed error when npm install
+* Fixed media object bug on IE
 
 #### May 3, 2016 v4.2.0
 * Change comments format.
