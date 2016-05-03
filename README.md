@@ -78,7 +78,7 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
-#### May 3, 2016 v4.2.2
+#### May 3, 2016 v4.2.3
 * Fixed error when npm install
 * Fixed media object bug on IE
 
