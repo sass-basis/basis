@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v4.1.0
+ * Name: Basis v4.2.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -12,64 +12,6 @@
  */
 /**
  * If you don't need classes of the Basis, set to true.
- */
-/* ========================================
- * function
- ======================================= */
-/**
- * A little brighten
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * Brighten
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * To very brighten
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * A little darken
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * Darken
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * To very darken
- *
- * @param   hex  $hex
- * @return  hex
- */
-/**
- * Return rem from px
- * @param   rem  $rem
- * @return  px
- */
-/**
- * Return the margin conforming to the rhythm
- *
- * @param   length  $base-margin
- * @param   int     $base-coefficient
- * @param   int     $add-coefficient
- * @return  length
- */
-/**
- * Return numeric value that doesn't have the unit.
- *
- * @param   length  $value  numeric value
- * @return  int
  */
 /**
  * Default font size
@@ -141,353 +83,6 @@
 /**
  * Border radius
  * @type  length
- */
-/**
- * Return min-width media query
- *
- * @param   length  $min  width
- * @return  string  min-width media query
- */
-/**
- * Return max-width media query
- *
- * @param   length  $max  width
- * @return  string  max-width media query
- */
-/**
- * Return media query for smartphone size
- *
- * @return  length  media query
- */
-/**
- * Return media query for tablet size
- *
- * @return  length  media query
- */
-/**
- * Return media query for pc size
- *
- * @return  string  media query
- */
-/**
- * Event helper
- *
- * img {
- *     @bs-hover() {
- *         opacity: .8;
- *     }
- * }
- */
-/**
- * Return px and rem font-sizes
- *
- * @param  rem  $rem
- */
-/**
- * Return line height ( px ) for vertical rhythum
- *
- * @param   px   $value
- * @param   int  $coefficient
- * @return  int
- */
-/**
- * Return line-height for vertical rhythum
- *
- * @param  rem  $rem  font size
- */
-/**
- * Return px and rem font-sizes and line-height for vertical rhythum
- *
- * @param  rem  $rem
- *
- * h1 {
- *     @include bs-font-size-line-height(2.4rem);
- * }
- */
-/**
- * Retrun margin-top
- *
- * @param  int  $coefficient
- */
-/**
- * Retrun margin-right
- *
- * @param  int  $coefficient
- */
-/**
- * Retrun margin-bottom
- *
- * @param  int  $coefficient
- */
-/**
- * Retrun margin-left
- *
- * @param  int  $coefficient
- */
-/**
- * Bounce vertical
- *
- * @param   length             $px        bounce size
- * @param   second|milisecond  $delay: 0  animate time
- */
-/**
- * Shake vertical
- */
-/**
- * Vibrate vertical
- */
-/**
- * Bounce horizontal
- *
- * @param   length             $px        bounce size
- * @param   second|milisecond  $delay: 0  animate time
- */
-/**
- * Shake horizontal
- */
-/**
- * Vibrate horizontal
- */
-/**
- * Bounce scale
- *
- * @param   float              $px        bounce size
- * @param   second|milisecond  $delay: 0  animate time
- */
-/**
- * Shake scale
- */
-/**
- * Vibrate scale
- */
-/**
- * Clearfix helper
- *
- * .clerfix {
- *     @include bs-u-clearfix();
- * }
- *
- * <div class="clearfix">
- *     <img style="float: right" />
- *     ....
- * </div>
- */
-/**
- * Transition helper
- *
- * a {
- *     @include bs-transition-all();
- *     color: #f00;
- *     &:hover {
- *         color: #f9c;
- *     }
- * }
- */
-/**
- * Transition helper
- *
- * .c-progress-bar {
- *     @include bs-transition-size();
- *     height: 10px;
- *     width: 10px;
- *     &:hover {
- *         width: 20px;
- *     }
- * }
- */
-/**
- * Transition helper
- *
- * img {
- *     @include bs-transition-opacity();
- *     opacity: 1;
- *     &:hover {
- *         opacity: .8;
- *     }
- * }
- */
-/**
- * Alert component
- *
- * .c-alert {
- *     @include bs-c-alert();
- * }
- *
- * <alert class="c-alert">
- *     ...
- * </alert>
- */
-/**
- * Button component
- *
- * .c-btn {
- *     @include bs-c-btn();
- * }
- *
- * <a class="c-btn">btn</a>
- */
-/**
- * Checkbox component
- *
- * .c-checkbox {
- *     @include bs-c-checkbox();
- * }
- *
- * <span class="c-checkbox">
- *     <input type="checkbox" />
- * </span>
- */
-/**
- * Fluid container component
- *
- * .c-container-fluid {
- *     @include bs-c-container-fluid();
- * }
- *
- * <div class="c-container-fluid">
- *    ...
- * </div>
- */
-/**
- * Container component
- *
- * .c-container {
- *     @include bs-c-container();
- * }
- *
- * <div class="c-container">
- *    ...
- * </div>
- */
-/**
- * Form control component
- *
- * .c-form-control {
- *     @include bs-c-form-control();
- * }
- *
- * <input type="text" class="c-form-control" />
- */
-/**
- * Hero component
- *
- * .c-hero {
- *     @include bs-c-hero();
- *     &__header {
- *         @include bs-c-hero__header();
- *     }
- *     &__content {
- *         @include bs-c-hero__content();
- *     }
- *     &__footer {
- *         @include bs-c-hero__footer();
- *     }
- * }
- */
-/**
- * Input group component
- *
- * .c-input-group {
- *     @include bs-c-input-group();
- *     &__addon {
- *         @include bs-c-input-group__addon();
- *     }
- *     &__field {
- *         @include bs-c-input-group__field();
- *     }
- *     &__control {
- *         @include bs-c-input-group__control();
- *     }
- *     &__btn {
- *         @include bs-c-input-group__btn();
- *     }
- * }
- *
- * <div class="c-input-group">
- *     <div class="c-input-group__addon">@</div>
- *     <div class="c-input-group__field">
- *         <input type="text" class="c-input-group__control" />
- *     </div>
- *     <button class="c-input-group__btn">Go</button>
- * </div>
- */
-/**
- * Media component
- *
- * .c-media {
- *     @include bs-c-media();
- *     &__figure {
- *         @include bs-c-media__figure();
- *     }
- *     &__body {
- *         @include bs-c-media__body();
- *     }
- * }
- *
- * <div class="c-media">
- *    <div class="c-media__figure">
- *        <img ... />
- *    </div>
- *    <div class="c-media__body">
- *        ...
- *    </div>
- * </div>
- */
-/**
- * Radio component
- *
- * .c-radio {
- *     @include bs-c-radio();
- * }
- *
- * <span class="c-radio">
- *     <input type="radio" />
- * </span>
- */
-/**
- * Return prefix for the device size
- *
- * @param   string  $size  sm|md|lg
- * @return  string
- */
-/**
- * Return greatest common divisor
- *
- * @param   int  $a  The number to be divided
- * @param   int  $b  The number to divide
- * @return  int  The number of the remainder
- */
-/**
- * Adding margin for the row
- *
- * @param  length  $margin  margin size
- */
-/**
- * Adding margin for the column
- *
- * @param  length  $margin  margin size
- */
-/**
- * Grid component
- *
- * .c-row {
- *     @include bs-c-row();
- *     &__col {
- *         @include bs-c-row__col();
- *         &--1-3 {
- *             @include bs-c-row__col(1, 3);
- *         }
- *         &--offset-1-3 {
- *             @include bs-c-row__col--offset(1, 3);
- *         }
- *     }
- * }
- *
- * <div class="c-row">
- *    <div class="c-row__col">
- *        ...
- *    </div>
- * </div>
  */
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -926,26 +521,17 @@ input, textarea, keygen, select, button {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/**
- * image
- */
 img {
   height: auto;
   max-width: 100%;
   vertical-align: middle;
 }
 
-/**
- * margin
- */
 p, ul, ol, dl, table, pre, blockquote {
   margin-top: 0;
   margin-bottom: 2.4rem;
 }
 
-/**
- * heading
- */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
@@ -998,9 +584,6 @@ h6 {
   margin-bottom: 1.2rem;
 }
 
-/**
- * Lists
- */
 ol ol, ol ul, ul ol, ul ul {
   margin-bottom: 0;
 }
@@ -1013,9 +596,6 @@ dd {
   margin-left: 0;
 }
 
-/**
- * blockquote
- */
 blockquote {
   border-left: 0.8rem solid #eeeeee;
   margin-left: 0;
@@ -1031,9 +611,6 @@ blockquote footer {
   font-size: 90%;
 }
 
-/**
- * code
- */
 code {
   background-color: #fad8d4;
   border-radius: 3px;
@@ -1041,9 +618,6 @@ code {
   padding: 2px 4px;
 }
 
-/**
- * pre
- */
 pre {
   background-color: #f7f7f7;
   border: 1px solid #eeeeee;
@@ -1059,16 +633,10 @@ pre code {
   padding: 0;
 }
 
-/**
- * label
- */
 label {
   cursor: pointer;
 }
 
-/**
- * WAI-ARIA
- */
 [aria-hidden="true"] {
   display: none;
 }
@@ -3628,7 +3196,7 @@ textarea._c-form-control {
   transition: opacity 0.1s ease-out;
 }
 
-._u-animate-shake-vertical:hover, ._u-animate-shake-vertical:active, ._u-animate-shake-vertical:focus {
+._u-animate-shake-vertical:hover, ._u-animate-shake-vertical:focus {
   position: relative;
   -webkit-animation: bs-bounce-vertical-4px 0.5s;
   animation: bs-bounce-vertical-4px 0.5s;
@@ -3670,7 +3238,7 @@ textarea._c-form-control {
   }
 }
 
-._u-animate-vibrate-vertical:hover, ._u-animate-vibrate-vertical:active, ._u-animate-vibrate-vertical:focus {
+._u-animate-vibrate-vertical:hover, ._u-animate-vibrate-vertical:focus {
   position: relative;
   -webkit-animation: bs-bounce-vertical-2px 0.2s;
   animation: bs-bounce-vertical-2px 0.2s;
@@ -3712,7 +3280,7 @@ textarea._c-form-control {
   }
 }
 
-._u-animate-shake-horizontal:hover, ._u-animate-shake-horizontal:active, ._u-animate-shake-horizontal:focus {
+._u-animate-shake-horizontal:hover, ._u-animate-shake-horizontal:focus {
   position: relative;
   -webkit-animation: bs-bounce-horizontal-4px 0.5s;
   animation: bs-bounce-horizontal-4px 0.5s;
@@ -3754,7 +3322,7 @@ textarea._c-form-control {
   }
 }
 
-._u-animate-vibrate-horizontal:hover, ._u-animate-vibrate-horizontal:active, ._u-animate-vibrate-horizontal:focus {
+._u-animate-vibrate-horizontal:hover, ._u-animate-vibrate-horizontal:focus {
   position: relative;
   -webkit-animation: bs-bounce-horizontal-2px 0.2s;
   animation: bs-bounce-horizontal-2px 0.2s;
@@ -3796,7 +3364,7 @@ textarea._c-form-control {
   }
 }
 
-._u-animate-shake-scale:hover, ._u-animate-shake-scale:active, ._u-animate-shake-scale:focus {
+._u-animate-shake-scale:hover, ._u-animate-shake-scale:focus {
   -webkit-animation: bs-bounce-scale-120 0.5s ease-out;
   animation: bs-bounce-scale-120 0.5s ease-out;
 }
@@ -3847,7 +3415,7 @@ textarea._c-form-control {
   }
 }
 
-._u-animate-vibrate-scale:hover, ._u-animate-vibrate-scale:active, ._u-animate-vibrate-scale:focus {
+._u-animate-vibrate-scale:hover, ._u-animate-vibrate-scale:focus {
   -webkit-animation: bs-bounce-scale-110 0.2s ease-out;
   animation: bs-bounce-scale-110 0.2s ease-out;
 }

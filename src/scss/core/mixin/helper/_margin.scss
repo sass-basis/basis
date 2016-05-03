@@ -1,35 +1,35 @@
-/**
- * Retrun margin-top
- *
- * @param  int  $coefficient
- */
+//
+// Retrun margin-top
+//
+// @param  int  $coefficient
+//
 @mixin bs-margin-top($coefficient) {
 	margin-top: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
 }
 
-/**
- * Retrun margin-right
- *
- * @param  int  $coefficient
- */
+//
+// Retrun margin-right
+//
+// @param  int  $coefficient
+//
 @mixin bs-margin-right($coefficient) {
 	margin-right: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
 }
 
-/**
- * Retrun margin-bottom
- *
- * @param  int  $coefficient
- */
+//
+// Retrun margin-bottom
+//
+// @param  int  $coefficient
+//
 @mixin bs-margin-bottom($coefficient) {
 	margin-bottom: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
 }
 
-/**
- * Retrun margin-left
- *
- * @param  int  $coefficient
- */
+//
+// Retrun margin-left
+//
+// @param  int  $coefficient
+//
 @mixin bs-margin-left($coefficient) {
 	margin-left: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
 }

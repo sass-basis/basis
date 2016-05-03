@@ -78,6 +78,11 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### May 3, 2016 v4.2.0
+* Change comments format.
+* Added mixin `bs-bp-md-min`, `bs-bp-md-max`
+* Refactoring around media query.
+
 #### April 24, 2016 v4.1.0
 * Changed GitHub repository.
 * Changed license.

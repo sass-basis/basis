@@ -1,0 +1,16 @@
+//
+// Return greatest common divisor
+//
+// @param   int  $a  The number to be divided
+// @param   int  $b  The number to divide
+// @return  int  The number of the remainder
+//
+@function bs-gcd($a, $b) {
+	$r: $a % $b;
+	@while $r != 0 {
+		$a: $b;
+		$b: $r;
+		$r: $a % $b;
+	}
+	@return $b;
+}

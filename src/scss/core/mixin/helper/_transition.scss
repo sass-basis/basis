@@ -1,46 +1,46 @@
-/**
- * Transition helper
- *
- * a {
- *     @include bs-transition-all();
- *     color: #f00;
- *     &:hover {
- *         color: #f9c;
- *     }
- * }
- */
+//
+// Transition helper
+//
+// a {
+//     @include bs-transition-all();
+//     color: #f00;
+//     &:hover {
+//         color: #f9c;
+//     }
+// }
+//
 @mixin bs-transition-all() {
 	transition: all $bs-transition-duration $bs-transition-function-timing;
 }
 
-/**
- * Transition helper
- *
- * .c-progress-bar {
- *     @include bs-transition-size();
- *     height: 10px;
- *     width: 10px;
- *     &:hover {
- *         width: 20px;
- *     }
- * }
- */
+//
+// Transition helper
+//
+// .c-progress-bar {
+//     @include bs-transition-size();
+//     height: 10px;
+//     width: 10px;
+//     &:hover {
+//         width: 20px;
+//     }
+// }
+//
 @mixin bs-transition-size() {
 	transition: width $bs-transition-duration $bs-transition-function-timing,
 				height $bs-transition-duration $bs-transition-function-timing;
 }
 
-/**
- * Transition helper
- *
- * img {
- *     @include bs-transition-opacity();
- *     opacity: 1;
- *     &:hover {
- *         opacity: .8;
- *     }
- * }
- */
+//
+// Transition helper
+//
+// img {
+//     @include bs-transition-opacity();
+//     opacity: 1;
+//     &:hover {
+//         opacity: .8;
+//     }
+// }
+//
 @mixin bs-transition-opacity() {
 	transition: opacity $bs-transition-duration $bs-transition-function-timing;
 }

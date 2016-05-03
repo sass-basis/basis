@@ -1,15 +1,15 @@
-/**
- * Clearfix helper
- *
- * .clerfix {
- *     @include bs-u-clearfix();
- * }
- *
- * <div class="clearfix">
- *     <img style="float: right" />
- *     ....
- * </div>
- */
+//
+// Clearfix helper
+//
+// .clerfix {
+//     @include bs-u-clearfix();
+// }
+//
+// <div class="clearfix">
+//     <img style="float: right" />
+//     ....
+// </div>
+//
 
 @mixin bs-clearfix() {
 	&:before, &:after {

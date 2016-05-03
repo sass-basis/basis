@@ -1,12 +1,12 @@
-/**
- * Button component
- *
- * .c-btn {
- *     @include bs-c-btn();
- * }
- *
- * <a class="c-btn">btn</a>
- */
+//
+// Button component
+//
+// .c-btn {
+//     @include bs-c-btn();
+// }
+//
+// <a class="c-btn" role="button">btn</a>
+//
 
 $bs-c-btn-border: 1px solid bs-light($bs-color-gray) !default;
 $bs-c-btn-text-color: $bs-color-text !default;

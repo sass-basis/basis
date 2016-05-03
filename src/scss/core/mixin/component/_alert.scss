@@ -1,14 +1,14 @@
-/**
- * Alert component
- *
- * .c-alert {
- *     @include bs-c-alert();
- * }
- *
- * <alert class="c-alert">
- *     ...
- * </alert>
- */
+//
+// Alert component
+//
+// .c-alert {
+//		@include bs-c-alert();
+// }
+//
+// <alert class="c-alert" role="alert">
+//     ...
+// </alert>
+//
 
 $bs-c-alert-border-radius: $bs-border-radius !default;
 $bs-c-alert-border: 1px solid bs-light($bs-color-gray) !default;

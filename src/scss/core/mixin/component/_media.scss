@@ -1,25 +1,25 @@
-/**
- * Media component
- *
- * .c-media {
- *     @include bs-c-media();
- *     &__figure {
- *         @include bs-c-media__figure();
- *     }
- *     &__body {
- *         @include bs-c-media__body();
- *     }
- * }
- *
- * <div class="c-media">
- *    <div class="c-media__figure">
- *        <img ... />
- *    </div>
- *    <div class="c-media__body">
- *        ...
- *    </div>
- * </div>
- */
+//
+// Media component
+//
+// .c-media {
+//     @include bs-c-media();
+//     &__figure {
+//         @include bs-c-media__figure();
+//     }
+//     &__body {
+//         @include bs-c-media__body();
+//     }
+// }
+//
+// <div class="c-media">
+//    <div class="c-media__figure">
+//        <img ... />
+//    </div>
+//    <div class="c-media__body">
+//        ...
+//    </div>
+// </div>
+//
 
 $bs-c-media-margin: $bs-base-line-height !default;
 

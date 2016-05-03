@@ -1,42 +1,42 @@
-/**
- * Fluid container component
- *
- * .c-container-fluid {
- *     @include bs-c-container-fluid();
- * }
- *
- * <div class="c-container-fluid">
- *    ...
- * </div>
- */
+//
+// Fluid container component
+//
+// .c-container-fluid {
+//     @include bs-c-container-fluid();
+// }
+//
+// <div class="c-container-fluid">
+//    ...
+// </div>
+//
 
-$bs-container-margin: $bs-base-line-height !default;
+$bs-c-container-margin: $bs-base-line-height !default;
 
 @mixin bs-c-container-fluid() {
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: $bs-container-margin;
-	padding-left: $bs-container-margin;
+	padding-right: $bs-c-container-margin;
+	padding-left: $bs-c-container-margin;
 }
 
-/**
- * Container component
- *
- * .c-container {
- *     @include bs-c-container();
- * }
- *
- * <div class="c-container">
- *    ...
- * </div>
- */
+//
+// Container component
+//
+// .c-container {
+//     @include bs-c-container();
+// }
+//
+// <div class="c-container">
+//    ...
+// </div>
+//
 
 $bs-c-container-max-width: 120rem !default;
 
 @mixin bs-c-container() {
 	@include bs-c-container-fluid();
 
-	@include bs-bp-min($bs-screen-lg-min) {
+	@include bs-bp-lg-only() {
 		max-width: $bs-c-container-max-width;
 	}
 }
