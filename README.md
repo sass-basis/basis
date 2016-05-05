@@ -78,6 +78,12 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### May 5, 2016 v4.2.7
+* Refactoring `._c-hero--cover`
+* Refactoring `bs-vertical-rhythm()`
+* Changed container margin on smartphone.
+* Fixed a image position of media object bug when `$bs-between-lines` changed.
+
 #### May 3, 2016 v4.2.6
 * Fixed error when npm install
 * Fixed media object bug on IE

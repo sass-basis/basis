@@ -33,7 +33,7 @@ $bs-c-media-margin: $bs-base-line-height !default;
 
 	> * {
 		vertical-align: top;
-		margin-top: 0.4rem;
+		margin-top: $bs-between-lines;
 	}
 }
 

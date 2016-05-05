@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v4.2.6
+ * Name: Basis v4.2.7
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -435,7 +435,7 @@ body {
 code, kbd, pre, samp {
   font-size: 14.4px;
   font-size: 1.44rem;
-  line-height: 1.5;
+  line-height: 1.55556;
   font-family: '_', monospace;
 }
 
@@ -461,7 +461,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 48px;
   font-size: 4.8rem;
-  line-height: 1.16667;
+  line-height: 1.125;
   margin-top: 0;
   margin-bottom: 4.8rem;
 }
@@ -477,7 +477,7 @@ h2 {
 h3 {
   font-size: 32px;
   font-size: 3.2rem;
-  line-height: 1.25;
+  line-height: 1.1875;
   margin-top: 4.8rem;
   margin-bottom: 2.4rem;
 }
@@ -610,15 +610,29 @@ label {
 ._c-container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 2.4rem;
-  padding-left: 2.4rem;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
+}
+
+@media (min-width: 40em) {
+  ._c-container-fluid {
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+  }
 }
 
 ._c-container {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 2.4rem;
-  padding-left: 2.4rem;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
+}
+
+@media (min-width: 40em) {
+  ._c-container {
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+  }
 }
 
 @media (min-width: 64em) {
@@ -669,6 +683,7 @@ textarea._c-form-control {
 ._c-hero--cover {
   background-size: cover;
   background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 
 ._c-hero--overlay::before {
