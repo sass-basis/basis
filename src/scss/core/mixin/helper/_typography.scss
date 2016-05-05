@@ -21,15 +21,15 @@
 	$font-size-px       : bs-strip-unit(bs-rem2px($bs-font-size));
 	$value-px           : bs-strip-unit($value);
 
-	$base: $base-line-height-px / 3 * $coefficient;
-	@if ($value-px < $base-line-height-px) {
-		@return $value-px / $font-size-px * $base-line-height-px;
-	} @elseif ($base == $value-px) {
-		@return $base + $between-lines-px * 2;
-	} @elseif ($value-px > $base - 1) {
+	$line-height-px: $value-px + ($between-lines-px * $coefficient);
+
+	@if ($line-height-px < $value-px + ($between-lines-px * 2)) {
 		@return bs-vertical-rhythm($value-px, ($coefficient + 1));
 	} @else {
-		@return $base;
+		@if ($value-px % $font-size-px == 0 and $value-px > $font-size-px) {
+			@return $line-height-px - ($between-lines-px / 2);
+		}
+		@return $line-height-px;
 	}
 }
 
