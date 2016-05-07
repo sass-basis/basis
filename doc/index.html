@@ -1413,6 +1413,23 @@ Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatib
 // Animate at anytime, use mixin.
 @include bs-vibrate-scale();</code></pre>
 						<div class="c-dummy-image _u-animate-vibrate-scale"></div>
+
+						<h3 class="c-section__h3">Extend underline from the center</h3>
+						<pre><code>&lt;a class=&quot;_u-animate-extend-underline-center&quot;&gt;Lorem&lt;/a&gt;
+&lt;a class=&quot;_u-animate-extend-underline-center&quot;&gt;Ipsum&lt;/a&gt;
+&lt;a class=&quot;_u-animate-extend-underline-center&quot;&gt;dolor&lt;/a&gt;
+
+// Animate at anytime, use mixin.
+.foo {
+	position: relative;
+
+	&::after {
+		@include bs-extend-underline-center();
+	}
+}</code></pre>
+						<a class="_u-animate-extend-underline-center">Lorem</a>
+						&nbsp;<a class="_u-animate-extend-underline-center">Ipsum</a>
+						&nbsp;<a class="_u-animate-extend-underline-center">dolor</a>
 					</section>
 				</section>
 			</main>
