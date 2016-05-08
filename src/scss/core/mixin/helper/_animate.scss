@@ -102,7 +102,7 @@
 // Extend the underline from the center.
 // This mixin use the pseudo-elements.
 //
-@mixin bs-extend-underline-center() {
+@mixin bs-extend-underline() {
 	position: absolute;
 	bottom: 0;
 	left: 50%;

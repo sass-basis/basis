@@ -46,11 +46,11 @@
 			}
 		}
 
-		&-extend-underline-center {
+		&-extend-underline {
 			position: relative;
 
 			&::after {
-				@include bs-extend-underline-center();
+				@include bs-extend-underline();
 			}
 
 			@include bs-hover() {
