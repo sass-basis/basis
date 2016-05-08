@@ -78,6 +78,12 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### May 8, 2016 v4.3.0
+* Added extending underline animation mixin `bs-extend-underline()`
+* Added extending underline animation class `._u-animate-extend-underline`
+* Added padding helper mixins.
+* Added `._c-row--reverse`
+
 #### May 5, 2016 v4.2.7
 * Refactoring `._c-hero--cover`
 * Refactoring `bs-vertical-rhythm()`
