@@ -45,5 +45,19 @@
 				@include bs-vibrate-scale();
 			}
 		}
+
+		&-extend-underline {
+			position: relative;
+
+			&::after {
+				@include bs-extend-underline();
+			}
+
+			@include bs-hover() {
+				&::after {
+					width: 100%;
+				}
+			}
+		}
 	}
 }

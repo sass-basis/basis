@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v4.2.7
+ * Name: Basis v4.3.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -888,6 +888,12 @@ textarea._c-form-control {
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
+}
+
+._c-row--reverse {
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 ._c-row--nowrap {
@@ -3404,6 +3410,28 @@ textarea._c-form-control {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+}
+
+._u-animate-extend-underline {
+  position: relative;
+}
+
+._u-animate-extend-underline::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  content: '';
+  width: 0;
+  height: 1px;
+  transition: width 0.1s ease-out;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #333;
+}
+
+._u-animate-extend-underline:hover::after, ._u-animate-extend-underline:focus::after {
+  width: 100%;
 }
 
 ._u-clearfix:before, ._u-clearfix:after {

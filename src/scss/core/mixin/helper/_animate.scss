@@ -97,3 +97,20 @@
 @mixin bs-vibrate-scale() {
 	@include bs-bounce-scale(1.1, .2s);
 }
+
+//
+// Extend the underline from the center.
+// This mixin use the pseudo-elements.
+//
+@mixin bs-extend-underline() {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	display: block;
+	content: '';
+	width: 0;
+	height: 1px;
+	transition: width $bs-transition-duration $bs-transition-function-timing;
+	transform: translateX(-50%);
+	background-color: $bs-color-text;
+}
