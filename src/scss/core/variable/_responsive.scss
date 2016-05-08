@@ -10,7 +10,7 @@ $bs-screen-sm-min: 0;
 // @type  length
 //
 $bs-screen-md-min: 40em !default;
-$bs-screen-sm-max: ($bs-screen-md-min - (1em / bs-strip-unit(bs-rem2px($bs-font-size))));
+$bs-screen-sm-max: ($bs-screen-md-min - (1em / 16));
 
 //
 // Break point for tablet and pc
@@ -18,7 +18,7 @@ $bs-screen-sm-max: ($bs-screen-md-min - (1em / bs-strip-unit(bs-rem2px($bs-font-
 // @type  length
 //
 $bs-screen-lg-min: 64em !default;
-$bs-screen-md-max: ($bs-screen-lg-min - (1em / bs-strip-unit(bs-rem2px($bs-font-size))));
+$bs-screen-md-max: ($bs-screen-lg-min - (1em / 16));
 
 //
 // Array of breakpoints

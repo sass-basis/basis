@@ -78,6 +78,9 @@ Pull request sent to the master branch doesn't merge.
 
 ## Changelog
 
+#### May 8, 2016 v4.3.1
+* Fixed a bug that the Basis set incorrect breakpoint when `$bs-font-size` isn't 1.6rem.
+
 #### May 8, 2016 v4.3.0
 * Added extending underline animation mixin `bs-extend-underline()`
 * Added extending underline animation class `._u-animate-extend-underline`
