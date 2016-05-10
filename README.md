@@ -1,11 +1,11 @@
-![Basis](https://avatars0.githubusercontent.com/u/18589717?v=3&s=200)
+<img src="https://avatars0.githubusercontent.com/u/18589717?v=3&s=200" alt="Basis" width="100" />
 
 # Basis
 A lightweight responsive CSS framework based on flexible box ( flexbox ).
 
 * Document: http://sass-basis.github.io/basis/
-* GitHub  : https://github.com/sass-basis/basis/
-* Release : https://github.com/sass-basis/basis/releases/
+* GitHub: https://github.com/sass-basis/basis/
+* Release: https://github.com/sass-basis/basis/releases/
 
 ## Why it's awesome?
 
@@ -17,8 +17,8 @@ A lightweight responsive CSS framework based on flexible box ( flexbox ).
 
 ## Demo ( HTML5 Templates )
 * integrity: https://github.com/sass-basis/integrity/
-* improve  : https://github.com/sass-basis/improve/
-* affinity : http://sass-basis.github.io/affinity/
+* improve: https://github.com/sass-basis/improve/
+* affinity: http://sass-basis.github.io/affinity/
 
 ## Get started
 
