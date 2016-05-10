@@ -1,13 +1,24 @@
-# basis
-A lightweight responsive CSS framework based on flexible box ( flexbox )
+![Basis](https://avatars0.githubusercontent.com/u/18589717?v=3&s=200)
 
-## Website
+# Basis
+A lightweight responsive CSS framework based on flexible box ( flexbox ).
 
-http://sass-basis.github.io/basis/
+* Document: http://sass-basis.github.io/basis/
+* GitHub  : https://github.com/sass-basis/basis/
+* Release : https://github.com/sass-basis/basis/releases/
 
-## GitHub
+## Why it's awesome?
 
-https://github.com/sass-basis/basis
+* Basis isn't about a UI framework. Basis provides only basic frame of components. So you build a responsive web page quickly and easy to overwrite with your sass or css.
+* CSS architecture of Basis is [FLOCSS](https://github.com/hiloki/flocss). So it is possible a modular approach.
+* Basis has incorporated the concept of vertical rhythm. So you can be a good-balanced design.
+* Flexible grid system. Clean because using a flexible box.
+* highly extensible. The core is only the basic components, it can be extended with [add-on](https://github.com/sass-basis).
+
+## Demo ( HTML5 Templates )
+* integrity: https://github.com/sass-basis/integrity/
+* improve  : https://github.com/sass-basis/improve/
+* affinity : http://sass-basis.github.io/affinity/
 
 ## Get started
 
