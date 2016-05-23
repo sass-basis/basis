@@ -43,4 +43,5 @@
 //
 @mixin bs-transition-opacity() {
 	transition: opacity $bs-transition-duration $bs-transition-function-timing;
+	backface-visibility: hidden;
 }
