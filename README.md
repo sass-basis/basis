@@ -1,7 +1,7 @@
-<img src="https://avatars0.githubusercontent.com/u/18589717?v=3&s=200" alt="Basis" width="100" />
-
 # Basis
 A lightweight responsive CSS framework based on flexible box ( flexbox ).
+
+<img src="https://avatars0.githubusercontent.com/u/18589717?v=3&s=200" alt="Basis" width="100" />
 
 * Document: http://sass-basis.github.io/basis/
 * GitHub: https://github.com/sass-basis/basis/
@@ -16,8 +16,8 @@ A lightweight responsive CSS framework based on flexible box ( flexbox ).
 * highly extensible. The core is only the basic components, it can be extended with [add-on](https://github.com/sass-basis).
 
 ## Demo ( HTML5 Templates )
-* integrity: https://github.com/sass-basis/integrity/
-* improve: https://github.com/sass-basis/improve/
+* integrity: http://sass-basis.github.io/integrity/
+* improve: http://sass-basis.github.io/improve/
 * affinity: http://sass-basis.github.io/affinity/
 
 ## Get started
