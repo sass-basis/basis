@@ -18,7 +18,7 @@
 @function bs-vertical-rhythm($value, $coefficient: 1) {
   $between-lines-px   : bs-strip-unit(bs-rem2px($bs-between-lines));
   $base-line-height-px: bs-strip-unit(bs-rem2px($bs-base-line-height));
-  $font-size-px       : bs-strip-unit(bs-rem2px($bs-font-size));
+  $font-size-px       : bs-strip-unit(bs-rem2px($bs-base-font-size));
   $value-px           : bs-strip-unit($value);
 
   $line-height-px: $value-px + ($between-lines-px * $coefficient);

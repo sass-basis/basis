@@ -2,7 +2,7 @@
 // Default font size
 // @type  rem
 //
-$bs-font-size: 1rem !default;
+$bs-base-font-size: 1rem !default;
 
 //
 // Heading element font size scale;
@@ -25,7 +25,7 @@ $bs-between-lines: .25rem !default;
 // Default line height
 // @type  rem
 //
-$bs-base-line-height: ($bs-font-size + $bs-between-lines * 2) !default;
+$bs-base-line-height: ($bs-base-font-size + $bs-between-lines * 2) !default;
 
 //
 // Margin coefficient

@@ -10,7 +10,7 @@
 
 $bs-c-btn-border: 1px solid bs-light($bs-color-gray) !default;
 $bs-c-btn-text-color: $bs-color-text !default;
-$bs-c-btn-padding: ($bs-font-size / 2) ($bs-font-size * 2) !default;
+$bs-c-btn-padding: ($bs-base-font-size / 2) ($bs-base-font-size * 2) !default;
 
 @mixin bs-c-btn {
   background-color: #fff;
