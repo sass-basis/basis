@@ -23,7 +23,7 @@
   }
 
   code, kbd, pre, samp {
-    @include bs-font-size-line-height($bs-base-font-size * 0.9);
+    @include bs-font-size-line-height($bs-base-font-size-px - 2);
     font-family: '_', monospace;
   }
 
