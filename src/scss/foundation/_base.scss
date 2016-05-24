@@ -10,9 +10,14 @@
     padding: 0;
   }
 
+  html {
+    font-size: (bs-strip-unit($bs-base-font-size-px) / 16 * 100%);
+  }
+
   body {
     color: $bs-color-text;
     font-family: $bs-font-family;
+    font-size: $bs-base-font-size-px;
     @include bs-font-size-line-height($bs-base-font-size);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
