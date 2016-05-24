@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/sass-basis/basis"
   },
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.12.8",
     "cssnano": "^3.6.2",
@@ -25,7 +25,6 @@
   "scripts": {
     "build": "gulp build",
     "deploy_gh_pages": "gulp deploy_gh_pages",
-    "release": "gulp release",
-    "postinstall": "gulp build"
+    "release": "gulp release"
   }
 }

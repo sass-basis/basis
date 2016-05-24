@@ -27,23 +27,21 @@ A lightweight responsive CSS framework based on flexible box ( flexbox ).
 1. ```$ npm install sass-basis```
 2. Import basis.scss your Sass/SCSS.
 ```scss
-@import /PATH/TO/node_modules/basis/src/scss/basis;
+@import /PATH/TO/node_modules/sass-basis/src/scss/basis;
 ```
-or Just this link.
-```html
-<link rel="stylesheet" href="/PATH/TO/node_modules/basis/dist/css/basis.min.css" />
+
+IF you want to use build files, just do this.
+
+```shell
+$ cd /PATH/TO/sass-basis
+$ npm install
+$ gulp build
 ```
 
 ### Download from GitHub
 
 1. Download the basis from https://github.com/sass-basis/basis/releases
-2. Build basis
-```shell
-$ cd /PATH/TO/basis
-$ npm install
-$ gulp build
-```
-3. Import basis.scss your Sass/SCSS.
+2. Import basis.scss your Sass/SCSS.
 ```scss
 @import /PATH/TO/basis/src/scss/basis;
 ```
