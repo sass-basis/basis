@@ -40,7 +40,7 @@ pre {
   text-align: center;
   color: #666;
   background-color: #222;
-  font-size: 1.4rem;
+  font-size: .8rem;
   margin-top: 24px;
   padding: 24px 0;
 }
@@ -69,7 +69,7 @@ pre {
 }
 .c-hero__title {
   font-family: 'Noto Sans', sans-serif;
-  font-size: 5rem;
+  font-size: 3rem;
   margin: 0 0 20px;
   line-height: 1;
 }
@@ -79,18 +79,18 @@ pre {
   margin-right: 8px;
 }
 .c-hero__lead {
-  font-size: 2rem;
+  font-size: 1.25rem;
   margin: 0 0 35px;
 }
 .c-hero__version {
   margin: 0 0 30px;
-  font-size: 1.3rem;
+  font-size: .8rem;
   opacity: .8;
 }
 .c-hero ._c-btn {
   transition: all .25s;
   margin: 0 5px;
-  padding: 1.2rem 4rem;
+  padding: 1rem 4rem;
 }
 .c-hero ._c-btn:hover,
 .c-hero ._c-btn:active {
@@ -109,29 +109,29 @@ pre {
  * c-section
  */
 .c-section {
-  margin-bottom: 4.8rem;
+  margin-bottom: 3rem;
 }
 .c-section__h1 {
   border-bottom: 2px solid #00DAE6;
   padding-bottom: 4px;
-  font-size: 4rem;
-  margin-bottom: 2.4rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 .c-section__h1--toplevel {
   background-color: #00DAE6;
-  padding: 1.6rem 2.4rem;
+  padding: 1rem 1.5rem;
   color: #fff;
   font-weight: normal;
-  font-size: 4rem;
-  margin-bottom: 4.8rem;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
 }
 .c-section__h2 {
   border-bottom: 1px solid #ddd;
   padding-bottom: 4px;
-  font-size: 3.2rem;
+  font-size: 2rem;
 }
 .c-section__h3 {
-  font-size: 2.4rem;
+  font-size: 1.5rem;
 }
 a {
   color: #00DAE6;
@@ -231,7 +231,7 @@ a {
   padding: 0;
 }
 .p-local-nav__item {
-  font-size: 1.4rem;
+  font-size: .8rem;
   border-bottom: 1px solid #eee;
   margin: 0;
   padding: 8px 0;
@@ -250,7 +250,7 @@ a {
   padding: 0 0 0 16px;
 }
 .p-local-nav__sub-item {
-  font-size: 1.3rem;
+  font-size: .8rem;
   margin: 0;
   padding: 0;
 }
