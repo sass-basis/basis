@@ -1,8 +1,9 @@
 //
 // Return px from rem
 // @param   rem  $rem
+// @param   px   $base-font-size-px
 // @return  px
 //
-@function bs-rem2px($rem) {
-  @return bs-strip-unit($rem) * $bs-base-font-size-px;
+@function bs-rem2px($rem, $base-font-size-px: $bs-base-font-size-px) {
+  @return bs-strip-unit($rem) * $base-font-size-px;
 }

@@ -37,7 +37,7 @@ gulp.task('sass', function() {
     .pipe(postcss([cssnano()]))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(path.dist.css));
-} );
+});
 
 /**
  * Auto Compile Sass.
@@ -63,5 +63,13 @@ gulp.task('release', ['build'], function() {
       ])
       .pipe( gulp.dest('release'));
 } );
+
+/**
+ * Sass test
+ */
+gulp.task('test', function() {
+  return gulp.src('tests/tests.scss')
+    .pipe(sass());
+});
 
 gulp.task( 'default', ['build', 'watch'] );
