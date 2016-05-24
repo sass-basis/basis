@@ -4,8 +4,8 @@
 // @return  bool
 //
 @function bs-is-use-mixin-only() {
-	@if ($bs-use-mixin-only == true) {
-		@return true;
-	}
-	@return false;
+  @if ($bs-use-mixin-only == true) {
+    @return true;
+  }
+  @return false;
 }

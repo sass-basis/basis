@@ -4,8 +4,8 @@
 // @param  rem  $rem
 //
 @mixin bs-font-size($rem) {
-	font-size: bs-rem2px($rem);
-	font-size: $rem;
+  font-size: bs-rem2px($rem);
+  font-size: $rem;
 }
 
 //
@@ -16,21 +16,21 @@
 // @return  int
 //
 @function bs-vertical-rhythm($value, $coefficient: 1) {
-	$between-lines-px   : bs-strip-unit(bs-rem2px($bs-between-lines));
-	$base-line-height-px: bs-strip-unit(bs-rem2px($bs-base-line-height));
-	$font-size-px       : bs-strip-unit(bs-rem2px($bs-font-size));
-	$value-px           : bs-strip-unit($value);
+  $between-lines-px   : bs-strip-unit(bs-rem2px($bs-between-lines));
+  $base-line-height-px: bs-strip-unit(bs-rem2px($bs-base-line-height));
+  $font-size-px       : bs-strip-unit(bs-rem2px($bs-font-size));
+  $value-px           : bs-strip-unit($value);
 
-	$line-height-px: $value-px + ($between-lines-px * $coefficient);
+  $line-height-px: $value-px + ($between-lines-px * $coefficient);
 
-	@if ($line-height-px < $value-px + ($between-lines-px * 2)) {
-		@return bs-vertical-rhythm($value-px, ($coefficient + 1));
-	} @else {
-		@if ($value-px % $font-size-px == 0 and $value-px > $font-size-px) {
-			@return $line-height-px - ($between-lines-px / 2);
-		}
-		@return $line-height-px;
-	}
+  @if ($line-height-px < $value-px + ($between-lines-px * 2)) {
+    @return bs-vertical-rhythm($value-px, ($coefficient + 1));
+  } @else {
+    @if ($value-px % $font-size-px == 0 and $value-px > $font-size-px) {
+      @return $line-height-px - ($between-lines-px / 2);
+    }
+    @return $line-height-px;
+  }
 }
 
 //
@@ -39,8 +39,8 @@
 // @param  rem  $rem  font size
 //
 @mixin bs-line-height($rem) {
-	$px: bs-rem2px($rem);
-	line-height: bs-vertical-rhythm(bs-strip-unit($px)) / bs-strip-unit($px);
+  $px: bs-rem2px($rem);
+  line-height: bs-vertical-rhythm(bs-strip-unit($px)) / bs-strip-unit($px);
 }
 
 //
@@ -53,6 +53,6 @@
 // }
 //
 @mixin bs-font-size-line-height($rem) {
-	@include bs-font-size($rem);
-	@include bs-line-height($rem);
+  @include bs-font-size($rem);
+  @include bs-line-height($rem);
 }

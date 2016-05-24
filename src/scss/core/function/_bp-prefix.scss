@@ -5,10 +5,10 @@
 // @return  string
 //
 @function bs-bp-prefix($size) {
-	$prefix: '-';
+  $prefix: '-';
 
-	@if $size != 'sm' {
-		$prefix: --#{$size};
-	}
-	@return $prefix;
+  @if $size != 'sm' {
+    $prefix: --#{$size};
+  }
+  @return $prefix;
 }

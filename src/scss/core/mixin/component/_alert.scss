@@ -2,7 +2,7 @@
 // Alert component
 //
 // .c-alert {
-//		@include bs-c-alert();
+//    @include bs-c-alert();
 // }
 //
 // <alert class="c-alert" role="alert">
@@ -15,9 +15,9 @@ $bs-c-alert-border: 1px solid bs-light($bs-color-gray) !default;
 $bs-c-alert-padding: $bs-font-size !default;
 
 @mixin bs-c-alert() {
-	background-color: #fff;
-	border-radius: $bs-c-alert-border-radius;
-	border: $bs-c-alert-border;
-	display: block;
-	padding: $bs-c-alert-padding;
+  background-color: #fff;
+  border-radius: $bs-c-alert-border-radius;
+  border: $bs-c-alert-border;
+  display: block;
+  padding: $bs-c-alert-padding;
 }

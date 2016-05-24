@@ -16,29 +16,29 @@
 //
 
 @mixin bs-c-hero() {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 @mixin bs-c-hero__part() {
-	flex: 0 1 100%;
-	max-width: 100%;
-	position: relative;
+  flex: 0 1 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 @mixin bs-c-hero__header() {
-	@include bs-c-hero__part();
-	align-self: flex-start;
+  @include bs-c-hero__part();
+  align-self: flex-start;
 }
 
 @mixin bs-c-hero__content() {
-	@include bs-c-hero__part();
-	align-self: center;
+  @include bs-c-hero__part();
+  align-self: center;
 }
 
 @mixin bs-c-hero__footer() {
-	@include bs-c-hero__part();
-	align-self: flex-end;
+  @include bs-c-hero__part();
+  align-self: flex-end;
 }
