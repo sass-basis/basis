@@ -7,14 +7,13 @@
     "Toro_Unit"
   ],
   "license": "MIT",
-  "homepage": "http://sass-basis.github.io/basis/",
+  "homepage": "http://sass-basis.github.io/",
   "repository": {
     "type": "git",
     "url": "https://github.com/sass-basis/basis"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
-    "browser-sync": "^2.12.8",
     "cssnano": "^3.6.2",
     "gulp": "^3.9.1",
     "gulp-cli": "^1.2.1",
@@ -24,7 +23,6 @@
   },
   "scripts": {
     "build": "gulp build",
-    "deploy_gh_pages": "gulp deploy_gh_pages",
     "release": "gulp release"
   }
 }

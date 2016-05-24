@@ -3,7 +3,7 @@ A lightweight responsive CSS framework based on flexible box ( flexbox ).
 
 <img src="https://avatars0.githubusercontent.com/u/18589717?v=3&s=200" alt="Basis" width="100" />
 
-* Document: http://sass-basis.github.io/basis/
+* Document: http://sass-basis.github.io/
 * GitHub: https://github.com/sass-basis/basis/
 * Release: https://github.com/sass-basis/basis/releases/
 

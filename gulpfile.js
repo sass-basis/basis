@@ -6,19 +6,16 @@
 var gulp         = require( 'gulp' );
 var sass         = require( 'gulp-sass' );
 var rename       = require( 'gulp-rename' );
-var browser_sync = require( 'browser-sync' );
 var postcss      = require( 'gulp-postcss' );
 var autoprefixer = require( 'autoprefixer' );
 var cssnano      = require( 'cssnano' );
 
 var path = {
   src: {
-    scss: 'src/scss/**/*.scss',
-    doc: 'doc/**'
+    scss: 'src/scss/**/*.scss'
   },
   dist: {
-    css: 'dist/css',
-    doc: 'doc'
+    css: 'dist/css'
   }
 };
 
@@ -42,48 +39,17 @@ gulp.task('sass', function() {
     .pipe(gulp.dest(path.dist.css));
 } );
 
-gulp.task('sass:build', ['sass']);
-
-/**
- * Browsersync.
- * Auto reload setting.
- */
-gulp.task('browsersync', function() {
-  browser_sync.init({
-    server: {
-      baseDir: path.dist.doc
-    },
-    files: [
-      path.src.doc
-    ]
-  });
-});
-
 /**
  * Auto Compile Sass.
  */
 gulp.task('watch', function() {
-  gulp.watch([path.src.scss], ['build']);
-});
-
-gulp.task('build', ['sass:build'], function() {
-  return gulp.src(
-      [
-        'dist/**',
-        'vendor/**'
-      ],
-      { base: './' }
-    )
-    .pipe(gulp.dest(path.dist.doc));
+  gulp.watch([path.src.scss], ['sass']);
 });
 
 /**
- * Deploy GitHub Pages
+ * Build
  */
-gulp.task('deploy_gh_pages', ['build'], function() {
-  return gulp.src(path.src.doc)
-      .pipe(gulp.dest('gh-pages'));
-} );
+gulp.task('build', ['sass']);
 
 /**
  * Release
@@ -93,11 +59,9 @@ gulp.task('release', ['build'], function() {
       [
         './**',
         '!node_modules',
-        '!node_modules/**',
-        '!gh-pages',
-        '!gh-pages/**'
+        '!node_modules/**'
       ])
       .pipe( gulp.dest('release'));
 } );
 
-gulp.task( 'default', ['build', 'browsersync', 'watch'] );
+gulp.task( 'default', ['build', 'watch'] );
