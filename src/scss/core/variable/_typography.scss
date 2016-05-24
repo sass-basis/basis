@@ -26,7 +26,7 @@ $bs-h6-font-size-scale: 1   !default;
 // Between the character and line of line-height
 // @type  rem
 //
-$bs-between-lines: .25rem !default;
+$bs-between-lines: ($bs-base-font-size / 4) !default;
 
 //
 // Default line height
