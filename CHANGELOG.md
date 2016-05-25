@@ -1,5 +1,19 @@
 #Changelog
 
+## May 25, 2016 v5.0.0
+* The document to another repository #58
+* Removed `html{ font-size: 62.5% }` #79
+* `bs-font-size()`, `bs-line-height()` and `bs-font-size-line-height()` support px #79
+* Refactoring `$bs-between-lines` #79
+* Changed `$bs-font-size` to `$bs-base-font-size`
+* Added a variable `$bs-base-font-size-px`
+* Removed auto build on npm install #81
+* Fixed opacity transition bug #82
+* Added CHANGELOG.md
+* Added .editorconfig
+* Changed indent style
+* Refactoring gulpfile.js
+
 ## May 10, 2016 v4.3.2
 * Update README
 
