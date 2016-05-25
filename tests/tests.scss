@@ -1,20 +1,20 @@
-@import '../src/scss/basis';
+@import '../src/scss/core/core';
 @import 'api/api';
 
-@include bs-test('Test bs-bp-prefix') {
+@include bs-test('[function] bs-bp-prefix()') {
 	@include bs-assert-equals('-', bs-bp-prefix('sm'));
 	@include bs-assert-equals('--md', bs-bp-prefix('md'));
 	@include bs-assert-equals('--lg', bs-bp-prefix('lg'));
 }
 
-@include bs-test('Test bs-gcd') {
+@include bs-test('[function] bs-gcd()') {
 	@include bs-assert-equals(2, bs-gcd(2, 12));
 	@include bs-assert-equals(4, bs-gcd(4, 12));
 	@include bs-assert-equals(1, bs-gcd(1, 12));
 	@include bs-assert-equals(1, bs-gcd(5, 12));
 }
 
-@include bs-test('Test bs-px2rem') {
+@include bs-test('[function] bs-px2rem()') {
 	$rem: bs-px2rem(16px, 16px);
 	@include bs-assert-equals(1rem, $rem);
 
@@ -22,7 +22,7 @@
 	@include bs-assert-equals(1.6rem, $rem);
 }
 
-@include bs-test('Test bs-rem2px') {
+@include bs-test('[function] bs-rem2px()') {
 	$rem: bs-rem2px(1rem, 16px);
 	@include bs-assert-equals(16px, $rem);
 
@@ -30,7 +30,7 @@
 	@include bs-assert-equals(10px, $rem);
 }
 
-@include bs-test('Test bs-strip-unit') {
+@include bs-test('[function] bs-strip-unit()') {
 	@include bs-assert-equals(1, bs-strip-unit(1rem));
 	@include bs-assert-equals(10, bs-strip-unit(10px));
 }

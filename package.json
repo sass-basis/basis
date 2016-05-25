@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "gulp build",
-    "release": "gulp release"
+    "release": "gulp release",
+    "sass-test": "scss tests/tests.scss"
   }
 }

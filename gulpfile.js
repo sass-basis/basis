@@ -64,12 +64,4 @@ gulp.task('release', ['build'], function() {
       .pipe( gulp.dest('release'));
 } );
 
-/**
- * Sass test
- */
-gulp.task('test', function() {
-  return gulp.src('tests/tests.scss')
-    .pipe(sass());
-});
-
 gulp.task( 'default', ['build', 'watch'] );
