@@ -1,21 +1,21 @@
 @if (not bs-is-use-mixin-only()) {
-	.#{$bs-prefix}u-hidden {
-		&-sm {
-			@include bs-bp-sm-only() {
-				display: none !important;
-			}
-		}
+  .#{$bs-prefix}u-hidden {
+    &-sm {
+      @include bs-bp-sm-only() {
+        display: none !important;
+      }
+    }
 
-		&-md {
-			@include bs-bp-md-only() {
-				display: none !important;
-			}
-		}
+    &-md {
+      @include bs-bp-md-only() {
+        display: none !important;
+      }
+    }
 
-		&-lg {
-			@include bs-bp-lg-only() {
-				display: none !important;
-			}
-		}
-	}
+    &-lg {
+      @include bs-bp-lg-only() {
+        display: none !important;
+      }
+    }
+  }
 }

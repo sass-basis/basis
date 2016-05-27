@@ -1,10 +1,10 @@
 @if (not bs-is-use-mixin-only()) {
-	.#{$bs-prefix}c-form-control {
-		@include bs-c-form-control();
-	}
+  .#{$bs-prefix}c-form-control {
+    @include bs-c-form-control();
+  }
 
-	textarea.#{$bs-prefix}c-form-control {
-		height: auto;
-		width: 100%;
-	}
+  textarea.#{$bs-prefix}c-form-control {
+    height: auto;
+    width: 100%;
+  }
 }

@@ -1,45 +1,45 @@
 @if (not bs-is-use-mixin-only()) {
-	.#{$bs-prefix}c-hero {
-		@include bs-c-hero();
+  .#{$bs-prefix}c-hero {
+    @include bs-c-hero();
 
-		&--full {
-			height: 100vh;
-		}
+    &--full {
+      height: 100vh;
+    }
 
-		&--cover {
-			background-size: cover;
-			background-position: 50% 50%;
-			background-repeat: no-repeat;
-		}
+    &--cover {
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
 
-		&--overlay {
-			&::before {
-				position: absolute;
-				content: '';
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				background-color: rgba(0, 0, 0, .7);
-			}
-		}
+    &--overlay {
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .7);
+      }
+    }
 
-		&--fixed {
-			@include bs-bp-lg-only() {
-				background-attachment: fixed;
-			}
-		}
+    &--fixed {
+      @include bs-bp-lg-only() {
+        background-attachment: fixed;
+      }
+    }
 
-		&__header {
-			@include bs-c-hero__header();
-		}
+    &__header {
+      @include bs-c-hero__header();
+    }
 
-		&__content {
-			@include bs-c-hero__content();
-		}
+    &__content {
+      @include bs-c-hero__content();
+    }
 
-		&__footer {
-			@include bs-c-hero__footer();
-		}
-	}
+    &__footer {
+      @include bs-c-hero__footer();
+    }
+  }
 }

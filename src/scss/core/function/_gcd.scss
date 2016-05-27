@@ -6,11 +6,11 @@
 // @return  int  The number of the remainder
 //
 @function bs-gcd($a, $b) {
-	$r: $a % $b;
-	@while $r != 0 {
-		$a: $b;
-		$b: $r;
-		$r: $a % $b;
-	}
-	@return $b;
+  $r: $a % $b;
+  @while $r != 0 {
+    $a: $b;
+    $b: $r;
+    $r: $a % $b;
+  }
+  @return $b;
 }

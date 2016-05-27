@@ -1,21 +1,21 @@
 @if (not bs-is-use-mixin-only()) {
-	.#{$bs-prefix}c-input-group {
-		@include bs-c-input-group();
+  .#{$bs-prefix}c-input-group {
+    @include bs-c-input-group();
 
-		&__addon {
-			@include bs-c-input-group__addon();
-		}
+    &__addon {
+      @include bs-c-input-group__addon();
+    }
 
-		&__field {
-			@include bs-c-input-group__field();
-		}
+    &__field {
+      @include bs-c-input-group__field();
+    }
 
-		&__control {
-			@include bs-c-input-group__control();
-		}
+    &__control {
+      @include bs-c-input-group__control();
+    }
 
-		&__btn {
-			@include bs-c-input-group__btn();
-		}
-	}
+    &__btn {
+      @include bs-c-input-group__btn();
+    }
+  }
 }

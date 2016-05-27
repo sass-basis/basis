@@ -9,7 +9,7 @@
 //
 
 @mixin bs-hover() {
-	&:hover, &:focus {
-		@content;
-	}
+  &:hover, &:focus {
+    @content;
+  }
 }

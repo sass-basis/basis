@@ -1,9 +1,9 @@
 @if (not bs-is-use-mixin-only()) {
-	.#{$bs-prefix}c-checkbox {
-		@include bs-c-checkbox();
+  .#{$bs-prefix}c-checkbox {
+    @include bs-c-checkbox();
 
-		&--block {
-			display: block;
-		}
-	}
+    &--block {
+      display: block;
+    }
+  }
 }

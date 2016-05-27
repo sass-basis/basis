@@ -4,7 +4,7 @@
 // @param  int  $coefficient
 //
 @mixin bs-padding-top($coefficient) {
-	padding-top: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  padding-top: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
 }
 
 //
@@ -13,7 +13,7 @@
 // @param  int  $coefficient
 //
 @mixin bs-padding-right($coefficient) {
-	padding-right: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  padding-right: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
 }
 
 //
@@ -22,7 +22,7 @@
 // @param  int  $coefficient
 //
 @mixin bs-padding-bottom($coefficient) {
-	padding-bottom: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  padding-bottom: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
 }
 
 //
@@ -31,5 +31,5 @@
 // @param  int  $coefficient
 //
 @mixin bs-padding-left($coefficient) {
-	padding-left: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  padding-left: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
 }

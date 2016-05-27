@@ -1,0 +1,12 @@
+@mixin bs-test($message) {
+	@debug $message;
+	@content;
+}
+
+@mixin bs-assert-equals($expected, $actual) {
+	@if ($expected == $actual) {
+		@debug 'OK!';
+	} @else {
+		@warn 'FAILURES! Expected: #{$expected}  Actual: #{$actual}';
+	}
+}

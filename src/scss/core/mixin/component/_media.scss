@@ -24,19 +24,19 @@
 $bs-c-media-margin: $bs-base-line-height !default;
 
 @mixin bs-c-media() {
-	display: flex;
+  display: flex;
 }
 
 @mixin bs-c-media__figure() {
-	margin-right: $bs-c-media-margin;
-	flex: none;
+  margin-right: $bs-c-media-margin;
+  flex: none;
 
-	> * {
-		vertical-align: top;
-		margin-top: $bs-between-lines;
-	}
+  > * {
+    vertical-align: top;
+    margin-top: $bs-between-lines;
+  }
 }
 
 @mixin bs-c-media__body() {
-	flex: 1;
+  flex: 1;
 }

@@ -4,9 +4,9 @@
 // @param  length  $margin  margin size
 //
 @mixin bs-row-margin($margin) {
-	margin-right: ($margin / 2 * -1);
-	margin-left: ($margin / 2 * -1);
-	margin-bottom: ($margin * -1);
+  margin-right: ($margin / 2 * -1);
+  margin-left: ($margin / 2 * -1);
+  margin-bottom: ($margin * -1);
 }
 
 //
@@ -15,9 +15,9 @@
 // @param  length  $margin  margin size
 //
 @mixin bs-col-margin($margin) {
-	padding-right: ($margin / 2);
-	padding-left: ($margin / 2);
-	margin-bottom: $margin;
+  padding-right: ($margin / 2);
+  padding-left: ($margin / 2);
+  margin-bottom: $margin;
 }
 
 //
@@ -50,26 +50,26 @@ $bs-min-columns: 1 !default;
 $bs-max-columns: 12 !default;
 
 @mixin bs-c-row() {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @mixin bs-c-row__col($columns: null, $max-columns: null) {
-	flex: 1;
-	max-width: 100%;
+  flex: 1;
+  max-width: 100%;
 
-	@if ($columns != null and $max-columns != null) {
-		$width: percentage($columns / $max_columns);
-		flex: 0 1 $width;
-		max-width: $width;
-	}
+  @if ($columns != null and $max-columns != null) {
+    $width: percentage($columns / $max_columns);
+    flex: 0 1 $width;
+    max-width: $width;
+  }
 }
 
 @mixin bs-c-row__col--offset($columns: null, $max-columns: null) {
-	@if ($columns != null and $max-columns != null) {
-		margin-left: percentage($columns / $max_columns);
-	}
-	@if ($columns == 0) {
-		margin-left: 0;
-	}
+  @if ($columns != null and $max-columns != null) {
+    margin-left: percentage($columns / $max_columns);
+  }
+  @if ($columns == 0) {
+    margin-left: 0;
+  }
 }

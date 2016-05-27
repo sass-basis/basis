@@ -26,7 +26,7 @@
   display: table-cell;
   vertical-align: top;
   margin-right: 0;
-  padding-right: 2.4rem;
+  padding-right: 1.5rem;
 }
 
 ._c-media__body {
@@ -42,7 +42,7 @@
 
 ._c-media--middle _c-media__figure {
   margin-left: 0;
-  padding-left: 2.4rem;
+  padding-left: 1.5rem;
 }
 
 ._c-media--reverse {

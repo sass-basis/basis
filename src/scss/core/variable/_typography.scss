@@ -1,8 +1,15 @@
 //
 // Default font size
+// If html { font-size: 62.5% }, set 10px
+// @type  px
+//
+$bs-base-font-size-px: 16px !default;
+
+//
+// Default font size
 // @type  rem
 //
-$bs-font-size: 1.6rem !default;
+$bs-base-font-size: 1rem !default;
 
 //
 // Heading element font size scale;
@@ -19,13 +26,13 @@ $bs-h6-font-size-scale: 1   !default;
 // Between the character and line of line-height
 // @type  rem
 //
-$bs-between-lines: .4rem !default;
+$bs-between-lines: ($bs-base-font-size / 4) !default;
 
 //
 // Default line height
 // @type  rem
 //
-$bs-base-line-height: ($bs-font-size + $bs-between-lines * 2) !default;
+$bs-base-line-height: ($bs-base-font-size + $bs-between-lines * 2) !default;
 
 //
 // Margin coefficient

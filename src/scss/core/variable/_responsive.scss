@@ -25,7 +25,7 @@ $bs-screen-md-max: ($bs-screen-lg-min - (1em / 16));
 // @type  array
 //
 $bs-sizes: (
-	sm: $bs-screen-sm-min,
-	md: $bs-screen-md-min,
-	lg: $bs-screen-lg-min
+  sm: $bs-screen-sm-min,
+  md: $bs-screen-md-min,
+  lg: $bs-screen-lg-min
 ) !default;
