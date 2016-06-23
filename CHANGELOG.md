@@ -1,5 +1,13 @@
 #Changelog
 
+## June 23, 2016 v5.1.0
+* Refactoring the auto column size class.
+* Added mixin `bs-ghost()`
+* Added mixin `bs-background-image-cover()`
+* Added mixin `bs-background-image-fixed()`
+* Added mixin `bs-overlay()`
+* Refactoring mixin `bs-c-form-control()`
+
 ## May 25, 2016 v5.0.0
 * The document to another repository #58
 * Removed `html{ font-size: 62.5% }` #79

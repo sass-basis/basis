@@ -28,4 +28,11 @@ $bs-c-form-control-disabled-background-color: bs-lighter($bs-color-gray) !defaul
   &[readonly] {
     background-color: $bs-c-form-control-disabled-background-color;
   }
+
+  @at-root {
+    textarea#{&} {
+      height: auto;
+      width: 100%;
+    }
+  }
 }

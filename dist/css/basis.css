@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v5.0.0
+ * Name: Basis v5.1.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -683,6 +683,10 @@ textarea._c-form-control {
   background-repeat: no-repeat;
 }
 
+._c-hero--overlay {
+  position: relative;
+}
+
 ._c-hero--overlay::before {
   position: absolute;
   content: '';
@@ -785,6 +789,11 @@ textarea._c-form-control {
   background-color: #eeeeee;
 }
 
+textarea._c-input-group__control {
+  height: auto;
+  width: 100%;
+}
+
 ._c-input-group__btn {
   background-color: #fff;
   border: 1px solid #cccccc;
@@ -859,11 +868,6 @@ textarea._c-form-control {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-
-._c-row--auto > ._c-row__col {
-  -ms-flex: auto;
-  flex: auto;
 }
 
 ._c-row--reverse {
@@ -1186,15 +1190,31 @@ textarea._c-form-control {
   margin-left: 0;
 }
 
+._c-row__col--auto {
+  -ms-flex: auto;
+  flex: auto;
+  max-width: none;
+}
+
 @media (min-width: 40em) {
   ._c-row__col--md-offset-0 {
     margin-left: 0;
+  }
+  ._c-row__col--md-auto {
+    -ms-flex: auto;
+    flex: auto;
+    max-width: none;
   }
 }
 
 @media (min-width: 64em) {
   ._c-row__col--lg-offset-0 {
     margin-left: 0;
+  }
+  ._c-row__col--lg-auto {
+    -ms-flex: auto;
+    flex: auto;
+    max-width: none;
   }
 }
 
