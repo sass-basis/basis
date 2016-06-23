@@ -3,6 +3,7 @@
 ## June 23, 2016 v5.1.0
 * Refactoring the auto column size class.
 * Added mixin `bs-ghost()`
+* Refactoring mixin `bs-c-form-control()`
 
 ## May 25, 2016 v5.0.0
 * The document to another repository #58
