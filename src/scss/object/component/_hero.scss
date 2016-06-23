@@ -24,7 +24,7 @@
 
     &--fixed {
       @include bs-bp-lg-only() {
-        background-attachment: fixed;
+        @include bs-background-image-fixed();
       }
     }
 
