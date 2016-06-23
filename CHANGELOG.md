@@ -5,6 +5,7 @@
 * Added mixin `bs-ghost()`
 * Added mixin `bs-background-image-cover()`
 * Added mixin `bs-background-image-fixed()`
+* Added mixin `bs-overlay()`
 * Refactoring mixin `bs-c-form-control()`
 
 ## May 25, 2016 v5.0.0
