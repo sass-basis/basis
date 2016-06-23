@@ -1,0 +1,8 @@
+//
+// Background image cover + centering
+//
+@mixin bs-background-image-cover() {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
