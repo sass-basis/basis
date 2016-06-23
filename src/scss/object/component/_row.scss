@@ -2,12 +2,6 @@
   .#{$bs-prefix}c-row {
     @include bs-c-row();
 
-    &--auto {
-      > .#{$bs-prefix}c-row__col {
-        flex: auto;
-      }
-    }
-
     &--reverse {
       flex-direction: row-reverse;
     }
@@ -131,6 +125,11 @@
 
           &#{$prefix}-offset-0 {
             @include bs-c-row__col--offset(0);
+          }
+
+          &#{$prefix}-auto {
+            flex: auto;
+            max-width: none;
           }
         }
       }
