@@ -22,6 +22,7 @@
     "gulp-sass": "^2.3.1"
   },
   "scripts": {
+    "gulp": "gulp",
     "build": "gulp build",
     "release": "gulp release",
     "sass-test": "scss tests/tests.scss"
