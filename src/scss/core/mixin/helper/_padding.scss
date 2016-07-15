@@ -6,7 +6,7 @@
 // @param  int  $coefficient-1
 // @param  int  $coefficient-1
 //
-@mixin bs-padding($coefficient-1, $coefficient-2: null, $coefficient-3 null, $coefficient-4 null) {
+@mixin bs-padding($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
   @if ($coefficient-2 == null and $coefficient-3 == null and $coefficient-4 == null) {
     $padding: bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
     margin: $margin;
