@@ -13,27 +13,18 @@
   } @elseif ($coefficient-3 == null and $coefficient-4 == null) {
     $margin-vertical  : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
     $margin-horizontal: bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
-    margin-top: $margin-vertical;
-    margin-bottom: $margin-vertical;
-    margin-right: $margin-horizontal;
-    margin-left: $margin-horizontal;
+    margin-top: $margin-vertical $margin-horizontal;
   } @elseif ($coefficient-4 == null) {
     $margin-top       : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
     $margin-horizontal: bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
     $margin-bottom    : bs-margin($bs-base-line-height, $coefficient-3, $bs-margin-coefficient);
-    margin-top: $margin-top;
-    margin-bottom: $margin-bottom;
-    margin-right: $margin-horizontal;
-    margin-left: $margin-horizontal;
+    margin-top: $margin-top $margin-horizontal $margin-bottom;
   } @else {
     $margin-top   : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
     $margin-right : bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
     $margin-bottom: bs-margin($bs-base-line-height, $coefficient-3, $bs-margin-coefficient);
     $margin-left  : bs-margin($bs-base-line-height, $coefficient-4, $bs-margin-coefficient);
-    margin-top: $margin-top;
-    margin-bottom: $margin-bottom;
-    margin-right: $margin-right;
-    margin-left: $margin-left;
+    margin-top: $margin-top $margin-right $margin-bottom $margin-left;
   }
 }
 

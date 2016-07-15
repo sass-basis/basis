@@ -13,27 +13,18 @@
   } @elseif ($coefficient-3 == null and $coefficient-4 == null) {
     $padding-vertical  : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
     $padding-horizontal: bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
-    padding-top: $padding-vertical;
-    padding-bottom: $padding-vertical;
-    padding-right: $padding-horizontal;
-    padding-left: $padding-horizontal;
+    padding: $padding-vertical $padding-horizontal;
   } @elseif ($coefficient-4 == null) {
     $padding-top       : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
     $padding-horizontal: bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
     $padding-bottom    : bs-margin($bs-base-line-height, $coefficient-3, $bs-margin-coefficient);
-    padding-top: $padding-top;
-    padding-bottom: $padding-bottom;
-    padding-right: $padding-horizontal;
-    padding-left: $padding-horizontal;
+    padding-top: $padding-top $padding-horizontal $padding-bottom;
   } @else {
     $padding-top   : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
     $padding-right : bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
     $padding-bottom: bs-margin($bs-base-line-height, $coefficient-3, $bs-margin-coefficient);
     $padding-left  : bs-margin($bs-base-line-height, $coefficient-4, $bs-margin-coefficient);
-    padding-top: $padding-top;
-    padding-bottom: $padding-bottom;
-    padding-right: $padding-right;
-    padding-left: $padding-left;
+    padding-top: $padding-top $padding-right $padding-bottom $padding-left;
   }
 }
 
