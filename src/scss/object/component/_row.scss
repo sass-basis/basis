@@ -126,16 +126,6 @@
           &#{$prefix}-offset-0 {
             @include bs-c-row__col--offset(0);
           }
-
-          &#{$prefix}-auto {
-            flex: auto;
-            max-width: none;
-          }
-
-          &#{$prefix}-justify {
-            flex: 1;
-            max-width: 100%;
-          }
         }
       }
     }
@@ -165,6 +155,18 @@
         $width: 100%;
         flex: 0 1 $width;
         max-width: $width;
+      }
+
+      .#{$bs-prefix}c-row__col {
+        &#{$prefix}-auto {
+          flex: auto;
+          max-width: none;
+        }
+
+        &#{$prefix}-justify {
+        	flex: 1;
+        	max-width: 100%;
+        }
       }
     }
   }
