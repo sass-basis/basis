@@ -120,6 +120,7 @@
     border: 1px solid bs-lighter($bs-color-gray);
     border-radius: $bs-border-radius;
     padding: $bs-base-font-size;
+    overflow: auto;
 
     code {
       background-color: transparent;
