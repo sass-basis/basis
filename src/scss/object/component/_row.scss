@@ -87,9 +87,7 @@
             display: flex;
 
             > * {
-              $width: 100%;
-              flex: 0 1 $width;
-              max-width: $width;
+              @include bs-col-width(100%);
             }
           }
         }
@@ -152,20 +150,16 @@
       }
 
       %bs-item#{$prefix}-full {
-        $width: 100%;
-        flex: 0 1 $width;
-        max-width: $width;
+        @include bs-col-width(100%);
       }
 
       .#{$bs-prefix}c-row__col {
         &#{$prefix}-auto {
-          flex: auto;
-          max-width: none;
+          @include bs-col-width(auto);
         }
 
         &#{$prefix}-justify {
-        	flex: 1;
-        	max-width: 100%;
+          @include bs-col-width(1);
         }
       }
     }
