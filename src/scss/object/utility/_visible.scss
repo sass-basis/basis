@@ -18,6 +18,12 @@
       }
     }
 
+    &-sm-flex {
+      @include bs-bp-sm-only() {
+        display: flex !important;
+      }
+    }
+
     &-md-inline {
       @include bs-bp-md-only() {
         display: inline !important;
@@ -36,6 +42,12 @@
       }
     }
 
+    &-md-flex {
+      @include bs-bp-md-only() {
+        display: flex !important;
+      }
+    }
+
     &-lg-inline {
       @include bs-bp-lg-only() {
         display: inline !important;
@@ -51,6 +63,12 @@
     &-lg-block {
       @include bs-bp-lg-only() {
         display: block !important;
+      }
+    }
+
+    &-lg-flex {
+      @include bs-bp-lg-only() {
+        display: flex !important;
       }
     }
   }

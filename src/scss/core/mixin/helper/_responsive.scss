@@ -37,7 +37,7 @@
 // Return $bs-screen-md-max media query
 //
 @mixin bs-bp-md-max() {
-  @include bs-bp-min($bs-screen-md-max) {
+  @include bs-bp-max($bs-screen-md-max) {
     @content;
   }
 }
