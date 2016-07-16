@@ -21,6 +21,24 @@
 }
 
 //
+// Setting column width
+//
+// @param  length  $width
+//
+@mixin bs-col-width($width) {
+  @if ($width == auto) {
+    flex: auto;
+    max-width: 100%;
+  } @elseif ($width == 1) {
+    flex: 1;
+    max-width: 100%;
+  } @else {
+    flex: 0 1 $width;
+    max-width: $width;
+  }
+}
+
+//
 // Grid component
 //
 // .c-row {
@@ -60,8 +78,7 @@ $bs-max-columns: 12 !default;
 
   @if ($columns != null and $max-columns != null) {
     $width: percentage($columns / $max_columns);
-    flex: 0 1 $width;
-    max-width: $width;
+    @include bs-col-width($width);
   }
 }
 

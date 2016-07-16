@@ -4,12 +4,12 @@
   width: 100%;
   font-size: 0;
 
-  &--auto {
-    table-layout: auto;
-  }
-
   &--reverse {
-    // Not supported.
+    direction: rtl;
+
+    > .#{$bs-prefix}c-row__col {
+      direction: ltr;
+    }
   }
 
   @each $size, $screen-min in $bs-sizes {
@@ -179,6 +179,16 @@
     %bs-item#{$prefix}-full {
       display: inline-block;
       width: 100%;
+    }
+
+    .#{$bs-prefix}c-row__col {
+      &#{$prefix}-auto {
+        // Not supported.
+      }
+
+      &#{$prefix}-justify {
+        // Not supported.
+      }
     }
   }
 }

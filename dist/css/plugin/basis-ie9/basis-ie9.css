@@ -62,8 +62,12 @@
   font-size: 0;
 }
 
-._c-row--auto {
-  table-layout: auto;
+._c-row--reverse {
+  direction: rtl;
+}
+
+._c-row--reverse > ._c-row__col {
+  direction: ltr;
 }
 
 ._c-row--nowrap > ._c-row__col {

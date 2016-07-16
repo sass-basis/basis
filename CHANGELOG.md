@@ -1,5 +1,17 @@
 #Changelog
 
+## July 16, 2016 v5.2.0
+* Fixed pre overflow #84
+* Fixed a bug `bs-bp-md-max()` #89
+* `aria-hidden="true"` should not be `display: none;` fix #85
+* Refactoring `._c-row` component
+* Added mixin `bs-margin()` #86
+* Added mixin `bs-padding()` #86
+* Added `._c-row__col--justify` #87
+* Added `._u-visible-[size]-flex` #88
+* Added mixin `bs-col-width()`
+* Added variables for the headings margin
+
 ## June 23, 2016 v5.1.0
 * Refactoring the auto column size class.
 * Added mixin `bs-ghost()`

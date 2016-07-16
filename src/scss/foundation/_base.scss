@@ -48,38 +48,38 @@
 
   h1 {
     @include bs-font-size-line-height($bs-base-font-size * $bs-h1-font-size-scale);
-    margin-top: 0;
-    @include bs-margin-bottom(2);
+    @include bs-margin-top($bs-h1-margin-top);
+    @include bs-margin-bottom($bs-h1-margin-bottom);
   }
 
   h2 {
     @include bs-font-size-line-height($bs-base-font-size * $bs-h2-font-size-scale);
-    @include bs-margin-top(2);
-    @include bs-margin-bottom(1);
+    @include bs-margin-top($bs-h2-margin-top);
+    @include bs-margin-bottom($bs-h2-margin-bottom);
   }
 
   h3 {
     @include bs-font-size-line-height($bs-base-font-size * $bs-h3-font-size-scale);
-    @include bs-margin-top(2);
-    @include bs-margin-bottom(1);
+    @include bs-margin-top($bs-h3-margin-top);
+    @include bs-margin-bottom($bs-h3-margin-bottom);
   }
 
   h4 {
     @include bs-font-size-line-height($bs-base-font-size * $bs-h4-font-size-scale);
-    @include bs-margin-top(2);
-    @include bs-margin-bottom(1);
+    @include bs-margin-top($bs-h4-margin-top);
+    @include bs-margin-bottom($bs-h4-margin-bottom);
   }
 
   h5 {
     @include bs-font-size-line-height($bs-base-font-size * $bs-h5-font-size-scale);
-    @include bs-margin-top(1);
-    @include bs-margin-bottom(.5);
+    @include bs-margin-top($bs-h5-margin-top);
+    @include bs-margin-bottom($bs-h5-margin-bottom);
   }
 
   h6 {
     @include bs-font-size-line-height($bs-base-font-size * $bs-h6-font-size-scale);
-    @include bs-margin-top(1);
-    @include bs-margin-bottom(.5);
+    @include bs-margin-top($bs-h6-margin-top);
+    @include bs-margin-bottom($bs-h6-margin-bottom);
   }
 
   ol ol, ol ul, ul ol, ul ul {
@@ -120,6 +120,7 @@
     border: 1px solid bs-lighter($bs-color-gray);
     border-radius: $bs-border-radius;
     padding: $bs-base-font-size;
+    overflow: auto;
 
     code {
       background-color: transparent;
@@ -132,9 +133,5 @@
 
   label {
     cursor: pointer;
-  }
-
-  [aria-hidden="true"] {
-    display: none;
   }
 }

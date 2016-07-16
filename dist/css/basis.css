@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v5.1.0
+ * Name: Basis v5.2.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -462,8 +462,8 @@ h1 {
   font-size: 48px;
   font-size: 3rem;
   line-height: 1.125;
-  margin-top: 0;
-  margin-bottom: 3rem;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
@@ -545,6 +545,7 @@ pre {
   border: 1px solid #eeeeee;
   border-radius: 3px;
   padding: 1rem;
+  overflow: auto;
 }
 
 pre code {
@@ -557,10 +558,6 @@ pre code {
 
 label {
   cursor: pointer;
-}
-
-[aria-hidden="true"] {
-  display: none;
 }
 
 ._c-alert {
@@ -1190,31 +1187,15 @@ textarea._c-input-group__control {
   margin-left: 0;
 }
 
-._c-row__col--auto {
-  -ms-flex: auto;
-  flex: auto;
-  max-width: none;
-}
-
 @media (min-width: 40em) {
   ._c-row__col--md-offset-0 {
     margin-left: 0;
-  }
-  ._c-row__col--md-auto {
-    -ms-flex: auto;
-    flex: auto;
-    max-width: none;
   }
 }
 
 @media (min-width: 64em) {
   ._c-row__col--lg-offset-0 {
     margin-left: 0;
-  }
-  ._c-row__col--lg-auto {
-    -ms-flex: auto;
-    flex: auto;
-    max-width: none;
   }
 }
 
@@ -1809,6 +1790,24 @@ textarea._c-input-group__control {
   max-width: 100%;
 }
 
+._c-row__col--auto {
+  -ms-flex: auto;
+  flex: auto;
+  max-width: 100%;
+}
+
+._c-row__col--justify {
+  -ms-flex: 1;
+  flex: 1;
+  max-width: 100%;
+}
+
+._c-row__col--auto {
+  -ms-flex: auto;
+  flex: auto;
+  max-width: none;
+}
+
 @media (min-width: 40em) {
   ._c-row__col--md-1-2, ._c-row__col--md-2-4, ._c-row__col--md-3-6, ._c-row__col--md-4-8, ._c-row__col--md-5-10, ._c-row__col--md-6-12 {
     -ms-flex: 1;
@@ -2309,6 +2308,21 @@ textarea._c-input-group__control {
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
     max-width: 100%;
+  }
+  ._c-row__col--md-auto {
+    -ms-flex: auto;
+    flex: auto;
+    max-width: 100%;
+  }
+  ._c-row__col--md-justify {
+    -ms-flex: 1;
+    flex: 1;
+    max-width: 100%;
+  }
+  ._c-row__col--md-auto {
+    -ms-flex: auto;
+    flex: auto;
+    max-width: none;
   }
 }
 
@@ -2813,6 +2827,21 @@ textarea._c-input-group__control {
     flex: 0 1 100%;
     max-width: 100%;
   }
+  ._c-row__col--lg-auto {
+    -ms-flex: auto;
+    flex: auto;
+    max-width: 100%;
+  }
+  ._c-row__col--lg-justify {
+    -ms-flex: 1;
+    flex: 1;
+    max-width: 100%;
+  }
+  ._c-row__col--lg-auto {
+    -ms-flex: auto;
+    flex: auto;
+    max-width: none;
+  }
 }
 
 ._u-animate {
@@ -3030,6 +3059,13 @@ textarea._c-input-group__control {
   }
 }
 
+@media (max-width: 39.9375em) {
+  ._u-visible-sm-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+
 @media (min-width: 40em) and (max-width: 63.9375em) {
   ._u-visible-md-inline {
     display: inline !important;
@@ -3048,6 +3084,13 @@ textarea._c-input-group__control {
   }
 }
 
+@media (min-width: 40em) and (max-width: 63.9375em) {
+  ._u-visible-md-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+
 @media (min-width: 64em) {
   ._u-visible-lg-inline {
     display: inline !important;
@@ -3063,6 +3106,13 @@ textarea._c-input-group__control {
 @media (min-width: 64em) {
   ._u-visible-lg-block {
     display: block !important;
+  }
+}
+
+@media (min-width: 64em) {
+  ._u-visible-lg-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
   }
 }
 
