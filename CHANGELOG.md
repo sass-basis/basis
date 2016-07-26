@@ -1,5 +1,8 @@
 #Changelog
 
+## July 16, 2016 v5.2.1
+* Fixed column offset bug #90
+
 ## July 16, 2016 v5.2.0
 * Fixed pre overflow #84
 * Fixed a bug `bs-bp-md-max()` #89
