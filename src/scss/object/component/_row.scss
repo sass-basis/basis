@@ -120,10 +120,6 @@
               }
             }
           }
-
-          &#{$prefix}-offset-0 {
-            @include bs-c-row__col--offset(0);
-          }
         }
       }
     }
@@ -160,6 +156,10 @@
 
         &#{$prefix}-justify {
           @include bs-col-width(1);
+        }
+
+        &#{$prefix}-offset-0 {
+          @include bs-c-row__col--offset(0);
         }
       }
 

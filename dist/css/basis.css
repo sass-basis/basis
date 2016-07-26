@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v5.2.0
+ * Name: Basis v5.2.1
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -1183,22 +1183,6 @@ textarea._c-input-group__control {
   max-width: 100%;
 }
 
-._c-row__col--offset-0 {
-  margin-left: 0;
-}
-
-@media (min-width: 40em) {
-  ._c-row__col--md-offset-0 {
-    margin-left: 0;
-  }
-}
-
-@media (min-width: 64em) {
-  ._c-row__col--lg-offset-0 {
-    margin-left: 0;
-  }
-}
-
 ._c-row__col--1-2, ._c-row__col--2-4, ._c-row__col--3-6, ._c-row__col--4-8, ._c-row__col--5-10, ._c-row__col--6-12 {
   -ms-flex: 1;
   flex: 1;
@@ -1802,6 +1786,10 @@ textarea._c-input-group__control {
   max-width: 100%;
 }
 
+._c-row__col--offset-0 {
+  margin-left: 0;
+}
+
 ._c-row__col--auto {
   -ms-flex: auto;
   flex: auto;
@@ -2318,6 +2306,9 @@ textarea._c-input-group__control {
     -ms-flex: 1;
     flex: 1;
     max-width: 100%;
+  }
+  ._c-row__col--md-offset-0 {
+    margin-left: 0;
   }
   ._c-row__col--md-auto {
     -ms-flex: auto;
@@ -2836,6 +2827,9 @@ textarea._c-input-group__control {
     -ms-flex: 1;
     flex: 1;
     max-width: 100%;
+  }
+  ._c-row__col--lg-offset-0 {
+    margin-left: 0;
   }
   ._c-row__col--lg-auto {
     -ms-flex: auto;
