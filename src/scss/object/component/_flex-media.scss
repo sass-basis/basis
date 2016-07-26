@@ -1,0 +1,37 @@
+@if (not bs-is-use-mixin-only()) {
+  .#{$bs-prefix}c-flex-media {
+    @include bs-bp-md-min() {
+      @include bs-c-media();
+    }
+
+    &__figure {
+      @include bs-margin-bottom(.5);
+
+      > img {
+        width: 100%;
+      }
+
+      @include bs-bp-md-min() {
+        @include bs-c-media__figure();
+
+        > img {
+          width: auto;
+        }
+      }
+
+      .#{$bs-prefix}c-flex-media--reverse & {
+        @include bs-bp-md-min() {
+          margin-right: 0;
+          margin-left: $bs-c-media-margin;
+          order: 1;
+        }
+      }
+    }
+
+    &__body {
+      @include bs-bp-md-min() {
+        @include bs-c-media__body();
+      }
+    }
+  }
+}
