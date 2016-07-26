@@ -1,0 +1,35 @@
+.#{$bs-prefix}c-flex-media {
+  @include bs-bp-md-min() {
+	  display: table;
+	  width: 100%;
+  }
+
+  &__figure {
+    @include bs-bp-md-min() {
+	    display: table-cell;
+	    vertical-align: top;
+	    margin-right: 0;
+	    padding-right: $bs-c-media-margin;
+    }
+  }
+
+  &__body {
+    @include bs-bp-md-min() {
+	    display: table-cell;
+	    vertical-align: top;
+	    width: 100%;
+    }
+  }
+
+  &--reverse {
+    @include bs-bp-md-min() {
+	    text-align: left;
+	    direction: rtl;
+
+	    > .#{$bs-prefix}c-media__body {
+	      text-align: left;
+	      direction: ltl;
+	    }
+		}
+  }
+}
