@@ -28,6 +28,7 @@ $bs-c-media-margin: $bs-base-line-height !default;
 }
 
 @mixin bs-c-media__figure() {
+  @include bs-background-image-cover();
   margin-right: $bs-c-media-margin;
   flex: none;
 
