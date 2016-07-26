@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v5.2.1
+ * Name: Basis v5.3.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -638,6 +638,55 @@ label {
   }
 }
 
+@media (min-width: 40em) {
+  ._c-flex-media {
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+._c-flex-media__figure {
+  margin-bottom: 0.75rem;
+}
+
+._c-flex-media__figure > img {
+  width: 100%;
+}
+
+@media (min-width: 40em) {
+  ._c-flex-media__figure {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin-right: 1.5rem;
+    -ms-flex: none;
+    flex: none;
+  }
+  ._c-flex-media__figure > * {
+    vertical-align: top;
+    margin-top: 0.25rem;
+  }
+  ._c-flex-media__figure > img {
+    width: auto;
+  }
+}
+
+@media (min-width: 40em) {
+  ._c-flex-media--reverse ._c-flex-media__figure {
+    margin-right: 0;
+    margin-left: 1.5rem;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+@media (min-width: 40em) {
+  ._c-flex-media__body {
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
 ._c-form-control {
   background-color: #fff;
   border: 1px solid #cccccc;
@@ -822,6 +871,9 @@ textarea._c-input-group__control {
 }
 
 ._c-media__figure {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   margin-right: 1.5rem;
   -ms-flex: none;
   flex: none;

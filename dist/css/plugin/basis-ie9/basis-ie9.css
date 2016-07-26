@@ -1,3 +1,38 @@
+@media (min-width: 40em) {
+  ._c-flex-media {
+    display: table;
+    width: 100%;
+  }
+}
+
+@media (min-width: 40em) {
+  ._c-flex-media__figure {
+    display: table-cell;
+    vertical-align: top;
+    margin-right: 0;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 40em) {
+  ._c-flex-media__body {
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+  }
+}
+
+@media (min-width: 40em) {
+  ._c-flex-media--reverse {
+    text-align: left;
+    direction: rtl;
+  }
+  ._c-flex-media--reverse > ._c-media__body {
+    text-align: left;
+    direction: ltl;
+  }
+}
+
 ._c-input-group {
   display: table;
   width: 100%;

@@ -1,5 +1,9 @@
 #Changelog
 
+## July 26, 2016 v5.3.0
+* Add the flex-media component #92
+* `._c-media`: background-image figure support #93
+
 ## July 16, 2016 v5.2.1
 * Fixed column offset bug #90
 
