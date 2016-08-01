@@ -161,6 +161,10 @@
         &#{$prefix}-offset-0 {
           @include bs-c-row__col--offset(0);
         }
+
+        &#{$prefix}-shrink {
+          flex-grow: 0;
+        }
       }
 
       .#{$bs-prefix}c-row__col {

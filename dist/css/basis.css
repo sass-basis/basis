@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v5.3.0
+ * Name: Basis v5.4.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -1842,6 +1842,11 @@ textarea._c-input-group__control {
   margin-left: 0;
 }
 
+._c-row__col--shrink {
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+
 ._c-row__col--auto {
   -ms-flex: auto;
   flex: auto;
@@ -2361,6 +2366,10 @@ textarea._c-input-group__control {
   }
   ._c-row__col--md-offset-0 {
     margin-left: 0;
+  }
+  ._c-row__col--md-shrink {
+    -ms-flex-positive: 0;
+    flex-grow: 0;
   }
   ._c-row__col--md-auto {
     -ms-flex: auto;
@@ -2882,6 +2891,10 @@ textarea._c-input-group__control {
   }
   ._c-row__col--lg-offset-0 {
     margin-left: 0;
+  }
+  ._c-row__col--lg-shrink {
+    -ms-flex-positive: 0;
+    flex-grow: 0;
   }
   ._c-row__col--lg-auto {
     -ms-flex: auto;
