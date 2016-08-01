@@ -1,5 +1,8 @@
 #Changelog
 
+## July 26, 2016 v5.4.1
+* Fixed bug that double definition of `._c-row__col--auto`
+
 ## July 26, 2016 v5.4.0
 * Add `._c-row__col--shrink` #94
 

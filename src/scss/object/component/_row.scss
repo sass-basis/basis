@@ -166,13 +166,6 @@
           flex-grow: 0;
         }
       }
-
-      .#{$bs-prefix}c-row__col {
-        &#{$prefix}-auto {
-          flex: auto;
-          max-width: none;
-        }
-      }
     }
   }
 }
