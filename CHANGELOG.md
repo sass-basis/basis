@@ -1,5 +1,8 @@
 #Changelog
 
+## July 26, 2016 v5.4.0
+* Add `._c-row__col--shrink` #94
+
 ## July 26, 2016 v5.3.0
 * Add the flex-media component #92
 * `._c-media`: background-image figure support #93
