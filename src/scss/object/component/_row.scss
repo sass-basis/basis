@@ -165,6 +165,10 @@
         &#{$prefix}-shrink {
           flex-grow: 0;
         }
+
+        &#{$prefix}-fit {
+          flex: 0 1 auto;
+        }
       }
     }
   }
