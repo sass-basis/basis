@@ -13,6 +13,7 @@
 
       @include bs-bp-md-min() {
         @include bs-c-media__figure();
+        margin-bottom: 0;
 
         > img {
           width: auto;

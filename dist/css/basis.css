@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v5.4.1
+ * Name: Basis v5.5.0
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -661,6 +661,7 @@ label {
     margin-right: 1.5rem;
     -ms-flex: none;
     flex: none;
+    margin-bottom: 0;
   }
   ._c-flex-media__figure > * {
     vertical-align: top;
@@ -1847,6 +1848,11 @@ textarea._c-input-group__control {
   flex-grow: 0;
 }
 
+._c-row__col--fit {
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
 @media (min-width: 40em) {
   ._c-row__col--md-1-2, ._c-row__col--md-2-4, ._c-row__col--md-3-6, ._c-row__col--md-4-8, ._c-row__col--md-5-10, ._c-row__col--md-6-12 {
     -ms-flex: 1;
@@ -2364,6 +2370,10 @@ textarea._c-input-group__control {
   ._c-row__col--md-shrink {
     -ms-flex-positive: 0;
     flex-grow: 0;
+  }
+  ._c-row__col--md-fit {
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
   }
 }
 
@@ -2885,6 +2895,10 @@ textarea._c-input-group__control {
     -ms-flex-positive: 0;
     flex-grow: 0;
   }
+  ._c-row__col--lg-fit {
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+  }
 }
 
 ._u-animate {
@@ -2897,6 +2911,7 @@ textarea._c-input-group__control {
 
 ._u-animate-opacity {
   transition: opacity 0.1s ease-out;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 

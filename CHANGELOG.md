@@ -1,5 +1,9 @@
 #Changelog
 
+## July 26, 2016 v5.5.0
+* Add `._c-row__col--fit` #96
+* Fixed `._c-flex-media__figure` margin #95
+
 ## July 26, 2016 v5.4.1
 * Fixed bug that double definition of `._c-row__col--auto`
 
