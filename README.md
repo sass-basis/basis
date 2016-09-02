@@ -1,6 +1,8 @@
 # Basis
 A lightweight responsive CSS framework based on flexible box ( flexbox ).
 
+*** <a href="https://getbasis.github.io">Heads up! These docs are for Sass based, which is no longer officially supported. Check out the latest version of Stylus based Basis!</a> ***
+
 <img src="https://avatars0.githubusercontent.com/u/18589717?v=3&s=200" alt="Basis" width="100" />
 
 * Document: http://sass-basis.github.io/
