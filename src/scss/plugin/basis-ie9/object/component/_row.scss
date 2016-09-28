@@ -193,6 +193,11 @@
       &#{$prefix}-shrink {
         // Not supported.
       }
+
+      &#{$prefix}-fit {
+        display: inline-block;
+        width: auto;
+      }
     }
   }
 }
