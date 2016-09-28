@@ -1,35 +1,30 @@
 @media (min-width: 40em) {
-  ._c-flex-media {
+  ._c-flex-media:before, ._c-flex-media:after {
+    content: " ";
     display: table;
-    width: 100%;
+  }
+  ._c-flex-media:after {
+    clear: both;
   }
 }
 
 @media (min-width: 40em) {
   ._c-flex-media__figure {
-    display: table-cell;
-    vertical-align: top;
-    margin-right: 0;
-    padding-right: 1.5rem;
+    display: block;
+    float: left;
   }
 }
 
 @media (min-width: 40em) {
   ._c-flex-media__body {
-    display: table-cell;
-    vertical-align: top;
-    width: 100%;
+    display: block;
+    overflow: hidden;
   }
 }
 
 @media (min-width: 40em) {
-  ._c-flex-media--reverse {
-    text-align: left;
-    direction: rtl;
-  }
-  ._c-flex-media--reverse > ._c-media__body {
-    text-align: left;
-    direction: ltl;
+  ._c-flex-media--reverse > ._c-media__figure {
+    float: right;
   }
 }
 

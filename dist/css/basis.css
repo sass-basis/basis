@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v5.5.0
+ * Name: Basis v5.5.1
  * Description: The flexbox based CSS framework.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: http://2inc.org
@@ -765,6 +765,7 @@ textarea._c-form-control {
   max-width: 100%;
   position: relative;
   -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
 }
 
@@ -867,7 +868,6 @@ textarea._c-input-group__control {
 
 ._c-media--middle {
   -ms-flex-align: center;
-  -ms-grid-row-align: center;
   align-items: center;
 }
 
@@ -957,25 +957,21 @@ textarea._c-input-group__control {
 
 ._c-row--top {
   -ms-flex-align: start;
-  -ms-grid-row-align: flex-start;
   align-items: flex-start;
 }
 
 ._c-row--bottom {
   -ms-flex-align: end;
-  -ms-grid-row-align: flex-end;
   align-items: flex-end;
 }
 
 ._c-row--middle {
   -ms-flex-align: center;
-  -ms-grid-row-align: center;
   align-items: center;
 }
 
 ._c-row--baseline {
   -ms-flex-align: baseline;
-  -ms-grid-row-align: baseline;
   align-items: baseline;
 }
 
@@ -1065,22 +1061,18 @@ textarea._c-input-group__control {
   }
   ._c-row--md-top {
     -ms-flex-align: start;
-    -ms-grid-row-align: flex-start;
     align-items: flex-start;
   }
   ._c-row--md-bottom {
     -ms-flex-align: end;
-    -ms-grid-row-align: flex-end;
     align-items: flex-end;
   }
   ._c-row--md-middle {
     -ms-flex-align: center;
-    -ms-grid-row-align: center;
     align-items: center;
   }
   ._c-row--md-baseline {
     -ms-flex-align: baseline;
-    -ms-grid-row-align: baseline;
     align-items: baseline;
   }
   ._c-row--md-collapse {
@@ -1161,22 +1153,18 @@ textarea._c-input-group__control {
   }
   ._c-row--lg-top {
     -ms-flex-align: start;
-    -ms-grid-row-align: flex-start;
     align-items: flex-start;
   }
   ._c-row--lg-bottom {
     -ms-flex-align: end;
-    -ms-grid-row-align: flex-end;
     align-items: flex-end;
   }
   ._c-row--lg-middle {
     -ms-flex-align: center;
-    -ms-grid-row-align: center;
     align-items: center;
   }
   ._c-row--lg-baseline {
     -ms-flex-align: baseline;
-    -ms-grid-row-align: baseline;
     align-items: baseline;
   }
   ._c-row--lg-collapse {

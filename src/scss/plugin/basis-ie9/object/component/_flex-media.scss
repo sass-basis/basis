@@ -1,35 +1,27 @@
 .#{$bs-prefix}c-flex-media {
   @include bs-bp-md-min() {
-	  display: table;
-	  width: 100%;
+	  @include bs-clearfix();
   }
 
   &__figure {
     @include bs-bp-md-min() {
-	    display: table-cell;
-	    vertical-align: top;
-	    margin-right: 0;
-	    padding-right: $bs-c-media-margin;
+      display: block;
+      float: left;
     }
   }
 
   &__body {
     @include bs-bp-md-min() {
-	    display: table-cell;
-	    vertical-align: top;
-	    width: 100%;
+	    display: block;
+      overflow: hidden;
     }
   }
 
   &--reverse {
     @include bs-bp-md-min() {
-	    text-align: left;
-	    direction: rtl;
-
-	    > .#{$bs-prefix}c-media__body {
-	      text-align: left;
-	      direction: ltl;
-	    }
+	    > .#{$bs-prefix}c-media__figure {
+        float: right;
+      }
 		}
   }
 }
