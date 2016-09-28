@@ -1,5 +1,8 @@
 #Changelog
 
+## September 28, 2016 v5.5.1
+* Refactoring `._c-flex-media` for IE9.
+
 ## July 26, 2016 v5.5.0
 * Add `._c-row__col--fit` #96
 * Fixed `._c-flex-media__figure` margin #95
