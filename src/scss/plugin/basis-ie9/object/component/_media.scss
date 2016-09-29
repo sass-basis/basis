@@ -1,39 +1,23 @@
 .#{$bs-prefix}c-media {
-  display: table;
-  width: 100%;
+  @include bs-clearfix();
 
   &__figure {
-    display: table-cell;
-    vertical-align: top;
-    margin-right: 0;
-    padding-right: $bs-c-media-margin;
+    display: block;
+    float: left;
   }
 
   &__body {
-    display: table-cell;
-    vertical-align: top;
-    width: 100%;
+    display: block;
+    overflow: hidden;
   }
 
   &--middle {
-    > .#{$bs-prefix}c-media__figure,
-    > .#{$bs-prefix}c-media__body {
-      vertical-align: middle;
-    }
-
-    #{$bs-prefix}c-media__figure {
-      margin-left: 0;
-      padding-left: $bs-c-media-margin;
-    }
+    // Not supported.
   }
 
   &--reverse {
-    text-align: left;
-    direction: rtl;
-
     > .#{$bs-prefix}c-media__body {
-      text-align: left;
-      direction: ltl;
+      float: right;
     }
   }
 }
