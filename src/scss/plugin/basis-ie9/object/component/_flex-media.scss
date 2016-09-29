@@ -19,7 +19,7 @@
 
   &--reverse {
     @include bs-bp-md-min() {
-	    > .#{$bs-prefix}c-media__figure {
+	    > .#{$bs-prefix}c-flex-media__figure {
         float: right;
       }
 		}

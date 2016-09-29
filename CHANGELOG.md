@@ -1,5 +1,9 @@
 #Changelog
 
+## September 29, 2016 v5.5.2
+* Refactoring `._c-flex-media` for IE9.
+* Refactoring `._c-media` for IE9.
+
 ## September 28, 2016 v5.5.1
 * Refactoring `._c-flex-media` for IE9.
 * Refactoring `._c-row__col--fit` for IE9.
