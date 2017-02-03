@@ -5,6 +5,7 @@
  */
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
+var sassglob     = require('gulp-sass-glob');
 var rename       = require('gulp-rename');
 var postcss      = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -40,6 +41,7 @@ gulp.task('css', function() {
       {base: dir.src.css}
     )
     .pipe(plumber())
+    .pipe(sassglob())
     .pipe(sass({
       'resolve url nocheck': true
     }))

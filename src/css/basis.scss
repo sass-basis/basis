@@ -1,12 +1,13 @@
 /*!
  * Name: Basis v6.0.0
- * Description: The flexbox based CSS framework.
+ * Description: A lightweight responsive Stylus/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
  * GitHub Repository: https://github.com/sass-basis/basis
  * License: MIT
  */
 
-@import 'core/core';
-@import 'foundation/foundation';
-@import 'object/object';
+@import 'core/*';
+@import 'foundation/*';
+@import 'object/component/*';
+@import 'object/utility/*';

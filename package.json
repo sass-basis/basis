@@ -22,6 +22,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-rollup": "^2.5.1",
     "gulp-sass": "^3.1.0",
+    "gulp-sass-glob": "^1.0.8",
     "gulp-uglify": "^2.0.0",
     "gulp-zip": "^3.2.0",
     "rollup-plugin-babel": "^2.7.1",
