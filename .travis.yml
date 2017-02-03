@@ -1,24 +1,28 @@
 language: node_js
 sudo: false
 node_js:
-  - '4.2'
+- '6'
 branches:
   only:
-    - master
-    - develop
+  - master
+  - develop
+  - "/v\\d+\\.\\d+\\.\\d+?.*/"
 env:
   global:
-    - GIT_COMMITTER_NAME=travis-ci
-    - GIT_COMMITTER_EMAIL=inc@2inc.org
-    - GIT_AUTHOR_NAME=travis-ci
-    - GIT_AUTHOR_EMAIL=inc@2inc.org
-    - secure: "EW2fbMK4w8CubYzjtyiNxS/CG4EdL8hJUMJDyAskzEWefRE+zWj8dapFtT8H4LBBC23nVubwsjb9JJsSR2cbLhU6wdIeYWZolxgL6ORuwCRp6UxCE8jAxIUAuE3pzIK4jXeQ74+oPD8wdmPD6IKRWyOUGbF4akjTY6j/9MEsIjsD8IaJcNWP+6x9BmmdcJQHhfNZjO1uEPc7nGYCeLUyFPHIbr+zppT4QTCemjIkcD7KuQ0huyMUNzZlWf5NPs/3nnbyG4pqIyPCAtDsgqirXIM6UQUrFLQFvyXNOCuTDCDI+rHFGIqgyCpOuwF0l2TgbarZEXXt7j0FCCdn+bPrFvF6sXkMJOvXULgsb8bbGdr/regz2eraimakTY56KfeiBf9ElK1FtRHthOn5GZo4Zki3JQZD6duQmOB3dHV7XPTNuEsBSSkEEQc47ZY3dmrcC2CMlRIuuzJVuvbKVP8hafoESN+MiRLRgpVYIjI6z0Wh+3JlcXrwh1m8ICKbBsvUjz6XY7b/9eytGhYri7HkQRnxbCaKNleUHzyLQDAfdYg9TRy249Vsfh5qED6IJ/t9c68RFdKmVbxnO/aABkvZRb6Iu5o/hZ0l/urGfdR73NN748zrUhEJbsYusoC82jVTAiCHC0f/OcPzCNBm6ltZdjNUrr+Sl+AuX7DF22JoFEc="
-before_script:
-  - git clone -b release --quiet https://github.com/sass-basis/basis.git release
+  - GIT_COMMITTER_NAME=travis-ci
+  - GIT_COMMITTER_EMAIL=inc@2inc.org
+  - GIT_AUTHOR_NAME=travis-ci
+  - GIT_AUTHOR_EMAIL=inc@2inc.org
+  - secure: "EW2fbMK4w8CubYzjtyiNxS/CG4EdL8hJUMJDyAskzEWefRE+zWj8dapFtT8H4LBBC23nVubwsjb9JJsSR2cbLhU6wdIeYWZolxgL6ORuwCRp6UxCE8jAxIUAuE3pzIK4jXeQ74+oPD8wdmPD6IKRWyOUGbF4akjTY6j/9MEsIjsD8IaJcNWP+6x9BmmdcJQHhfNZjO1uEPc7nGYCeLUyFPHIbr+zppT4QTCemjIkcD7KuQ0huyMUNzZlWf5NPs/3nnbyG4pqIyPCAtDsgqirXIM6UQUrFLQFvyXNOCuTDCDI+rHFGIqgyCpOuwF0l2TgbarZEXXt7j0FCCdn+bPrFvF6sXkMJOvXULgsb8bbGdr/regz2eraimakTY56KfeiBf9ElK1FtRHthOn5GZo4Zki3JQZD6duQmOB3dHV7XPTNuEsBSSkEEQc47ZY3dmrcC2CMlRIuuzJVuvbKVP8hafoESN+MiRLRgpVYIjI6z0Wh+3JlcXrwh1m8ICKbBsvUjz6XY7b/9eytGhYri7HkQRnxbCaKNleUHzyLQDAfdYg9TRy249Vsfh5qED6IJ/t9c68RFdKmVbxnO/aABkvZRb6Iu5o/hZ0l/urGfdR73NN748zrUhEJbsYusoC82jVTAiCHC0f/OcPzCNBm6ltZdjNUrr+Sl+AuX7DF22JoFEc="
 script:
-  - cd release
-  - ls | xargs rm -rf
-  - cd ../
-  - npm run release
-after_success:
-  - bash ./bin/deploy.sh
+- yarn run gulp build
+before_deploy:
+- yarn run gulp zip
+deploy:
+  provider: releases
+  api_key:
+    secure: A8qPo5Z1dJjkIFFUtTzOnzTwOXHKWy0TgZ8PTpty8tKAPtacjppFKmprCuOJdZzkfV9nd4Fp1/e0Fw9354Zz6g1rVxVj6Wvz40U89/PR7tahAi/V+qpRudoNltS1X1VJ435my60KBpDaMQGpftKWTjQ4V+JJCm4Nc4Nq6ZXzIQQ2T7gTsKp42XKo+mrx3LxkL22kNWY+IbG+saLPnck7CzD+Rn+CjIm6ZCly95tjMxsFHN5H3HFJtrm8WEsB3PzVnKS8v7mYds/n0iWaLVnn4pYedozbF5IyjW39QizFlbpKUrWDMj5Szl4b+21B+QPL+73xOeFg3PWdiuSKHgoDUPtcKwmBUqhK5jU1DbttvyUf+MAy7oRqrPUu/G15wnwgatPKdYvZqNGhZGbX1GutQ9GOOgNMuH4AiRtOSCKKp1QKn025rCA4ppQPk4/tWqgVfsRqjC1jtYWt303Qd3u1R9XPu8/mwa3qlCEAqknir0jXAO4bBFZkLf3pH6GxVacHcN10xFRjqg+ny1TUBRlhXgcqSWIT7MIsx+JFRv1+o/PV+91PP09+HQsoB+8W8zxcR4xIaTuQgg9qEGjT1PsaLcX/SxKvtnZBEB4w1DQd4hAr+CN6LYAPPsbVsx/dEr1VYc4nVsmPyeQ96EFMugy23w4SiWYvA3WCPaXYenXoEl0=
+  file: basis.zip
+  on:
+    tags: true
+    repo: sass-basis/basis

@@ -1,6 +1,6 @@
 {
   "name": "sass-basis",
-  "version": "5.5.2",
+  "version": "6.0.0",
   "main": "src/scss/basis.scss",
   "author": "inc2734",
   "contributors": [
@@ -13,18 +13,26 @@
     "url": "https://github.com/sass-basis/basis"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.2",
-    "cssnano": "^3.10.0",
+    "autoprefixer": "^6.5.4",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "cssnano": "^3.9.1",
     "gulp": "^3.9.1",
-    "gulp-cli": "^1.2.2",
-    "gulp-postcss": "^6.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0"
+    "gulp-rollup": "^2.5.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-zip": "^3.2.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-node-resolve": "^2.0.0"
   },
   "scripts": {
     "gulp": "gulp",
-    "build": "gulp build",
-    "release": "gulp release",
     "sass-test": "scss tests/tests.scss"
+  },
+  "dependencies": {
+    "normalize-styl": "^4.1.1"
   }
 }

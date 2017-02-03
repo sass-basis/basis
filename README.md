@@ -1,11 +1,9 @@
 # Basis
-A lightweight responsive CSS framework based on flexible box ( flexbox ).
-
-*** <a href="https://getbasis.github.io">Heads up! These docs are for Sass based, which is no longer officially supported. Check out the latest version of Stylus based Basis!</a> ***
+A lightweight responsive Sass/CSS framework based on flexible box.
 
 <img src="https://avatars0.githubusercontent.com/u/18589717?v=3&s=200" alt="Basis" width="100" />
 
-* Document: http://sass-basis.github.io/
+* Document: https://sass-basis.github.io/
 * GitHub: https://github.com/sass-basis/basis/
 * Release: https://github.com/sass-basis/basis/releases/
 
@@ -15,41 +13,53 @@ A lightweight responsive CSS framework based on flexible box ( flexbox ).
 * CSS architecture of Basis is [FLOCSS](https://github.com/hiloki/flocss). So it is possible a modular approach.
 * Basis has incorporated the concept of vertical rhythm. So you can be a good-balanced design.
 * Flexible grid system. Clean because using a flexible box.
-* highly extensible. The core is only the basic components, it can be extended with [add-on](https://github.com/sass-basis).
 
 ## Demo ( HTML5 Templates )
-* integrity: http://sass-basis.github.io/integrity/
-* improve: http://sass-basis.github.io/improve/
-* affinity: http://sass-basis.github.io/affinity/
+* integrity: https://sass-basis.github.io/integrity/
+* improve: https://sass-basis.github.io/improve/
+* affinity: https://sass-basis.github.io/affinity/
 
 ## Get started
 
-### Using npm
+### Using yarn
 
-1. ```$ npm install sass-basis```
-2. Import basis.scss your Sass/SCSS.
-```scss
-@import /PATH/TO/node_modules/sass-basis/src/scss/basis;
+Installs Basis
+```
+$ yarn install sass-basis
+$ yarn run gulp build
 ```
 
-IF you want to use build files, just do this.
+Imports basis.styl your Stylus.
+```
+@import /PATH/TO/node_modules/sass-basis/src/css/basis;
+```
 
-```shell
-$ cd /PATH/TO/sass-basis
-$ npm install
-$ gulp build
+Imports JavaScripts ( Require jQuery )
+```
+import '/PATH/TO/node_modules/sass-basis/src/js/basis.js';
 ```
 
 ### Download from GitHub
 
-1. Download the basis from https://github.com/sass-basis/basis/releases
-2. Import basis.scss your Sass/SCSS.
-```scss
-@import /PATH/TO/basis/src/scss/basis;
+Download the basis from https://github.com/sass-basis/basis/releases
+
+Imports basis.scss your Sass/SCSS.
 ```
+@import /PATH/TO/basis/src/css/basis;
+```
+
 or Just this link.
-```html
-<link rel="stylesheet" href="/PATH/TO/basis/dist/css/basis.min.css" />
+```
+<link rel="stylesheet" href="/PATH/TO/basis/dist/css/basis.min.css">
+```
+
+Loads JavaScripts
+```
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/PATH/TO/node_modules/sass-basis/dist/js/basis.min.js"></script>
 ```
 
 ### Option
@@ -83,9 +93,9 @@ Pull request sent to the master branch doesn't merge.
 
 ## Third party licenses
 
-#### normalize.css v4.0.0
+#### Stylus version of Normalize.css
 * MIT License
-* github.com/necolas/normalize.css
+* https://github.com/bymathias/normalize.styl
 
 ## License
 
