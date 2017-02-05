@@ -1,0 +1,47 @@
+//
+// The circle spinner component
+//
+// @param  hash  properties for decoration
+//
+// .c-spinner-circle {
+//   @include _spinner-circle((
+//     'size'       : 20px,
+//     'color'      : _light($_color-gray),
+//     'border-size': 3px,
+//     'delay'      : 0s,
+//     'duration'   : 2s,
+//   ));
+// }
+//
+// <div class="c-spinner-pulse"></div>
+//
+
+@mixin _spinner-circle($params: ()) {
+  $params: map-merge(
+    (
+      'size'       : 20px,
+      'color'      : _light($_color-gray),
+      'border-size': 3px,
+      'delay'      : 0s,
+      'duration'   : 2s,
+    ),
+    $params
+  );
+
+  $animation-name: _sanitize-animation-name(_spinner-circle- + zip(map-values($params)));
+
+  display: inline-block;
+  @include _circle(map-get($params, 'size'));
+  border: map-get($params, 'border-size') solid map-get($params, 'color');
+  border-top-color: _dark(map-get($params, 'color'));
+  animation: animation-name map-get($params, 'duration') linear map-get($params, 'delay') infinite;
+
+  @keyframes #{$animation-name} {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

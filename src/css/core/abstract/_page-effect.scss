@@ -1,0 +1,71 @@
+//
+// The page effect component
+//
+// @param  hash  properties for decoration
+//
+// .c-page-effect {
+//   _page-effect((
+//     'duration': .2s,
+//     'color'   : #fff,
+//   ));
+// }
+//
+// import BasisPageEffect from 'node_modules/sass-basis/src/js/page-effect.js';
+// new BasisPageEffect();
+//
+// <div class="c-page-effect" data-c="page-effect" data-page-effect="fadein" aria-hidden="false">
+//   <div class="c-page-effect__item">
+//     Loading...
+//   </div>
+// </div>
+//
+
+$_page-effect-z-index: 1000000 !default;
+
+@mixin _page-effect($params: ()) {
+  $params: map-merge(
+    (
+      'duration': .2s, // Must be the same as js location duration time.
+      'color'   : #fff,
+    ),
+    $params
+  );
+
+  $fadein-animation-name : _sanitize-animation-name(_page-effect-fadein- + zip(map-values($params)));
+  $fadeout-animation-name: _sanitize-animation-name(_page-effect-fadeout- + zip(map-values($params)));
+
+  @include _position(fixed, 0, 0, 0, 0, $_page-effect-z-index);
+  background-color: map-get($params, 'color');
+
+  &[data-page-effect="fadein"][aria-hidden="true"] {
+    opacity: 0;
+    z-index: -1;
+    animation: $fadein-animation-name (map-get($params, 'duration') + 0.2) ease-in 0s;
+  }
+
+  &[data-page-effect="fadeout"][aria-hidden="false"] {
+    opacity: 1;
+    z-index: $_page-effect-z-index;
+    animation: $fadeout-animation-name map-get($params, 'duration') ease-in 0s;
+  }
+
+  @keyframes #{$fadein-animation-name} {
+    0% {
+      z-index: $_page-effect-z-index;
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes #{$fadeout-animation-name} {
+    0% {
+      z-index: $_page-effect-z-index;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

@@ -10,7 +10,7 @@
 // </div>
 //
 
-$bs-c-container-margin: $bs-base-line-height !default;
+$bs-c-container-margin: $_base-line-height !default;
 
 @mixin bs-c-container-fluid() {
   margin-right: auto;

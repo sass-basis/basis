@@ -1,4 +1,4 @@
-.#{$bs-prefix}c-flex-media {
+.#{$_prefix}c-flex-media {
   @include bs-bp-md-min() {
 	  @include bs-clearfix();
   }
@@ -19,7 +19,7 @@
 
   &--reverse {
     @include bs-bp-md-min() {
-	    > .#{$bs-prefix}c-flex-media__figure {
+	    > .#{$_prefix}c-flex-media__figure {
         float: right;
       }
 		}

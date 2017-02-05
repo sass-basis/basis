@@ -1,0 +1,60 @@
+//
+// The checkbox component
+//
+// .c-checkbox {
+//   @include _checkbox();
+// }
+//
+// <span class="c-checkbox">
+//   <input type="checkbox">
+//   <label class="c-checkbox__label">Label</label>
+// </span>
+//
+
+@mixin _checkbox() {
+  $checkbox-margin: ($_base-font-size / 2);
+  $checkbox-z-index: 1;
+  $checkbox-border-radius: 3px;
+  $root: #{&};
+
+  position: relative;
+  display: inline-block;
+  margin-right: $checkbox-margin;
+  padding-left: ($_base-font-size + $checkbox-margin);
+
+  > [type="checkbox"] {
+    @include _position(absolute, $_between-lines, null, null, 0, $checkbox-z-index);
+    @include _square($_base-font-size);
+    cursor: pointer;
+    opacity: 0 !important;
+    outline: 0;
+
+    &:checked ~ #{$root}__label::after {
+      opacity: 1;
+    }
+  }
+
+  &__label {
+    &::before {
+      @include _position(absolute, $_between-lines, null, null, 0, ($checkbox-z-index - 1));
+      @include _square($_base-font-size, $checkbox-border-radius);
+      content: '';
+      display: inline-block;
+      background-color: #fff;
+      border: 1px solid _light($_color-gray);
+    }
+
+    &::after {
+      $size: ($_base-font-size / 2);
+      $left: (($_base-font-size - $size) / 2);
+      $top : ($_between-lines + $left);
+
+      @include _position(absolute, $top, null, null, $left, ($checkbox-z-index - 1));
+      @include _square($size, ($checkbox-border-radius - 1));
+      content: '';
+      display: inline-block;
+      background-color: _dark($_color-gray);
+      opacity: 0;
+    }
+  }
+}

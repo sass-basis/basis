@@ -1,4 +1,4 @@
-.#{$bs-prefix}c-row {
+.#{$_prefix}c-row {
   display: table;
   table-layout: fixed;
   width: 100%;
@@ -7,17 +7,17 @@
   &--reverse {
     direction: rtl;
 
-    > .#{$bs-prefix}c-row__col {
+    > .#{$_prefix}c-row__col {
       direction: ltr;
     }
   }
 
-  @each $size, $screen-min in $bs-sizes {
+  @each $size, $screen-min in $_sizes {
     @include bs-bp-min($screen-min) {
       $prefix: bs-bp-prefix($size);
 
       &#{$prefix}-nowrap {
-        > .#{$bs-prefix}c-row__col {
+        > .#{$_prefix}c-row__col {
           display: table-cell;
         }
       }
@@ -25,7 +25,7 @@
       &#{$prefix}-left {
         text-align: left;
 
-        > .#{$bs-prefix}c-row__col {
+        > .#{$_prefix}c-row__col {
           display: inline-block;
         }
       }
@@ -33,7 +33,7 @@
       &#{$prefix}-right {
         text-align: right;
 
-        > .#{$bs-prefix}c-row__col {
+        > .#{$_prefix}c-row__col {
           display: inline-block;
         }
       }
@@ -41,7 +41,7 @@
       &#{$prefix}-center {
         text-align: center;
 
-        > .#{$bs-prefix}c-row__col {
+        > .#{$_prefix}c-row__col {
           display: inline-block;
         }
       }
@@ -57,7 +57,7 @@
           width: 100%;
         }
 
-        > .#{$bs-prefix}c-row__col {
+        > .#{$_prefix}c-row__col {
           display: inline-block;
         }
       }
@@ -67,28 +67,28 @@
       }
 
       &#{$prefix}-top {
-        > .#{$bs-prefix}c-row__col {
+        > .#{$_prefix}c-row__col {
           display: inline-block;
           vertical-align: top;
         }
       }
 
       &#{$prefix}-bottom {
-        > .#{$bs-prefix}c-row__col {
+        > .#{$_prefix}c-row__col {
           display: inline-block;
           vertical-align: bottom;
         }
       }
 
       &#{$prefix}-middle {
-        > .#{$bs-prefix}c-row__col {
+        > .#{$_prefix}c-row__col {
           display: inline-block;
           vertical-align: middle;
         }
       }
 
       &#{$prefix}-baseline {
-        > .#{$bs-prefix}c-row__col {
+        > .#{$_prefix}c-row__col {
           display: inline-block;
           vertical-align: baseline;
         }
@@ -108,7 +108,7 @@
 
       &#{$prefix}-fill {
         // Not supported.
-        > .#{$bs-prefix}c-row__col {
+        > .#{$_prefix}c-row__col {
           display: inline-block;
         }
       }
@@ -116,13 +116,13 @@
   }
 
   &__col {
-    font-size: bs-rem2px($bs-base-font-size);
+    font-size: bs-rem2px($_base-font-size);
     // display: inline-block;
     display: table-cell;
     text-align: left;
     vertical-align: top;
 
-    @each $size, $screen-min in $bs-sizes {
+    @each $size, $screen-min in $_sizes {
       @include bs-bp-min($screen-min) {
         $prefix: bs-bp-prefix($size);
 
@@ -151,7 +151,7 @@
   }
 }
 
-@each $size, $screen-min in $bs-sizes {
+@each $size, $screen-min in $_sizes {
   @include bs-bp-min($screen-min) {
     $prefix: bs-bp-prefix($size);
 
@@ -177,7 +177,7 @@
       width: 100%;
     }
 
-    .#{$bs-prefix}c-row__col {
+    .#{$_prefix}c-row__col {
       &#{$prefix}-auto {
         // Not supported.
       }

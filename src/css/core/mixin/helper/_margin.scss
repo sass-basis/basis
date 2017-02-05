@@ -8,22 +8,22 @@
 //
 @mixin bs-margin($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
   @if ($coefficient-2 == null and $coefficient-3 == null and $coefficient-4 == null) {
-    $margin: bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
+    $margin: bs-margin($_base-line-height, $coefficient-1, $_margin-coefficient);
     margin: $margin;
   } @elseif ($coefficient-3 == null and $coefficient-4 == null) {
-    $margin-vertical  : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
-    $margin-horizontal: bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
+    $margin-vertical  : bs-margin($_base-line-height, $coefficient-1, $_margin-coefficient);
+    $margin-horizontal: bs-margin($_base-line-height, $coefficient-2, $_margin-coefficient);
     margin: $margin-vertical $margin-horizontal;
   } @elseif ($coefficient-4 == null) {
-    $margin-top       : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
-    $margin-horizontal: bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
-    $margin-bottom    : bs-margin($bs-base-line-height, $coefficient-3, $bs-margin-coefficient);
+    $margin-top       : bs-margin($_base-line-height, $coefficient-1, $_margin-coefficient);
+    $margin-horizontal: bs-margin($_base-line-height, $coefficient-2, $_margin-coefficient);
+    $margin-bottom    : bs-margin($_base-line-height, $coefficient-3, $_margin-coefficient);
     margin: $margin-top $margin-horizontal $margin-bottom;
   } @else {
-    $margin-top   : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
-    $margin-right : bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
-    $margin-bottom: bs-margin($bs-base-line-height, $coefficient-3, $bs-margin-coefficient);
-    $margin-left  : bs-margin($bs-base-line-height, $coefficient-4, $bs-margin-coefficient);
+    $margin-top   : bs-margin($_base-line-height, $coefficient-1, $_margin-coefficient);
+    $margin-right : bs-margin($_base-line-height, $coefficient-2, $_margin-coefficient);
+    $margin-bottom: bs-margin($_base-line-height, $coefficient-3, $_margin-coefficient);
+    $margin-left  : bs-margin($_base-line-height, $coefficient-4, $_margin-coefficient);
     margin: $margin-top $margin-right $margin-bottom $margin-left;
   }
 }
@@ -34,7 +34,7 @@
 // @param  int  $coefficient
 //
 @mixin bs-margin-top($coefficient) {
-  margin-top: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  margin-top: bs-margin($_base-line-height, $coefficient, $_margin-coefficient);
 }
 
 //
@@ -43,7 +43,7 @@
 // @param  int  $coefficient
 //
 @mixin bs-margin-right($coefficient) {
-  margin-right: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  margin-right: bs-margin($_base-line-height, $coefficient, $_margin-coefficient);
 }
 
 //
@@ -52,7 +52,7 @@
 // @param  int  $coefficient
 //
 @mixin bs-margin-bottom($coefficient) {
-  margin-bottom: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  margin-bottom: bs-margin($_base-line-height, $coefficient, $_margin-coefficient);
 }
 
 //
@@ -61,5 +61,5 @@
 // @param  int  $coefficient
 //
 @mixin bs-margin-left($coefficient) {
-  margin-left: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  margin-left: bs-margin($_base-line-height, $coefficient, $_margin-coefficient);
 }

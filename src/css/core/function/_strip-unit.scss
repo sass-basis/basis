@@ -4,6 +4,9 @@
 // @param   length  $value  numeric value
 // @return  int
 //
-@function bs-strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+@function _strip-unit($value) {
+  @if (_is-null($value)) {
+    @return $value;
+  }
+  @return ($value / ($value * 0 + 1));
 }

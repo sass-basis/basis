@@ -1,0 +1,48 @@
+//
+// The form control component
+//
+// @param  hash  properties for decoration
+//
+// .c-form-control {
+//   @include _form-control((
+//     'background-color'         : #fff,
+//     'border-size'              : 1px,
+//     'border-color'             : #ccc,
+//     'disabled-background-color': #eee,
+//     'readonly-background-color': #eee,
+//   ));
+// }
+//
+// <input type="text" class="c-form-control">
+//
+
+@mixin _form-control($params: ()) {
+  $params: map-merge(
+    (
+      'background-color'         : #fff,
+      'border-size'              : 0,
+      'border-color'             : transparent,
+      'disabled-background-color': _lighter($_color-gray),
+      'readonly-background-color': _lighter($_color-gray),
+    ),
+    $params
+  );
+
+  border: map-get($params, 'border-size') solid map-get($params, 'border-color');
+
+  &[disabled] {
+    background-color: map-get($params, 'disabled-background-color');
+    cursor: not-allowed;
+  }
+
+  &[readonly] {
+    background-color: map-get($params, 'readonly-background-color');
+  }
+
+  @at-root {
+    textarea#{&} {
+      height: auto;
+      width: 100%;
+    }
+  }
+}

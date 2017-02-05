@@ -2,13 +2,4 @@
 // Prefix of basis classes
 // @type  string
 //
-$bs-prefix: '_' !default;
-
-//
-// If you don't need classes of the Basis, set to true.
-//
-$bs-use-mixin-only: false !default;
-
-@import 'function/function';
-@import 'variable/variable';
-@import 'mixin/mixin';
+$_prefix: '_' !default;

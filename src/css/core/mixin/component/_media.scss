@@ -21,20 +21,20 @@
 // </div>
 //
 
-$bs-c-media-margin: $bs-base-line-height !default;
+$bs-c-media-margin: $_base-line-height !default;
 
 @mixin bs-c-media() {
   display: flex;
 }
 
 @mixin bs-c-media__figure() {
-  @include bs-background-image-cover();
+  @include _background-image-cover();
   margin-right: $bs-c-media-margin;
   flex: none;
 
   > * {
     vertical-align: top;
-    margin-top: $bs-between-lines;
+    margin-top: $_between-lines;
   }
 }
 

@@ -1,5 +1,5 @@
 @if (not bs-is-use-mixin-only()) {
-  .#{$bs-prefix}u-pull {
+  .#{$_prefix}u-pull {
     &-right {
       float: right !important;
     }

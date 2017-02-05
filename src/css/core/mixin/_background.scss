@@ -1,7 +1,7 @@
 //
 // Background image cover + centering
 //
-@mixin bs-background-image-cover() {
+@mixin _background-image-cover() {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -10,6 +10,6 @@
 //
 // Background image fixed
 //
-@mixin bs-background-image-fixed() {
+@mixin _background-image-fixed() {
   background-attachment: fixed;
 }

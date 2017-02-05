@@ -8,22 +8,22 @@
 //
 @mixin bs-padding($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
   @if ($coefficient-2 == null and $coefficient-3 == null and $coefficient-4 == null) {
-    $padding: bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
+    $padding: bs-margin($_base-line-height, $coefficient-1, $_margin-coefficient);
     padding: $padding;
   } @elseif ($coefficient-3 == null and $coefficient-4 == null) {
-    $padding-vertical  : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
-    $padding-horizontal: bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
+    $padding-vertical  : bs-margin($_base-line-height, $coefficient-1, $_margin-coefficient);
+    $padding-horizontal: bs-margin($_base-line-height, $coefficient-2, $_margin-coefficient);
     padding: $padding-vertical $padding-horizontal;
   } @elseif ($coefficient-4 == null) {
-    $padding-top       : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
-    $padding-horizontal: bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
-    $padding-bottom    : bs-margin($bs-base-line-height, $coefficient-3, $bs-margin-coefficient);
+    $padding-top       : bs-margin($_base-line-height, $coefficient-1, $_margin-coefficient);
+    $padding-horizontal: bs-margin($_base-line-height, $coefficient-2, $_margin-coefficient);
+    $padding-bottom    : bs-margin($_base-line-height, $coefficient-3, $_margin-coefficient);
     padding: $padding-top $padding-horizontal $padding-bottom;
   } @else {
-    $padding-top   : bs-margin($bs-base-line-height, $coefficient-1, $bs-margin-coefficient);
-    $padding-right : bs-margin($bs-base-line-height, $coefficient-2, $bs-margin-coefficient);
-    $padding-bottom: bs-margin($bs-base-line-height, $coefficient-3, $bs-margin-coefficient);
-    $padding-left  : bs-margin($bs-base-line-height, $coefficient-4, $bs-margin-coefficient);
+    $padding-top   : bs-margin($_base-line-height, $coefficient-1, $_margin-coefficient);
+    $padding-right : bs-margin($_base-line-height, $coefficient-2, $_margin-coefficient);
+    $padding-bottom: bs-margin($_base-line-height, $coefficient-3, $_margin-coefficient);
+    $padding-left  : bs-margin($_base-line-height, $coefficient-4, $_margin-coefficient);
     padding: $padding-top $padding-right $padding-bottom $padding-left;
   }
 }
@@ -34,7 +34,7 @@
 // @param  int  $coefficient
 //
 @mixin bs-padding-top($coefficient) {
-  padding-top: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  padding-top: bs-margin($_base-line-height, $coefficient, $_margin-coefficient);
 }
 
 //
@@ -43,7 +43,7 @@
 // @param  int  $coefficient
 //
 @mixin bs-padding-right($coefficient) {
-  padding-right: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  padding-right: bs-margin($_base-line-height, $coefficient, $_margin-coefficient);
 }
 
 //
@@ -52,7 +52,7 @@
 // @param  int  $coefficient
 //
 @mixin bs-padding-bottom($coefficient) {
-  padding-bottom: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  padding-bottom: bs-margin($_base-line-height, $coefficient, $_margin-coefficient);
 }
 
 //
@@ -61,5 +61,5 @@
 // @param  int  $coefficient
 //
 @mixin bs-padding-left($coefficient) {
-  padding-left: bs-margin($bs-base-line-height, $coefficient, $bs-margin-coefficient);
+  padding-left: bs-margin($_base-line-height, $coefficient, $_margin-coefficient);
 }

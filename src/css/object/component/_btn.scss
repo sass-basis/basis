@@ -1,13 +1,11 @@
-@if (not bs-is-use-mixin-only()) {
-  .#{$bs-prefix}c-btn {
-    @include bs-c-btn();
+.#{$_prefix}c-btn {
+  @include bs-c-btn();
 
-    &--block {
-      display: block;
-    }
+  &--block {
+    display: block;
+  }
 
-    &--ghost {
-      @include bs-ghost();
-    }
+  &--ghost {
+    @include bs-ghost();
   }
 }

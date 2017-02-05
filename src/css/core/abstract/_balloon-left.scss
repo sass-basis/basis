@@ -1,0 +1,45 @@
+//
+// The left balloon component
+//
+// @param  hash  properties for decoration
+//
+// .c-balloon-left {
+//   @include _balloon-left((
+//     'background-color': #fff,
+//     'border-color'    : #ccc,
+//     'border-size'     : 1px,
+//     'triangle-size'   : 10px,
+//   ));
+// }
+//
+// <div class="c-balloon-left">
+//   ...
+// </div>
+//
+
+@mixin _balloon-left($params: ()) {
+  $params: map-merge(
+    (
+      'background-color': transparent,
+      'border-color'    : transparent,
+      'border-size'     : 0,
+      'triangle-size'   : 10px,
+    ),
+    $params
+  );
+
+  position: relative;
+  background-color: map-get($params, 'background-color');
+
+  @if (not _is-null(map-get($params, 'border-size')) and not _is-null(map-get($params, 'border-color'))) {
+    border: map-get($params, 'border-size') solid map-get($params, 'border-color');
+  }
+
+  @include _balloon-triangle(
+    left,
+    map-get($params, 'triangle-size'),
+    map-get($params, 'background-color'),
+    map-get($params, 'border-size'),
+    map-get($params, 'border-color')
+  );
+}

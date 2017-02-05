@@ -1,31 +1,61 @@
 //
-// Break point for smartphone
-// @type  length
+// Default font size
+// If html { font-size: 62.5% }, set 10px
+// @type  px
 //
-$bs-screen-sm-min: 0;
+$_base-font-size-px: 16px !default;
 
 //
-// Break point for smartphone and tablet
-// 640px / 16px
-// @type  length
+// Default font size
+// @type  rem
 //
-$bs-screen-md-min: 40em !default;
-$bs-screen-sm-max: ($bs-screen-md-min - (1em / 16));
+$_base-font-size: 1rem;
 
 //
-// Break point for tablet and pc
-// 1024px / 16px
-// @type  length
+// Between the character and line of line-height
+// @type  rem
 //
-$bs-screen-lg-min: 64em !default;
-$bs-screen-md-max: ($bs-screen-lg-min - (1em / 16));
+$_between-lines: ($_base-font-size / 4) !default;
+
+//
+// Default line height
+// @type  rem
+//
+$_base-line-height: ($_base-font-size + $_between-lines * 2) !default;
+
+//
+// Margin coefficient
+// @type  int
+//
+$_margin-coefficient: 1 !default;
+
+//
+// The minimum number of columns
+// @type  int
+//
+$_min-columns: 1 !default;
+
+//
+// The maximum number of columns
+// @type  int
+//
+$_max-columns: 12 !default;
 
 //
 // Array of breakpoints
 // @type  array
 //
-$bs-sizes: (
-  sm: $bs-screen-sm-min,
-  md: $bs-screen-md-min,
-  lg: $bs-screen-lg-min
+$_sizes: (
+  'sm': 0,
+  'md': (_px2rem(640px) / _px2rem($_base-font-size-px) * 1em),
+  'lg': (_px2rem(1024px) / _px2rem($_base-font-size-px) * 1em)
+) !default;
+
+//
+// Array of breakpoints
+// @type  array
+//
+$_sizes-max: (
+  'sm': (map-get($_sizes, 'md') - (1em / _strip-unit($_base-font-size-px))),
+  'md': (map-get($_sizes, 'lg') - (1em / _strip-unit($_base-font-size-px)))
 ) !default;

@@ -1,0 +1,61 @@
+//
+// The radio component
+//
+// @param  hash  properties for decoration
+//
+// .c-radio {
+//   @include _radio();
+// }
+//
+// <span class="c-radio">
+//   <input type="radio">
+//   <label class="c-radio__label">Label</label>
+// </span>
+//
+
+@mixin _radio() {
+  $radio-margin : ($_base-font-size / 2);
+  $radio-z-index: 1;
+  $root: #{&};
+
+  position: relative;
+  display: inline-block;
+  margin-right: $radio-margin;
+  padding-left: ($_base-font-size + $radio-margin);
+
+  > [type="radio"] {
+    @include _position(absolute, $_between-lines, null, null, 0, $radio-z-index);
+    @include _square($_base-font-size);
+    cursor: pointer;
+    opacity: 0 !important;
+    outline: 0;
+
+    &:checked ~ #{$root}__label::after {
+      opacity: 1;
+    }
+  }
+
+  &__label {
+    &::before {
+      @include _position(absolute, $_between-lines, null, null, 0, ($radio-z-index - 1));
+      @include _circle($_base-font-size);
+      content: '';
+      display: inline-block;
+      background-color: #fff;
+      border: 1px solid _light($_color-gray);
+    }
+
+    &::after {
+      $size: ($_base-font-size / 2);
+      $left: (($_base-font-size - $size) / 2);
+      $top : ($_between-lines + $left);
+
+      @include _position(absolute, $top, null, null, $left, ($radio-z-index - 1));
+      @include _circle($size);
+      content: '';
+      display: inline-block;
+      background-color: _dark($_color-gray);
+      opacity: 0;
+    }
+  }
+}

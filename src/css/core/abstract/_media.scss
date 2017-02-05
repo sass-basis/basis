@@ -1,0 +1,34 @@
+//
+// The media component
+//
+// .c-media {
+//   @include _media();
+// }
+//
+// <div class="c-media">
+//   <div class="c-media__figure">
+//     <img ...>
+//   </div>
+//   <div class="c-media__body">
+//     ...
+//   </div>
+// </div>
+//
+
+@mixin _media() {
+  display: flex;
+
+  &__figure {
+    flex: none;
+    @include _background-image-cover();
+
+    > * {
+      vertical-align: top;
+      margin-top: $_between-lines;
+    }
+  }
+
+  &__body {
+    flex: 1;
+  }
+}

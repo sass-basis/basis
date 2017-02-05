@@ -10,7 +10,7 @@
 // </span>
 //
 
-$bs-c-checkbox-margin: ($bs-base-font-size / 2) !default;
+$bs-c-checkbox-margin: ($_base-font-size / 2) !default;
 
 @mixin bs-c-checkbox() {
   display: inline-block;

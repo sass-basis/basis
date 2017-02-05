@@ -1,0 +1,45 @@
+//
+// The bottom balloon component
+//
+// @param  hash  properties for decoration
+//
+// .c-balloon-bottom {
+//   @include _balloon-bottom((
+//     'background-color': #fff,
+//     'border-color'    : #ccc,
+//     'border-size'     : 1px,
+//     'triangle-size'   : 10px,
+//   ));
+// }
+//
+// <div class="c-balloon-bottom">
+//   ...
+// </div>
+//
+
+@mixin _balloon-bottom($params: ()) {
+  $params: map-merge(
+    (
+      'background-color': transparent,
+      'border-color'    : transparent,
+      'border-size'     : 0,
+      'triangle-size'   : 10px,
+    ),
+    $params
+  );
+
+  position: relative;
+  background-color: map-get($params, 'background-color');
+
+  @if (not _is-null(map-get($params, 'border-size')) and not _is-null(map-get($params, 'border-color'))) {
+    border: map-get($params, 'border-size') solid map-get($params, 'border-color');
+  }
+
+  @include _balloon-triangle(
+    bottom,
+    map-get($params, 'triangle-size'),
+    map-get($params, 'background-color'),
+    map-get($params, 'border-size'),
+    map-get($params, 'border-color')
+  );
+}

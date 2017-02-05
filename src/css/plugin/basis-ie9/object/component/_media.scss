@@ -1,4 +1,4 @@
-.#{$bs-prefix}c-media {
+.#{$_prefix}c-media {
   @include bs-clearfix();
 
   &__figure {
@@ -16,7 +16,7 @@
   }
 
   &--reverse {
-    > .#{$bs-prefix}c-media__body {
+    > .#{$_prefix}c-media__body {
       float: right;
     }
   }

@@ -1,0 +1,72 @@
+//
+// The pulse spinner component
+//
+// @param  hash  properties for decoration
+//
+// .c-spinner-pulse {
+//   _spinner-pulse((
+//     'height'  : 16px,
+//     'width'   : 5px,
+//     'color'   : $_color-gray,
+//     'delay'   : 0s,
+//     'duration': 2s,
+//     'scale'   : 1.3,
+//   ));
+// }
+//
+// <div class="c-spinner-pulse">
+//   <div class="c-spinner-pulse__bar"></div>
+//   <div class="c-spinner-pulse__bar"></div>
+//   <div class="c-spinner-pulse__bar"></div>
+// </div>
+//
+
+@mixin _spinner-pulse($params: ()) {
+  $params: map-merge(
+    (
+      'height'  : 16px,
+      'width'   : 5px,
+      'color'   : $_color-gray,
+      'delay'   : 0s,
+      'duration': 2s,
+      'scale'   : 1.4,
+    ),
+    $params
+  );
+
+  $animation-name: _sanitize-animation-name(_spinner-pulse- + zip(map-values($params)));
+
+  display: inline-flex;
+  justify-content: space-between;
+
+  &__bar {
+    height: map-get($params, 'height');
+    width: map-get($params, 'width');
+    display: block;
+    background-color: map-get($params, 'color');
+    animation: $animation-name map-get($params, 'duration') ease-in map-get($params, 'delay') infinite;
+
+    &:nth-child(2) {
+      animation-delay: .1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: .2s;
+    }
+
+    @keyframes #{$animation-name} {
+      0% {
+        transform: scaleY(1);
+      }
+      10% {
+        transform: scaleY(map-get($params, 'scale'));
+      }
+      20% {
+        transform: scaleY(1);
+      }
+      100% {
+        transform: scaleY(1);
+      }
+    }
+  }
+}

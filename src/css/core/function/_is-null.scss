@@ -1,0 +1,12 @@
+//
+// Checks for a valid null
+//
+// @return  bool
+//
+@function _is-null($value) {
+  @if ('null' == type-of($value)) {
+    @return true;
+  }
+
+  @return false;
+}

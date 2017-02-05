@@ -4,7 +4,7 @@
 // @param  length  $min  width
 //
 @mixin bs-bp-min($min) {
-  @if ($min == $bs-screen-sm-min) {
+  @if ($min == map-get($_sizes, 'sm')) {
     @content;
   } @else {
     @media (min-width: $min) {
@@ -25,10 +25,10 @@
 }
 
 //
-// Return $bs-screen-md-min media query
+// Return map-get($_sizes, 'md') media query
 //
 @mixin bs-bp-md-min() {
-  @include bs-bp-min($bs-screen-md-min) {
+  @include bs-bp-min(map-get($_sizes, 'md')) {
     @content;
   }
 }
@@ -55,7 +55,7 @@
 // Return media query for tablet size
 //
 @mixin bs-bp-md-only() {
-  @media (min-width: $bs-screen-md-min) and (max-width: $bs-screen-md-max) {
+  @media (min-width: map-get($_sizes, 'md')) and (max-width: $bs-screen-md-max) {
     @content;
   }
 }
@@ -66,7 +66,7 @@
 // @return  string  media query
 //
 @mixin bs-bp-lg-only() {
-  @include bs-bp-min($bs-screen-lg-min) {
+  @include bs-bp-min(map-get($_sizes, 'lg')) {
     @content;
   }
 }

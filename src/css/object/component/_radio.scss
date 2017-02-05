@@ -1,9 +1,7 @@
-@if (not bs-is-use-mixin-only()) {
-  .#{$bs-prefix}c-radio {
-    @include bs-c-radio();
+.#{$_prefix}c-radio {
+  @include bs-c-radio();
 
-    &--block {
-      display: block;
-    }
+  &--block {
+    display: block;
   }
 }

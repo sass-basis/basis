@@ -1,0 +1,37 @@
+//
+// The fluid container component
+//
+// .c-container-fluid {
+//   @include _container-fluid();
+// }
+//
+// <div class="c-container-fluid">
+//   ...
+// </div>
+//
+
+@mixin _container-fluid() {
+}
+
+//
+// The container component
+//
+// .c-container {
+//   @include _container();
+// }
+//
+// <div class="c-container">
+//   ...
+// </div>
+//
+
+$_container-max-width: 1200px !default;
+
+@mixin _container() {
+  margin-right: auto;
+  margin-left: auto;
+
+  @include _media-lg-only() {
+    max-width: _px2rem($_container-max-width);
+  }
+}

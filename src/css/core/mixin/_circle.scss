@@ -1,0 +1,12 @@
+//
+// Creating circle
+//
+// @param  length  $size
+//
+
+@mixin _circle($size) {
+  border-radius: 100%;
+  height: $size;
+  width: $size;
+  overflow: hidden;
+}

@@ -14,11 +14,11 @@
 	@include bs-assert-equals(1, bs-gcd(5, 12));
 }
 
-@include bs-test('[function] bs-px2rem()') {
-	$rem: bs-px2rem(16px, 16px);
+@include bs-test('[function] _px2rem()') {
+	$rem: _px2rem(16px, 16px);
 	@include bs-assert-equals(1rem, $rem);
 
-	$rem: bs-px2rem(16px, 10px);
+	$rem: _px2rem(16px, 10px);
 	@include bs-assert-equals(1.6rem, $rem);
 }
 
@@ -30,7 +30,7 @@
 	@include bs-assert-equals(10px, $rem);
 }
 
-@include bs-test('[function] bs-strip-unit()') {
-	@include bs-assert-equals(1, bs-strip-unit(1rem));
-	@include bs-assert-equals(10, bs-strip-unit(10px));
+@include bs-test('[function] _strip-unit()') {
+	@include bs-assert-equals(1, _strip-unit(1rem));
+	@include bs-assert-equals(10, _strip-unit(10px));
 }

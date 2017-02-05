@@ -1,0 +1,19 @@
+//
+// Unstyled list
+//
+@mixin _list-unstyled() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+//
+// Inline list
+//
+@mixin _list-inline() {
+  @include _list-unstyled();
+
+  > li {
+    display: inline-block;
+  }
+}

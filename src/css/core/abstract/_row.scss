@@ -1,0 +1,97 @@
+//
+// The grid component
+//
+// .c-row {
+//   @include _row();
+//   &__col {
+//     @include _row__col();
+//     &--1-3 {
+//       @include _row__col(1, 3);
+//     }
+//     &--offset-1-3 {
+//       @include _row__col--offset(1, 3);
+//     }
+//   }
+// }
+//
+// <div class="c-row">
+//  <div class="c-row__col">
+//    ...
+//  </div>
+// </div>
+//
+
+@mixin _row() {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//
+// Setting column width
+//
+// @param  int  $columns  molecule column size
+// @param  int  $max-columns  denominator column size
+//
+@mixin _row__col($columns: null, $max-columns: null) {
+  @if (not _is-null($columns) and not _is-null($max-columns)) {
+    $width: percentage($columns / $max-columns);
+    @include _row__col--width($width);
+  } @else {
+    @include _row__col--width(1);
+  }
+}
+
+//
+// Setting column width
+//
+// @param  length  $width
+//
+@mixin _row__col--width($width) {
+  @if ('auto' == $width) {
+    flex: auto;
+    max-width: 100%;
+  } @else if (1 == $width) {
+    flex: 1;
+    max-width: 100%;
+  } @else {
+    flex: 0 1 $width;
+    max-width: $width;
+  }
+}
+
+//
+// Setting column offset
+//
+// @param  int  $columns  molecule offset size
+// @param  int  $max-columns  denominator offset size
+//
+@mixin _row__col--offset($columns: null, $max-columns: null) {
+  @if (not _is-null($columns) and not _is-null($max-columns)) {
+    margin-left: percentage($columns / $max-columns);
+  }
+  @if (0 == $columns) {
+    margin-left: 0;
+  }
+}
+
+//
+// Adding margin for the column
+//
+// @param  int  $coefficient
+//
+@mixin _row__col--margin($coefficient) {
+  padding-right: ($_base-line-height * $coefficient / 2);
+  padding-left: ($_base-line-height * $coefficient / 2);
+  margin-bottom: ($_base-line-height * $coefficient);
+}
+
+//
+// Adding margin for the row
+//
+// @param  int  $coefficient
+//
+@mixin _row--margin($coefficient) {
+  margin-right: ($_base-line-height * $coefficient / 2 * -1);
+  margin-left: ($_base-line-height * $coefficient / 2 * -1);
+  margin-bottom: ($_base-line-height * $coefficient * -1);
+}

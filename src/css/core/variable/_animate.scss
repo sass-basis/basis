@@ -2,11 +2,11 @@
 // Animation time
 // @type  second|milisecond
 //
-$bs-transition-duration: .1s !default;
+$_transition-duration: .1s !default;
 
 //
 // Transition function timing
 // @type  string
 // @see  http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
 //
-$bs-transition-function-timing: ease-out !default;
+$_transition-function-timing: ease-out !default;

@@ -1,0 +1,8 @@
+//
+// @param  string  $name
+// @return  string
+//
+@function _sanitize-animation-name($name) {
+  $name: replace(('.', '(', ')', ',', ' ', '#', '-'), '_', $name);
+  @return $name;
+}

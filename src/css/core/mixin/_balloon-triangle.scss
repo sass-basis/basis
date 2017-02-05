@@ -1,0 +1,59 @@
+//
+// Generate balloon triangle
+//
+// @param  string  $position
+// @param  length  $size  triangle size
+// @param  hex  $background-color
+// @param  length  $border-size
+// @param  hex  $border-color
+//
+@mixin _balloon-triangle($position, $size, $background-color, $border-size: 0, $border-color: transparent) {
+  $before: ($size * -1);
+  $after: $before;
+  @if (0 < $border-size) {
+    $after: $after + $border-size + 1;
+  }
+
+  &::before, &::after {
+    content: '';
+    display: block;
+
+    @if ('top' == $position or 'bottom' == $position) {
+      margin-left: (($size / 2) * -1);
+    } @else if ('right' == $position or 'left' == $position) {
+      margin-top: (($size / 2) * -1);
+    }
+  }
+
+  &::before {
+    @if ('top' == $position) {
+      @include _position(absolute, $before, null, null, 50%);
+      @include _triangle-top($size, $size, $border-color);
+    } @else if ('right' == $position) {
+      @include _position(absolute, 50%, $before, null, null);
+      @include _triangle-right($size, $size, $border-color);
+    } @else if ('bottom' == $position) {
+      @include _position(absolute, null, null, $before, 50%);
+      @include _triangle-bottom($size, $size, $border-color);
+    } @else if ('left' == $position) {
+      @include _position(absolute, 50%, null, null, $before);
+      @include _triangle-left($size, $size, $border-color);
+    }
+  }
+
+  &::after {
+    @if ('top' == $position) {
+      @include _position(absolute, $after, null, null, 50%);
+      @include _triangle-top($size, $size, $background-color);
+    } @else if ('right' == $position) {
+      @include _position(absolute, 50%, $after, null, null);
+      @include _triangle-right($size, $size, $border-color);
+    } @else if ('bottom' == $position) {
+      @include _position(absolute, null, null, $after, 50%);
+      @include _triangle-bottom($size, $size, $border-color);
+    } @else if ('left' == $position) {
+      @include _position(absolute, 50%, null, null, $after);
+      @include _triangle-left($size, $size, $border-color);
+    }
+  }
+}

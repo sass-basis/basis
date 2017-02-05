@@ -1,0 +1,33 @@
+//
+// The position shorthand
+//
+// @param  string  $position
+// @param  length  $top
+// @param  length  $right
+// @param  length  $bottom
+// @param  length  $left
+// @param  int     $z-index
+//
+@mixin _position($position, $top: null, $right: null, $bottom: null, $left: null, $z-index: null) {
+  position: $position;
+
+  @if (_is-length($top)) {
+    top: $top;
+  }
+
+  @if (_is-length($right)) {
+    right: $right;
+  }
+
+  @if (_is-length($bottom)) {
+    bottom: $bottom;
+  }
+
+  @if (_is-length($left)) {
+    left: $left;
+  }
+
+  @if (_is-int($z-index)) {
+    z-index: _strip-unit($z-index);
+  }
+}

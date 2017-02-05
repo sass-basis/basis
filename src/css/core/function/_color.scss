@@ -4,7 +4,7 @@
 // @param   hex  $hex
 // @return  hex
 //
-@function bs-light($hex) {
+@function _light($hex) {
   @return lighten($hex, 20%);
 }
 
@@ -14,7 +14,7 @@
 // @param   hex  $hex
 // @return  hex
 //
-@function bs-lighter($hex) {
+@function _lighter($hex) {
   @return lighten($hex, 33.5%);
 }
 
@@ -24,7 +24,7 @@
 // @param   hex  $hex
 // @return  hex
 //
-@function bs-lightest($hex) {
+@function _lightest($hex) {
   @return lighten($hex, 37%);
 }
 
@@ -34,7 +34,7 @@
 // @param   hex  $hex
 // @return  hex
 //
-@function bs-dark($hex) {
+@function _dark($hex) {
   @return darken($hex, 20%);
 }
 
@@ -44,7 +44,7 @@
 // @param   hex  $hex
 // @return  hex
 //
-@function bs-darker($hex) {
+@function _darker($hex) {
   @return darken($hex, 33.5%);
 }
 
@@ -54,6 +54,6 @@
 // @param   hex  $hex
 // @return  hex
 //
-@function bs-darkest($hex) {
+@function _darkest($hex) {
   @return darken($hex, 37%);
 }

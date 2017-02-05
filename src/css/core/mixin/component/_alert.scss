@@ -11,8 +11,8 @@
 //
 
 $bs-c-alert-border-radius: $bs-border-radius !default;
-$bs-c-alert-border: 1px solid bs-light($bs-color-gray) !default;
-$bs-c-alert-padding: $bs-base-font-size !default;
+$bs-c-alert-border: 1px solid _light($_color-gray) !default;
+$bs-c-alert-padding: $_base-font-size !default;
 
 @mixin bs-c-alert() {
   background-color: #fff;

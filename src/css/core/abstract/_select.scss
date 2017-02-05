@@ -1,0 +1,58 @@
+//
+// The select component
+//
+// @param  hash  properties for decoration
+//
+// .c-select {
+//   @include _select((
+//     'background-color': null,
+//     'border-color'    : null,
+//     'border-size'     : null,
+//   ));
+// }
+//
+// <span class="c-select">
+//   <select></select>
+// </span>
+//
+
+@mixin _select($params: ()) {
+  $params: map-merge(
+    (
+      'background-color': null,
+      'border-color'    : null,
+      'border-size'     : null,
+    ),
+    $params
+  );
+
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  @if (not _is-null(map-get($params, 'border-color')) and not _is-null(map-get($params, 'border-size'))) {
+    border: map-get($paramsm, 'border-size') solid map-get($params, 'border-color');
+  }
+
+  @if (not _is-null(map-get($params, 'background-color'))) {
+    background-color: map-get($params, 'background-color');
+  }
+
+  &::before {
+    @include _position(absolute, 50%, 6px, null, null);
+    transform: translateY(-50%);
+    content: '';
+    display: block;
+  }
+
+  > select {
+    position: relative;
+    margin: 0;
+    appearance: none;
+    background-color: transparent !important;
+    border: none;
+    line-height: 1;
+    outline: 0;
+    width: calc(100% + 50px);
+  }
+}

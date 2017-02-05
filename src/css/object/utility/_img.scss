@@ -1,5 +1,3 @@
-@if (not bs-is-use-mixin-only()) {
-  .#{$bs-prefix}u-img-2x {
-    zoom: 0.5 !important;
-  }
+.#{$_prefix}u-img-2x {
+  zoom: 0.5 !important;
 }

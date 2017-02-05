@@ -1,0 +1,14 @@
+//
+// Creating square
+//
+// @param  length  $size
+// @param  length  $border-radius
+//
+@mixin _square($size, $border-radius: null) {
+  height: $size;
+  width: $size;
+
+  @if (_is-length($border-radius)) {
+    border-radius: $border-radius;
+  }
+}

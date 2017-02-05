@@ -1,0 +1,16 @@
+//
+// Return matched key in the hash
+//
+// @param   string  $key
+// @param   hash    $hash
+// @return  mixed|null
+//
+@function _hash-search($key, $hash) {
+  $keys: map-keys($hash);
+  @each $_key in $keys {
+    @if ($_key == $key) {
+      @return $_key;
+    }
+  }
+  @return null;
+}

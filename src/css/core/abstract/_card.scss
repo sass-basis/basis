@@ -1,0 +1,32 @@
+//
+// The card componet
+//
+// .c-card {
+//   @include _card();
+// }
+//
+// <div class="c-card">
+//  <div class="c-card__figure">
+//    <img ...>
+//  </div>
+//  <div class="c-card__body">
+//    ...
+//  </div>
+// </div>
+//
+
+@mixin _card() {
+  display: flex;
+  flex-direction: column;
+
+  &__figure {
+    > img {
+      vertical-align: top;
+      width: 100%;
+    }
+  }
+
+  &__body {
+    flex: 1 0 auto;
+  }
+}

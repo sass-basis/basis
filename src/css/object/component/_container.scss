@@ -1,9 +1,7 @@
-@if (not bs-is-use-mixin-only()) {
-  .#{$bs-prefix}c-container-fluid {
-    @include bs-c-container-fluid();
-  }
+.#{$_prefix}c-container-fluid {
+  @include bs-c-container-fluid();
+}
 
-  .#{$bs-prefix}c-container {
-    @include bs-c-container();
-  }
+.#{$_prefix}c-container {
+  @include bs-c-container();
 }

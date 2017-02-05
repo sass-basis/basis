@@ -1,0 +1,37 @@
+//
+// The alert component
+//
+// @param  hash  properties for decoration
+//
+// .c-alert {
+//   @include _alert((
+//     background-color: null,
+//     border-color    : null,
+//     border-size     : null,
+//   ));
+// }
+//
+// <div class="c-alert" role="alert">
+//   ...
+// </div>
+//
+
+@mixin _alert($params: ()) {
+  $params: map-merge((
+      'background-color': null,
+      'border-color'    : null,
+      'border-size'     : null,
+    ),
+    $params
+  );
+
+  display: block;
+
+  @if (not _is-null(map-get($params, 'border-color')) and not _is-null(map-get($params, 'border-size'))) {
+    border: map-get($params, 'border-size') solid map-get($params, 'border-color');
+  }
+
+  @if (not _is-null(map-get($params, 'background-color'))) {
+    background-color: map-get($params, 'background-color');
+  }
+}

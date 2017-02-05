@@ -1,5 +1,5 @@
 @if (not bs-is-use-mixin-only()) {
-  .#{$bs-prefix}u-hidden {
+  .#{$_prefix}u-hidden {
     &-sm {
       @include bs-bp-sm-only() {
         display: none !important;

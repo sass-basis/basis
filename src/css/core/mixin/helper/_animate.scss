@@ -71,7 +71,7 @@
 // @param   second|milisecond  $delay: 0  animate time
 //
 @mixin bs-bounce-scale($float, $delay: 0) {
-  $suffix: bs-strip-unit(percentage($float));
+  $suffix: _strip-unit(percentage($float));
   animation: bs-bounce-scale-#{$suffix} $delay ease-out;
   $scale: ($float - 1);
 
@@ -110,7 +110,7 @@
   content: '';
   width: 0;
   height: 1px;
-  transition: width $bs-transition-duration $bs-transition-function-timing;
+  transition: width $_transition-duration $_transition-function-timing;
   transform: translateX(-50%);
-  background-color: $bs-color-text;
+  background-color: $_color-text;
 }

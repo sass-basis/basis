@@ -1,5 +1,5 @@
 @if (not bs-is-use-mixin-only()) {
-  .#{$bs-prefix}u-visible {
+  .#{$_prefix}u-visible {
     &-sm-inline {
       @include bs-bp-sm-only() {
         display: inline !important;
