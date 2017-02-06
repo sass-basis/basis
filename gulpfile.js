@@ -43,6 +43,7 @@ gulp.task('css', function() {
     .pipe(plumber())
     .pipe(sassglob())
     .pipe(sass({
+      includePaths: require('node-normalize-scss').includePaths,
       'resolve url nocheck': true
     }))
     .pipe(postcss([

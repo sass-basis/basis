@@ -34,6 +34,6 @@
     "sass-test": "gulp sass-test"
   },
   "dependencies": {
-    "normalize-styl": "^4.1.1"
+    "node-normalize-scss": "^1.4.0"
   }
 }
