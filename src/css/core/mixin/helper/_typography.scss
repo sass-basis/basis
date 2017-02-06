@@ -9,7 +9,7 @@
     font-size: $font-size;
     font-size: _px2rem($font-size);
   } @elseif ($unit == 'rem') {
-    font-size: bs-rem2px($font-size);
+    font-size: _rem2px($font-size);
     font-size: $font-size;
   } @else {
     font-size: $font-size;
@@ -24,9 +24,9 @@
 // @return  int
 //
 @function bs-vertical-rhythm($font-size, $coefficient: 1) {
-  $between-lines   : _strip-unit(bs-rem2px($_between-lines));
-  $base-line-height: _strip-unit(bs-rem2px($_base-line-height));
-  $base-font-size  : _strip-unit(bs-rem2px($_base-font-size));
+  $between-lines   : _strip-unit(_rem2px($_between-lines));
+  $base-line-height: _strip-unit(_rem2px($_base-line-height));
+  $base-font-size  : _strip-unit(_rem2px($_base-font-size));
   $font-size       : _strip-unit($font-size);
 
   $line-height: $font-size + ($between-lines * $coefficient);
@@ -50,7 +50,7 @@
   $unit: unit($font-size);
   $px: $font-size;
   @if ($unit == 'rem') {
-    $px: bs-rem2px($font-size);
+    $px: _rem2px($font-size);
   }
   line-height: bs-vertical-rhythm($px) / _strip-unit($px);
 }

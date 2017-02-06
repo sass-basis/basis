@@ -4,11 +4,12 @@
 // @param   string  $size  sm|md|lg
 // @return  string
 //
-@function bs-bp-prefix($size) {
+@function _size-prefix($size) {
   $prefix: '-';
 
-  @if $size != 'sm' {
-    $prefix: --#{$size};
+  @if ('sm' != $size) {
+    $prefix: '--' + $size;
   }
+
   @return $prefix;
 }

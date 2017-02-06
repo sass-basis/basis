@@ -10,7 +10,7 @@
 // </alert>
 //
 
-$bs-c-alert-border-radius: $bs-border-radius !default;
+$bs-c-alert-border-radius: $_border-radius !default;
 $bs-c-alert-border: 1px solid _light($_color-gray) !default;
 $bs-c-alert-padding: $_base-font-size !default;
 

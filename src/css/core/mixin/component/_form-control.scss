@@ -9,7 +9,7 @@
 //
 
 $bs-c-form-control-border: 1px solid _light($_color-gray) !default;
-$bs-c-form-control-border-radius: $bs-border-radius !default;
+$bs-c-form-control-border-radius: $_border-radius !default;
 $bs-c-form-control-padding: ($_base-line-height / 4) ($_base-line-height / 2) !default;
 $bs-c-form-control-disabled-background-color: _lighter($_color-gray) !default;
 

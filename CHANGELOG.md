@@ -30,7 +30,7 @@
 * Fixed a bug `bs-bp-md-max()` #89
 * `aria-hidden="true"` should not be `display: none;` fix #85
 * Refactoring `._c-row` component
-* Added mixin `bs-margin()` #86
+* Added mixin `_space()` #86
 * Added mixin `bs-padding()` #86
 * Added `._c-row__col--justify` #87
 * Added `._u-visible-[size]-flex` #88

@@ -123,4 +123,17 @@ gulp.task('zip', function(){
     .pipe(gulp.dest('./'));
 });
 
+/**
+ * Sass tests
+ */
+gulp.task('sass-test', function() {
+  return gulp.src('./tests/tests.scss')
+    .pipe(plumber())
+    .pipe(sassglob())
+    .pipe(sass({
+      'resolve url nocheck': true
+    }))
+    .pipe(gulp.dest('./tests'));
+});
+
 gulp.task('default', ['build', 'watch']);

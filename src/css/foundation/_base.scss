@@ -16,13 +16,13 @@ html {
 body {
   color: $_color-text;
   font-family: $_font-family;
-  @include bs-font-size-line-height($_base-font-size);
+  @include _font-size-line-height($_base-font-size);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code, kbd, pre, samp {
-  @include bs-font-size-line-height($_base-font-size-px - 2);
+  @include _font-size-line-height($_base-font-size-px - 2);
   font-family: '_', monospace;
 }
 
@@ -37,8 +37,11 @@ img {
 }
 
 p, ul, ol, dl, table, pre, blockquote {
-  margin-top: 0;
-  @include bs-margin-bottom(1);
+  @include _margin(0, 0, 1);
+}
+
+figure {
+  @include _margin(0, 0, 1);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -46,39 +49,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @include bs-font-size-line-height($_base-font-size * $_h1-font-size-scale);
-  @include bs-margin-top($_h1-margin-top);
-  @include bs-margin-bottom($_h1-margin-bottom);
+  @include _font-size-line-height($_base-font-size * $_h1-font-size-scale);
+  @include _margin-top($_h1-margin-top);
+  @include _margin-bottom($_h1-margin-bottom);
 }
 
 h2 {
-  @include bs-font-size-line-height($_base-font-size * $_h2-font-size-scale);
-  @include bs-margin-top($_h2-margin-top);
-  @include bs-margin-bottom($_h2-margin-bottom);
+  @include _font-size-line-height($_base-font-size * $_h2-font-size-scale);
+  @include _margin-top($_h2-margin-top);
+  @include _margin-bottom($_h2-margin-bottom);
 }
 
 h3 {
-  @include bs-font-size-line-height($_base-font-size * $_h3-font-size-scale);
-  @include bs-margin-top($_h3-margin-top);
-  @include bs-margin-bottom($_h3-margin-bottom);
+  @include _font-size-line-height($_base-font-size * $_h3-font-size-scale);
+  @include _margin-top($_h3-margin-top);
+  @include _margin-bottom($_h3-margin-bottom);
 }
 
 h4 {
-  @include bs-font-size-line-height($_base-font-size * $_h4-font-size-scale);
-  @include bs-margin-top($_h4-margin-top);
-  @include bs-margin-bottom($_h4-margin-bottom);
+  @include _font-size-line-height($_base-font-size * $_h4-font-size-scale);
+  @include _margin-top($_h4-margin-top);
+  @include _margin-bottom($_h4-margin-bottom);
 }
 
 h5 {
-  @include bs-font-size-line-height($_base-font-size * $_h5-font-size-scale);
-  @include bs-margin-top($_h5-margin-top);
-  @include bs-margin-bottom($_h5-margin-bottom);
+  @include _font-size-line-height($_base-font-size * $_h5-font-size-scale);
+  @include _margin-top($_h5-margin-top);
+  @include _margin-bottom($_h5-margin-bottom);
 }
 
 h6 {
-  @include bs-font-size-line-height($_base-font-size * $_h6-font-size-scale);
-  @include bs-margin-top($_h6-margin-top);
-  @include bs-margin-bottom($_h6-margin-bottom);
+  @include _font-size-line-height($_base-font-size * $_h6-font-size-scale);
+  @include _margin-top($_h6-margin-top);
+  @include _margin-bottom($_h6-margin-bottom);
 }
 
 ol ol, ol ul, ul ol, ul ul {
@@ -109,7 +112,7 @@ blockquote {
 
 code {
   background-color: _lighter($_color-red);
-  border-radius: $bs-border-radius;
+  border-radius: $_border-radius;
   color: $_color-red;
   padding: 2px 4px;
 }
@@ -117,7 +120,7 @@ code {
 pre {
   background-color: _lightest($_color-gray);
   border: 1px solid _lighter($_color-gray);
-  border-radius: $bs-border-radius;
+  border-radius: $_border-radius;
   padding: $_base-font-size;
   overflow: auto;
 

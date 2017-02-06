@@ -7,7 +7,7 @@
 
   @each $size, $screen-min in $_sizes {
     @include bs-bp-min($screen-min) {
-      $prefix: bs-bp-prefix($size);
+      $prefix: _size-prefix($size);
 
       &#{$prefix}-nowrap {
         flex-wrap: nowrap;
@@ -98,11 +98,11 @@
 
     @each $size, $screen-min in $_sizes {
       @include bs-bp-min($screen-min) {
-        $prefix: bs-bp-prefix($size);
+        $prefix: _size-prefix($size);
 
         @for $max_columns from $bs-min-columns through $bs-max-columns {
           @for $i from 1 through $max_columns {
-            $gcd: bs-gcd($i, $max_columns);
+            $gcd: _gcd($i, $max_columns);
 
             &#{$prefix}-#{$i}-#{$max_columns} {
               @if $i != $max_columns {
@@ -126,11 +126,11 @@
 
 @each $size, $screen-min in $_sizes {
   @include bs-bp-min($screen-min) {
-    $prefix: bs-bp-prefix($size);
+    $prefix: _size-prefix($size);
 
     @for $max_columns from 1 through $bs-max-columns {
       @for $i from 1 through $max_columns {
-        $gcd: bs-gcd($i, $max_columns);
+        $gcd: _gcd($i, $max_columns);
 
         @if $gcd == 1 {
           %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {

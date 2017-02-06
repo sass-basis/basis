@@ -5,7 +5,7 @@
 // @param   int  $b  The number to divide
 // @return  int  The number of the remainder
 //
-@function bs-gcd($a, $b) {
+@function _gcd($a, $b) {
   $r: $a % $b;
   @while $r != 0 {
     $a: $b;

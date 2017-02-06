@@ -1,0 +1,66 @@
+//
+// Sets margin
+//
+// @param  int  $coefficient-1
+// @param  int  $coefficient-2
+// @param  int  $coefficient-3
+// @param  int  $coefficient-4
+//
+
+@mixin _margin($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
+  @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
+    $margin: _space($coefficient-1);
+    margin: $margin;
+  } @else if (_is-null($coefficient-3) and _is-null($coefficient-4)) {
+    $margin-vertical  : _space($coefficient-1);
+    $margin-horizontal: _space($coefficient-2);
+    margin: $margin-vertical $margin-horizontal;
+  } @else if (_is-null($coefficient-4)) {
+    $margin-top       : _space($coefficient-1);
+    $margin-horizontal: _space($coefficient-2);
+    $margin-bottom    : _space($coefficient-3);
+    margin: $margin-top $margin-horizontal $margin-bottom;
+  } @else {
+    $margin-top   : _space($coefficient-1);
+    $margin-right : _space($coefficient-2);
+    $margin-bottom: _space($coefficient-3);
+    $margin-left  : _space($coefficient-4);
+    margin: $margin-top $margin-right $margin-bottom $margin-left;
+  }
+}
+
+//
+// Sets margin-top
+//
+// @param  int  $coefficient
+//
+@mixin _margin-top($coefficient) {
+  margin-top: _space($coefficient);
+}
+
+//
+// Sets margin-right
+//
+// @param  int  $coefficient
+//
+@mixin _margin-right($coefficient) {
+  margin-right: _space($coefficient);
+}
+
+//
+// Sets margin-bottom
+//
+// @param  int  $coefficient
+//
+@mixin _margin-bottom($coefficient) {
+  margin-bottom: _space($coefficient);
+}
+
+//
+// Sets margin-left
+//
+// @param  int  $coefficient
+//
+@mixin _margin-left($coefficient) {
+  margin-left: _space($coefficient);
+}

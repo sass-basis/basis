@@ -4,7 +4,7 @@
   }
 
   &__figure {
-    @include bs-margin-bottom(.5);
+    @include _margin(0, 0, .5);
 
     > img {
       width: 100%;
