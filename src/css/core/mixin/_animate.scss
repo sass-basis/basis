@@ -1,0 +1,116 @@
+//
+// Bounce vertical
+//
+// @param   length             $px        bounce size
+// @param   second|milisecond  $delay: 0  animate time
+//
+@mixin _bounce-vertical($px, $delay: 0) {
+  $keyframe-name: _sanitize-animation-name(_bounce-vertical- + $px);
+  position: relative;
+  animation: $keyframe-name $delay;
+
+  @keyframes #{$keyframe-name} {
+    0%   { top: ($px * -1); }
+    25%  { top: $px; }
+    50%  { top: ($px / 2 * -1); }
+    75%  { top: ($px / 2); }
+    100% { top: 0; }
+  }
+}
+
+//
+// Shake vertical
+//
+@mixin _shake-vertical() {
+  @include _bounce-vertical(4px, .5s);
+}
+
+//
+// Vibrate vertical
+//
+@mixin _vibrate-vertical() {
+  @include _bounce-vertical(2px, .2s);
+}
+
+//
+// Bounce horizontal
+//
+// @param   length             $px        bounce size
+// @param   second|milisecond  $delay: 0  animate time
+//
+@mixin _bounce-horizontal($px, $delay: 0) {
+  $keyframe-name: _sanitize-animation-name(_bounce-horizontal- + $px);
+  position: relative;
+  animation: $keyframe-name $delay;
+
+  @keyframes #{$keyframe-name} {
+    0%   { left: ($px * -1); }
+    25%  { left: $px; }
+    50%  { left: ($px / 2 * -1); }
+    75%  { left: ($px / 2); }
+    100% { left: 0; }
+  }
+}
+
+//
+// Shake horizontal
+//
+@mixin _shake-horizontal() {
+  @include _bounce-horizontal(4px, .5s);
+}
+
+//
+// Vibrate horizontal
+//
+@mixin _vibrate-horizontal() {
+  @include _bounce-horizontal(2px, .2s);
+}
+
+//
+// Bounce scale
+//
+// @param   float              $px        bounce size
+// @param   second|milisecond  $delay: 0  animate time
+//
+@mixin _bounce-scale($float, $delay: 0) {
+  $suffix: _strip-unit(percentage($float));
+  $keyframe-name: _sanitize-animation-name(_bounce-scale- + $suffix);
+  animation: $keyframe-name $delay ease-out;
+
+  @keyframes #{$keyframe-name} {
+    0%   { transform: scale(1); }
+    25%  { transform: scale($float); }
+    50%  { transform: scale(1); }
+    75%  { transform: scale((1 + ($float - 1) / 2)); }
+    100% { transform: scale(1); }
+  }
+}
+
+//
+// Shake scale
+//
+@mixin _shake-scale() {
+  @include _bounce-scale(1.2, .5s);
+}
+
+//
+// Vibrate scale
+//
+@mixin _vibrate-scale() {
+  @include _bounce-scale(1.1, .2s);
+}
+
+//
+// Extend the underline from the center.
+// This mixin use the pseudo-elements.
+//
+@mixin _extend-underline() {
+  @include _position(absolute, null, null, 0, 50%);
+  display: block;
+  content: '';
+  width: 0;
+  height: 1px;
+  transition: width $_transition-duration $_transition-function-timing;
+  transform: translateX(-50%);
+  background-color: $_color-text;
+}

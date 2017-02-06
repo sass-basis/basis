@@ -1,0 +1,15 @@
+//
+// Hover event helper
+//
+// img {
+//   @include _hover() {
+//     opacity: .8;
+//   }
+// }
+//
+
+@mixin _hover() {
+  &:hover, &:focus {
+    @content;
+  }
+}
