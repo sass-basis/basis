@@ -1,6 +1,7 @@
-@import '../../core/*';
-@import '../../core/function/*';
-@import '../../core/variable/*';
-@import '../../core/mixin/*';
-@import '../../core/abstract/*';
-@import 'object/component/*';
+@import '../../basis-core';
+
+@import 'object/component/flex-media';
+@import 'object/component/input-group';
+@import 'object/component/media';
+@import 'object/component/navbar';
+@import 'object/component/row';

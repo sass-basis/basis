@@ -7,14 +7,49 @@
  * License: MIT
  */
 
-@import 'core/*';
-@import 'core/function/*';
-@import 'core/variable/*';
-@import 'core/mixin/*';
-@import 'core/abstract/*';
+@import 'basis-core';
 
-@import "normalize";
-@import 'foundation/*';
+@import 'normalize';
 
-@import 'object/component/*';
-@import 'object/utility/*';
+@import 'foundation/base';
+
+@import 'object/component/alert';
+@import 'object/component/balloon-bottom';
+@import 'object/component/balloon-left';
+@import 'object/component/balloon-right';
+@import 'object/component/balloon-top';
+@import 'object/component/breadcrumbs';
+@import 'object/component/btn';
+@import 'object/component/card';
+@import 'object/component/checkbox';
+@import 'object/component/container';
+@import 'object/component/copyright';
+@import 'object/component/drawer';
+@import 'object/component/entries';
+@import 'object/component/entry';
+@import 'object/component/flex-media';
+@import 'object/component/form-control';
+@import 'object/component/hamburger-btn';
+@import 'object/component/hero';
+@import 'object/component/input-group';
+@import 'object/component/media';
+@import 'object/component/meta';
+@import 'object/component/navbar';
+@import 'object/component/page-effect';
+@import 'object/component/page-header';
+@import 'object/component/radio';
+@import 'object/component/row';
+@import 'object/component/section';
+@import 'object/component/select';
+@import 'object/component/site-branding';
+@import 'object/component/spinner-circle';
+@import 'object/component/spinner-dots';
+@import 'object/component/spinner-pulse';
+
+@import 'object/utility/animate';
+@import 'object/utility/clearfix';
+@import 'object/utility/hidden';
+@import 'object/utility/img';
+@import 'object/utility/pull';
+@import 'object/utility/text';
+@import 'object/utility/visible';

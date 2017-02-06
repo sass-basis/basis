@@ -1,14 +1,65 @@
-/*!
- * Name: Basis v6.0.0
- * Description: A lightweight responsive Sass/CSS framework based on flexible box.
- * Author: Takashi Kitajima ( inc2734 )
- * Author URL: https://2inc.org
- * GitHub Repository: https://github.com/sass-basis/basis
- * License: MIT
- */
+@import 'core/core';
 
-@import 'core/*';
-@import 'core/function/*';
-@import 'core/variable/*';
-@import 'core/mixin/*';
-@import 'core/abstract/*';
+@import 'core/function/color';
+@import 'core/function/gcd';
+@import 'core/function/hash-search';
+@import 'core/function/is-int';
+@import 'core/function/is-length';
+@import 'core/function/is-null';
+@import 'core/function/px2rem';
+@import 'core/function/rem2px';
+@import 'core/function/replace';
+@import 'core/function/sanitize-animation-name';
+@import 'core/function/size-prefix';
+@import 'core/function/space';
+@import 'core/function/strip-unit';
+@import 'core/function/vertical-rhythm';
+
+@import 'core/variable/animate';
+@import 'core/variable/border-radius';
+@import 'core/variable/color';
+@import 'core/variable/responsive';
+@import 'core/variable/typography';
+
+@import 'core/mixin/animate';
+@import 'core/mixin/background';
+@import 'core/mixin/balloon-triangle';
+@import 'core/mixin/circle';
+@import 'core/mixin/clearfix';
+@import 'core/mixin/event';
+@import 'core/mixin/ghost';
+@import 'core/mixin/list';
+@import 'core/mixin/margin';
+@import 'core/mixin/overlay';
+@import 'core/mixin/padding';
+@import 'core/mixin/position';
+@import 'core/mixin/responsive';
+@import 'core/mixin/square';
+@import 'core/mixin/transition';
+@import 'core/mixin/triangle';
+@import 'core/mixin/typography';
+
+@import 'core/abstract/alert';
+@import 'core/abstract/balloon-bottom';
+@import 'core/abstract/balloon-left';
+@import 'core/abstract/balloon-right';
+@import 'core/abstract/balloon-top';
+@import 'core/abstract/btn';
+@import 'core/abstract/card';
+@import 'core/abstract/checkbox';
+@import 'core/abstract/container';
+@import 'core/abstract/drawer';
+@import 'core/abstract/flex-media';
+@import 'core/abstract/form-control';
+@import 'core/abstract/hamburger-btn';
+@import 'core/abstract/hero';
+@import 'core/abstract/input-group';
+@import 'core/abstract/media';
+@import 'core/abstract/navbar';
+@import 'core/abstract/page-effect';
+@import 'core/abstract/radio';
+@import 'core/abstract/row';
+@import 'core/abstract/select';
+@import 'core/abstract/spinner-circle';
+@import 'core/abstract/spinner-dots';
+@import 'core/abstract/spinner-pulse';
