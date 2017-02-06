@@ -1,0 +1,23 @@
+//
+// The breadcrumbs component
+//
+// <ol class="_c-breadcrumbs">
+//   <li class="_c-breadcrumbs__item"><a href="#">...</a></li>
+//   <li class="_c-breadcrumbs__item">...</li>
+// </ol>
+//
+
+.#{$_prefix}c-breadcrumbs {
+  @include _list-unstyled();
+
+  &__item {
+    display: inline;
+
+    &:nth-child(n + 2) {
+      &::before {
+        @include _margin(0, 5px);
+        content: '>';
+      }
+    }
+  }
+}

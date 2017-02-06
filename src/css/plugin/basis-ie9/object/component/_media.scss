@@ -1,5 +1,5 @@
 .#{$_prefix}c-media {
-  @include bs-clearfix();
+  @include _clearfix();
 
   &__figure {
     display: block;
@@ -16,7 +16,7 @@
   }
 
   &--reverse {
-    > .#{$_prefix}c-media__body {
+    > .#{$_prefix}c-media__figure {
       float: right;
     }
   }

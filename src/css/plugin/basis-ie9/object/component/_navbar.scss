@@ -1,0 +1,19 @@
+.#{$_prefix}c-navbar {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  &__item {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+    > a {
+      display: block;
+    }
+  }
+
+  &--auto {
+    table-layout: auto;
+  }
+}

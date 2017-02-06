@@ -1,0 +1,21 @@
+//
+// The page effect component
+//
+// import BasisPageEffect from 'node_modules/getbasis/src/js/page-effect.js';
+// new BasisPageEffect();
+//
+// <div class="_c-page-effect" data-c="page-effect" data-page-effect="fadein" aria-hidden="false">
+//   <div class="_c-page-effect__item">
+//     Loading...
+//   </div>
+// </div>
+//
+
+.#{$_prefix}c-page-effect {
+  @include _page-effect();
+
+  &__item {
+    @include _position(absolute, 50%, null, null, 50%);
+    transform: translate(-50%, -50%);
+  }
+}

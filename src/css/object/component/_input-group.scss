@@ -1,19 +1,52 @@
+//
+// The input group component
+//
+// <div class="_c-input-group">
+//   <div class="_c-input-group__addon">@</div>
+//   <div class="_c-input-group__field">
+//     <input type="text">
+//   </div>
+//   <button class="_c-input-group__btn">Go</button>
+// </div>
+//
+
 .#{$_prefix}c-input-group {
-  @include bs-c-input-group();
+  @include _input-group();
+  border-radius: $_border-radius;
+
+  > :first-child {
+    border-radius: $_border-radius 0 0 $_border-radius;
+  }
+
+  > :last-child {
+    border-radius: 0 $_border-radius $_border-radius 0;
+  }
 
   &__addon {
-    @include bs-c-input-group__addon();
+    background-color: _lighter($_color-gray);
+    padding: ($_base-font-size / 2);
   }
 
   &__field {
-    @include bs-c-input-group__field();
-  }
-
-  &__control {
-    @include bs-c-input-group__control();
+    > input[type='email'],
+    > input[type='number'],
+    > input[type='password'],
+    > input[type='search'],
+    > input[type='tel'],
+    > input[type='text'],
+    > input[type='url'] {
+      padding: ($_base-line-height / 4) ($_base-line-height / 2);
+    }
   }
 
   &__btn {
-    @include bs-c-input-group__btn();
+    @include _btn((
+      'background-color': #fff,
+      'border-size'     : 1px,
+      'border-color'    : _light($_color-gray),
+    ));
+
+    color: $_color-text;
+    padding: ($_base-font-size / 2) ($_base-font-size * 2);
   }
 }

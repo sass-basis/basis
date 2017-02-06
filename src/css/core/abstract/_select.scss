@@ -31,7 +31,7 @@
   overflow: hidden;
 
   @if (not _is-null(map-get($params, 'border-color')) and not _is-null(map-get($params, 'border-size'))) {
-    border: map-get($paramsm, 'border-size') solid map-get($params, 'border-color');
+    border: map-get($params, 'border-size') solid map-get($params, 'border-color');
   }
 
   @if (not _is-null(map-get($params, 'background-color'))) {

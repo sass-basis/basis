@@ -1,11 +1,24 @@
+//
+// The button component
+//
+// <a class="_c-btn" role="button">btn</a>
+//
+
 .#{$_prefix}c-btn {
-  @include bs-c-btn();
+  @include _btn((
+    'background-color': #fff,
+    'border-size'     : 1px,
+    'border-color'    : _light($_color-gray),
+  ));
+
+  color: $_color-text;
+  padding: ($_base-font-size / 2) ($_base-font-size * 2);
 
   &--block {
     display: block;
   }
 
   &--ghost {
-    @include bs-ghost();
+    @include _ghost();
   }
 }

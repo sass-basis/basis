@@ -1,0 +1,76 @@
+//
+// The drawer component
+//
+// import BasisDrawer from 'node_modules/sass-basis/src/js/drawer.js';
+// new BasisDrawer();
+//
+// <div class="_c-drawer" data-c="drawer">
+//   <nav id="drawer" class="_c-drawer__body" data-c="drawer__body" role="navigation" aria-hidden="true">
+//     <ul class="_c-drawer__menu">
+//       <li class="_c-drawer__item"><a href="#">menu</a></li>
+//       <li class="_c-drawer__item"><a href="#">menu</a></li>
+//       <li class="_c-drawer__item">
+//         <a href="#">menu</a>
+//         <div class="_c-drawer__toggle" data-c="drawer__toggle" aria-expanded="false">&gt;</div>
+//         <ul class="_c-drawer__submenu" data-c="drawer__submenu" aria-hidden="true">
+//           <li class="_c-drawer__subitem"><a href="#">submenu</a></li>
+//           <li class="_c-drawer__subitem"><a href="#">submenu</a></li>
+//         </ul>
+//       </li>
+//     </ul>
+//   </nav>
+// </div>
+//
+// <div class="_c-hamburger-btn" data-c="drawer-btn" aria-expanded="false" aria-controls="drawer"></div>
+//
+
+.#{$_prefix}c-drawer {
+  $item-padding-coefficient: 1;
+
+  @include _drawer();
+
+  &__menu {
+    @include _list-unstyled();
+  }
+
+  &__item, &__subitem {
+    position: relative;
+    color: #fff;
+
+    > a {
+      color: #fff;
+      text-decoration: none;
+      @include _transition(background-color);
+
+      @include _hover() {
+        color: #ccc;
+      }
+    }
+  }
+
+  &__item {
+    @include _padding(.5, $item-padding-coefficient, 0);
+  }
+
+  &__submenu {
+    @include _list-unstyled();
+    @include _margin(0, ($item-padding-coefficient * -1), 0, 0);
+    padding-left: 1em;
+  }
+
+  &__subitem {
+    @include _padding(.5, $item-padding-coefficient, 0, 0);
+  }
+
+  &__toggle {
+    @include _position(absolute, _space(.5), 5px, 0);
+    @include _square($_base-line-height)
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__body--fixed {
+    position: fixed;
+  }
+}

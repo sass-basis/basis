@@ -1,0 +1,31 @@
+//
+// The select component
+//
+// <span class="_c-select">
+//   <select></select>
+// </span>
+//
+
+.#{$_prefix}c-select {
+  @include _select((
+    'background-color': #fff,
+    'border-size'     : 1px,
+    'border-color'    : _light($_color-gray),
+  ));
+
+  border-radius: _border-radius;
+
+  &::before {
+    @include _triangle-bottom(8px, 6px, _dark($_color-gray))
+    width: 0;
+    height: 0;
+  }
+
+  > select {
+    padding: ($_base-line-height / 4) $_base-line-height ($_base-line-height / 4) ($_base-line-height / 2);
+  }
+
+  &--block {
+    display: block;
+  }
+}

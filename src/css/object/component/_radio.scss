@@ -1,5 +1,14 @@
+//
+// The radio component
+//
+// <span class="_c-radio">
+//   <input type="radio">
+//   <label class="_c-radio__label">Label</label>
+// </span>
+//
+
 .#{$_prefix}c-radio {
-  @include bs-c-radio();
+  @include _radio();
 
   &--block {
     display: block;

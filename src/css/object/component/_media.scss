@@ -1,25 +1,37 @@
+//
+// The media component
+//
+// <div class="_c-media">
+//   <div class="_c-media__figure">
+//     <img ...>
+//   </div>
+//   <div class="_c-media__body">
+//     ...
+//   </div>
+// </div>
+//
+
 .#{$_prefix}c-media {
-  @include bs-c-media();
+  @include _media();
+
+  &__figure {
+    @include _margin(0, 1, 0, 0);
+  }
+
+  &__body {
+    > .#{$_prefix}c-media {
+      @include _margin-top(1);
+    }
+  }
 
   &--middle {
     align-items: center;
   }
 
-  &__figure {
-    @include bs-c-media__figure();
-
-    .#{$_prefix}c-media--reverse & {
-      margin-right: 0;
-      margin-left: $bs-c-media-margin;
+  &--reverse {
+    .#{$_prefix}c-media__figure {
+      @include _margin(0, 0, 0, 1);
       order: 1;
-    }
-  }
-
-  &__body {
-    @include bs-c-media__body();
-
-    > .#{$_prefix}c-media {
-      margin-top: $bs-c-media-margin;
     }
   }
 }

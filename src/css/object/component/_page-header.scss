@@ -1,0 +1,15 @@
+//
+// The page header component
+//
+// <header class="_c-page-header">
+//   <h1 class="_c-page-header__title">...</h1>
+// </header>
+//
+
+.#{$_prefix}c-page-header {
+  @include _padding(2, 0);
+
+  &__title {
+    margin: 0;
+  }
+}

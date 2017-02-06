@@ -1,24 +1,24 @@
 .#{$_prefix}c-flex-media {
-  @include bs-bp-md-min() {
-	  @include bs-clearfix();
+  @include _media-min(md) {
+	  @include _clearfix();
   }
 
   &__figure {
-    @include bs-bp-md-min() {
+    @include _media-min(md) {
       display: block;
       float: left;
     }
   }
 
   &__body {
-    @include bs-bp-md-min() {
+    @include _media-min(md) {
 	    display: block;
       overflow: hidden;
     }
   }
 
   &--reverse {
-    @include bs-bp-md-min() {
+    @include _media-min(md) {
 	    > .#{$_prefix}c-flex-media__figure {
         float: right;
       }

@@ -1,12 +1,26 @@
+//
+// The grid component
+//
+// <div class="_c-row">
+//  <div class="_c-row__col">
+//    ...
+//  </div>
+// </div>
+//
+
 .#{$_prefix}c-row {
-  @include bs-c-row();
+  @include _row();
+
+  &__col {
+    @include _row__col(null, null);
+  }
 
   &--reverse {
     flex-direction: row-reverse;
   }
 
   @each $size, $screen-min in $_sizes {
-    @include bs-bp-min($screen-min) {
+    @include _media-min($screen-min) {
       $prefix: _size-prefix($size);
 
       &#{$prefix}-nowrap {
@@ -50,33 +64,33 @@
       }
 
       &#{$prefix}-collapse {
-        @include bs-row-margin(0);
+        @include _row--margin(0);
 
         > .#{$_prefix}c-row__col {
-          @include bs-col-margin(0);
+          @include _row__col--margin(0);
         }
       }
 
       &#{$prefix}-margin {
-        @include bs-row-margin($bs-col-margin);
+        @include _row--margin(1);
 
         > .#{$_prefix}c-row__col {
-          @include bs-col-margin($bs-col-margin);
+          @include _row__col--margin(1);
         }
 
         &-s {
-          @include bs-row-margin($bs-col-margin-s);
+          @include _row--margin(.5);
 
           > .#{$_prefix}c-row__col {
-            @include bs-col-margin($bs-col-margin-s);
+            @include _row__col--margin(.5);
           }
         }
 
         &-l {
-          @include bs-row-margin($bs-col-margin-l);
+          @include _row--margin(2);
 
           > .#{$_prefix}c-row__col {
-            @include bs-col-margin($bs-col-margin-l);
+            @include _row__col--margin(2);
           }
         }
       }
@@ -86,37 +100,7 @@
           display: flex;
 
           > * {
-            @include bs-col-width(100%);
-          }
-        }
-      }
-    }
-  }
-
-  &__col {
-    @include bs-c-row__col();
-
-    @each $size, $screen-min in $_sizes {
-      @include bs-bp-min($screen-min) {
-        $prefix: _size-prefix($size);
-
-        @for $max_columns from $bs-min-columns through $bs-max-columns {
-          @for $i from 1 through $max_columns {
-            $gcd: _gcd($i, $max_columns);
-
-            &#{$prefix}-#{$i}-#{$max_columns} {
-              @if $i != $max_columns {
-                @extend %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
-              } @else {
-                @extend %bs-item#{$prefix}-full;
-              }
-            }
-
-            @if $i < $max_columns {
-              &#{$prefix}-offset-#{$i}-#{$max_columns} {
-                @extend %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
-              }
-            }
+            @include _row__col--width(100%);
           }
         }
       }
@@ -125,40 +109,40 @@
 }
 
 @each $size, $screen-min in $_sizes {
-  @include bs-bp-min($screen-min) {
+  @include _media-min($screen-min) {
     $prefix: _size-prefix($size);
 
-    @for $max_columns from 1 through $bs-max-columns {
+    @for $max_columns from 1 through $_max-columns {
       @for $i from 1 through $max_columns {
         $gcd: _gcd($i, $max_columns);
 
-        @if $gcd == 1 {
-          %bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-            @include bs-c-row__col($i, $max_columns);
+        @if (1 == $gcd) {
+          %_bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
+            @include _row__col($i, $max_columns);
           }
 
-          %bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-            @include bs-c-row__col--offset($i, $max_columns);
+          %_bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
+            @include _row__col--offset($i, $max_columns);
           }
         }
       }
     }
 
-    %bs-item#{$prefix}-full {
-      @include bs-col-width(100%);
+    %_bs-item#{$prefix}-full {
+      @include _row__col--width(100%);
     }
 
     .#{$_prefix}c-row__col {
       &#{$prefix}-auto {
-        @include bs-col-width(auto);
+        @include _row__col--width(auto);
       }
 
       &#{$prefix}-justify {
-        @include bs-col-width(1);
+        @include _row__col--width(1);
       }
 
       &#{$prefix}-offset-0 {
-        @include bs-c-row__col--offset(0);
+        @include _row__col--offset(0);
       }
 
       &#{$prefix}-shrink {
@@ -167,6 +151,34 @@
 
       &#{$prefix}-fit {
         flex: 0 1 auto;
+      }
+    }
+  }
+}
+
+.#{$_prefix}c-row__col {
+  @each $size, $screen-min in $_sizes {
+    @include _media-min($screen-min) {
+      $prefix: _size-prefix($size);
+
+      @for $max_columns from $_min-columns through $_max-columns {
+        @for $i from 1 through $max_columns {
+          $gcd: _gcd($i, $max_columns);
+
+          &#{$prefix}-#{$i}-#{$max_columns} {
+            @if ($max_columns != $i) {
+              @extend %_bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
+            } @else {
+              @extend %_bs-item#{$prefix}-full;
+            }
+          }
+
+          @if ($i < $max_columns) {
+            &#{$prefix}-offset-#{$i}-#{$max_columns} {
+              @extend %_bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
+            }
+          }
+        }
       }
     }
   }

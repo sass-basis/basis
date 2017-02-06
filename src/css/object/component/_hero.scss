@@ -1,5 +1,15 @@
+//
+// The hero component
+//
+// <div class="_c-hero">
+//   <div class="_c-hero__header"></div>
+//   <div class="_c-hero__content"></div>
+//   <div class="_c-hero__footer"></div>
+// </div>
+//
+
 .#{$_prefix}c-hero {
-  @include bs-c-hero();
+  @include _hero();
 
   &--full {
     height: 100vh;
@@ -10,24 +20,12 @@
   }
 
   &--overlay {
-    @include bs-overlay(rgba(0, 0, 0, .7));
+    @include _overlay(#000, .7);
   }
 
   &--fixed {
-    @include bs-bp-lg-only() {
+    @include _media-lg-only() {
       @include _background-image-fixed();
     }
-  }
-
-  &__header {
-    @include bs-c-hero__header();
-  }
-
-  &__content {
-    @include bs-c-hero__content();
-  }
-
-  &__footer {
-    @include bs-c-hero__footer();
   }
 }

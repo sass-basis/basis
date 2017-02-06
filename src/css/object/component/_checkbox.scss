@@ -1,5 +1,14 @@
+//
+// The checkbox component
+//
+// <span class="_c-checkbox">
+//   <input type="checkbox">
+//   <label class="_c-checkbox__label">Label</label>
+// </span>
+//
+
 .#{$_prefix}c-checkbox {
-  @include bs-c-checkbox();
+  @include _checkbox();
 
   &--block {
     display: block;

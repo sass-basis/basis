@@ -1,36 +1,33 @@
+//
+// The meedia component. When smartphone size, vertically aligned.
+//
+// <div class="_c-flex-media">
+//  <div class="_c-flex-media__figure">
+//    <img ...>
+//  </div>
+//  <div class="_c-flex-media__body">
+//    ...
+//  </div>
+// </div>
+//
+
 .#{$_prefix}c-flex-media {
-  @include bs-bp-md-min() {
-    @include bs-c-media();
-  }
+  @include _flex-media();
 
   &__figure {
     @include _margin(0, 0, .5);
 
-    > img {
-      width: 100%;
-    }
-
-    @include bs-bp-md-min() {
-      @include bs-c-media__figure();
-      margin-bottom: 0;
-
-      > img {
-        width: auto;
-      }
-    }
-
-    .#{$_prefix}c-flex-media--reverse & {
-      @include bs-bp-md-min() {
-        margin-right: 0;
-        margin-left: $bs-c-media-margin;
-        order: 1;
-      }
+    @include _media-min(md) {
+      @include _margin(0, 1, 0, 0);
     }
   }
 
-  &__body {
-    @include bs-bp-md-min() {
-      @include bs-c-media__body();
+  &--reverse {
+    .#{$_prefix}c-flex-media__figure {
+      @include _media-min(md) {
+        @include _margin(0, 0, 0, 1);
+        order: 1;
+      }
     }
   }
 }

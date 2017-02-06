@@ -1,0 +1,23 @@
+//
+// The entry component
+//
+// <article class="_c-entry">
+//   <header class="_c-entry__header">
+//     <h1 class="_c-entry__title">...</h1>
+//     <div class="_c-entry__content">
+//       ...
+//     </div>
+//   </header>
+// </article>
+//
+
+.#{$_prefix}c-entry {
+  &__header {
+  }
+
+  &__title {
+  }
+
+  &__content {
+  }
+}

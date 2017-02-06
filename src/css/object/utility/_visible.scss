@@ -1,75 +1,73 @@
-@if (not bs-is-use-mixin-only()) {
-  .#{$_prefix}u-visible {
-    &-sm-inline {
-      @include bs-bp-sm-only() {
-        display: inline !important;
-      }
+.#{$_prefix}u-visible {
+  &-sm-inline {
+    @include _media-sm-only() {
+      display: inline !important;
     }
+  }
 
-    &-sm-inline-block {
-      @include bs-bp-sm-only() {
-        display: inline-block !important;
-      }
+  &-sm-inline-block {
+    @include _media-sm-only() {
+      display: inline-block !important;
     }
+  }
 
-    &-sm-block {
-      @include bs-bp-sm-only() {
-        display: block !important;
-      }
+  &-sm-block {
+    @include _media-sm-only() {
+      display: block !important;
     }
+  }
 
-    &-sm-flex {
-      @include bs-bp-sm-only() {
-        display: flex !important;
-      }
+  &-sm-flex {
+    @include _media-sm-only() {
+      display: flex !important;
     }
+  }
 
-    &-md-inline {
-      @include bs-bp-md-only() {
-        display: inline !important;
-      }
+  &-md-inline {
+    @include _media-md-only() {
+      display: inline !important;
     }
+  }
 
-    &-md-inline-block {
-      @include bs-bp-md-only() {
-        display: inline-block !important;
-      }
+  &-md-inline-block {
+    @include _media-md-only() {
+      display: inline-block !important;
     }
+  }
 
-    &-md-block {
-      @include bs-bp-md-only() {
-        display: block !important;
-      }
+  &-md-block {
+    @include _media-md-only() {
+      display: block !important;
     }
+  }
 
-    &-md-flex {
-      @include bs-bp-md-only() {
-        display: flex !important;
-      }
+  &-md-flex {
+    @include _media-md-only() {
+      display: flex !important;
     }
+  }
 
-    &-lg-inline {
-      @include bs-bp-lg-only() {
-        display: inline !important;
-      }
+  &-lg-inline {
+    @include _media-lg-only() {
+      display: inline !important;
     }
+  }
 
-    &-lg-inline-block {
-      @include bs-bp-lg-only() {
-        display: inline-block !important;
-      }
+  &-lg-inline-block {
+    @include _media-lg-only() {
+      display: inline-block !important;
     }
+  }
 
-    &-lg-block {
-      @include bs-bp-lg-only() {
-        display: block !important;
-      }
+  &-lg-block {
+    @include _media-lg-only() {
+      display: block !important;
     }
+  }
 
-    &-lg-flex {
-      @include bs-bp-lg-only() {
-        display: flex !important;
-      }
+  &-lg-flex {
+    @include _media-lg-only() {
+      display: flex !important;
     }
   }
 }

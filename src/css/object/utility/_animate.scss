@@ -1,47 +1,47 @@
 .#{$_prefix}u-animate {
-  @include bs-transition-all();
+  @include _transition-all();
 
   &-size {
-    @include bs-transition-size();
+    @include _transition-size();
   }
 
   &-opacity {
-    @include bs-transition-opacity();
+    @include _transition-opacity();
   }
 
   &-shake-vertical {
-    @include bs-hover() {
-      @include bs-shake-vertical();
+    @include _hover() {
+      @include _shake-vertical();
     }
   }
 
   &-vibrate-vertical {
-    @include bs-hover() {
-      @include bs-vibrate-vertical();
+    @include _hover() {
+      @include _vibrate-vertical();
     }
   }
 
   &-shake-horizontal {
-    @include bs-hover() {
-      @include bs-shake-horizontal();
+    @include _hover() {
+      @include _shake-horizontal();
     }
   }
 
   &-vibrate-horizontal {
-    @include bs-hover() {
-      @include bs-vibrate-horizontal();
+    @include _hover() {
+      @include _vibrate-horizontal();
     }
   }
 
   &-shake-scale {
-    @include bs-hover() {
-      @include bs-shake-scale();
+    @include _hover() {
+      @include _shake-scale();
     }
   }
 
   &-vibrate-scale {
-    @include bs-hover() {
-      @include bs-vibrate-scale();
+    @include _hover() {
+      @include _vibrate-scale();
     }
   }
 
@@ -49,10 +49,10 @@
     position: relative;
 
     &::after {
-      @include bs-extend-underline();
+      @include _extend-underline();
     }
 
-    @include bs-hover() {
+    @include _hover() {
       &::after {
         width: 100%;
       }

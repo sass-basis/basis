@@ -1,7 +1,33 @@
+//
+// The fluid container component
+//
+// <div class="_c-container-fluid">
+//   ...
+// </div>
+//
+
 .#{$_prefix}c-container-fluid {
-  @include bs-c-container-fluid();
+  $container-margin: $_base-line-height;
+
+  @include _container-fluid();
+  padding-right: ($container-margin / 2);
+  padding-left: ($container-margin / 2);
+
+  @include _media-min(md) {
+    padding-right: $container-margin;
+    padding-left: $container-margin;
+  }
 }
 
+//
+// The container component
+//
+// <div class="_c-container">
+//   ...
+// </div>
+//
+
 .#{$_prefix}c-container {
-  @include bs-c-container();
+  @extend .#{$_prefix}c-container-fluid;
+  @include _container();
 }

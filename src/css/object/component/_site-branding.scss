@@ -1,0 +1,14 @@
+//
+// The site branding component
+//
+// <div class="_c-site-branding">
+//   <h1 class="_c-site-branding__title">...</h1>
+// </div>
+//
+
+.#{$_prefix}c-site-branding {
+  &__title {
+    margin: 0;
+    @include _font-size-line-height($_base-font-size * 2);
+  }
+}
