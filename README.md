@@ -93,9 +93,9 @@ Pull request sent to the master branch doesn't merge.
 
 ## Third party licenses
 
-#### Stylus version of Normalize.css
+#### Scss version of Normalize.css
 * MIT License
-* https://github.com/bymathias/normalize.styl
+* https://github.com/ranjandatta/node-normalize-scss
 
 ## License
 
