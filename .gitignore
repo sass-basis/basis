@@ -4,4 +4,6 @@ dist/
 release/
 *.log
 yarn.lock
+tests/tests.css
+basis.zip
 .sass-cache

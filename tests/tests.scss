@@ -1,8 +1,4 @@
-@import '../src/css/core/*';
-@import '../src/css/core/function/*';
-@import '../src/css/core/variable/*';
-@import '../src/css/core/mixin/*';
-@import '../src/css/core/abstract/*';
+@import '../src/css/basis-core';
 @import 'api/api';
 
 @include _test('[function] _size-prefix()') {
@@ -75,4 +71,8 @@
   @include _assert-equals(false, _is-null(0));
   @include _assert-equals(false, _is-null('null'));
   @include _assert-equals(true, _is-null(null));
+}
+
+@include _test('[function] _vertical-rhythm()') {
+  @include _assert-equals(24, _vertical-rhythm(16px));
 }

@@ -17,7 +17,7 @@
   @if ($line-height < $font-size + ($between-lines * 2)) {
     @return _vertical-rhythm($font-size, ($coefficient + 1));
   } @else {
-    @if ($font-size % $base-font-size == 0 && $font-size > $base-font-size) {
+    @if ($font-size % $base-font-size == 0 and $font-size > $base-font-size) {
       @return $line-height - ($between-lines / 2);
     }
     @return $line-height;
