@@ -36,7 +36,7 @@
   }
 
   &__addon {
-    flex: 0 1 0;
+    flex: none;
     border: map-get($params, 'border-size') solid map-get($params, 'border-color');
   }
 
@@ -61,7 +61,7 @@
 
   &__btn {
     @include _btn();
-    flex: 0 1 0;
+    flex: none;
     overflow: visible;
     border: map-get($params, 'border-size') solid map-get($params, 'border-color');
   }
