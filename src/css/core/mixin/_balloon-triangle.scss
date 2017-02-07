@@ -47,13 +47,13 @@
       @include _triangle-top($size, $size, $background-color);
     } @else if ('right' == $position) {
       @include _position(absolute, 50%, $after, null, null);
-      @include _triangle-right($size, $size, $border-color);
+      @include _triangle-right($size, $size, $background-color);
     } @else if ('bottom' == $position) {
       @include _position(absolute, null, null, $after, 50%);
-      @include _triangle-bottom($size, $size, $border-color);
+      @include _triangle-bottom($size, $size, $background-color);
     } @else if ('left' == $position) {
       @include _position(absolute, 50%, null, null, $after);
-      @include _triangle-left($size, $size, $border-color);
+      @include _triangle-left($size, $size, $background-color);
     }
   }
 }
