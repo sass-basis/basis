@@ -1,5 +1,9 @@
 #Changelog
 
+## February 7, 2017 v6.0.0
+* Refactoring
+* Using yarn
+
 ## September 29, 2016 v5.5.2
 * Refactoring `._c-flex-media` for IE9.
 * Refactoring `._c-media` for IE9.
