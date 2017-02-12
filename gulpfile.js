@@ -40,10 +40,7 @@ gulp.task('css', function() {
       {base: dir.src.css}
     )
     .pipe(plumber())
-    .pipe(sass({
-      includePaths: require('node-normalize-scss').includePaths,
-      'resolve url nocheck': true
-    }))
+    .pipe(sass())
     .pipe(postcss([
       autoprefixer({
         browsers: ['last 2 versions'],
