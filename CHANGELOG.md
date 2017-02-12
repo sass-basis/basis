@@ -1,5 +1,8 @@
 #Changelog
 
+## February 12, 2017 v6.0.1
+* Refactoring normalize.scss importing.
+
 ## February 7, 2017 v6.0.0
 * Refactoring
 * Using yarn
