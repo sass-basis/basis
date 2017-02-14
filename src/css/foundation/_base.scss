@@ -30,6 +30,10 @@ input, textarea, keygen, select, button {
   font-family: $_font-family;
 }
 
+input, textarea, optgroup, select, button {
+  @include _line-height($_base-font-size);
+}
+
 img {
   height: auto;
   max-width: 100%;
