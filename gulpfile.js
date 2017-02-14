@@ -89,7 +89,7 @@ gulp.task('js', function() {
  * Auto Build
  */
 gulp.task('watch', function() {
-  gulp.watch([dir.src.css + '/**/*.styl'], ['css']);
+  gulp.watch([dir.src.css + '/**/*.scss'], ['css']);
   gulp.watch([dir.src.js + '/**/*.js'], ['js']);
 });
 
