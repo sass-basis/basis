@@ -106,14 +106,12 @@ gulp.task('build', ['css', 'js']);
 gulp.task('zip', function(){
   return gulp.src(
       [
-        '**/*',
+        '**',
+        '.editorconfig',
+        '.gitignore',
         '!node_modules',
         '!node_modules/**',
-        '!.git',
-        '!.gitignore',
-        '!.travis.yml',
-        '!basis.zip',
-        '!**/.DS_Store'
+        '!basis.zip'
       ]
       , {base: './'}
     )
@@ -127,9 +125,7 @@ gulp.task('zip', function(){
 gulp.task('sass-test', function() {
   return gulp.src('./tests/tests.scss')
     .pipe(plumber())
-    .pipe(sass({
-      'resolve url nocheck': true
-    }))
+    .pipe(sass())
     .pipe(gulp.dest('./tests'));
 });
 
