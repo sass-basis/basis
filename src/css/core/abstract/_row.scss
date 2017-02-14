@@ -80,9 +80,9 @@
 // @param  int  $coefficient
 //
 @mixin _row__col--margin($coefficient) {
-  padding-right: ($_base-line-height * $coefficient / 2);
-  padding-left: ($_base-line-height * $coefficient / 2);
-  margin-bottom: ($_base-line-height * $coefficient);
+  @include _padding-right($coefficient / 2);
+  @include _padding-left($coefficient / 2);
+  @include _margin-bottom($coefficient);
 }
 
 //
@@ -91,7 +91,7 @@
 // @param  int  $coefficient
 //
 @mixin _row--margin($coefficient) {
-  margin-right: ($_base-line-height * $coefficient / 2 * -1);
-  margin-left: ($_base-line-height * $coefficient / 2 * -1);
-  margin-bottom: ($_base-line-height * $coefficient * -1);
+  @include _margin-right($coefficient / 2 * -1);
+  @include _margin-left($coefficient / 2 * -1);
+  @include _margin-bottom($coefficient * -1);
 }
