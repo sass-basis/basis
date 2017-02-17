@@ -29,7 +29,7 @@ $ yarn install sass-basis
 $ yarn run gulp build
 ```
 
-Imports basis.styl your Stylus.
+Imports basis.scss your Sass/SCSS.
 ```
 @import /PATH/TO/node_modules/sass-basis/src/css/basis;
 ```
