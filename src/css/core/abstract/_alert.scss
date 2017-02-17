@@ -6,8 +6,7 @@
 // .c-alert {
 //   @include _alert((
 //     background-color: null,
-//     border-color    : null,
-//     border-size     : null,
+//     border: null,
 //   ));
 // }
 //
@@ -18,20 +17,22 @@
 
 @mixin _alert($params: ()) {
   $params: map-merge((
-      'background-color': null,
-      'border-color'    : null,
-      'border-size'     : null,
+      background-color: null,
+      border: null,
     ),
     $params
   );
 
+  $background-color: map-get($params, 'background-color');
+  $border: map-get($params, 'border');
+
   display: block;
 
-  @if (not _is-null(map-get($params, 'border-color')) and not _is-null(map-get($params, 'border-size'))) {
-    border: map-get($params, 'border-size') solid map-get($params, 'border-color');
+  @if (not _is-null($background-color)) {
+    background-color: $background-color;
   }
 
-  @if (not _is-null(map-get($params, 'background-color'))) {
-    background-color: map-get($params, 'background-color');
+  @if (not _is-null($border)) {
+    border: $border;
   }
 }
