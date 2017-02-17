@@ -6,9 +6,8 @@
 
 .#{$_prefix}c-btn {
   @include _btn((
-    'background-color': #fff,
-    'border-size'     : 1px,
-    'border-color'    : _light($_color-gray),
+    background-color: #fff,
+    border: 1px solid _light($_color-gray),
   ));
 
   color: $_color-text;
