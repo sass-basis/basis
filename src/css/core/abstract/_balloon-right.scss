@@ -5,10 +5,10 @@
 //
 // .c-balloon-right {
 //   @include _balloon-right((
-//     'background-color': #fff,
-//     'border-color'    : #ccc,
-//     'border-size'     : 1px,
-//     'triangle-size'   : 10px,
+//     background-color: null,
+//     border-color: null,
+//     border-size: null,
+//     triangle-size: 10px,
 //   ));
 // }
 //
@@ -20,26 +20,34 @@
 @mixin _balloon-right($params: ()) {
   $params: map-merge(
     (
-      'background-color': transparent,
-      'border-color'    : transparent,
-      'border-size'     : 0,
-      'triangle-size'   : 10px,
+      background-color: null,
+      border-color: null,
+      border-size: null,
+      triangle-size: 10px,
     ),
     $params
   );
 
-  position: relative;
-  background-color: map-get($params, 'background-color');
+  $background-color: map-get($params, 'background-color');
+  $border-color: map-get($params, 'border-color');
+  $border-size: map-get($params, 'border-size');
+  $triangle-size: map-get($params, 'triangle-size');
 
-  @if (not _is-null(map-get($params, 'border-size')) and not _is-null(map-get($params, 'border-color'))) {
-    border: map-get($params, 'border-size') solid map-get($params, 'border-color');
+  position: relative;
+
+  @if (not _is-null($border-size)) {
+    background-color: $background-color;
+  }
+
+  @if (not _is-null($border-size) and not _is-null($border-color)) {
+    border: $border-size solid $border-color;
   }
 
   @include _balloon-triangle(
     right,
-    map-get($params, 'triangle-size'),
-    map-get($params, 'background-color'),
-    map-get($params, 'border-size'),
-    map-get($params, 'border-color')
+    $triangle-size,
+    $background-color,
+    $border-size,
+    $border-color
   );
 }
