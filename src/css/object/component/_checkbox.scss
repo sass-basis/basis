@@ -1,11 +1,16 @@
-/*
- * The checkbox component
- *
- * <span class="_c-checkbox">
- *   <input type="checkbox">
- *   <label class="_c-checkbox__label">Label</label>
- * </span>
- */
+/**
+* ._c-checkbox
+*
+* The checkbox component
+*
+* Markup:
+* <span class="_c-checkbox">
+*   <input type="checkbox">
+*   <label class="_c-checkbox__label">Label</label>
+* </span>
+*
+* Styleguide 1.0.0
+*/
 
 .#{$_prefix}c-checkbox {
   @include _checkbox((

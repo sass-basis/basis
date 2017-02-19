@@ -16,6 +16,7 @@ var nodeResolve  = require('rollup-plugin-node-resolve');
 var commonjs     = require('rollup-plugin-commonjs');
 var babel        = require('rollup-plugin-babel');
 var plumber      = require('gulp-plumber');
+var styleguide   = require('sc5-styleguide');
 
 var dir = {
   src: {
@@ -24,9 +25,10 @@ var dir = {
     font: 'src/font'
   },
   dist: {
-    css : 'dist/css',
-    js  : 'dist/js',
-    font: 'dist/font'
+    css       : 'dist/css',
+    js        : 'dist/js',
+    font      : 'dist/font',
+    styleguide: 'dist/styleguide'
   }
 };
 
@@ -86,7 +88,8 @@ gulp.task('js', function() {
       gulp.src([dir.dist.js + '/basis.js'])
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(dir.dist.js));
+        .pipe(gulp.dest(dir.dist.js))
+        .pipe(gulp.dest(dir.dist.styleguide + '/assets/js'));
     });
 });
 
@@ -95,7 +98,8 @@ gulp.task('js', function() {
  */
 gulp.task('font', function() {
   return gulp.src(dir.src.font + '/*')
-    .pipe(gulp.dest(dir.dist.font));
+    .pipe(gulp.dest(dir.dist.font))
+    .pipe(gulp.dest(dir.dist.styleguide + '/dist/font'));
 });
 
 /**
@@ -104,6 +108,7 @@ gulp.task('font', function() {
 gulp.task('watch', function() {
   gulp.watch([dir.src.css + '/**/*.scss'], ['css']);
   gulp.watch([dir.src.js + '/**/*.js'], ['js']);
+  gulp.watch([dir.dist.css + '/basis.css'], ['styleguide']);
 });
 
 /**
@@ -140,4 +145,34 @@ gulp.task('sass-test', function() {
     .pipe(gulp.dest('./tests'));
 });
 
-gulp.task('default', ['build', 'watch']);
+/**
+ * Styleguide
+ */
+gulp.task('styleguide:generate', function() {
+  return gulp.src(dir.dist.css + '/basis.css')
+    .pipe(styleguide.generate({
+        title: 'Basis Styleguide',
+        server: true,
+        rootPath: dir.dist.styleguide,
+        overviewPath: 'README.md',
+        parsers: 'postcss',
+        extraHead: [
+          '<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>',
+          '<script src="/assets/js/basis.min.js"></script>'
+        ],
+        disableEncapsulation: true,
+        showMarkupSection: true,
+        sideNav: true
+      }))
+    .pipe(gulp.dest(dir.dist.styleguide));
+});
+
+gulp.task('styleguide:applystyles', function() {
+  return gulp.src(dir.dist.css + '/basis.css')
+    .pipe(styleguide.applyStyles())
+    .pipe(gulp.dest(dir.dist.styleguide));
+});
+
+gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
+
+gulp.task('default', ['build', 'watch', 'styleguide']);
