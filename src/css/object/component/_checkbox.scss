@@ -1,16 +1,17 @@
 /**
-* ._c-checkbox
-*
-* The checkbox component
-*
-* Markup:
-* <span class="_c-checkbox">
-*   <input type="checkbox">
-*   <label class="_c-checkbox__label">Label</label>
-* </span>
-*
-* Styleguide 1.0.0
-*/
+ * ._c-checkbox
+ *
+ * Markup:
+ * <label>
+ *   <span class="_c-checkbox">
+ *     <input type="checkbox">
+ *     <span class="_c-checkbox__control"></span>
+ *   </span>
+ *   Label
+ * </label>
+ *
+ * Styleguide 1.0.0
+ */
 
 .#{$_prefix}c-checkbox {
   @include _checkbox((
@@ -19,7 +20,6 @@
   ));
 
   margin-right: ($_base-font-size-px / 2);
-  padding-left: ($_base-font-size-px + ($_base-font-size-px / 2));
 
   &--block {
     display: block;

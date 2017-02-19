@@ -8,10 +8,13 @@
 //   ));
 // }
 //
-// <span class="c-checkbox">
-//   <input type="checkbox">
-//   <label class="c-checkbox__label">Label</label>
-// </span>
+// <label>
+//   <span class="c-checkbox">
+//     <input type="checkbox">
+//     <span class="c-checkbox__control"></span>
+//   </span>
+//   Label
+// </label>
 //
 
 @mixin _checkbox($params: ()) {
@@ -30,33 +33,30 @@
 
   position: relative;
   display: inline-block;
-  padding-left: $size;
+  @include _square($size);
 
   > [type="checkbox"],
-  &__label::before,
-  &__label::after {
-    @include _position(absolute, 50%, null, null, 0);
-    transform: translateY(-50%);
+  &__control,
+  &__control::before,
+  &__control::after {
+    @include _position(absolute, 0, null, null, 0);
+    display: block;
+    @include _square($size);
   }
 
   > [type="checkbox"] {
     z-index: $z-index;
-    @include _square($size);
     cursor: pointer;
     opacity: 0 !important;
     outline: 0;
 
-    &:checked ~ #{$root}__label::after {
+    &:checked ~ #{$root}__control::after {
       opacity: 1;
     }
   }
 
-  &__label {
-    &::before,
-    &::after {
-      z-index: ($z-index - 1);
-      display: inline-block;
-    }
+  &__control {
+    z-index: ($z-index - 1);
 
     &::before {
       @include _square($size);
@@ -71,7 +71,9 @@
       content: "\e901";
       opacity: 0;
       font-size: calc(#{$size} - 4px);
-      left: (4px / 2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
