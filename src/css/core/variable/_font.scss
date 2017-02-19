@@ -1,0 +1,12 @@
+$_font-path: '../../../sass-basis/dist/font' !default;
+
+@font-face {
+  font-family: 'basis';
+  src: url($_font-path + '/basis.eot');
+  src: url($_font-path + '/basis.eot#iefix') format('embedded-opentype'),
+       url($_font-path + '/basis.ttf') format('truetype'),
+       url($_font-path + '/basis.woff') format('woff'),
+       url($_font-path + '/basis.svg#basis') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

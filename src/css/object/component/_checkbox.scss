@@ -1,14 +1,20 @@
-//
-// The checkbox component
-//
-// <span class="_c-checkbox">
-//   <input type="checkbox">
-//   <label class="_c-checkbox__label">Label</label>
-// </span>
-//
+/*
+ * The checkbox component
+ *
+ * <span class="_c-checkbox">
+ *   <input type="checkbox">
+ *   <label class="_c-checkbox__label">Label</label>
+ * </span>
+ */
 
 .#{$_prefix}c-checkbox {
-  @include _checkbox();
+  @include _checkbox((
+    size: $_base-font-size-px,
+    border-radius: $_border-radius,
+  ));
+
+  margin-right: ($_base-font-size-px / 2);
+  padding-left: ($_base-font-size-px + ($_base-font-size-px / 2));
 
   &--block {
     display: block;

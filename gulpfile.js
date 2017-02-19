@@ -19,12 +19,14 @@ var plumber      = require('gulp-plumber');
 
 var dir = {
   src: {
-    css: 'src/css',
-    js : 'src/js'
+    css : 'src/css',
+    js  : 'src/js',
+    font: 'src/font'
   },
   dist: {
-    css: 'dist/css',
-    js : 'dist/js'
+    css : 'dist/css',
+    js  : 'dist/js',
+    font: 'dist/font'
   }
 };
 
@@ -41,6 +43,7 @@ gulp.task('css', function() {
     )
     .pipe(plumber())
     .pipe(sass({
+      outputStyle: 'expanded',
       includePaths: require('node-normalize-scss').includePaths
     }))
     .pipe(postcss([
@@ -88,6 +91,14 @@ gulp.task('js', function() {
 });
 
 /**
+ * Build font
+ */
+gulp.task('font', function() {
+  return gulp.src(dir.src.font + '/*')
+    .pipe(gulp.dest(dir.dist.font));
+});
+
+/**
  * Auto Build
  */
 gulp.task('watch', function() {
@@ -98,7 +109,7 @@ gulp.task('watch', function() {
 /**
  * Build
  */
-gulp.task('build', ['css', 'js']);
+gulp.task('build', ['css', 'js', 'font']);
 
 /**
  * Creates the zip file

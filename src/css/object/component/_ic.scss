@@ -1,0 +1,13 @@
+[class^="#{$_prefix}ic-"], [class*=" #{$_prefix}ic-"] {
+  @include _ic();
+}
+
+.#{$_prefix}ic-angle-right::before {
+  content: "\e900";
+}
+.#{$_prefix}ic-check::before {
+  content: "\e901";
+}
+.#{$_prefix}ic-circle::before {
+  content: "\e902";
+}
