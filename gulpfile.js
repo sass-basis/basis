@@ -16,19 +16,21 @@ var nodeResolve  = require('rollup-plugin-node-resolve');
 var commonjs     = require('rollup-plugin-commonjs');
 var babel        = require('rollup-plugin-babel');
 var plumber      = require('gulp-plumber');
-var styleguide   = require('sc5-styleguide');
+var aigis        = require('gulp-aigis');
+var browser_sync = require('browser-sync');
 
 var dir = {
   src: {
-    css : 'src/css',
-    js  : 'src/js',
-    font: 'src/font'
+    css  : 'src/css',
+    js   : 'src/js',
+    font : 'src/font',
+    aigis: 'src/aigis'
   },
   dist: {
-    css       : 'dist/css',
-    js        : 'dist/js',
-    font      : 'dist/font',
-    styleguide: 'dist/styleguide'
+    css  : 'dist/css',
+    js   : 'dist/js',
+    font : 'dist/font',
+    aigis: 'dist/aigis'
   }
 };
 
@@ -88,8 +90,7 @@ gulp.task('js', function() {
       gulp.src([dir.dist.js + '/basis.js'])
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(dir.dist.js))
-        .pipe(gulp.dest(dir.dist.styleguide + '/assets/js'));
+        .pipe(gulp.dest(dir.dist.js));
     });
 });
 
@@ -98,43 +99,16 @@ gulp.task('js', function() {
  */
 gulp.task('font', function() {
   return gulp.src(dir.src.font + '/*')
-    .pipe(gulp.dest(dir.dist.font))
-    .pipe(gulp.dest(dir.dist.styleguide + '/dist/font'));
+    .pipe(gulp.dest(dir.dist.font));
 });
 
 /**
  * Styleguide
  */
-gulp.task('styleguide:generate', function() {
-  return gulp.src(dir.src.css + '/**/*.scss')
-    .pipe(styleguide.generate({
-        title: 'Basis Styleguide',
-        server: true,
-        rootPath: dir.dist.styleguide,
-        overviewPath: 'README.md',
-        parsers: 'scss',
-        extraHead: [
-          '<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>',
-          '<script src="/assets/js/basis.min.js"></script>'
-        ],
-        disableEncapsulation: true,
-        showMarkupSection: true,
-        sideNav: true
-      }))
-    .pipe(gulp.dest(dir.dist.styleguide));
+gulp.task('aigis', function() {
+  gulp.src(dir.src.aigis + '/aigis_config.yml')
+    .pipe(aigis());
 });
-
-gulp.task('styleguide:applystyles', function() {
-  return gulp.src(dir.src.css + '/basis.scss')
-    .pipe(sass({
-      outputStyle: 'expanded',
-      includePaths: require('node-normalize-scss').includePaths
-    }))
-    .pipe(styleguide.applyStyles())
-    .pipe(gulp.dest(dir.dist.styleguide));
-});
-
-gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
 
 /**
  * Auto Build
@@ -142,13 +116,27 @@ gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
 gulp.task('watch', function() {
   gulp.watch([dir.src.css + '/**/*.scss'], ['css']);
   gulp.watch([dir.src.js + '/**/*.js'], ['js']);
-  gulp.watch([dir.dist.css + '/basis.css'], ['styleguide']);
+  gulp.watch([dir.src.css + '/**/*.scss'], ['aigis']);
 });
 
 /**
  * Build
  */
-gulp.task('build', ['css', 'js', 'font', 'styleguide']);
+gulp.task('build', ['css', 'js', 'font', 'aigis']);
+
+/**
+ * Browsersync
+ */
+gulp.task('browsersync', function() {
+  browser_sync.init( {
+    server: {
+      baseDir: dir.dist.aigis + '/'
+    },
+    files: [
+      dir.dist.aigis + '/index.html'
+    ]
+  });
+});
 
 /**
  * Creates the zip file
@@ -179,4 +167,4 @@ gulp.task('sass-test', function() {
     .pipe(gulp.dest('./tests'));
 });
 
-gulp.task('default', ['build', 'watch', 'styleguide']);
+gulp.task('default', ['build', 'watch', 'aigis', 'browsersync']);

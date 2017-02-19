@@ -1,19 +1,62 @@
-.#{$_prefix}u-hidden {
-  &-sm {
-    @include _media-sm-only() {
-      display: none !important;
-    }
-  }
+/*
+---
+name: ._u-hidden-sm
+category:
+  - object/utility
+  - object/utility/hidden
+---
 
-  &-md {
-    @include _media-md-only() {
-      display: none !important;
-    }
-  }
+```html
+<div class="_u-hidden-sm">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
 
-  &-lg {
-    @include _media-lg-only() {
-      display: none !important;
-    }
+.#{$_prefix}u-hidden-sm {
+  @include _media-sm-only() {
+    display: none !important;
+  }
+}
+
+/*
+---
+name: ._u-hidden-md
+category:
+  - object/utility
+  - object/utility/hidden
+---
+
+```html
+<div class="_u-hidden-md">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-hidden-md {
+  @include _media-md-only() {
+    display: none !important;
+  }
+}
+
+/*
+---
+name: ._u-hidden-lg
+category:
+  - object/utility
+  - object/utility/hidden
+---
+
+```html
+<div class="_u-hidden-lg">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-hidden-lg {
+  @include _media-lg-only() {
+    display: none !important;
   }
 }

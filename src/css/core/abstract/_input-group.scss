@@ -1,12 +1,11 @@
 //
-// The input group component
+// Input Group
 //
 // @param  hash  properties for decoration
 //
 // .c-input-group {
 //   @include _input-group((
-//     'border-size' : 1px,
-//     'border-color': _light($_color-gray),
+//     border: 1px solid _light($_color-gray),
 //   ));
 // }
 //
@@ -22,11 +21,12 @@
 @mixin _input-group($params: ()) {
   $params: map-merge(
     (
-      'border-size' : 1px,
-      'border-color': _light($_color-gray),
+      border: 1px solid _light($_color-gray),
     ),
     $params
   );
+
+  $border: 1px solid _light($_color-gray);
 
   display: flex;
   flex-wrap: nowrap;
@@ -35,15 +35,21 @@
     border-left: none;
   }
 
+  &__addon,
+  &__field,
+  &__btn {
+    @if (not _is-null($border)) {
+      border: $border;
+    }
+  }
+
   &__addon {
     flex: none;
-    border: map-get($params, 'border-size') solid map-get($params, 'border-color');
   }
 
   &__field {
     display: flex;
     flex: 1;
-    border: map-get($params, 'border-size') solid map-get($params, 'border-color');
 
     > input[type='email'],
     > input[type='number'],
@@ -63,6 +69,5 @@
     @include _btn();
     flex: none;
     overflow: visible;
-    border: map-get($params, 'border-size') solid map-get($params, 'border-color');
   }
 }

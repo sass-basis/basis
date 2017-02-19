@@ -1,12 +1,25 @@
-//
-// The hero component
-//
-// <div class="_c-hero">
-//   <div class="_c-hero__header"></div>
-//   <div class="_c-hero__content"></div>
-//   <div class="_c-hero__footer"></div>
-// </div>
-//
+/*
+---
+name: Hero
+category:
+  - object/component
+  - object/component/hero
+---
+
+```html
+<div class="_c-hero" style="background-image: url(/aigis_assets/images/dummy.jpg)">
+  <div class="_c-hero__header">
+    ...
+  </div>
+  <div class="_c-hero__content">
+    ...
+  </div>
+  <div class="_c-hero__footer">
+    ...
+  </div>
+</div>
+```
+*/
 
 .#{$_prefix}c-hero {
   @include _hero();

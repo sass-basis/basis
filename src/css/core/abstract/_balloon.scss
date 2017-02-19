@@ -1,0 +1,126 @@
+@mixin _balloon($angle, $params: ()) {
+  $params: map-merge(
+    (
+      background-color: null,
+      border-color: null,
+      border-size: null,
+      triangle-size: 10px,
+    ),
+    $params
+  );
+
+  $background-color: map-get($params, 'background-color');
+  $border-color: map-get($params, 'border-color');
+  $border-size: map-get($params, 'border-size');
+  $triangle-size: map-get($params, 'triangle-size');
+
+  position: relative;
+
+  @if (not _is-null($border-size)) {
+    background-color: $background-color;
+  }
+
+  @if (not _is-null($border-size) and not _is-null($border-color)) {
+    border: $border-size solid $border-color;
+  }
+
+  @include _balloon-triangle(
+    $angle,
+    $triangle-size,
+    $background-color,
+    $border-size,
+    $border-color
+  );
+}
+
+//
+// Balloon (Top)
+//
+// @param  hash  properties for decoration
+//
+// .c-balloon-top {
+//   @include _balloon-top((
+//     background-color: null,
+//     border-color: null,
+//     border-size: null,
+//     triangle-size: 10px,
+//   ));
+// }
+//
+// <div class="c-balloon-top">
+//   ...
+// </div>
+//
+
+@mixin _balloon-top($params: ()) {
+  @include _balloon(top, $params);
+}
+
+//
+// Balloon (Right)
+//
+// @param  hash  properties for decoration
+//
+// .c-balloon-right {
+//   @include _balloon-right((
+//     background-color: null,
+//     border-color: null,
+//     border-size: null,
+//     triangle-size: 10px,
+//   ));
+// }
+//
+// <div class="c-balloon-right">
+//   ...
+// </div>
+//
+
+@mixin _balloon-right($params: ()) {
+  @include _balloon(right, $params);
+}
+
+//
+// Balloon (Bottom)
+//
+// @param  hash  properties for decoration
+//
+// .c-balloon-bottom {
+//   @include _balloon-bottom((
+//     background-color: null,
+//     border-color: null,
+//     border-size: null,
+//     triangle-size: 10px,
+//   ));
+// }
+//
+// <div class="c-balloon-bottom">
+//   ...
+// </div>
+//
+
+@mixin _balloon-bottom($params: ()) {
+  @include _balloon(bottom, $params);
+}
+
+//
+// Balloon (Left)
+//
+// @param  hash  properties for decoration
+//
+// .c-balloon-left {
+//   @include _balloon-left((
+//     background-color: null,
+//     border-color: null,
+//     border-size: null,
+//     triangle-size: 10px,
+//   ));
+// }
+//
+// <div class="c-balloon-left">
+//   ...
+// </div>
+//
+
+@mixin _balloon-left($params: ()) {
+  @include _balloon(left, $params);
+}

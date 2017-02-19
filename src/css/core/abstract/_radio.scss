@@ -1,60 +1,74 @@
 //
-// The radio component
+// Radio
 //
 // @param  hash  properties for decoration
 //
 // .c-radio {
-//   @include _radio();
+//   @include _radio((
+//     size: $_base-font-size-px,
+//   ));
 // }
 //
-// <span class="c-radio">
-//   <input type="radio">
-//   <label class="c-radio__label">Label</label>
-// </span>
+// <label>
+//   <span class="c-radio">
+//     <input type="radio">
+//     <span class="c-radio__control"></span>
+//   </span>
+//   ...
+// </label>
 //
 
-@mixin _radio() {
-  $radio-margin : ($_base-font-size / 2);
-  $radio-z-index: 1;
+@mixin _radio($params: ()) {
+  $params: map-merge(
+    (
+      size: $_base-font-size-px,
+    ),
+    $params
+  );
+
+  $z-index: 1;
+  $size: map-get($params, 'size');
   $root: #{&};
 
   position: relative;
   display: inline-block;
-  margin-right: $radio-margin;
-  padding-left: ($_base-font-size + $radio-margin);
+  @include _square($size);
+
+  > [type="radio"],
+  &__control,
+  &__control::before {
+    @include _position(absolute, 0, null, null, 0);
+    display: block;
+    @include _square($size, 100%);
+  }
 
   > [type="radio"] {
-    @include _position(absolute, $_between-lines, null, null, 0, $radio-z-index);
-    @include _square($_base-font-size);
+    z-index: $z-index;
     cursor: pointer;
     opacity: 0 !important;
     outline: 0;
 
-    &:checked ~ #{$root}__label::after {
+    &:checked ~ #{$root}__control::after {
       opacity: 1;
     }
   }
 
-  &__label {
+  &__control {
+    z-index: ($z-index - 1);
+
     &::before {
-      @include _position(absolute, $_between-lines, null, null, 0, ($radio-z-index - 1));
-      @include _circle($_base-font-size);
       content: '';
-      display: inline-block;
       background-color: #fff;
       border: 1px solid _light($_color-gray);
     }
 
     &::after {
-      $size: ($_base-font-size / 2);
-      $left: (($_base-font-size - $size) / 2);
-      $top : ($_between-lines + $left);
-
-      @include _position(absolute, $top, null, null, $left, ($radio-z-index - 1));
-      @include _circle($size);
+      @include _position(absolute, 50%, null, null, 50%);
+      transform: translate(-50%, -50%);
       content: '';
-      display: inline-block;
-      background-color: _dark($_color-gray);
+      display: block;
+      background-color: $_color-text;
+      @include _square(($size / 2), 100%);
       opacity: 0;
     }
   }

@@ -1,19 +1,42 @@
-//
-// The form control component
-//
-// <input type="text" class="_c-form-control">
-//
+/*
+---
+name: Form Control
+category:
+  - object/component
+  - object/component/form-control
+---
+
+```html
+<input type="text" class="_c-form-control">
+```
+```html
+<textarea class="_c-form-control"></textarea>
+```
+```html
+<input type="text" class="_c-form-control" disabled>
+```
+```html
+<input type="text" class="_c-form-control" readonly>
+```
+*/
 
 .#{$_prefix}c-form-control {
   @include _form-control((
-    'background-color'         : #fff,
-    'border-size'              : 1px,
-    'border-color'             : _light($_color-gray),
-    'disabled-background-color': _lighter($_color-gray),
-    'readonly-background-color': _lighter($_color-gray),
+    background-color: #fff,
+    border: 1px solid _light($_color-gray),
   ));
 
   border-radius: $_border-radius;
   padding: ($_base-line-height / 4) ($_base-line-height / 2);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
+
+
+  &[disabled] {
+    background-color: _lighter($_color-gray);
+    cursor: not-allowed;
+  }
+
+  &[readonly] {
+    background-color: _lighter($_color-gray);
+  }
 }

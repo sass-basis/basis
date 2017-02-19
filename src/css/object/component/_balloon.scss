@@ -1,0 +1,107 @@
+/*
+---
+name: Balloon (Top)
+category:
+  - object/component
+  - object/component/balloon
+---
+
+```html
+<div class="_c-balloon-top">
+  ...
+</div>
+```
+*/
+
+.#{$_prefix}c-balloon-top {
+  @include _balloon-top((
+    background-color: #fff,
+    border-color: _light($_color-gray),
+    border-size: 1px,
+    triangle-size: 10px,
+  ));
+
+  border-radius: $_border-radius;
+  @include _padding(.75);
+}
+
+/*
+---
+name: Balloon (Right)
+category:
+  - object/component
+  - object/component/balloon
+---
+
+```html
+<div class="_c-balloon-right">
+  ...
+</div>
+```
+*/
+
+.#{$_prefix}c-balloon-right {
+  @include _balloon-right((
+    background-color: #fff,
+    border-color: _light($_color-gray),
+    border-size: 1px,
+    triangle-size: 10px,
+  ));
+
+  border-radius: $_border-radius;
+  @include _padding(.75);
+}
+
+/*
+---
+name: Balloon (Bottom)
+category:
+  - object/component
+  - object/component/balloon
+---
+
+```html
+<div class="_c-balloon-bottom">
+  ...
+</div>
+```
+*/
+
+.#{$_prefix}c-balloon-bottom {
+  @include _balloon-bottom((
+    background-color: #fff,
+    border-color: _light($_color-gray),
+    border-size: 1px,
+    triangle-size: 10px,
+  ));
+
+  border-radius: $_border-radius;
+  @include _padding(.75);
+}
+
+/*
+---
+name: Balloon (Left)
+category:
+  - object/component
+  - object/component/balloon
+---
+
+```html
+<div class="_c-balloon-left">
+  ...
+</div>
+```
+*/
+
+.#{$_prefix}c-balloon-left {
+  @include _balloon-left((
+    background-color: #fff,
+    border-color: _light($_color-gray),
+    border-size: 1px,
+    triangle-size: 10px,
+  ));
+
+  border-radius: $_border-radius;
+  @include _padding(.75);
+}

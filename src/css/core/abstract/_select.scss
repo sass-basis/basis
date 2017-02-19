@@ -1,13 +1,12 @@
 //
-// The select component
+// Select
 //
 // @param  hash  properties for decoration
 //
 // .c-select {
 //   @include _select((
-//     'background-color': null,
-//     'border-color'    : null,
-//     'border-size'     : null,
+//     background-color: null,
+//     border: null,
 //   ));
 // }
 //
@@ -19,23 +18,25 @@
 @mixin _select($params: ()) {
   $params: map-merge(
     (
-      'background-color': null,
-      'border-color'    : null,
-      'border-size'     : null,
+      background-color: null,
+      border: null,
     ),
     $params
   );
+
+  $background-color: map-get($params, 'background-color');
+  $border: map-get($params, 'border');
 
   position: relative;
   display: inline-block;
   overflow: hidden;
 
-  @if (not _is-null(map-get($params, 'border-color')) and not _is-null(map-get($params, 'border-size'))) {
-    border: map-get($params, 'border-size') solid map-get($params, 'border-color');
+  @if (not _is-null($border)) {
+    border: $border;
   }
 
-  @if (not _is-null(map-get($params, 'background-color'))) {
-    background-color: map-get($params, 'background-color');
+  @if (not _is-null($background-color)) {
+    background-color: $background-color;
   }
 
   &::before {

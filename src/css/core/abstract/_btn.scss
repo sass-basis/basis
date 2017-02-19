@@ -1,5 +1,5 @@
 //
-// The button component
+// Button
 //
 // @param  hash  properties for decoration
 //
@@ -27,6 +27,7 @@
 
   display: inline-block;
   cursor: pointer;
+  line-height: 1;
   overflow: hidden;
   text-align: center;
   text-decoration: none;

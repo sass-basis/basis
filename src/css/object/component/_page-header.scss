@@ -1,10 +1,17 @@
-//
-// The page header component
-//
-// <header class="_c-page-header">
-//   <h1 class="_c-page-header__title">...</h1>
-// </header>
-//
+/*
+---
+name: Page Header
+category:
+  - object/component
+  - object/component/page-header
+---
+
+```html
+<header class="_c-page-header">
+  <h1 class="_c-page-header__title">...</h1>
+</header>
+```
+*/
 
 .#{$_prefix}c-page-header {
   @include _padding(2, 0);

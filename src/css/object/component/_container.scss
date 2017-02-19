@@ -1,10 +1,17 @@
-//
-// The fluid container component
-//
-// <div class="_c-container-fluid">
-//   ...
-// </div>
-//
+/*
+---
+name: Container (Fluid)
+category:
+  - object/component
+  - object/component/container
+---
+
+```html
+<div class="_c-container-fluid">
+  ...
+</div>
+```
+*/
 
 .#{$_prefix}c-container-fluid {
   $container-margin: $_base-line-height;
@@ -19,13 +26,18 @@
   }
 }
 
-//
-// The container component
-//
-// <div class="_c-container">
-//   ...
-// </div>
-//
+/*
+---
+name: Container
+category: object/component
+---
+
+```html
+<div class="_c-container">
+  ...
+</div>
+```
+*/
 
 .#{$_prefix}c-container {
   @extend .#{$_prefix}c-container-fluid;

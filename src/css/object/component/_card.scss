@@ -1,18 +1,25 @@
-//
-// The card componet
-//
-// <div class="_c-card">
-//  <div class="_c-card__figure">
-//    <img ...>
-//  </div>
-//  <div class="_c-card__body">
-//    ...
-//  </div>
-//  <div class="_c-card__action">
-//    ...
-//  </div>
-// </div>
-//
+/*
+---
+name: Card
+category:
+  - object/component
+  - object/component/card
+---
+
+```html
+<div class="_c-card">
+  <div class="_c-card__figure">
+    <img src="/aigis_assets/images/dummy.jpg">
+  </div>
+  <div class="_c-card__body">
+    ...
+  </div>
+  <div class="_c-card__action">
+    ...
+  </div>
+</div>
+```
+*/
 
 .#{$_prefix}c-card {
   @include _card();

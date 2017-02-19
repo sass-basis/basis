@@ -1,15 +1,22 @@
-//
-// The meedia component. When smartphone size, vertically aligned.
-//
-// <div class="_c-flex-media">
-//  <div class="_c-flex-media__figure">
-//    <img ...>
-//  </div>
-//  <div class="_c-flex-media__body">
-//    ...
-//  </div>
-// </div>
-//
+/*
+---
+name: Flexible media
+category:
+  - object/component
+  - object/component/flex-media
+---
+
+```html
+<div class="_c-flex-media">
+  <div class="_c-flex-media__figure">
+    <img src="/aigis_assets/images/dummy.jpg" style="width: 150px">
+  </div>
+  <div class="_c-flex-media__body">
+    ...
+  </div>
+</div>
+```
+*/
 
 .#{$_prefix}c-flex-media {
   @include _flex-media();

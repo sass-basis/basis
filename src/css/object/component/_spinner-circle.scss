@@ -1,8 +1,15 @@
-//
-// The circle spinner component
-//
-// <div class="_c-spinner-circle"></div>
-//
+/*
+---
+name: Spinner (Circle)
+category:
+  - object/component
+  - object/component/spinner-circle
+---
+
+```html
+<div class="_c-spinner-circle"></div>
+```
+*/
 
 .#{$_prefix}c-spinner-circle {
   @include _spinner-circle();

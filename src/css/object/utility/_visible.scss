@@ -1,73 +1,251 @@
-.#{$_prefix}u-visible {
-  &-sm-inline {
-    @include _media-sm-only() {
-      display: inline !important;
-    }
-  }
+/*
+---
+name: ._u-visible-sm-inline
+category:
+  - object/utility
+  - object/utility/visible
+---
 
-  &-sm-inline-block {
-    @include _media-sm-only() {
-      display: inline-block !important;
-    }
-  }
+```html
+<div class="_u-visible-sm-inline">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
 
-  &-sm-block {
-    @include _media-sm-only() {
-      display: block !important;
-    }
+.#{$_prefix}u-visible-sm-inline {
+  @include _media-sm-only() {
+    display: inline !important;
   }
+}
 
-  &-sm-flex {
-    @include _media-sm-only() {
-      display: flex !important;
-    }
+/*
+---
+name: ._u-visible-sm-inline-block
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-sm-inline-block">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-sm-inline-block {
+  @include _media-sm-only() {
+    display: inline-block !important;
   }
+}
 
-  &-md-inline {
-    @include _media-md-only() {
-      display: inline !important;
-    }
+/*
+---
+name: ._u-visible-sm-block
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-sm-block">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-sm-block {
+  @include _media-sm-only() {
+    display: block !important;
   }
+}
 
-  &-md-inline-block {
-    @include _media-md-only() {
-      display: inline-block !important;
-    }
+/*
+---
+name: ._u-visible-sm-flex
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-sm-flex">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-sm-flex {
+  @include _media-sm-only() {
+    display: flex !important;
   }
+}
 
-  &-md-block {
-    @include _media-md-only() {
-      display: block !important;
-    }
+/*
+---
+name: ._u-visible-md-inline
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-md-inline">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-md-inline {
+  @include _media-md-only() {
+    display: inline !important;
   }
+}
 
-  &-md-flex {
-    @include _media-md-only() {
-      display: flex !important;
-    }
+/*
+---
+name: ._u-visible-md-inline-block
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-md-inline-block">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-md-inline-block {
+  @include _media-md-only() {
+    display: inline-block !important;
   }
+}
 
-  &-lg-inline {
-    @include _media-lg-only() {
-      display: inline !important;
-    }
+/*
+---
+name: ._u-visible-md-block
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-md-block">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-md-block {
+  @include _media-md-only() {
+    display: block !important;
   }
+}
 
-  &-lg-inline-block {
-    @include _media-lg-only() {
-      display: inline-block !important;
-    }
+/*
+---
+name: ._u-visible-md-flex
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-md-flex">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-md-flex {
+  @include _media-md-only() {
+    display: flex !important;
   }
+}
 
-  &-lg-block {
-    @include _media-lg-only() {
-      display: block !important;
-    }
+/*
+---
+name: ._u-visible-lg-inline
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-lg-inline">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-lg-inline {
+  @include _media-lg-only() {
+    display: inline !important;
   }
+}
 
-  &-lg-flex {
-    @include _media-lg-only() {
-      display: flex !important;
-    }
+/*
+---
+name: ._u-visible-lg-inline-block
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-lg-inline-block">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-lg-inline-block {
+  @include _media-lg-only() {
+    display: inline-block !important;
+  }
+}
+
+/*
+---
+name: ._u-visible-lg-block
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-lg-block">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-lg-block {
+  @include _media-lg-only() {
+    display: block !important;
+  }
+}
+
+/*
+---
+name: ._u-visible-lg-flex
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-lg-flex">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-lg-flex {
+  @include _media-lg-only() {
+    display: flex !important;
   }
 }

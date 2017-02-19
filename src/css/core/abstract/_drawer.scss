@@ -1,13 +1,13 @@
 //
-// The drawer component
+// Drawer
 //
 // @param  hash  properties for decoration
 //
 // .c-drawer {
 //   @include _drawer((
-//     'background-color': _light($_color-black),
-//     'width'           : ($_base-line-height * 10),
-//     'max-width'       : 80%,
+//     background-color: _light($_color-black),
+//     width: ($_base-line-height * 10),
+//     max-width: 80%,
 //   ));
 // }
 //
@@ -31,27 +31,35 @@
 //   </nav>
 // </div>
 //
-// <div class="_c-hamburger-btn" data-c="drawer-btn" aria-expanded="false" aria-controls="drawer"></div>
+// <div class="_c-hamburger-btn" data-c="drawer-btn" aria-expanded="false" aria-controls="drawer">
+//   <div class="_c-hamburger-btn__bar"></div>
+//   <div class="_c-hamburger-btn__bar"></div>
+//   <div class="_c-hamburger-btn__bar"></div>
+// </div>
 //
 
 @mixin _drawer($params: ()) {
   $params: map-merge(
     (
-      "background-color": _light($_color-black),
-      "width"           : ($_base-line-height * 10),
-      "max-width"       : 80%,
+      background-color: _light($_color-black),
+      width: ($_base-line-height * 10),
+      max-width: 80%,
     ),
     $params
   );
+
+  $background-color: map-get($params, 'background-color');
+  $width: map-get($params, 'width');
+  $max-width: map-get($params, 'max-width');
 
   position: relative;
 
   &__body {
     @include _position(absolute, 0, null, 0, -100%, 10);
     @include _transition(left);
-    width: map-get($params, 'width');
-    max-width: map-get($params, 'max-width');
-    background-color: map-get($params, 'background-color');
+    width: $width;
+    max-width: $max-width;
+    background-color: $background-color;
     overflow-y: auto;
 
     &[aria-hidden="false"] {

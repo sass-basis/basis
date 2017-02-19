@@ -1,14 +1,21 @@
-//
-// The input group component
-//
-// <div class="_c-input-group">
-//   <div class="_c-input-group__addon">@</div>
-//   <div class="_c-input-group__field">
-//     <input type="text">
-//   </div>
-//   <button class="_c-input-group__btn">Go</button>
-// </div>
-//
+/*
+---
+name: Input Group
+category:
+  - object/component
+  - object/component/input-group
+---
+
+```html
+<div class="_c-input-group">
+  <div class="_c-input-group__addon">@</div>
+  <div class="_c-input-group__field">
+    <input type="text">
+  </div>
+  <button class="_c-input-group__btn">Go</button>
+</div>
+```
+*/
 
 .#{$_prefix}c-input-group {
   @include _input-group();
@@ -41,9 +48,9 @@
 
   &__btn {
     @include _btn((
-      'background-color': #fff,
-      'border-size'     : 1px,
-      'border-color'    : _light($_color-gray),
+      background-color: #fff,
+      border-size: 1px,
+      border-color: _light($_color-gray),
     ));
 
     color: $_color-text;

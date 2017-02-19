@@ -1,10 +1,17 @@
-//
-// The copyright component
-//
-// <div class="_c-copyright">
-//   ...
-// </div>
-//
+/*
+---
+name: Copyright
+category:
+  - object/component
+  - object/component/copyright
+---
+
+```html
+<div class="_c-copyright">
+  ...
+</div>
+```
+*/
 
 .#{$_prefix}c-copyright {
 }

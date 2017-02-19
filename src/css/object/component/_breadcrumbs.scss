@@ -1,11 +1,18 @@
-//
-// The breadcrumbs component
-//
-// <ol class="_c-breadcrumbs">
-//   <li class="_c-breadcrumbs__item"><a href="#">...</a></li>
-//   <li class="_c-breadcrumbs__item">...</li>
-// </ol>
-//
+/*
+---
+name: Breadcrumbs
+category:
+  - object/component
+  - object/component/breadcrumbs
+---
+
+```html
+<ol class="_c-breadcrumbs">
+  <li class="_c-breadcrumbs__item"><a href="#">...</a></li>
+  <li class="_c-breadcrumbs__item">...</li>
+</ol>
+```
+*/
 
 .#{$_prefix}c-breadcrumbs {
   @include _list-unstyled();

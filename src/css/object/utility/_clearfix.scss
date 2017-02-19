@@ -1,3 +1,20 @@
+/*
+---
+name: ._u-clearfix
+category:
+  - object/utility
+  - object/utility/clearfix
+---
+
+```html
+<div class="_u-clearfix">
+  <img class="_u-pull-left" src="/aigis_assets/images/dummy.jpg" style="width: 150px; margin-right: 1em">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+```
+*/
+
 .#{$_prefix}u-clearfix {
   @include _clearfix();
 }

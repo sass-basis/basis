@@ -1,15 +1,22 @@
-//
-// The media component
-//
-// <div class="_c-media">
-//   <div class="_c-media__figure">
-//     <img ...>
-//   </div>
-//   <div class="_c-media__body">
-//     ...
-//   </div>
-// </div>
-//
+/*
+---
+name: Media
+category:
+  - object/component
+  - object/component/media
+---
+
+```html
+<div class="_c-media">
+  <div class="_c-media__figure">
+    <img src="/aigis_assets/images/dummy.jpg" style="width: 150px">
+  </div>
+  <div class="_c-media__body">
+    ...
+  </div>
+</div>
+```
+*/
 
 .#{$_prefix}c-media {
   @include _media();

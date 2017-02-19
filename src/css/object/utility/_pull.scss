@@ -1,9 +1,35 @@
-.#{$_prefix}u-pull {
-  &-right {
-    float: right !important;
-  }
+/*
+---
+name: ._u-pull-right
+category:
+  - object/utility
+  - object/utility/pull
+---
 
-  &-left {
-    float: left !important;
-  }
+```html
+<img class="_u-pull-right" src="/aigis_assets/images/dummy.jpg" style="width: 150px; margin-left: 1em">
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+```
+*/
+
+.#{$_prefix}u-pull-right {
+  float: right !important;
+}
+
+/*
+---
+name: ._u-pull-left
+category:
+  - object/utility
+  - object/utility/pull
+---
+
+```html
+<img class="_u-pull-left" src="/aigis_assets/images/dummy.jpg" style="width: 150px; margin-right: 1em">
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+```
+*/
+
+.#{$_prefix}u-pull--left {
+  float: left !important;
 }

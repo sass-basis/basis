@@ -1,14 +1,14 @@
 //
-// The hamberger button component
+// Hamburger Button
 //
 // @param  hash  properties for decoration
 //
 // .c-hamburger-btn {
 //   @include _hamburger-btn((
-//     'height'    : 16px,
-//     'width'     : 22px,
-//     'bar-height': 2px,
-//     'color'     : _color-text,
+//     height: 16px,
+//     width: 22px,
+//     bar-height: 2px,
+//     color: _color-text,
 //   ));
 // }
 //
@@ -22,10 +22,10 @@
 @mixin _hamburger-btn($params: ()) {
   $params: map-merge(
     (
-      'height'    : 16px,
-      'width'     : 22px,
-      'bar-height': 2px,
-      'color'     : $_color-text,
+      height: 16px,
+      width: 22px,
+      bar-height: 2px,
+      color: $_color-text,
     ),
     $params
   );

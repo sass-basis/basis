@@ -1,20 +1,27 @@
-//
-// The hamberger button component
-//
-// <div class="_c-hamburger-btn" role="button" aria-expanded="false">
-//   <div class="_c-hamburger-btn__bar"></div>
-//   <div class="_c-hamburger-btn__bar"></div>
-//   <div class="_c-hamburger-btn__bar"></div>
-// </div>
-//
+/*
+---
+name: Hamberger Button
+category:
+  - object/component
+  - object/component/hamberger-btn
+---
+
+```html
+<div class="_c-hamburger-btn" role="button" aria-expanded="false">
+  <div class="_c-hamburger-btn__bar"></div>
+  <div class="_c-hamburger-btn__bar"></div>
+  <div class="_c-hamburger-btn__bar"></div>
+</div>
+```
+*/
 
 .#{$_prefix}c-hamburger-btn {
-  $height    : 16px;
+  $height: 16px;
   $bar-height: 2px;
 
   @include _hamburger-btn((
-    'height'    : $height,
-    'bar-height': $bar-height,
+    height: $height,
+    bar-height: $bar-height,
   ));
 
   &[aria-expanded="true"] > &__bar {

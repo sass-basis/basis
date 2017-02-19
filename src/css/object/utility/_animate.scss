@@ -1,61 +1,207 @@
+/*
+---
+name: ._u-animate
+category:
+  - object/utility
+  - object/utility/animate
+---
+
+```html
+<style>
+._u-animate:hover {
+  width: 100% !important;
+  opacity: .5 !important;
+}
+</style>
+<div class="_u-animate" style="background-color: #333; width: 100px; height: 20px;"></div>
+```
+*/
+
 .#{$_prefix}u-animate {
   @include _transition-all();
+}
 
-  &-size {
-    @include _transition-size();
+/*
+---
+name: ._u-animate-size
+category:
+  - object/utility
+  - object/utility/animate
+---
+
+```html
+<style>
+._u-animate-size:hover {
+  width: 100% !important;
+}
+</style>
+<div class="_u-animate-size" style="background-color: #333; width: 100px; height: 20px;"></div>
+```
+*/
+
+.#{$_prefix}u-animate-size {
+  @include _transition-size();
+}
+
+/*
+---
+name: ._u-animate-opacity
+category:
+  - object/utility
+  - object/utility/animate
+---
+
+```html
+<style>
+._u-animate-opacity:hover {
+  opacity: .5 !important;
+}
+</style>
+<div class="_u-animate-opacity" style="background-color: #333; width: 100px; height: 20px;"></div>
+```
+*/
+
+.#{$_prefix}u-animate-opacity {
+  @include _transition-opacity();
+}
+
+/*
+---
+name: ._u-animate-shake-vertical
+category:
+  - object/utility
+  - object/utility/animate
+---
+
+```html
+<div class="_u-animate-shake-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-animate-shake-vertical {
+  @include _hover() {
+    @include _shake-vertical();
+  }
+}
+
+/*
+---
+name: ._u-animate-vibrate-vertical
+category:
+  - object/utility
+  - object/utility/animate
+---
+
+```html
+<div class="_u-animate-vibrate-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-animate-vibrate-vertical {
+  @include _hover() {
+    @include _vibrate-vertical();
+  }
+}
+
+/*
+---
+name: ._u-animate-shake-horizontal
+category:
+  - object/utility
+  - object/utility/animate
+---
+
+```html
+<div class="_u-animate-shake-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-animate-shake-horizontal {
+  @include _hover() {
+    @include _shake-horizontal();
+  }
+}
+
+/*
+---
+name: ._u-animate-vibrate-horizontal
+category:
+  - object/utility
+  - object/utility/animate
+---
+
+```html
+<div class="_u-animate-vibrate-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-animate-vibrate-horizontal {
+  @include _hover() {
+    @include _vibrate-horizontal();
+  }
+}
+
+/*
+---
+name: ._u-animate-shake-scale
+category:
+  - object/utility
+  - object/utility/animate
+---
+
+```html
+<div class="_u-animate-shake-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-animate-shake-scale {
+  @include _hover() {
+    @include _shake-scale();
+  }
+}
+
+/*
+---
+name: ._u-animate-vibrate-scale
+category:
+  - object/utility
+  - object/utility/animate
+---
+
+```html
+<div class="_u-animate-vibrate-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-animate-vibrate-scale {
+  @include _hover() {
+    @include _vibrate-scale();
+  }
+}
+
+/*
+---
+name: ._u-animate-extend-underline
+category:
+  - object/utility
+  - object/utility/animate
+---
+
+```html
+<span class="_u-animate-extend-underline">menu</span>
+```
+*/
+
+.#{$_prefix}u-animate-extend-underline {
+  position: relative;
+
+  &::after {
+    @include _extend-underline();
   }
 
-  &-opacity {
-    @include _transition-opacity();
-  }
-
-  &-shake-vertical {
-    @include _hover() {
-      @include _shake-vertical();
-    }
-  }
-
-  &-vibrate-vertical {
-    @include _hover() {
-      @include _vibrate-vertical();
-    }
-  }
-
-  &-shake-horizontal {
-    @include _hover() {
-      @include _shake-horizontal();
-    }
-  }
-
-  &-vibrate-horizontal {
-    @include _hover() {
-      @include _vibrate-horizontal();
-    }
-  }
-
-  &-shake-scale {
-    @include _hover() {
-      @include _shake-scale();
-    }
-  }
-
-  &-vibrate-scale {
-    @include _hover() {
-      @include _vibrate-scale();
-    }
-  }
-
-  &-extend-underline {
-    position: relative;
-
+  @include _hover() {
     &::after {
-      @include _extend-underline();
-    }
-
-    @include _hover() {
-      &::after {
-        width: 100%;
-      }
+      width: 100%;
     }
   }
 }

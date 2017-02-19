@@ -1,13 +1,59 @@
+/*
+---
+name: ._u-text-center
+category:
+  - object/utility
+  - object/utility/text
+---
+
+```html
+<div class="_u-text-center">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
 .#{$_prefix}u-text {
   &-center {
     text-align: center !important;
   }
+}
 
-  &-right {
-    text-align: right !important;
-  }
+/*
+---
+name: ._u-text-right
+category:
+  - object/utility
+  - object/utility/text
+---
 
-  &-left {
-    text-align: left !important;
-  }
+```html
+<div class="_u-text-right">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-right {
+  text-align: right !important;
+}
+
+/*
+---
+name: ._u-text-left
+category:
+  - object/utility
+  - object/utility/text
+---
+
+```html
+<div class="_u-text-left">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+
+.#{$_prefix}u-left {
+  text-align: left !important;
 }

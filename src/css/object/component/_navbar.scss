@@ -1,23 +1,54 @@
-//
-// The navbar component
-//
-// import BasisNavbar from 'node_modules/sass-basis/src/js/navbar.js';
-// new BasisNavbar();
-//
-// <ul class="_c-navbar">
-//   <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
-//     <a href="#">menu</a>
-//     <ul class="_c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
-//       <li class="_c-navbar__subitem" data-c="navbar__subitem" aria-haspopup="true">
-//         <a href="#">submenu</a>
-//         <ul class="_c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
-//           <li class="_c-navbar__subitem" data-c="navbar__subitem"><a href="#">submenu</a></li>
-//         </ul>
-//       </li>
-//     </ul>
-//   </li>
-// </ul>
-//
+/*
+---
+name: navbar
+category:
+  - object/component
+  - object/component/navbar
+---
+
+```html
+<ul class="_c-navbar">
+  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <ul class="_c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+      <li class="_c-navbar__subitem" data-c="navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <ul class="_c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+          <li class="_c-navbar__subitem" data-c="navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+  </li>
+  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+  </li>
+</ul>
+```
+```html
+<ul class="_c-navbar _c-navbar--auto">
+  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <ul class="_c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+      <li class="_c-navbar__subitem" data-c="navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <ul class="_c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+          <li class="_c-navbar__subitem" data-c="navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+  </li>
+  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+  </li>
+</ul>
+```
+*/
 
 .#{$_prefix}c-navbar {
   @include _navbar();

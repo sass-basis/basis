@@ -1,3 +1,16 @@
+/*
+---
+name: _u-img-2x
+category:
+  - object/utility
+  - object/utility/img
+---
+
+```html
+<img class="_u-img-2x" src="/aigis_assets/images/dummy.jpg">
+```
+*/
+
 .#{$_prefix}u-img-2x {
   zoom: 0.5 !important;
 }

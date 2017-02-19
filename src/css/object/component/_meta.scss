@@ -1,12 +1,19 @@
-//
-// The meta component
-//
-// <ul class="_c-meta">
-//   <li class="_c-meta__item">
-//     ...
-//   </li>
-// </ul>
-//
+/*
+---
+name: Meta
+category:
+  - object/component
+  - object/component/meta
+---
+
+```html
+<ul class="_c-meta">
+  <li class="_c-meta__item">
+    ...
+  </li>
+</ul>
+```
+*/
 
 .#{$_prefix}c-meta {
   @include _list-unstyled();

@@ -1,10 +1,17 @@
-//
-// The site branding component
-//
-// <div class="_c-site-branding">
-//   <h1 class="_c-site-branding__title">...</h1>
-// </div>
-//
+/*
+---
+name: Site Branding
+category:
+  - object/component
+  - object/component/site-branding
+---
+
+```html
+<div class="_c-site-branding">
+  <h1 class="_c-site-branding__title">...</h1>
+</div>
+```
+*/
 
 .#{$_prefix}c-site-branding {
   &__title {

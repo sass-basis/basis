@@ -1,12 +1,19 @@
-//
-// The pulse spinner component
-//
-// <div class="_c-spinner-pulse">
-//   <div class="_c-spinner-pulse__bar"></div>
-//   <div class="_c-spinner-pulse__bar"></div>
-//   <div class="_c-spinner-pulse__bar"></div>
-// </div>
-//
+/*
+---
+name: Spinner (Pulse)
+category:
+  - object/component
+  - object/component/spinner-pulse
+---
+
+```html
+<div class="_c-spinner-pulse">
+  <div class="_c-spinner-pulse__bar"></div>
+  <div class="_c-spinner-pulse__bar"></div>
+  <div class="_c-spinner-pulse__bar"></div>
+</div>
+```
+*/
 
 .#{$_prefix}c-spinner-pulse {
   @include _spinner-pulse();

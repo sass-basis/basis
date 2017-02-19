@@ -1,12 +1,19 @@
-//
-// The entries component
-//
-// <ul class="_c-entries">
-//   <li class="_c-entries__item">
-//     ...
-//   </li>
-// </ul>
-//
+/*
+---
+name: Entries
+category:
+  - object/component
+  - object/component/entries
+---
+
+```html
+<ul class="_c-entries">
+  <li class="_c-entries__item">
+    ...
+  </li>
+</ul>
+```
+*/
 
 .#{$_prefix}c-entries {
   @include _list-unstyled();

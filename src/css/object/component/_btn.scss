@@ -1,8 +1,21 @@
-//
-// The button component
-//
-// <a class="_c-btn" role="button">btn</a>
-//
+/*
+---
+name: Button
+category:
+  - object/component
+  - object/component/btn
+---
+
+```html
+<a class="_c-btn" role="button">btn</a>
+```
+```html
+<a class="_c-btn _c-btn--block" role="button">btn</a>
+```
+```html
+<a class="_c-btn _c-btn--ghost" role="button">btn</a>
+```
+*/
 
 .#{$_prefix}c-btn {
   @include _btn((

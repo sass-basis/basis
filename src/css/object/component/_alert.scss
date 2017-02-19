@@ -1,10 +1,17 @@
-//
-// The alert component
-//
-// <div class="_c-alert" role="alert">
-//   ...
-// </div>
-//
+/*
+---
+name: Alert
+category:
+  - object/component
+  - object/component/alert
+---
+
+```html
+<div class="_c-alert" role="alert">
+  ...
+</div>
+```
+*/
 
 .#{$_prefix}c-alert {
   @include _alert((

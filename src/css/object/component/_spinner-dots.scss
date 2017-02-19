@@ -1,12 +1,19 @@
-//
-// The dots spinner component
-//
-// <div class="_c-spinner-dots">
-//   <div class="_c-spinner-dots__dot"></div>
-//   <div class="_c-spinner-dots__dot"></div>
-//   <div class="_c-spinner-dots__dot"></div>
-// </div>
-//
+/*
+---
+name: Spinner (Dots)
+category:
+  - object/component
+  - object/component/spinner-dots
+---
+
+```html
+<div class="_c-spinner-dots">
+  <div class="_c-spinner-dots__dot"></div>
+  <div class="_c-spinner-dots__dot"></div>
+  <div class="_c-spinner-dots__dot"></div>
+</div>
+```
+*/
 
 .#{$_prefix}c-spinner-dots {
   @include _spinner-dots();
