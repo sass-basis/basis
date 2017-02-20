@@ -16,18 +16,18 @@
 
 @include _test('[function] _px2rem()') {
   $rem: _px2rem(16px, 16px);
-  @include _assert-equals(1rem, rem);
+  @include _assert-equals(1rem, $rem);
 
   $rem: _px2rem(16px, 10px);
-  @include _assert-equals(1.6rem, rem);
+  @include _assert-equals(1.6rem, $rem);
 }
 
 @include _test('[function] _rem2px()') {
   $rem: _rem2px(1rem, 16px);
-  @include _assert-equals(16px, rem);
+  @include _assert-equals(16px, $rem);
 
   $rem: _rem2px(1rem, 10px);
-  @include _assert-equals(10px, rem);
+  @include _assert-equals(10px, $rem);
 }
 
 @include _test('[function] _strip-unit()') {

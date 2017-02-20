@@ -127,7 +127,7 @@ gulp.task('build', ['css', 'js', 'font', 'aigis']);
 /**
  * Browsersync
  */
-gulp.task('server', function() {
+gulp.task('server', ['build'], function() {
   browserSync.init( {
     server: {
       baseDir: dir.dist.aigis + '/'
@@ -167,4 +167,4 @@ gulp.task('sass-test', function() {
     .pipe(gulp.dest('./tests'));
 });
 
-gulp.task('default', ['build', 'watch', 'aigis', 'server']);
+gulp.task('default', ['build', 'watch', 'server']);

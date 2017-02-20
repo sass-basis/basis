@@ -69,7 +69,6 @@
       @include _ic();
       content: "\e901";
       opacity: 0;
-      font-size: calc(#{$size} - 4px);
       display: flex;
       align-items: center;
       justify-content: center;

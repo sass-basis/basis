@@ -23,7 +23,8 @@ category:
     &:nth-child(n + 2) {
       &::before {
         @include _margin(0, 5px);
-        content: '>';
+        @include _ic();
+        content: "\e900";
       }
     }
   }
