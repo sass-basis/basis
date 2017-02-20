@@ -26,7 +26,6 @@ A lightweight responsive Sass/CSS framework based on flexible box.
 Installs Basis
 ```
 $ yarn install sass-basis
-$ yarn run gulp build
 ```
 
 Imports basis.scss your Sass/SCSS.

@@ -17,7 +17,7 @@ var commonjs     = require('rollup-plugin-commonjs');
 var babel        = require('rollup-plugin-babel');
 var plumber      = require('gulp-plumber');
 var aigis        = require('gulp-aigis');
-var browser_sync = require('browser-sync');
+var browserSync  = require('browser-sync');
 
 var dir = {
   src: {
@@ -127,8 +127,8 @@ gulp.task('build', ['css', 'js', 'font', 'aigis']);
 /**
  * Browsersync
  */
-gulp.task('browsersync', function() {
-  browser_sync.init( {
+gulp.task('server', function() {
+  browserSync.init( {
     server: {
       baseDir: dir.dist.aigis + '/'
     },
@@ -167,4 +167,4 @@ gulp.task('sass-test', function() {
     .pipe(gulp.dest('./tests'));
 });
 
-gulp.task('default', ['build', 'watch', 'aigis', 'browsersync']);
+gulp.task('default', ['build', 'watch', 'aigis', 'server']);
