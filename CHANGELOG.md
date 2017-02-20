@@ -1,5 +1,10 @@
 #Changelog
 
+## February 20, 2017 v6.1.0
+* Added styleguide.
+* Update `._c-checkbox`
+* Update `._c-radio`
+
 ## February 14, 2017 v6.0.2
 * Fix line-height of Form elements for normalize.css.
 * Refactoring grid margin calculation.
