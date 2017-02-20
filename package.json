@@ -6,6 +6,15 @@
   "contributors": [
     "Toro_Unit"
   ],
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
   "license": "MIT",
   "homepage": "https://sass-basis.github.io/",
   "repository": {
