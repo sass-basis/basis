@@ -1,9 +1,9 @@
 //
 // Replace in a string
 //
-// @param  string|list  $substr
-// @param  string  $newsubstr
-// @param  string  $string
+// @param   string|list  $substr
+// @param   string       $newsubstr
+// @param   string       $string
 // @return  string
 //
 @function _replace($substr, $newsubstr, $string) {

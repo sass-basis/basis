@@ -2,10 +2,10 @@
 // Generate balloon triangle
 //
 // @param  string  $position
-// @param  length  $size  triangle size
-// @param  hex  $background-color
+// @param  length  $size              triangle size
+// @param  hex     $background-color
 // @param  length  $border-size
-// @param  hex  $border-color
+// @param  hex     $border-color
 //
 @mixin _balloon-triangle($position, $size, $background-color, $border-size: 0, $border-color: transparent) {
   $before: ($size * -1);

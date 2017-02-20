@@ -3,7 +3,7 @@
 //
 // @param  length  $width
 // @param  length  $height
-// @param  hex  $color
+// @param  hex     $color
 //
 // .c-triangle-top {
 //   @include _triangle-top(10px, 10px, #000);
@@ -21,7 +21,7 @@
 //
 // @param  length  $width
 // @param  length  $height
-// @param  hex  $color
+// @param  hex     $color
 //
 // .c-triangle-right {
 //   _triangle-right(10px, 10px, #000);
@@ -39,7 +39,7 @@
 //
 // @param  length  $width
 // @param  length  $height
-// @param  hex  $color
+// @param  hex     $color
 //
 // .c-triangle-bottom {
 //   @include _triangle-bottom(10px, 10px, #000);
@@ -57,7 +57,7 @@
 //
 // @param  length  $width
 // @param  length  $height
-// @param  hex  $color
+// @param  hex     $color
 //
 // .c-triangle-left {
 //   @include _triangle-left(10px, 10px, #000);

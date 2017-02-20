@@ -1,42 +1,7 @@
-@mixin _balloon($angle, $params: ()) {
-  $params: map-merge(
-    (
-      background-color: null,
-      border-color: null,
-      border-size: null,
-      triangle-size: 10px,
-    ),
-    $params
-  );
-
-  $background-color: map-get($params, 'background-color');
-  $border-color: map-get($params, 'border-color');
-  $border-size: map-get($params, 'border-size');
-  $triangle-size: map-get($params, 'triangle-size');
-
-  position: relative;
-
-  @if (not _is-null($border-size)) {
-    background-color: $background-color;
-  }
-
-  @if (not _is-null($border-size) and not _is-null($border-color)) {
-    border: $border-size solid $border-color;
-  }
-
-  @include _balloon-triangle(
-    $angle,
-    $triangle-size,
-    $background-color,
-    $border-size,
-    $border-color
-  );
-}
-
 //
 // Balloon (Top)
 //
-// @param  hash  properties for decoration
+// @param  hash  $params  properties for decoration
 //
 // .c-balloon-top {
 //   @include _balloon-top((
@@ -59,7 +24,7 @@
 //
 // Balloon (Right)
 //
-// @param  hash  properties for decoration
+// @param  hash  $params  properties for decoration
 //
 // .c-balloon-right {
 //   @include _balloon-right((
@@ -82,7 +47,7 @@
 //
 // Balloon (Bottom)
 //
-// @param  hash  properties for decoration
+// @param  hash  $params  properties for decoration
 //
 // .c-balloon-bottom {
 //   @include _balloon-bottom((
@@ -105,7 +70,7 @@
 //
 // Balloon (Left)
 //
-// @param  hash  properties for decoration
+// @param  hash  $params  properties for decoration
 //
 // .c-balloon-left {
 //   @include _balloon-left((
