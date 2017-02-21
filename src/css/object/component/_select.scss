@@ -7,17 +7,20 @@ category:
 ---
 
 ```html
-<span class="_c-select">
+<span class="_c-select" data-c="select">
   <select>
     <option>1</option>
     <option>2</option>
     <option>3</option>
   </select>
+  <span class="_c-select__label" data-c="select__label"></span>
 </span>
 ```
 */
 
 .#{$_prefix}c-select {
+  $padding: ($_base-line-height / 4) ($_base-line-height * 2) ($_base-line-height / 4) ($_base-line-height / 2);
+
   @include _select((
     background-color: #fff,
     border: 1px solid _light($_color-gray),
@@ -26,13 +29,18 @@ category:
   border-radius: $_border-radius;
 
   &::before {
-    @include _triangle-bottom(8px, 6px, _dark($_color-gray))
-    width: 0;
-    height: 0;
+    @include _position(absolute, 50%, ($_between-lines * 2), null, null);
+    transform: translateY(-50%);
+    @include _ic();
+    content: "\e902";
   }
 
   > select {
-    padding: ($_base-line-height / 4) $_base-line-height ($_base-line-height / 4) ($_base-line-height / 2);
+    padding: $padding;
+  }
+
+  &__label {
+    padding: $padding;
   }
 
   &--block {

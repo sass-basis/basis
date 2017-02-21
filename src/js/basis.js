@@ -8,3 +8,6 @@ new BasisNavbar();
 
 import BasisPageEffect from './page-effect.js';
 new BasisPageEffect();
+
+import BasisSelect from './select.js';
+new BasisSelect();

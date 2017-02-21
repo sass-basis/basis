@@ -36,3 +36,20 @@ category:
 .#{$_prefix}ic-check::before {
   content: "\e901";
 }
+
+/*
+---
+name: Icon (Angle Down)
+category:
+  - object/component
+  - object/component/icon-font
+---
+
+```html
+<span class="_ic-select" aria-hidden="true"></span>
+```
+*/
+
+.#{$_prefix}ic-angle-down::before {
+  content: "\e902";
+}
