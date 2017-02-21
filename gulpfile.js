@@ -105,10 +105,16 @@ gulp.task('font', function() {
 /**
  * Styleguide
  */
-gulp.task('aigis', function() {
-  gulp.src(dir.src.aigis + '/aigis_config.yml')
-    .pipe(aigis());
-});
+ gulp.task('aigis:update', function() {
+   return _aigis();
+ });
+ gulp.task('aigis:build', ['build'], function() {
+   return _aigis();
+ });
+ function _aigis() {
+   return gulp.src(dir.src.aigis + '/aigis_config.yml')
+     .pipe(aigis())
+ }
 
 /**
  * Auto Build
@@ -116,18 +122,25 @@ gulp.task('aigis', function() {
 gulp.task('watch', function() {
   gulp.watch([dir.src.css + '/**/*.scss'], ['css']);
   gulp.watch([dir.src.js + '/**/*.js'], ['js']);
-  gulp.watch([dir.src.css + '/**/*.scss', dir.src.js + '/**/*.js'], ['aigis']);
+  gulp.watch(
+    [
+      dir.src.css + '/**/*.scss',
+      dir.src.js + '/**/*.js',
+      dir.src.font + '/**'
+    ],
+    ['aigis:update']
+  );
 });
 
 /**
  * Build
  */
-gulp.task('build', ['css', 'js', 'font', 'aigis']);
+gulp.task('build', ['css', 'js', 'font']);
 
 /**
  * Browsersync
  */
-gulp.task('server', ['build'], function() {
+gulp.task('server', ['aigis:build'], function() {
   browserSync.init( {
     server: {
       baseDir: dir.dist.aigis + '/'
@@ -167,4 +180,4 @@ gulp.task('sass-test', function() {
     .pipe(gulp.dest('./tests'));
 });
 
-gulp.task('default', ['build', 'watch', 'server']);
+gulp.task('default', ['watch', 'server']);
