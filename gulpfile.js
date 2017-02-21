@@ -124,9 +124,8 @@ gulp.task('watch', function() {
   gulp.watch([dir.src.js + '/**/*.js'], ['js']);
   gulp.watch(
     [
-      dir.src.css + '/**/*.scss',
-      dir.src.js + '/**/*.js',
-      dir.src.font + '/**'
+      dir.dist.css + '/basis.css',
+      dir.dist.js + '/app.js'
     ],
     ['aigis:update']
   );

@@ -1,12 +1,8 @@
 //
 // Input Group
 //
-// @param  hash  $params  properties for decoration
-//
 // .c-input-group {
-//   @include _input-group((
-//     border: 1px solid _light($_color-gray),
-//   ));
+//   @include _input-group();
 // }
 //
 // <div class="c-input-group">
@@ -18,32 +14,36 @@
 // </div>
 //
 
-@mixin _input-group($params: ()) {
-  $params: map-merge(
-    (
-      border: 1px solid _light($_color-gray),
-    ),
-    $params
-  );
-
-  $border: 1px solid _light($_color-gray);
-
+@mixin _input-group() {
   display: flex;
   flex-wrap: nowrap;
+  border-radius: $_border-radius;
 
-  > :nth-child(n + 2) {
-    border-left: none;
+  > :first-child {
+    position: relative;
+    border-radius: $_border-radius 0 0 $_border-radius;
+    border-right: none;
   }
 
-  &__addon,
-  &__field,
-  &__btn {
-    @if (not _is-null($border)) {
-      border: $border;
+  > :nth-last-child(2) {
+    position: relative;
+    z-index: 1;
+  }
+
+  > :last-child {
+    position: relative;
+    z-index: 0;
+    left: -1px;
+    border-radius: 0 $_border-radius $_border-radius 0;
+
+    &:hover, &:active, &:focus {
+      z-index: 1;
     }
   }
 
   &__addon {
+    border: 1px solid $_form-control-border-color;
+    @include _form-control-base-padding();
     flex: none;
   }
 
@@ -59,14 +59,19 @@
     > input[type='text'],
     > input[type='url'] {
       @include _form-control();
+      border-radius: 0;
       flex: 1;
       width: 100%;
-      border: none;
     }
   }
 
   &__btn {
-    @include _btn();
+    @include _btn((
+      background-color: #fff,
+    ));
+    @include _form-control-base-border();
+    @include _form-control-base-padding();
+    color: $_color-text;
     flex: none;
     overflow: visible;
   }

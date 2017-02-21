@@ -1,16 +1,11 @@
 //
 // Select
 //
-// @param  hash  $params for decoration
-//
 // .c-select {
-//   @include _select((
-//     background-color: null,
-//     border: null,
-//   ));
+//   @include _select();
 // }
 //
-// <span class="c-select" data-c="select">
+// <span class="c-select" data-c="select" aria-selected="false">
 //   <select>
 //     <option>1</option>
 //     <option>2</option>
@@ -19,28 +14,24 @@
 // </span>
 //
 
-@mixin _select($params: ()) {
-  $params: map-merge(
-    (
-      background-color: null,
-      border: null,
-    ),
-    $params
-  );
-
-  $background-color: map-get($params, 'background-color');
-  $border: map-get($params, 'border');
-
+@mixin _select() {
   position: relative;
   display: inline-block;
   overflow: hidden;
+  background-color: #fff;
+  @include _form-control-base-border();
 
-  @if (not _is-null($border)) {
-    border: $border;
+  &::before {
+    @include _position(absolute, 50%, ($_between-lines * 2), null, null, 1);
+    transform: translateY(-50%);
+    @include _ic();
+    content: "\e902";
   }
 
-  @if (not _is-null($background-color)) {
-    background-color: $background-color;
+  > select,
+  &__label {
+    @include _form-control-base-padding();
+    @include _padding-right(1.5);
   }
 
   > select {

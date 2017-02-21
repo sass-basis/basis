@@ -1,32 +1,16 @@
 //
 // Form Control
 //
-// @param  hash  $params  properties for decoration
-//
 // .c-form-control {
-//   @include _form-control((
-//     background-color: #fff,
-//     border-size: 0 solid transparent,
-//   ));
+//   @include _form-control();
 // }
 //
 // <input type="text" class="c-form-control">
 //
 
-@mixin _form-control($params: ()) {
-  $params: map-merge(
-    (
-      background-color: #fff,
-      border: 0 solid transparent,
-    ),
-    $params
-  );
-
-  $background-color: map-get($params, 'background-color');
-  $border: map-get($params, 'border');
-
-  background-color: $background-color;
-  border: $border;
+@mixin _form-control() {
+  @include _form-control-base-border();
+  @include _form-control-base-padding();
 
   @at-root {
     textarea#{&} {
