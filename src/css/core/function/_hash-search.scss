@@ -1,8 +1,8 @@
 //
 // Return matched key in the hash
 //
-// @param   string  $key
-// @param   hash    $hash
+// @param   string      $key
+// @param   hash        $hash
 // @return  mixed|null
 //
 @function _hash-search($key, $hash) {

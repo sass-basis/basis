@@ -116,7 +116,7 @@ gulp.task('aigis', function() {
 gulp.task('watch', function() {
   gulp.watch([dir.src.css + '/**/*.scss'], ['css']);
   gulp.watch([dir.src.js + '/**/*.js'], ['js']);
-  gulp.watch([dir.src.css + '/**/*.scss'], ['aigis']);
+  gulp.watch([dir.src.css + '/**/*.scss', dir.src.js + '/**/*.js'], ['aigis']);
 });
 
 /**
