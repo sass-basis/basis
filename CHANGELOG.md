@@ -2,8 +2,11 @@
 
 ## February 20, 2017 v6.1.0
 * Added styleguide.
-* Update `._c-checkbox`
-* Update `._c-radio`
+* Update `._c-checkbox` and `_checkbox()`
+* Update `._c-radio` and `_radio()`
+* Update `._c-form-control` and `_form-control()`
+* Update `._c-input-group` and `_input-group()`
+* Update `._c-select` and `_select()`
 
 ## February 14, 2017 v6.0.2
 * Fix line-height of Form elements for normalize.css.
