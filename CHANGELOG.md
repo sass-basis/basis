@@ -1,5 +1,10 @@
 #Changelog
 
+## February 20, 2017 v6.1.1
+* Update `._c-checkbox`
+* Update `._c-radio`
+* Fix bug that background-color of `_page-effect()` is not reflected.
+
 ## February 20, 2017 v6.1.0
 * Added styleguide.
 * Update `._c-checkbox` and `_checkbox()`

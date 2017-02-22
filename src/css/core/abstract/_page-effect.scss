@@ -32,7 +32,7 @@ $_page-effect-z-index: 1000000 !default;
   );
 
   $duration: map-get($params, 'duration');
-  $background-color: map-get($params, 'color');
+  $background-color: map-get($params, 'background-color');
 
   $fadein-animation-name : _sanitize-animation-name(_page-effect-fadein- + zip(map-values($params)));
   $fadeout-animation-name: _sanitize-animation-name(_page-effect-fadeout- + zip(map-values($params)));
