@@ -1,5 +1,8 @@
 #Changelog
 
+## February 22, 2017 v6.1.2
+* Fix bug that `._c-select--block` is not reflected.
+
 ## February 20, 2017 v6.1.1
 * Update `._c-checkbox`
 * Update `._c-radio`

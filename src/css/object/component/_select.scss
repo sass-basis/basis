@@ -23,5 +23,9 @@ category:
 
   &--block {
     display: block;
+
+    > select {
+      width: 100%;
+    }
   }
 }
