@@ -13,10 +13,8 @@ category:
 ```
 */
 
-.#{$_prefix}u-text {
-  &-center {
-    text-align: center !important;
-  }
+.#{$_prefix}u-text-center {
+  text-align: center !important;
 }
 
 /*
@@ -34,7 +32,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-right {
+.#{$_prefix}u-text-right {
   text-align: right !important;
 }
 
@@ -53,6 +51,6 @@ category:
 ```
 */
 
-.#{$_prefix}u-left {
+.#{$_prefix}u-text-left {
   text-align: left !important;
 }

@@ -1,5 +1,10 @@
 #Changelog
 
+## February 22, 2017 v6.1.3
+* Fix `._u-text-left` bug.
+* Fix `._u-text-right` bug.
+* Fix `._u-pull-left` bug.
+
 ## February 22, 2017 v6.1.2
 * Fix bug that `._c-select--block` is not reflected.
 
