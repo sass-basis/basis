@@ -21,6 +21,15 @@
     "type": "git",
     "url": "https://github.com/sass-basis/basis"
   },
+  "files": [
+    "src",
+    "dist",
+    "tests",
+    "gulpfile.js",
+    "LICENSE",
+    "README.md",
+    "yarn.lock"
+  ],
   "devDependencies": {
     "autoprefixer": "^6.7.2",
     "babel-preset-es2015-rollup": "^3.0.0",
@@ -41,9 +50,11 @@
   },
   "scripts": {
     "gulp": "gulp",
-    "test": "gulp test"
+    "test": "gulp test",
+    "prepublish": "gulp build"
   },
   "dependencies": {
+    "html5shiv": "^3.7.3",
     "node-normalize-scss": "^1.4.0"
   }
 }

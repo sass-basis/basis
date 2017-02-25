@@ -67,7 +67,7 @@ Support IE9 ( Not perfect )
 
 ```html
 <!--[if lt IE 10]>
-<link rel="stylesheet" href="/PATH/TO/basis/dist/css/plugin/basis-ie9/basis-ie9.min.css" />
+<link rel="stylesheet" href="/PATH/TO/node_modules/sass-basis/dist/css/plugin/basis-ie9/basis-ie9.min.css" />
 <![endif]-->
 ```
 
@@ -75,7 +75,7 @@ And support IE8 ( Not perfect )
 
 ```html
 <!--[if lt IE 9]>
-<script src="/PATH/TO/basis/vendor/html5.js"></script>
+<script src="/PATH/TO/node_modules/html5shiv/dist/html5shiv.js"></script>
 <![endif]-->
 ```
 
@@ -89,12 +89,6 @@ Please don't make the new issue if the issue of the same content already exists.
 If you can coding, please give me a pull request.
 But, please do not send in the master branch.
 Pull request sent to the master branch doesn't merge.
-
-## Third party licenses
-
-#### Scss version of Normalize.css
-* MIT License
-* https://github.com/ranjandatta/node-normalize-scss
 
 ## License
 
