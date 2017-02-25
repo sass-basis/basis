@@ -172,7 +172,7 @@ gulp.task('zip', function(){
 /**
  * Sass tests
  */
-gulp.task('sass-test', function() {
+gulp.task('test', function() {
   return gulp.src('./tests/tests.scss')
     .pipe(plumber())
     .pipe(sass())

@@ -41,7 +41,7 @@
   },
   "scripts": {
     "gulp": "gulp",
-    "sass-test": "gulp sass-test"
+    "test": "gulp test"
   },
   "dependencies": {
     "node-normalize-scss": "^1.4.0"
