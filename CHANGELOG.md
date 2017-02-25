@@ -1,5 +1,8 @@
 #Changelog
 
+## February 25, 2017 v6.2.1
+* Bug fix for npm publish
+
 ## February 25, 2017 v6.2.0
 * Update for npm publish
 * Update `$_font-path`
