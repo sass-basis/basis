@@ -1,5 +1,9 @@
 #Changelog
 
+## February 25, 2017 v6.2.0
+* Update for npm publish
+* Update `$_font-path`
+
 ## February 22, 2017 v6.1.3
 * Fix `._u-text-left` bug.
 * Fix `._u-text-right` bug.
