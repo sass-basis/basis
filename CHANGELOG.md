@@ -1,5 +1,8 @@
 #Changelog
 
+## March 3, 2017 v6.3.1
+* Fix typo
+
 ## March 3, 2017 v6.3.0
 * Update btn, alert, balloon and card padding.
 * Added `_ib-row()`. This is inline-block base abstract.

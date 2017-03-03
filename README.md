@@ -31,10 +31,10 @@ $ yarn install sass-basis
 Imports Basis your Sass/SCSS.
 ```
 /* If you want to use Basis classes */
-@import node_modules/getbasis/src/css/basis;
+@import node_modules/sass-basis/src/css/basis;
 
 /* If you want to use Basis mixins only */
-@import node_modules/getbasis/src/css/basis-core;
+@import node_modules/sass-basis/src/css/basis-core;
 ```
 
 Imports JavaScripts ( Require jQuery )
