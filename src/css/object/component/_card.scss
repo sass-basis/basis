@@ -22,14 +22,12 @@ category:
 */
 
 .#{$_prefix}c-card {
-  @include _card();
+  @include _card((
+    background-color: #fff,
+  ));
+
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .1),
               0 1px 1px 0 rgba(0, 0, 0, .05);
-  background-color: #fff;
-
-  &__body {
-    @include _padding(.5, .75);
-  }
 
   &__action {
     border-top: 1px solid _lighter($_color-gray);

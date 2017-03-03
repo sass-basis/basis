@@ -7,6 +7,7 @@
 //   @include _btn((
 //     background-color: null,
 //     border: null,
+//     padding: _space(.5) _space(1),
 //   ));
 // }
 //
@@ -18,12 +19,14 @@
     (
       background-color: null,
       border: null,
+      padding: _space(.5) _space(1),
     ),
     $params
   );
 
   $background-color: map-get($params, 'background-color');
   $border: map-get($params, 'border');
+  $padding: map-get($params, 'padding');
 
   display: inline-block;
   cursor: pointer;
@@ -40,5 +43,9 @@
 
   @if (not _is-null($border)) {
     border: $border;
+  }
+
+  @if (not _is-null($padding)) {
+    padding: $padding;
   }
 }

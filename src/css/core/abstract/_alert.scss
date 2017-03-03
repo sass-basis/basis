@@ -7,6 +7,7 @@
 //   @include _alert((
 //     background-color: null,
 //     border: null,
+//     padding: _space(.75),
 //   ));
 // }
 //
@@ -19,12 +20,14 @@
   $params: map-merge((
       background-color: null,
       border: null,
+      padding: _space(.75),
     ),
     $params
   );
 
   $background-color: map-get($params, 'background-color');
   $border: map-get($params, 'border');
+  $padding: map-get($params, 'padding');
 
   display: block;
 
@@ -34,5 +37,9 @@
 
   @if (not _is-null($border)) {
     border: $border;
+  }
+
+  @if (not _is-null($padding)) {
+    padding: $padding;
   }
 }

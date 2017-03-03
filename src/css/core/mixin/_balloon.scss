@@ -11,6 +11,7 @@
       border-color: null,
       border-size: null,
       triangle-size: 10px,
+      padding: _space(.75),
     ),
     $params
   );
@@ -19,6 +20,7 @@
   $border-color: map-get($params, 'border-color');
   $border-size: map-get($params, 'border-size');
   $triangle-size: map-get($params, 'triangle-size');
+  $padding: map-get($params, 'padding');
 
   position: relative;
 
@@ -28,6 +30,10 @@
 
   @if (not _is-null($border-size) and not _is-null($border-color)) {
     border: $border-size solid $border-color;
+  }
+
+  @if (not _is-null($padding)) {
+    padding: $padding;
   }
 
   @include _balloon-triangle(

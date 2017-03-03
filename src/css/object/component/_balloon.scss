@@ -18,11 +18,9 @@ category:
     background-color: #fff,
     border-color: _light($_color-gray),
     border-size: 1px,
-    triangle-size: 10px,
   ));
 
   border-radius: $_border-radius;
-  @include _padding(.75);
 }
 
 /*
@@ -45,11 +43,9 @@ category:
     background-color: #fff,
     border-color: _light($_color-gray),
     border-size: 1px,
-    triangle-size: 10px,
   ));
 
   border-radius: $_border-radius;
-  @include _padding(.75);
 }
 
 /*
@@ -72,11 +68,9 @@ category:
     background-color: #fff,
     border-color: _light($_color-gray),
     border-size: 1px,
-    triangle-size: 10px,
   ));
 
   border-radius: $_border-radius;
-  @include _padding(.75);
 }
 
 /*
@@ -99,9 +93,7 @@ category:
     background-color: #fff,
     border-color: _light($_color-gray),
     border-size: 1px,
-    triangle-size: 10px,
   ));
 
   border-radius: $_border-radius;
-  @include _padding(.75);
 }
