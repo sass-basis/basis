@@ -21,6 +21,14 @@ A lightweight responsive Sass/CSS framework based on flexible box.
 
 ## Get started
 
+### Using Basis Project (Starter Kit)
+```
+$ git clone https://github.com/inc2734/starter-kit.git
+$ cd starter-kit
+$ yarn install
+$ yarn start
+```
+
 ### Using Yarn
 
 Installs Basis
@@ -68,6 +76,9 @@ Loads JavaScripts
   crossorigin="anonymous"></script>
 <script src="node_modules/sass-basis/dist/js/basis.min.js"></script>
 ```
+
+### Using CDN (jsDelivr)
+https://www.jsdelivr.com/projects/sass-basis
 
 ### Sample for using classes
 ```
