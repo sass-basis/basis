@@ -1,5 +1,8 @@
 #Changelog
 
+## March 3, 2017 v6.3.2
+* Update README
+
 ## March 3, 2017 v6.3.1
 * Fix typo
 
