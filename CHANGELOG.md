@@ -1,6 +1,10 @@
 #Changelog
 
-## March 3, 2017 v6.3.2
+## March 30, 2017 v6.4.0
+* Added `_pagination()`
+* Added `._c-pagination`
+
+## March 29, 2017 v6.3.2
 * Update README
 
 ## March 3, 2017 v6.3.1
