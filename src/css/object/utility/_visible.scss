@@ -34,7 +34,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-sm-inline-block {
+.#{$_prefix}u-visible-sm-inline-block {
   @include _media-sm-only() {
     display: inline-block !important;
   }
@@ -55,7 +55,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-sm-block {
+.#{$_prefix}u-visible-sm-block {
   @include _media-sm-only() {
     display: block !important;
   }
@@ -76,7 +76,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-sm-flex {
+.#{$_prefix}u-visible-sm-flex {
   @include _media-sm-only() {
     display: flex !important;
   }
@@ -97,7 +97,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-md-inline {
+.#{$_prefix}u-visible-md-inline {
   @include _media-md-only() {
     display: inline !important;
   }
@@ -118,7 +118,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-md-inline-block {
+.#{$_prefix}u-visible-md-inline-block {
   @include _media-md-only() {
     display: inline-block !important;
   }
@@ -139,7 +139,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-md-block {
+.#{$_prefix}u-visible-md-block {
   @include _media-md-only() {
     display: block !important;
   }
@@ -160,7 +160,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-md-flex {
+.#{$_prefix}u-visible-md-flex {
   @include _media-md-only() {
     display: flex !important;
   }
@@ -181,7 +181,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-lg-inline {
+.#{$_prefix}u-visible-lg-inline {
   @include _media-lg-only() {
     display: inline !important;
   }
@@ -202,7 +202,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-lg-inline-block {
+.#{$_prefix}u-visible-lg-inline-block {
   @include _media-lg-only() {
     display: inline-block !important;
   }
@@ -223,7 +223,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-lg-block {
+.#{$_prefix}u-visible-lg-block {
   @include _media-lg-only() {
     display: block !important;
   }
@@ -244,7 +244,7 @@ category:
 ```
 */
 
-.#{$_prefix}u-lg-flex {
+.#{$_prefix}u-visible-lg-flex {
   @include _media-lg-only() {
     display: flex !important;
   }
