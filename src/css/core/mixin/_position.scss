@@ -11,23 +11,23 @@
 @mixin _position($position, $top: null, $right: null, $bottom: null, $left: null, $z-index: null) {
   position: $position;
 
-  @if (_is-length($top)) {
+  @if (_is-number($top) or _is-length($top)) {
     top: $top;
   }
 
-  @if (_is-length($right)) {
+  @if (_is-length($right) or _is-length($right)) {
     right: $right;
   }
 
-  @if (_is-length($bottom)) {
+  @if (_is-length($bottom) or _is-length($bottom)) {
     bottom: $bottom;
   }
 
-  @if (_is-length($left)) {
+  @if (_is-length($left) or _is-length($left)) {
     left: $left;
   }
 
-  @if (_is-int($z-index)) {
+  @if (_is-int($z-index) or _is-length($z-index)) {
     z-index: _strip-unit($z-index);
   }
 }

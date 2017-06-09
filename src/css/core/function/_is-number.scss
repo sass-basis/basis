@@ -1,0 +1,13 @@
+//
+// Checks for a valid number
+//
+// @param   mixed  $value
+// @return  bool
+//
+@function _is-number($value) {
+  @if ('number' == type-of($value) and '' == unit($value)) {
+    @return true;
+  }
+
+  @return false;
+}

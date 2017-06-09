@@ -5,7 +5,7 @@
 // @return  bool
 //
 @function _is-int($value) {
-  @if ('number' == type-of($value) and '' == unit($value)) {
+  @if ('number' == type-of($value) and '' == unit($value) and $value == ceil($value) and $value == abs($value)) {
     @return true;
   }
 

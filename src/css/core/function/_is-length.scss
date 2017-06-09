@@ -5,8 +5,16 @@
 // @return  bool
 //
 @function _is-length($value) {
-  @if ('number' == type-of($value) and ('' != unit($value) or 0 == $value)) {
-    @return true;
+  @if ('number' == type-of($value)) {
+    @if ('' != unit($value) or 0 == $value) {
+      @return true;
+    }
+  }
+
+  @if ('string' == type-of($value)) {
+    @if (1 == str-index($value, 'calc')) {
+      @return true;
+    }
   }
 
   @return false;

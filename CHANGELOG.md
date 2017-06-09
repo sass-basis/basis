@@ -3,7 +3,10 @@
 ## June 9, 2017 v6.5.0
 * Added `_content()`
 * Added `._c-content`
+* Added `_is-number()`
 * Fix `._c-select` bug
+* Fix `_is-int()` bug
+* `_space()` is able to use `calc`
 
 ## March 30, 2017 v6.4.0
 * Added `_pagination()`

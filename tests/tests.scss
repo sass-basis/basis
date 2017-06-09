@@ -46,15 +46,31 @@
   @include _assert-equals(true, _is-length(1%));
   @include _assert-equals(false, _is-length('test'));
   @include _assert-equals(false, _is-length('1px'));
+  @include _assert-equals(true, _is-length(calc(50% - 10px)));
 }
 
 @include _test('[function] _is-int()') {
   @include _assert-equals(true, _is-int(0));
   @include _assert-equals(true, _is-int(1));
+  @include _assert-equals(false, _is-int(0.5));
+  @include _assert-equals(false, _is-int(-1));
   @include _assert-equals(false, _is-int(1px));
   @include _assert-equals(false, _is-int(1%));
   @include _assert-equals(false, _is-int('test'));
   @include _assert-equals(false, _is-int('1'));
+  @include _assert-equals(false, _is-int(calc(50% - 10px)));
+}
+
+@include _test('[function] _is-number()') {
+  @include _assert-equals(true, _is-number(0));
+  @include _assert-equals(true, _is-number(1));
+  @include _assert-equals(true, _is-number(0.5));
+  @include _assert-equals(true, _is-number(-1));
+  @include _assert-equals(false, _is-number(1px));
+  @include _assert-equals(false, _is-number(1%));
+  @include _assert-equals(false, _is-number('test'));
+  @include _assert-equals(false, _is-number('1'));
+  @include _assert-equals(false, _is-number(calc(50% - 10px)));
 }
 
 @include _test('[function] _space()') {
@@ -63,6 +79,7 @@
   @include _assert-equals(4.5rem, _space(3));
   @include _assert-equals(0, _space(0));
   @include _assert-equals(-1.5rem, _space(-1));
+  @include _assert-equals(calc(50% - 10px), _space(calc(50% - 10px)));
 }
 
 @include _test('[function] _is-null()') {

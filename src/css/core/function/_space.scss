@@ -10,7 +10,7 @@
   @if (0 == $coefficient) {
     @return 0;
   }
-  @if ('' != unit($coefficient)) {
+  @if (_is-length($coefficient)) {
     @return $coefficient;
   }
   $margin    : ($_base-line-height * $coefficient);
