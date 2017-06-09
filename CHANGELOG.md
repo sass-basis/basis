@@ -1,5 +1,10 @@
 #Changelog
 
+## June 9, 2017 v6.5.0
+* Added `_content()`
+* Added `._c-content`
+* Fix `._c-select` bug
+
 ## March 30, 2017 v6.4.0
 * Added `_pagination()`
 * Added `._c-pagination`
