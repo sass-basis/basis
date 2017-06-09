@@ -5,6 +5,7 @@
 * Added `._c-content`
 * Added `_is-number()`
 * Added `._u-hidden-md-up`
+* Added `._u-visible-md-up-*`
 * Fix `._c-select` bug
 * Fix `_is-int()` bug
 * Fix `._c-btn--block` bug

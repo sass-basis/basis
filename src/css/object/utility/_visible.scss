@@ -105,6 +105,27 @@ category:
 
 /*
 ---
+name: ._u-visible-md-up-inline
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-md-up-inline">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-visible-md-up-inline {
+  @include _media-min(md) {
+    display: inline !important;
+  }
+}
+
+/*
+---
 name: ._u-visible-md-inline-block
 category:
   - object/utility
@@ -120,6 +141,27 @@ category:
 
 .#{$_prefix}u-visible-md-inline-block {
   @include _media-md-only() {
+    display: inline-block !important;
+  }
+}
+
+/*
+---
+name: ._u-visible-md-up-inline-block
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-md-up-inline-block">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-visible-md-up-inline-block {
+  @include _media-min(md) {
     display: inline-block !important;
   }
 }
@@ -147,6 +189,27 @@ category:
 
 /*
 ---
+name: ._u-visible-md-up-block
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-md-up-block">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-visible-md-up-block {
+  @include _media-min(md) {
+    display: block !important;
+  }
+}
+
+/*
+---
 name: ._u-visible-md-flex
 category:
   - object/utility
@@ -162,6 +225,27 @@ category:
 
 .#{$_prefix}u-visible-md-flex {
   @include _media-md-only() {
+    display: flex !important;
+  }
+}
+
+/*
+---
+name: ._u-visible-md-up-flex
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="_u-visible-md-up-flex">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-visible-md-up-flex {
+  @include _media-min(md) {
     display: flex !important;
   }
 }
