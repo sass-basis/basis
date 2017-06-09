@@ -42,6 +42,27 @@ category:
 
 /*
 ---
+name: ._u-hidden-md-up
+category:
+  - object/utility
+  - object/utility/hidden
+---
+
+```html
+<div class="_u-hidden-md-up">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-hidden-md-up {
+  @include _media-min(md) {
+    display: none !important;
+  }
+}
+
+/*
+---
 name: ._u-hidden-lg
 category:
   - object/utility
