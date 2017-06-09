@@ -1,0 +1,65 @@
+//
+// Content
+//
+// @param  int  $coefficient
+//
+// .c-content {
+//   @include _content();
+// }
+//
+// <div class="c-content">
+//   ...
+// </div>
+//
+
+@mixin _content($coefficient: 1) {
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > *:not(h1, h2, h3, h4, h5, h6) + *:not(h1, h2, h3, h4, h5, h6) {
+    @include _margin-top($_base-margin-bottom * $coefficient);
+  }
+
+  > h1 {
+    @include _margin-top($_h1-margin-top * $coefficient);
+    @include _margin-bottom($_h1-margin-bottom * $coefficient);
+  }
+
+  > h2 {
+    @include _margin-top($_h2-margin-top * $coefficient);
+    @include _margin-bottom($_h2-margin-bottom * $coefficient);
+  }
+
+  > h3 {
+    @include _margin-top($_h3-margin-top * $coefficient);
+    @include _margin-bottom($_h3-margin-bottom * $coefficient);
+  }
+
+  > h4 {
+    @include _margin-top($_h4-margin-top * $coefficient);
+    @include _margin-bottom($_h4-margin-bottom * $coefficient);
+  }
+
+  > h5 {
+    @include _margin-top($_h5-margin-top * $coefficient);
+    @include _margin-bottom($_h5-margin-bottom * $coefficient);
+  }
+
+  > h6 {
+    @include _margin-top($_h6-margin-top * $coefficient);
+    @include _margin-bottom($_h6-margin-bottom * $coefficient);
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > ol ol,
+  > ol ul,
+  > ul ol,
+  > ul ul {
+    margin-bottom: 0;
+  }
+}
