@@ -9,10 +9,10 @@ export default class BasisSelect {
       const selectWrapper = $(e);
       const select = selectWrapper.find('select');
       const label  = selectWrapper.find('[data-c="select__label"]');
-      label.text(select.children('option:selected').val());
+      label.text(select.children('option:selected').text());
 
       select.on('change', (event) => {
-        label.text(select.val());
+        label.text($(select[0].selectedOptions).text());
       });
 
       select.on('focusin', (event) => {
