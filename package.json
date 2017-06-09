@@ -4,7 +4,8 @@
   "main": "src/css/basis.scss",
   "author": "inc2734",
   "contributors": [
-    "Toro_Unit"
+    "Toro_Unit",
+    "qtamaki"
   ],
   "keywords": [
     "css",
