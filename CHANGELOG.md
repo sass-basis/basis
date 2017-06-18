@@ -2,6 +2,8 @@
 
 ## June 18, 2017 v7.0.0
 * Change default prefix. `_` to blank.
+* Remove class `.u-animate-size` and `.u-animate-opacity`
+* Remove mixin `_transition-all()`, `_transition-size()` and `_transition-opacity()`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`

@@ -18,51 +18,7 @@ category:
 */
 
 .#{$_prefix}u-animate {
-  @include _transition-all();
-}
-
-/*
----
-name: .u-animate-size
-category:
-  - object/utility
-  - object/utility/animate
----
-
-```html
-<style>
-.u-animate-size:hover {
-  width: 100% !important;
-}
-</style>
-<div class="u-animate-size" style="background-color: #333; width: 100px; height: 20px;"></div>
-```
-*/
-
-.#{$_prefix}u-animate-size {
-  @include _transition-size();
-}
-
-/*
----
-name: .u-animate-opacity
-category:
-  - object/utility
-  - object/utility/animate
----
-
-```html
-<style>
-.u-animate-opacity:hover {
-  opacity: .5 !important;
-}
-</style>
-<div class="u-animate-opacity" style="background-color: #333; width: 100px; height: 20px;"></div>
-```
-*/
-
-.#{$_prefix}u-animate-opacity {
-  @include _transition-opacity();
+  @include _transition(all);
 }
 
 /*
