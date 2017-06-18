@@ -50,12 +50,3 @@ $_sizes: (
   'md': (_px2rem(640px) / _px2rem($_base-font-size-px) * 1em),
   'lg': (_px2rem(1024px) / _px2rem($_base-font-size-px) * 1em)
 ) !default;
-
-//
-// Array of breakpoints
-// @type  array
-//
-$_sizes-max: (
-  'sm': (map-get($_sizes, 'md') - (1em / _strip-unit($_base-font-size-px))),
-  'md': (map-get($_sizes, 'lg') - (1em / _strip-unit($_base-font-size-px)))
-) !default;

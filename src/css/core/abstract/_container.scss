@@ -35,7 +35,7 @@ $_container-max-width: 1200px !default;
   margin-right: auto;
   margin-left: auto;
 
-  @include _media-lg-only() {
+  @include _media-only(lg) {
     max-width: _px2rem($_container-max-width);
   }
 }

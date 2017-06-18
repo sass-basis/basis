@@ -4,6 +4,12 @@
 * Change default prefix. `_` to blank.
 * Remove class `.u-animate-size` and `.u-animate-opacity`
 * Remove mixin `_transition-all()`, `_transition-size()` and `_transition-opacity()`
+* Remove mixin `_media-{size}-only()`
+* Add mixin `_media-only($size)`
+* Remove variable `$_sizes-max`
+* Add function `_min($size)`, `_max($size)`, `_prev-size-key($size)` and `_next-size-key($size)`
+* Media query mixin use `calc()`
+* Remove function `_has-search()`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`

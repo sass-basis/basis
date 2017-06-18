@@ -1,20 +1,18 @@
 //
 // min-width media query
 //
-// @param  size|length  $min  width
+// @param  size|length  $size  width
 //
-@mixin _media-min($min) {
-  $size: _hash-search($min, $_sizes);
-  @if ($min == 'sm') {
-    @content;
-  } @else if (null != $size) {
-    @media (min-width: map-get($_sizes, $min)) {
+@mixin _media-min($size) {
+  $prev_size: _prev-size-key($size);
+  @if (false != $prev_size) {
+    @media (min-width: _min($size)) {
       @content;
     }
-  } @else if ($min == map-get($_sizes, 'sm')) {
+  } @else if (0 == $size) {
     @content;
-  } @else {
-    @media (min-width: $min) {
+  } @else if ('number' == type-of($size)) {
+    @media (min-width: _min($size)) {
       @content;
     }
   }
@@ -23,44 +21,46 @@
 //
 // max-width media query
 //
+// @param  size|length  $size  width
+//
+@mixin _media-max($size) {
+  $next_size: _next-size-key($size);
+  @if (false != $next_size) {
+    @media (max-width: _max($size)) {
+      @content;
+    }
+  } @else if (map-get($_sizes, $size)) {
+    @content;
+  } @else if ('number' == type-of($size)) {
+    @media (max-width: _max($size)) {
+      @content;
+    }
+  }
+}
+
+//
+// Specific size only media query
+//
 // @param  size|length  $max  width
 //
-@mixin _media-max($max) {
-  $size: _hash-search($max, $_sizes);
-  @if (null != $size) {
-    @media (max-width: map-get($_sizes-max, $max)) {
+@mixin _media-only($size) {
+  $prev_size: _prev-size-key($size);
+  $next_size: _next-size-key($size);
+  @if (false == $prev_size and false == $next_size) {
+    @media (min-width: _min($size)) and (max-size: _max($size)) {
+      @content;
+    }
+  } @else if (false == $prev_size) {
+    @include _media-max($size) {
+      @content;
+    }
+  } @else if (false == $next_size) {
+    @include _media-min($size) {
       @content;
     }
   } @else {
-    @media (max-width: $max) {
+    @media (min-width: _min($size)) and (max-size: _max($size)) {
       @content;
     }
-  }
-}
-
-//
-// Media query for smartphone size
-//
-@mixin _media-sm-only() {
-  @include _media-max(map-get($_sizes-max, 'sm')) {
-    @content;
-  }
-}
-
-//
-// Media query for tablet size
-//
-@mixin _media-md-only() {
-  @media (min-width: map-get($_sizes, 'md')) and (max-width: map-get($_sizes-max, 'md')) {
-    @content;
-  }
-}
-
-//
-// Media query for pc size
-//
-@mixin _media-lg-only() {
-  @include _media-min(map-get($_sizes, 'lg')) {
-    @content;
   }
 }

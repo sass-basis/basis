@@ -14,7 +14,7 @@ category:
 */
 
 .#{$_prefix}u-visible-sm-inline {
-  @include _media-sm-only() {
+  @include _media-only(sm) {
     display: inline !important;
   }
 }
@@ -35,7 +35,7 @@ category:
 */
 
 .#{$_prefix}u-visible-sm-inline-block {
-  @include _media-sm-only() {
+  @include _media-only(sm) {
     display: inline-block !important;
   }
 }
@@ -56,7 +56,7 @@ category:
 */
 
 .#{$_prefix}u-visible-sm-block {
-  @include _media-sm-only() {
+  @include _media-only(sm) {
     display: block !important;
   }
 }
@@ -77,7 +77,7 @@ category:
 */
 
 .#{$_prefix}u-visible-sm-flex {
-  @include _media-sm-only() {
+  @include _media-only(sm) {
     display: flex !important;
   }
 }
@@ -98,7 +98,7 @@ category:
 */
 
 .#{$_prefix}u-visible-md-inline {
-  @include _media-md-only() {
+  @include _media-only(md) {
     display: inline !important;
   }
 }
@@ -140,7 +140,7 @@ category:
 */
 
 .#{$_prefix}u-visible-md-inline-block {
-  @include _media-md-only() {
+  @include _media-only(md) {
     display: inline-block !important;
   }
 }
@@ -182,7 +182,7 @@ category:
 */
 
 .#{$_prefix}u-visible-md-block {
-  @include _media-md-only() {
+  @include _media-only(md) {
     display: block !important;
   }
 }
@@ -224,7 +224,7 @@ category:
 */
 
 .#{$_prefix}u-visible-md-flex {
-  @include _media-md-only() {
+  @include _media-only(md) {
     display: flex !important;
   }
 }
@@ -266,7 +266,7 @@ category:
 */
 
 .#{$_prefix}u-visible-lg-inline {
-  @include _media-lg-only() {
+  @include _media-only(lg) {
     display: inline !important;
   }
 }
@@ -287,7 +287,7 @@ category:
 */
 
 .#{$_prefix}u-visible-lg-inline-block {
-  @include _media-lg-only() {
+  @include _media-only(lg) {
     display: inline-block !important;
   }
 }
@@ -308,7 +308,7 @@ category:
 */
 
 .#{$_prefix}u-visible-lg-block {
-  @include _media-lg-only() {
+  @include _media-only(lg) {
     display: block !important;
   }
 }
@@ -329,7 +329,7 @@ category:
 */
 
 .#{$_prefix}u-visible-lg-flex {
-  @include _media-lg-only() {
+  @include _media-only(lg) {
     display: flex !important;
   }
 }

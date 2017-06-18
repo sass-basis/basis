@@ -14,7 +14,7 @@ category:
 */
 
 .#{$_prefix}u-hidden-sm {
-  @include _media-sm-only() {
+  @include _media-only(sm) {
     display: none !important;
   }
 }
@@ -35,7 +35,7 @@ category:
 */
 
 .#{$_prefix}u-hidden-md {
-  @include _media-md-only() {
+  @include _media-only(md) {
     display: none !important;
   }
 }
@@ -77,7 +77,7 @@ category:
 */
 
 .#{$_prefix}u-hidden-lg {
-  @include _media-lg-only() {
+  @include _media-only(lg) {
     display: none !important;
   }
 }

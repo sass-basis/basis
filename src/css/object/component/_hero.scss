@@ -37,7 +37,7 @@ category:
   }
 
   &--fixed {
-    @include _media-lg-only() {
+    @include _media-only(lg) {
       @include _background-image-fixed();
     }
   }

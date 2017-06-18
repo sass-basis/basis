@@ -93,3 +93,35 @@
 @include _test('[function] _vertical-rhythm()') {
   @include _assert-equals(24, _vertical-rhythm(16px));
 }
+
+@include _test('[function] _min()') {
+  @include _assert-equals(map-get($_sizes, sm), _min(sm));
+  @include _assert-equals(map-get($_sizes, md), _min(md));
+  @include _assert-equals(map-get($_sizes, lg), _min(lg));
+  @include _assert-equals(false, _min(dummy));
+  @include _assert-equals(0, _min(0));
+  @include _assert-equals(10px, _min(10px));
+  @include _assert-equals(10%, _min(10%));
+}
+
+@include _test('[function] _max()') {
+  @include _assert-equals(calc(#{map-get($_sizes, md)} - 1px), _max(sm));
+  @include _assert-equals(calc(#{map-get($_sizes, lg)} - 1px), _max(md));
+  @include _assert-equals(false, _max(lg));
+  @include _assert-equals(false, _max(dummy));
+  @include _assert-equals(0, _max(0));
+  @include _assert-equals(10px, _max(10px));
+  @include _assert-equals(10%, _max(10%));
+}
+
+@include _test('[function] _prev-size-key()') {
+  @include _assert-equals(false, _prev-size-key(sm));
+  @include _assert-equals(sm, _prev-size-key(md));
+  @include _assert-equals(md, _prev-size-key(lg));
+}
+
+@include _test('[function] _next-size-key()') {
+  @include _assert-equals(md, _next-size-key(sm));
+  @include _assert-equals(lg, _next-size-key(md));
+  @include _assert-equals(false, _next-size-key(lg));
+}
