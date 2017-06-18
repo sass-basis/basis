@@ -10,6 +10,8 @@
 * Add function `_min($size)`, `_max($size)`, `_prev-size-key($size)` and `_next-size-key($size)`
 * Media query mixin use `calc()`
 * Remove function `_has-search()`
+* Remove class `.c-row__col--shrink`
+* `.c-row` has `overflow: hidden;`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`

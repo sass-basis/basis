@@ -227,6 +227,45 @@ category:
   </div>
 </div>
 ```
+```html
+<div class="c-row c-row--margin">
+  <div class="c-row__col c-row__col--auto">
+    1
+  </div>
+  <div class="c-row__col c-row__col--auto">
+    22
+  </div>
+  <div class="c-row__col c-row__col--auto">
+    333
+  </div>
+</div>
+```
+```html
+<div class="c-row c-row--margin">
+  <div class="c-row__col c-row__col--justify">
+    1
+  </div>
+  <div class="c-row__col c-row__col--justify">
+    22
+  </div>
+  <div class="c-row__col c-row__col--justify">
+    333
+  </div>
+</div>
+```
+```html
+<div class="c-row c-row--margin">
+  <div class="c-row__col c-row__col--fit">
+    1
+  </div>
+  <div class="c-row__col c-row__col--fit">
+    22
+  </div>
+  <div class="c-row__col c-row__col--fit">
+    333
+  </div>
+</div>
+```
 */
 
 .#{$_prefix}c-row {
@@ -364,10 +403,6 @@ category:
 
       &#{$prefix}-offset-0 {
         @include _row__col--offset(0);
-      }
-
-      &#{$prefix}-shrink {
-        flex-grow: 0;
       }
 
       &#{$prefix}-fit {

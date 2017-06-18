@@ -24,6 +24,7 @@
 @mixin _row() {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 //
@@ -33,6 +34,8 @@
 // @param  int  $max-columns  denominator column size
 //
 @mixin _row__col($columns: null, $max-columns: null) {
+  max-width: 100%;
+
   @if (not _is-null($columns) and not _is-null($max-columns)) {
     $width: percentage($columns / $max-columns);
     @include _row__col--width($width);
@@ -48,11 +51,9 @@
 //
 @mixin _row__col--width($width) {
   @if ('auto' == $width) {
-    flex: auto;
-    max-width: 100%;
+    flex: 1 1 auto;
   } @else if (1 == $width) {
-    flex: 1;
-    max-width: 100%;
+    flex: 1 1 0;
   } @else {
     flex: 0 1 $width;
     max-width: $width;
