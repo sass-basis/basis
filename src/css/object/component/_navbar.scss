@@ -7,43 +7,43 @@ category:
 ---
 
 ```html
-<ul class="_c-navbar">
-  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+<ul class="c-navbar">
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <ul class="_c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
-      <li class="_c-navbar__subitem" data-c="navbar__subitem" aria-haspopup="true">
+    <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" data-c="navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <ul class="_c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
-          <li class="_c-navbar__subitem" data-c="navbar__subitem"><a href="#">submenu</a></li>
+        <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem" data-c="navbar__subitem"><a href="#">submenu</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
   </li>
-  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
   </li>
 </ul>
 ```
 ```html
-<ul class="_c-navbar _c-navbar--auto">
-  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+<ul class="c-navbar c-navbar--auto">
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <ul class="_c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
-      <li class="_c-navbar__subitem" data-c="navbar__subitem" aria-haspopup="true">
+    <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" data-c="navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <ul class="_c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
-          <li class="_c-navbar__subitem" data-c="navbar__subitem"><a href="#">submenu</a></li>
+        <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem" data-c="navbar__subitem"><a href="#">submenu</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
   </li>
-  <li class="_c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
   </li>
 </ul>

@@ -1,5 +1,5 @@
-[class^="#{$_prefix}ic-"],
-[class*=" #{$_prefix}ic-"] {
+[class^="#{$_prefix}c-ic-"],
+[class*=" #{$_prefix}c-ic-"] {
   @include _ic();
 }
 
@@ -12,11 +12,11 @@ category:
 ---
 
 ```html
-<span class="_ic-angle-right" aria-hidden="true"></span>
+<span class="c-ic-angle-right" aria-hidden="true"></span>
 ```
 */
 
-.#{$_prefix}ic-angle-right::before {
+.#{$_prefix}c-ic-angle-right::before {
   content: "\e900";
 }
 
@@ -29,11 +29,11 @@ category:
 ---
 
 ```html
-<span class="_ic-check" aria-hidden="true"></span>
+<span class="c-ic-check" aria-hidden="true"></span>
 ```
 */
 
-.#{$_prefix}ic-check::before {
+.#{$_prefix}c-ic-check::before {
   content: "\e901";
 }
 
@@ -46,10 +46,10 @@ category:
 ---
 
 ```html
-<span class="_ic-angle-down" aria-hidden="true"></span>
+<span class="c-ic-angle-down" aria-hidden="true"></span>
 ```
 */
 
-.#{$_prefix}ic-angle-down::before {
+.#{$_prefix}c-ic-angle-down::before {
   content: "\e902";
 }

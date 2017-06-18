@@ -82,7 +82,7 @@ https://www.jsdelivr.com/projects/sass-basis
 
 ### Sample for using classes
 ```
-<a class="_c-btn _c-btn--block">Btn</a>
+<a class="c-btn c-btn--block">Btn</a>
 ```
 
 ### Sample for using abstracts

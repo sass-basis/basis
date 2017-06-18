@@ -1,6 +1,6 @@
 /*
 ---
-name: ._u-animate
+name: .u-animate
 category:
   - object/utility
   - object/utility/animate
@@ -8,12 +8,12 @@ category:
 
 ```html
 <style>
-._u-animate:hover {
+.u-animate:hover {
   width: 100% !important;
   opacity: .5 !important;
 }
 </style>
-<div class="_u-animate" style="background-color: #333; width: 100px; height: 20px;"></div>
+<div class="u-animate" style="background-color: #333; width: 100px; height: 20px;"></div>
 ```
 */
 
@@ -23,7 +23,7 @@ category:
 
 /*
 ---
-name: ._u-animate-size
+name: .u-animate-size
 category:
   - object/utility
   - object/utility/animate
@@ -31,11 +31,11 @@ category:
 
 ```html
 <style>
-._u-animate-size:hover {
+.u-animate-size:hover {
   width: 100% !important;
 }
 </style>
-<div class="_u-animate-size" style="background-color: #333; width: 100px; height: 20px;"></div>
+<div class="u-animate-size" style="background-color: #333; width: 100px; height: 20px;"></div>
 ```
 */
 
@@ -45,7 +45,7 @@ category:
 
 /*
 ---
-name: ._u-animate-opacity
+name: .u-animate-opacity
 category:
   - object/utility
   - object/utility/animate
@@ -53,11 +53,11 @@ category:
 
 ```html
 <style>
-._u-animate-opacity:hover {
+.u-animate-opacity:hover {
   opacity: .5 !important;
 }
 </style>
-<div class="_u-animate-opacity" style="background-color: #333; width: 100px; height: 20px;"></div>
+<div class="u-animate-opacity" style="background-color: #333; width: 100px; height: 20px;"></div>
 ```
 */
 
@@ -67,14 +67,14 @@ category:
 
 /*
 ---
-name: ._u-animate-shake-vertical
+name: .u-animate-shake-vertical
 category:
   - object/utility
   - object/utility/animate
 ---
 
 ```html
-<div class="_u-animate-shake-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
+<div class="u-animate-shake-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
 
@@ -86,14 +86,14 @@ category:
 
 /*
 ---
-name: ._u-animate-vibrate-vertical
+name: .u-animate-vibrate-vertical
 category:
   - object/utility
   - object/utility/animate
 ---
 
 ```html
-<div class="_u-animate-vibrate-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
+<div class="u-animate-vibrate-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
 
@@ -105,14 +105,14 @@ category:
 
 /*
 ---
-name: ._u-animate-shake-horizontal
+name: .u-animate-shake-horizontal
 category:
   - object/utility
   - object/utility/animate
 ---
 
 ```html
-<div class="_u-animate-shake-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
+<div class="u-animate-shake-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
 
@@ -124,14 +124,14 @@ category:
 
 /*
 ---
-name: ._u-animate-vibrate-horizontal
+name: .u-animate-vibrate-horizontal
 category:
   - object/utility
   - object/utility/animate
 ---
 
 ```html
-<div class="_u-animate-vibrate-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
+<div class="u-animate-vibrate-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
 
@@ -143,14 +143,14 @@ category:
 
 /*
 ---
-name: ._u-animate-shake-scale
+name: .u-animate-shake-scale
 category:
   - object/utility
   - object/utility/animate
 ---
 
 ```html
-<div class="_u-animate-shake-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
+<div class="u-animate-shake-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
 
@@ -162,14 +162,14 @@ category:
 
 /*
 ---
-name: ._u-animate-vibrate-scale
+name: .u-animate-vibrate-scale
 category:
   - object/utility
   - object/utility/animate
 ---
 
 ```html
-<div class="_u-animate-vibrate-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
+<div class="u-animate-vibrate-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
 
@@ -181,14 +181,14 @@ category:
 
 /*
 ---
-name: ._u-animate-extend-underline
+name: .u-animate-extend-underline
 category:
   - object/utility
   - object/utility/animate
 ---
 
 ```html
-<span class="_u-animate-extend-underline">menu</span>
+<span class="u-animate-extend-underline">menu</span>
 ```
 */
 

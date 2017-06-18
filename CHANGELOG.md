@@ -1,5 +1,8 @@
 #Changelog
 
+## June 18, 2017 v7.0.0
+* Change default prefix. `_` to blank.
+
 ## June 9, 2017 v6.5.0
 * Added `_content()`
 * Added `._c-content`
