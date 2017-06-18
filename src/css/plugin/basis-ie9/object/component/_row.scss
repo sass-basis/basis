@@ -162,10 +162,6 @@
         // Depending on the base style.
       }
 
-      &#{$prefix}-shrink {
-        // Not supported.
-      }
-
       &#{$prefix}-fit {
         display: inline-block;
         width: auto;
