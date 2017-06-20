@@ -18,12 +18,7 @@ category:
 */
 
 .#{$_prefix}c-btn {
-  @include _btn((
-    background-color: #fff,
-    border: 1px solid _light($_color-gray),
-  ));
-
-  color: $_color-text;
+  @include _btn();
 
   &--block {
     display: block;

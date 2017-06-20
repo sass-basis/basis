@@ -66,9 +66,7 @@
   }
 
   &__btn {
-    @include _btn((
-      background-color: #fff,
-    ));
+    @include _btn();
     @include _form-control-base-border();
     @include _form-control-base-padding();
     color: $_color-text;
