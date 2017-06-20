@@ -32,11 +32,11 @@
   &__item {
     position: relative;
     display: flex;
-    flex: 1;
+    flex: 1 1 0%;
 
     > a {
       display: flex;
-      width: 100%;
+      flex: 1 1 0%;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -44,7 +44,7 @@
     }
 
     > [data-c="navbar__submenu"] {
-      @include _position(absolute, 100%, null, null, 0);
+      @include _position(absolute, 100%, 0, null, 0);
     }
   }
 
@@ -63,7 +63,7 @@
 
   &__submenu {
     @include _list-unstyled();
-    min-width: 200px;
+    min-width: 220px;
     opacity: 0;
     visibility: hidden;
     @include _transition(opacity);

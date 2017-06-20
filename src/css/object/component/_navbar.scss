@@ -28,7 +28,28 @@ category:
 </ul>
 ```
 ```html
-<ul class="c-navbar c-navbar--auto">
+<ul class="c-navbar c-navbar--left">
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" data-c="navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem" data-c="navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+  </li>
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+  </li>
+</ul>
+```
+```html
+<ul class="c-navbar c-navbar--right">
   <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
     <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
@@ -52,10 +73,29 @@ category:
 
 .#{$_prefix}c-navbar {
   @include _navbar();
+  $root: #{&};
 
-  &--auto {
+  &--left {
     .#{$_prefix}c-navbar__item {
       flex: 0 1 auto;
+    }
+  }
+
+  &--right {
+    justify-content: flex-end;
+
+    #{$root}__item {
+      flex: 0 1 auto;
+
+      > [data-c="navbar__submenu"] {
+        @include _position(absolute, 100%, 0, null, auto);
+      }
+    }
+
+    #{$root}__subitem {
+      > [data-c="navbar__submenu"] {
+        @include _position(absolute, 0, 100%, null, auto);
+      }
     }
   }
 }

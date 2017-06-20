@@ -44,6 +44,7 @@
   @include _assert-equals(false, _is-length(1));
   @include _assert-equals(true, _is-length(1px));
   @include _assert-equals(true, _is-length(1%));
+  @include _assert-equals(true, _is-length(auto));
   @include _assert-equals(false, _is-length('test'));
   @include _assert-equals(false, _is-length('1px'));
   @include _assert-equals(true, _is-length(calc(50% - 10px)));

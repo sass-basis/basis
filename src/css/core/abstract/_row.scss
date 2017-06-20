@@ -53,7 +53,7 @@
   @if ('auto' == $width) {
     flex: 1 1 auto;
   } @else if (1 == $width) {
-    flex: 1 1 0;
+    flex: 1 1 0%;
   } @else {
     flex: 0 1 $width;
     max-width: $width;

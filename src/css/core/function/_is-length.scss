@@ -5,6 +5,10 @@
 // @return  bool
 //
 @function _is-length($value) {
+  @if ('auto' == $value) {
+    @return true;
+  }
+
   @if ('number' == type-of($value)) {
     @if ('' != unit($value) or 0 == $value) {
       @return true;

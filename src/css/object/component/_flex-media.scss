@@ -16,6 +16,16 @@ category:
   </div>
 </div>
 ```
+```html
+<div class="c-flex-media c-flex-media--reverse">
+  <div class="c-flex-media__figure">
+    <img src="/aigis_assets/images/dummy.jpg" style="width: 150px">
+  </div>
+  <div class="c-flex-media__body">
+    ...
+  </div>
+</div>
+```
 */
 
 .#{$_prefix}c-flex-media {
@@ -23,7 +33,7 @@ category:
   $root: #{&};
 
   &--reverse {
-    .#{$root}__figure {
+    #{$root}__figure {
       @include _media-min(md) {
         order: 1;
       }
