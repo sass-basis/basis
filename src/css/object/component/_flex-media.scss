@@ -20,19 +20,11 @@ category:
 
 .#{$_prefix}c-flex-media {
   @include _flex-media();
-
-  &__figure {
-    @include _margin(0, 0, .5);
-
-    @include _media-min(md) {
-      @include _margin(0, 1, 0, 0);
-    }
-  }
+  $root: #{&};
 
   &--reverse {
-    .#{$_prefix}c-flex-media__figure {
+    .#{$root}__figure {
       @include _media-min(md) {
-        @include _margin(0, 0, 0, 1);
         order: 1;
       }
     }
