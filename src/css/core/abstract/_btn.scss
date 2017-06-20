@@ -3,6 +3,9 @@
 //
 // .c-btn {
 //   @include _btn();
+//   @include _padding(.5, 1);
+//   background-color: #fff;
+//   color: $_color-text;
 // }
 //
 // <a class="c-btn" role="button">btn</a>

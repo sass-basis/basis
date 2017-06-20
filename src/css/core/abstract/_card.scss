@@ -1,13 +1,10 @@
 //
 // Card
 //
-// @param  hash  $params  properties for decoration
-//
 // .c-card {
-//   @include _card((
-//     background-color: null,
-//     padding: _space(.75),
-//   ));
+//   @include _card();
+//   background-color: #fff;
+//   @include _padding(.75);
 // }
 //
 // <div class="c-card">
@@ -20,26 +17,14 @@
 // </div>
 //
 
-@mixin _card($params: ()) {
-  $params: map-merge(
-    (
-      background-color: null,
-      padding: _space(.75),
-    ),
-    $params
-  );
-
-  $background-color: map-get($params, 'background-color');
-  $padding: map-get($params, 'padding');
-
+@mixin _card() {
   display: flex;
   flex-direction: column;
 
-  @if (not _is-null($background-color)) {
-    background-color: $background-color;
-  }
-
   &__figure {
+    position: relative;
+    @include _background-image-cover();
+
     > img {
       vertical-align: top;
       width: 100%;
@@ -48,9 +33,5 @@
 
   &__body {
     flex: 1 0 auto;
-
-    @if (not _is-null($padding)) {
-      padding: $padding;
-    }
   }
 }
