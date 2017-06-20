@@ -19,8 +19,4 @@ category:
 
 .#{$_prefix}c-input-group {
   @include _input-group();
-
-  &__addon {
-    background-color: _lighter($_color-gray);
-  }
 }
