@@ -5,10 +5,10 @@
 //
 // .c-drawer {
 //   @include _drawer((
-//     background-color: _light($_color-black),
 //     width: ($_base-line-height * 10),
 //     max-width: 80%,
 //   ));
+//    background-color: _light($_color-black);
 // }
 //
 // import BasisDrawer from 'node_modules/sass-basis/src/js/drawer.js';
@@ -41,14 +41,12 @@
 @mixin _drawer($params: ()) {
   $params: map-merge(
     (
-      background-color: _light($_color-black),
       width: ($_base-line-height * 10),
       max-width: 80%,
     ),
     $params
   );
 
-  $background-color: map-get($params, 'background-color');
   $width: map-get($params, 'width');
   $max-width: map-get($params, 'max-width');
 
@@ -59,7 +57,6 @@
     @include _transition(left);
     width: $width;
     max-width: $max-width;
-    background-color: $background-color;
     overflow-y: auto;
 
     &[aria-hidden="false"] {
@@ -74,6 +71,13 @@
     &[aria-hidden="false"] {
       height: auto;
       overflow: visible;
+    }
+  }
+
+  &__item, &__subitem {
+    > a {
+      display: block;
+      text-decoration: none;
     }
   }
 

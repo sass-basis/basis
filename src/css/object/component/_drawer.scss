@@ -45,17 +45,6 @@ category:
 
   &__item, &__subitem {
     position: relative;
-    color: #fff;
-
-    > a {
-      color: #fff;
-      text-decoration: none;
-      @include _transition(background-color);
-
-      @include _hover() {
-        color: #ccc;
-      }
-    }
   }
 
   &__item {
