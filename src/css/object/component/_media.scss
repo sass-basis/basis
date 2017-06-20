@@ -21,23 +21,12 @@ category:
 .#{$_prefix}c-media {
   @include _media();
 
-  &__figure {
-    @include _margin(0, 1, 0, 0);
-  }
-
-  &__body {
-    > .#{$_prefix}c-media {
-      @include _margin-top(1);
-    }
-  }
-
   &--middle {
     align-items: center;
   }
 
   &--reverse {
     .#{$_prefix}c-media__figure {
-      @include _margin(0, 0, 0, 1);
       order: 1;
     }
   }
