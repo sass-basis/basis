@@ -14,10 +14,5 @@ category:
 */
 
 .#{$_prefix}c-alert {
-  @include _alert((
-    background-color: #fff,
-    border: 1px solid _light($_color-gray),
-  ));
-
-  border-radius: $_border-radius;
+  @include _alert();
 }

@@ -1,14 +1,11 @@
 //
 // Alert
 //
-// @param  hash  $params  properties for decoration
-//
 // .c-alert {
-//   @include _alert((
-//     background-color: null,
-//     border: null,
-//     padding: _space(.75),
-//   ));
+//   @include _alert();
+//   @include _padding(1);
+//   background-color: #4b9ad8;
+//   color: #fff;
 // }
 //
 // <div class="c-alert" role="alert">
@@ -16,30 +13,6 @@
 // </div>
 //
 
-@mixin _alert($params: ()) {
-  $params: map-merge((
-      background-color: null,
-      border: null,
-      padding: _space(.75),
-    ),
-    $params
-  );
-
-  $background-color: map-get($params, 'background-color');
-  $border: map-get($params, 'border');
-  $padding: map-get($params, 'padding');
-
+@mixin _alert() {
   display: block;
-
-  @if (not _is-null($background-color)) {
-    background-color: $background-color;
-  }
-
-  @if (not _is-null($border)) {
-    border: $border;
-  }
-
-  @if (not _is-null($padding)) {
-    padding: $padding;
-  }
 }
