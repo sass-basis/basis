@@ -1,0 +1,28 @@
+//
+// Breadcrumbs
+//
+// .c-breadcrumbs {
+//   @include _breadcrumbs();
+// }
+//
+// <ol class="c-breadcrumbs">
+//   <li class="c-breadcrumbs__item"><a href="#">...</a></li>
+//   <li class="c-breadcrumbs__item">...</li>
+// </ol>
+//
+
+@mixin _breadcrumbs() {
+  @include _list-unstyled();
+
+  &__item {
+    display: inline;
+
+    &:nth-child(n + 2) {
+      &::before {
+        @include _margin(0, 5px);
+        @include _ic();
+        content: "\e900";
+      }
+    }
+  }
+}

@@ -18,6 +18,7 @@
 * Add class `.u-content`
 * Add abstract `_page-header()`
 * Add abstract `_section()`
+* Add abstract `_breadcrumbs()`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`
