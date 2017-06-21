@@ -14,6 +14,8 @@
 * `.c-row` has `overflow: hidden;`
 * Remove class `.c-navbar--auto`
 * Add class `.c-navbar--left` and `.c-navbar--right`
+* Remove class `.c-content`
+* Add class `.u-content`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`
