@@ -16,8 +16,5 @@ category:
 */
 
 .#{$_prefix}c-entries {
-  @include _list-unstyled();
-
-  &__item {
-  }
+  @include _entries();
 }

@@ -1,0 +1,17 @@
+//
+// Entries
+//
+// .c-entries {
+//   @include _entries();
+// }
+//
+// <ul class="c-entries">
+//   <li class="c-entries__item">
+//     ...
+//   </li>
+// </ul>
+//
+
+@mixin _entries() {
+  @include _list-unstyled();
+}

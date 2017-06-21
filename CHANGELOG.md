@@ -19,6 +19,7 @@
 * Add abstract `_page-header()`
 * Add abstract `_section()`
 * Add abstract `_breadcrumbs()`
+* Add abstract `_entries()`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`
