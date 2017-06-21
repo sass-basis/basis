@@ -17,9 +17,4 @@ category:
 
 .#{$_prefix}c-page-effect {
   @include _page-effect();
-
-  &__item {
-    @include _position(absolute, 50%, null, null, 50%);
-    transform: translate(-50%, -50%);
-  }
 }
