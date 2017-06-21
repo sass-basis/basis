@@ -34,7 +34,6 @@
   > select,
   &__label {
     @include _form-control-base-padding();
-    @include _padding-right(1.5);
   }
 
   > select {
@@ -44,9 +43,11 @@
     appearance: none;
     border: none;
     outline: 0;
+    @include _padding-right(1.5);
   }
 
   &__label {
     @include _position(absolute, 0, 0, 0, 0, 0);
+    padding-right: 0;
   }
 }
