@@ -1,0 +1,17 @@
+//
+// Page Header
+//
+// .c-page-header {
+//   @include _page-header();
+// }
+//
+// <div class="c-page-header">
+//   <h1 class="c-page-header__title">...</h1>
+// </div>
+//
+
+@mixin _page-header() {
+  &__title {
+    margin: 0;
+  }
+}

@@ -14,9 +14,5 @@ category:
 */
 
 .#{$_prefix}c-page-header {
-  @include _padding(2, 0);
-
-  &__title {
-    margin: 0;
-  }
+  @include _page-header();
 }
