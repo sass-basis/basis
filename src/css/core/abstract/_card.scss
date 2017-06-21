@@ -4,7 +4,10 @@
 // .c-card {
 //   @include _card();
 //   background-color: #fff;
-//   @include _padding(.75);
+//
+//   &__body, &__action {
+//     @include _padding(.75);
+//   }
 // }
 //
 // <div class="c-card">
@@ -14,12 +17,17 @@
 //   <div class="c-card__body">
 //     ...
 //   </div>
+//   <div class="c-card__action">
+//     ...
+//   </div>
 // </div>
 //
 
 @mixin _card() {
   display: flex;
   flex-direction: column;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .1),
+              0 1px 1px 0 rgba(0, 0, 0, .05);
 
   &__figure {
     position: relative;
@@ -33,5 +41,9 @@
 
   &__body {
     flex: 1 0 auto;
+  }
+
+  &__action {
+    border-top: 1px solid _lighter($_color-gray);
   }
 }
