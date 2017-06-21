@@ -19,12 +19,5 @@ category:
 */
 
 .#{$_prefix}c-entry {
-  &__header {
-  }
-
-  &__title {
-  }
-
-  &__content {
-  }
+  @include _entry();
 }

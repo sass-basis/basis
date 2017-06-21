@@ -20,6 +20,7 @@
 * Add abstract `_section()`
 * Add abstract `_breadcrumbs()`
 * Add abstract `_entries()`
+* Add abstract `_entry()`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`
