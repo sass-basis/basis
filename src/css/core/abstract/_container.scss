@@ -1,4 +1,10 @@
 //
+// Container side margin
+// @var  length
+//
+$_container-margin: $_base-line-height !default;
+
+//
 // Container (Fluid)
 //
 // .c-container-fluid {
@@ -11,6 +17,13 @@
 //
 
 @mixin _container-fluid() {
+  padding-right: ($_container-margin / 2);
+  padding-left: ($_container-margin / 2);
+
+  @include _media-min(md) {
+    padding-right: $_container-margin;
+    padding-left: $_container-margin;
+  }
 }
 
 //
@@ -32,6 +45,8 @@ $_container-max-width: 1200px !default;
 //
 
 @mixin _container() {
+  @include _container-fluid();
+
   margin-right: auto;
   margin-left: auto;
 
