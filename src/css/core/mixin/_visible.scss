@@ -1,0 +1,17 @@
+//
+// Visible helper
+//
+// This helper set "position" property.
+// We recomment to use this helper on elements with no position specified.
+//
+// .u-visible {
+//   @include _visible();
+// }
+//
+
+@mixin _visible() {
+  position: static !important;
+  clip: auto !important;
+  speak: normal !important;
+  visibility: visible !important;
+}

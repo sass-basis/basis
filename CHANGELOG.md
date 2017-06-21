@@ -22,6 +22,10 @@
 * Add abstract `_entries()`
 * Add abstract `_entry()`
 * Add abstract `_meta()`
+* Add mixin `_hidden()`
+* Add mixin `_visible()`
+* Remove classes `.u-visible-{size}-{display}`
+* Add classes `.u-visible-{size}`, `.u-visible` and `.u-hidden`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`

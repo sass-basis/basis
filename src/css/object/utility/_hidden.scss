@@ -1,5 +1,24 @@
 /*
 ---
+name: .u-hidden
+category:
+  - object/utility
+  - object/utility/hidden
+---
+
+```html
+<div class="u-hidden">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-hidden {
+  @include _hidden();
+}
+
+/*
+---
 name: .u-hidden-sm
 category:
   - object/utility
@@ -15,7 +34,7 @@ category:
 
 .#{$_prefix}u-hidden-sm {
   @include _media-only(sm) {
-    display: none !important;
+    @include _hidden();
   }
 }
 
@@ -57,7 +76,7 @@ category:
 
 .#{$_prefix}u-hidden-md-up {
   @include _media-min(md) {
-    display: none !important;
+    @include _hidden();
   }
 }
 
@@ -78,6 +97,6 @@ category:
 
 .#{$_prefix}u-hidden-lg {
   @include _media-only(lg) {
-    display: none !important;
+    @include _hidden();
   }
 }

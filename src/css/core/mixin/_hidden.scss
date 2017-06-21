@@ -1,0 +1,17 @@
+//
+// Hidden helper
+//
+// This helper set "position" property.
+// We recomment to use this helper on elements with no position specified.
+//
+// .u-hidden {
+//   @include _hidden();
+// }
+//
+
+@mixin _hidden() {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  speak: none !important;
+  visibility: hidden !important;
+}

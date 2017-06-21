@@ -1,335 +1,102 @@
 /*
 ---
-name: .u-visible-sm-inline
+name: .u-visible
 category:
   - object/utility
   - object/utility/visible
 ---
 
 ```html
-<div class="u-visible-sm-inline">
+<div class="u-visible">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 </div>
 ```
 */
 
-.#{$_prefix}u-visible-sm-inline {
+.#{$_prefix}u-visible {
+  @include _visible();
+}
+
+/*
+---
+name: .u-visible-sm
+category:
+  - object/utility
+  - object/utility/visible
+---
+
+```html
+<div class="u-hidden u-visible-sm">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-visible-sm {
   @include _media-only(sm) {
-    display: inline !important;
+    @include _visible();
   }
 }
 
 /*
 ---
-name: .u-visible-sm-inline-block
+name: .u-visible-md
 category:
   - object/utility
   - object/utility/visible
 ---
 
 ```html
-<div class="u-visible-sm-inline-block">
+<div class="u-hidden u-visible-md">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 </div>
 ```
 */
 
-.#{$_prefix}u-visible-sm-inline-block {
-  @include _media-only(sm) {
-    display: inline-block !important;
-  }
-}
-
-/*
----
-name: .u-visible-sm-block
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-sm-block">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-sm-block {
-  @include _media-only(sm) {
-    display: block !important;
-  }
-}
-
-/*
----
-name: .u-visible-sm-flex
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-sm-flex">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-sm-flex {
-  @include _media-only(sm) {
-    display: flex !important;
-  }
-}
-
-/*
----
-name: .u-visible-md-inline
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-md-inline">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-md-inline {
+.#{$_prefix}u-visible-md {
   @include _media-only(md) {
-    display: inline !important;
+    @include _visible();
   }
 }
 
 /*
 ---
-name: .u-visible-md-up-inline
+name: .u-visible-md-up
 category:
   - object/utility
   - object/utility/visible
 ---
 
 ```html
-<div class="u-visible-md-up-inline">
+<div class="u-hidden u-visible-md-up">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 </div>
 ```
 */
 
-.#{$_prefix}u-visible-md-up-inline {
+.#{$_prefix}u-visible-md-up {
   @include _media-min(md) {
-    display: inline !important;
+    @include _visible();
   }
 }
 
 /*
 ---
-name: .u-visible-md-inline-block
+name: .u-visible-lg
 category:
   - object/utility
   - object/utility/visible
 ---
 
 ```html
-<div class="u-visible-md-inline-block">
+<div class="u-hidden u-visible-lg">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 </div>
 ```
 */
 
-.#{$_prefix}u-visible-md-inline-block {
-  @include _media-only(md) {
-    display: inline-block !important;
-  }
-}
-
-/*
----
-name: .u-visible-md-up-inline-block
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-md-up-inline-block">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-md-up-inline-block {
-  @include _media-min(md) {
-    display: inline-block !important;
-  }
-}
-
-/*
----
-name: .u-visible-md-block
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-md-block">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-md-block {
-  @include _media-only(md) {
-    display: block !important;
-  }
-}
-
-/*
----
-name: .u-visible-md-up-block
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-md-up-block">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-md-up-block {
-  @include _media-min(md) {
-    display: block !important;
-  }
-}
-
-/*
----
-name: .u-visible-md-flex
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-md-flex">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-md-flex {
-  @include _media-only(md) {
-    display: flex !important;
-  }
-}
-
-/*
----
-name: .u-visible-md-up-flex
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-md-up-flex">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-md-up-flex {
-  @include _media-min(md) {
-    display: flex !important;
-  }
-}
-
-/*
----
-name: .u-visible-lg-inline
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-lg-inline">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-lg-inline {
+.#{$_prefix}u-visible-lg {
   @include _media-only(lg) {
-    display: inline !important;
-  }
-}
-
-/*
----
-name: .u-visible-lg-inline-block
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-lg-inline-block">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-lg-inline-block {
-  @include _media-only(lg) {
-    display: inline-block !important;
-  }
-}
-
-/*
----
-name: .u-visible-lg-block
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-lg-block">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-lg-block {
-  @include _media-only(lg) {
-    display: block !important;
-  }
-}
-
-/*
----
-name: .u-visible-lg-flex
-category:
-  - object/utility
-  - object/utility/visible
----
-
-```html
-<div class="u-visible-lg-flex">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-
-.#{$_prefix}u-visible-lg-flex {
-  @include _media-only(lg) {
-    display: flex !important;
+    @include _visible();
   }
 }

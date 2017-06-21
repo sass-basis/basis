@@ -105,7 +105,7 @@ gulp.task('font', function() {
 /**
  * Styleguide
  */
- gulp.task('aigis:update', function() {
+ gulp.task('aigis:update', ['build'], function() {
    return _aigis();
  });
  gulp.task('aigis:build', ['build'], function() {

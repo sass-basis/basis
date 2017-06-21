@@ -47,7 +47,7 @@
   $prev_size: _prev-size-key($size);
   $next_size: _next-size-key($size);
   @if (false == $prev_size and false == $next_size) {
-    @media (min-width: _min($size)) and (max-size: _max($size)) {
+    @media (min-width: _min($size)) and (max-width: _max($size)) {
       @content;
     }
   } @else if (false == $prev_size) {
@@ -59,7 +59,7 @@
       @content;
     }
   } @else {
-    @media (min-width: _min($size)) and (max-size: _max($size)) {
+    @media (min-width: _min($size)) and (max-width: _max($size)) {
       @content;
     }
   }
