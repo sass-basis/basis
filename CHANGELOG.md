@@ -21,6 +21,7 @@
 * Add abstract `_breadcrumbs()`
 * Add abstract `_entries()`
 * Add abstract `_entry()`
+* Add abstract `_meta()`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`

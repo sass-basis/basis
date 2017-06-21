@@ -16,14 +16,5 @@ category:
 */
 
 .#{$_prefix}c-meta {
-  @include _list-unstyled();
-  @include _font-size-line-height($_base-font-size-px - 2);
-
-  &, a {
-    color: $_color-gray;
-  }
-
-  &__item {
-    display: inline;
-  }
+  @include _meta();
 }

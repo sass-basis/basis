@@ -1,0 +1,21 @@
+//
+// Meta
+//
+// .c-meta {
+//   @include _meta();
+// }
+//
+// <ul class="c-meta">
+//   <li class="c-meta__item">
+//     ...
+//   </li>
+// </ul>
+//
+
+@mixin _meta() {
+  @include _list-unstyled();
+
+  &__item {
+    display: inline;
+  }
+}
