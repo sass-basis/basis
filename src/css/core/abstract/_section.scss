@@ -1,0 +1,20 @@
+//
+// Section
+//
+// .c-section {
+//   @include _section();
+// }
+//
+// <div class="c-section">
+//   <h2 class="c-section__title">...</h2>
+//   <div class="c-section__content">
+//     ...
+//   </div>
+// </div>
+//
+
+@mixin _section() {
+  &__title {
+    margin-top: 0;
+  }
+}

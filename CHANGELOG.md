@@ -17,6 +17,7 @@
 * Remove class `.c-content`
 * Add class `.u-content`
 * Add abstract `_page-header()`
+* Add abstract `_section()`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`

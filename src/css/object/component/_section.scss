@@ -17,11 +17,5 @@ category:
 */
 
 .#{$_prefix}c-section {
-  @include _padding(2, 0);
-
-  &__title {
-  }
-
-  &__content {
-  }
+  @include _section();
 }
