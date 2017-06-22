@@ -52,6 +52,7 @@
 * Change class `.u-animate-shake-scale` to `.u-shake-scale`
 * Change class `.u-animate-vibrate-scale` to `.u-vibrate-scale`
 * Change class `.u-animate-extend-underline` to `.u-extend-underline`
+* Remove `data-c` attribute
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`

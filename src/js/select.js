@@ -3,12 +3,16 @@
 import $ from 'jquery';
 
 export default class BasisSelect {
-  constructor() {
-    this.select = $('[data-c="select"]');
+  constructor(args = {}) {
+    this.args = Object.assign({
+      select: '.c-select',
+      label : '.c-select__label'
+    }, args);
+    this.select = $(this.args.select);
     this.select.each((i, e) => {
       const selectWrapper = $(e);
       const select = selectWrapper.find('select');
-      const label  = selectWrapper.find('[data-c="select__label"]');
+      const label  = selectWrapper.find(this.args.label);
       label.text(select.children('option:selected').text());
 
       select.on('change', (event) => {

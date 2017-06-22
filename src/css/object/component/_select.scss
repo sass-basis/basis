@@ -9,23 +9,23 @@ Select box component
 
 ### html
 ```html
-<span class="c-select" data-c="select" aria-selected="false">
+<span class="c-select" aria-selected="false">
   <select>
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label" data-c="select__label"></span>
+  <span class="c-select__label"></span>
 </span>
 ```
 ```html
-<span class="c-select c-select--block" data-c="select" aria-selected="false">
+<span class="c-select c-select--block" aria-selected="false">
   <select>
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label" data-c="select__label"></span>
+  <span class="c-select__label"></span>
 </span>
 ```
 */

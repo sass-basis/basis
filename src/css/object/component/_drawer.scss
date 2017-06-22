@@ -9,17 +9,17 @@ Drawer component
 
 ### html
 ```html
-<div style="min-height: 200px">
-  <nav id="drawer" class="c-drawer" data-c="drawer" role="navigation" aria-hidden="true" aria-labeledby="hamburger-btn">
+<div style="min-height: 200px; position: relative">
+  <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labeledby="hamburger-btn">
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item">
         <a href="#">menu</a>
-        <div class="c-drawer__toggle" data-c="drawer__toggle" aria-expanded="false">
+        <div class="c-drawer__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
         </div>
-        <ul class="c-drawer__submenu" data-c="drawer__submenu" aria-hidden="true">
+        <ul class="c-drawer__submenu" aria-hidden="true">
           <li class="c-drawer__subitem"><a href="#">submenu</a></li>
           <li class="c-drawer__subitem"><a href="#">submenu</a></li>
         </ul>
@@ -28,7 +28,7 @@ Drawer component
   </nav>
 </div>
 
-<div id="hamburger-btn" class="c-hamburger-btn" data-c="hamburger-btn" aria-expanded="false" aria-controls="drawer">
+<div id="hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
   <div class="c-hamburger-btn__bar"></div>
   <div class="c-hamburger-btn__bar"></div>
   <div class="c-hamburger-btn__bar"></div>

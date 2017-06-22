@@ -3,8 +3,13 @@
 import $ from 'jquery';
 
 export default class BasisDrawer {
-  constructor() {
-    this.drawer = $('[data-c="drawer"]');
+  constructor(args = {}) {
+    this.args = Object.assign({
+      drawer : '.c-drawer',
+      toggle : '.c-drawer__toggle',
+      submenu: '.c-drawer__submenu'
+    }, args);
+    this.drawer = $(this.args.drawer);
     this.setListener();
   }
 
@@ -14,14 +19,14 @@ export default class BasisDrawer {
       this.setIdForSubmenu(drawer);
 
       const container  = drawer.parent();
-      const btn        = $('#' + drawer.attr('aria-labeledby'));
-      const toggleBtns = drawer.find('[data-c="drawer__toggle"][aria-controls]');
+      const btn        = $(`#${drawer.attr('aria-labeledby')}`);
+      const toggleBtns = drawer.find(`${this.args.toggle}[aria-controls]`);
 
       container.on('click', (event) => {
         this.close(btn);
         this.hidden(drawer);
-        this.close(drawer.find('[data-c="drawer__toggle"]'));
-        this.hidden(drawer.find('[data-c="drawer__submenu"]'));
+        this.close(drawer.find(this.args.toggle));
+        this.hidden(drawer.find(this.args.submenu));
       });
 
       drawer.on('click', (event) => {
@@ -53,8 +58,8 @@ export default class BasisDrawer {
     } else {
       this.close(btn);
       this.hidden(menu);
-      this.close(menu.find('[data-c="drawer__toggle"]'));
-      this.hidden(menu.find('[data-c="drawer__submenu"]'));
+      this.close(menu.find(this.args.toggle));
+      this.hidden(menu.find(this.args.submenu));
     }
   }
 
@@ -75,12 +80,12 @@ export default class BasisDrawer {
   }
 
   setIdForSubmenu(drawer) {
-    drawer.find('[data-c="drawer__submenu"][aria-hidden]').each((i, e) => {
+    drawer.find(`${this.args.submenu}[aria-hidden]`).each((i, e) => {
       const random    = Math.floor((Math.random() * (9999999 - 1000000)) + 1000000);
       const time      = new Date().getTime();
       const id        = `drawer-${time}${random}`;
       const submenu   = $(e);
-      const toggleBtn = submenu.siblings('[data-c="drawer__toggle"]');
+      const toggleBtn = submenu.siblings(this.args.toggle);
       if (submenu.length && toggleBtn.length) {
         submenu.attr('id', id);
         toggleBtn.attr('aria-controls', `${id}`);

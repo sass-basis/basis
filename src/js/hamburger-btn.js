@@ -3,8 +3,11 @@
 import $ from 'jquery';
 
 export default class BasisHamburgerBtn {
-  constructor() {
-    this.hamburgerBtn = $('[data-c="hamburger-btn"]');
+  constructor(args = {}) {
+    this.args = Object.assign({
+      btn: '.c-hamburger-btn'
+    }, args);
+    this.hamburgerBtn = $(this.args.btn);
     this.setListener();
   }
 

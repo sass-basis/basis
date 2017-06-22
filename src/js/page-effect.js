@@ -3,11 +3,12 @@
 import $ from 'jquery';
 
 export default class BasisPageEffect {
-  constructor(params) {
-    this.params = $.extend({
+  constructor(args = {}) {
+    this.args = Object.assign({
+      pageEffect: '.c-page-effect',
       duration: 200
-    }, params);
-    this.container     = $('[data-c="page-effect"]');
+    }, args);
+    this.container     = $(this.args.pageEffect);
     this.pageOutObject = $('[data-page-effect-link="true"], a[href]:not([target="_blank"], [href^="#"], [href*="javascript"], [href*=".jpg"], [href*=".jpeg"], [href*=".gif"], [href*=".png"], [href*=".mov"], [href*=".swf"], [href*=".mp4"], [href*=".flv"], [href*=".avi"], [href*=".mp3"], [href*=".pdf"], [href*=".zip"], [href^="mailto:"], [data-page-effect-link="false"])');
     this.setListener();
   }
@@ -35,7 +36,7 @@ export default class BasisPageEffect {
   moveLocation(url) {
     setTimeout(() => {
       location.href = url
-    }, this.params['duration']);
+    }, this.args['duration']);
   }
 
   hide() {
