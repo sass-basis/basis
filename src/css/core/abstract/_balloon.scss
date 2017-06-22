@@ -1,90 +1,114 @@
-//
-// Balloon (Top)
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-balloon-top {
-//   @include _balloon-top((
-//     background-color: null,
-//     border-color: null,
-//     border-size: null,
-//     triangle-size: 10px,
-//   ));
-// }
-//
-// <div class="c-balloon-top">
-//   ...
-// </div>
-//
+/*
+---
+name: _balloon-top()
+category:
+  - core/abstract
+  - core/abstract/_balloon-top()
+---
+```scss
+.c-balloon-top {
+  @include _balloon-top((
+    background-color: #fff,
+    border-color: null,
+    border-size: null,
+    triangle-size: 10px,
+  ));
+  @include _padding(1);
+}
+```
+```ejs
+<div class="c-balloon-top">
+  ...
+</div>
+```
+*/
 
 @mixin _balloon-top($params: ()) {
   @include _balloon(top, $params);
 }
 
-//
-// Balloon (Right)
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-balloon-right {
-//   @include _balloon-right((
-//     background-color: null,
-//     border-color: null,
-//     border-size: null,
-//     triangle-size: 10px,
-//   ));
-// }
-//
-// <div class="c-balloon-right">
-//   ...
-// </div>
-//
+/*
+---
+name: _balloon-right()
+category:
+  - core/abstract
+  - core/abstract/_balloon-right()
+---
+```scss
+.c-balloon-right {
+  @include _balloon-right((
+    background-color: #fff,
+    border-color: null,
+    border-size: null,
+    triangle-size: 10px,
+  ));
+  @include _padding(1);
+}
+```
+```ejs
+<div class="c-balloon-right">
+  ...
+</div>
+```
+*/
 
 @mixin _balloon-right($params: ()) {
   @include _balloon(right, $params);
 }
 
-//
-// Balloon (Bottom)
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-balloon-bottom {
-//   @include _balloon-bottom((
-//     background-color: null,
-//     border-color: null,
-//     border-size: null,
-//     triangle-size: 10px,
-//   ));
-// }
-//
-// <div class="c-balloon-bottom">
-//   ...
-// </div>
-//
+/*
+---
+name: _balloon-bottom()
+category:
+  - core/abstract
+  - core/abstract/_balloon-bottom()
+---
+```scss
+.c-balloon-bottom {
+  @include _balloon-bottom((
+    background-color: #fff,
+    border-color: null,
+    border-size: null,
+    triangle-size: 10px,
+  ));
+  @include _padding(1);
+}
+```
+```ejs
+<div class="c-balloon-bottom">
+  ...
+</div>
+```
+*/
 
 @mixin _balloon-bottom($params: ()) {
   @include _balloon(bottom, $params);
 }
 
-//
-// Balloon (Left)
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-balloon-left {
-//   @include _balloon-left((
-//     background-color: null,
-//     border-color: null,
-//     border-size: null,
-//     triangle-size: 10px,
-//   ));
-// }
-//
-// <div class="c-balloon-left">
-//   ...
-// </div>
-//
+/*
+---
+name: _balloon-left()
+category:
+  - core/abstract
+  - core/abstract/_balloon-left()
+---
+```scss
+.c-balloon-left {
+  @include _balloon-left((
+    background-color: #fff,
+    border-color: null,
+    border-size: null,
+    triangle-size: 10px,
+  ));
+  @include _padding(1);
+}
+```
+```ejs
+<div class="c-balloon-left">
+  ...
+</div>
+```
+*/
 
 @mixin _balloon-left($params: ()) {
   @include _balloon(left, $params);

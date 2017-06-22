@@ -1,7 +1,17 @@
-//
-// Font path
-// @type  string
-//
+/*
+---
+name: $_font-path
+category:
+  - core/variable
+  - core/variable/$_font-path
+---
+Basis font relative path
+
+```scss
+$_font-path: '../font';
+```
+*/
+
 $_font-path: '../font' !default;
 
 @font-face {

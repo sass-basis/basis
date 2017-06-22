@@ -1,42 +1,81 @@
-//
-// Drawer
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-drawer {
-//   @include _drawer((
-//     width: ($_base-line-height * 10),
-//     max-width: 80%,
-//   ));
-//    background-color: _light($_color-black);
-// }
-//
-// import BasisDrawer from 'node_modules/sass-basis/src/js/drawer.js';
-// new BasisDrawer();
-//
-// <div class="c-drawer" data-c="drawer">
-//   <nav id="drawer" class="c-drawer__body" data-c="drawer__body" role="navigation" aria-hidden="true">
-//     <ul class="c-drawer__menu">
-//       <li class="c-drawer__item"><a href="#">menu</a></li>
-//       <li class="c-drawer__item"><a href="#">menu</a></li>
-//       <li class="c-drawer__item">
-//         <a href="#">menu</a>
-//         <div class="c-drawer__toggle" data-c="drawer__toggle" aria-expanded="false">&gt;</div>
-//         <ul class="c-drawer__submenu" data-c="drawer__submenu" aria-hidden="true">
-//           <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-//           <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-//         </ul>
-//       </li>
-//     </ul>
-//   </nav>
-// </div>
-//
-// <div class="c-hamburger-btn" data-c="drawer-btn" aria-expanded="false" aria-controls="drawer">
-//   <div class="c-hamburger-btn__bar"></div>
-//   <div class="c-hamburger-btn__bar"></div>
-//   <div class="c-hamburger-btn__bar"></div>
-// </div>
-//
+/*
+---
+name: _drawer()
+category:
+  - core/abstract
+  - core/abstract/_drawer()
+---
+```scss
+.c-drawer {
+  @include _drawer((
+    width: ($_base-line-height * 10),
+    max-width: 80%,
+  ));
+
+  $item-padding-coefficient: 1;
+
+  &__menu {
+    @include _list-unstyled();
+  }
+
+  &__item, &__subitem {
+    position: relative;
+  }
+
+  &__item {
+    @include _padding(.5, $item-padding-coefficient, 0);
+  }
+
+  &__submenu {
+    @include _list-unstyled();
+    @include _margin(0, ($item-padding-coefficient * -1), 0, 0);
+    padding-left: 1em;
+  }
+
+  &__subitem {
+    @include _padding(.5, $item-padding-coefficient, 0, 0);
+  }
+
+  &__toggle {
+    @include _position(absolute, _space(.5), 5px, 0);
+    @include _square($_base-line-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+```
+```js
+import BasisDrawer from 'node_modules/sass-basis/src/js/drawer.js';
+new BasisDrawer();
+```
+```ejs
+<div style="min-height: 200px">
+  <nav id="drawer" class="c-drawer" data-c="drawer" role="navigation" aria-hidden="true" aria-labeledby="hamburger-btn">
+    <ul class="c-drawer__menu">
+      <li class="c-drawer__item"><a href="#">menu</a></li>
+      <li class="c-drawer__item"><a href="#">menu</a></li>
+      <li class="c-drawer__item">
+        <a href="#">menu</a>
+        <div class="c-drawer__toggle" data-c="drawer__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-drawer__submenu" data-c="drawer__submenu" aria-hidden="true">
+          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div id="hamburger-btn" class="c-hamburger-btn" data-c="hamburger-btn" aria-expanded="false" aria-controls="drawer">
+  <div class="c-hamburger-btn__bar"></div>
+  <div class="c-hamburger-btn__bar"></div>
+  <div class="c-hamburger-btn__bar"></div>
+</div>
+```
+*/
 
 @mixin _drawer($params: ()) {
   $params: map-merge(
@@ -50,18 +89,14 @@
   $width: map-get($params, 'width');
   $max-width: map-get($params, 'max-width');
 
-  position: relative;
+  @include _position(absolute, 0, null, 0, -100%, 10);
+  @include _transition(left);
+  width: $width;
+  max-width: $max-width;
+  overflow-y: auto;
 
-  &__body {
-    @include _position(absolute, 0, null, 0, -100%, 10);
-    @include _transition(left);
-    width: $width;
-    max-width: $max-width;
-    overflow-y: auto;
-
-    &[aria-hidden="false"] {
-      left: 0;
-    }
+  &[aria-hidden="false"] {
+    left: 0;
   }
 
   &__submenu {

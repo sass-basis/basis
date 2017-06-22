@@ -1,3 +1,11 @@
+/*
+---
+name: _vertical-rhythm()
+category:
+  - core/function
+  - core/function/_vertical-rhythm()
+---
+```scss
 //
 // Return line height ( px ) for vertical rhythum
 //
@@ -5,6 +13,10 @@
 // @param   int  coefficient
 // @return  int
 //
+
+line-height: (_vertical-rhythm(16px) / 16);
+```
+*/
 
 @function _vertical-rhythm($font-size, $coefficient: 1) {
   $between-lines   : _strip-unit(_rem2px($_between-lines));

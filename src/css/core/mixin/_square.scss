@@ -1,9 +1,24 @@
+/*
+---
+name: _square()
+category:
+  - core/mixin
+  - core/mixin/_square()
+---
+```scss
 //
 // Creating square
 //
 // @param  length  $size
 // @param  length  $border-radius
 //
+
+.c-foo {
+  @include _square(30px);
+}
+```
+*/
+
 @mixin _square($size, $border-radius: null) {
   height: $size;
   width: $size;

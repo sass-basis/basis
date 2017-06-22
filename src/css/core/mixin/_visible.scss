@@ -1,13 +1,25 @@
-//
-// Visible helper
+/*
+---
+name: _visible()
+category:
+  - core/mixin
+  - core/mixin/_visible()
+---
+```scss
 //
 // This helper set "position" property.
 // We recomment to use this helper on elements with no position specified.
 //
-// .u-visible {
-//   @include _visible();
-// }
-//
+
+.c-foo {
+  @include _hidden();
+
+  @include _media-min(md) {
+      @include _visible();
+  }
+}
+```
+*/
 
 @mixin _visible() {
   position: static !important;

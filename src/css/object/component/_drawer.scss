@@ -7,8 +7,8 @@ category:
 ---
 
 ```html
-<div class="c-drawer" data-c="drawer" style="min-height: 200px">
-  <nav id="drawer" class="c-drawer__body" data-c="drawer__body" role="navigation" aria-hidden="true">
+<div style="min-height: 200px">
+  <nav id="drawer" class="c-drawer" data-c="drawer" role="navigation" aria-hidden="true" aria-labeledby="hamburger-btn">
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -26,7 +26,7 @@ category:
   </nav>
 </div>
 
-<div class="c-hamburger-btn" data-c="drawer-btn" aria-expanded="false" aria-controls="drawer">
+<div id="hamburger-btn" class="c-hamburger-btn" data-c="hamburger-btn" aria-expanded="false" aria-controls="drawer">
   <div class="c-hamburger-btn__bar"></div>
   <div class="c-hamburger-btn__bar"></div>
   <div class="c-hamburger-btn__bar"></div>
@@ -69,7 +69,7 @@ category:
     justify-content: center;
   }
 
-  &__body--fixed {
+  &--fixed {
     position: fixed;
   }
 }

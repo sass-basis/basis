@@ -1,19 +1,35 @@
-//
-// Entry
-//
-// .c-entry {
-//   @include _entry();
-// }
-//
-// <article class="c-entry">
-//   <header class="c-entry__header">
-//     <h1 class="c-entry__title">...</h1>
-//     <div class="c-entry__content">
-//       ...
-//     </div>
-//   </header>
-// </article>
-//
+/*
+---
+name: _entry()
+category:
+  - core/abstract
+  - core/abstract/_entry()
+---
+```scss
+.c-entry {
+  @include _entry();
+
+  &__header {
+    @include _margin(0, 0, 1);
+    @include _font-size-line-height($_base-font-size * 1.5);
+  }
+
+  &__content {
+    @include _content();
+  }
+}
+```
+```ejs
+<article class="c-entry">
+  <header class="c-entry__header">
+    <h1 class="c-entry__title">...</h1>
+    <div class="c-entry__content">
+      ...
+    </div>
+  </header>
+</article>
+```
+*/
 
 @mixin _entry() {
   &__title {

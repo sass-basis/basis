@@ -1,39 +1,319 @@
-//
-// HTML element margin coefficient;
-// @type  int
-//
+/*
+---
+name: $_base-margin-bottom
+category:
+  - core/variable
+  - core/variable/$_base-margin-bottom
+---
+HTML element margin coefficient
+
+```scss
+$_base-margin-bottom: 1
+```
+*/
+
 $_base-margin-bottom: 1 !default;
 
-//
-// Heading element font size scale;
-// @type  int
-//
+/*
+---
+name: $_h1-font-size-scale
+category:
+  - core/variable
+  - core/variable/$_h1-font-size-scale
+---
+h1 font size scale
+
+```scss
+$_h1-font-size-scale: 2.5;
+```
+*/
+
 $_h1-font-size-scale: 2.5 !default;
+
+/*
+---
+name: $_h2-font-size-scale
+category:
+  - core/variable
+  - core/variable/$_h2-font-size-scale
+---
+h2 font size scale
+
+```scss
+$_h2-font-size-scale: 2;
+```
+*/
+
 $_h2-font-size-scale: 2 !default;
+
+/*
+---
+name: $_h3-font-size-scale
+category:
+  - core/variable
+  - core/variable/$_h3-font-size-scale
+---
+h3 font size scale
+
+```scss
+$_h3-font-size-scale: 1.5;
+```
+*/
+
 $_h3-font-size-scale: 1.5 !default;
+
+/*
+---
+name: $_h4-font-size-scale
+category:
+  - core/variable
+  - core/variable/$_h4-font-size-scale
+---
+h4 font size scale
+
+```scss
+$_h4-font-size-scale: 1.25;
+```
+*/
+
 $_h4-font-size-scale: 1.25 !default;
+
+/*
+---
+name: $_h5-font-size-scale
+category:
+  - core/variable
+  - core/variable/$_h5-font-size-scale
+---
+h5 font size scale
+
+```scss
+$_h5-font-size-scale: 1;
+```
+*/
+
 $_h5-font-size-scale: 1 !default;
+
+/*
+---
+name: $_h6-font-size-scale
+category:
+  - core/variable
+  - core/variable/$_h6-font-size-scale
+---
+h6 font size scale
+
+```scss
+$_h6-font-size-scale: 1;
+```
+*/
+
 $_h6-font-size-scale: 1 !default;
 
-//
-// Heading element margin coefficient;
-// @type  int
-//
-$_h1-margin-top   : 0 !default;
+/*
+---
+name: $_h1-margin-top
+category:
+  - core/variable
+  - core/variable/$_h1-margin-top
+---
+h1 margin top coefficient
+
+```scss
+$_h1-margin-top: 0;
+```
+*/
+
+$_h1-margin-top: 0 !default;
+
+/*
+---
+name: $_h1-margin-bottom
+category:
+  - core/variable
+  - core/variable/$_h1-margin-bottom
+---
+h1 margin bottom coefficient
+
+```scss
+$_h1-margin-bottom: $_base-margin-bottom;
+```
+*/
+
 $_h1-margin-bottom: $_base-margin-bottom !default;
-$_h2-margin-top   : $_base-margin-bottom * 2 !default;
+
+/*
+---
+name: $_h2-margin-top
+category:
+  - core/variable
+  - core/variable/$_h2-margin-top
+---
+h2 margin top coefficient
+
+```scss
+$_h2-margin-top: $_base-margin-bottom * 2;
+```
+*/
+
+$_h2-margin-top: $_base-margin-bottom * 2 !default;
+
+/*
+---
+name: $_h2-margin-bottom
+category:
+  - core/variable
+  - core/variable/$_h2-margin-bottom
+---
+h2 margin bottom coefficient
+
+```scss
+$_h2-margin-bottom: $_base-margin-bottom;
+```
+*/
+
 $_h2-margin-bottom: $_base-margin-bottom !default;
-$_h3-margin-top   : $_base-margin-bottom * 1.5 !default;
+
+/*
+---
+name: $_h3-margin-top
+category:
+  - core/variable
+  - core/variable/$_h3-margin-top
+---
+h3 margin top coefficient
+
+```scss
+$_h3-margin-top: $_base-margin-bottom * 1.5;
+```
+*/
+
+$_h3-margin-top: $_base-margin-bottom * 1.5 !default;
+
+/*
+---
+name: $_h3-margin-bottom
+category:
+  - core/variable
+  - core/variable/$_h3-margin-bottom
+---
+h3 margin bottom coefficient
+
+```scss
+$_h3-margin-bottom: $_base-margin-bottom;
+```
+*/
+
 $_h3-margin-bottom: $_base-margin-bottom !default;
-$_h4-margin-top   : $_base-margin-bottom * 1.25 !default;
+
+/*
+---
+name: $_h4-margin-top
+category:
+  - core/variable
+  - core/variable/$_h4-margin-top
+---
+h4 margin top coefficient
+
+```scss
+$_h4-margin-top: $_base-margin-bottom * 1.25;
+```
+*/
+
+$_h4-margin-top: $_base-margin-bottom * 1.25 !default;
+
+/*
+---
+name: $_h4-margin-bottom
+category:
+  - core/variable
+  - core/variable/$_h4-margin-bottom
+---
+h4 margin bottom coefficient
+
+```scss
+$_h4-margin-bottom: $_base-margin-bottom;
+```
+*/
+
 $_h4-margin-bottom: $_base-margin-bottom !default;
-$_h5-margin-top   : $_base-margin-bottom !default;
+
+/*
+---
+name: $_h5-margin-top
+category:
+  - core/variable
+  - core/variable/$_h5-margin-top
+---
+h5 margin top coefficient
+
+```scss
+$_h5-margin-top: $_base-margin-bottom;
+```
+*/
+
+$_h5-margin-top: $_base-margin-bottom !default;
+
+/*
+---
+name: $_h5-margin-bottom
+category:
+  - core/variable
+  - core/variable/$_h5-margin-bottom
+---
+h5 margin bottom coefficient
+
+```scss
+$_h5-margin-bottom: $_base-margin-bottom * .5;
+```
+*/
+
 $_h5-margin-bottom: $_base-margin-bottom * .5 !default;
-$_h6-margin-top   : $_base-margin-bottom !default;
+
+/*
+---
+name: $_h6-margin-top
+category:
+  - core/variable
+  - core/variable/$_h6-margin-top
+---
+h6 margin top coefficient
+
+```scss
+$_h6-margin-top: $_base-margin-bottom;
+```
+*/
+
+$_h6-margin-top: $_base-margin-bottom !default;
+
+/*
+---
+name: $_h6-margin-bottom
+category:
+  - core/variable
+  - core/variable/$_h6-margin-bottom
+---
+h6 margin bottom coefficient
+
+```scss
+$_h6-margin-bottom: $_base-margin-bottom * .5;
+```
+*/
+
 $_h6-margin-bottom: $_base-margin-bottom * .5 !default;
 
-//
-// Default font family
-// @type  string
-//
+/*
+---
+name: $_font-family
+category:
+  - core/variable
+  - core/variable/$_font-family
+---
+Default font family
+
+```scss
+$_font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+```
+*/
+
 $_font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;

@@ -1,16 +1,23 @@
-//
-// Meta
-//
-// .c-meta {
-//   @include _meta();
-// }
-//
-// <ul class="c-meta">
-//   <li class="c-meta__item">
-//     ...
-//   </li>
-// </ul>
-//
+/*
+---
+name: _meta()
+category:
+  - core/abstract
+  - core/abstract/_meta()
+---
+```scss
+.c-meta {
+  @include _meta();
+}
+```
+```ejs
+<ul class="c-meta">
+  <li class="c-meta__item">
+    ...
+  </li>
+</ul>
+```
+*/
 
 @mixin _meta() {
   @include _list-unstyled();

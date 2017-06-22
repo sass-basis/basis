@@ -1,9 +1,23 @@
+/*
+---
+name: _px2rem()
+category:
+  - core/function
+  - core/function/_px2rem()
+---
+```scss
 //
 // Return rem from px
+//
 // @param   px  $px
 // @param   px  $base-font-size-px
 // @return  rem
 //
+
+font-size: _px2rem(16px);
+```
+*/
+
 @function _px2rem($px, $base-font-size-px: $_base-font-size-px) {
   @return _strip-unit($px / $base-font-size-px) * 1rem;
 }

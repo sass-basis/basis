@@ -1,17 +1,24 @@
-//
-// Alert
-//
-// .c-alert {
-//   @include _alert();
-//   @include _padding(1);
-//   background-color: #4b9ad8;
-//   color: #fff;
-// }
-//
-// <div class="c-alert" role="alert">
-//   ...
-// </div>
-//
+/*
+---
+name: _alert()
+category:
+  - core/abstract
+  - core/abstract/_alert()
+---
+```scss
+.c-alert {
+  @include _alert();
+  @include _padding(1);
+  background-color: #4b9ad8;
+  color: #fff;
+}
+```
+```ejs
+<div class="c-alert" role="alert">
+  ...
+</div>
+```
+*/
 
 @mixin _alert() {
   display: block;

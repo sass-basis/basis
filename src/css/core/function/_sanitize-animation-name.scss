@@ -1,7 +1,23 @@
+/*
+---
+name: _sanitize-animation-name()
+category:
+  - core/function
+  - core/function/_sanitize-animation-name()
+---
+```scss
+//
+// Sanitize animation name
 //
 // @param   string  $name
 // @return  string
 //
+
+$animation-name: _sanitize-animation-name($name);
+animation: $animation-name .2s ease-in 0s;
+```
+*/
+
 @function _sanitize-animation-name($name) {
   $name: replace(('.', '(', ')', ',', ' ', '#', '-'), '_', $name);
   @return $name;

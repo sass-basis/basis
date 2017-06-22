@@ -1,3 +1,11 @@
+/*
+---
+name: _margin()
+category:
+  - core/mixin
+  - core/mixin/_margin()
+---
+```scss
 //
 // Sets margin
 //
@@ -6,6 +14,14 @@
 // @param  int  $coefficient-3
 // @param  int  $coefficient-4
 //
+
+@include _margin(1);
+@include _margin(1, 2);
+@include _margin(1, 2, .5);
+@include _margin(1, 2, .5, 2);
+@include _margin(10px);
+```
+*/
 
 @mixin _margin($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
   @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
@@ -29,38 +45,98 @@
   }
 }
 
+/*
+---
+name: _margin-top()
+category:
+  - core/mixin
+  - core/mixin/_margin()
+  - core/mixin/_margin-top()
+---
+```scss
 //
 // Sets margin-top
 //
 // @param  int  $coefficient
 //
+
+@include _margin-top(1);
+@include _margin-top(10px);
+```
+*/
+
 @mixin _margin-top($coefficient) {
   margin-top: _space($coefficient);
 }
 
+/*
+---
+name: _margin-right()
+category:
+  - core/mixin
+  - core/mixin/_margin()
+  - core/mixin/_margin-right()
+---
+```scss
 //
 // Sets margin-right
 //
 // @param  int  $coefficient
 //
+
+@include _margin-right(1);
+@include _margin-right(10px);
+```
+*/
+
 @mixin _margin-right($coefficient) {
   margin-right: _space($coefficient);
 }
 
+/*
+---
+name: _margin-bottom()
+category:
+  - core/mixin
+  - core/mixin/_margin()
+  - core/mixin/_margin-bottom()
+---
+```scss
 //
 // Sets margin-bottom
 //
 // @param  int  $coefficient
 //
+
+@include _margin-bottom(1);
+@include _margin-bottom(10px);
+```
+*/
+
 @mixin _margin-bottom($coefficient) {
   margin-bottom: _space($coefficient);
 }
 
+/*
+---
+name: _margin-left()
+category:
+  - core/mixin
+  - core/mixin/_margin()
+  - core/mixin/_margin-left()
+---
+```scss
 //
 // Sets margin-left
 //
 // @param  int  $coefficient
 //
+
+@include _margin-left(1);
+@include _margin-left(10px);
+```
+*/
+
 @mixin _margin-left($coefficient) {
   margin-left: _space($coefficient);
 }

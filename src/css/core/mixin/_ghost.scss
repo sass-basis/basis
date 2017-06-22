@@ -1,18 +1,24 @@
-//
-// Ghost style
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-btn-ghost {
-//   @include _btn();
-//   @include _ghost((
-//     border-size: 1px,
-//     color: #fff,
-//   ));
-// }
-//
-// <a class="c-btn-ghost" role="button">btn</a>
-//
+/*
+---
+name: _ghost()
+category:
+  - core/mixin
+  - core/mixin/_ghost()
+---
+```scss
+.c-ghost-btn {
+  @include _btn();
+  @include _ghost((
+    border-size: 1px,
+    color: #fff,
+  ));
+  @include _padding(1, 2);
+}
+```
+```ejs
+<a class="c-ghost-btn" role="button">btn</a>
+```
+*/
 
 @mixin _ghost($params: ()) {
   $params: map-merge(

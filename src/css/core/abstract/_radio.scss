@@ -1,22 +1,27 @@
-//
-// Radio
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-radio {
-//   @include _radio((
-//     size: $_base-font-size-px,
-//   ));
-// }
-//
-// <label>
-//   <span class="c-radio">
-//     <input type="radio">
-//     <span class="c-radio__control"></span>
-//   </span>
-//   ...
-// </label>
-//
+/*
+---
+name: _radio()
+category:
+  - core/abstract
+  - core/abstract/_radio()
+---
+```scss
+.c-radio {
+  @include _radio((
+    size: $_base-font-size-px,
+  ));
+}
+```
+```ejs
+<label>
+  <span class="c-radio">
+    <input type="radio">
+    <span class="c-radio__control"></span>
+  </span>
+  ...
+</label>
+```
+*/
 
 @mixin _radio($params: ()) {
   $params: map-merge(

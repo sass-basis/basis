@@ -377,7 +377,13 @@ category: body
 
 */
 
+.aigis-module {
+  position: relative;
+}
 .aigis-module__filepath {
+  position: absolute;
+  top: 2em;
+  right: 0;
   display: block;
   text-align: right;
   margin-top: -15px;

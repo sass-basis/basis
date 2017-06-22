@@ -1,9 +1,29 @@
+/*
+---
+name: _balloon()
+category:
+  - core/mixin
+  - core/mixin/_balloon()
+---
+```scss
 //
 // Generate balloon
 //
 // @param  string  $angle   position of arrow
 // @param  hash    $params  properties for decoration
 //
+
+.c-foo {
+  @include _balloon(top, (
+    background-color: #fff,
+    border-color: #ccc,
+    border-size: 1px,
+    triangle-size: 10px,
+  ));
+}
+```
+*/
+
 @mixin _balloon($angle, $params: ()) {
   $params: map-merge(
     (

@@ -1,5 +1,15 @@
-//
-// Border radius
-// @type  length
-//
+/*
+---
+name: $_border-radius
+category:
+  - core/variable
+  - core/variable/$_border-radius
+---
+Border radius
+
+```scss
+$_border-radius: 3px;
+```
+*/
+
 $_border-radius: 3px !default;

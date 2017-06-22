@@ -1,16 +1,29 @@
-//
-// Entries
-//
-// .c-entries {
-//   @include _entries();
-// }
-//
-// <ul class="c-entries">
-//   <li class="c-entries__item">
-//     ...
-//   </li>
-// </ul>
-//
+/*
+---
+name: _entries()
+category:
+  - core/abstract
+  - core/abstract/_entries()
+---
+```scss
+.c-entries {
+  @include _entries();
+  boder-top: 1px solid _light($_color-gray);
+
+  &__item {
+    @include _padding(1, 0);
+    boder-bottom: 1px solid _light($_color-gray);
+  }
+}
+```
+```ejs
+<ul class="c-entries">
+  <li class="c-entries__item">
+    ...
+  </li>
+</ul>
+```
+*/
 
 @mixin _entries() {
   @include _list-unstyled();

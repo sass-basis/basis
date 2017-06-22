@@ -1,9 +1,24 @@
+/*
+---
+name: _is-null()
+category:
+  - core/function
+  - core/function/_is-null()
+---
+```scss
 //
 // Checks for a valid null
 //
 // @param   mixed  $value
 // @return  bool
 //
+
+@if (not _is-null($value)) {
+  width: $value;
+}
+```
+*/
+
 @function _is-null($value) {
   @if ('null' == type-of($value)) {
     @return true;

@@ -4,16 +4,18 @@ import $ from 'jquery';
 
 export default class BasisDrawer {
   constructor() {
-    this.setIdForSubmenu();
+    this.drawer = $('[data-c="drawer"]');
     this.setListener();
   }
 
   setListener() {
-    const btns = $('[data-c="drawer-btn"][aria-controls]');
-    btns.each((i, e) => {
-      const btn       = $(e);
-      const drawer    = $(`#${btn.attr('aria-controls')}`);
-      const container = drawer.parent('[data-c="drawer"]');
+    this.drawer.each((i, e) => {
+      const drawer = $(e);
+      this.setIdForSubmenu(drawer);
+
+      const container  = drawer.parent();
+      const btn        = $('#' + drawer.attr('aria-labeledby'));
+      const toggleBtns = drawer.find('[data-c="drawer__toggle"][aria-controls]');
 
       container.on('click', (event) => {
         this.close(btn);
@@ -26,26 +28,19 @@ export default class BasisDrawer {
         event.stopPropagation();
       });
 
-      btn.on('click', (event) => {
-        event.preventDefault();
-        this.toggleMenu(btn);
-        event.stopPropagation();
-      });
-
       $(window).on('resize', (event) => {
         this.hidden(drawer);
         this.close(btn);
       });
-    });
 
-    const toggleBtns = $('[data-c="drawer__toggle"][aria-controls]');
-    toggleBtns.each((i, e) => {
-      const toggleBtn = $(e);
-      const submenu   = $(`#${toggleBtn.attr('aria-controls')}`);
-      toggleBtn.on('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        this.toggleMenu(toggleBtn);
+      toggleBtns.each((i, e) => {
+        const toggleBtn = $(e);
+        const submenu   = $(`#${toggleBtn.attr('aria-controls')}`);
+        toggleBtn.on('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          this.toggleMenu(toggleBtn);
+        });
       });
     });
   }
@@ -79,8 +74,8 @@ export default class BasisDrawer {
     target.attr('aria-hidden', 'true');
   }
 
-  setIdForSubmenu() {
-    $('[data-c="drawer__submenu"][aria-hidden]').each((i, e) => {
+  setIdForSubmenu(drawer) {
+    drawer.find('[data-c="drawer__submenu"][aria-hidden]').each((i, e) => {
       const random    = Math.floor((Math.random() * (9999999 - 1000000)) + 1000000);
       const time      = new Date().getTime();
       const id        = `drawer-${time}${random}`;

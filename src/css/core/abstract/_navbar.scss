@@ -1,27 +1,46 @@
-//
-// Navbar
-//
-// .c-navbar {
-//   @include _navbar();
-// }
-//
-// import BasisNavbar from 'node_modules/sass-basis/src/js/navbar.js';
-// new BasisNavbar();
-//
-// <ul class="c-navbar">
-//   <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
-//     <a href="#">menu</a>
-//     <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
-//       <li class="c-navbar__subitem" data-c="navbar__subitem" aria-haspopup="true">
-//         <a href="#">submenu</a>
-//         <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
-//           <li class="c-navbar__subitem" data-c="navbar__subitem"><a href="#">submenu</a></li>
-//         </ul>
-//       </li>
-//     </ul>
-//   </li>
-// </ul>
-//
+/*
+---
+name: _navbar()
+category:
+  - core/abstract
+  - core/abstract/_navbar()
+---
+```scss
+.c-navbar {
+  @include _navbar();
+
+  &__item > a {
+    color: $_color-text;
+    @include _padding(.5, 1);
+  }
+}
+```
+```js
+import BasisNavbar from 'node_modules/sass-basis/src/js/navbar.js';
+new BasisNavbar();
+```
+```ejs
+<ul class="c-navbar">
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" data-c="navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <ul class="c-navbar__submenu" data-c="navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem" data-c="navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+  </li>
+  <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+  </li>
+</ul>
+```
+*/
 
 @mixin _navbar() {
   @include _list-unstyled();

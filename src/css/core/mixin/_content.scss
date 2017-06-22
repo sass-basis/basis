@@ -1,16 +1,25 @@
-//
-// Content
+/*
+---
+name: _content()
+category:
+  - core/mixin
+  - core/mixin/_content()
+---
+```scss
 //
 // @param  int  $coefficient
 //
-// .u-content {
-//   @include _content();
-// }
-//
-// <div class="u-content">
-//   ...
-// </div>
-//
+
+.u-content {
+  @include _content(1);
+}
+```
+```ejs
+<div class="u-content">
+  ...
+</div>
+```
+*/
 
 @mixin _content($coefficient: 1) {
   > * {

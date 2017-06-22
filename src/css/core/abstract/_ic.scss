@@ -1,10 +1,23 @@
-//
-// Icon Font
-//
-// .c-ic {
-//   @include _ic();
-// }
-//
+/*
+---
+name: _ic()
+category:
+  - core/abstract
+  - core/abstract/_ic()
+---
+```scss
+.c-ic-angle-right {
+  @include _ic();
+
+  &::before {
+    content: "\e900";
+  }
+}
+```
+```ejs
+<span class="c-ic-angle-right" aria-hidden="true"></span>
+```
+*/
 
 @mixin _ic() {
   font-family: 'basis';

@@ -1,3 +1,11 @@
+/*
+---
+name: _balloon-triangle()
+category:
+  - core/mixin
+  - core/mixin/_balloon-triangle()
+---
+```scss
 //
 // Generate balloon triangle
 //
@@ -7,6 +15,16 @@
 // @param  length  $border-size
 // @param  hex     $border-color
 //
+
+.c-foo {
+  @include _balloon-triangle(top, 10px, #fff, 1px, #ccc);
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+```
+*/
+
 @mixin _balloon-triangle($position, $size, $background-color, $border-size: 0, $border-color: transparent) {
   $before: ($size * -1);
   $after: $before;

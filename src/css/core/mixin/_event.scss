@@ -1,15 +1,21 @@
-//
-// Hover event helper
-//
-// img {
-//   @include _hover() {
-//     opacity: .8;
-//   }
-// }
-//
+/*
+---
+name: _hover()
+category:
+  - core/mixin
+  - core/mixin/_hover()
+---
+```scss
+img {
+  @include _hover() {
+    opacity: .8;
+  }
+}
+```
+*/
 
 @mixin _hover() {
-  &:hover, &:focus {
+  &:hover, &:active, &:focus {
     @content;
   }
 }

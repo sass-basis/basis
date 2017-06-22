@@ -1,3 +1,11 @@
+/*
+---
+name: _min()
+category:
+  - core/function
+  - core/function/_min()
+---
+```scss
 //
 // Return min size.
 // If $size is key of $_size, return that value.
@@ -6,6 +14,13 @@
 // @param  size|length  $size
 // @return length|false
 //
+
+@media (min-width: _min(md)) {
+  ...
+}
+```
+*/
+
 @function _min($size) {
   @if (null != map-get($_sizes, $size)) {
     @return map-get($_sizes, $size);
@@ -15,6 +30,14 @@
   @return false;
 }
 
+/*
+---
+name: _max()
+category:
+  - core/function
+  - core/function/_max()
+---
+```scss
 //
 // Return max size.
 // If $size is key of $_size, return that max value.
@@ -23,6 +46,13 @@
 // @param  size|length  $size
 // @return length|false
 //
+
+@media (max-width: _max(md)) {
+  ...
+}
+```
+*/
+
 @function _max($size) {
   $next_size: _next-size-key($size);
   @if (false != $next_size) {
@@ -34,12 +64,25 @@
   @return false;
 }
 
+/*
+---
+name: _prev-size-key()
+category:
+  - core/function
+  - core/function/_prev-size-key()
+---
+```scss
 //
 // Return prev key of $_size
 //
 // @param  size  $size
 // @return size
 //
+
+$prev_size_key: _prev-size-key(md); // => sm
+```
+*/
+
 @function _prev-size-key($size) {
   $prev: false;
   @each $key, $value in $_sizes {
@@ -51,12 +94,25 @@
   @return false;
 }
 
+/*
+---
+name: _next-size-key()
+category:
+  - core/function
+  - core/function/_next-size-key()
+---
+```scss
 //
 // Return next key of $_size
 //
 // @param  size  $size
 // @return size
 //
+
+$next_size_key: _next-size-key(md); // => lg
+```
+*/
+
 @function _next-size-key($size) {
   $next: false;
   @each $key, $value in $_sizes {

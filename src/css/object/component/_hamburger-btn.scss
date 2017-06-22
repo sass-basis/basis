@@ -1,17 +1,19 @@
 /*
 ---
-name: Hamberger Button
+name: Hamburger Button
 category:
   - object/component
-  - object/component/hamberger-btn
+  - object/component/hamburger-btn
 ---
 
 ```html
-<div class="c-hamburger-btn" role="button" aria-expanded="false">
+<div id="hamburger-btn" class="c-hamburger-btn" role="button" data-c="hamburger-btn" aria-expanded="false" aria-controls="drawer">
   <div class="c-hamburger-btn__bar"></div>
   <div class="c-hamburger-btn__bar"></div>
   <div class="c-hamburger-btn__bar"></div>
 </div>
+
+<nav id="drawer" aria-labeledby="hamburger-btn">...</nav>
 ```
 */
 

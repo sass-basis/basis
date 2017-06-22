@@ -26,6 +26,7 @@
 * Add mixin `_visible()`
 * Remove classes `.u-visible-{size}-{display}`
 * Add classes `.u-visible-{size}`, `.u-visible` and `.u-hidden`
+* Remove class `.c-drawer__body`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`

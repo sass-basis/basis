@@ -1,31 +1,92 @@
-//
-// Form Control border color
-// @var  hex
-//
-$_form-control-border-color: _light($_color-gray) !default;
-
-//
-// Form Control border color when hover
-// @var  hex
-//
-$_form-control-border-color-hover: $_color-gray !default;
-
-//
-// Form Control border color when focus
-// @var  hex
-//
-$_form-control-border-color-focus: #85B7D9 !default;
-
+/*
+---
+name: _form-control-base-padding()
+category:
+  - core/mixin
+  - core/mixin/_form-control-base-padding()
+---
+```scss
 //
 // Sets padding for form controls
 //
+
+input[type="text"],
+select {
+  @include _form-control-base-padding();
+}
+```
+*/
+
 @mixin _form-control-base-padding() {
   @include _padding(.25, .5);
 }
 
+/*
+---
+name: $_form-control-border-color
+category:
+  - core/mixin
+  - core/mixin/_form-control-base-border()
+---
+Form Control border color
+
+```scss
+$_form-control-border-color: _light($_color-gray);
+```
+*/
+
+$_form-control-border-color: _light($_color-gray) !default;
+
+/*
+---
+name: $_form-control-border-color-hover
+category:
+  - core/mixin
+  - core/mixin/_form-control-base-border()
+---
+Form Control border color when hover
+
+```scss
+$_form-control-border-color-hover: $_color-gray;
+```
+*/
+
+$_form-control-border-color-hover: $_color-gray !default;
+
+/*
+---
+name: $_form-control-border-color-focus
+category:
+  - core/mixin
+  - core/mixin/_form-control-base-border()
+---
+Form Control border color when focus
+
+```scss
+$_form-control-border-color-focus: #85B7D9;
+```
+*/
+$_form-control-border-color-focus: #85b7d9 !default;
+
+/*
+---
+name: _form-control-base-border()
+category:
+  - core/mixin
+  - core/mixin/_form-control-base-border()
+---
+```scss
 //
 // Sets border for form controls
 //
+
+input[type="text"],
+select {
+  @include _form-control-base-border();
+}
+```
+*/
+
 @mixin _form-control-base-border() {
   border: 1px solid $_form-control-border-color;
   border-radius: $_border-radius;

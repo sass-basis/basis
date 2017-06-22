@@ -1,19 +1,36 @@
-//
-// Flexible Media
-//
-// .c-flex-media {
-//   @include _flex-media();
-// }
-//
-// <div class="c-flex-media">
-//   <div class="c-flex-media__figure">
-//     <img ...>
-//   </div>
-//   <div class="c-flex-media__body">
-//     ...
-//   </div>
-// </div>
-//
+/*
+---
+name: _flex-media()
+category:
+  - core/abstract
+  - core/abstract/_flex-media()
+---
+```scss
+.c-flex-media {
+  @include _flex-media();
+
+  &__figure {
+    @include _margin(0, 0, .5);
+    width: 100%;
+
+    @include _media-min(md) {
+      @include _margin(0, 1, 0, 0);
+      width: 150px;
+    }
+  }
+}
+```
+```ejs
+<div class="c-flex-media">
+  <div class="c-flex-media__figure">
+    <img src="/aigis_assets/images/dummy.jpg">
+  </div>
+  <div class="c-flex-media__body">
+    ...
+  </div>
+</div>
+```
+*/
 
 @mixin _flex-media() {
   @include _media-min(md) {
@@ -26,10 +43,6 @@
 
     > img {
       width: 100%;
-
-      @include _media-min(md) {
-        width: auto;
-      }
     }
 
     > * {
@@ -41,6 +54,6 @@
   }
 
   &__body {
-    flex: 1;
+    flex: 1 1 0%;
   }
 }

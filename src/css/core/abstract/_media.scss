@@ -1,19 +1,30 @@
-//
-// Media
-//
-// .c-media {
-//   @include _media();
-// }
-//
-// <div class="c-media">
-//   <div class="c-media__figure">
-//     <img ...>
-//   </div>
-//   <div class="c-media__body">
-//     ...
-//   </div>
-// </div>
-//
+/*
+---
+name: _media()
+category:
+  - core/abstract
+  - core/abstract/_media()
+---
+```scss
+.c-media {
+  @include _media();
+
+  &__figure {
+    @include _margin(0, 1, 0, 0);
+  }
+}
+```
+```ejs
+<div class="c-media">
+  <div class="c-media__figure">
+    <img src="/aigis_assets/images/dummy.jpg" style="width: 150px">
+  </div>
+  <div class="c-media__body">
+    ...
+  </div>
+</div>
+```
+*/
 
 @mixin _media() {
   display: flex;

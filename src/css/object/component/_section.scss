@@ -8,9 +8,11 @@ category:
 
 ```html
 <section class="c-section">
-  <h2 class="c-section__title">...</h2>
-  <div class="c-section__content">
-    ...
+  <div class="_c-container">
+    <h2 class="c-section__title">...</h2>
+    <div class="c-section__content">
+      ...
+    </div>
   </div>
 </section>
 ```

@@ -1,20 +1,25 @@
-//
-// Spinner (Circle)
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-spinner-circle {
-//   @include _spinner-circle((
-//     size: 20px,
-//     color: _light($_color-gray),
-//     border-size: 3px,
-//     delay: 0s,
-//     duration: 2s,
-//   ));
-// }
-//
-// <div class="c-spinner-circle"></div>
-//
+/*
+---
+name: _spinner-circle()
+category:
+  - core/abstract
+  - core/abstract/_spinner-circle()
+---
+```scss
+.c-spinner-circle {
+  @include _spinner-circle((
+    size: 20px,
+    color: _light($_color-gray),
+    border-size: 3px,
+    delay: 0s,
+    duration: 2s,
+  ));
+}
+```
+```ejs
+<div class="c-spinner-circle"></div>
+```
+*/
 
 @mixin _spinner-circle($params: ()) {
   $params: map-merge(

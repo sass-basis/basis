@@ -1,59 +1,137 @@
+/*
+---
+name: _light()
+category:
+  - core/function
+  - core/function/_light()
+---
+```scss
 //
 // A little brighten
 //
 // @param   hex  $hex
 // @return  hex
 //
+
+color: _light(#000);
+```
+*/
+
 @function _light($hex) {
   @return lighten($hex, 20%);
 }
 
+/*
+---
+name: _lighter()
+category:
+  - core/function
+  - core/function/_lighter()
+---
+```scss
 //
 // Brighten
 //
 // @param   hex  $hex
 // @return  hex
 //
+
+color: _lighter(#000);
+```
+*/
+
 @function _lighter($hex) {
   @return lighten($hex, 33.5%);
 }
 
+/*
+---
+name: _lightest()
+category:
+  - core/function
+  - core/function/_lightest()
+---
+```scss
 //
 // To very brighten
 //
 // @param   hex  $hex
 // @return  hex
 //
+
+color: _lightest(#000);
+```
+*/
+
 @function _lightest($hex) {
   @return lighten($hex, 37%);
 }
 
+/*
+---
+name: _dark()
+category:
+  - core/function
+  - core/function/_dark()
+---
+```scss
 //
 // A little darken
 //
 // @param   hex  $hex
 // @return  hex
 //
+
+color: _dark(#fff);
+```
+*/
+
 @function _dark($hex) {
   @return darken($hex, 20%);
 }
 
+/*
+---
+name: _darker()
+category:
+  - core/function
+  - core/function/_darker()
+---
+```scss
 //
 // Darken
 //
 // @param   hex  $hex
 // @return  hex
 //
+
+color: _darker(#fff);
+```
+*/
+
 @function _darker($hex) {
   @return darken($hex, 33.5%);
 }
 
+/*
+---
+name: _darkest()
+category:
+  - core/function
+  - core/function/_darkest()
+---
+```scss
 //
 // To very darken
 //
 // @param   hex  $hex
 // @return  hex
 //
+
+color: _darkest(#fff);
+```
+*/
+
 @function _darkest($hex) {
   @return darken($hex, 37%);
 }

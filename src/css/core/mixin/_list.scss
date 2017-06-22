@@ -1,15 +1,45 @@
+/*
+---
+name: _list-unstyled()
+category:
+  - core/mixin
+  - core/mixin/_list-unstyled()
+---
+```scss
 //
 // Unstyled list
 //
+
+ul.u-unstyled-list {
+  @include _list-unstyled();
+}
+```
+*/
+
 @mixin _list-unstyled() {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
 }
 
+/*
+---
+name: _list-inline()
+category:
+  - core/mixin
+  - core/mixin/_list-inline()
+---
+```scss
 //
 // Inline list
 //
+
+ul.u-inline-list {
+  @include _list-inline();
+}
+```
+*/
+
 @mixin _list-inline() {
   @include _list-unstyled();
 

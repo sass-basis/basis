@@ -1,15 +1,22 @@
-//
-// Clearfix helper
-//
-// .clerfix {
-//   @include _clearfix();
-// }
-//
-// <div class="clearfix">
-//   <img style="float: right">
-//   ....
-// </div>
-//
+/*
+---
+name: _clearfix()
+category:
+  - core/mixin
+  - core/mixin/_clearfix()
+---
+```scss
+.clerfix {
+  @include _clearfix();
+}
+```
+```ejs
+<div class="clearfix">
+  <img style="float: right">
+  ....
+</div>
+```
+*/
 
 @mixin _clearfix() {
   &:before, &:after {

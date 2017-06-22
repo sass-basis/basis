@@ -1,25 +1,30 @@
-//
-// Spinner (Pulse)
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-spinner-pulse {
-//   @include _spinner-pulse((
-//     height: 16px,
-//     width: 5px,
-//     color: $_color-gray,
-//     delay: 0s,
-//     duration: 2s,
-//     scale: 1.3,
-//   ));
-// }
-//
-// <div class="c-spinner-pulse">
-//   <div class="c-spinner-pulse__bar"></div>
-//   <div class="c-spinner-pulse__bar"></div>
-//   <div class="c-spinner-pulse__bar"></div>
-// </div>
-//
+/*
+---
+name: _spinner-pulse()
+category:
+  - core/abstract
+  - core/abstract/_spinner-pulse()
+---
+```scss
+.c-spinner-pulse {
+  @include _spinner-pulse((
+    height: 16px,
+    width: 5px,
+    color: $_color-gray,
+    delay: 0s,
+    duration: 2s,
+    scale: 1.3,
+  ));
+}
+```
+```ejs
+<div class="c-spinner-pulse">
+  <div class="c-spinner-pulse__bar"></div>
+  <div class="c-spinner-pulse__bar"></div>
+  <div class="c-spinner-pulse__bar"></div>
+</div>
+```
+*/
 
 @mixin _spinner-pulse($params: ()) {
   $params: map-merge(

@@ -1,9 +1,23 @@
+/*
+---
+name: _size-prefix()
+category:
+  - core/function
+  - core/function/_size-prefix()
+---
+```scss
 //
 // Return prefix for the device size
 //
 // @param   string  $size  sm|md|lg
 // @return  string
 //
+
+$prefix: _size-prefix(md); // -> --md
+```
+*/
+
+
 @function _size-prefix($size) {
   $prefix: '-';
 

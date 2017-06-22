@@ -1,8 +1,25 @@
+/*
+---
+name: _media-min()
+category:
+  - core/mixin
+  - core/mixin/_media-min()
+---
+```scss
 //
 // min-width media query
 //
 // @param  size|length  $size  width
 //
+
+.c-foo {
+  @include _media-min(md) {
+    ...
+  }
+}
+```
+*/
+
 @mixin _media-min($size) {
   $prev_size: _prev-size-key($size);
   @if (false != $prev_size) {
@@ -18,11 +35,28 @@
   }
 }
 
+/*
+---
+name: _media-max()
+category:
+  - core/mixin
+  - core/mixin/_media-max()
+---
+```scss
 //
 // max-width media query
 //
 // @param  size|length  $size  width
 //
+
+.c-foo {
+  @include _media-max(md) {
+    ...
+  }
+}
+```
+*/
+
 @mixin _media-max($size) {
   $next_size: _next-size-key($size);
   @if (false != $next_size) {
@@ -38,11 +72,28 @@
   }
 }
 
+/*
+---
+name: _media-only()
+category:
+  - core/mixin
+  - core/mixin/_media-only()
+---
+```scss
 //
 // Specific size only media query
 //
-// @param  size|length  $max  width
+// @param  size|length  $size  width
 //
+
+.c-foo {
+  @include _media-only(md) {
+    ...
+  }
+}
+```
+*/
+
 @mixin _media-only($size) {
   $prev_size: _prev-size-key($size);
   $next_size: _next-size-key($size);

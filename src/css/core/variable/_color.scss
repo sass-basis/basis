@@ -1,23 +1,63 @@
-//
-// Default text color
-// @type  hex
-//
+/*
+---
+name: $_color-text
+category:
+  - core/variable
+  - core/variable/$_color-text
+---
+Default text color
+
+```scss
+$_color-text: #333;
+```
+*/
+
 $_color-text: #333 !default;
 
-//
-// Default black color
-// @type  hex
-//
+/*
+---
+name: $_color-black
+category:
+  - core/variable
+  - core/variable/$_color-black
+---
+Default black color
+
+```scss
+$_color-black: #111;
+```
+*/
+
 $_color-black: #111 !default;
 
-//
-// Default gray color
-// @type  hex
-//
+/*
+---
+name: $_color-gray
+category:
+  - core/variable
+  - core/variable/$_color-gray
+---
+Default gray color
+
+```scss
+$_color-gray: #999;
+```
+*/
+
 $_color-gray: #999 !default;
 
-//
-// Default red color
-// @type  hex
-//
+/*
+---
+name: $_color-red
+category:
+  - core/variable
+  - core/variable/$_color-red
+---
+Default red color
+
+```scss
+$_color-red: #e74c3c;
+```
+*/
+
 $_color-red: #e74c3c !default;

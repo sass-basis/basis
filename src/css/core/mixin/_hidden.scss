@@ -1,13 +1,25 @@
-//
-// Hidden helper
+/*
+---
+name: _hidden()
+category:
+  - core/mixin
+  - core/mixin/_hidden()
+---
+```scss
 //
 // This helper set "position" property.
 // We recomment to use this helper on elements with no position specified.
 //
-// .u-hidden {
-//   @include _hidden();
-// }
-//
+
+.c-foo {
+  @include _hidden();
+
+  @include _media-min(md) {
+      @include _visible();
+  }
+}
+```
+*/
 
 @mixin _hidden() {
   position: absolute !important;

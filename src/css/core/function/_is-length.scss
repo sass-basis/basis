@@ -1,9 +1,24 @@
+/*
+---
+name: _is-length()
+category:
+  - core/function
+  - core/function/_is-length()
+---
+```scss
 //
 // Checks for a valid CSS length
 //
 // @param   mixed  $value
 // @return  bool
 //
+
+@if (_is-length($value)) {
+  width: $value;
+}
+```
+*/
+
 @function _is-length($value) {
   @if ('auto' == $value) {
     @return true;

@@ -1,3 +1,11 @@
+/*
+---
+name: _space()
+category:
+  - core/function
+  - core/function/_space()
+---
+```scss
 //
 // Return the margin conforming to the rhythm
 // When coefficient is lenght return it as is
@@ -5,6 +13,11 @@
 // @param   int|length  $coefficient
 // @return  length
 //
+
+padding: _space(1);
+```
+*/
+
 
 @function _space($coefficient) {
   @if (0 == $coefficient) {

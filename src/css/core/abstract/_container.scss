@@ -1,20 +1,38 @@
-//
-// Container side margin
-// @var  length
-//
+/*
+---
+name: $_container-margin
+category:
+  - core/abstract
+  - core/abstract/_container()
+  - core/abstract/_container-fluid()
+---
+Container side margin
+
+```scss
+$_container-margin: $_base-line-height;
+```
+*/
+
 $_container-margin: $_base-line-height !default;
 
-//
-// Container (Fluid)
-//
-// .c-container-fluid {
-//   @include _container-fluid();
-// }
-//
-// <div class="c-container-fluid">
-//   ...
-// </div>
-//
+/*
+---
+name: _container-fluid()
+category:
+  - core/abstract
+  - core/abstract/_container-fluid()
+---
+```scss
+.c-container-fluid {
+  @include _container-fluid();
+}
+```
+```ejs
+<div class="c-container-fluid">
+  ...
+</div>
+```
+*/
 
 @mixin _container-fluid() {
   padding-right: ($_container-margin / 2);
@@ -26,23 +44,40 @@ $_container-margin: $_base-line-height !default;
   }
 }
 
-//
-// Container max-width
-// @var  length
-//
+/*
+---
+name: $_container-max-width
+category:
+  - core/abstract
+  - core/abstract/_container()
+---
+Container max-width
+
+```scss
+$_container-max-width: 1200px;
+```
+*/
+
 $_container-max-width: 1200px !default;
 
-//
-// Container
-//
-// .c-container {
-//   @include _container();
-// }
-//
-// <div class="c-container">
-//   ...
-// </div>
-//
+/*
+---
+name: _container()
+category:
+  - core/abstract
+  - core/abstract/_container()
+---
+```scss
+.c-container {
+  @include _container();
+}
+```
+```ejs
+<div class="c-container">
+  ...
+</div>
+```
+*/
 
 @mixin _container() {
   @include _container-fluid();

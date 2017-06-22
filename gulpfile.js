@@ -18,6 +18,7 @@ var babel        = require('rollup-plugin-babel');
 var plumber      = require('gulp-plumber');
 var aigis        = require('gulp-aigis');
 var browserSync  = require('browser-sync');
+var runSequence  = require('run-sequence');
 
 var dir = {
   src: {
@@ -105,7 +106,7 @@ gulp.task('font', function() {
 /**
  * Styleguide
  */
- gulp.task('aigis:update', ['build'], function() {
+ gulp.task('aigis:update', function() {
    return _aigis();
  });
  gulp.task('aigis:build', ['build'], function() {
@@ -120,15 +121,17 @@ gulp.task('font', function() {
  * Auto Build
  */
 gulp.task('watch', function() {
-  gulp.watch([dir.src.css + '/**/*.scss'], ['css']);
-  gulp.watch([dir.src.js + '/**/*.js'], ['js']);
-  gulp.watch(
-    [
-      dir.src.css + '/**/*.scss',
-      dir.src.js + '/**/*.js'
-    ],
-    ['aigis:update']
-  );
+  gulp.watch([dir.src.css + '/**/*.scss'], function() {
+    runSequence('css', 'aigis:update');
+  });
+
+  gulp.watch([dir.src.js + '/**/*.js'], function() {
+    runSequence('js', 'aigis:update');
+  });
+
+  gulp.watch([dir.src.aigis + '/**'], function() {
+    runSequence('aigis:update');
+  });
 });
 
 /**

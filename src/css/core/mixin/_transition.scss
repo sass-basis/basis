@@ -1,16 +1,28 @@
+/*
+---
+name: _transition()
+category:
+  - core/mixin
+  - core/mixin/_transition()
+---
+```scss
 //
 // Transition helper
 //
 // @param  string  $property
 //
-// a {
-//   @include _transition(all);
-//   color: #f00;
-//   &:hover {
-//     color: #f9c;
-//   }
-// }
-//
+
+a {
+  @include _transition(all);
+  color: #f00;
+
+  @include _hover() {
+    color: #f9c;
+  }
+}
+```
+*/
+
 @mixin _transition($property: all) {
   transition: $property $_transition-duration $_transition-function-timing;
 }

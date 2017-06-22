@@ -1,5 +1,8 @@
 'use strict';
 
+import BasisHamburgerBtn from './hamburger-btn.js';
+new BasisHamburgerBtn();
+
 import BasisDrawer from './drawer.js';
 new BasisDrawer();
 

@@ -1,15 +1,22 @@
-//
-// Button
-//
-// .c-btn {
-//   @include _btn();
-//   @include _padding(.5, 1);
-//   background-color: #fff;
-//   color: $_color-text;
-// }
-//
-// <a class="c-btn" role="button">btn</a>
-//
+/*
+---
+name: _btn()
+category:
+  - core/abstract
+  - core/abstract/_btn()
+---
+```scss
+.c-btn {
+  @include _btn();
+  @include _padding(.5, 1);
+  background-color: #fff;
+  color: $_color-text;
+}
+```
+```ejs
+<a class="c-btn" role="button">btn</a>
+```
+*/
 
 @mixin _btn() {
   display: inline-block;

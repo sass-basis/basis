@@ -1,9 +1,23 @@
+/*
+---
+name: _is-int()
+category:
+  - core/function
+  - core/function/_is-int()
+---
+```scss
 //
 // Checks for a valid int
 //
 // @param   mixed  $value
 // @return  bool
 //
+
+@if (_is-int($value)) {
+  z-index: $value;
+}
+```
+*/
 @function _is-int($value) {
   @if ('number' == type-of($value) and '' == unit($value) and $value == ceil($value) and $value == abs($value)) {
     @return true;

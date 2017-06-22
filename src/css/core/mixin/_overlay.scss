@@ -1,9 +1,23 @@
+/*
+---
+name: _overlay()
+category:
+  - core/mixin
+  - core/mixin/_overlay()
+---
+```scss
 //
 // Overlay
 //
 // @param  hex  $hex
 // @param  int  $opacity
 //
+
+.c-foo {
+  @include _overlay(#fff, .5);
+}
+```
+*/
 
 @mixin _overlay($hex, $opacity: 1) {
   position: relative;

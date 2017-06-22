@@ -19,3 +19,6 @@ template_dir: ./template_ejs
 template_engine: ejs
 
 index: ../../README.md
+
+transform:
+  - html

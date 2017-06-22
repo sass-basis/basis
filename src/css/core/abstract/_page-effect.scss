@@ -1,26 +1,46 @@
-//
-// Page Effect
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-page-effect {
-//   @include _page-effect((
-//     duration: .2s,
-//     background-color: #fff,
-//   ));
-// }
-//
-// import BasisPageEffect from 'node_modules/sass-basis/src/js/page-effect.js';
-// new BasisPageEffect();
-//
-// <div class="c-page-effect" data-c="page-effect" data-page-effect="fadein" aria-hidden="false">
-//   <div class="c-page-effect__item">
-//     Loading...
-//   </div>
-// </div>
-//
+/*
+---
+name: $_page-effect-z-index
+category:
+  - core/abstract
+  - core/abstract/_page-effect()
+---
+z-index of page effect
+
+```scss
+$_page-effect-z-index: 1000000;
+```
+*/
 
 $_page-effect-z-index: 1000000 !default;
+
+/*
+---
+name: _page-effect()
+category:
+  - core/abstract
+  - core/abstract/_page-effect()
+---
+```scss
+.c-page-effect {
+  @include _page-effect((
+    duration: .2s,
+    background-color: #fff,
+  ));
+}
+```
+```js
+import BasisPageEffect from 'node_modules/sass-basis/src/js/page-effect.js';
+new BasisPageEffect();
+```
+```ejs
+<div class="c-page-effect" data-c="page-effect" data-page-effect="fadein" aria-hidden="false">
+  <div class="c-page-effect__item">
+    Loading...
+  </div>
+</div>
+```
+*/
 
 @mixin _page-effect($params: ()) {
   $params: map-merge(

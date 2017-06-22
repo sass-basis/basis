@@ -1,3 +1,11 @@
+/*
+---
+name: _position()
+category:
+  - core/mixin
+  - core/mixin/_position()
+---
+```scss
 //
 // The position shorthand
 //
@@ -8,6 +16,11 @@
 // @param  length  $left
 // @param  int     $z-index
 //
+
+@include _position(absolute, 10px, null, null, 10px, 1);
+```
+*/
+
 @mixin _position($position, $top: null, $right: null, $bottom: null, $left: null, $z-index: null) {
   position: $position;
 

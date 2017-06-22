@@ -1,11 +1,27 @@
+/*
+---
+name: _padding()
+category:
+  - core/mixin
+  - core/mixin/_padding()
+---
+```scss
 //
-// Setspadding
+// Sets padding
 //
 // @param  int  $coefficient-1
 // @param  int  $coefficient-2
 // @param  int  $coefficient-3
 // @param  int  $coefficient-4
 //
+
+@include _padding(1);
+@include _padding(1, 2);
+@include _padding(1, 2, .5);
+@include _padding(1, 2, .5, 2);
+@include _padding(10px);
+```
+*/
 
 @mixin _padding($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
   @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
@@ -29,38 +45,98 @@
   }
 }
 
+/*
+---
+name: _padding-top()
+category:
+  - core/mixin
+  - core/mixin/_padding()
+  - core/mixin/_padding-top()
+---
+```scss
 //
-// Retrun padding-top
+// Sets padding-top
 //
 // @param  int  $coefficient
 //
+
+@include _padding-top(1);
+@include _padding-top(10px);
+```
+*/
+
 @mixin _padding-top($coefficient) {
   padding-top: _space($coefficient);
 }
 
+/*
+---
+name: _padding-right()
+category:
+  - core/mixin
+  - core/mixin/_padding()
+  - core/mixin/_padding-right()
+---
+```scss
 //
-// Retrun padding-right
+// Sets padding-right
 //
 // @param  int  $coefficient
 //
+
+@include _padding-right(1);
+@include _padding-right(10px);
+```
+*/
+
 @mixin _padding-right($coefficient) {
   padding-right: _space($coefficient);
 }
 
+/*
+---
+name: _padding-bottom()
+category:
+  - core/mixin
+  - core/mixin/_padding()
+  - core/mixin/_padding-bottom()
+---
+```scss
 //
-// Retrun padding-bottom
+// Sets padding-bottom
 //
 // @param  int  $coefficient
 //
+
+@include _padding-bottom(1);
+@include _padding-bottom(10px);
+```
+*/
+
 @mixin _padding-bottom($coefficient) {
   padding-bottom: _space($coefficient);
 }
 
+/*
+---
+name: _padding-left()
+category:
+  - core/mixin
+  - core/mixin/_padding()
+  - core/mixin/_padding-left()
+---
+```scss
 //
-// Retrun padding-left
+// Sets padding-left
 //
 // @param  int  $coefficient
 //
+
+@include _padding-left(1);
+@include _padding-left(10px);
+```
+*/
+
 @mixin _padding-left($coefficient) {
   padding-left: _space($coefficient);
 }

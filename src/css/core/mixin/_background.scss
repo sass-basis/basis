@@ -1,15 +1,46 @@
+/*
+---
+name: _background-image-cover()
+category:
+  - core/mixin
+  - core/mixin/_background-image-cover()
+---
+```scss
 //
 // Background image cover + centering
 //
+
+.c-foo {
+  @include _background-image-cover();
+  background-image: url(...);
+}
+```
+*/
+
 @mixin _background-image-cover() {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
 
+/*
+---
+name: _background-image-fixed()
+category:
+  - core/mixin
+  - core/mixin/_background-image-fixed()
+---
+```scss
 //
 // Background image fixed
 //
+
+.c-foo {
+  @include _background-image-fixed();
+  background-image: url(...);
+}
+```
+*/
 @mixin _background-image-fixed() {
   background-attachment: fixed;
 }

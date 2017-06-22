@@ -1,25 +1,35 @@
-//
-// Grid System
-//
-// .c-row {
-//   @include _row();
-//   &__col {
-//     @include _row__col();
-//     &--1-3 {
-//       @include _row__col(1, 3);
-//     }
-//     &--offset-1-3 {
-//       @include _row__col--offset(1, 3);
-//     }
-//   }
-// }
-//
-// <div class="c-row">
-//   <div class="c-row__col">
-//     ...
-//   </div>
-// </div>
-//
+/*
+---
+name: _row()
+category:
+  - core/abstract
+  - core/abstract/_row()
+---
+```scss
+.c-row {
+  @include _row();
+
+  &__col {
+    @include _row__col();
+
+    &--1-3 {
+      @include _row__col(1, 3);
+    }
+
+    &--offset-1-3 {
+      @include _row__col--offset(1, 3);
+    }
+  }
+}
+```
+```ejs
+<div class="c-row">
+  <div class="c-row__col c-row__col--1-3">
+    ...
+  </div>
+</div>
+```
+*/
 
 @mixin _row() {
   display: flex;

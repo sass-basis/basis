@@ -1,23 +1,34 @@
-//
-// Hamburger Button
-//
-// @param  hash  $params  properties for decoration
-//
-// .c-hamburger-btn {
-//   @include _hamburger-btn((
-//     height: 16px,
-//     width: 22px,
-//     bar-height: 2px,
-//     color: $_color-text,
-//   ));
-// }
-//
-// <div class="c-hamburger-btn" role="button" aria-expanded="false">
-//   <div class="c-hamburger-btn__bar"></div>
-//   <div class="c-hamburger-btn__bar"></div>
-//   <div class="c-hamburger-btn__bar"></div>
-// </div>
-//
+/*
+---
+name: _hamburger-btn()
+category:
+  - core/abstract
+  - core/abstract/_hamburger-btn()
+---
+```scss
+.c-hamburger-btn {
+  @include _hamburger-btn((
+    height: 16px,
+    width: 22px,
+    bar-height: 2px,
+    color: $_color-text,
+  ));
+}
+```
+```js
+import BasisHamburgerBtn from 'node_modules/sass-basis/src/js/hamburger-btn.js';
+new BasisHamburgerBtn();
+```
+```ejs
+<div id="hamburger-btn" class="c-hamburger-btn" role="button" data-c="hamburger-btn" aria-expanded="false" aria-controls="drawer">
+  <div class="c-hamburger-btn__bar"></div>
+  <div class="c-hamburger-btn__bar"></div>
+  <div class="c-hamburger-btn__bar"></div>
+</div>
+
+<nav id="drawer" aria-labeledby="hamburger-btn">...</nav>
+```
+*/
 
 @mixin _hamburger-btn($params: ()) {
   $params: map-merge(

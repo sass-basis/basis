@@ -1,12 +1,33 @@
-//
-// Animation time
-// @type  second|milisecond
-//
+/*
+---
+name: $_transition-duration
+category:
+  - core/variable
+  - core/variable/$_transition-duration
+---
+Animation time
+
+```scss
+$_transition-duration: .1s;
+```
+*/
+
 $_transition-duration: .1s !default;
 
-//
-// Transition function timing
-// @type  string
-// @see  http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
-//
+/*
+---
+name: $_transition-function-timing
+category:
+  - core/variable
+  - core/variable/$_transition-function-timing
+---
+Transition function timing
+
+@link  http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
+
+```scss
+$_transition-function-timing: ease-out;
+```
+*/
+
 $_transition-function-timing: ease-out !default;

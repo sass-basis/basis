@@ -1,3 +1,11 @@
+/*
+---
+name: _replace()
+category:
+  - core/function
+  - core/function/_replace()
+---
+```scss
 //
 // Replace in a string
 //
@@ -6,6 +14,11 @@
 // @param   string       $string
 // @return  string
 //
+
+$value: _replace('p', 'a', 'apple'); // => aaale
+```
+*/
+
 @function _replace($substr, $newsubstr, $string) {
   @if ('list' == type-of($substr)) {
     @each $_s in $substr {

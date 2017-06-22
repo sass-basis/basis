@@ -1,15 +1,22 @@
-//
-// Breadcrumbs
-//
-// .c-breadcrumbs {
-//   @include _breadcrumbs();
-// }
-//
-// <ol class="c-breadcrumbs">
-//   <li class="c-breadcrumbs__item"><a href="#">...</a></li>
-//   <li class="c-breadcrumbs__item">...</li>
-// </ol>
-//
+/*
+---
+name: _breadcrumbs()
+category:
+  - core/abstract
+  - core/abstract/_breadcrumbs()
+---
+```scss
+.c-breadcrumbs {
+  @include _breadcrumbs();
+}
+```
+```ejs
+<ol class="c-breadcrumbs">
+  <li class="c-breadcrumbs__item"><a href="#">...</a></li>
+  <li class="c-breadcrumbs__item">...</li>
+</ol>
+```
+*/
 
 @mixin _breadcrumbs() {
   @include _list-unstyled();

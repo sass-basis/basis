@@ -1,21 +1,28 @@
-//
-// Checkbox
-//
-// .c-checkbox {
-//   @include _checkbox((
-//     size: $_base-font-size-px,
-//     border-radius: $_border-radius,
-//   ));
-// }
-//
-// <label>
-//   <span class="c-checkbox">
-//     <input type="checkbox">
-//     <span class="c-checkbox__control"></span>
-//   </span>
-//   ...
-// </label>
-//
+/*
+---
+name: _checkbox()
+category:
+  - core/abstract
+  - core/abstract/_checkbox()
+---
+```scss
+.c-checkbox {
+  @include _checkbox((
+    size: $_base-font-size-px,
+    border-radius: $_border-radius,
+  ));
+}
+```
+```ejs
+<label>
+  <span class="c-checkbox">
+    <input type="checkbox">
+    <span class="c-checkbox__control"></span>
+  </span>
+  ...
+</label>
+```
+*/
 
 @mixin _checkbox($params: ()) {
   $params: map-merge(

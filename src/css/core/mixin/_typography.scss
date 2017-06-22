@@ -1,8 +1,23 @@
+/*
+---
+name: _font-size()
+category:
+  - core/mixin
+  - core/mixin/_font-size()
+---
+```scss
 //
 // Sets px and rem font-sizes
 //
 // @param  rem|px  $font-size
 //
+
+.c-foo {
+  @include _font-size(12px);
+}
+```
+*/
+
 @mixin _font-size($font-size) {
   $unit: unit($font-size);
   @if ('px' == $unit) {
@@ -16,11 +31,26 @@
   }
 }
 
+/*
+---
+name: _line-height()
+category:
+  - core/mixin
+  - core/mixin/_line-height()
+---
+```scss
 //
 // Sets line-height for vertical rhythum
 //
 // @param  rem|px  $font-size  font size
 //
+
+.c-foo {
+  @include _line-height(12px);
+}
+```
+*/
+
 @mixin _line-height($font-size) {
   $unit: unit($font-size);
   $px  : $font-size;
@@ -30,15 +60,26 @@
   line-height: (_vertical-rhythm($px) / _strip-unit($px));
 }
 
+/*
+---
+name: _font-size-line-height()
+category:
+  - core/mixin
+  - core/mixin/_font-size-line-height()
+---
+```scss
 //
 // Sets px and rem font-sizes and line-height for vertical rhythum
 //
 // @param  rem|px  $font-size
 //
-// h1 {
-//   @include _font-size-line-height(1.5rem);
-// }
-//
+
+.c-foo {
+  @include _font-size-line-height(24px);
+}
+```
+*/
+
 @mixin _font-size-line-height($font-size) {
   $unit: unit($font-size);
   $rem : $font-size;

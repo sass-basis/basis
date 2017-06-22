@@ -1,18 +1,25 @@
-//
-// Input Group
-//
-// .c-input-group {
-//   @include _input-group();
-// }
-//
-// <div class="c-input-group">
-//   <div class="c-input-group__addon">@</div>
-//   <div class="c-input-group__field">
-//     <input type="text">
-//   </div>
-//   <button class="c-input-group__btn">Go</button>
-// </div>
-//
+/*
+---
+name: _input-group()
+category:
+  - core/abstract
+  - core/abstract/_input-group()
+---
+```scss
+.c-input-group {
+  @include _input-group();
+}
+```
+```ejs
+<div class="c-input-group">
+  <div class="c-input-group__addon">@</div>
+  <div class="c-input-group__field">
+    <input type="text">
+  </div>
+  <button class="c-input-group__btn">Go</button>
+</div>
+```
+*/
 
 @mixin _input-group() {
   display: flex;
