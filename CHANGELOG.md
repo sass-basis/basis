@@ -22,11 +22,36 @@
 * Add abstract `_entries()`
 * Add abstract `_entry()`
 * Add abstract `_meta()`
+* Add abstract `_site-branding()`
 * Add mixin `_hidden()`
 * Add mixin `_visible()`
 * Remove classes `.u-visible-{size}-{display}`
 * Add classes `.u-visible-{size}`, `.u-visible` and `.u-hidden`
 * Remove class `.c-drawer__body`
+* Change abstract `_container-fluid()` to `_fluid-container()`
+* Change class `.c-container-fluid` to `.c-fluid-container`
+* Change abstract `_spinner-circle()` to `_circle-spinner()`
+* Change class `.c-spinner-circle` to `.c-circle-spinner`
+* Change abstract `_spinner-dots()` to `_circle-dots()`
+* Change class `.c-spinner-dots` to `.c-circle-dots`
+* Change abstract `_spinner-pulse()` to `_circle-pulse()`
+* Change class `.c-spinner-pulse` to `.c-circle-pulse`
+* Change abstract `_balloon-top()` to `_top-balloon()`
+* Change class `.c-balloon-top` to `.c-top-balloon`
+* Change abstract `_balloon-right()` to `_right-balloon()`
+* Change class `.c-balloon-right` to `.c-right-balloon`
+* Change abstract `_balloon-bottom()` to `_bottom-balloon()`
+* Change class `.c-balloon-bottom` to `.c-bottom-balloon`
+* Change abstract `_balloon-left()` to `_left-balloon()`
+* Change class `.c-balloon-left` to `.c-left-balloon`
+* Change class `.u-animate` to `.u-transition`
+* Change class `.u-animate-shake-vertical` to `.u-shake-vertical`
+* Change class `.u-animate-vibrate-vertical` to `.u-vibrate-vertical`
+* Change class `.u-animate-shake-horizontal` to `.u-shake-horizontal`
+* Change class `.u-animate-vibrate-horizontal` to `.u-vibrate-horizontal`
+* Change class `.u-animate-shake-scale` to `.u-shake-scale`
+* Change class `.u-animate-vibrate-scale` to `.u-vibrate-scale`
+* Change class `.u-animate-extend-underline` to `.u-extend-underline`
 
 ## June 9, 2017 v6.5.0
 * Added `_content()`

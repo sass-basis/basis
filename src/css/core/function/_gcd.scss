@@ -1,11 +1,3 @@
-//
-// Return greatest common divisor
-//
-// @param   int  $a  The number to be divided
-// @param   int  $b  The number to divide
-// @return  int  The number of the remainder
-//
-
 /*
 ---
 name: _gcd()
@@ -13,9 +5,10 @@ category:
   - core/function
   - core/function/_gcd()
 ---
+Return greatest common divisor
+
+### scss
 ```scss
-//
-// Return greatest common divisor
 //
 // @param   int  $a  The number to be divided
 // @param   int  $b  The number to divide

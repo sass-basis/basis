@@ -5,7 +5,16 @@ category:
   - core/mixin
   - core/mixin/_ghost()
 ---
+### Ghost button helper
+
+### scss
 ```scss
+//
+// @param  hash  $params
+//   border-size  length
+//   color        hex
+//
+
 .c-ghost-btn {
   @include _btn();
   @include _ghost((
@@ -15,6 +24,8 @@ category:
   @include _padding(1, 2);
 }
 ```
+
+### html
 ```ejs
 <a class="c-ghost-btn" role="button">btn</a>
 ```

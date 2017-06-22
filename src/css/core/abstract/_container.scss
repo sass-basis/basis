@@ -3,12 +3,19 @@
 name: $_container-margin
 category:
   - core/abstract
-  - core/abstract/_container()
-  - core/abstract/_container-fluid()
+  - core/abstract/container
+  - core/abstract/container/_container()
+  - core/abstract/container/_fluid-container()
+  - core/variable/container/$_container-margin
 ---
 Container side margin
 
+### scss
 ```scss
+//
+// @var  length
+//
+
 $_container-margin: $_base-line-height;
 ```
 */
@@ -17,24 +24,30 @@ $_container-margin: $_base-line-height !default;
 
 /*
 ---
-name: _container-fluid()
+name: _fluid-container()
 category:
   - core/abstract
-  - core/abstract/_container-fluid()
+  - core/abstract/container
+  - core/abstract/container/_fluid-container()
 ---
+Abstract fluid container component
+
+### scss
 ```scss
-.c-container-fluid {
-  @include _container-fluid();
+.c-fluid-container {
+  @include _fluid-container();
 }
 ```
+
+### html
 ```ejs
-<div class="c-container-fluid">
+<div class="c-fluid-container">
   ...
 </div>
 ```
 */
 
-@mixin _container-fluid() {
+@mixin _fluid-container() {
   padding-right: ($_container-margin / 2);
   padding-left: ($_container-margin / 2);
 
@@ -49,11 +62,18 @@ category:
 name: $_container-max-width
 category:
   - core/abstract
-  - core/abstract/_container()
+  - core/abstract/container
+  - core/abstract/container/_container()
+  - core/variable/container/$_container-max-width
 ---
-Container max-width
+Container max width
 
+### scss
 ```scss
+//
+// @var  length
+//
+
 $_container-max-width: 1200px;
 ```
 */
@@ -65,13 +85,19 @@ $_container-max-width: 1200px !default;
 name: _container()
 category:
   - core/abstract
-  - core/abstract/_container()
+  - core/abstract/container
+  - core/abstract/container/_container()
 ---
+Abstract container component
+
+### scss
 ```scss
 .c-container {
   @include _container();
 }
 ```
+
+### html
 ```ejs
 <div class="c-container">
   ...
@@ -80,7 +106,7 @@ category:
 */
 
 @mixin _container() {
-  @include _container-fluid();
+  @include _fluid-container();
 
   margin-right: auto;
   margin-left: auto;

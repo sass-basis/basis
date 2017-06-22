@@ -1,11 +1,13 @@
 /*
 ---
-name: Hero
+name: .c-hero
 category:
   - object/component
   - object/component/hero
 ---
+Hero component
 
+### html
 ```html
 <div class="c-hero" style="background-image: url(/aigis_assets/images/dummy.jpg)">
   <div class="c-hero__header">

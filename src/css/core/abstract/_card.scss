@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_card()
 ---
+Abstract card component
+
+### scss
 ```scss
 .c-card {
   @include _card();
@@ -15,6 +18,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <div class="c-card">
   <div class="c-card__figure">

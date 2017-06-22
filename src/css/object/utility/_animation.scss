@@ -1,0 +1,161 @@
+/*
+---
+name: .u-shake-vertical
+category:
+  - object/utility
+  - object/utility/animation
+  - object/utility/animation/shake-vertical
+---
+Shake vertical utility
+
+### html
+```html
+<div class="u-shake-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-shake-vertical {
+  @include _hover() {
+    @include _shake-vertical();
+  }
+}
+
+/*
+---
+name: .u-vibrate-vertical
+category:
+  - object/utility
+  - object/utility/animation
+  - object/utility/animation/vibrate-vertical
+---
+Vibrate vertical utility
+
+### html
+```html
+<div class="u-vibrate-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-vibrate-vertical {
+  @include _hover() {
+    @include _vibrate-vertical();
+  }
+}
+
+/*
+---
+name: .u-shake-horizontal
+category:
+  - object/utility
+  - object/utility/animation
+  - object/utility/animation/shake-horizontal
+---
+Shake horizontal utility
+
+### html
+```html
+<div class="u-shake-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-shake-horizontal {
+  @include _hover() {
+    @include _shake-horizontal();
+  }
+}
+
+/*
+---
+name: .u-vibrate-horizontal
+category:
+  - object/utility
+  - object/utility/animation
+  - object/utility/animation/vibrate-horizontal
+---
+Vibrate horizontal utility
+
+### html
+```html
+<div class="u-vibrate-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-vibrate-horizontal {
+  @include _hover() {
+    @include _vibrate-horizontal();
+  }
+}
+
+/*
+---
+name: .u-shake-scale
+category:
+  - object/utility
+  - object/utility/animation
+  - object/utility/animation/shake-scale
+---
+Shake scale utility
+
+### html
+```html
+<div class="u-shake-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-shake-scale {
+  @include _hover() {
+    @include _shake-scale();
+  }
+}
+
+/*
+---
+name: .u-vibrate-scale
+category:
+  - object/utility
+  - object/utility/animation
+  - object/utility/animation/vibrate-scale
+---
+Vibrate scale utility
+
+### html
+```html
+<div class="u-vibrate-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
+```
+*/
+
+.#{$_prefix}u-vibrate-scale {
+  @include _hover() {
+    @include _vibrate-scale();
+  }
+}
+
+/*
+---
+name: .u-extend-underline
+category:
+  - object/utility
+  - object/utility/animation
+  - object/utility/animation/extend-underline
+---
+Extend underline utility
+
+### html
+```html
+<span class="u-extend-underline">menu</span>
+```
+*/
+
+.#{$_prefix}u-extend-underline {
+  position: relative;
+
+  &::after {
+    @include _extend-underline();
+  }
+
+  @include _hover() {
+    &::after {
+      width: 100%;
+    }
+  }
+}

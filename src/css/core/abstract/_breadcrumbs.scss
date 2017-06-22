@@ -5,11 +5,16 @@ category:
   - core/abstract
   - core/abstract/_breadcrumbs()
 ---
+Abstract breadcrumbs component
+
+### scss
 ```scss
 .c-breadcrumbs {
   @include _breadcrumbs();
 }
 ```
+
+### html
 ```ejs
 <ol class="c-breadcrumbs">
   <li class="c-breadcrumbs__item"><a href="#">...</a></li>

@@ -1,11 +1,13 @@
 /*
 ---
-name: Drawer
+name: .c-drawer
 category:
   - object/component
   - object/component/drawer
 ---
+Drawer component
 
+### html
 ```html
 <div style="min-height: 200px">
   <nav id="drawer" class="c-drawer" data-c="drawer" role="navigation" aria-hidden="true" aria-labeledby="hamburger-btn">

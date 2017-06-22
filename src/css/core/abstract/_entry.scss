@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_entry()
 ---
+Abstract entry component
+
+### scss
 ```scss
 .c-entry {
   @include _entry();
@@ -19,6 +22,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <article class="c-entry">
   <header class="c-entry__header">

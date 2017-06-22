@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_ic()
 ---
+Abstract icon component
+
+### scss
 ```scss
 .c-ic-angle-right {
   @include _ic();
@@ -14,6 +17,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <span class="c-ic-angle-right" aria-hidden="true"></span>
 ```

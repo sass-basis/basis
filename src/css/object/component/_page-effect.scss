@@ -1,11 +1,13 @@
 /*
 ---
-name: Page Effect
+name: .c-page-effect
 category:
   - object/component
   - object/component/page-effect
 ---
+Page effect component
 
+### html
 ```html
 <div class="c-page-effect" data-c="page-effect" data-page-effect="fadein" aria-hidden="false">
   <div class="c-page-effect__item">

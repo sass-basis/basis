@@ -3,11 +3,13 @@
 name: _margin()
 category:
   - core/mixin
-  - core/mixin/_margin()
+  - core/mixin/margin
+  - core/mixin/margin/_margin()
 ---
+Sets margin
+
+### scss
 ```scss
-//
-// Sets margin
 //
 // @param  int  $coefficient-1
 // @param  int  $coefficient-2
@@ -50,12 +52,13 @@ category:
 name: _margin-top()
 category:
   - core/mixin
-  - core/mixin/_margin()
-  - core/mixin/_margin-top()
+  - core/mixin/margin
+  - core/mixin/margin/_margin-top()
 ---
+Sets margin-top
+
+### scss
 ```scss
-//
-// Sets margin-top
 //
 // @param  int  $coefficient
 //
@@ -74,12 +77,13 @@ category:
 name: _margin-right()
 category:
   - core/mixin
-  - core/mixin/_margin()
-  - core/mixin/_margin-right()
+  - core/mixin/margin
+  - core/mixin/margin/_margin-right()
 ---
+Sets margin-right
+
+### scss
 ```scss
-//
-// Sets margin-right
 //
 // @param  int  $coefficient
 //
@@ -98,12 +102,13 @@ category:
 name: _margin-bottom()
 category:
   - core/mixin
-  - core/mixin/_margin()
-  - core/mixin/_margin-bottom()
+  - core/mixin/margin
+  - core/mixin/margin/_margin-bottom()
 ---
+Sets margin-bottom
+
+### scss
 ```scss
-//
-// Sets margin-bottom
 //
 // @param  int  $coefficient
 //
@@ -122,12 +127,13 @@ category:
 name: _margin-left()
 category:
   - core/mixin
-  - core/mixin/_margin()
-  - core/mixin/_margin-left()
+  - core/mixin/margin
+  - core/mixin/margin/_margin-left()
 ---
+Sets margin-left
+
+### scss
 ```scss
-//
-// Sets margin-left
 //
 // @param  int  $coefficient
 //

@@ -3,10 +3,12 @@
 name: $_color-text
 category:
   - core/variable
-  - core/variable/$_color-text
+  - core/variable/color
+  - core/variable/color/$_color-text
 ---
 Default text color
 
+### scss
 ```scss
 $_color-text: #333;
 ```
@@ -19,10 +21,12 @@ $_color-text: #333 !default;
 name: $_color-black
 category:
   - core/variable
-  - core/variable/$_color-black
+  - core/variable/color
+  - core/variable/color/$_color-black
 ---
 Default black color
 
+### scss
 ```scss
 $_color-black: #111;
 ```
@@ -35,10 +39,12 @@ $_color-black: #111 !default;
 name: $_color-gray
 category:
   - core/variable
-  - core/variable/$_color-gray
+  - core/variable/color
+  - core/variable/color/$_color-gray
 ---
 Default gray color
 
+### scss
 ```scss
 $_color-gray: #999;
 ```
@@ -51,10 +57,12 @@ $_color-gray: #999 !default;
 name: $_color-red
 category:
   - core/variable
-  - core/variable/$_color-red
+  - core/variable/color
+  - core/variable/color/$_color-red
 ---
 Default red color
 
+### scss
 ```scss
 $_color-red: #e74c3c;
 ```

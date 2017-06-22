@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_hero()
 ---
+Abstract hero component
+
+### scss
 ```scss
 .c-hero {
   @include _hero();
@@ -19,6 +22,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <div class="c-hero">
   <div class="c-hero__header">

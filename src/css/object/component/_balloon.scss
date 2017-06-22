@@ -1,20 +1,23 @@
 /*
 ---
-name: Balloon (Top)
+name: .c-top-balloon
 category:
   - object/component
   - object/component/balloon
+  - object/component/balloon/top-balloon
 ---
+Top balloon component
 
+### html
 ```html
-<div class="c-balloon-top">
+<div class="c-top-balloon">
   ...
 </div>
 ```
 */
 
-.#{$_prefix}c-balloon-top {
-  @include _balloon-top((
+.#{$_prefix}c-top-balloon {
+  @include _top-balloon((
     background-color: #fff,
     border-color: _light($_color-gray),
     border-size: 1px,
@@ -23,21 +26,24 @@ category:
 
 /*
 ---
-name: Balloon (Right)
+name: .c-right-balloon
 category:
   - object/component
   - object/component/balloon
+  - object/component/balloon/right-balloon
 ---
+Right balloon component
 
+### html
 ```html
-<div class="c-balloon-right">
+<div class="c-right-balloon">
   ...
 </div>
 ```
 */
 
-.#{$_prefix}c-balloon-right {
-  @include _balloon-right((
+.#{$_prefix}c-right-balloon {
+  @include _right-balloon((
     background-color: #fff,
     border-color: _light($_color-gray),
     border-size: 1px,
@@ -46,21 +52,24 @@ category:
 
 /*
 ---
-name: Balloon (Bottom)
+name: .c-bottom-balloon
 category:
   - object/component
   - object/component/balloon
+  - object/component/balloon/bottom-balloon
 ---
+Bottom balloon component
 
+### html
 ```html
-<div class="c-balloon-bottom">
+<div class="c-bottom-balloon">
   ...
 </div>
 ```
 */
 
-.#{$_prefix}c-balloon-bottom {
-  @include _balloon-bottom((
+.#{$_prefix}c-bottom-balloon {
+  @include _bottom-balloon((
     background-color: #fff,
     border-color: _light($_color-gray),
     border-size: 1px,
@@ -69,21 +78,24 @@ category:
 
 /*
 ---
-name: Balloon (Left)
+name: .c-left-balloon
 category:
   - object/component
   - object/component/balloon
+  - object/component/balloon/left-balloon
 ---
+Left balloon component
 
+### html
 ```html
-<div class="c-balloon-left">
+<div class="c-left-balloon">
   ...
 </div>
 ```
 */
 
-.#{$_prefix}c-balloon-left {
-  @include _balloon-left((
+.#{$_prefix}c-left-balloon {
+  @include _left-balloon((
     background-color: #fff,
     border-color: _light($_color-gray),
     border-size: 1px,

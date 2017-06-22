@@ -3,13 +3,13 @@
 name: _list-unstyled()
 category:
   - core/mixin
-  - core/mixin/_list-unstyled()
+  - core/mixin/list
+  - core/mixin/list/_list-unstyled()
 ---
-```scss
-//
-// Unstyled list
-//
+Unstyled list
 
+### scss
+```scss
 ul.u-unstyled-list {
   @include _list-unstyled();
 }
@@ -27,13 +27,13 @@ ul.u-unstyled-list {
 name: _list-inline()
 category:
   - core/mixin
-  - core/mixin/_list-inline()
+  - core/mixin/list
+  - core/mixin/list/_list-inline()
 ---
-```scss
-//
-// Inline list
-//
+Inline list
 
+### scss
+```scss
 ul.u-inline-list {
   @include _list-inline();
 }

@@ -3,17 +3,25 @@
 name: _select()
 category:
   - core/abstract
-  - core/abstract/_select()
+  - core/abstract/form
+  - core/abstract/form/_select()
 ---
+Abstract selectbox component
+
+### scss
 ```scss
 .c-select {
   @include _select();
 }
 ```
+
+### js
 ```js
 import BasisSelect from 'node_modules/sass-basis/src/js/select.js';
 new BasisSelect();
 ```
+
+### html
 ```ejs
 <span class="c-select c-select--block" data-c="select" aria-selected="false">
   <select>

@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_navbar()
 ---
+Abstract navbar component
+
+### scss
 ```scss
 .c-navbar {
   @include _navbar();
@@ -15,10 +18,14 @@ category:
   }
 }
 ```
+
+### js
 ```js
 import BasisNavbar from 'node_modules/sass-basis/src/js/navbar.js';
 new BasisNavbar();
 ```
+
+### html
 ```ejs
 <ul class="c-navbar">
   <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">

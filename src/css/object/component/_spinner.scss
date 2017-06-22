@@ -1,0 +1,75 @@
+/*
+---
+name: .c-circle-spinner
+category:
+  - object/component
+  - object/component/spinner
+  - object/component/spinner/circle-spinner
+---
+Circle spinner component
+
+### html
+```html
+<div class="c-circle-spinner"></div>
+```
+*/
+
+.#{$_prefix}c-circle-spinner {
+  @include _circle-spinner();
+}
+
+/*
+---
+name: .c-dots-spinner
+category:
+  - object/component
+  - object/component/spinner
+  - object/component/spinner/dots-spinner
+---
+Dots spinner component
+
+### html
+```html
+<div class="c-dots-spinner">
+  <div class="c-dots-spinner__dot"></div>
+  <div class="c-dots-spinner__dot"></div>
+  <div class="c-dots-spinner__dot"></div>
+</div>
+```
+*/
+
+.#{$_prefix}c-dots-spinner {
+  @include _dots-spinner();
+
+  &__dot {
+    margin: 0 4px;
+  }
+}
+
+/*
+---
+name: .c-pulse-spinner
+category:
+  - object/component
+  - object/component/spinner
+  - object/component/spinner/pulse-spinner
+---
+Pulse spinner component
+
+### html
+```html
+<div class="c-pulse-spinner">
+  <div class="c-pulse-spinner__bar"></div>
+  <div class="c-pulse-spinner__bar"></div>
+  <div class="c-pulse-spinner__bar"></div>
+</div>
+```
+*/
+
+.#{$_prefix}c-pulse-spinner {
+  @include _pulse-spinner();
+
+  &__bar {
+    margin: 0 3px;
+  }
+}

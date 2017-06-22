@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_entries()
 ---
+Abstract entries component
+
+### scss
 ```scss
 .c-entries {
   @include _entries();
@@ -16,6 +19,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <ul class="c-entries">
   <li class="c-entries__item">

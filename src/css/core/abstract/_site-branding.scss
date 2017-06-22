@@ -1,0 +1,30 @@
+/*
+---
+name: _site-branding()
+category:
+  - core/abstract
+  - core/abstract/_site-branding()
+---
+Abstract site branding component
+
+### scss
+```scss
+.c-site-branding {
+  @include _site-branding();
+}
+```
+
+### html
+```ejs
+<div class="c-site-branding">
+  <h1 class="c-site-branding__title">...</h1>
+</div>
+```
+*/
+
+@mixin _site-branding() {
+  &__title {
+    margin: 0;
+    @include _font-size-line-height($_base-font-size * 2);
+  }
+}

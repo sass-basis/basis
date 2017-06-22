@@ -5,6 +5,9 @@ category:
   - core/mixin
   - core/mixin/_content()
 ---
+Sets Child elements margin
+
+### scss
 ```scss
 //
 // @param  int  $coefficient
@@ -14,6 +17,8 @@ category:
   @include _content(1);
 }
 ```
+
+### html
 ```ejs
 <div class="u-content">
   ...

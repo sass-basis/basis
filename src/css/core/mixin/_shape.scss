@@ -1,13 +1,76 @@
 /*
 ---
+name: _circle()
+category:
+  - core/mixin
+  - core/mixin/shape
+  - core/mixin/shape/_circle()
+---
+Create circle object
+
+### scss
+```scss
+//
+// @param  length  $size
+//
+
+.c-foo {
+  @include _circle(30px);
+}
+```
+*/
+
+@mixin _circle($size) {
+  border-radius: 100%;
+  height: $size;
+  width: $size;
+  overflow: hidden;
+}
+
+/*
+---
+name: _square()
+category:
+  - core/mixin
+  - core/mixin/shape
+  - core/mixin/shape/_square()
+---
+Creating square
+
+### scss
+```scss
+//
+// @param  length  $size
+// @param  length  $border-radius
+//
+
+.c-foo {
+  @include _square(30px);
+}
+```
+*/
+
+@mixin _square($size, $border-radius: null) {
+  height: $size;
+  width: $size;
+
+  @if (_is-length($border-radius)) {
+    border-radius: $border-radius;
+  }
+}
+
+/*
+---
 name: _triangle-top()
 category:
   - core/mixin
-  - core/mixin/_triangle-top()
+  - core/mixin/shape
+  - core/mixin/shape/_triangle-top()
 ---
+Generate top triangle style
+
+### scss
 ```scss
-//
-// Generate top triangle style
 //
 // @param  length  $width
 // @param  length  $height
@@ -32,7 +95,8 @@ category:
 name: _triangle-right()
 category:
   - core/mixin
-  - core/mixin/_triangle-right()
+  - core/mixin/shape
+  - core/mixin/shape/_triangle-right()
 ---
 ```scss
 //
@@ -61,7 +125,8 @@ category:
 name: _triangle-bottom()
 category:
   - core/mixin
-  - core/mixin/_triangle-bottom()
+  - core/mixin/shape
+  - core/mixin/shape/_triangle-bottom()
 ---
 ```scss
 //
@@ -90,7 +155,8 @@ category:
 name: _triangle-left()
 category:
   - core/mixin
-  - core/mixin/_triangle-left()
+  - core/mixin/shape
+  - core/mixin/shape/_triangle-left()
 ---
 ```scss
 //

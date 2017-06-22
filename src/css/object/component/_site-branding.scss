@@ -1,11 +1,13 @@
 /*
 ---
-name: Site Branding
+name: .c-site-branding
 category:
   - object/component
   - object/component/site-branding
 ---
+Site branding component
 
+### html
 ```html
 <div class="c-site-branding">
   <h1 class="c-site-branding__title">...</h1>
@@ -14,8 +16,5 @@ category:
 */
 
 .#{$_prefix}c-site-branding {
-  &__title {
-    margin: 0;
-    @include _font-size-line-height($_base-font-size * 2);
-  }
+  @include _site-branding();
 }

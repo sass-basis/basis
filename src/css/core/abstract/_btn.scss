@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_btn()
 ---
+Abstract button component
+
+### scss
 ```scss
 .c-btn {
   @include _btn();
@@ -13,6 +16,8 @@ category:
   color: $_color-text;
 }
 ```
+
+## html
 ```ejs
 <a class="c-btn" role="button">btn</a>
 ```

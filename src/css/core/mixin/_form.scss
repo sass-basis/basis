@@ -3,13 +3,13 @@
 name: _form-control-base-padding()
 category:
   - core/mixin
-  - core/mixin/_form-control-base-padding()
+  - core/mixin/form
+  - core/mixin/form/_form-control-base-padding()
 ---
-```scss
-//
-// Sets padding for form controls
-//
+Sets padding for form controls
 
+### scss
+```scss
 input[type="text"],
 select {
   @include _form-control-base-padding();
@@ -26,10 +26,13 @@ select {
 name: $_form-control-border-color
 category:
   - core/mixin
-  - core/mixin/_form-control-base-border()
+  - core/mixin/form
+  - core/mixin/form/_form-control-base-border()
+  - core/variable/form/$_form-control-border-color
 ---
 Form Control border color
 
+### scss
 ```scss
 $_form-control-border-color: _light($_color-gray);
 ```
@@ -42,10 +45,13 @@ $_form-control-border-color: _light($_color-gray) !default;
 name: $_form-control-border-color-hover
 category:
   - core/mixin
-  - core/mixin/_form-control-base-border()
+  - core/mixin/form
+  - core/mixin/form/_form-control-base-border()
+  - core/variable/form/$_form-control-border-color-hover
 ---
 Form Control border color when hover
 
+### scss
 ```scss
 $_form-control-border-color-hover: $_color-gray;
 ```
@@ -58,10 +64,13 @@ $_form-control-border-color-hover: $_color-gray !default;
 name: $_form-control-border-color-focus
 category:
   - core/mixin
-  - core/mixin/_form-control-base-border()
+  - core/mixin/form
+  - core/mixin/form/_form-control-base-border()
+  - core/variable/form/$_form-control-border-color-focus
 ---
 Form Control border color when focus
 
+### scss
 ```scss
 $_form-control-border-color-focus: #85B7D9;
 ```
@@ -73,13 +82,13 @@ $_form-control-border-color-focus: #85b7d9 !default;
 name: _form-control-base-border()
 category:
   - core/mixin
-  - core/mixin/_form-control-base-border()
+  - core/mixin/form
+  - core/mixin/form/_form-control-base-border()
 ---
-```scss
-//
-// Sets border for form controls
-//
+Sets border for form controls
 
+### scss
+```scss
 input[type="text"],
 select {
   @include _form-control-base-border();

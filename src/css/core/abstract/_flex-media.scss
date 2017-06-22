@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_flex-media()
 ---
+Abstract flexible media component
+
+### scss
 ```scss
 .c-flex-media {
   @include _flex-media();
@@ -20,6 +23,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <div class="c-flex-media">
   <div class="c-flex-media__figure">

@@ -1,11 +1,13 @@
 /*
 ---
-name: Select
+name: .c-select
 category:
   - object/component
   - object/component/select
 ---
+Select box component
 
+### html
 ```html
 <span class="c-select" data-c="select" aria-selected="false">
   <select>

@@ -1,13 +1,25 @@
 /*
 ---
-name: _balloon-top()
+name: _top-balloon()
 category:
   - core/abstract
-  - core/abstract/_balloon-top()
+  - core/abstract/balloon
+  - core/abstract/balloon/_top-balloon()
 ---
+Abstract top balloon component
+
+### scss
 ```scss
-.c-balloon-top {
-  @include _balloon-top((
+//
+// @param  hash  $params
+//   background-color  hex
+//   border-color      hex
+//   border-size       length
+//   triangle-size     length
+//
+
+.c-top-balloon {
+  @include _top-balloon((
     background-color: #fff,
     border-color: null,
     border-size: null,
@@ -16,27 +28,41 @@ category:
   @include _padding(1);
 }
 ```
+
+### html
 ```ejs
-<div class="c-balloon-top">
+<div class="c-top-balloon">
   ...
 </div>
 ```
 */
 
-@mixin _balloon-top($params: ()) {
+@mixin _top-balloon($params: ()) {
   @include _balloon(top, $params);
 }
 
 /*
 ---
-name: _balloon-right()
+name: _right-balloon()
 category:
   - core/abstract
-  - core/abstract/_balloon-right()
+  - core/abstract/balloon
+  - core/abstract/balloon/_right-balloon()
 ---
+Abstract right balloon component
+
+### scss
 ```scss
-.c-balloon-right {
-  @include _balloon-right((
+//
+// @param  hash  $params
+//   background-color  hex
+//   border-color      hex
+//   border-size       length
+//   triangle-size     length
+//
+
+.c-right-balloon {
+  @include _right-balloon((
     background-color: #fff,
     border-color: null,
     border-size: null,
@@ -45,27 +71,41 @@ category:
   @include _padding(1);
 }
 ```
+
+### html
 ```ejs
-<div class="c-balloon-right">
+<div class="c-right-balloon">
   ...
 </div>
 ```
 */
 
-@mixin _balloon-right($params: ()) {
+@mixin _right-balloon($params: ()) {
   @include _balloon(right, $params);
 }
 
 /*
 ---
-name: _balloon-bottom()
+name: _bottom-balloon()
 category:
   - core/abstract
-  - core/abstract/_balloon-bottom()
+  - core/abstract/balloon
+  - core/abstract/balloon/_bottom-balloon()
 ---
+Abstract bottom balloon component
+
+### scss
 ```scss
-.c-balloon-bottom {
-  @include _balloon-bottom((
+//
+// @param  hash  $params
+//   background-color  hex
+//   border-color      hex
+//   border-size       length
+//   triangle-size     length
+//
+
+.c-bottom-balloon {
+  @include _bottom-balloon((
     background-color: #fff,
     border-color: null,
     border-size: null,
@@ -74,27 +114,41 @@ category:
   @include _padding(1);
 }
 ```
+
+### html
 ```ejs
-<div class="c-balloon-bottom">
+<div class="c-bottom-balloon">
   ...
 </div>
 ```
 */
 
-@mixin _balloon-bottom($params: ()) {
+@mixin _bottom-balloon($params: ()) {
   @include _balloon(bottom, $params);
 }
 
 /*
 ---
-name: _balloon-left()
+name: _left-balloon()
 category:
   - core/abstract
-  - core/abstract/_balloon-left()
+  - core/abstract/balloon
+  - core/abstract/balloon/_left-balloon()
 ---
+Abstract left balloon component
+
+### scss
 ```scss
-.c-balloon-left {
-  @include _balloon-left((
+//
+// @param  hash  $params
+//   background-color  hex
+//   border-color      hex
+//   border-size       length
+//   triangle-size     length
+//
+
+.c-left-balloon {
+  @include _left-balloon((
     background-color: #fff,
     border-color: null,
     border-size: null,
@@ -103,13 +157,15 @@ category:
   @include _padding(1);
 }
 ```
+
+### html
 ```ejs
-<div class="c-balloon-left">
+<div class="c-left-balloon">
   ...
 </div>
 ```
 */
 
-@mixin _balloon-left($params: ()) {
+@mixin _left-balloon($params: ()) {
   @include _balloon(left, $params);
 }

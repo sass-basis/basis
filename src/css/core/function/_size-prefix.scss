@@ -5,9 +5,11 @@ category:
   - core/function
   - core/function/_size-prefix()
 ---
+
+Return prefix for the device size
+
+### scss
 ```scss
-//
-// Return prefix for the device size
 //
 // @param   string  $size  sm|md|lg
 // @return  string

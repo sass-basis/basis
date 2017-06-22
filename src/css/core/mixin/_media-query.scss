@@ -3,11 +3,13 @@
 name: _media-min()
 category:
   - core/mixin
-  - core/mixin/_media-min()
+  - core/mixin/media-query
+  - core/mixin/media-query/_media-min()
 ---
+min-width media query
+
+### scss
 ```scss
-//
-// min-width media query
 //
 // @param  size|length  $size  width
 //
@@ -40,11 +42,13 @@ category:
 name: _media-max()
 category:
   - core/mixin
-  - core/mixin/_media-max()
+  - core/mixin/media-query
+  - core/mixin/media-query/_media-max()
 ---
+max-width media query
+
+### scss
 ```scss
-//
-// max-width media query
 //
 // @param  size|length  $size  width
 //
@@ -77,11 +81,13 @@ category:
 name: _media-only()
 category:
   - core/mixin
-  - core/mixin/_media-only()
+  - core/mixin/media-query
+  - core/mixin/media-query/_media-only()
 ---
+Specific size only media query
+
+### scss
 ```scss
-//
-// Specific size only media query
 //
 // @param  size|length  $size  width
 //

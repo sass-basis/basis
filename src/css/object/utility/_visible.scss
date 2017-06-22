@@ -4,8 +4,11 @@ name: .u-visible
 category:
   - object/utility
   - object/utility/visible
+  - object/utility/visible/visible
 ---
+Visible utility
 
+### html
 ```html
 <div class="u-visible">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -23,8 +26,11 @@ name: .u-visible-sm
 category:
   - object/utility
   - object/utility/visible
+  - object/utility/visible/visible-sm
 ---
+Visible utility for sm
 
+### html
 ```html
 <div class="u-hidden u-visible-sm">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -44,8 +50,11 @@ name: .u-visible-md
 category:
   - object/utility
   - object/utility/visible
+  - object/utility/visible/visible-md
 ---
+Visible utility for md
 
+### html
 ```html
 <div class="u-hidden u-visible-md">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -65,8 +74,11 @@ name: .u-visible-md-up
 category:
   - object/utility
   - object/utility/visible
+  - object/utility/visible/visible-md-up
 ---
+Visible utility for md or more
 
+### html
 ```html
 <div class="u-hidden u-visible-md-up">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -86,8 +98,11 @@ name: .u-visible-lg
 category:
   - object/utility
   - object/utility/visible
+  - object/utility/visible/visible-lg
 ---
+Visible utility for lg
 
+### html
 ```html
 <div class="u-hidden u-visible-lg">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.

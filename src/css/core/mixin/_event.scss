@@ -5,6 +5,9 @@ category:
   - core/mixin
   - core/mixin/_hover()
 ---
+Hover event helper
+
+### scss
 ```scss
 img {
   @include _hover() {

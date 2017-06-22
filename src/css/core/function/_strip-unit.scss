@@ -5,9 +5,10 @@ category:
   - core/function
   - core/function/_strip-unit()
 ---
+Return numeric value that doesn't have the unit.
+
+### scss
 ```scss
-//
-// Return numeric value that doesn't have the unit.
 //
 // @param   length  $value  numeric value
 // @return  int

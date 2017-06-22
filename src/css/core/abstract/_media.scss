@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_media()
 ---
+Abstract media component
+
+### scss
 ```scss
 .c-media {
   @include _media();
@@ -14,6 +17,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <div class="c-media">
   <div class="c-media__figure">

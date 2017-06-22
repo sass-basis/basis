@@ -1,0 +1,270 @@
+/*
+---
+name: _circle-spinner()
+category:
+  - core/abstract
+  - core/abstract/spinner
+  - core/abstract/spinner/_circle-spinner()
+---
+Abstract circle spinner component
+
+### scss
+```scss
+//
+// @param  hash  $params
+//   size         length
+//   color        hex
+//   border-size  length
+//   delay        seconds
+//   duration     seconds
+//
+
+.c-circle-spinner {
+  @include _circle-spinner((
+    size: 20px,
+    color: _light($_color-gray),
+    border-size: 3px,
+    delay: 0s,
+    duration: 2s,
+  ));
+}
+```
+
+### html
+```ejs
+<div class="c-circle-spinner"></div>
+```
+*/
+
+@mixin _circle-spinner($params: ()) {
+  $params: map-merge(
+    (
+      size: 20px,
+      color: _light($_color-gray),
+      border-size: 3px,
+      delay: 0s,
+      duration: 2s,
+    ),
+    $params
+  );
+
+  $size: map-get($params, 'size');
+  $color: map-get($params, 'color');
+  $border-size: map-get($params, 'border-size');
+  $delay: map-get($params, 'delay');
+  $duration: map-get($params, 'duration');
+
+  $animation-name: _sanitize-animation-name(_circle-spinner- + zip(map-values($params)));
+
+  display: inline-block;
+  @include _circle($size);
+  border: $border-size solid $color;
+  border-top-color: _dark($color);
+  animation: $animation-name $duration linear $delay infinite;
+
+  @keyframes #{$animation-name} {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/*
+---
+name: _dots-spinner()
+category:
+  - core/abstract
+  - core/abstract/spinner
+  - core/abstract/spinner/_dots-spinner()
+---
+Abstract dots spinner component
+
+### scss
+```scss
+//
+// @param  hash  $params
+//   size         length
+//   color        hex
+//   delay        seconds
+//   duration     seconds
+//   scale        int
+//
+
+.c-dots-spinner {
+  @include _dots-spinner((
+    size: 10px,
+    color: $_color-gray,
+    delay: 0s,
+    duration: 2s,
+    scale: 1.3,
+  ));
+}
+```
+
+### html
+```ejs
+<div class="c-dots-spinner">
+  <div class="c-dots-spinner__dot"></div>
+  <div class="c-dots-spinner__dot"></div>
+  <div class="c-dots-spinner__dot"></div>
+</div>
+```
+*/
+
+@mixin _dots-spinner($params: ()) {
+  $params: map-merge(
+    (
+      size: 10px,
+      color: $_color-gray,
+      delay: 0s,
+      duration: 2s,
+      scale: 1.3,
+    ),
+    $params
+  );
+
+  $size: map-get($params, 'size');
+  $color: map-get($params, 'color');
+  $delay: map-get($params, 'delay');
+  $duration: map-get($params, 'duration');
+  $scale: map-get($params, 'scale');
+
+  $animation-name: _sanitize-animation-name(_dots-spinner- + zip(map-values($params)));
+
+  display: inline-block;
+  font-size: 0;
+
+  &__dot {
+    @include _circle($size);
+    display: inline-block;
+    background-color: $color;
+    animation: $animation-name $duration ease-in $delay infinite;
+
+    &:nth-child(2) {
+      animation-delay: .1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: .2s;
+    }
+
+    @keyframes #{$animation-name} {
+      0% {
+        transform: scale(1);
+      }
+      10% {
+        transform: scale($scale);
+      }
+      20% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+/*
+---
+name: _pulse-spinner()
+category:
+  - core/abstract
+  - core/abstract/spinner
+  - core/abstract/spinner/_pulse-spinner()
+---
+Abstract pulse spinner component
+
+### scss
+```scss
+//
+// @param  hash  $params
+//   height    length
+//   width     length
+//   color     hex
+//   delay     seconds
+//   duration  seconds
+//   scale     int
+//
+
+.c-pulse-spinner {
+  @include _pulse-spinner((
+    height: 16px,
+    width: 5px,
+    color: $_color-gray,
+    delay: 0s,
+    duration: 2s,
+    scale: 1.3,
+  ));
+}
+```
+
+### html
+```ejs
+<div class="c-pulse-spinner">
+  <div class="c-pulse-spinner__bar"></div>
+  <div class="c-pulse-spinner__bar"></div>
+  <div class="c-pulse-spinner__bar"></div>
+</div>
+```
+*/
+
+@mixin _pulse-spinner($params: ()) {
+  $params: map-merge(
+    (
+      height: 16px,
+      width: 5px,
+      color: $_color-gray,
+      delay: 0s,
+      duration: 2s,
+      scale: 1.4,
+    ),
+    $params
+  );
+
+  $height: map-get($params, 'height');
+  $width: map-get($params, 'width');
+  $color: map-get($params, 'color');
+  $delay: map-get($params, 'delay');
+  $duration: map-get($params, 'duration');
+  $scale: map-get($params, 'scale');
+
+  $animation-name: _sanitize-animation-name(_pulse-spinner- + zip(map-values($params)));
+
+  display: inline-flex;
+  justify-content: space-between;
+
+  &__bar {
+    height: $height;
+    width: $width;
+    display: block;
+    background-color: $color;
+    animation: $animation-name $duration ease-in $delay infinite;
+
+    &:nth-child(2) {
+      animation-delay: .1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: .2s;
+    }
+
+    @keyframes #{$animation-name} {
+      0% {
+        transform: scaleY(1);
+      }
+      10% {
+        transform: scaleY($scale);
+      }
+      20% {
+        transform: scaleY(1);
+      }
+      100% {
+        transform: scaleY(1);
+      }
+    }
+  }
+}

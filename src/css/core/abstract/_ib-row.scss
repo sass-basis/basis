@@ -3,8 +3,12 @@
 name: _ib-row()
 category:
   - core/abstract
-  - core/abstract/_ib-row()
+  - core/abstract/grid-system
+  - core/abstract/grid-system/_ib-row()
 ---
+Abstract row component of inline-block based grid system
+
+### scss
 ```scss
 .c-row {
   @include _ib-row();
@@ -22,6 +26,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <div class="c-row">
   <div class="c-row__col c-row__col--1-3">
@@ -36,12 +42,45 @@ category:
   font-size: 0;
 }
 
-//
-// Setting column width
+/*
+---
+name: _ib-row__col()
+category:
+  - core/abstract
+  - core/abstract/grid-system/_ib-row()
+---
+Abstract column element of inline-block based grid system
+
+### scss
+```scss
 //
 // @param  int  $columns      molecule column size
 // @param  int  $max-columns  denominator column size
 //
+
+.c-row {
+  @include _ib-row();
+
+  &__col {
+    @include _ib-row__col();
+
+    &--1-3 {
+      @include _ib-row__col(1, 3);
+    }
+  }
+}
+```
+
+### html
+```ejs
+<div class="c-row">
+  <div class="c-row__col c-row__col--1-3">
+    ...
+  </div>
+</div>
+```
+*/
+
 @mixin _ib-row__col($columns: null, $max-columns: null) {
   display: inline-block;
   font-size: $_base-font-size;
@@ -56,11 +95,32 @@ category:
   }
 }
 
-//
-// Setting column width
+/*
+---
+name: _ib-row__col--width()
+category:
+  - core/abstract
+  - core/abstract/grid-system/_ib-row()
+---
+Sets column width of inline-block based grid system
+
+### scss
+```scss
 //
 // @param  length  $width
 //
+
+.c-row {
+  @include _ib-row();
+
+  &__col {
+    @include _ib-row__col();
+    @include _ib-row__col--width(auto);
+  }
+}
+```
+*/
+
 @mixin _ib-row__col--width($width) {
   @if ('auto' == $width) {
     width: auto;
@@ -69,30 +129,85 @@ category:
   }
 }
 
+/*
+---
+name: _ib-row__col--offset()
+category:
+  - core/abstract
+  - core/abstract/grid-system/_ib-row()
+---
+Sets column offset of inline-block based grid system
+
+### scss
+```scss
 //
-// Setting column offset
+// @param  int  $columns      molecule column size
+// @param  int  $max-columns  denominator column size
 //
-// @param  int  $columns      molecule offset size
-// @param  int  $max-columns  denominator offset size
-//
+
+.c-row {
+  @include _ib-row();
+
+  &__col {
+    @include _ib-row__col();
+    @include _ib-row__col--offset(1, 3);
+  }
+}
+```
+*/
+
 @mixin _ib-row__col--offset($columns: null, $max-columns: null) {
   @include _row__col--offset($columns, $max-columns);
 }
 
-//
-// Adding margin for the column
-//
-// @param  int  $coefficient
-//
-@mixin _ib-row__col--margin($coefficient) {
-  @include _row__col--margin($coefficient);
-}
+/*
+---
+name: _ib-row--margin()
+category:
+  - core/abstract
+  - core/abstract/grid-system/_ib-row()
+---
+Sets row margin of inline-block based grid system
 
-//
-// Adding margin for the row
+### scss
+```scss
 //
 // @param  int  $coefficient
 //
+
+.c-row {
+  @include _ib-row();
+  @include _ib-row--margin(1);
+}
+```
+*/
+
 @mixin _ib-row--margin($coefficient) {
   @include _row--margin($coefficient);
+}
+
+/*
+---
+name: _ib-row__col--margin()
+category:
+  - core/abstract
+  - core/abstract/grid-system/_ib-row()
+---
+Sets column margin of inline-block based grid system
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+.c-row {
+  @include _ib-row();
+  @include _ib-row--margin(1);
+}
+```
+*/
+
+@mixin _ib-row__col--margin($coefficient) {
+  @include _row__col--margin($coefficient);
 }

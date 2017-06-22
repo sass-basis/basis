@@ -3,11 +3,13 @@
 name: _padding()
 category:
   - core/mixin
-  - core/mixin/_padding()
+  - core/mixin/padding
+  - core/mixin/padding/_padding()
 ---
+Sets padding
+
+### scss
 ```scss
-//
-// Sets padding
 //
 // @param  int  $coefficient-1
 // @param  int  $coefficient-2
@@ -50,12 +52,13 @@ category:
 name: _padding-top()
 category:
   - core/mixin
-  - core/mixin/_padding()
-  - core/mixin/_padding-top()
+  - core/mixin/padding
+  - core/mixin/padding/_padding-top()
 ---
+Sets padding-top
+
+### scss
 ```scss
-//
-// Sets padding-top
 //
 // @param  int  $coefficient
 //
@@ -74,12 +77,13 @@ category:
 name: _padding-right()
 category:
   - core/mixin
-  - core/mixin/_padding()
-  - core/mixin/_padding-right()
+  - core/mixin/padding
+  - core/mixin/padding/_padding-right()
 ---
+Sets padding-right
+
+### scss
 ```scss
-//
-// Sets padding-right
 //
 // @param  int  $coefficient
 //
@@ -98,12 +102,13 @@ category:
 name: _padding-bottom()
 category:
   - core/mixin
-  - core/mixin/_padding()
-  - core/mixin/_padding-bottom()
+  - core/mixin/padding
+  - core/mixin/padding/_padding-bottom()
 ---
+Sets padding-bottom
+
+### scss
 ```scss
-//
-// Sets padding-bottom
 //
 // @param  int  $coefficient
 //
@@ -122,12 +127,13 @@ category:
 name: _padding-left()
 category:
   - core/mixin
-  - core/mixin/_padding()
-  - core/mixin/_padding-left()
+  - core/mixin/padding
+  - core/mixin/padding/_padding-left()
 ---
+Sets padding-left
+
+### scss
 ```scss
-//
-// Sets padding-left
 //
 // @param  int  $coefficient
 //

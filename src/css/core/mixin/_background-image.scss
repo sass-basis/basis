@@ -3,13 +3,13 @@
 name: _background-image-cover()
 category:
   - core/mixin
-  - core/mixin/_background-image-cover()
+  - core/mixin/background-image
+  - core/mixin/background-image/_background-image-cover()
 ---
-```scss
-//
-// Background image cover + centering
-//
+Background image cover + centering
 
+### scss
+```scss
 .c-foo {
   @include _background-image-cover();
   background-image: url(...);
@@ -28,19 +28,20 @@ category:
 name: _background-image-fixed()
 category:
   - core/mixin
-  - core/mixin/_background-image-fixed()
+  - core/mixin/background-image
+  - core/mixin/background-image/_background-image-fixed()
 ---
-```scss
-//
-// Background image fixed
-//
+Background image fixed
 
+### scss
+```scss
 .c-foo {
   @include _background-image-fixed();
   background-image: url(...);
 }
 ```
 */
+
 @mixin _background-image-fixed() {
   background-attachment: fixed;
 }

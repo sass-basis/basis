@@ -3,13 +3,16 @@
 name: _min()
 category:
   - core/function
-  - core/function/_min()
+  - core/function/media-query
+  - core/function/media-query/_min()
 ---
+Return min size.
+
+* If `$size` is key of `$_size`, return that value.
+* If `$size` is number, return this.
+
+### scss
 ```scss
-//
-// Return min size.
-// If $size is key of $_size, return that value.
-// If $size is number, return this.
 //
 // @param  size|length  $size
 // @return length|false
@@ -35,13 +38,16 @@ category:
 name: _max()
 category:
   - core/function
-  - core/function/_max()
+  - core/function/media-query
+  - core/function/media-query/_max()
 ---
+Return max size.
+
+* If `$size` is key of `$_size`, return that max value.
+* If `$size` is number, return this.
+
+### scss
 ```scss
-//
-// Return max size.
-// If $size is key of $_size, return that max value.
-// If $size is number, return this.
 //
 // @param  size|length  $size
 // @return length|false
@@ -69,11 +75,13 @@ category:
 name: _prev-size-key()
 category:
   - core/function
-  - core/function/_prev-size-key()
+  - core/function/media-query
+  - core/function/media-query/_prev-size-key()
 ---
+Return prev key of `$_size`
+
+### scss
 ```scss
-//
-// Return prev key of $_size
 //
 // @param  size  $size
 // @return size
@@ -99,11 +107,13 @@ $prev_size_key: _prev-size-key(md); // => sm
 name: _next-size-key()
 category:
   - core/function
-  - core/function/_next-size-key()
+  - core/function/media-query
+  - core/function/media-query/_next-size-key()
 ---
+Return next key of `$_size`
+
+### scss
 ```scss
-//
-// Return next key of $_size
 //
 // @param  size  $size
 // @return size

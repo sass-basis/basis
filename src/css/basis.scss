@@ -41,15 +41,14 @@
 @import 'object/component/section';
 @import 'object/component/select';
 @import 'object/component/site-branding';
-@import 'object/component/spinner-circle';
-@import 'object/component/spinner-dots';
-@import 'object/component/spinner-pulse';
+@import 'object/component/spinner';
 
-@import 'object/utility/animate';
+@import 'object/utility/animation';
 @import 'object/utility/clearfix';
 @import 'object/utility/content';
 @import 'object/utility/hidden';
 @import 'object/utility/img';
 @import 'object/utility/pull';
 @import 'object/utility/text';
+@import 'object/utility/transition';
 @import 'object/utility/visible';

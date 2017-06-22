@@ -1,0 +1,24 @@
+/*
+---
+name: .u-transition
+category:
+  - object/utility
+  - object/utility/transition
+---
+Transition utility
+
+### html
+```html
+<style>
+.u-transition:hover {
+  width: 100% !important;
+  opacity: .5 !important;
+}
+</style>
+<div class="u-transition" style="background-color: #333; width: 100px; height: 20px;"></div>
+```
+*/
+
+.#{$_prefix}u-transition {
+  @include _transition(all);
+}

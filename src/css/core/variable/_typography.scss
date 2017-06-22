@@ -1,12 +1,108 @@
 /*
 ---
+name: $_base-font-size-px
+category:
+  - core/variable
+  - core/variable/typography
+  - core/variable/typography/$_base-font-size-px
+---
+Default font size
+
+* If html is `font-size: 62.5%`, set `10px`
+
+### scss
+```scss
+$_base-font-size-px: 16px;
+```
+*/
+
+$_base-font-size-px: 16px !default;
+
+/*
+---
+name: $_base-font-size
+category:
+  - core/variable
+  - core/variable/typography
+  - core/variable/typography/$_base-font-size
+---
+Default font size (rem)
+
+* `$_base-font-size-px` be not able to change. If you want to change base font size, overwrite `$_base-font-size-px`.
+
+### scss
+```scss
+$_base-font-size-px: 16px;
+```
+*/
+
+$_base-font-size: 1rem;
+
+/*
+---
+name: $_between-lines
+category:
+  - core/variable
+  - core/variable/typography
+  - core/variable/typography/$_between-lines
+---
+Between the character and line of line-height
+
+### scss
+```scss
+$_between-lines: ($_base-font-size / 4);
+```
+*/
+
+$_between-lines: ($_base-font-size / 4) !default;
+
+/*
+---
+name: $_base-line-height
+category:
+  - core/variable
+  - core/variable/typography
+  - core/variable/typography/$_base-line-height
+---
+Default line height
+
+### scss
+```scss
+$_base-line-height: ($_base-font-size + $_between-lines * 2);
+```
+*/
+
+$_base-line-height: ($_base-font-size + $_between-lines * 2) !default;
+
+/*
+---
+name: $_margin-coefficient
+category:
+  - core/variable
+  - core/variable/typography
+  - core/variable/typography/$_margin-coefficient
+---
+Margin coefficient
+
+### scss
+```scss
+$_margin-coefficient: 1;
+```
+*/
+
+$_margin-coefficient: 1 !default;
+
+/*
+---
 name: $_base-margin-bottom
 category:
   - core/variable
-  - core/variable/$_base-margin-bottom
+  - core/variable/typography
+  - core/variable/typography/$_base-margin-bottom
 ---
 HTML element margin coefficient
 
+### scss
 ```scss
 $_base-margin-bottom: 1
 ```
@@ -19,10 +115,12 @@ $_base-margin-bottom: 1 !default;
 name: $_h1-font-size-scale
 category:
   - core/variable
-  - core/variable/$_h1-font-size-scale
+  - core/variable/typography
+  - core/variable/typography/$_h1-font-size-scale
 ---
-h1 font size scale
+`h1` font size scale
 
+### scss
 ```scss
 $_h1-font-size-scale: 2.5;
 ```
@@ -35,10 +133,12 @@ $_h1-font-size-scale: 2.5 !default;
 name: $_h2-font-size-scale
 category:
   - core/variable
-  - core/variable/$_h2-font-size-scale
+  - core/variable/typography
+  - core/variable/typography/$_h2-font-size-scale
 ---
-h2 font size scale
+`h2` font size scale
 
+### scss
 ```scss
 $_h2-font-size-scale: 2;
 ```
@@ -51,10 +151,12 @@ $_h2-font-size-scale: 2 !default;
 name: $_h3-font-size-scale
 category:
   - core/variable
-  - core/variable/$_h3-font-size-scale
+  - core/variable/typography
+  - core/variable/typography/$_h3-font-size-scale
 ---
-h3 font size scale
+`h3` font size scale
 
+### scss
 ```scss
 $_h3-font-size-scale: 1.5;
 ```
@@ -67,10 +169,12 @@ $_h3-font-size-scale: 1.5 !default;
 name: $_h4-font-size-scale
 category:
   - core/variable
-  - core/variable/$_h4-font-size-scale
+  - core/variable/typography
+  - core/variable/typography/$_h4-font-size-scale
 ---
-h4 font size scale
+`h4` font size scale
 
+### scss
 ```scss
 $_h4-font-size-scale: 1.25;
 ```
@@ -82,11 +186,12 @@ $_h4-font-size-scale: 1.25 !default;
 ---
 name: $_h5-font-size-scale
 category:
-  - core/variable
-  - core/variable/$_h5-font-size-scale
+  - core/variable/typography
+  - core/variable/typography/$_h5-font-size-scale
 ---
-h5 font size scale
+`h5` font size scale
 
+### scss
 ```scss
 $_h5-font-size-scale: 1;
 ```
@@ -99,10 +204,12 @@ $_h5-font-size-scale: 1 !default;
 name: $_h6-font-size-scale
 category:
   - core/variable
-  - core/variable/$_h6-font-size-scale
+  - core/variable/typography
+  - core/variable/typography/$_h6-font-size-scale
 ---
-h6 font size scale
+`h6` font size scale
 
+### scss
 ```scss
 $_h6-font-size-scale: 1;
 ```
@@ -115,10 +222,12 @@ $_h6-font-size-scale: 1 !default;
 name: $_h1-margin-top
 category:
   - core/variable
-  - core/variable/$_h1-margin-top
+  - core/variable/typography
+  - core/variable/typography/$_h1-margin-top
 ---
-h1 margin top coefficient
+`h1` margin top coefficient
 
+### scss
 ```scss
 $_h1-margin-top: 0;
 ```
@@ -131,10 +240,12 @@ $_h1-margin-top: 0 !default;
 name: $_h1-margin-bottom
 category:
   - core/variable
-  - core/variable/$_h1-margin-bottom
+  - core/variable/typography
+  - core/variable/typography/$_h1-margin-bottom
 ---
-h1 margin bottom coefficient
+`h1` margin bottom coefficient
 
+### scss
 ```scss
 $_h1-margin-bottom: $_base-margin-bottom;
 ```
@@ -147,10 +258,12 @@ $_h1-margin-bottom: $_base-margin-bottom !default;
 name: $_h2-margin-top
 category:
   - core/variable
-  - core/variable/$_h2-margin-top
+  - core/variable/typography
+  - core/variable/typography/$_h2-margin-top
 ---
-h2 margin top coefficient
+`h2` margin top coefficient
 
+### scss
 ```scss
 $_h2-margin-top: $_base-margin-bottom * 2;
 ```
@@ -163,10 +276,12 @@ $_h2-margin-top: $_base-margin-bottom * 2 !default;
 name: $_h2-margin-bottom
 category:
   - core/variable
-  - core/variable/$_h2-margin-bottom
+  - core/variable/typography
+  - core/variable/typography/$_h2-margin-bottom
 ---
-h2 margin bottom coefficient
+`h2` margin bottom coefficient
 
+### scss
 ```scss
 $_h2-margin-bottom: $_base-margin-bottom;
 ```
@@ -179,10 +294,12 @@ $_h2-margin-bottom: $_base-margin-bottom !default;
 name: $_h3-margin-top
 category:
   - core/variable
-  - core/variable/$_h3-margin-top
+  - core/variable/typography
+  - core/variable/typography/$_h3-margin-top
 ---
-h3 margin top coefficient
+`h3` margin top coefficient
 
+### scss
 ```scss
 $_h3-margin-top: $_base-margin-bottom * 1.5;
 ```
@@ -195,10 +312,12 @@ $_h3-margin-top: $_base-margin-bottom * 1.5 !default;
 name: $_h3-margin-bottom
 category:
   - core/variable
-  - core/variable/$_h3-margin-bottom
+  - core/variable/typography
+  - core/variable/typography/$_h3-margin-bottom
 ---
-h3 margin bottom coefficient
+`h3` margin bottom coefficient
 
+### scss
 ```scss
 $_h3-margin-bottom: $_base-margin-bottom;
 ```
@@ -211,10 +330,12 @@ $_h3-margin-bottom: $_base-margin-bottom !default;
 name: $_h4-margin-top
 category:
   - core/variable
-  - core/variable/$_h4-margin-top
+  - core/variable/typography
+  - core/variable/typography/$_h4-margin-top
 ---
-h4 margin top coefficient
+`h4` margin top coefficient
 
+### scss
 ```scss
 $_h4-margin-top: $_base-margin-bottom * 1.25;
 ```
@@ -227,10 +348,12 @@ $_h4-margin-top: $_base-margin-bottom * 1.25 !default;
 name: $_h4-margin-bottom
 category:
   - core/variable
-  - core/variable/$_h4-margin-bottom
+  - core/variable/typography
+  - core/variable/typography/$_h4-margin-bottom
 ---
-h4 margin bottom coefficient
+`h4` margin bottom coefficient
 
+### scss
 ```scss
 $_h4-margin-bottom: $_base-margin-bottom;
 ```
@@ -243,10 +366,12 @@ $_h4-margin-bottom: $_base-margin-bottom !default;
 name: $_h5-margin-top
 category:
   - core/variable
-  - core/variable/$_h5-margin-top
+  - core/variable/typography
+  - core/variable/typography/$_h5-margin-top
 ---
-h5 margin top coefficient
+`h5` margin top coefficient
 
+### scss
 ```scss
 $_h5-margin-top: $_base-margin-bottom;
 ```
@@ -259,10 +384,12 @@ $_h5-margin-top: $_base-margin-bottom !default;
 name: $_h5-margin-bottom
 category:
   - core/variable
-  - core/variable/$_h5-margin-bottom
+  - core/variable/typography
+  - core/variable/typography/$_h5-margin-bottom
 ---
-h5 margin bottom coefficient
+`h5` margin bottom coefficient
 
+### scss
 ```scss
 $_h5-margin-bottom: $_base-margin-bottom * .5;
 ```
@@ -275,10 +402,12 @@ $_h5-margin-bottom: $_base-margin-bottom * .5 !default;
 name: $_h6-margin-top
 category:
   - core/variable
-  - core/variable/$_h6-margin-top
+  - core/variable/typography
+  - core/variable/typography/$_h6-margin-top
 ---
-h6 margin top coefficient
+`h6` margin top coefficient
 
+### scss
 ```scss
 $_h6-margin-top: $_base-margin-bottom;
 ```
@@ -291,10 +420,12 @@ $_h6-margin-top: $_base-margin-bottom !default;
 name: $_h6-margin-bottom
 category:
   - core/variable
-  - core/variable/$_h6-margin-bottom
+  - core/variable/typography
+  - core/variable/typography/$_h6-margin-bottom
 ---
-h6 margin bottom coefficient
+`h6` margin bottom coefficient
 
+### scss
 ```scss
 $_h6-margin-bottom: $_base-margin-bottom * .5;
 ```
@@ -307,7 +438,8 @@ $_h6-margin-bottom: $_base-margin-bottom * .5 !default;
 name: $_font-family
 category:
   - core/variable
-  - core/variable/$_font-family
+  - core/variable/typography
+  - core/variable/typography/$_font-family
 ---
 Default font family
 

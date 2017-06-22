@@ -1,11 +1,13 @@
 /*
 ---
-name: navbar
+name: .c-navbar
 category:
   - object/component
   - object/component/navbar
 ---
+Navbar component
 
+### html
 ```html
 <ul class="c-navbar">
   <li class="c-navbar__item" data-c="navbar__item" aria-haspopup="true">

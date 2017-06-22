@@ -5,11 +5,16 @@ category:
   - core/mixin
   - core/mixin/_clearfix()
 ---
+Clearfix helper
+
+### scss
 ```scss
 .clerfix {
   @include _clearfix();
 }
 ```
+
+### html
 ```ejs
 <div class="clearfix">
   <img style="float: right">

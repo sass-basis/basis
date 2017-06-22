@@ -3,11 +3,13 @@
 name: _bounce-vertical()
 category:
   - core/mixin
-  - core/mixin/_bounce-vertical()
+  - core/mixin/animation
+  - core/mixin/animation/_bounce-vertical()
 ---
+Bounce vertical
+
+### scss
 ```scss
-//
-// Bounce vertical
 //
 // @param   length             $px        bounce size
 // @param   second|milisecond  $delay: 0  animate time
@@ -40,13 +42,13 @@ category:
 name: _shake-vertical()
 category:
   - core/mixin
-  - core/mixin/_shake-vertical()
+  - core/mixin/animation
+  - core/mixin/animation/_shake-vertical()
 ---
-```scss
-//
-// Shake vertical
-//
+Shake vertical
 
+### scss
+```scss
 .c-foo {
   @include _hover() {
     @include _shake-vertical();
@@ -64,13 +66,13 @@ category:
 name: _vibrate-vertical()
 category:
   - core/mixin
-  - core/mixin/_vibrate-vertical()
+  - core/mixin/animation
+  - core/mixin/animation/_vibrate-vertical()
 ---
-```scss
-//
-// Vibrate vertical
-//
+Vibrate vertical
 
+### scss
+```scss
 .c-foo {
   @include _hover() {
     @include _vibrate-vertical();
@@ -88,11 +90,13 @@ category:
 name: _bounce-horizontal()
 category:
   - core/mixin
-  - core/mixin/_bounce-horizontal()
+  - core/mixin/animation
+  - core/mixin/animation/_bounce-horizontal()
 ---
+Bounce horizontal
+
+### scss
 ```scss
-//
-// Bounce horizontal
 //
 // @param   length             $px        bounce size
 // @param   second|milisecond  $delay: 0  animate time
@@ -125,13 +129,13 @@ category:
 name: _shake-horizontal()
 category:
   - core/mixin
-  - core/mixin/_shake-horizontal()
+  - core/mixin/animation
+  - core/mixin/animation/_shake-horizontal()
 ---
-```scss
-//
-// Shake horizontal
-//
+Shake horizontal
 
+### scss
+```scss
 .c-foo {
   @include _hover() {
     @include _shake-horizontal();
@@ -149,13 +153,13 @@ category:
 name: _vibrate-horizontal()
 category:
   - core/mixin
-  - core/mixin/_vibrate-horizontal()
+  - core/mixin/animation
+  - core/mixin/animation/_vibrate-horizontal()
 ---
-```scss
-//
-// Vibrate horizontal
-//
+Vibrate horizontal
 
+### scss
+```scss
 .c-foo {
   @include _hover() {
     @include _vibrate-horizontal();
@@ -173,11 +177,13 @@ category:
 name: _bounce-scale()
 category:
   - core/mixin
-  - core/mixin/_bounce-scale()
+  - core/mixin/animation
+  - core/mixin/animation/_bounce-scale()
 ---
+Bounce scale
+
+### scss
 ```scss
-//
-// Bounce scale
 //
 // @param   float              $px        bounce size
 // @param   second|milisecond  $delay: 0  animate time
@@ -209,13 +215,13 @@ category:
 name: _shake-scale()
 category:
   - core/mixin
-  - core/mixin/_shake-scale()
+  - core/mixin/animation
+  - core/mixin/animation/_shake-scale()
 ---
-```scss
-//
-// Shake scale
-//
+Shake scale
 
+### scss
+```scss
 .c-foo {
   @include _hover() {
     @include _shake-scale();
@@ -233,13 +239,13 @@ category:
 name: _vibrate-scale()
 category:
   - core/mixin
-  - core/mixin/_vibrate-scale()
+  - core/mixin/animation
+  - core/mixin/animation/_vibrate-scale()
 ---
-```scss
-//
-// Vibrate scale
-//
+Vibrate scale
 
+### scss
+```scss
 .c-foo {
   @include _hover() {
     @include _vibrate-scale();
@@ -257,14 +263,15 @@ category:
 name: _extend-underline()
 category:
   - core/mixin
-  - core/mixin/_extend-underline()
+  - core/mixin/animation
+  - core/mixin/animation/_extend-underline()
 ---
-```scss
-//
-// Extend the underline from the center.
-// This mixin use the pseudo-elements.
-//
+Extend the underline from the center.
 
+* This mixin use the pseudo-elements.
+
+### scss
+```scss
 .c-foo a {
   @include _hover() {
     &::after {

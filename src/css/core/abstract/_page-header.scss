@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_page-header()
 ---
+Abstract page header component
+
+### scss
 ```scss
 .c-page-header {
   @include _page-header();
@@ -15,6 +18,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <div class="c-page-header">
   <h1 class="c-page-header__title">...</h1>

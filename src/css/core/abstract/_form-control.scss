@@ -3,13 +3,19 @@
 name: _form-control()
 category:
   - core/abstract
-  - core/abstract/_form-control()
+  - core/abstract/form
+  - core/abstract/form/_form-control()
 ---
+Abstract form control component
+
+### scss
 ```scss
 .c-form-control {
   @include _form-control();
 }
 ```
+
+### html
 ```ejs
 <input type="text" class="c-form-control">
 ```

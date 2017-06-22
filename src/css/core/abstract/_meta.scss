@@ -5,11 +5,16 @@ category:
   - core/abstract
   - core/abstract/_meta()
 ---
+Abstract meta component
+
+### scss
 ```scss
 .c-meta {
   @include _meta();
 }
 ```
+
+### html
 ```ejs
 <ul class="c-meta">
   <li class="c-meta__item">

@@ -4,8 +4,11 @@ name: .u-text-center
 category:
   - object/utility
   - object/utility/text
+  - object/utility/text/text-center
 ---
+Centering text utility
 
+### html
 ```html
 <div class="u-text-center">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -23,8 +26,11 @@ name: .u-text-right
 category:
   - object/utility
   - object/utility/text
+  - object/utility/text/text-right
 ---
+Right justified text utility
 
+### html
 ```html
 <div class="u-text-right">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -42,8 +48,11 @@ name: .u-text-left
 category:
   - object/utility
   - object/utility/text
+  - object/utility/text/text-left
 ---
+Left justified text utility
 
+### html
 ```html
 <div class="u-text-left">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.

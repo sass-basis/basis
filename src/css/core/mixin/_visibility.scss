@@ -1,0 +1,63 @@
+/*
+---
+name: _hidden()
+category:
+  - core/mixin
+  - core/mixin/visibility
+  - core/mixin/visibility/_hidden()
+---
+Hidden helper
+
+* This helper set "position" property.
+* We recomment to use this helper on elements with no position specified.
+
+### scss
+```scss
+.c-foo {
+  @include _hidden();
+
+  @include _media-min(md) {
+      @include _visible();
+  }
+}
+```
+*/
+
+@mixin _hidden() {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  speak: none !important;
+  visibility: hidden !important;
+}
+
+/*
+---
+name: _visible()
+category:
+  - core/mixin
+  - core/mixin/visibility
+  - core/mixin/visibility/_visible()
+---
+Visible helper
+
+* This helper set "position" property.
+*  We recomment to use this helper on elements with no position specified.
+
+### scss
+```scss
+.c-foo {
+  @include _hidden();
+
+  @include _media-min(md) {
+      @include _visible();
+  }
+}
+```
+*/
+
+@mixin _visible() {
+  position: static !important;
+  clip: auto !important;
+  speak: normal !important;
+  visibility: visible !important;
+}

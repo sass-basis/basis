@@ -4,8 +4,11 @@ name: .u-pull-right
 category:
   - object/utility
   - object/utility/pull
+  - object/utility/pull/pull-right
 ---
+Pull right utility
 
+### html
 ```html
 <img class="u-pull-right" src="/aigis_assets/images/dummy.jpg" style="width: 150px; margin-left: 1em">
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -22,8 +25,11 @@ name: .u-pull-left
 category:
   - object/utility
   - object/utility/pull
+  - object/utility/pull/pull-left
 ---
+Pull left utility
 
+### html
 ```html
 <img class="u-pull-left" src="/aigis_assets/images/dummy.jpg" style="width: 150px; margin-right: 1em">
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.

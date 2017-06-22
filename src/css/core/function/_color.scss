@@ -3,11 +3,13 @@
 name: _light()
 category:
   - core/function
-  - core/function/_light()
+  - core/function/color
+  - core/function/color/_light()
 ---
+A little brighten
+
+### scss
 ```scss
-//
-// A little brighten
 //
 // @param   hex  $hex
 // @return  hex
@@ -26,11 +28,13 @@ color: _light(#000);
 name: _lighter()
 category:
   - core/function
-  - core/function/_lighter()
+  - core/function/color
+  - core/function/color/_lighter()
 ---
+Brighten
+
+### scss
 ```scss
-//
-// Brighten
 //
 // @param   hex  $hex
 // @return  hex
@@ -49,11 +53,13 @@ color: _lighter(#000);
 name: _lightest()
 category:
   - core/function
-  - core/function/_lightest()
+  - core/function/color
+  - core/function/color/_lightest()
 ---
+To very brighten
+
+### scss
 ```scss
-//
-// To very brighten
 //
 // @param   hex  $hex
 // @return  hex
@@ -72,11 +78,13 @@ color: _lightest(#000);
 name: _dark()
 category:
   - core/function
-  - core/function/_dark()
+  - core/function/color
+  - core/function/color/_dark()
 ---
+A little darken
+
+### scss
 ```scss
-//
-// A little darken
 //
 // @param   hex  $hex
 // @return  hex
@@ -95,11 +103,13 @@ color: _dark(#fff);
 name: _darker()
 category:
   - core/function
-  - core/function/_darker()
+  - core/function/color
+  - core/function/color/_darker()
 ---
+Darken
+
+### scss
 ```scss
-//
-// Darken
 //
 // @param   hex  $hex
 // @return  hex
@@ -118,11 +128,13 @@ color: _darker(#fff);
 name: _darkest()
 category:
   - core/function
-  - core/function/_darkest()
+  - core/function/color
+  - core/function/color/_darkest()
 ---
+To very darken
+
+### scss
 ```scss
-//
-// To very darken
 //
 // @param   hex  $hex
 // @return  hex

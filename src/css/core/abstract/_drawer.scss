@@ -5,7 +5,16 @@ category:
   - core/abstract
   - core/abstract/_drawer()
 ---
+Abstract drawer component
+
+### scss
 ```scss
+//
+// @param  hash  $params
+//   width      length
+//   max-width  length
+//
+
 .c-drawer {
   @include _drawer((
     width: ($_base-line-height * 10),
@@ -45,10 +54,14 @@ category:
   }
 }
 ```
+
+### js
 ```js
 import BasisDrawer from 'node_modules/sass-basis/src/js/drawer.js';
 new BasisDrawer();
 ```
+
+### html
 ```ejs
 <div style="min-height: 200px">
   <nav id="drawer" class="c-drawer" data-c="drawer" role="navigation" aria-hidden="true" aria-labeledby="hamburger-btn">

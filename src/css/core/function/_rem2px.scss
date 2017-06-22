@@ -5,9 +5,11 @@ category:
   - core/function
   - core/function/_rem2px()
 ---
+Return px from rem
+
+### scss
 ```scss
 //
-// Return px from rem
 // @param   rem  $rem
 // @param   px   $base-font-size-px
 // @return  px

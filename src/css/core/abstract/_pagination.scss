@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_pagination()
 ---
+Abstract pagination component
+
+### scss
 ```scss
 .c-pagination {
   @include _pagination();
@@ -23,6 +26,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <div class="c-pagination">
   <span class="c-pagination__item" aria-current="page">1</span>

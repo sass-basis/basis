@@ -5,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_alert()
 ---
+Abstract alert component
+
+### scss
 ```scss
 .c-alert {
   @include _alert();
@@ -13,6 +16,8 @@ category:
   color: #fff;
 }
 ```
+
+### html
 ```ejs
 <div class="c-alert" role="alert">
   ...

@@ -3,9 +3,19 @@
 name: _checkbox()
 category:
   - core/abstract
-  - core/abstract/_checkbox()
+  - core/abstract/form
+  - core/abstract/form/_checkbox()
 ---
+Abstract checkbox component
+
+### scss
 ```scss
+//
+// @param  hash  $params
+//   size           length
+//   border-radius  length
+//
+
 .c-checkbox {
   @include _checkbox((
     size: $_base-font-size-px,
@@ -13,6 +23,8 @@ category:
   ));
 }
 ```
+
+### html
 ```ejs
 <label>
   <span class="c-checkbox">

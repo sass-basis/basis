@@ -4,8 +4,11 @@ name: .u-hidden
 category:
   - object/utility
   - object/utility/hidden
+  - object/utility/hidden/hidden
 ---
+Hidden utility
 
+### html
 ```html
 <div class="u-hidden">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -23,8 +26,11 @@ name: .u-hidden-sm
 category:
   - object/utility
   - object/utility/hidden
+  - object/utility/hidden/hidden-sm
 ---
+Hidden utility for sm
 
+### html
 ```html
 <div class="u-hidden-sm">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -44,8 +50,11 @@ name: .u-hidden-md
 category:
   - object/utility
   - object/utility/hidden
+  - object/utility/hidden/hidden-md
 ---
+Hidden utility for md
 
+### html
 ```html
 <div class="u-hidden-md">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -65,8 +74,11 @@ name: .u-hidden-md-up
 category:
   - object/utility
   - object/utility/hidden
+  - object/utility/hidden/hidden-md-up
 ---
+Hidden utility for md or more
 
+### html
 ```html
 <div class="u-hidden-md-up">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -86,8 +98,11 @@ name: .u-hidden-lg
 category:
   - object/utility
   - object/utility/hidden
+  - object/utility/hidden/hidden-lg
 ---
+Hidden utility for lg
 
+### html
 ```html
 <div class="u-hidden-lg">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.

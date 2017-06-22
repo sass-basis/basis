@@ -1,0 +1,134 @@
+/*
+---
+name: _is-int()
+category:
+  - core/function
+  - core/function/condition
+  - core/function/condition/_is-int()
+---
+Checks for a valid int
+
+### scss
+```scss
+//
+// @param   mixed  $value
+// @return  bool
+//
+
+@if (_is-int($value)) {
+  z-index: $value;
+}
+```
+*/
+@function _is-int($value) {
+  @if ('number' == type-of($value) and '' == unit($value) and $value == ceil($value) and $value == abs($value)) {
+    @return true;
+  }
+
+  @return false;
+}
+
+/*
+---
+name: _is-length()
+category:
+  - core/function
+  - core/function/condition
+  - core/function/condition/_is-length()
+---
+Checks for a valid CSS length
+
+### scss
+```scss
+//
+// @param   mixed  $value
+// @return  bool
+//
+
+@if (_is-length($value)) {
+  width: $value;
+}
+```
+*/
+
+@function _is-length($value) {
+  @if ('auto' == $value) {
+    @return true;
+  }
+
+  @if ('number' == type-of($value)) {
+    @if ('' != unit($value) or 0 == $value) {
+      @return true;
+    }
+  }
+
+  @if ('string' == type-of($value)) {
+    @if (1 == str-index($value, 'calc')) {
+      @return true;
+    }
+  }
+
+  @return false;
+}
+
+/*
+---
+name: _is-null()
+category:
+  - core/function
+  - core/function/condition
+  - core/function/condition/_is-null()
+---
+Checks for a valid null
+
+### scss
+```scss
+//
+// @param   mixed  $value
+// @return  bool
+//
+
+@if (not _is-null($value)) {
+  width: $value;
+}
+```
+*/
+
+@function _is-null($value) {
+  @if ('null' == type-of($value)) {
+    @return true;
+  }
+
+  @return false;
+}
+
+/*
+---
+name: _is-number()
+category:
+  - core/function
+  - core/function/condition
+  - core/function/condition/_is-number()
+---
+Checks for a valid number
+
+### scss
+```scss
+//
+// @param   mixed  $value
+// @return  bool
+//
+
+@if (_is-number($value)) {
+  z-index: $value;
+}
+```
+*/
+
+@function _is-number($value) {
+  @if ('number' == type-of($value) and '' == unit($value)) {
+    @return true;
+  }
+
+  @return false;
+}

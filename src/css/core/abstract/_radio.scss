@@ -3,8 +3,12 @@
 name: _radio()
 category:
   - core/abstract
-  - core/abstract/_radio()
+  - core/abstract/form
+  - core/abstract/form/_radio()
 ---
+Abstract radio button component
+
+### scss
 ```scss
 .c-radio {
   @include _radio((
@@ -12,6 +16,8 @@ category:
   ));
 }
 ```
+
+### html
 ```ejs
 <label>
   <span class="c-radio">

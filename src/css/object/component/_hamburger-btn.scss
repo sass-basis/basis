@@ -1,11 +1,13 @@
 /*
 ---
-name: Hamburger Button
+name: .c-hamburger-btn
 category:
   - object/component
   - object/component/hamburger-btn
 ---
+Hamburger button component
 
+### html
 ```html
 <div id="hamburger-btn" class="c-hamburger-btn" role="button" data-c="hamburger-btn" aria-expanded="false" aria-controls="drawer">
   <div class="c-hamburger-btn__bar"></div>

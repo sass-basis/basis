@@ -1,11 +1,13 @@
 /*
 ---
-name: Page Header
+name: .c-page-header
 category:
   - object/component
   - object/component/page-header
 ---
+Page header component
 
+### html
 ```html
 <header class="c-page-header">
   <h1 class="c-page-header__title">...</h1>

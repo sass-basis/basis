@@ -1,17 +1,3 @@
-//
-// Section
-//
-// .c-section {
-//   @include _section();
-// }
-//
-// <div class="c-section">
-//   <h2 class="c-section__title">...</h2>
-//   <div class="c-section__content">
-//     ...
-//   </div>
-// </div>
-//
 /*
 ---
 name: _section()
@@ -19,6 +5,9 @@ category:
   - core/abstract
   - core/abstract/_section()
 ---
+Abstract section component
+
+### scss
 ```scss
 .c-section {
   @include _section();
@@ -35,6 +24,8 @@ category:
   }
 }
 ```
+
+### html
 ```ejs
 <section class="c-section">
   <div class="_c-container">

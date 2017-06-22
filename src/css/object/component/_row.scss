@@ -1,11 +1,13 @@
 /*
 ---
-name: Grid System
+name: .c-row
 category:
   - object/component
   - object/component/grid-system
 ---
+Row component of flexbox based grid system
 
+### html
 ```html
 <div class="c-row">
   <div class="c-row__col c-row__col--1-3">
