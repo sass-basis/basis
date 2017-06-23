@@ -12,7 +12,6 @@
 name: $_prefix
 category:
   - core/variable
-  - core/variable/$_prefix
 ---
 Prefix of basis classes
 
@@ -26,7 +25,6 @@ name: _light()
 category:
   - core/function
   - core/function/color
-  - core/function/color/_light()
 ---
 A little brighten
 
@@ -46,7 +44,6 @@ name: _lighter()
 category:
   - core/function
   - core/function/color
-  - core/function/color/_lighter()
 ---
 Brighten
 
@@ -66,7 +63,6 @@ name: _lightest()
 category:
   - core/function
   - core/function/color
-  - core/function/color/_lightest()
 ---
 To very brighten
 
@@ -86,7 +82,6 @@ name: _dark()
 category:
   - core/function
   - core/function/color
-  - core/function/color/_dark()
 ---
 A little darken
 
@@ -106,7 +101,6 @@ name: _darker()
 category:
   - core/function
   - core/function/color
-  - core/function/color/_darker()
 ---
 Darken
 
@@ -126,7 +120,6 @@ name: _darkest()
 category:
   - core/function
   - core/function/color
-  - core/function/color/_darkest()
 ---
 To very darken
 
@@ -146,7 +139,6 @@ name: _is-int()
 category:
   - core/function
   - core/function/condition
-  - core/function/condition/_is-int()
 ---
 Checks for a valid int
 
@@ -168,7 +160,6 @@ name: _is-length()
 category:
   - core/function
   - core/function/condition
-  - core/function/condition/_is-length()
 ---
 Checks for a valid CSS length
 
@@ -190,7 +181,6 @@ name: _is-null()
 category:
   - core/function
   - core/function/condition
-  - core/function/condition/_is-null()
 ---
 Checks for a valid null
 
@@ -212,7 +202,6 @@ name: _is-number()
 category:
   - core/function
   - core/function/condition
-  - core/function/condition/_is-number()
 ---
 Checks for a valid number
 
@@ -233,7 +222,6 @@ Checks for a valid number
 name: _gcd()
 category:
   - core/function
-  - core/function/_gcd()
 ---
 Return greatest common divisor
 
@@ -254,7 +242,6 @@ name: _min()
 category:
   - core/function
   - core/function/media-query
-  - core/function/media-query/_min()
 ---
 Return min size.
 
@@ -279,7 +266,6 @@ name: _max()
 category:
   - core/function
   - core/function/media-query
-  - core/function/media-query/_max()
 ---
 Return max size.
 
@@ -304,7 +290,6 @@ name: _prev-size-key()
 category:
   - core/function
   - core/function/media-query
-  - core/function/media-query/_prev-size-key()
 ---
 Return prev key of `$_size`
 
@@ -324,7 +309,6 @@ name: _next-size-key()
 category:
   - core/function
   - core/function/media-query
-  - core/function/media-query/_next-size-key()
 ---
 Return next key of `$_size`
 
@@ -343,7 +327,6 @@ $next_size_key: _next-size-key(md); // => lg
 name: _px2rem()
 category:
   - core/function
-  - core/function/_px2rem()
 ---
 Return rem from px
 
@@ -363,7 +346,6 @@ font-size: _px2rem(16px);
 name: _rem2px()
 category:
   - core/function
-  - core/function/_rem2px()
 ---
 Return px from rem
 
@@ -383,7 +365,6 @@ font-size: _rem2px(2rem);
 name: _replace()
 category:
   - core/function
-  - core/function/_replace()
 ---
 Replace in a string
 
@@ -404,7 +385,6 @@ $value: _replace('p', 'a', 'apple'); // => aaale
 name: _sanitize-animation-name()
 category:
   - core/function
-  - core/function/_sanitize-animation-name()
 ---
 Sanitize animation name
 
@@ -424,7 +404,6 @@ animation: $animation-name .2s ease-in 0s;
 name: _size-prefix()
 category:
   - core/function
-  - core/function/_size-prefix()
 ---
 
 Return prefix for the device size
@@ -444,7 +423,6 @@ $prefix: _size-prefix(md); // -> --md
 name: _space()
 category:
   - core/function
-  - core/function/_space()
 ---
 Return the margin conforming to the rhythm
 
@@ -465,7 +443,6 @@ padding: _space(1);
 name: _strip-unit()
 category:
   - core/function
-  - core/function/_strip-unit()
 ---
 Return numeric value that doesn't have the unit.
 
@@ -484,7 +461,6 @@ $value: _strip-unit(10px); // => 10
 name: _vertical-rhythm()
 category:
   - core/function
-  - core/function/_vertical-rhythm()
 ---
 Return line height ( px ) for vertical rhythum
 
@@ -505,7 +481,6 @@ name: $_base-font-size-px
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_base-font-size-px
 ---
 Default font size
 
@@ -522,7 +497,6 @@ name: $_base-font-size
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_base-font-size
 ---
 Default font size (rem)
 
@@ -539,7 +513,6 @@ name: $_between-lines
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_between-lines
 ---
 Between the character and line of line-height
 
@@ -554,7 +527,6 @@ name: $_base-line-height
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_base-line-height
 ---
 Default line height
 
@@ -569,7 +541,6 @@ name: $_margin-coefficient
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_margin-coefficient
 ---
 Margin coefficient
 
@@ -584,7 +555,6 @@ name: $_base-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_base-margin-bottom
 ---
 HTML element margin coefficient
 
@@ -599,7 +569,6 @@ name: $_h1-font-size-scale
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h1-font-size-scale
 ---
 `h1` font size scale
 
@@ -614,7 +583,6 @@ name: $_h2-font-size-scale
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h2-font-size-scale
 ---
 `h2` font size scale
 
@@ -629,7 +597,6 @@ name: $_h3-font-size-scale
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h3-font-size-scale
 ---
 `h3` font size scale
 
@@ -644,7 +611,6 @@ name: $_h4-font-size-scale
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h4-font-size-scale
 ---
 `h4` font size scale
 
@@ -658,7 +624,6 @@ $_h4-font-size-scale: 1.25;
 name: $_h5-font-size-scale
 category:
   - core/variable/typography
-  - core/variable/typography/$_h5-font-size-scale
 ---
 `h5` font size scale
 
@@ -673,7 +638,6 @@ name: $_h6-font-size-scale
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h6-font-size-scale
 ---
 `h6` font size scale
 
@@ -688,7 +652,6 @@ name: $_h1-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h1-margin-top
 ---
 `h1` margin top coefficient
 
@@ -703,7 +666,6 @@ name: $_h1-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h1-margin-bottom
 ---
 `h1` margin bottom coefficient
 
@@ -718,7 +680,6 @@ name: $_h2-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h2-margin-top
 ---
 `h2` margin top coefficient
 
@@ -733,7 +694,6 @@ name: $_h2-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h2-margin-bottom
 ---
 `h2` margin bottom coefficient
 
@@ -748,7 +708,6 @@ name: $_h3-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h3-margin-top
 ---
 `h3` margin top coefficient
 
@@ -763,7 +722,6 @@ name: $_h3-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h3-margin-bottom
 ---
 `h3` margin bottom coefficient
 
@@ -778,7 +736,6 @@ name: $_h4-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h4-margin-top
 ---
 `h4` margin top coefficient
 
@@ -793,7 +750,6 @@ name: $_h4-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h4-margin-bottom
 ---
 `h4` margin bottom coefficient
 
@@ -808,7 +764,6 @@ name: $_h5-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h5-margin-top
 ---
 `h5` margin top coefficient
 
@@ -823,7 +778,6 @@ name: $_h5-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h5-margin-bottom
 ---
 `h5` margin bottom coefficient
 
@@ -838,7 +792,6 @@ name: $_h6-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h6-margin-top
 ---
 `h6` margin top coefficient
 
@@ -853,7 +806,6 @@ name: $_h6-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h6-margin-bottom
 ---
 `h6` margin bottom coefficient
 
@@ -868,7 +820,6 @@ name: $_font-family
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_font-family
 ---
 Default font family
 
@@ -881,7 +832,6 @@ $_font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 name: $_transition-duration
 category:
   - core/variable
-  - core/variable/$_transition-duration
 ---
 Animation time
 
@@ -895,7 +845,6 @@ $_transition-duration: .1s;
 name: $_transition-function-timing
 category:
   - core/variable
-  - core/variable/$_transition-function-timing
 ---
 Transition function timing
 
@@ -913,7 +862,6 @@ $_transition-function-timing: ease-out;
 name: $_border-radius
 category:
   - core/variable
-  - core/variable/$_border-radius
 ---
 Border radius
 
@@ -928,7 +876,6 @@ name: $_color-text
 category:
   - core/variable
   - core/variable/color
-  - core/variable/color/$_color-text
 ---
 Default text color
 
@@ -943,7 +890,6 @@ name: $_color-black
 category:
   - core/variable
   - core/variable/color
-  - core/variable/color/$_color-black
 ---
 Default black color
 
@@ -958,7 +904,6 @@ name: $_color-gray
 category:
   - core/variable
   - core/variable/color
-  - core/variable/color/$_color-gray
 ---
 Default gray color
 
@@ -973,7 +918,6 @@ name: $_color-red
 category:
   - core/variable
   - core/variable/color
-  - core/variable/color/$_color-red
 ---
 Default red color
 
@@ -987,7 +931,6 @@ $_color-red: #e74c3c;
 name: $_font-path
 category:
   - core/variable
-  - core/variable/$_font-path
 ---
 Basis font relative path
 
@@ -1010,7 +953,6 @@ name: $_min-columns
 category:
   - core/variable
   - core/variable/media-query
-  - core/variable/media-query/$_min-columns
 ---
 The minimum number of columns
 
@@ -1025,7 +967,6 @@ name: $_max-columns
 category:
   - core/variable
   - core/variable/media-query
-  - core/variable/media-query/$_max-columns
 ---
 The maximum number of columns
 
@@ -1040,7 +981,6 @@ name: $_sizes
 category:
   - core/variable
   - core/variable/media-query
-  - core/variable/media-query/$_sizes
 ---
 Hash of breakpoints
 
@@ -1059,7 +999,6 @@ name: _bounce-vertical()
 category:
   - core/mixin
   - core/mixin/animation
-  - core/mixin/animation/_bounce-vertical()
 ---
 Bounce vertical
 
@@ -1083,7 +1022,6 @@ name: _shake-vertical()
 category:
   - core/mixin
   - core/mixin/animation
-  - core/mixin/animation/_shake-vertical()
 ---
 Shake vertical
 
@@ -1102,7 +1040,6 @@ name: _vibrate-vertical()
 category:
   - core/mixin
   - core/mixin/animation
-  - core/mixin/animation/_vibrate-vertical()
 ---
 Vibrate vertical
 
@@ -1121,7 +1058,6 @@ name: _bounce-horizontal()
 category:
   - core/mixin
   - core/mixin/animation
-  - core/mixin/animation/_bounce-horizontal()
 ---
 Bounce horizontal
 
@@ -1145,7 +1081,6 @@ name: _shake-horizontal()
 category:
   - core/mixin
   - core/mixin/animation
-  - core/mixin/animation/_shake-horizontal()
 ---
 Shake horizontal
 
@@ -1164,7 +1099,6 @@ name: _vibrate-horizontal()
 category:
   - core/mixin
   - core/mixin/animation
-  - core/mixin/animation/_vibrate-horizontal()
 ---
 Vibrate horizontal
 
@@ -1183,7 +1117,6 @@ name: _bounce-scale()
 category:
   - core/mixin
   - core/mixin/animation
-  - core/mixin/animation/_bounce-scale()
 ---
 Bounce scale
 
@@ -1207,7 +1140,6 @@ name: _shake-scale()
 category:
   - core/mixin
   - core/mixin/animation
-  - core/mixin/animation/_shake-scale()
 ---
 Shake scale
 
@@ -1226,7 +1158,6 @@ name: _vibrate-scale()
 category:
   - core/mixin
   - core/mixin/animation
-  - core/mixin/animation/_vibrate-scale()
 ---
 Vibrate scale
 
@@ -1245,7 +1176,6 @@ name: _extend-underline()
 category:
   - core/mixin
   - core/mixin/animation
-  - core/mixin/animation/_extend-underline()
 ---
 Extend the underline from the center.
 
@@ -1268,7 +1198,6 @@ name: _background-image-cover()
 category:
   - core/mixin
   - core/mixin/background-image
-  - core/mixin/background-image/_background-image-cover()
 ---
 Background image cover + centering
 
@@ -1286,7 +1215,6 @@ name: _background-image-fixed()
 category:
   - core/mixin
   - core/mixin/background-image
-  - core/mixin/background-image/_background-image-fixed()
 ---
 Background image fixed
 
@@ -1303,7 +1231,6 @@ Background image fixed
 name: _balloon-triangle()
 category:
   - core/mixin
-  - core/mixin/_balloon-triangle()
 ---
 Generate balloon triangle
 
@@ -1330,7 +1257,6 @@ Generate balloon triangle
 name: _balloon()
 category:
   - core/mixin
-  - core/mixin/_balloon()
 ---
 Generate balloon
 
@@ -1356,7 +1282,6 @@ Generate balloon
 name: _clearfix()
 category:
   - core/mixin
-  - core/mixin/_clearfix()
 ---
 Clearfix helper
 
@@ -1380,7 +1305,6 @@ Clearfix helper
 name: _content()
 category:
   - core/mixin
-  - core/mixin/_content()
 ---
 Sets Child elements margin
 
@@ -1407,7 +1331,6 @@ Sets Child elements margin
 name: _hover()
 category:
   - core/mixin
-  - core/mixin/_hover()
 ---
 Hover event helper
 
@@ -1426,7 +1349,6 @@ name: _form-control-base-padding()
 category:
   - core/mixin
   - core/mixin/form
-  - core/mixin/form/_form-control-base-padding()
 ---
 Sets padding for form controls
 
@@ -1444,8 +1366,7 @@ name: $_form-control-border-color
 category:
   - core/mixin
   - core/mixin/form
-  - core/mixin/form/_form-control-base-border()
-  - core/variable/form/$_form-control-border-color
+  - core/variable/form
 ---
 Form Control border color
 
@@ -1460,8 +1381,7 @@ name: $_form-control-border-color-hover
 category:
   - core/mixin
   - core/mixin/form
-  - core/mixin/form/_form-control-base-border()
-  - core/variable/form/$_form-control-border-color-hover
+  - core/variable/form
 ---
 Form Control border color when hover
 
@@ -1476,8 +1396,7 @@ name: $_form-control-border-color-focus
 category:
   - core/mixin
   - core/mixin/form
-  - core/mixin/form/_form-control-base-border()
-  - core/variable/form/$_form-control-border-color-focus
+  - core/variable/form
 ---
 Form Control border color when focus
 
@@ -1492,7 +1411,6 @@ name: _form-control-base-border()
 category:
   - core/mixin
   - core/mixin/form
-  - core/mixin/form/_form-control-base-border()
 ---
 Sets border for form controls
 
@@ -1509,7 +1427,6 @@ select {
 name: _ghost()
 category:
   - core/mixin
-  - core/mixin/_ghost()
 ---
 ### Ghost button helper
 
@@ -1542,7 +1459,6 @@ name: _list-unstyled()
 category:
   - core/mixin
   - core/mixin/list
-  - core/mixin/list/_list-unstyled()
 ---
 Unstyled list
 
@@ -1559,7 +1475,6 @@ name: _list-inline()
 category:
   - core/mixin
   - core/mixin/list
-  - core/mixin/list/_list-inline()
 ---
 Inline list
 
@@ -1576,7 +1491,6 @@ name: _margin()
 category:
   - core/mixin
   - core/mixin/margin
-  - core/mixin/margin/_margin()
 ---
 Sets margin
 
@@ -1602,7 +1516,6 @@ name: _margin-top()
 category:
   - core/mixin
   - core/mixin/margin
-  - core/mixin/margin/_margin-top()
 ---
 Sets margin-top
 
@@ -1622,7 +1535,6 @@ name: _margin-right()
 category:
   - core/mixin
   - core/mixin/margin
-  - core/mixin/margin/_margin-right()
 ---
 Sets margin-right
 
@@ -1642,7 +1554,6 @@ name: _margin-bottom()
 category:
   - core/mixin
   - core/mixin/margin
-  - core/mixin/margin/_margin-bottom()
 ---
 Sets margin-bottom
 
@@ -1662,7 +1573,6 @@ name: _margin-left()
 category:
   - core/mixin
   - core/mixin/margin
-  - core/mixin/margin/_margin-left()
 ---
 Sets margin-left
 
@@ -1681,7 +1591,6 @@ Sets margin-left
 name: _overlay()
 category:
   - core/mixin
-  - core/mixin/_overlay()
 ---
 Overlay helper
 
@@ -1703,7 +1612,6 @@ name: _padding()
 category:
   - core/mixin
   - core/mixin/padding
-  - core/mixin/padding/_padding()
 ---
 Sets padding
 
@@ -1729,7 +1637,6 @@ name: _padding-top()
 category:
   - core/mixin
   - core/mixin/padding
-  - core/mixin/padding/_padding-top()
 ---
 Sets padding-top
 
@@ -1749,7 +1656,6 @@ name: _padding-right()
 category:
   - core/mixin
   - core/mixin/padding
-  - core/mixin/padding/_padding-right()
 ---
 Sets padding-right
 
@@ -1769,7 +1675,6 @@ name: _padding-bottom()
 category:
   - core/mixin
   - core/mixin/padding
-  - core/mixin/padding/_padding-bottom()
 ---
 Sets padding-bottom
 
@@ -1789,7 +1694,6 @@ name: _padding-left()
 category:
   - core/mixin
   - core/mixin/padding
-  - core/mixin/padding/_padding-left()
 ---
 Sets padding-left
 
@@ -1808,7 +1712,6 @@ Sets padding-left
 name: _position()
 category:
   - core/mixin
-  - core/mixin/_position()
 ---
 The position shorthand
 
@@ -1832,7 +1735,6 @@ name: _media-min()
 category:
   - core/mixin
   - core/mixin/media-query
-  - core/mixin/media-query/_media-min()
 ---
 min-width media query
 
@@ -1855,7 +1757,6 @@ name: _media-max()
 category:
   - core/mixin
   - core/mixin/media-query
-  - core/mixin/media-query/_media-max()
 ---
 max-width media query
 
@@ -1878,7 +1779,6 @@ name: _media-only()
 category:
   - core/mixin
   - core/mixin/media-query
-  - core/mixin/media-query/_media-only()
 ---
 Specific size only media query
 
@@ -1901,7 +1801,6 @@ name: _circle()
 category:
   - core/mixin
   - core/mixin/shape
-  - core/mixin/shape/_circle()
 ---
 Create circle object
 
@@ -1922,7 +1821,6 @@ name: _square()
 category:
   - core/mixin
   - core/mixin/shape
-  - core/mixin/shape/_square()
 ---
 Creating square
 
@@ -1944,7 +1842,6 @@ name: _triangle-top()
 category:
   - core/mixin
   - core/mixin/shape
-  - core/mixin/shape/_triangle-top()
 ---
 Generate top triangle style
 
@@ -1967,7 +1864,6 @@ name: _triangle-right()
 category:
   - core/mixin
   - core/mixin/shape
-  - core/mixin/shape/_triangle-right()
 ---
 ```scss
 //
@@ -1989,7 +1885,6 @@ name: _triangle-bottom()
 category:
   - core/mixin
   - core/mixin/shape
-  - core/mixin/shape/_triangle-bottom()
 ---
 ```scss
 //
@@ -2011,7 +1906,6 @@ name: _triangle-left()
 category:
   - core/mixin
   - core/mixin/shape
-  - core/mixin/shape/_triangle-left()
 ---
 ```scss
 //
@@ -2032,7 +1926,6 @@ category:
 name: _transition()
 category:
   - core/mixin
-  - core/mixin/_transition()
 ---
 Transition helper
 
@@ -2058,7 +1951,6 @@ name: _font-size()
 category:
   - core/mixin
   - core/mixin/typography
-  - core/mixin/typography/_font-size()
 ---
 Sets px and rem font-sizes
 
@@ -2079,7 +1971,6 @@ name: _line-height()
 category:
   - core/mixin
   - core/mixin/typography
-  - core/mixin/typography/_line-height()
 ---
 Sets line-height for vertical rhythum
 
@@ -2100,7 +1991,6 @@ name: _font-size-line-height()
 category:
   - core/mixin
   - core/mixin/typography
-  - core/mixin/typography/_font-size-line-height()
 ---
 Sets px and rem font-sizes and line-height for vertical rhythum
 
@@ -2121,7 +2011,6 @@ name: _hidden()
 category:
   - core/mixin
   - core/mixin/visibility
-  - core/mixin/visibility/_hidden()
 ---
 Hidden helper
 
@@ -2145,7 +2034,6 @@ name: _visible()
 category:
   - core/mixin
   - core/mixin/visibility
-  - core/mixin/visibility/_visible()
 ---
 Visible helper
 
@@ -2168,7 +2056,6 @@ Visible helper
 name: _alert()
 category:
   - core/abstract
-  - core/abstract/_alert()
 ---
 Abstract alert component
 
@@ -2195,7 +2082,6 @@ name: _top-balloon()
 category:
   - core/abstract
   - core/abstract/balloon
-  - core/abstract/balloon/_top-balloon()
 ---
 Abstract top balloon component
 
@@ -2233,7 +2119,6 @@ name: _right-balloon()
 category:
   - core/abstract
   - core/abstract/balloon
-  - core/abstract/balloon/_right-balloon()
 ---
 Abstract right balloon component
 
@@ -2271,7 +2156,6 @@ name: _bottom-balloon()
 category:
   - core/abstract
   - core/abstract/balloon
-  - core/abstract/balloon/_bottom-balloon()
 ---
 Abstract bottom balloon component
 
@@ -2309,7 +2193,6 @@ name: _left-balloon()
 category:
   - core/abstract
   - core/abstract/balloon
-  - core/abstract/balloon/_left-balloon()
 ---
 Abstract left balloon component
 
@@ -2346,7 +2229,6 @@ Abstract left balloon component
 name: _breadcrumbs()
 category:
   - core/abstract
-  - core/abstract/_breadcrumbs()
 ---
 Abstract breadcrumbs component
 
@@ -2370,7 +2252,6 @@ Abstract breadcrumbs component
 name: _btn()
 category:
   - core/abstract
-  - core/abstract/_btn()
 ---
 Abstract button component
 
@@ -2394,7 +2275,6 @@ Abstract button component
 name: _card()
 category:
   - core/abstract
-  - core/abstract/_card()
 ---
 Abstract card component
 
@@ -2414,7 +2294,7 @@ Abstract card component
 ```ejs
 <div class="c-card">
   <div class="c-card__figure">
-    <img src="/aigis_assets/images/dummy.jpg">
+    <img src="<%= root %>aigis_assets/images/dummy.jpg">
   </div>
   <div class="c-card__body">
     ...
@@ -2426,7 +2306,7 @@ Abstract card component
 ```
 ```ejs
 <div class="c-card">
-  <div class="c-card__figure" style="background-image: url('/aigis_assets/images/dummy.jpg'); padding-top: 50%">
+  <div class="c-card__figure" style="background-image: url('<%= root %>aigis_assets/images/dummy.jpg'); padding-top: 50%">
     <div style="position: absolute; left: 10px; bottom: 10px">...</div>
   </div>
   <div class="c-card__body">
@@ -2444,7 +2324,6 @@ name: _checkbox()
 category:
   - core/abstract
   - core/abstract/form
-  - core/abstract/form/_checkbox()
 ---
 Abstract checkbox component
 
@@ -2481,9 +2360,7 @@ name: $_container-margin
 category:
   - core/abstract
   - core/abstract/container
-  - core/abstract/container/_container()
-  - core/abstract/container/_fluid-container()
-  - core/variable/container/$_container-margin
+  - core/variable/container
 ---
 Container side margin
 
@@ -2502,7 +2379,6 @@ name: _fluid-container()
 category:
   - core/abstract
   - core/abstract/container
-  - core/abstract/container/_fluid-container()
 ---
 Abstract fluid container component
 
@@ -2526,8 +2402,7 @@ name: $_container-max-width
 category:
   - core/abstract
   - core/abstract/container
-  - core/abstract/container/_container()
-  - core/variable/container/$_container-max-width
+  - core/variable/container
 ---
 Container max width
 
@@ -2546,7 +2421,6 @@ name: _container()
 category:
   - core/abstract
   - core/abstract/container
-  - core/abstract/container/_container()
 ---
 Abstract container component
 
@@ -2569,7 +2443,6 @@ Abstract container component
 name: _drawer()
 category:
   - core/abstract
-  - core/abstract/_drawer()
 ---
 Abstract drawer component
 
@@ -2664,7 +2537,6 @@ new BasisDrawer({
 name: _entries()
 category:
   - core/abstract
-  - core/abstract/_entries()
 ---
 Abstract entries component
 
@@ -2695,7 +2567,6 @@ Abstract entries component
 name: _entry()
 category:
   - core/abstract
-  - core/abstract/_entry()
 ---
 Abstract entry component
 
@@ -2732,7 +2603,6 @@ Abstract entry component
 name: _flex-media()
 category:
   - core/abstract
-  - core/abstract/_flex-media()
 ---
 Abstract flexible media component
 
@@ -2757,7 +2627,7 @@ Abstract flexible media component
 ```ejs
 <div class="c-flex-media">
   <div class="c-flex-media__figure">
-    <img src="/aigis_assets/images/dummy.jpg">
+    <img src="<%= root %>aigis_assets/images/dummy.jpg">
   </div>
   <div class="c-flex-media__body">
     ...
@@ -2771,7 +2641,6 @@ name: _form-control()
 category:
   - core/abstract
   - core/abstract/form
-  - core/abstract/form/_form-control()
 ---
 Abstract form control component
 
@@ -2792,7 +2661,6 @@ Abstract form control component
 name: _hamburger-btn()
 category:
   - core/abstract
-  - core/abstract/_hamburger-btn()
 ---
 Abstract hamburger button component
 
@@ -2832,7 +2700,6 @@ new BasisHamburgerBtn({
 name: _hero()
 category:
   - core/abstract
-  - core/abstract/_hero()
 ---
 Abstract hero component
 
@@ -2872,7 +2739,6 @@ Abstract hero component
 name: _ic()
 category:
   - core/abstract
-  - core/abstract/_ic()
 ---
 Abstract icon component
 
@@ -2897,8 +2763,7 @@ Abstract icon component
 name: _ib-row()
 category:
   - core/abstract
-  - core/abstract/grid-system
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Abstract row component of inline-block based grid system
 
@@ -2935,7 +2800,7 @@ Abstract row component of inline-block based grid system
 name: _ib-row__col()
 category:
   - core/abstract
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Abstract column element of inline-block based grid system
 
@@ -2973,7 +2838,7 @@ Abstract column element of inline-block based grid system
 name: _ib-row__col--width()
 category:
   - core/abstract
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Sets column width of inline-block based grid system
 
@@ -2998,7 +2863,7 @@ Sets column width of inline-block based grid system
 name: _ib-row__col--offset()
 category:
   - core/abstract
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Sets column offset of inline-block based grid system
 
@@ -3024,7 +2889,7 @@ Sets column offset of inline-block based grid system
 name: _ib-row--margin()
 category:
   - core/abstract
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Sets row margin of inline-block based grid system
 
@@ -3045,7 +2910,7 @@ Sets row margin of inline-block based grid system
 name: _ib-row__col--margin()
 category:
   - core/abstract
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Sets column margin of inline-block based grid system
 
@@ -3067,7 +2932,6 @@ name: _input-group()
 category:
   - core/abstract
   - core/abstract/form
-  - core/abstract/form/_input-group()
 ---
 Abstract input group component
 
@@ -3094,7 +2958,6 @@ Abstract input group component
 name: _media()
 category:
   - core/abstract
-  - core/abstract/_media()
 ---
 Abstract media component
 
@@ -3113,7 +2976,7 @@ Abstract media component
 ```ejs
 <div class="c-media">
   <div class="c-media__figure">
-    <img src="/aigis_assets/images/dummy.jpg" style="width: 150px">
+    <img src="<%= root %>aigis_assets/images/dummy.jpg" style="width: 150px">
   </div>
   <div class="c-media__body">
     ...
@@ -3126,7 +2989,6 @@ Abstract media component
 name: _meta()
 category:
   - core/abstract
-  - core/abstract/_meta()
 ---
 Abstract meta component
 
@@ -3151,7 +3013,6 @@ Abstract meta component
 name: _navbar()
 category:
   - core/abstract
-  - core/abstract/_navbar()
 ---
 Abstract navbar component
 
@@ -3205,8 +3066,7 @@ new BasisNavbar({
 name: $_page-effect-z-index
 category:
   - core/abstract
-  - core/abstract/_page-effect()
-  - core/variable/page-effect/$_page-effect-z-index
+  - core/variable/page-effect
 ---
 `z-index` of page effect
 
@@ -3220,7 +3080,6 @@ $_page-effect-z-index: 1000000;
 name: _page-effect()
 category:
   - core/abstract
-  - core/abstract/_page-effect()
 ---
 Abstract page effect component
 
@@ -3257,7 +3116,6 @@ new BasisPageEffect({
 name: _page-header()
 category:
   - core/abstract
-  - core/abstract/_page-header()
 ---
 Abstract page header component
 
@@ -3285,7 +3143,6 @@ Abstract page header component
 name: _pagination()
 category:
   - core/abstract
-  - core/abstract/_pagination()
 ---
 Abstract pagination component
 
@@ -3326,7 +3183,6 @@ name: _radio()
 category:
   - core/abstract
   - core/abstract/form
-  - core/abstract/form/_radio()
 ---
 Abstract radio button component
 
@@ -3355,8 +3211,7 @@ Abstract radio button component
 name: _row()
 category:
   - core/abstract
-  - core/abstract/grid-system
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Abstract row component of flexbox based grid system
 
@@ -3393,7 +3248,7 @@ Abstract row component of flexbox based grid system
 name: _row__col()
 category:
   - core/abstract
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Abstract column element of flexbox based grid system
 
@@ -3431,7 +3286,7 @@ Abstract column element of flexbox based grid system
 name: _row__col--width()
 category:
   - core/abstract
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Sets column width of flexbox based grid system
 
@@ -3456,7 +3311,7 @@ Sets column width of flexbox based grid system
 name: _row__col--offset()
 category:
   - core/abstract
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Sets column offset of flexbox based grid system
 
@@ -3482,7 +3337,7 @@ Sets column offset of flexbox based grid system
 name: _row--margin()
 category:
   - core/abstract
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Sets row margin of flexbox based grid system
 
@@ -3503,7 +3358,7 @@ Sets row margin of flexbox based grid system
 name: _row__col--margin()
 category:
   - core/abstract
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Sets column margin of flexbox based grid system
 
@@ -3524,7 +3379,6 @@ Sets column margin of flexbox based grid system
 name: _section()
 category:
   - core/abstract
-  - core/abstract/_section()
 ---
 Abstract section component
 
@@ -3564,7 +3418,6 @@ name: _select()
 category:
   - core/abstract
   - core/abstract/form
-  - core/abstract/form/_select()
 ---
 Abstract selectbox component
 
@@ -3601,7 +3454,6 @@ new BasisSelect({
 name: _site-branding()
 category:
   - core/abstract
-  - core/abstract/_site-branding()
 ---
 Abstract site branding component
 
@@ -3625,7 +3477,6 @@ name: _circle-spinner()
 category:
   - core/abstract
   - core/abstract/spinner
-  - core/abstract/spinner/_circle-spinner()
 ---
 Abstract circle spinner component
 
@@ -3662,7 +3513,6 @@ name: _dots-spinner()
 category:
   - core/abstract
   - core/abstract/spinner
-  - core/abstract/spinner/_dots-spinner()
 ---
 Abstract dots spinner component
 
@@ -3703,7 +3553,6 @@ name: _pulse-spinner()
 category:
   - core/abstract
   - core/abstract/spinner
-  - core/abstract/spinner/_pulse-spinner()
 ---
 Abstract pulse spinner component
 
@@ -4644,7 +4493,7 @@ Card component
 ```html
 <div class="c-card">
   <div class="c-card__figure">
-    <img src="/aigis_assets/images/dummy.jpg">
+    <img src="<%= root %>aigis_assets/images/dummy.jpg">
   </div>
   <div class="c-card__body">
     ...
@@ -4656,7 +4505,7 @@ Card component
 ```
 ```html
 <div class="c-card">
-  <div class="c-card__figure" style="background-image: url('/aigis_assets/images/dummy.jpg'); padding-top: 50%">
+  <div class="c-card__figure" style="background-image: url('<%= root %>aigis_assets/images/dummy.jpg'); padding-top: 50%">
     <div style="position: absolute; left: 10px; bottom: 10px">...</div>
   </div>
   <div class="c-card__body">
@@ -5047,7 +4896,7 @@ Flexible media component
 ```html
 <div class="c-flex-media">
   <div class="c-flex-media__figure">
-    <img src="/aigis_assets/images/dummy.jpg" style="width: 150px">
+    <img src="<%= root %>aigis_assets/images/dummy.jpg" style="width: 150px">
   </div>
   <div class="c-flex-media__body">
     ...
@@ -5057,7 +4906,7 @@ Flexible media component
 ```html
 <div class="c-flex-media c-flex-media--reverse">
   <div class="c-flex-media__figure">
-    <img src="/aigis_assets/images/dummy.jpg" style="width: 150px">
+    <img src="<%= root %>aigis_assets/images/dummy.jpg" style="width: 150px">
   </div>
   <div class="c-flex-media__body">
     ...
@@ -5247,7 +5096,7 @@ Hero component
 
 ### html
 ```html
-<div class="c-hero" style="background-image: url(/aigis_assets/images/dummy.jpg)">
+<div class="c-hero" style="background-image: url(<%= root %>aigis_assets/images/dummy.jpg)">
   <div class="c-hero__header">
     ...
   </div>
@@ -5573,7 +5422,7 @@ Media component
 ```html
 <div class="c-media">
   <div class="c-media__figure">
-    <img src="/aigis_assets/images/dummy.jpg" style="width: 150px">
+    <img src="<%= root %>aigis_assets/images/dummy.jpg" style="width: 150px">
   </div>
   <div class="c-media__body">
     ...
@@ -8976,7 +8825,7 @@ Clearfix utility
 ### html
 ```html
 <div class="u-clearfix">
-  <img class="u-pull-left" src="/aigis_assets/images/dummy.jpg" style="width: 150px; margin-right: 1em">
+  <img class="u-pull-left" src="<%= root %>aigis_assets/images/dummy.jpg" style="width: 150px; margin-right: 1em">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 </div>
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -9231,7 +9080,7 @@ Retina image size utility
 
 ### html
 ```html
-<img class="u-img-2x" src="/aigis_assets/images/dummy.jpg">
+<img class="u-img-2x" src="<%= root %>aigis_assets/images/dummy.jpg">
 ```
 */
 .u-img-2x {
@@ -9250,7 +9099,7 @@ Pull right utility
 
 ### html
 ```html
-<img class="u-pull-right" src="/aigis_assets/images/dummy.jpg" style="width: 150px; margin-left: 1em">
+<img class="u-pull-right" src="<%= root %>aigis_assets/images/dummy.jpg" style="width: 150px; margin-left: 1em">
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 ```
 */
@@ -9270,7 +9119,7 @@ Pull left utility
 
 ### html
 ```html
-<img class="u-pull-left" src="/aigis_assets/images/dummy.jpg" style="width: 150px; margin-right: 1em">
+<img class="u-pull-left" src="<%= root %>aigis_assets/images/dummy.jpg" style="width: 150px; margin-right: 1em">
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 ```
 */
@@ -9978,12 +9827,6 @@ pre {
   padding: 0.41667rem 0.83333rem;
 }
 
-.p-local-nav {
-  font-size: 13px;
-  font-size: 0.86667rem;
-  line-height: 1.76923;
-}
-
 .p-local-nav ul {
   list-style: none;
   margin-left: 0;
@@ -9992,6 +9835,10 @@ pre {
 
 .p-local-nav li li {
   padding: 0 0 0 0.83333rem;
+}
+
+.p-local-nav li li li {
+  display: none;
 }
 
 .p-local-nav a[href] {
@@ -10004,7 +9851,7 @@ pre {
 }
 
 .p-local-nav a:not([href]) {
-  color: #999999;
+  color: #a2a2a2;
   cursor: text;
   text-decoration: none;
 }
