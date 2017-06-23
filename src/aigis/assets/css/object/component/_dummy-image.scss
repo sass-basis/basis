@@ -1,0 +1,10 @@
+.c-dummy-image {
+  background-color: #333;
+  width: 100px;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 75%;
+  }
+}

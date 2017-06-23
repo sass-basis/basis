@@ -1,0 +1,28 @@
+.p-local-nav {
+  @include _font-size-line-height($_base-font-size-px - 2);
+
+  ul {
+    @include _list-unstyled();
+  }
+
+  li {
+    li {
+      @include _padding(0, 0, 0, .5);
+    }
+  }
+
+  a[href] {
+    color: _light($_color-text);
+    text-decoration: none;
+
+    @include _hover() {
+      text-decoration: underline;;
+    }
+  }
+
+  a:not([href]) {
+    color: _lighter($_color-text);
+    cursor: text;
+    text-decoration: none;
+  }
+}

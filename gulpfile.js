@@ -88,7 +88,7 @@ gulp.task('js', function() {
     }))
     .pipe(gulp.dest(dir.dist.js))
     .on('end', function() {
-      gulp.src([dir.dist.js + '/basis.js'])
+      return gulp.src([dir.dist.js + '/basis.js'])
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(dir.dist.js));
@@ -106,16 +106,49 @@ gulp.task('font', function() {
 /**
  * Styleguide
  */
- gulp.task('aigis:update', function() {
-   return _aigis();
- });
- gulp.task('aigis:build', ['build'], function() {
-   return _aigis();
- });
- function _aigis() {
-   return gulp.src(dir.src.aigis + '/aigis_config.yml')
-     .pipe(aigis())
- }
+gulp.task('aigis:update', function() {
+  return _aigis();
+});
+gulp.task('aigis:build', ['build'], function() {
+  return _aigis();
+});
+function _aigis() {
+  return gulp.src(dir.src.aigis + '/aigis_config.yml')
+    .pipe(aigis())
+    .on('end', function() {
+      return _aigis_css();
+    });
+}
+
+/**
+ * Sass to CSS
+ */
+gulp.task('aigis:css', function() {
+  return _aigis_css();
+});
+function _aigis_css() {
+  return gulp.src(
+      [
+        dir.src.aigis + '/assets/css/*.scss',
+      ],
+      {base: dir.src.aigis + '/assets/css'}
+    )
+    .pipe(plumber())
+    .pipe(sass({
+      outputStyle: 'expanded',
+      includePaths: require('node-normalize-scss').includePaths
+    }))
+    .pipe(postcss([
+      autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+      })
+    ]))
+    .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/css'))
+    .pipe(postcss([cssnano()]))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/css'));
+};
 
 /**
  * Auto Build
@@ -129,8 +162,12 @@ gulp.task('watch', function() {
     runSequence('js', 'aigis:update');
   });
 
-  gulp.watch([dir.src.aigis + '/**'], function() {
+  gulp.watch([dir.src.aigis + '/**/*.ejs'], function() {
     runSequence('aigis:update');
+  });
+
+  gulp.watch([dir.src.aigis + '/assets/css/**/*.scss'], function() {
+    runSequence('aigis:css');
   });
 });
 
@@ -148,7 +185,8 @@ gulp.task('server', ['aigis:build'], function() {
       baseDir: dir.dist.aigis + '/'
     },
     files: [
-      dir.dist.aigis + '/index.html'
+      dir.dist.aigis + '/index.html',
+      dir.dist.aigis + '/aigis_assets/css/style.min.css'
     ]
   });
 });

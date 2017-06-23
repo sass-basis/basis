@@ -1,0 +1,29 @@
+.#{$_prefix}l-header {
+  z-index: 1;
+  background-color: #00dae6;
+  overflow: hidden;
+
+  &, a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  > .#{$_prefix}c-container {
+    position: relative;
+  }
+
+  .c-site-branding {
+    padding: ($_base-line-height / 2) 0;
+  }
+
+  .#{$_prefix}c-hamburger-btn {
+    position: absolute;
+    top: 50%;
+    right: $_base-line-height;
+    transform: translateY(-50%);
+
+    &__bar {
+      background-color: #fff;
+    }
+  }
+}

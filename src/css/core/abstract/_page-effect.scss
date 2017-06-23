@@ -78,7 +78,6 @@ new BasisPageEffect({
   &[data-page-effect="fadein"][aria-hidden="true"] {
     opacity: 0;
     z-index: -1;
-    visibility: hidden;
     animation: $fadein-animation-name ($duration + 0.2) ease-in 0s;
   }
 

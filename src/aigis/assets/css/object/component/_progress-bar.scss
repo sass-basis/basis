@@ -1,0 +1,9 @@
+.c-progress-bar {
+  background-color: #e74c3c;
+  width: 25%;
+  height: 20px;
+
+  @include _hover() {
+    width: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+.p-social-nav {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+
+  &__item {
+    @include _margin(0, .5, 0, 0);
+    display: inline-block;
+    padding: 0;
+  }
+}

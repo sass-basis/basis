@@ -63,11 +63,11 @@ new BasisNavbar({
   &__item {
     position: relative;
     display: flex;
-    flex: 1 1 0%;
+    flex: 1 1 auto;
 
     > a {
       display: flex;
-      flex: 1 1 0%;
+      flex: 1 1 auto;
       align-items: center;
       justify-content: center;
       text-align: center;

@@ -17,6 +17,9 @@ export default class BasisHamburgerBtn {
       const target = $('#' + hamburgerBtn.attr('aria-controls'));
 
       hamburgerBtn.click((event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
         if ('false' === hamburgerBtn.attr('aria-expanded')) {
           hamburgerBtn.attr('aria-expanded', 'true');
           target.attr('aria-hidden', 'false');

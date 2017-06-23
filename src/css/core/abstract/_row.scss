@@ -40,7 +40,6 @@ Abstract row component of flexbox based grid system
 @mixin _row() {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
 }
 
 /*

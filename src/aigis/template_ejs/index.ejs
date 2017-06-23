@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link href="<%- root %>aigis_assets/css/highlight/okadia.css" rel="stylesheet">
-    <link href="<%- root %>aigis_assets/css/theme.css" rel="stylesheet">
-    <link href="<%- root %>css/basis.css" rel="stylesheet">
-    <title>Basis Styleguide</title>
-  </head>
-<body>
-  <div class="aigis-container">
-    <%- include('sidemenu') %>
-    <div class="aigis-contents">
-      <div class="aigis-contents__body u-content">
-        <%- include('components') %>
-        <footer class="aigis-footer">Last update at <%- timestamp %></footer>
-      </div>
-    </div>
+<%- include('_layout/_head', { 'title': 'Basis Styleguide' }) %>
+<body class="l-body" data-sticky-footer="true">
+<%- include('_parts/_ga') %>
+<%- include('_object/_component/_page-effect') %>
+
+<%- include('_object/_project/_drawer') %>
+
+<div id="container" class="l-container" data-l="container">
+  <%- include('_layout/_header') %>
+
+  <div id="contents" class="l-contents" data-l="contents">
+    <%- include('components') %>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="<%- root %>js/basis.min.js"></script>
+  <%- include('_layout/_footer') %>
+</div>
+<%- include('_layout/_foot') %>
 </body>
 </html>

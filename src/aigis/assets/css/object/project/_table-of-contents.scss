@@ -1,0 +1,27 @@
+.p-table-of-contents {
+  @include _margin(0, 0, 2);
+  @include _list-unstyled();
+  @include _padding(0, 1);
+  background-color: #fafafa;
+  border: 1px solid _lighter($_color-gray);
+  border-radius: $_border-radius;
+
+  &__item {
+    border-bottom: 1px solid _lighter($_color-gray);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    > a {
+      display: block;
+      @include _padding(.5, 0);
+      color: $_color-text;
+      text-decoration: none;
+
+      @include _hover() {
+        opacity: .8;
+      }
+    }
+  }
+}

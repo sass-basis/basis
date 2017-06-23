@@ -1,0 +1,20 @@
+.p-scroll-top {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  @include _position(fixed, null, 16px, 16px, null);
+
+  > a {
+    display: block;
+    @include _square(48px);
+    overflow: hidden;
+    background-color: rgba( 0, 0, 0, .8 );
+    color: #fff;
+    position: relative;
+
+    > .fa {
+      @include _position(absolute, 50%, null, null, 50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+}

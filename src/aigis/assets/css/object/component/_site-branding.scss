@@ -1,0 +1,17 @@
+.c-site-branding {
+  &__title {
+    @include font-basis();
+    @include _font-size-line-height($_base-font-size * 2);
+    margin: 0;
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      margin-right: 8px;
+      vertical-align: baseline;
+      height: 24px;
+    }
+  }
+}

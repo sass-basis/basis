@@ -1,0 +1,17 @@
+.c-table {
+  width: 100%;
+
+  th, td {
+    padding: 8px;
+  }
+
+  &--bordered {
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+
+    th, td {
+      border-bottom: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+    }
+  }
+}

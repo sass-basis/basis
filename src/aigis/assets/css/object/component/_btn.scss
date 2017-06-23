@@ -1,0 +1,32 @@
+.c-btn {
+  @include _transition(all);
+  border: none;
+  border-radius: 3px;
+  @include _padding(.5, 1);
+
+  &--block {
+    display: block;
+  }
+
+  &--ghost {
+    border: 1px solid #fff;
+    background-color: transparent;
+  }
+
+  &--launch, &--download, &--buy {
+    background-color: $color-primary;
+    color: #fff;
+
+    @include _hover() {
+      opacity: .8;
+    }
+
+    .fa {
+      margin-right: 8px;
+    }
+  }
+
+  &--buy {
+    background-color: #e1c600;
+  }
+}

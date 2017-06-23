@@ -1,0 +1,17 @@
+body {
+  letter-spacing: 1px;
+}
+
+a {
+  transition: background-color $_transition-duration $_transition-function-timing,
+              color $_transition-duration $_transition-function-timing;
+  color: _dark($color-primary);
+}
+
+.hljs, pre {
+  background-color: #15191d;
+}
+
+pre {
+  border: none;
+}

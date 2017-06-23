@@ -1,0 +1,6 @@
+.l-contents {
+}
+
+.l-main, .l-sub {
+  @include _padding(2, 0);
+}

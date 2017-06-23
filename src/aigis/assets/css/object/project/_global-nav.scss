@@ -1,0 +1,7 @@
+.p-global-nav {
+  @include _font-size-line-height(14px);
+
+  .#{$_prefix}c-navbar__item a {
+    @include _padding(.25, .5);
+  }
+}

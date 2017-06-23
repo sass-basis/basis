@@ -1,0 +1,14 @@
+.p-show-grid {
+  &__item {
+    background-color: #00DAE6;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    padding: 16px;
+
+    &--cloudy {
+      background-color: #eee;
+      color: #999;
+    }
+  }
+}
