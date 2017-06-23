@@ -3,7 +3,6 @@
 name: _flex-media()
 category:
   - core/abstract
-  - core/abstract/_flex-media()
 ---
 Abstract flexible media component
 
@@ -28,7 +27,7 @@ Abstract flexible media component
 ```ejs
 <div class="c-flex-media">
   <div class="c-flex-media__figure">
-    <img src="/aigis_assets/images/dummy.jpg">
+    <img src="<%= root %>aigis_assets/images/dummy.jpg">
   </div>
   <div class="c-flex-media__body">
     ...

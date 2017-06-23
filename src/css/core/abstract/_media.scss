@@ -3,7 +3,6 @@
 name: _media()
 category:
   - core/abstract
-  - core/abstract/_media()
 ---
 Abstract media component
 
@@ -22,7 +21,7 @@ Abstract media component
 ```ejs
 <div class="c-media">
   <div class="c-media__figure">
-    <img src="/aigis_assets/images/dummy.jpg" style="width: 150px">
+    <img src="<%= root %>aigis_assets/images/dummy.jpg" style="width: 150px">
   </div>
   <div class="c-media__body">
     ...

@@ -4,7 +4,6 @@ name: _media-min()
 category:
   - core/mixin
   - core/mixin/media-query
-  - core/mixin/media-query/_media-min()
 ---
 min-width media query
 
@@ -43,7 +42,6 @@ name: _media-max()
 category:
   - core/mixin
   - core/mixin/media-query
-  - core/mixin/media-query/_media-max()
 ---
 max-width media query
 
@@ -82,7 +80,6 @@ name: _media-only()
 category:
   - core/mixin
   - core/mixin/media-query
-  - core/mixin/media-query/_media-only()
 ---
 Specific size only media query
 

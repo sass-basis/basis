@@ -4,7 +4,6 @@ name: $_min-columns
 category:
   - core/variable
   - core/variable/media-query
-  - core/variable/media-query/$_min-columns
 ---
 The minimum number of columns
 
@@ -22,7 +21,6 @@ name: $_max-columns
 category:
   - core/variable
   - core/variable/media-query
-  - core/variable/media-query/$_max-columns
 ---
 The maximum number of columns
 
@@ -40,7 +38,6 @@ name: $_sizes
 category:
   - core/variable
   - core/variable/media-query
-  - core/variable/media-query/$_sizes
 ---
 Hash of breakpoints
 

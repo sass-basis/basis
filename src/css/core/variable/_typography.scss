@@ -4,7 +4,6 @@ name: $_base-font-size-px
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_base-font-size-px
 ---
 Default font size
 
@@ -24,7 +23,6 @@ name: $_base-font-size
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_base-font-size
 ---
 Default font size (rem)
 
@@ -44,7 +42,6 @@ name: $_between-lines
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_between-lines
 ---
 Between the character and line of line-height
 
@@ -62,7 +59,6 @@ name: $_base-line-height
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_base-line-height
 ---
 Default line height
 
@@ -80,7 +76,6 @@ name: $_margin-coefficient
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_margin-coefficient
 ---
 Margin coefficient
 
@@ -98,7 +93,6 @@ name: $_base-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_base-margin-bottom
 ---
 HTML element margin coefficient
 
@@ -116,7 +110,6 @@ name: $_h1-font-size-scale
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h1-font-size-scale
 ---
 `h1` font size scale
 
@@ -134,7 +127,6 @@ name: $_h2-font-size-scale
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h2-font-size-scale
 ---
 `h2` font size scale
 
@@ -152,7 +144,6 @@ name: $_h3-font-size-scale
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h3-font-size-scale
 ---
 `h3` font size scale
 
@@ -170,7 +161,6 @@ name: $_h4-font-size-scale
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h4-font-size-scale
 ---
 `h4` font size scale
 
@@ -187,7 +177,6 @@ $_h4-font-size-scale: 1.25 !default;
 name: $_h5-font-size-scale
 category:
   - core/variable/typography
-  - core/variable/typography/$_h5-font-size-scale
 ---
 `h5` font size scale
 
@@ -205,7 +194,6 @@ name: $_h6-font-size-scale
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h6-font-size-scale
 ---
 `h6` font size scale
 
@@ -223,7 +211,6 @@ name: $_h1-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h1-margin-top
 ---
 `h1` margin top coefficient
 
@@ -241,7 +228,6 @@ name: $_h1-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h1-margin-bottom
 ---
 `h1` margin bottom coefficient
 
@@ -259,7 +245,6 @@ name: $_h2-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h2-margin-top
 ---
 `h2` margin top coefficient
 
@@ -277,7 +262,6 @@ name: $_h2-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h2-margin-bottom
 ---
 `h2` margin bottom coefficient
 
@@ -295,7 +279,6 @@ name: $_h3-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h3-margin-top
 ---
 `h3` margin top coefficient
 
@@ -313,7 +296,6 @@ name: $_h3-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h3-margin-bottom
 ---
 `h3` margin bottom coefficient
 
@@ -331,7 +313,6 @@ name: $_h4-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h4-margin-top
 ---
 `h4` margin top coefficient
 
@@ -349,7 +330,6 @@ name: $_h4-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h4-margin-bottom
 ---
 `h4` margin bottom coefficient
 
@@ -367,7 +347,6 @@ name: $_h5-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h5-margin-top
 ---
 `h5` margin top coefficient
 
@@ -385,7 +364,6 @@ name: $_h5-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h5-margin-bottom
 ---
 `h5` margin bottom coefficient
 
@@ -403,7 +381,6 @@ name: $_h6-margin-top
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h6-margin-top
 ---
 `h6` margin top coefficient
 
@@ -421,7 +398,6 @@ name: $_h6-margin-bottom
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_h6-margin-bottom
 ---
 `h6` margin bottom coefficient
 
@@ -439,7 +415,6 @@ name: $_font-family
 category:
   - core/variable
   - core/variable/typography
-  - core/variable/typography/$_font-family
 ---
 Default font family
 

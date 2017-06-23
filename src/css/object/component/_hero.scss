@@ -9,7 +9,7 @@ Hero component
 
 ### html
 ```html
-<div class="c-hero" style="background-image: url(/aigis_assets/images/dummy.jpg)">
+<div class="c-hero" style="background-image: url(<%= root %>aigis_assets/images/dummy.jpg)">
   <div class="c-hero__header">
     ...
   </div>

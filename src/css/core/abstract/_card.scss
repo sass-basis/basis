@@ -3,7 +3,6 @@
 name: _card()
 category:
   - core/abstract
-  - core/abstract/_card()
 ---
 Abstract card component
 
@@ -23,7 +22,7 @@ Abstract card component
 ```ejs
 <div class="c-card">
   <div class="c-card__figure">
-    <img src="/aigis_assets/images/dummy.jpg">
+    <img src="<%= root %>aigis_assets/images/dummy.jpg">
   </div>
   <div class="c-card__body">
     ...
@@ -35,7 +34,7 @@ Abstract card component
 ```
 ```ejs
 <div class="c-card">
-  <div class="c-card__figure" style="background-image: url('/aigis_assets/images/dummy.jpg'); padding-top: 50%">
+  <div class="c-card__figure" style="background-image: url('<%= root %>aigis_assets/images/dummy.jpg'); padding-top: 50%">
     <div style="position: absolute; left: 10px; bottom: 10px">...</div>
   </div>
   <div class="c-card__body">

@@ -3,8 +3,7 @@
 name: $_page-effect-z-index
 category:
   - core/abstract
-  - core/abstract/_page-effect()
-  - core/variable/page-effect/$_page-effect-z-index
+  - core/variable/page-effect
 ---
 `z-index` of page effect
 
@@ -21,7 +20,6 @@ $_page-effect-z-index: 1000000 !default;
 name: _page-effect()
 category:
   - core/abstract
-  - core/abstract/_page-effect()
 ---
 Abstract page effect component
 

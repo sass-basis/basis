@@ -3,8 +3,7 @@
 name: _ib-row()
 category:
   - core/abstract
-  - core/abstract/grid-system
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Abstract row component of inline-block based grid system
 
@@ -47,7 +46,7 @@ Abstract row component of inline-block based grid system
 name: _ib-row__col()
 category:
   - core/abstract
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Abstract column element of inline-block based grid system
 
@@ -100,7 +99,7 @@ Abstract column element of inline-block based grid system
 name: _ib-row__col--width()
 category:
   - core/abstract
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Sets column width of inline-block based grid system
 
@@ -134,7 +133,7 @@ Sets column width of inline-block based grid system
 name: _ib-row__col--offset()
 category:
   - core/abstract
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Sets column offset of inline-block based grid system
 
@@ -165,7 +164,7 @@ Sets column offset of inline-block based grid system
 name: _ib-row--margin()
 category:
   - core/abstract
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Sets row margin of inline-block based grid system
 
@@ -191,7 +190,7 @@ Sets row margin of inline-block based grid system
 name: _ib-row__col--margin()
 category:
   - core/abstract
-  - core/abstract/grid-system/_ib-row()
+  - core/abstract/grid-system/inline-block
 ---
 Sets column margin of inline-block based grid system
 

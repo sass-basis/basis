@@ -3,8 +3,7 @@
 name: _row()
 category:
   - core/abstract
-  - core/abstract/grid-system
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Abstract row component of flexbox based grid system
 
@@ -47,7 +46,7 @@ Abstract row component of flexbox based grid system
 name: _row__col()
 category:
   - core/abstract
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Abstract column element of flexbox based grid system
 
@@ -97,7 +96,7 @@ Abstract column element of flexbox based grid system
 name: _row__col--width()
 category:
   - core/abstract
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Sets column width of flexbox based grid system
 
@@ -134,7 +133,7 @@ Sets column width of flexbox based grid system
 name: _row__col--offset()
 category:
   - core/abstract
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Sets column offset of flexbox based grid system
 
@@ -170,7 +169,7 @@ Sets column offset of flexbox based grid system
 name: _row--margin()
 category:
   - core/abstract
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Sets row margin of flexbox based grid system
 
@@ -198,7 +197,7 @@ Sets row margin of flexbox based grid system
 name: _row__col--margin()
 category:
   - core/abstract
-  - core/abstract/grid-system/_row()
+  - core/abstract/grid-system/flexbox
 ---
 Sets column margin of flexbox based grid system
 

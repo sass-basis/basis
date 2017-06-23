@@ -4,7 +4,6 @@ name: _form-control-base-padding()
 category:
   - core/mixin
   - core/mixin/form
-  - core/mixin/form/_form-control-base-padding()
 ---
 Sets padding for form controls
 
@@ -27,8 +26,7 @@ name: $_form-control-border-color
 category:
   - core/mixin
   - core/mixin/form
-  - core/mixin/form/_form-control-base-border()
-  - core/variable/form/$_form-control-border-color
+  - core/variable/form
 ---
 Form Control border color
 
@@ -46,8 +44,7 @@ name: $_form-control-border-color-hover
 category:
   - core/mixin
   - core/mixin/form
-  - core/mixin/form/_form-control-base-border()
-  - core/variable/form/$_form-control-border-color-hover
+  - core/variable/form
 ---
 Form Control border color when hover
 
@@ -65,8 +62,7 @@ name: $_form-control-border-color-focus
 category:
   - core/mixin
   - core/mixin/form
-  - core/mixin/form/_form-control-base-border()
-  - core/variable/form/$_form-control-border-color-focus
+  - core/variable/form
 ---
 Form Control border color when focus
 
@@ -83,7 +79,6 @@ name: _form-control-base-border()
 category:
   - core/mixin
   - core/mixin/form
-  - core/mixin/form/_form-control-base-border()
 ---
 Sets border for form controls
 

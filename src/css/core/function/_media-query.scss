@@ -4,7 +4,6 @@ name: _min()
 category:
   - core/function
   - core/function/media-query
-  - core/function/media-query/_min()
 ---
 Return min size.
 
@@ -39,7 +38,6 @@ name: _max()
 category:
   - core/function
   - core/function/media-query
-  - core/function/media-query/_max()
 ---
 Return max size.
 
@@ -76,7 +74,6 @@ name: _prev-size-key()
 category:
   - core/function
   - core/function/media-query
-  - core/function/media-query/_prev-size-key()
 ---
 Return prev key of `$_size`
 
@@ -108,7 +105,6 @@ name: _next-size-key()
 category:
   - core/function
   - core/function/media-query
-  - core/function/media-query/_next-size-key()
 ---
 Return next key of `$_size`
 

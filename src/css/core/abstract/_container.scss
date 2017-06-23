@@ -4,9 +4,7 @@ name: $_container-margin
 category:
   - core/abstract
   - core/abstract/container
-  - core/abstract/container/_container()
-  - core/abstract/container/_fluid-container()
-  - core/variable/container/$_container-margin
+  - core/variable/container
 ---
 Container side margin
 
@@ -28,7 +26,6 @@ name: _fluid-container()
 category:
   - core/abstract
   - core/abstract/container
-  - core/abstract/container/_fluid-container()
 ---
 Abstract fluid container component
 
@@ -63,8 +60,7 @@ name: $_container-max-width
 category:
   - core/abstract
   - core/abstract/container
-  - core/abstract/container/_container()
-  - core/variable/container/$_container-max-width
+  - core/variable/container
 ---
 Container max width
 
@@ -86,7 +82,6 @@ name: _container()
 category:
   - core/abstract
   - core/abstract/container
-  - core/abstract/container/_container()
 ---
 Abstract container component
 

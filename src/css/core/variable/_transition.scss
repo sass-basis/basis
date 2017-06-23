@@ -3,7 +3,6 @@
 name: $_transition-duration
 category:
   - core/variable
-  - core/variable/$_transition-duration
 ---
 Animation time
 
@@ -20,7 +19,6 @@ $_transition-duration: .1s !default;
 name: $_transition-function-timing
 category:
   - core/variable
-  - core/variable/$_transition-function-timing
 ---
 Transition function timing
 
