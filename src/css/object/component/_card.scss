@@ -11,7 +11,7 @@ Card component
 ```html
 <div class="c-card">
   <div class="c-card__figure">
-    <img src="<%= root %>aigis_assets/images/dummy.jpg">
+    <img src="/basis/aigis_assets/images/dummy.jpg">
   </div>
   <div class="c-card__body">
     ...
@@ -23,7 +23,7 @@ Card component
 ```
 ```html
 <div class="c-card">
-  <div class="c-card__figure" style="background-image: url('<%= root %>aigis_assets/images/dummy.jpg'); padding-top: 50%">
+  <div class="c-card__figure" style="background-image: url('/basis/aigis_assets/images/dummy.jpg'); padding-top: 50%">
     <div style="position: absolute; left: 10px; bottom: 10px">...</div>
   </div>
   <div class="c-card__body">

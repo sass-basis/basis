@@ -27,7 +27,7 @@ Abstract flexible media component
 ```ejs
 <div class="c-flex-media">
   <div class="c-flex-media__figure">
-    <img src="<%= root %>aigis_assets/images/dummy.jpg">
+    <img src="/basis/aigis_assets/images/dummy.jpg">
   </div>
   <div class="c-flex-media__body">
     ...

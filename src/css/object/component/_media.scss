@@ -11,7 +11,7 @@ Media component
 ```html
 <div class="c-media">
   <div class="c-media__figure">
-    <img src="<%= root %>aigis_assets/images/dummy.jpg" style="width: 150px">
+    <img src="/basis/aigis_assets/images/dummy.jpg" style="width: 150px">
   </div>
   <div class="c-media__body">
     ...
