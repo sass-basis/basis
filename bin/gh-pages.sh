@@ -16,7 +16,7 @@ git clone -b gh-pages --quiet https://github.com/sass-basis/basis.git gh-pages
 cd gh-pages
 ls | xargs rm -rf
 rm -f .editorconfig .gitignore .npmignore .travis.yml
-cp ../dist/aigis/ .
+cp -r ../dist/aigis/ .
 ls -la
 
 git add -A
