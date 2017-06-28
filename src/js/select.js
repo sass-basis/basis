@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 export default class BasisSelect {
   constructor(args = {}) {
-    this.args = Object.assign({
+    this.args = $.extend({
       select: '.c-select',
       label : '.c-select__label'
     }, args);
