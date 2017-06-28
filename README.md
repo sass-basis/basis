@@ -78,7 +78,7 @@ Loads JavaScripts
 ```
 
 ### Using CDN (jsDelivr)
-https://www.jsdelivr.com/projects/sass-basis
+https://cdn.jsdelivr.net/npm/sass-basis@latest/dist/
 
 ### Sample for using classes
 ```
@@ -88,10 +88,7 @@ https://www.jsdelivr.com/projects/sass-basis
 ### Sample for using abstracts
 ```
 .c-btn {
-  @include _c-btn((
-    background-color: #fff,
-    border: 1px solid #ddd,
-  ));
+  @include _c-btn();
 
   &--block {
     display: block;
