@@ -1,9 +1,12 @@
+@import '../../../css/basis';
+
 $color-primary: #00DAE6;
 $_font-family : "Helvetica Neue", Helvetica, sans-serif;
 $_color-text  : #444;
 $_base-font-size-px: 15px;
 $_between-lines: (1rem / 3);
 $_font-path: '../../font';
+$_prefix: 'sg-';
 
 @import '../../../css/basis';
 

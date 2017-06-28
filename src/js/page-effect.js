@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 export default class BasisPageEffect {
   constructor(args = {}) {
-    this.args = Object.assign({
+    this.args = $.extend({
       pageEffect: '.c-page-effect',
       duration: 200
     }, args);

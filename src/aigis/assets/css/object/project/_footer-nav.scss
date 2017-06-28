@@ -1,4 +1,4 @@
-.p-footer-nav {
+.#{$_prefix}p-footer-nav {
   @include _font-size-line-height(14px);
 
   &__list {

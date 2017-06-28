@@ -1,4 +1,4 @@
-.p-table-of-contents {
+.#{$_prefix}p-table-of-contents {
   @include _margin(0, 0, 2);
   @include _list-unstyled();
   @include _padding(0, 1);

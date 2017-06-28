@@ -1,4 +1,4 @@
-.c-btn {
+.#{$_prefix}c-btn {
   @include _transition(all);
   border: none;
   border-radius: 3px;

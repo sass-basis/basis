@@ -116,7 +116,7 @@ function _aigis() {
   return gulp.src(dir.src.aigis + '/aigis_config.yml')
     .pipe(aigis())
     .on('end', function() {
-      return _aigis_css();
+      runSequence('aigis:css', 'aigis:js');
     });
 }
 
@@ -124,9 +124,6 @@ function _aigis() {
  * Sass to CSS
  */
 gulp.task('aigis:css', function() {
-  return _aigis_css();
-});
-function _aigis_css() {
   return gulp.src(
       [
         dir.src.aigis + '/assets/css/*.scss',
@@ -148,7 +145,39 @@ function _aigis_css() {
     .pipe(postcss([cssnano()]))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/css'));
-};
+});
+
+/**
+ * Build javascript
+ */
+gulp.task('aigis:js', function() {
+  gulp.src(dir.src.aigis + '/assets/js/*.js')
+    .pipe(plumber())
+    .pipe(rollup({
+      allowRealFiles: true,
+      entry: dir.src.aigis + '/assets/js/app.js',
+      format: 'iife',
+      external: ['jquery'],
+      globals: {
+        jquery: "jQuery"
+      },
+      plugins: [
+        nodeResolve({ jsnext: true }),
+        commonjs(),
+        babel({
+          presets: ['es2015-rollup'],
+          babelrc: false
+        })
+      ]
+    }))
+    .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'))
+    .on('end', function() {
+      return gulp.src([dir.dist.aigis + '/aigis_assets/js/app.js'])
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'));
+    });
+});
 
 /**
  * Auto Build
@@ -168,6 +197,10 @@ gulp.task('watch', function() {
 
   gulp.watch([dir.src.aigis + '/assets/css/**/*.scss'], function() {
     runSequence('aigis:css');
+  });
+
+  gulp.watch([dir.src.aigis + '/assets/js/**/*.js'], function() {
+    runSequence('aigis:js');
   });
 });
 

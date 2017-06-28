@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 export default class BasisDrawer {
   constructor(args = {}) {
-    this.args = Object.assign({
+    this.args = $.extend({
       drawer : '.c-drawer',
       toggle : '.c-drawer__toggle',
       submenu: '.c-drawer__submenu'

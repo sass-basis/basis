@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 export default class BasisNavbar {
   constructor(args = {}) {
-    this.args = Object.assign({
+    this.args = $.extend({
       item   : '.c-navbar__item',
       submenu: '.c-navbar__submenu',
       subitem: '.c-navbar__subitem'

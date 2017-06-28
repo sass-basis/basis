@@ -1,4 +1,4 @@
-.c-section {
+.#{$_prefix}c-section {
   @include _content();
   @include _padding(3, 0);
 

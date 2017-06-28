@@ -12,7 +12,7 @@
     position: relative;
   }
 
-  .c-site-branding {
+  .#{$_prefix}c-site-branding {
     padding: ($_base-line-height / 2) 0;
   }
 

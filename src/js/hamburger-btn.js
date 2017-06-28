@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 export default class BasisHamburgerBtn {
   constructor(args = {}) {
-    this.args = Object.assign({
+    this.args = $.extend({
       btn: '.c-hamburger-btn'
     }, args);
     this.hamburgerBtn = $(this.args.btn);

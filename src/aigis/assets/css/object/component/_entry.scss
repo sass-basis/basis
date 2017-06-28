@@ -1,4 +1,4 @@
-.c-entry {
+.#{$_prefix}c-entry {
   &__header {
     @include _margin(0, 0, 1);
   }

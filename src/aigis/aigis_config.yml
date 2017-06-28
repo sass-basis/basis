@@ -10,7 +10,7 @@ dest: ../../dist/aigis
 dependencies:
   - ./aigis_assets
   #- ../../dist/css
-  - ../../dist/js
+  #- ../../dist/js
   - ../../dist/font
   #- ../../dist/aigis_assets
 
