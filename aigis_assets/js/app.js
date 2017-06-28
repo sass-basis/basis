@@ -27,7 +27,7 @@ var createClass = function () {
   };
 }();
 
-var BasisHamburgerBtn = function () {
+var BasisHamburgerBtn$1 = function () {
   function BasisHamburgerBtn() {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisHamburgerBtn);
@@ -64,7 +64,7 @@ var BasisHamburgerBtn = function () {
   return BasisHamburgerBtn;
 }();
 
-var BasisDrawer = function () {
+var BasisDrawer$1 = function () {
   function BasisDrawer() {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisDrawer);
@@ -173,7 +173,7 @@ var BasisDrawer = function () {
   return BasisDrawer;
 }();
 
-var BasisNavbar = function () {
+var BasisNavbar$1 = function () {
   function BasisNavbar() {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisNavbar);
@@ -217,7 +217,7 @@ var BasisNavbar = function () {
   return BasisNavbar;
 }();
 
-var BasisPageEffect = function () {
+var BasisPageEffect$1 = function () {
   function BasisPageEffect() {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisPageEffect);
@@ -275,7 +275,7 @@ var BasisPageEffect = function () {
   return BasisPageEffect;
 }();
 
-var BasisSelect = function BasisSelect() {
+var BasisSelect$1 = function BasisSelect() {
   var _this = this;
 
   var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -306,28 +306,38 @@ var BasisSelect = function BasisSelect() {
   });
 };
 
-new BasisHamburgerBtn({
+new BasisHamburgerBtn$1();
+
+new BasisDrawer$1();
+
+new BasisNavbar$1();
+
+new BasisPageEffect$1();
+
+new BasisSelect$1();
+
+new BasisHamburgerBtn$1({
   btn: '.sg-c-hamburger-btn'
 });
 
-new BasisDrawer({
+new BasisDrawer$1({
   drawer: '.sg-c-drawer',
   toggle: '.sg-c-drawer__toggle',
   submenu: '.sg-c-drawer__submenu'
 });
 
-new BasisNavbar({
+new BasisNavbar$1({
   item: '.sg-c-navbar__item',
   submenu: '.sg-c-navbar__submenu',
   subitem: '.sg-c-navbar__subitem'
 });
 
-new BasisPageEffect({
+new BasisPageEffect$1({
   pageEffect: '.sg-c-page-effect',
   duration: 200
 });
 
-new BasisSelect({
+new BasisSelect$1({
   select: '.sg-c-select',
   label: '.sg-c-select__label'
 });
