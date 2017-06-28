@@ -8,7 +8,7 @@ category:
 Prefix of basis classes
 
 ```scss
-$_max-columns: '';
+$_prefix: '';
 ```
 */
 /*
@@ -815,6 +815,7 @@ category:
 ---
 Default font family
 
+### scss
 ```scss
 $_font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 ```
@@ -2267,6 +2268,7 @@ Abstract button component
 name: _card()
 category:
   - core/abstract
+compile: true
 ---
 Abstract card component
 
@@ -2286,7 +2288,7 @@ Abstract card component
 ```ejs
 <div class="c-card">
   <div class="c-card__figure">
-    <img src="<%= root %>aigis_assets/images/dummy.jpg">
+    <img src="/basis/aigis_assets/images/dummy.jpg">
   </div>
   <div class="c-card__body">
     ...
@@ -2298,7 +2300,7 @@ Abstract card component
 ```
 ```ejs
 <div class="c-card">
-  <div class="c-card__figure" style="background-image: url('<%= root %>aigis_assets/images/dummy.jpg'); padding-top: 50%">
+  <div class="c-card__figure" style="background-image: url('/basis/aigis_assets/images/dummy.jpg'); padding-top: 50%">
     <div style="position: absolute; left: 10px; bottom: 10px">...</div>
   </div>
   <div class="c-card__body">
@@ -2619,7 +2621,7 @@ Abstract flexible media component
 ```ejs
 <div class="c-flex-media">
   <div class="c-flex-media__figure">
-    <img src="<%= root %>aigis_assets/images/dummy.jpg">
+    <img src="/basis/aigis_assets/images/dummy.jpg">
   </div>
   <div class="c-flex-media__body">
     ...
@@ -2968,7 +2970,7 @@ Abstract media component
 ```ejs
 <div class="c-media">
   <div class="c-media__figure">
-    <img src="<%= root %>aigis_assets/images/dummy.jpg" style="width: 150px">
+    <img src="/basis/aigis_assets/images/dummy.jpg" style="width: 150px">
   </div>
   <div class="c-media__body">
     ...

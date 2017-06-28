@@ -32,7 +32,7 @@ var BasisHamburgerBtn = function () {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisHamburgerBtn);
 
-    this.args = Object.assign({
+    this.args = $.extend({
       btn: '.c-hamburger-btn'
     }, args);
     this.hamburgerBtn = $(this.args.btn);
@@ -69,7 +69,7 @@ var BasisDrawer = function () {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisDrawer);
 
-    this.args = Object.assign({
+    this.args = $.extend({
       drawer: '.c-drawer',
       toggle: '.c-drawer__toggle',
       submenu: '.c-drawer__submenu'
@@ -178,7 +178,7 @@ var BasisNavbar = function () {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisNavbar);
 
-    this.args = Object.assign({
+    this.args = $.extend({
       item: '.c-navbar__item',
       submenu: '.c-navbar__submenu',
       subitem: '.c-navbar__subitem'
@@ -222,7 +222,7 @@ var BasisPageEffect = function () {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisPageEffect);
 
-    this.args = Object.assign({
+    this.args = $.extend({
       pageEffect: '.c-page-effect',
       duration: 200
     }, args);
@@ -281,7 +281,7 @@ var BasisSelect = function BasisSelect() {
   var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   classCallCheck(this, BasisSelect);
 
-  this.args = Object.assign({
+  this.args = $.extend({
     select: '.c-select',
     label: '.c-select__label'
   }, args);
@@ -306,14 +306,30 @@ var BasisSelect = function BasisSelect() {
   });
 };
 
-new BasisHamburgerBtn();
+new BasisHamburgerBtn({
+  btn: '.sg-c-hamburger-btn'
+});
 
-new BasisDrawer();
+new BasisDrawer({
+  drawer: '.sg-c-drawer',
+  toggle: '.sg-c-drawer__toggle',
+  submenu: '.sg-c-drawer__submenu'
+});
 
-new BasisNavbar();
+new BasisNavbar({
+  item: '.sg-c-navbar__item',
+  submenu: '.sg-c-navbar__submenu',
+  subitem: '.sg-c-navbar__subitem'
+});
 
-new BasisPageEffect();
+new BasisPageEffect({
+  pageEffect: '.sg-c-page-effect',
+  duration: 200
+});
 
-new BasisSelect();
+new BasisSelect({
+  select: '.sg-c-select',
+  label: '.sg-c-select__label'
+});
 
 }(jQuery));
