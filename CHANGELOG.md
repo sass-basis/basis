@@ -1,5 +1,8 @@
 #Changelog
 
+## October 6, 2017 v7.0.1
+* Remove margin of `.c-entry__content > *` from `_content()`
+
 ## June 18, 2017 v7.0.0
 * Change default prefix. `_` to blank.
 * Remove class `.u-animate-size` and `.u-animate-opacity`
