@@ -1,6 +1,6 @@
 #Changelog
 
-## October 6, 2017 v7.0.1
+## October 6, 2017 v7.0.2
 * Remove margin of `.c-entry__content > *` from `_content()`
 
 ## June 18, 2017 v7.0.0
