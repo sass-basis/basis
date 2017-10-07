@@ -19,7 +19,7 @@ export default class BasisDrawer {
       this.setIdForSubmenu(drawer);
 
       const container  = drawer.parent();
-      const btn        = $(`#${drawer.attr('aria-labeledby')}`);
+      const btn        = $(`#${drawer.attr('aria-labelledby')}`);
       const toggleBtns = drawer.find(`${this.args.toggle}[aria-controls]`);
 
       container.on('click', (event) => {

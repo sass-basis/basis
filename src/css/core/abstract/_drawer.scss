@@ -67,7 +67,7 @@ new BasisDrawer({
 ### html
 ```ejs
 <div style="min-height: 200px">
-  <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labeledby="hamburger-btn">
+  <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="hamburger-btn">
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>

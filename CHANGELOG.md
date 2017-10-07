@@ -1,5 +1,8 @@
 #Changelog
 
+## October 7, 2017 v7.0.3
+* Fix typo aria-labelledby
+
 ## October 6, 2017 v7.0.2
 * Remove margin of `.c-entry__content > *` from `_content()`
 
