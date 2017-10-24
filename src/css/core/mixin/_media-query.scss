@@ -23,13 +23,9 @@ min-width media query
 
 @mixin _media-min($size) {
   $prev_size: _prev-size-key($size);
-  @if (false != $prev_size) {
-    @media (min-width: _min($size)) {
-      @content;
-    }
-  } @else if (0 == $size) {
+  @if (0 == $size or false == $prev_size) {
     @content;
-  } @else if ('number' == type-of($size)) {
+  } @else {
     @media (min-width: _min($size)) {
       @content;
     }
