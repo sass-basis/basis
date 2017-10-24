@@ -1,5 +1,9 @@
 #Changelog
 
+## October 25, 2017 v8.0.1
+* Fix container width bug over lg.
+* Fix background fixed hero bug over lg.
+
 ## October 24, 2017 v8.0.0
 * Add function `_px2em()`
 * Add `size` argument to `_hover()`

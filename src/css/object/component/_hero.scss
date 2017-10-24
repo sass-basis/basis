@@ -39,7 +39,7 @@ Hero component
   }
 
   &--fixed {
-    @include _media-only(lg) {
+    @include _media-min(lg) {
       @include _background-image-fixed();
     }
   }

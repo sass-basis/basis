@@ -106,7 +106,7 @@ Abstract container component
   margin-right: auto;
   margin-left: auto;
 
-  @include _media-only(lg) {
+  @include _media-min(lg) {
     max-width: _px2rem($_container-max-width);
   }
 }
