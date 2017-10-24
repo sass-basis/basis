@@ -88,7 +88,7 @@ var BasisDrawer$1 = function () {
         _this.setIdForSubmenu(drawer);
 
         var container = drawer.parent();
-        var btn = $('#' + drawer.attr('aria-labeledby'));
+        var btn = $('#' + drawer.attr('aria-labelledby'));
         var toggleBtns = drawer.find(_this.args.toggle + '[aria-controls]');
 
         container.on('click', function (event) {
