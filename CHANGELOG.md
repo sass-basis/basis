@@ -1,5 +1,10 @@
 #Changelog
 
+## October 24, 2017 v7.1.0
+* Add function `_px2em()`
+* Add `size` argument to `_hover()`
+* Add `xl` break point.
+
 ## October 7, 2017 v7.0.3
 * Fix typo aria-labelledby
 
