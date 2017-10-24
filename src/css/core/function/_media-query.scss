@@ -60,7 +60,7 @@ Return max size.
 @function _max($size) {
   $next_size: _next-size-key($size);
   @if (false != $next_size) {
-    $max: _px2rem((_rem2px(map-get($_sizes, $next_size)) - 1));
+    $max: _px2em((_rem2px(map-get($_sizes, $next_size)) - 1));
     @return $max;
   } @else if ('number' == type-of($size)) {
     @return $size;

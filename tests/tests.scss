@@ -5,6 +5,7 @@
   @include _assert-equals('-', _size-prefix('sm'));
   @include _assert-equals('--md', _size-prefix('md'));
   @include _assert-equals('--lg', _size-prefix('lg'));
+  @include _assert-equals('--xl', _size-prefix('xl'));
 }
 
 @include _test('[function] _gcd()') {
@@ -12,6 +13,14 @@
   @include _assert-equals(4, _gcd(4, 12));
   @include _assert-equals(1, _gcd(1, 12));
   @include _assert-equals(1, _gcd(5, 12));
+}
+
+@include _test('[function] _px2em()') {
+  $em: _px2em(16px, 16px);
+  @include _assert-equals(1em, $em);
+
+  $em: _px2em(16px, 10px);
+  @include _assert-equals(1.6em, $em);
 }
 
 @include _test('[function] _px2rem()') {
@@ -99,30 +108,36 @@
   @include _assert-equals(map-get($_sizes, sm), _min(sm));
   @include _assert-equals(map-get($_sizes, md), _min(md));
   @include _assert-equals(map-get($_sizes, lg), _min(lg));
+  @include _assert-equals(map-get($_sizes, xl), _min(xl));
   @include _assert-equals(false, _min(dummy));
   @include _assert-equals(0, _min(0));
   @include _assert-equals(10px, _min(10px));
   @include _assert-equals(10%, _min(10%));
+  @include _assert-equals(10em, _min(10em));
 }
 
 @include _test('[function] _max()') {
-  @include _assert-equals(calc(#{map-get($_sizes, md)} - 1px), _max(sm));
-  @include _assert-equals(calc(#{map-get($_sizes, lg)} - 1px), _max(md));
-  @include _assert-equals(false, _max(lg));
+  @include _assert-equals(_px2em(_rem2px(map-get($_sizes, md)) - 1px), _max(sm));
+  @include _assert-equals(_px2em(_rem2px(map-get($_sizes, lg)) - 1px), _max(md));
+  @include _assert-equals(_px2em(_rem2px(map-get($_sizes, xl)) - 1px), _max(lg));
+  @include _assert-equals(false, _max(xl));
   @include _assert-equals(false, _max(dummy));
   @include _assert-equals(0, _max(0));
   @include _assert-equals(10px, _max(10px));
   @include _assert-equals(10%, _max(10%));
+  @include _assert-equals(10em, _max(10em));
 }
 
 @include _test('[function] _prev-size-key()') {
   @include _assert-equals(false, _prev-size-key(sm));
   @include _assert-equals(sm, _prev-size-key(md));
   @include _assert-equals(md, _prev-size-key(lg));
+  @include _assert-equals(lg, _prev-size-key(xl));
 }
 
 @include _test('[function] _next-size-key()') {
   @include _assert-equals(md, _next-size-key(sm));
   @include _assert-equals(lg, _next-size-key(md));
-  @include _assert-equals(false, _next-size-key(lg));
+  @include _assert-equals(xl, _next-size-key(lg));
+  @include _assert-equals(false, _next-size-key(xl));
 }

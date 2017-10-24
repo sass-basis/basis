@@ -1,0 +1,23 @@
+/*
+---
+name: _px2em()
+category:
+  - core/function
+---
+Return em from px
+
+### scss
+```scss
+//
+// @param   px  $px
+// @param   px  $base-font-size-px
+// @return  em
+//
+
+font-size: _px2em(16px);
+```
+*/
+
+@function _px2em($px, $base-font-size-px: $_base-font-size-px) {
+  @return _strip-unit($px / $base-font-size-px) * 1em;
+}
