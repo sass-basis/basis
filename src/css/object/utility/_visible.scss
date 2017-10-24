@@ -115,3 +115,75 @@ Visible utility for lg
     @include _visible();
   }
 }
+
+/*
+---
+name: .u-visible-lg-up
+category:
+  - object/utility
+  - object/utility/visible
+  - object/utility/visible/visible-lg-up
+---
+Visible utility for lg or more
+
+### html
+```html
+<div class="u-hidden u-visible-lg-up">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-visible-lg-up {
+  @include _media-min(lg) {
+    @include _visible();
+  }
+}
+
+/*
+---
+name: .u-visible-xl
+category:
+  - object/utility
+  - object/utility/visible
+  - object/utility/visible/visible-xl
+---
+Visible utility for xl
+
+### html
+```html
+<div class="u-hidden u-visible-xl">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-visible-xl {
+  @include _media-only(xl) {
+    @include _visible();
+  }
+}
+
+/*
+---
+name: .u-visible-xl-up
+category:
+  - object/utility
+  - object/utility/visible
+  - object/utility/visible/visible-xl-up
+---
+Visible utility for xl or more
+
+### html
+```html
+<div class="u-hidden u-visible-xl-up">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-visible-xl-up {
+  @include _media-min(xl) {
+    @include _visible();
+  }
+}

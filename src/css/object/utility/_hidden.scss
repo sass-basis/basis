@@ -115,3 +115,75 @@ Hidden utility for lg
     @include _hidden();
   }
 }
+
+/*
+---
+name: .u-hidden-lg-up
+category:
+  - object/utility
+  - object/utility/hidden
+  - object/utility/hidden/hidden-lg-up
+---
+Hidden utility for lg or more
+
+### html
+```html
+<div class="u-hidden-lg-up">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-hidden-lg-up {
+  @include _media-min(lg) {
+    @include _hidden();
+  }
+}
+
+/*
+---
+name: .u-hidden-xl
+category:
+  - object/utility
+  - object/utility/hidden
+  - object/utility/hidden/hidden-xl
+---
+Hidden utility for xl
+
+### html
+```html
+<div class="u-hidden-xl">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-hidden-xl {
+  @include _media-only(xl) {
+    @include _hidden();
+  }
+}
+
+/*
+---
+name: .u-hidden-xl-up
+category:
+  - object/utility
+  - object/utility/hidden
+  - object/utility/hidden/hidden-xl-up
+---
+Hidden utility for xl or more
+
+### html
+```html
+<div class="u-hidden-xl-up">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+*/
+
+.#{$_prefix}u-hidden-xl-up {
+  @include _media-min(xl) {
+    @include _hidden();
+  }
+}

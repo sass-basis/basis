@@ -1,9 +1,15 @@
 #Changelog
 
-## October 24, 2017 v7.1.0
+## October 24, 2017 v8.0.0
 * Add function `_px2em()`
 * Add `size` argument to `_hover()`
 * Add `xl` break point.
+* Add `.u-hidden-lg-up`
+* Add `.u-hidden-xl`
+* Add `.u-hidden-xl-up`
+* Add `.u-visible-lg-up`
+* Add `.u-visible-xl`
+* Add `.u-visible-xl-up`
 
 ## October 7, 2017 v7.0.3
 * Fix typo aria-labelledby
