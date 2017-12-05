@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v8.0.1
+ * Name: Basis v8.0.2
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -3735,6 +3735,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   /* 2 */
 }
@@ -4179,10 +4180,9 @@ blockquote footer {
 }
 
 code {
-  background-color: #fad8d4;
+  background-color: #eeeeee;
   border-radius: 3px;
-  color: #e74c3c;
-  padding: 2px 4px;
+  padding: 2px 6px;
 }
 
 pre {
@@ -10106,7 +10106,7 @@ Visible utility for xl or more
 }
 
 /*!
- * Name: Basis v8.0.1
+ * Name: Basis v8.0.2
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -13841,6 +13841,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   /* 2 */
 }
@@ -14285,10 +14286,9 @@ blockquote footer {
 }
 
 code {
-  background-color: #fad8d4;
+  background-color: #eeeeee;
   border-radius: 3px;
-  color: #e74c3c;
-  padding: 2px 4px;
+  padding: 2px 6px;
 }
 
 pre {

@@ -135,28 +135,28 @@
               <div class="sg-c-entry__content">
                 <p>Abstract row component of flexbox based grid system</p>
 <h3 id="scss">scss</h3>
-<pre><code class="language-scss"><span class="token selector">.c-row </span><span class="token punctuation">{</span>
-  <span class="token keyword">@include</span> _<span class="token function">row</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="language-scss"><span class="token selector" >.c-row </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-  <span class="token selector"><span class="token parent important">&amp;</span>__col </span><span class="token punctuation">{</span>
-    <span class="token keyword">@include</span> _row__<span class="token function">col</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token selector" >&amp;__col </span><span class="token punctuation" >{</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-    <span class="token selector"><span class="token parent important">&amp;</span>--1-3 </span><span class="token punctuation">{</span>
-      <span class="token keyword">@include</span> _row__<span class="token function">col</span><span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token selector" >&amp;--1-3 </span><span class="token punctuation" >{</span>
+      <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >3</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token punctuation" >}</span>
 
-    <span class="token selector"><span class="token parent important">&amp;</span>--offset-1-3 </span><span class="token punctuation">{</span>
-      <span class="token keyword">@include</span> _row__<span class="token function">col--offset</span><span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    <span class="token selector" >&amp;--offset-1-3 </span><span class="token punctuation" >{</span>
+      <span class="token keyword" >@include</span> _row__<span class="token function" >col--offset</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >3</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token punctuation" >}</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span>
 </code></pre>
 <h3 id="html">html</h3>
-<pre><code class="language-ejs"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>c-row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>c-row__col c-row__col--1-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<pre><code class="language-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-row<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-row__col c-row__col--1-3<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
     ...
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
 </code></pre>
 
               </div>
@@ -179,24 +179,24 @@
 <span class="token comment" spellcheck="true">// @param  int  $max-columns  denominator column size</span>
 <span class="token comment" spellcheck="true">//</span>
 
-<span class="token selector">.c-row </span><span class="token punctuation">{</span>
-  <span class="token keyword">@include</span> _<span class="token function">row</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token selector" >.c-row </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-  <span class="token selector"><span class="token parent important">&amp;</span>__col </span><span class="token punctuation">{</span>
-    <span class="token keyword">@include</span> _row__<span class="token function">col</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token selector" >&amp;__col </span><span class="token punctuation" >{</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-    <span class="token selector"><span class="token parent important">&amp;</span>--1-3 </span><span class="token punctuation">{</span>
-      <span class="token keyword">@include</span> _row__<span class="token function">col</span><span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    <span class="token selector" >&amp;--1-3 </span><span class="token punctuation" >{</span>
+      <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >3</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token punctuation" >}</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span>
 </code></pre>
 <h3 id="html">html</h3>
-<pre><code class="language-ejs"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>c-row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>c-row__col c-row__col--1-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<pre><code class="language-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-row<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-row__col c-row__col--1-3<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
     ...
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
 </code></pre>
 
               </div>
@@ -218,14 +218,14 @@
 <span class="token comment" spellcheck="true">// @param  length  $width</span>
 <span class="token comment" spellcheck="true">//</span>
 
-<span class="token selector">.c-row </span><span class="token punctuation">{</span>
-  <span class="token keyword">@include</span> _<span class="token function">row</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token selector" >.c-row </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-  <span class="token selector"><span class="token parent important">&amp;</span>__col </span><span class="token punctuation">{</span>
-    <span class="token keyword">@include</span> _row__<span class="token function">col</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">@include</span> _row__<span class="token function">col--width</span><span class="token punctuation">(</span>auto<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token selector" >&amp;__col </span><span class="token punctuation" >{</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col--width</span><span class="token punctuation" >(</span>auto<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span>
 </code></pre>
 
               </div>
@@ -248,14 +248,14 @@
 <span class="token comment" spellcheck="true">// @param  int  $max-columns  denominator column size</span>
 <span class="token comment" spellcheck="true">//</span>
 
-<span class="token selector">.c-row </span><span class="token punctuation">{</span>
-  <span class="token keyword">@include</span> _<span class="token function">row</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token selector" >.c-row </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-  <span class="token selector"><span class="token parent important">&amp;</span>__col </span><span class="token punctuation">{</span>
-    <span class="token keyword">@include</span> _row__<span class="token function">col</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">@include</span> _row__<span class="token function">col--offset</span><span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token selector" >&amp;__col </span><span class="token punctuation" >{</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col--offset</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >3</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span>
 </code></pre>
 
               </div>
@@ -277,10 +277,10 @@
 <span class="token comment" spellcheck="true">// @param  int  $coefficient</span>
 <span class="token comment" spellcheck="true">//</span>
 
-<span class="token selector">.c-row </span><span class="token punctuation">{</span>
-  <span class="token keyword">@include</span> _<span class="token function">row</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">@include</span> _<span class="token function">row--margin</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token selector" >.c-row </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row--margin</span><span class="token punctuation" >(</span><span class="token number" >1</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token punctuation" >}</span>
 </code></pre>
 
               </div>
@@ -302,10 +302,10 @@
 <span class="token comment" spellcheck="true">// @param  int  $coefficient</span>
 <span class="token comment" spellcheck="true">//</span>
 
-<span class="token selector">.c-row </span><span class="token punctuation">{</span>
-  <span class="token keyword">@include</span> _<span class="token function">row</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">@include</span> _<span class="token function">row--margin</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token selector" >.c-row </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row--margin</span><span class="token punctuation" >(</span><span class="token number" >1</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token punctuation" >}</span>
 </code></pre>
 
               </div>
