@@ -100,10 +100,9 @@ blockquote {
 }
 
 code {
-  background-color: _lighter($_color-red);
+  background-color: _lighter($_color-gray);
   border-radius: $_border-radius;
-  color: $_color-red;
-  padding: 2px 4px;
+  padding: 2px 6px;
 }
 
 pre {

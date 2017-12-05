@@ -58,7 +58,11 @@ gulp.task('css', function() {
       })
     ]))
     .pipe(gulp.dest(dir.dist.css))
-    .pipe(postcss([cssnano()]))
+    .pipe(postcss([
+      cssnano({
+        'zindex': false
+      })
+    ]))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(dir.dist.css));
 });
@@ -71,7 +75,7 @@ gulp.task('js', function() {
     .pipe(plumber())
     .pipe(rollup({
       allowRealFiles: true,
-      entry: dir.src.js + '/basis.js',
+      input: dir.src.js + '/basis.js',
       format: 'iife',
       external: ['jquery'],
       globals: {
@@ -81,7 +85,17 @@ gulp.task('js', function() {
         nodeResolve({ jsnext: true }),
         commonjs(),
         babel({
-          presets: ['es2015-rollup'],
+          presets: [
+            [
+              "env", {
+                "modules": false,
+                "targets": {
+                  "browsers": ['last 2 versions']
+                }
+              }
+            ]
+          ],
+          plugins: ['external-helpers'],
           babelrc: false
         })
       ]
@@ -142,7 +156,11 @@ gulp.task('aigis:css', function() {
       })
     ]))
     .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/css'))
-    .pipe(postcss([cssnano()]))
+    .pipe(postcss([
+      cssnano({
+        'zindex': false
+      })
+    ]))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/css'));
 });
@@ -155,7 +173,7 @@ gulp.task('aigis:js', function() {
     .pipe(plumber())
     .pipe(rollup({
       allowRealFiles: true,
-      entry: dir.src.aigis + '/assets/js/app.js',
+      input: dir.src.aigis + '/assets/js/app.js',
       format: 'iife',
       external: ['jquery'],
       globals: {
@@ -165,7 +183,17 @@ gulp.task('aigis:js', function() {
         nodeResolve({ jsnext: true }),
         commonjs(),
         babel({
-          presets: ['es2015-rollup'],
+          presets: [
+            [
+              "env", {
+                "modules": false,
+                "targets": {
+                  "browsers": ['last 2 versions']
+                }
+              }
+            ]
+          ],
+          plugins: ['external-helpers'],
           babelrc: false
         })
       ]
