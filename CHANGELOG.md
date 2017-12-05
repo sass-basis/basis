@@ -1,5 +1,9 @@
 #Changelog
 
+## December 5, 2017 v8.0.2
+* Change code element color
+* Fix page-effetct js bug
+
 ## October 25, 2017 v8.0.1
 * Fix container width bug over lg.
 * Fix background fixed hero bug over lg.
