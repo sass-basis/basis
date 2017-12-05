@@ -25,6 +25,10 @@ export default class BasisPageEffect {
           return;
         }
 
+        if ('true' !== link.attr('data-page-effect-link')) {
+          return;
+        }
+
         event.preventDefault();
         this.show();
         const url = link.attr('href');
