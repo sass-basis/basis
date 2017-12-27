@@ -1,5 +1,8 @@
 #Changelog
 
+## December 27, 2017 v8.0.3
+* Keyboad support for `.c-navbar`.
+
 ## December 5, 2017 v8.0.2
 * Change code element color
 * Fix page-effetct js bug

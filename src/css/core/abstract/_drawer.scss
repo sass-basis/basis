@@ -110,8 +110,10 @@ new BasisDrawer({
   width: $width;
   max-width: $max-width;
   overflow-y: auto;
+  visibility: hidden;
 
   &[aria-hidden="false"] {
+    visibility: visible;
     left: 0;
   }
 

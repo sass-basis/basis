@@ -16,12 +16,19 @@ export default class BasisNavbar {
   setListener() {
     this.items.each((i, e) => {
       const item = $(e);
-      item.on('mouseover focus', (event) => {
+      item.on('mouseover focusin', (event) => {
         this.show(item.children(this.args.submenu));
       });
 
       item.on('mouseleave', (event) => {
         this.hidden(item.children(this.args.submenu));
+      });
+    });
+
+    $(this.args.item).each((i, e) => {
+      const item = $(e);
+      item.on('focusin', (event) => {
+        this.hidden(item.siblings(this.args.item).children(this.args.submenu));
       });
     });
   }
