@@ -317,12 +317,19 @@ var BasisNavbar$1 = function () {
 
       this.items.each(function (i, e) {
         var item = $(e);
-        item.on('mouseover focus', function (event) {
+        item.on('mouseover focusin', function (event) {
           _this.show(item.children(_this.args.submenu));
         });
 
         item.on('mouseleave', function (event) {
           _this.hidden(item.children(_this.args.submenu));
+        });
+      });
+
+      $(this.args.item).each(function (i, e) {
+        var item = $(e);
+        item.on('focusin', function (event) {
+          _this.hidden(item.siblings(_this.args.item).children(_this.args.submenu));
         });
       });
     }
