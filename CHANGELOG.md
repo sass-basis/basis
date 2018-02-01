@@ -1,5 +1,8 @@
 #Changelog
 
+## February 1, 2018 v8.0.4
+* `max-width` of `_c-container` changed unit rem to px.
+
 ## December 27, 2017 v8.0.3
 * Keyboad support for `.c-navbar`.
 
