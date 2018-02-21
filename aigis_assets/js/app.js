@@ -196,6 +196,7 @@ var BasisDrawer$1 = function () {
       submenu: '.c-drawer__submenu'
     }, args);
     this.drawer = $(this.args.drawer);
+    this.windowWidth = $(window).width();
     this.setListener();
   }
 
@@ -224,8 +225,11 @@ var BasisDrawer$1 = function () {
         });
 
         $(window).on('resize', function (event) {
-          _this.hidden(drawer);
-          _this.close(btn);
+          if ($(window).width() !== _this.windowWidth) {
+            _this.hidden(drawer);
+            _this.close(btn);
+            _this.windowWidth = $(window).width();
+          }
         });
 
         toggleBtns.each(function (i, e) {
