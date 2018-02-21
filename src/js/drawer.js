@@ -10,6 +10,7 @@ export default class BasisDrawer {
       submenu: '.c-drawer__submenu'
     }, args);
     this.drawer = $(this.args.drawer);
+    this.windowWidth = $(window).width();
     this.setListener();
   }
 
@@ -34,8 +35,11 @@ export default class BasisDrawer {
       });
 
       $(window).on('resize', (event) => {
-        this.hidden(drawer);
-        this.close(btn);
+        if ($(window).width() !== this.windowWidth) {
+          this.hidden(drawer);
+          this.close(btn);
+          this.windowWidth = $(window).width();
+        }
       });
 
       toggleBtns.each((i, e) => {
