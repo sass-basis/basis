@@ -1,5 +1,9 @@
 #Changelog
 
+## February 21, 2018 v8.0.5
+* Fix drawer bug.
+* Fix `_content()` bug.
+
 ## February 1, 2018 v8.0.4
 * `max-width` of `_c-container` changed unit rem to px.
 
