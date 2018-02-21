@@ -26,7 +26,7 @@ Sets Child elements margin
 */
 
 @mixin _content($coefficient: 1) {
-  > *:not(h1, h2, h3, h4, h5, h6) + *:not(h1, h2, h3, h4, h5, h6) {
+  > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
     @include _margin-top($_base-margin-bottom * $coefficient);
   }
 
