@@ -10,9 +10,12 @@ Hamburger button component
 ### html
 ```html
 <div id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
-  <div class="c-hamburger-btn__bar"></div>
-  <div class="c-hamburger-btn__bar"></div>
-  <div class="c-hamburger-btn__bar"></div>
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU</div>
 </div>
 
 <nav id="drawer" aria-labelledby="hamburger-btn">...</nav>
@@ -28,20 +31,20 @@ Hamburger button component
     bar-height: $bar-height,
   ));
 
-  &[aria-expanded="true"] > &__bar {
-    &:nth-child(1), &:nth-child(3) {
+  &[aria-expanded="true"] > &__bars > &__bar {
+    &:nth-of-type(1), &:nth-of-type(3) {
       top: ($height / 2 - $bar-height / 2);
     }
 
-    &:nth-child(1) {
+    &:nth-of-type(1) {
       transform: rotate(45deg);
     }
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       background-color: transparent;
     }
 
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       transform: rotate(-45deg);
     }
   }

@@ -9,6 +9,8 @@
 * Remove `.c-flex-media`
 * Remove `_card()`
 * Remove `.c-card`
+* Refactoring `_hamburger-button()`
+* Refactoring `.c-hamburger-button`
 
 ## February 21, 2018 v8.0.5
 * Fix drawer bug.

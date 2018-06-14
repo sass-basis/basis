@@ -76,10 +76,12 @@ gulp.task('js', function() {
     .pipe(rollup({
       allowRealFiles: true,
       input: dir.src.js + '/basis.js',
-      format: 'iife',
       external: ['jquery'],
-      globals: {
-        jquery: "jQuery"
+      output: {
+        globals: {
+          jquery: "jQuery"
+        },
+        format: 'iife'
       },
       plugins: [
         nodeResolve({ jsnext: true }),
@@ -174,10 +176,12 @@ gulp.task('aigis:js', function() {
     .pipe(rollup({
       allowRealFiles: true,
       input: dir.src.aigis + '/assets/js/app.js',
-      format: 'iife',
       external: ['jquery'],
-      globals: {
-        jquery: "jQuery"
+      output: {
+        globals: {
+          jquery: "jQuery"
+        },
+        format: 'iife'
       },
       plugins: [
         nodeResolve({ jsnext: true }),
