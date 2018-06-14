@@ -11,6 +11,7 @@
 * Remove `.c-card`
 * Refactoring `_hamburger-button()`
 * Refactoring `.c-hamburger-button`
+* Accessibility fix for `.c-navbar`
 
 ## February 21, 2018 v8.0.5
 * Fix drawer bug.
