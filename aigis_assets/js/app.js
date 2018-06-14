@@ -3,123 +3,6 @@
 
 $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
-var asyncGenerator = function () {
-  function AwaitValue(value) {
-    this.value = value;
-  }
-
-  function AsyncGenerator(gen) {
-    var front, back;
-
-    function send(key, arg) {
-      return new Promise(function (resolve, reject) {
-        var request = {
-          key: key,
-          arg: arg,
-          resolve: resolve,
-          reject: reject,
-          next: null
-        };
-
-        if (back) {
-          back = back.next = request;
-        } else {
-          front = back = request;
-          resume(key, arg);
-        }
-      });
-    }
-
-    function resume(key, arg) {
-      try {
-        var result = gen[key](arg);
-        var value = result.value;
-
-        if (value instanceof AwaitValue) {
-          Promise.resolve(value.value).then(function (arg) {
-            resume("next", arg);
-          }, function (arg) {
-            resume("throw", arg);
-          });
-        } else {
-          settle(result.done ? "return" : "normal", result.value);
-        }
-      } catch (err) {
-        settle("throw", err);
-      }
-    }
-
-    function settle(type, value) {
-      switch (type) {
-        case "return":
-          front.resolve({
-            value: value,
-            done: true
-          });
-          break;
-
-        case "throw":
-          front.reject(value);
-          break;
-
-        default:
-          front.resolve({
-            value: value,
-            done: false
-          });
-          break;
-      }
-
-      front = front.next;
-
-      if (front) {
-        resume(front.key, front.arg);
-      } else {
-        back = null;
-      }
-    }
-
-    this._invoke = send;
-
-    if (typeof gen.return !== "function") {
-      this.return = undefined;
-    }
-  }
-
-  if (typeof Symbol === "function" && Symbol.asyncIterator) {
-    AsyncGenerator.prototype[Symbol.asyncIterator] = function () {
-      return this;
-    };
-  }
-
-  AsyncGenerator.prototype.next = function (arg) {
-    return this._invoke("next", arg);
-  };
-
-  AsyncGenerator.prototype.throw = function (arg) {
-    return this._invoke("throw", arg);
-  };
-
-  AsyncGenerator.prototype.return = function (arg) {
-    return this._invoke("return", arg);
-  };
-
-  return {
-    wrap: function (fn) {
-      return function () {
-        return new AsyncGenerator(fn.apply(this, arguments));
-      };
-    },
-    await: function (value) {
-      return new AwaitValue(value);
-    }
-  };
-}();
-
-
-
-
-
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -144,9 +27,7 @@ var createClass = function () {
   };
 }();
 
-'use strict';
-
-var BasisHamburgerBtn$1 = function () {
+var BasisHamburgerBtn = function () {
   function BasisHamburgerBtn() {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisHamburgerBtn);
@@ -183,9 +64,7 @@ var BasisHamburgerBtn$1 = function () {
   return BasisHamburgerBtn;
 }();
 
-'use strict';
-
-var BasisDrawer$1 = function () {
+var BasisDrawer = function () {
   function BasisDrawer() {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisDrawer);
@@ -298,9 +177,7 @@ var BasisDrawer$1 = function () {
   return BasisDrawer;
 }();
 
-'use strict';
-
-var BasisNavbar$1 = function () {
+var BasisNavbar = function () {
   function BasisNavbar() {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisNavbar);
@@ -325,7 +202,7 @@ var BasisNavbar$1 = function () {
           _this.show(item.children(_this.args.submenu));
         });
 
-        item.on('mouseleave', function (event) {
+        item.on('mouseleave blur', function (event) {
           _this.hidden(item.children(_this.args.submenu));
         });
       });
@@ -333,7 +210,14 @@ var BasisNavbar$1 = function () {
       $(this.args.item).each(function (i, e) {
         var item = $(e);
         item.on('focusin', function (event) {
-          _this.hidden(item.siblings(_this.args.item).children(_this.args.submenu));
+          _this.hidden(item.siblings(_this.args.item).find(_this.args.submenu));
+        });
+
+        item.find(_this.args.subitem).each(function (i, e) {
+          var subitem = $(e);
+          subitem.on('focusin', function (event) {
+            _this.hidden(subitem.siblings(_this.args.subitem).find(_this.args.submenu));
+          });
         });
       });
     }
@@ -351,9 +235,7 @@ var BasisNavbar$1 = function () {
   return BasisNavbar;
 }();
 
-'use strict';
-
-var BasisPageEffect$1 = function () {
+var BasisPageEffect = function () {
   function BasisPageEffect() {
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, BasisPageEffect);
@@ -415,9 +297,7 @@ var BasisPageEffect$1 = function () {
   return BasisPageEffect;
 }();
 
-'use strict';
-
-var BasisSelect$1 = function BasisSelect() {
+var BasisSelect = function BasisSelect() {
   var _this = this;
 
   var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -448,42 +328,38 @@ var BasisSelect$1 = function BasisSelect() {
   });
 };
 
-'use strict';
+new BasisHamburgerBtn();
 
-new BasisHamburgerBtn$1();
+new BasisDrawer();
 
-new BasisDrawer$1();
+new BasisNavbar();
 
-new BasisNavbar$1();
+new BasisPageEffect();
 
-new BasisPageEffect$1();
+new BasisSelect();
 
-new BasisSelect$1();
-
-'use strict';
-
-new BasisHamburgerBtn$1({
+new BasisHamburgerBtn({
   btn: '.sg-c-hamburger-btn'
 });
 
-new BasisDrawer$1({
+new BasisDrawer({
   drawer: '.sg-c-drawer',
   toggle: '.sg-c-drawer__toggle',
   submenu: '.sg-c-drawer__submenu'
 });
 
-new BasisNavbar$1({
+new BasisNavbar({
   item: '.sg-c-navbar__item',
   submenu: '.sg-c-navbar__submenu',
   subitem: '.sg-c-navbar__subitem'
 });
 
-new BasisPageEffect$1({
+new BasisPageEffect({
   pageEffect: '.sg-c-page-effect',
   duration: 200
 });
 
-new BasisSelect$1({
+new BasisSelect({
   select: '.sg-c-select',
   label: '.sg-c-select__label'
 });

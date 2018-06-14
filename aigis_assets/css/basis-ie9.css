@@ -2295,55 +2295,6 @@ Abstract button component
 */
 /*
 ---
-name: _card()
-category:
-  - core/abstract
-compile: true
----
-Abstract card component
-
-### scss
-```scss
-.c-card {
-  @include _card();
-  background-color: #fff;
-
-  &__body, &__action {
-    @include _padding(.75);
-  }
-}
-```
-
-### html
-```ejs
-<div class="c-card">
-  <div class="c-card__figure">
-    <img src="/basis/aigis_assets/images/dummy.jpg">
-  </div>
-  <div class="c-card__body">
-    ...
-  </div>
-  <div class="c-card__action">
-    ...
-  </div>
-</div>
-```
-```ejs
-<div class="c-card">
-  <div class="c-card__figure" style="background-image: url('/basis/aigis_assets/images/dummy.jpg'); padding-top: 50%">
-    <div style="position: absolute; left: 10px; bottom: 10px">...</div>
-  </div>
-  <div class="c-card__body">
-    ...
-  </div>
-  <div class="c-card__action">
-    ...
-  </div>
-</div>
-```
-*/
-/*
----
 name: _checkbox()
 category:
   - core/abstract
@@ -2550,9 +2501,12 @@ new BasisDrawer({
 </div>
 
 <div id="hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
-  <div class="c-hamburger-btn__bar"></div>
-  <div class="c-hamburger-btn__bar"></div>
-  <div class="c-hamburger-btn__bar"></div>
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU</div>
 </div>
 ```
 */
@@ -2624,43 +2578,6 @@ Abstract entry component
 */
 /*
 ---
-name: _flex-media()
-category:
-  - core/abstract
----
-Abstract flexible media component
-
-### scss
-```scss
-.c-flex-media {
-  @include _flex-media();
-
-  &__figure {
-    @include _margin(0, 0, .5);
-    width: 100%;
-
-    @include _media-min(md) {
-      @include _margin(0, 1, 0, 0);
-      width: 150px;
-    }
-  }
-}
-```
-
-### html
-```ejs
-<div class="c-flex-media">
-  <div class="c-flex-media__figure">
-    <img src="/basis/aigis_assets/images/dummy.jpg">
-  </div>
-  <div class="c-flex-media__body">
-    ...
-  </div>
-</div>
-```
-*/
-/*
----
 name: _form-control()
 category:
   - core/abstract
@@ -2711,9 +2628,12 @@ new BasisHamburgerBtn({
 ### html
 ```ejs
 <div id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
-  <div class="c-hamburger-btn__bar"></div>
-  <div class="c-hamburger-btn__bar"></div>
-  <div class="c-hamburger-btn__bar"></div>
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU</div>
 </div>
 
 <nav id="drawer" aria-labelledby="hamburger-btn">...</nav>
@@ -3228,6 +3148,41 @@ Abstract radio button component
   </span>
   ...
 </label>
+```
+*/
+/*
+---
+name: _radio()
+category:
+  - core/abstract
+---
+Abstract responsive table component
+
+### scss
+```scss
+.responsive-table {
+  @include _media-max(sm) {
+    @include _responsive-table();
+  }
+}
+```
+
+### html
+```html
+<div class="c-responsive-table">
+  <table style="width: 1000px">
+    <tr>
+      <th>th</th>
+      <td>td</td>
+      <td>td</td>
+    </tr>
+    <tr>
+      <th>th</th>
+      <td>td</td>
+      <td>td</td>
+    </tr>
+  </table>
+</div>
 ```
 */
 /*
