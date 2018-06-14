@@ -5,6 +5,8 @@
 * Add `.c-responsive-table`
 * Remove `.c-row__col--offset-*`
 * Remove `.c-copyright`
+* Remove `_flex-media()`
+* Remove `.c-flex-media`
 
 ## February 21, 2018 v8.0.5
 * Fix drawer bug.
