@@ -382,10 +382,6 @@ Row component of flexbox based grid system
           %_bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
             @include _row__col($i, $max_columns);
           }
-
-          %_bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-            @include _row__col--offset($i, $max_columns);
-          }
         }
       }
     }
@@ -401,10 +397,6 @@ Row component of flexbox based grid system
 
       &#{$prefix}-justify {
         @include _row__col--width(1);
-      }
-
-      &#{$prefix}-offset-0 {
-        @include _row__col--offset(0);
       }
 
       &#{$prefix}-fit {
@@ -428,12 +420,6 @@ Row component of flexbox based grid system
               @extend %_bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
             } @else {
               @extend %_bs-item#{$prefix}-full;
-            }
-          }
-
-          @if ($i < $max_columns) {
-            &#{$prefix}-offset-#{$i}-#{$max_columns} {
-              @extend %_bs-item#{$prefix}-offset-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
             }
           }
         }
