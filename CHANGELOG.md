@@ -4,6 +4,7 @@
 * Add `_responsive-talbe()`
 * Add `.c-responsive-table`
 * Remove `.c-row__col--offset-*`
+* Remove `.c-copyright`
 
 ## February 21, 2018 v8.0.5
 * Fix drawer bug.
