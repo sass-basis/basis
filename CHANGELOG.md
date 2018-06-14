@@ -7,6 +7,8 @@
 * Remove `.c-copyright`
 * Remove `_flex-media()`
 * Remove `.c-flex-media`
+* Remove `_card()`
+* Remove `.c-card`
 
 ## February 21, 2018 v8.0.5
 * Fix drawer bug.
