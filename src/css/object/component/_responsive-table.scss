@@ -1,0 +1,33 @@
+/*
+---
+name: .c-responsive-table
+category:
+  - object/component
+  - object/component/responsive-table
+---
+Responsive table component
+
+### html
+```html
+<div class="c-responsive-table">
+  <table style="width: 1000px">
+    <tr>
+      <th>th</th>
+      <td>td</td>
+      <td>td</td>
+    </tr>
+    <tr>
+      <th>th</th>
+      <td>td</td>
+      <td>td</td>
+    </tr>
+  </table>
+</div>
+```
+*/
+
+.#{$_prefix}c-responsive-table {
+  @include _media-max(sm) {
+    @include _responsive-table();
+  }
+}

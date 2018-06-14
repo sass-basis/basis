@@ -1,5 +1,9 @@
 #Changelog
 
+## June 14, 2018 v9.0.0
+* Add `_responsive-talbe()`
+* Add `.c-responsive-table`
+
 ## February 21, 2018 v8.0.5
 * Fix drawer bug.
 * Fix `_content()` bug.
