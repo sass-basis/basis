@@ -1,26 +1,23 @@
-'use strict';
-
 /**
  * Import node modules
  */
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
-var rename       = require('gulp-rename');
-var postcss      = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var cssnano      = require('cssnano');
-var zip          = require('gulp-zip');
-var uglify       = require('gulp-uglify');
-var rollup       = require('gulp-rollup');
-var nodeResolve  = require('rollup-plugin-node-resolve');
-var commonjs     = require('rollup-plugin-commonjs');
-var babel        = require('rollup-plugin-babel');
-var plumber      = require('gulp-plumber');
-var aigis        = require('gulp-aigis');
-var browserSync  = require('browser-sync');
-var runSequence  = require('run-sequence');
+import gulp         from 'gulp';
+import sass         from 'gulp-sass';
+import rename       from 'gulp-rename';
+import postcss      from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano      from 'cssnano';
+import zip          from 'gulp-zip';
+import uglify       from 'gulp-uglify';
+import rollup       from 'gulp-rollup';
+import nodeResolve  from 'rollup-plugin-node-resolve';
+import commonjs     from 'rollup-plugin-commonjs';
+import babel        from 'rollup-plugin-babel';
+import plumber      from 'gulp-plumber';
+import aigis        from 'gulp-aigis';
+import browserSync  from 'browser-sync';
 
-var dir = {
+const dir = {
   src: {
     css  : 'src/css',
     js   : 'src/js',
@@ -38,7 +35,7 @@ var dir = {
 /**
  * Sass to CSS
  */
-gulp.task('css', function() {
+export function css() {
   return gulp.src(
       [
         dir.src.css + '/basis.scss',
@@ -65,12 +62,12 @@ gulp.task('css', function() {
     ]))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(dir.dist.css));
-});
+}
 
 /**
  * Build javascript
  */
-gulp.task('js', function() {
+export function js() {
   gulp.src(dir.src.js + '/**/*.js')
     .pipe(plumber())
     .pipe(rollup({
@@ -103,43 +100,40 @@ gulp.task('js', function() {
       ]
     }))
     .pipe(gulp.dest(dir.dist.js))
-    .on('end', function() {
+    .on('end', () => {
       return gulp.src([dir.dist.js + '/basis.js'])
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(dir.dist.js));
     });
-});
+}
 
 /**
  * Build font
  */
-gulp.task('font', function() {
+export function font() {
   return gulp.src(dir.src.font + '/*')
     .pipe(gulp.dest(dir.dist.font));
-});
+}
 
 /**
  * Styleguide
  */
-gulp.task('aigis:update', function() {
-  return _aigis();
-});
-gulp.task('aigis:build', ['build'], function() {
-  return _aigis();
-});
+gulp.task('aigis:update', () => _aigis());
+gulp.task('aigis:build', ['build'], () => _aigis());
+
 function _aigis() {
   return gulp.src(dir.src.aigis + '/aigis_config.yml')
     .pipe(aigis())
-    .on('end', function() {
-      runSequence('aigis:css', 'aigis:js');
+    .on('end', () => {
+      gulp.series('aigis:css', 'aigis:js');
     });
 }
 
 /**
  * Sass to CSS
  */
-gulp.task('aigis:css', function() {
+gulp.task('aigis:css', () => {
   return gulp.src(
       [
         dir.src.aigis + '/assets/css/*.scss',
@@ -170,7 +164,7 @@ gulp.task('aigis:css', function() {
 /**
  * Build javascript
  */
-gulp.task('aigis:js', function() {
+gulp.task('aigis:js', () => {
   gulp.src(dir.src.aigis + '/assets/js/*.js')
     .pipe(plumber())
     .pipe(rollup({
@@ -203,7 +197,7 @@ gulp.task('aigis:js', function() {
       ]
     }))
     .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'))
-    .on('end', function() {
+    .on('end', () => {
       return gulp.src([dir.dist.aigis + '/aigis_assets/js/app.js'])
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
@@ -214,37 +208,27 @@ gulp.task('aigis:js', function() {
 /**
  * Auto Build
  */
-gulp.task('watch', function() {
-  gulp.watch([dir.src.css + '/**/*.scss'], function() {
-    runSequence('css', 'aigis:update');
-  });
+export function watch() {
+  gulp.watch([dir.src.css + '/**/*.scss'], gulp.series(css, 'aigis:update'));
 
-  gulp.watch([dir.src.js + '/**/*.js'], function() {
-    runSequence('js', 'aigis:update');
-  });
+  gulp.watch([dir.src.js + '/**/*.js'], gulp.series(js, 'aigis:update'));
 
-  gulp.watch([dir.src.aigis + '/**/*.ejs'], function() {
-    runSequence('aigis:update');
-  });
+  gulp.watch([dir.src.aigis + '/**/*.ejs'], gulp.series('aigis:update'));
 
-  gulp.watch([dir.src.aigis + '/assets/css/**/*.scss'], function() {
-    runSequence('aigis:css');
-  });
+  gulp.watch([dir.src.aigis + '/assets/css/**/*.scss'], gulp.series('aigis:css'));
 
-  gulp.watch([dir.src.aigis + '/assets/js/**/*.js'], function() {
-    runSequence('aigis:js');
-  });
-});
+  gulp.watch([dir.src.aigis + '/assets/js/**/*.js'], gulp.series('aigis:js'));
+}
 
 /**
  * Build
  */
-gulp.task('build', ['css', 'js', 'font']);
+export const build = gulp.parallel(css, js, font);
 
 /**
  * Browsersync
  */
-gulp.task('server', ['aigis:build'], function() {
+export const server = gulp.series('aigis:build', () => {
   browserSync.init( {
     server: {
       baseDir: dir.dist.aigis + '/'
@@ -259,7 +243,7 @@ gulp.task('server', ['aigis:build'], function() {
 /**
  * Creates the zip file
  */
-gulp.task('zip', function(){
+export function zip() {
   return gulp.src(
       [
         '**',
@@ -273,16 +257,16 @@ gulp.task('zip', function(){
     )
     .pipe(zip('basis.zip'))
     .pipe(gulp.dest('./'));
-});
+}
 
 /**
  * Sass tests
  */
-gulp.task('test', function() {
+export function test() {
   return gulp.src('./tests/tests.scss')
     .pipe(plumber())
     .pipe(sass())
     .pipe(gulp.dest('./tests'));
-});
+}
 
-gulp.task('default', ['watch', 'server']);
+export default gulp.parallel(watch, server);
