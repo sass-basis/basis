@@ -7,7 +7,7 @@ import rename       from 'gulp-rename';
 import postcss      from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano      from 'cssnano';
-import zip          from 'gulp-zip';
+import g_zip        from 'gulp-zip';
 import uglify       from 'gulp-uglify';
 import rollup       from 'gulp-rollup';
 import nodeResolve  from 'rollup-plugin-node-resolve';
@@ -255,7 +255,7 @@ export function zip() {
       ]
       , {base: './'}
     )
-    .pipe(zip('basis.zip'))
+    .pipe(g_zip('basis.zip'))
     .pipe(gulp.dest('./'));
 }
 
