@@ -121,19 +121,14 @@ export function font() {
  */
 export const build = gulp.parallel(css, js, font);
 
-function _aigis() {
-  return gulp.src(dir.src.aigis + '/aigis_config.yml')
-    .pipe(aigis())
-    .on('end', () => {
-      gulp.series('aigis:css', 'aigis:js');
-    });
-}
-
 /**
  * Styleguide
  */
-gulp.task('aigis:update', () => _aigis());
-gulp.task('aigis:build', ['build'], () => _aigis());
+gulp.task('aigis:update', gulp.series(() => {
+  return gulp.src(dir.src.aigis + '/aigis_config.yml').pipe(aigis());
+}, 'aigis:css', 'aigis:js'));
+
+gulp.task('aigis:build', gulp.series('build', 'aigis:update'));
 
 /**
  * Sass to CSS
