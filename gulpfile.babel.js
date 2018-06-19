@@ -68,7 +68,7 @@ export function css() {
  * Build javascript
  */
 export const js = gulp.series(() => {
-  gulp.src(dir.src.js + '/**/*.js')
+  return gulp.src(dir.src.js + '/**/*.js')
     .pipe(plumber())
     .pipe(rollup({
       allowRealFiles: true,
