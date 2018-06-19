@@ -117,10 +117,9 @@ export function font() {
 }
 
 /**
- * Styleguide
+ * Build
  */
-gulp.task('aigis:update', () => _aigis());
-gulp.task('aigis:build', ['build'], () => _aigis());
+export const build = gulp.parallel(css, js, font);
 
 function _aigis() {
   return gulp.src(dir.src.aigis + '/aigis_config.yml')
@@ -131,15 +130,18 @@ function _aigis() {
 }
 
 /**
+ * Styleguide
+ */
+gulp.task('aigis:update', () => _aigis());
+gulp.task('aigis:build', ['build'], () => _aigis());
+
+/**
  * Sass to CSS
  */
 gulp.task('aigis:css', () => {
-  return gulp.src(
-      [
-        dir.src.aigis + '/assets/css/*.scss',
-      ],
-      {base: dir.src.aigis + '/assets/css'}
-    )
+  return gulp.src(dir.src.aigis + '/assets/css/*.scss', {
+      base: dir.src.aigis + '/assets/css'
+    })
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'expanded',
@@ -213,17 +215,12 @@ export function watch() {
 
   gulp.watch([dir.src.js + '/**/*.js'], gulp.series(js, 'aigis:update'));
 
-  gulp.watch([dir.src.aigis + '/**/*.ejs'], gulp.series('aigis:update'));
+  gulp.watch([dir.src.aigis + '/**/*.ejs'], gulp.task('aigis:update'));
 
-  gulp.watch([dir.src.aigis + '/assets/css/**/*.scss'], gulp.series('aigis:css'));
+  gulp.watch([dir.src.aigis + '/assets/css/**/*.scss'], gulp.task('aigis:css'));
 
-  gulp.watch([dir.src.aigis + '/assets/js/**/*.js'], gulp.series('aigis:js'));
+  gulp.watch([dir.src.aigis + '/assets/js/**/*.js'], gulp.task('aigis:js'));
 }
-
-/**
- * Build
- */
-export const build = gulp.parallel(css, js, font);
 
 /**
  * Browsersync
