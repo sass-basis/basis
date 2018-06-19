@@ -121,15 +121,6 @@ export function font() {
 export const build = gulp.parallel(css, js, font);
 
 /**
- * Styleguide
- */
-gulp.task('aigis:update', gulp.series(() => {
-  return gulp.src(dir.src.aigis + '/aigis_config.yml').pipe(aigis());
-}, 'aigis:css', 'aigis:js'));
-
-gulp.task('aigis:build', gulp.series(build, 'aigis:update'));
-
-/**
  * Sass to CSS
  */
 gulp.task('aigis:css', () => {
@@ -199,6 +190,15 @@ gulp.task('aigis:js', gulp.series(() => {
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'));
 });
+
+/**
+ * Styleguide
+ */
+gulp.task('aigis:update', gulp.series(() => {
+  return gulp.src(dir.src.aigis + '/aigis_config.yml').pipe(aigis());
+}, 'aigis:css', 'aigis:js'));
+
+gulp.task('aigis:build', gulp.series(build, 'aigis:update'));
 
 /**
  * Auto Build
