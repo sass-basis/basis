@@ -67,7 +67,7 @@ export function css() {
 /**
  * Build javascript
  */
-export function js() {
+export const js = gulp.series(() => {
   gulp.src(dir.src.js + '/**/*.js')
     .pipe(plumber())
     .pipe(rollup({
@@ -99,14 +99,13 @@ export function js() {
         })
       ]
     }))
-    .pipe(gulp.dest(dir.dist.js))
-    .on('end', () => {
-      return gulp.src([dir.dist.js + '/basis.js'])
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(dir.dist.js));
-    });
-}
+    .pipe(gulp.dest(dir.dist.js));
+}, () => {
+  return gulp.src([dir.dist.js + '/basis.js'])
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest(dir.dist.js));
+});
 
 /**
  * Build font
@@ -128,7 +127,7 @@ gulp.task('aigis:update', gulp.series(() => {
   return gulp.src(dir.src.aigis + '/aigis_config.yml').pipe(aigis());
 }, 'aigis:css', 'aigis:js'));
 
-gulp.task('aigis:build', gulp.series('build', 'aigis:update'));
+gulp.task('aigis:build', gulp.series(build, 'aigis:update'));
 
 /**
  * Sass to CSS
@@ -161,8 +160,8 @@ gulp.task('aigis:css', () => {
 /**
  * Build javascript
  */
-gulp.task('aigis:js', () => {
-  gulp.src(dir.src.aigis + '/assets/js/*.js')
+gulp.task('aigis:js', gulp.series(() => {
+  return gulp.src(dir.src.aigis + '/assets/js/*.js')
     .pipe(plumber())
     .pipe(rollup({
       allowRealFiles: true,
@@ -193,13 +192,12 @@ gulp.task('aigis:js', () => {
         })
       ]
     }))
-    .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'))
-    .on('end', () => {
-      return gulp.src([dir.dist.aigis + '/aigis_assets/js/app.js'])
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'));
-    });
+    .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'));
+}), () => {
+  return gulp.src([dir.dist.aigis + '/aigis_assets/js/app.js'])
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'));
 });
 
 /**
