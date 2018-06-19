@@ -32,6 +32,35 @@ const dir = {
   }
 };
 
+const baseRollupConfig = {
+  allowRealFiles: true,
+  external: ['jquery'],
+  output: {
+    globals: {
+      jquery: "jQuery"
+    },
+    format: 'iife'
+  },
+  plugins: [
+    nodeResolve({ jsnext: true }),
+    commonjs(),
+    babel({
+      presets: [
+        [
+          "env", {
+            "modules": false,
+            "targets": {
+              "browsers": ['last 2 versions']
+            }
+          }
+        ]
+      ],
+      plugins: ['external-helpers'],
+      babelrc: false
+    })
+  ]
+};
+
 /**
  * Sass to CSS
  */
@@ -70,35 +99,11 @@ export function css() {
 export const js = gulp.series(() => {
   return gulp.src(dir.src.js + '/**/*.js')
     .pipe(plumber())
-    .pipe(rollup({
-      allowRealFiles: true,
-      input: dir.src.js + '/basis.js',
-      external: ['jquery'],
-      output: {
-        globals: {
-          jquery: "jQuery"
-        },
-        format: 'iife'
-      },
-      plugins: [
-        nodeResolve({ jsnext: true }),
-        commonjs(),
-        babel({
-          presets: [
-            [
-              "env", {
-                "modules": false,
-                "targets": {
-                  "browsers": ['last 2 versions']
-                }
-              }
-            ]
-          ],
-          plugins: ['external-helpers'],
-          babelrc: false
-        })
-      ]
-    }))
+    .pipe(rollup(Object.assign(
+      {},
+      baseRollupConfig,
+      { input: dir.src.js + '/basis.js' }
+    )))
     .pipe(gulp.dest(dir.dist.js));
 }, () => {
   return gulp.src([dir.dist.js + '/basis.js'])
@@ -154,35 +159,11 @@ gulp.task('aigis:css', () => {
 gulp.task('aigis:js', gulp.series(() => {
   return gulp.src(dir.src.aigis + '/assets/js/*.js')
     .pipe(plumber())
-    .pipe(rollup({
-      allowRealFiles: true,
-      input: dir.src.aigis + '/assets/js/app.js',
-      external: ['jquery'],
-      output: {
-        globals: {
-          jquery: "jQuery"
-        },
-        format: 'iife'
-      },
-      plugins: [
-        nodeResolve({ jsnext: true }),
-        commonjs(),
-        babel({
-          presets: [
-            [
-              "env", {
-                "modules": false,
-                "targets": {
-                  "browsers": ['last 2 versions']
-                }
-              }
-            ]
-          ],
-          plugins: ['external-helpers'],
-          babelrc: false
-        })
-      ]
-    }))
+    .pipe(rollup(Object.assign(
+      {},
+      baseRollupConfig,
+      { input: dir.src.aigis + '/assets/js/app.js' }
+    )))
     .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'));
 }), () => {
   return gulp.src([dir.dist.aigis + '/aigis_assets/js/app.js'])
