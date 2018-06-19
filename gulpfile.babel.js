@@ -156,7 +156,7 @@ gulp.task('aigis:css', () => {
 /**
  * Build javascript
  */
-gulp.task('aigis:js', gulp.series(() => {
+gulp.task('aigis:js', () => {
   return gulp.src(dir.src.aigis + '/assets/js/*.js')
     .pipe(plumber())
     .pipe(rollup(Object.assign(
@@ -164,9 +164,7 @@ gulp.task('aigis:js', gulp.series(() => {
       baseRollupConfig,
       { input: dir.src.aigis + '/assets/js/app.js' }
     )))
-    .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'));
-}), () => {
-  return gulp.src([dir.dist.aigis + '/aigis_assets/js/app.js'])
+    .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'))
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(dir.dist.aigis + '/aigis_assets/js'));
