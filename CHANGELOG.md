@@ -1,5 +1,8 @@
 #Changelog
 
+## July 27, 2018 v9.1.0
+* Add `.c-navbar--center`
+
 ## June 14, 2018 v9.0.0
 * Add `_responsive-talbe()`
 * Add `.c-responsive-table`

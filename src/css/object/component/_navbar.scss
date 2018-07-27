@@ -30,6 +30,27 @@ Navbar component
 </ul>
 ```
 ```html
+<ul class="c-navbar c-navbar--center">
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+  </li>
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+  </li>
+</ul>
+```
+```html
 <ul class="c-navbar c-navbar--left">
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
@@ -75,7 +96,14 @@ Navbar component
 
 .#{$_prefix}c-navbar {
   @include _navbar();
-  $root: #{&};
+
+  &--center {
+    justify-content: center;
+
+    .#{$_prefix}c-navbar__item {
+      flex: none;
+    }
+  }
 
   &--left {
     .#{$_prefix}c-navbar__item {
@@ -86,16 +114,16 @@ Navbar component
   &--right {
     justify-content: flex-end;
 
-    #{$root}__item {
+    .#{$_prefix}c-navbar__item {
       flex: 0 1 auto;
 
-      > #{$root}__submenu {
+      > .#{$_prefix}c-navbar__submenu {
         @include _position(absolute, 100%, 0, null, auto);
       }
     }
 
-    #{$root}__subitem {
-      > #{$root}__submenu {
+    .#{$_prefix}c-navbar__subitem {
+      > .#{$_prefix}c-navbar__submenu {
         @include _position(absolute, 0, 100%, null, auto);
       }
     }
