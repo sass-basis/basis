@@ -1,7 +1,11 @@
 #Changelog
 
+## July 27, 2018 v9.1.1
+* Remove gulp and yarn
+
 ## July 27, 2018 v9.1.0
 * Add `.c-navbar--center`
+* Upgrade gulp #110
 
 ## June 14, 2018 v9.0.0
 * Add `_responsive-talbe()`

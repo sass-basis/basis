@@ -1,8 +1,8 @@
 node_modules/
 .DS_Store
 dist/
-release/
 *.log
 tests/tests.css
 basis.zip
+basis/
 .sass-cache

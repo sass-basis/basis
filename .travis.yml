@@ -1,7 +1,7 @@
 language: node_js
 sudo: false
 node_js:
-- '6'
+- '8'
 branches:
   only:
   - master
@@ -14,13 +14,16 @@ env:
   - GIT_AUTHOR_NAME=travis-ci
   - GIT_AUTHOR_EMAIL=inc@2inc.org
   - secure: QYrqO57tcHLh99+ELoAdM0ojNaPc9cKQ4k8W4oVHOZowxGXKnAnDLYgt/PzmtMnNHmFA/bup+COphLAc7KX5hfcFnLKHlLGq85Rgr6+pzjtXJV+YjROcv0oSNuh2yIjPs52ktAGOqXBEwLMMx3bF8yKQz80idTtrYgJ80bi93f1kUfju+9oXJiOTGV0pehqNfgVC769oYeArGF37luuCeE8T7KHx+tYOqKQwpJcY0HLS086P4HA35sbm4vqtEkrI+UU9xccY9JE1X/NOqNWwR6KP0o1goaYDSXtzN8eMgDfb06jEtEmin//qfWbapg9vfDE352WvUR/n6tKU8fPlkKDBauFxaO4CBkDDJdGJ1cDRaTZH7IjLmfMGVyfAsKAl/36ZBJvGeX6of8PN0fzyHsQHXVsm8P9rJ5449hpsYJmzrBKjagtfC8/tDkD63Xef6jPIMF9p0wtRHUitV2NEcgyzg5wMs5GId1sqHH1wfjLGX7m1eLCcOl8Rw1J5bWabiw0GvymYiHMAu4O4GKmCgz0EkGa1AQt4btGsFjdAcalh7jl9B+EzSDSwG4Vh9V+VBTkimJU92+11R6ZuE719oRee+OljR+3rKSEFP27sTibZUuX1DNYu6UjpRW3ndZEV6MHhR8JOFhcyai0AJFa/UAXsOkaR5DSHLS4YDuk+2wU=
+cache:
+  directories:
+  - node_modules
 script:
-- yarn run gulp build
-- yarn run gulp aigis:build
+- npm run build
+- npm run aigis
 after_success:
 - bash ./bin/gh-pages.sh
 before_deploy:
-- yarn run gulp zip
+- npm run zip
 - ls -la basis.zip
 - export RELEASE_FILE=$(ls basis.zip)
 deploy:

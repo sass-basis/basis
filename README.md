@@ -25,15 +25,15 @@ A lightweight responsive Sass/CSS framework based on flexible box.
 ```
 $ git clone https://github.com/sass-basis/starter-kit.git
 $ cd starter-kit
-$ yarn install
-$ yarn start
+$ npm install
+$ npm start
 ```
 
-### Using Yarn
+### Using NPM
 
 Installs Basis
 ```
-$ yarn install sass-basis
+$ npm install sass-basis
 ```
 
 Imports Basis your Sass/SCSS.
