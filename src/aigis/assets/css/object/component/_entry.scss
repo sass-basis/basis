@@ -1,19 +1,19 @@
-.#{$_prefix}c-entry {
-  &__header {
+.#{$_prefix}l-main > .#{$_prefix}c-entry {
+  .#{$_prefix}c-entry__header {
     @include _margin(0, 0, 1);
   }
 
-  &__title {
+  .#{$_prefix}c-entry__title {
     @include _padding(0, 0, .25);
     border-bottom: 1px solid _light($_color-gray);
     @include _padding(0, 0, .25);
   }
 
-  &__content {
+  .#{$_prefix}c-entry__content {
     @include _content();
   }
 
-  & + & {
+  & + .#{$_prefix}c-entry {
     @include _margin-top(2);
   }
 }

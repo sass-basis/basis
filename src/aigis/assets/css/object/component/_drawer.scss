@@ -1,4 +1,4 @@
-.#{$_prefix}c-drawer {
+.#{$_prefix}l-body > .#{$_prefix}c-drawer {
   background-color: $_color-text;
   @include _padding(.5);
 

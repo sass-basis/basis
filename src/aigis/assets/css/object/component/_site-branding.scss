@@ -1,4 +1,4 @@
-.#{$_prefix}c-site-branding {
+.#{$_prefix}l-header .#{$_prefix}c-site-branding {
   &__title {
     @include font-basis();
     @include _font-size-line-height($_base-font-size * 2);

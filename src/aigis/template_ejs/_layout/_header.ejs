@@ -1,22 +1,24 @@
-<header id="header" class="sg-l-header" role="banner" data-l="header" data-l-header-type="overlay">
-  <div class="sg-c-container">
-    <div class="sg-c-row sg-c-row--nowrap sg-c-row--lg-margin sg-c-row--middle">
-      <div class="sg-c-row__col sg-c-row__col--auto sg-c-row__col--md-1-2">
-        <div class="sg-c-site-branding">
-          <h1 class="sg-c-site-branding__title">
+<header id="header" class="l-header" role="banner" data-l="header" data-l-header-type="overlay">
+  <div class="c-container">
+    <div class="c-row c-row--nowrap c-row--lg-margin c-row--middle">
+      <div class="c-row__col c-row__col--auto c-row__col--md-1-2">
+        <div class="c-site-branding">
+          <h1 class="c-site-branding__title">
             <a href="<%= root %>"><img src="<%= root %>aigis_assets/images/logo.svg" alt="">Basis Styleguide</a>
           </h1>
         </div>
       </div>
-      <div class="sg-c-row__col sg-c-row__col--fit sg-c-row__col--md-1-2">
-        <div class="sg-u-hidden-lg-up">
-          <div id="hamburger-btn" class="sg-c-hamburger-btn u-hidden-lg-up" aria-controls="drawer-nav" aria-expanded="false">
-            <div class="sg-c-hamburger-btn__bar"></div>
-            <div class="sg-c-hamburger-btn__bar"></div>
-            <div class="sg-c-hamburger-btn__bar"></div>
+      <div class="c-row__col c-row__col--fit c-row__col--md-1-2">
+        <div class="u-hidden-lg-up">
+          <div id="hamburger-btn" class="c-hamburger-btn u-hidden-lg-up" aria-controls="drawer-nav" aria-expanded="false">
+            <div class="c-hamburger-btn__bars">
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+            </div>
           </div>
         </div>
-        <div class="sg-u-hidden sg-u-visible-lg-up">
+        <div class="u-hidden u-visible-lg-up">
           <%- include('../_object/_project/_global-nav') %>
         </div>
       </div>

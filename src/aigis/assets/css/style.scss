@@ -6,7 +6,7 @@ $_color-text  : #444;
 $_base-font-size-px: 15px;
 $_between-lines: (1rem / 3);
 $_font-path: '../../font';
-$_prefix: 'sg-';
+$_prefix: '';
 
 @import '../../../css/basis';
 
@@ -29,9 +29,7 @@ $_prefix: 'sg-';
 @import 'object/component/label';
 @import 'object/component/meta';
 @import 'object/component/page-header';
-@import 'object/component/progress-bar';
 @import 'object/component/site-branding';
-@import 'object/component/section';
 @import 'object/component/table';
 
 @import 'object/project/footer-nav';
