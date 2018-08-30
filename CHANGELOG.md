@@ -1,5 +1,10 @@
 #Changelog
 
+## August 30, 2018 v9.1.2
+* Update manual
+* Update babel and rolup-babel
+* Close drawer when link clicked.
+
 ## July 27, 2018 v9.1.1
 * Remove gulp and yarn
 
