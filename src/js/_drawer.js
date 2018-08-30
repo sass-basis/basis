@@ -7,7 +7,9 @@ export default class BasisDrawer {
     this.args = $.extend({
       drawer : '.c-drawer',
       toggle : '.c-drawer__toggle',
-      submenu: '.c-drawer__submenu'
+      submenu: '.c-drawer__submenu',
+      item   : '.c-drawer__item',
+      subitem: '.c-drawer__subitem',
     }, args);
     this.drawer = $(this.args.drawer);
     this.windowWidth = $(window).width();
@@ -32,6 +34,13 @@ export default class BasisDrawer {
 
       drawer.on('click', (event) => {
         event.stopPropagation();
+      });
+
+      drawer.find(this.args.item, this.args.subitem).children('a').on('click', (event) => {
+        this.close(btn);
+        this.hidden(drawer);
+        this.close(drawer.find(this.args.toggle));
+        this.hidden(drawer.find(this.args.submenu));
       });
 
       $(window).on('resize', (event) => {
