@@ -3,34 +3,35 @@
 
   $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
-  var classCallCheck = function (instance, Constructor) {
+  function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
-  };
+  }
 
-  var createClass = function () {
-    function defineProperties(target, props) {
-      for (var i = 0; i < props.length; i++) {
-        var descriptor = props[i];
-        descriptor.enumerable = descriptor.enumerable || false;
-        descriptor.configurable = true;
-        if ("value" in descriptor) descriptor.writable = true;
-        Object.defineProperty(target, descriptor.key, descriptor);
-      }
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
     }
+  }
 
-    return function (Constructor, protoProps, staticProps) {
-      if (protoProps) defineProperties(Constructor.prototype, protoProps);
-      if (staticProps) defineProperties(Constructor, staticProps);
-      return Constructor;
-    };
-  }();
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
 
-  var BasisHamburgerBtn = function () {
+  var BasisHamburgerBtn =
+  /*#__PURE__*/
+  function () {
     function BasisHamburgerBtn() {
       var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      classCallCheck(this, BasisHamburgerBtn);
+
+      _classCallCheck(this, BasisHamburgerBtn);
 
       this.args = $.extend({
         btn: '.c-hamburger-btn'
@@ -39,13 +40,12 @@
       this.setListener();
     }
 
-    createClass(BasisHamburgerBtn, [{
-      key: 'setListener',
+    _createClass(BasisHamburgerBtn, [{
+      key: "setListener",
       value: function setListener() {
         this.hamburgerBtn.each(function (i, e) {
           var hamburgerBtn = $(e);
           var target = $('#' + hamburgerBtn.attr('aria-controls'));
-
           hamburgerBtn.click(function (event) {
             event.preventDefault();
             event.stopPropagation();
@@ -61,71 +61,90 @@
         });
       }
     }]);
+
     return BasisHamburgerBtn;
   }();
 
-  var BasisDrawer = function () {
+  var BasisDrawer =
+  /*#__PURE__*/
+  function () {
     function BasisDrawer() {
       var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      classCallCheck(this, BasisDrawer);
+
+      _classCallCheck(this, BasisDrawer);
 
       this.args = $.extend({
         drawer: '.c-drawer',
         toggle: '.c-drawer__toggle',
-        submenu: '.c-drawer__submenu'
+        submenu: '.c-drawer__submenu',
+        item: '.c-drawer__item',
+        subitem: '.c-drawer__subitem'
       }, args);
       this.drawer = $(this.args.drawer);
       this.windowWidth = $(window).width();
       this.setListener();
     }
 
-    createClass(BasisDrawer, [{
-      key: 'setListener',
+    _createClass(BasisDrawer, [{
+      key: "setListener",
       value: function setListener() {
         var _this = this;
 
         this.drawer.each(function (i, e) {
           var drawer = $(e);
+
           _this.setIdForSubmenu(drawer);
 
           var container = drawer.parent();
-          var btn = $('#' + drawer.attr('aria-labelledby'));
-          var toggleBtns = drawer.find(_this.args.toggle + '[aria-controls]');
-
+          var btn = $("#".concat(drawer.attr('aria-labelledby')));
+          var toggleBtns = drawer.find("".concat(_this.args.toggle, "[aria-controls]"));
           container.on('click', function (event) {
             _this.close(btn);
+
             _this.hidden(drawer);
+
             _this.close(drawer.find(_this.args.toggle));
+
             _this.hidden(drawer.find(_this.args.submenu));
           });
-
           drawer.on('click', function (event) {
             event.stopPropagation();
           });
+          drawer.find(_this.args.item, _this.args.subitem).children('a').on('click', function (event) {
+            _this.close(btn);
 
+            _this.hidden(drawer);
+
+            _this.close(drawer.find(_this.args.toggle));
+
+            _this.hidden(drawer.find(_this.args.submenu));
+          });
           $(window).on('resize', function (event) {
             if ($(window).width() !== _this.windowWidth) {
               _this.hidden(drawer);
+
               _this.close(btn);
+
               _this.windowWidth = $(window).width();
             }
           });
-
           toggleBtns.each(function (i, e) {
             var toggleBtn = $(e);
-            var submenu = $('#' + toggleBtn.attr('aria-controls'));
+            var submenu = $("#".concat(toggleBtn.attr('aria-controls')));
             toggleBtn.on('click', function (event) {
               event.preventDefault();
               event.stopPropagation();
+
               _this.toggleMenu(toggleBtn);
             });
           });
         });
       }
     }, {
-      key: 'toggleMenu',
+      key: "toggleMenu",
       value: function toggleMenu(btn) {
-        var menu = $('#' + btn.attr('aria-controls'));
+        var menu = $("#".concat(btn.attr('aria-controls')));
+
         if ('false' == btn.attr('aria-expanded')) {
           this.open(btn);
           this.show(menu);
@@ -137,62 +156,67 @@
         }
       }
     }, {
-      key: 'open',
+      key: "open",
       value: function open(target) {
         target.attr('aria-expanded', 'true');
       }
     }, {
-      key: 'close',
+      key: "close",
       value: function close(target) {
         target.attr('aria-expanded', 'false');
       }
     }, {
-      key: 'show',
+      key: "show",
       value: function show(target) {
         target.attr('aria-hidden', 'false');
       }
     }, {
-      key: 'hidden',
+      key: "hidden",
       value: function hidden(target) {
         target.attr('aria-hidden', 'true');
       }
     }, {
-      key: 'setIdForSubmenu',
+      key: "setIdForSubmenu",
       value: function setIdForSubmenu(drawer) {
         var _this2 = this;
 
-        drawer.find(this.args.submenu + '[aria-hidden]').each(function (i, e) {
+        drawer.find("".concat(this.args.submenu, "[aria-hidden]")).each(function (i, e) {
           var random = Math.floor(Math.random() * (9999999 - 1000000) + 1000000);
           var time = new Date().getTime();
-          var id = 'drawer-' + time + random;
+          var id = "drawer-".concat(time).concat(random);
           var submenu = $(e);
           var toggleBtn = submenu.siblings(_this2.args.toggle);
+
           if (submenu.length && toggleBtn.length) {
             submenu.attr('id', id);
-            toggleBtn.attr('aria-controls', '' + id);
+            toggleBtn.attr('aria-controls', "".concat(id));
           }
         });
       }
     }]);
+
     return BasisDrawer;
   }();
 
-  var BasisNavbar = function () {
+  var BasisNavbar =
+  /*#__PURE__*/
+  function () {
     function BasisNavbar() {
       var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      classCallCheck(this, BasisNavbar);
+
+      _classCallCheck(this, BasisNavbar);
 
       this.args = $.extend({
         item: '.c-navbar__item',
         submenu: '.c-navbar__submenu',
         subitem: '.c-navbar__subitem'
       }, args);
-      this.items = $(this.args.item + '[aria-haspopup="true"], ' + this.args.subitem + '[aria-haspopup="true"]');
+      this.items = $("".concat(this.args.item, "[aria-haspopup=\"true\"], ").concat(this.args.subitem, "[aria-haspopup=\"true\"]"));
       this.setListener();
     }
 
-    createClass(BasisNavbar, [{
-      key: 'setListener',
+    _createClass(BasisNavbar, [{
+      key: "setListener",
       value: function setListener() {
         var _this = this;
 
@@ -201,18 +225,15 @@
           item.on('mouseover focusin', function (event) {
             _this.show(item.children(_this.args.submenu));
           });
-
           item.on('mouseleave blur', function (event) {
             _this.hidden(item.children(_this.args.submenu));
           });
         });
-
         $(this.args.item).each(function (i, e) {
           var item = $(e);
           item.on('focusin', function (event) {
             _this.hidden(item.siblings(_this.args.item).find(_this.args.submenu));
           });
-
           item.find(_this.args.subitem).each(function (i, e) {
             var subitem = $(e);
             subitem.on('focusin', function (event) {
@@ -222,23 +243,27 @@
         });
       }
     }, {
-      key: 'show',
+      key: "show",
       value: function show(submenu) {
         submenu.attr('aria-hidden', 'false');
       }
     }, {
-      key: 'hidden',
+      key: "hidden",
       value: function hidden(submenu) {
         submenu.attr('aria-hidden', 'true');
       }
     }]);
+
     return BasisNavbar;
   }();
 
-  var BasisPageEffect = function () {
+  var BasisPageEffect =
+  /*#__PURE__*/
+  function () {
     function BasisPageEffect() {
       var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      classCallCheck(this, BasisPageEffect);
+
+      _classCallCheck(this, BasisPageEffect);
 
       this.args = $.extend({
         pageEffect: '.c-page-effect',
@@ -249,15 +274,14 @@
       this.setListener();
     }
 
-    createClass(BasisPageEffect, [{
-      key: 'setListener',
+    _createClass(BasisPageEffect, [{
+      key: "setListener",
       value: function setListener() {
         var _this = this;
 
         $(window).on('load', function (event) {
           _this.hide();
         });
-
         this.pageOutObject.each(function (i, e) {
           var link = $(e);
           link.on('click', function (event) {
@@ -270,30 +294,34 @@
             }
 
             event.preventDefault();
+
             _this.show();
+
             var url = link.attr('href');
+
             _this.moveLocation(url);
           });
         });
       }
     }, {
-      key: 'moveLocation',
+      key: "moveLocation",
       value: function moveLocation(url) {
         setTimeout(function () {
           location.href = url;
         }, this.args['duration']);
       }
     }, {
-      key: 'hide',
+      key: "hide",
       value: function hide() {
         this.container.attr('aria-hidden', 'true').attr('data-page-effect', 'fadein');
       }
     }, {
-      key: 'show',
+      key: "show",
       value: function show() {
         this.container.attr('aria-hidden', 'false').attr('data-page-effect', 'fadeout');
       }
     }]);
+
     return BasisPageEffect;
   }();
 
@@ -301,7 +329,8 @@
     var _this = this;
 
     var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-    classCallCheck(this, BasisSelect);
+
+    _classCallCheck(this, BasisSelect);
 
     this.args = $.extend({
       select: '.c-select',
@@ -313,15 +342,12 @@
       var select = selectWrapper.find('select');
       var label = selectWrapper.find(_this.args.label);
       label.text(select.children('option:selected').text());
-
       select.on('change', function (event) {
         label.text($(select[0].selectedOptions).text());
       });
-
       select.on('focusin', function (event) {
         selectWrapper.attr('aria-selected', 'true');
       });
-
       select.on('focusout', function (event) {
         selectWrapper.attr('aria-selected', 'false');
       });
