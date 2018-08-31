@@ -1,108 +1,111 @@
 'use strict';
 
-import $ from 'jquery';
-
 export default class BasisDrawer {
   constructor(args = {}) {
-    this.args = $.extend({
-      drawer : '.c-drawer',
-      toggle : '.c-drawer__toggle',
-      submenu: '.c-drawer__submenu',
-      item   : '.c-drawer__item',
-      subitem: '.c-drawer__subitem',
-    }, args);
-    this.drawer = $(this.args.drawer);
-    this.windowWidth = $(window).width();
-    this.setListener();
+    this.args = args;
+    this.args.drawer  = !! this.args.drawer ? this.args.drawer : '.c-drawer';
+    this.args.toggle  = !! this.args.toggle ? this.args.toggle : '.c-drawer__toggle';
+    this.args.submenu = !! this.args.submenu ? this.args.submenu : '.c-drawer__submenu';
+    this.args.item    = !! this.args.item ? this.args.item : '.c-drawer__item';
+    this.args.subitem = !! this.args.subitem ? this.args.subitem : '.c-drawer__subitem';
+
+    window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
   }
 
-  setListener() {
-    this.drawer.each((i, e) => {
-      const drawer = $(e);
-      this.setIdForSubmenu(drawer);
+  _DOMContentLoaded() {
+    this.windowWidth = window.innerWidth;
 
-      const container  = drawer.parent();
-      const btn        = $(`#${drawer.attr('aria-labelledby')}`);
-      const toggleBtns = drawer.find(`${this.args.toggle}[aria-controls]`);
+    const drawers = document.querySelectorAll(this.args.drawer);
+    this._forEachHtmlNodes(drawers, (drawer) => {
+      (() => {
+        const submenus = drawer.querySelectorAll(`${this.args.submenu}[aria-hidden]`);
+        this._forEachHtmlNodes(submenus, (submenu) => {
+          const random    = Math.floor((Math.random() * (9999999 - 1000000)) + 1000000);
+          const time      = new Date().getTime();
+          const id        = `drawer-${time}${random}`;
+          const toggleBtn = submenu.parentNode.querySelector(this.args.toggle);
 
-      container.on('click', (event) => {
-        this.close(btn);
-        this.hidden(drawer);
-        this.close(drawer.find(this.args.toggle));
-        this.hidden(drawer.find(this.args.submenu));
-      });
-
-      drawer.on('click', (event) => {
-        event.stopPropagation();
-      });
-
-      drawer.find(this.args.item, this.args.subitem).children('a').on('click', (event) => {
-        this.close(btn);
-        this.hidden(drawer);
-        this.close(drawer.find(this.args.toggle));
-        this.hidden(drawer.find(this.args.submenu));
-      });
-
-      $(window).on('resize', (event) => {
-        if ($(window).width() !== this.windowWidth) {
-          this.hidden(drawer);
-          this.close(btn);
-          this.windowWidth = $(window).width();
-        }
-      });
-
-      toggleBtns.each((i, e) => {
-        const toggleBtn = $(e);
-        const submenu   = $(`#${toggleBtn.attr('aria-controls')}`);
-        toggleBtn.on('click', (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          this.toggleMenu(toggleBtn);
+          if (!! submenu && !! toggleBtn) {
+            submenu.setAttribute('id', id);
+            toggleBtn.setAttribute('aria-controls', `${id}`);
+          }
         });
-      });
-    });
-  }
+      })();
 
-  toggleMenu(btn) {
-    const menu = $(`#${btn.attr('aria-controls')}`);
-    if ('false' == btn.attr('aria-expanded')) {
-      this.open(btn);
-      this.show(menu);
-    } else {
-      this.close(btn);
-      this.hidden(menu);
-      this.close(menu.find(this.args.toggle));
-      this.hidden(menu.find(this.args.submenu));
-    }
-  }
+      const container  = drawer.parentNode;
+      const btn        = document.getElementById(drawer.getAttribute('aria-labelledby'));
+      const toggleBtns = drawer.querySelectorAll(`${this.args.toggle}`);
+      const subMenus   = drawer.querySelectorAll(this.args.submenu);
 
-  open(target) {
-    target.attr('aria-expanded', 'true');
-  }
+      const closeDrawer = () => {
+        this._close(btn);
+        this._hidden(drawer);
+        this._forEachHtmlNodes(toggleBtns, (element) => this._close(element));
+        this._forEachHtmlNodes(subMenus, (element) => this._hidden(element));
+      };
 
-  close(target) {
-    target.attr('aria-expanded', 'false');
-  }
+      const closeDrawerOnResize = () => {
+        if (window.innerWidth !== this.windowWidth) {
+          this._hidden(drawer);
+          this._close(btn);
+          this.windowWidth = window.innerWidth;
+        }
+      };
 
-  show(target) {
-    target.attr('aria-hidden', 'false');
-  }
+      const toggleMenu = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
 
-  hidden(target) {
-    target.attr('aria-hidden', 'true');
-  }
+        const toggleBtn = event.currentTarget;
+        const menu = document.getElementById(toggleBtn.getAttribute('aria-controls'));
 
-  setIdForSubmenu(drawer) {
-    drawer.find(`${this.args.submenu}[aria-hidden]`).each((i, e) => {
-      const random    = Math.floor((Math.random() * (9999999 - 1000000)) + 1000000);
-      const time      = new Date().getTime();
-      const id        = `drawer-${time}${random}`;
-      const submenu   = $(e);
-      const toggleBtn = submenu.siblings(this.args.toggle);
-      if (submenu.length && toggleBtn.length) {
-        submenu.attr('id', id);
-        toggleBtn.attr('aria-controls', `${id}`);
+        if ('false' == toggleBtn.getAttribute('aria-expanded')) {
+          this._open(toggleBtn);
+          this._show(menu);
+        } else {
+          this._close(toggleBtn);
+          this._hidden(menu);
+          this._forEachHtmlNodes(menu.querySelectorAll(this.args.toggle), (element) => this._close(element));
+          this._forEachHtmlNodes(menu.querySelectorAll(this.args.submenu), (element) => this._hidden(element));
+        }
       }
+
+      drawer.addEventListener('click', (event) => event.stopPropagation(), false);
+      window.addEventListener('resize', closeDrawerOnResize, false);
+
+      if (!! container) {
+        container.addEventListener('click', closeDrawer, false);
+      }
+
+      const drawerItemLinks = drawer.querySelectorAll(`${this.args.item} > a`);
+      this._forEachHtmlNodes(drawerItemLinks, (element) => element.addEventListener('click', closeDrawer, false));
+
+      const drawerSubItemLinks = drawer.querySelectorAll(`${this.args.subitem} > a`);
+      this._forEachHtmlNodes(drawerSubItemLinks, (element) => element.addEventListener('click', closeDrawer, false));
+
+      this._forEachHtmlNodes(toggleBtns, (element) => element.addEventListener('click', toggleMenu, false));
     });
+  }
+
+  _open(target) {
+    target.setAttribute('aria-expanded', 'true');
+  }
+
+  _close(target) {
+    target.setAttribute('aria-expanded', 'false');
+  }
+
+  _show(target) {
+    target.setAttribute('aria-hidden', 'false');
+  }
+
+  _hidden(target) {
+    target.setAttribute('aria-hidden', 'true');
+  }
+
+  _forEachHtmlNodes(htmlNodes, callback) {
+    if (0 < htmlNodes.length) {
+      [].forEach.call(htmlNodes, (htmlNode) => callback(htmlNode));
+    }
   }
 }

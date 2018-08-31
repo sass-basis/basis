@@ -1,33 +1,40 @@
 'use strict';
 
-import $ from 'jquery';
-
 export default class BasisHamburgerBtn {
   constructor(args = {}) {
-    this.args = $.extend({
-      btn: '.c-hamburger-btn'
-    }, args);
-    this.hamburgerBtn = $(this.args.btn);
-    this.setListener();
+    this.args = args;
+    this.args.btn = !! this.args.btn ? this.args.btn : '.c-hamburger-btn';
+
+    window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
   }
 
-  setListener() {
-    this.hamburgerBtn.each((i, e) => {
-      const hamburgerBtn = $(e);
-      const target = $('#' + hamburgerBtn.attr('aria-controls'));
+  _DOMContentLoaded() {
+    const hamburgerBtns = document.querySelectorAll(this.args.btn);
+    this._forEachHtmlNodes(hamburgerBtns, (element) => element.addEventListener('click', this._click, false));
+  }
 
-      hamburgerBtn.click((event) => {
-        event.preventDefault();
-        event.stopPropagation();
+  _click(event) {
+    const hamburgerBtn = event.currentTarget;
+    const drawer = document.getElementById(hamburgerBtn.getAttribute('aria-controls'));
+    if (! drawer) {
+      return;
+    }
 
-        if ('false' === hamburgerBtn.attr('aria-expanded')) {
-          hamburgerBtn.attr('aria-expanded', 'true');
-          target.attr('aria-hidden', 'false');
-        } else {
-          hamburgerBtn.attr('aria-expanded', 'false');
-          target.attr('aria-hidden', 'true');
-        }
-      });
-    });
+    event.preventDefault();
+    event.stopPropagation();
+
+    if ('false' === hamburgerBtn.getAttribute('aria-expanded')) {
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+    } else {
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  _forEachHtmlNodes(htmlNodes, callback) {
+    if (0 < htmlNodes.length) {
+      [].forEach.call(htmlNodes, (htmlNode) => callback(htmlNode));
+    }
   }
 }

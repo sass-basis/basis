@@ -1,5 +1,8 @@
 #Changelog
 
+## August 31, 2018 v9.1.3
+* Close drawer when link clicked.
+
 ## August 30, 2018 v9.1.2
 * Update manual
 * Update babel and rolup-babel
