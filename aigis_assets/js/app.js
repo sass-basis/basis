@@ -29,36 +29,59 @@
   /*#__PURE__*/
   function () {
     function BasisHamburgerBtn() {
+      var _this = this;
+
       var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
       _classCallCheck(this, BasisHamburgerBtn);
 
-      this.args = $.extend({
-        btn: '.c-hamburger-btn'
-      }, args);
-      this.hamburgerBtn = $(this.args.btn);
-      this.setListener();
+      this.args = args;
+      this.args.btn = !!this.args.btn ? this.args.btn : '.c-hamburger-btn';
+      window.addEventListener('DOMContentLoaded', function () {
+        return _this._DOMContentLoaded();
+      }, false);
     }
 
     _createClass(BasisHamburgerBtn, [{
-      key: "setListener",
-      value: function setListener() {
-        this.hamburgerBtn.each(function (i, e) {
-          var hamburgerBtn = $(e);
-          var target = $('#' + hamburgerBtn.attr('aria-controls'));
-          hamburgerBtn.click(function (event) {
-            event.preventDefault();
-            event.stopPropagation();
+      key: "_DOMContentLoaded",
+      value: function _DOMContentLoaded() {
+        var _this2 = this;
 
-            if ('false' === hamburgerBtn.attr('aria-expanded')) {
-              hamburgerBtn.attr('aria-expanded', 'true');
-              target.attr('aria-hidden', 'false');
-            } else {
-              hamburgerBtn.attr('aria-expanded', 'false');
-              target.attr('aria-hidden', 'true');
-            }
-          });
+        var hamburgerBtns = document.querySelectorAll(this.args.btn);
+
+        this._forEachHtmlNodes(hamburgerBtns, function (element) {
+          return element.addEventListener('click', _this2._click, false);
         });
+      }
+    }, {
+      key: "_click",
+      value: function _click(event) {
+        var hamburgerBtn = event.currentTarget;
+        var drawer = document.getElementById(hamburgerBtn.getAttribute('aria-controls'));
+
+        if (!drawer) {
+          return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        if ('false' === hamburgerBtn.getAttribute('aria-expanded')) {
+          hamburgerBtn.setAttribute('aria-expanded', 'true');
+          drawer.setAttribute('aria-hidden', 'false');
+        } else {
+          hamburgerBtn.setAttribute('aria-expanded', 'false');
+          drawer.setAttribute('aria-hidden', 'true');
+        }
+      }
+    }, {
+      key: "_forEachHtmlNodes",
+      value: function _forEachHtmlNodes(htmlNodes, callback) {
+        if (0 < htmlNodes.length) {
+          [].forEach.call(htmlNodes, function (htmlNode) {
+            return callback(htmlNode);
+          });
+        }
       }
     }]);
 
@@ -69,129 +92,156 @@
   /*#__PURE__*/
   function () {
     function BasisDrawer() {
+      var _this = this;
+
       var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
       _classCallCheck(this, BasisDrawer);
 
-      this.args = $.extend({
-        drawer: '.c-drawer',
-        toggle: '.c-drawer__toggle',
-        submenu: '.c-drawer__submenu',
-        item: '.c-drawer__item',
-        subitem: '.c-drawer__subitem'
-      }, args);
-      this.drawer = $(this.args.drawer);
-      this.windowWidth = $(window).width();
-      this.setListener();
+      this.args = args;
+      this.args.drawer = !!this.args.drawer ? this.args.drawer : '.c-drawer';
+      this.args.toggle = !!this.args.toggle ? this.args.toggle : '.c-drawer__toggle';
+      this.args.submenu = !!this.args.submenu ? this.args.submenu : '.c-drawer__submenu';
+      this.args.item = !!this.args.item ? this.args.item : '.c-drawer__item';
+      this.args.subitem = !!this.args.subitem ? this.args.subitem : '.c-drawer__subitem';
+      window.addEventListener('DOMContentLoaded', function () {
+        return _this._DOMContentLoaded();
+      }, false);
     }
 
     _createClass(BasisDrawer, [{
-      key: "setListener",
-      value: function setListener() {
-        var _this = this;
-
-        this.drawer.each(function (i, e) {
-          var drawer = $(e);
-
-          _this.setIdForSubmenu(drawer);
-
-          var container = drawer.parent();
-          var btn = $("#".concat(drawer.attr('aria-labelledby')));
-          var toggleBtns = drawer.find("".concat(_this.args.toggle, "[aria-controls]"));
-          container.on('click', function (event) {
-            _this.close(btn);
-
-            _this.hidden(drawer);
-
-            _this.close(drawer.find(_this.args.toggle));
-
-            _this.hidden(drawer.find(_this.args.submenu));
-          });
-          drawer.on('click', function (event) {
-            event.stopPropagation();
-          });
-          drawer.find(_this.args.item, _this.args.subitem).children('a').on('click', function (event) {
-            _this.close(btn);
-
-            _this.hidden(drawer);
-
-            _this.close(drawer.find(_this.args.toggle));
-
-            _this.hidden(drawer.find(_this.args.submenu));
-          });
-          $(window).on('resize', function (event) {
-            if ($(window).width() !== _this.windowWidth) {
-              _this.hidden(drawer);
-
-              _this.close(btn);
-
-              _this.windowWidth = $(window).width();
-            }
-          });
-          toggleBtns.each(function (i, e) {
-            var toggleBtn = $(e);
-            var submenu = $("#".concat(toggleBtn.attr('aria-controls')));
-            toggleBtn.on('click', function (event) {
-              event.preventDefault();
-              event.stopPropagation();
-
-              _this.toggleMenu(toggleBtn);
-            });
-          });
-        });
-      }
-    }, {
-      key: "toggleMenu",
-      value: function toggleMenu(btn) {
-        var menu = $("#".concat(btn.attr('aria-controls')));
-
-        if ('false' == btn.attr('aria-expanded')) {
-          this.open(btn);
-          this.show(menu);
-        } else {
-          this.close(btn);
-          this.hidden(menu);
-          this.close(menu.find(this.args.toggle));
-          this.hidden(menu.find(this.args.submenu));
-        }
-      }
-    }, {
-      key: "open",
-      value: function open(target) {
-        target.attr('aria-expanded', 'true');
-      }
-    }, {
-      key: "close",
-      value: function close(target) {
-        target.attr('aria-expanded', 'false');
-      }
-    }, {
-      key: "show",
-      value: function show(target) {
-        target.attr('aria-hidden', 'false');
-      }
-    }, {
-      key: "hidden",
-      value: function hidden(target) {
-        target.attr('aria-hidden', 'true');
-      }
-    }, {
-      key: "setIdForSubmenu",
-      value: function setIdForSubmenu(drawer) {
+      key: "_DOMContentLoaded",
+      value: function _DOMContentLoaded() {
         var _this2 = this;
 
-        drawer.find("".concat(this.args.submenu, "[aria-hidden]")).each(function (i, e) {
-          var random = Math.floor(Math.random() * (9999999 - 1000000) + 1000000);
-          var time = new Date().getTime();
-          var id = "drawer-".concat(time).concat(random);
-          var submenu = $(e);
-          var toggleBtn = submenu.siblings(_this2.args.toggle);
+        this.windowWidth = window.innerWidth;
+        var drawers = document.querySelectorAll(this.args.drawer);
 
-          if (submenu.length && toggleBtn.length) {
-            submenu.attr('id', id);
-            toggleBtn.attr('aria-controls', "".concat(id));
+        this._forEachHtmlNodes(drawers, function (drawer) {
+          (function () {
+            var submenus = drawer.querySelectorAll("".concat(_this2.args.submenu, "[aria-hidden]"));
+
+            _this2._forEachHtmlNodes(submenus, function (submenu) {
+              var random = Math.floor(Math.random() * (9999999 - 1000000) + 1000000);
+              var time = new Date().getTime();
+              var id = "drawer-".concat(time).concat(random);
+              var toggleBtn = submenu.parentNode.querySelector(_this2.args.toggle);
+
+              if (!!submenu && !!toggleBtn) {
+                submenu.setAttribute('id', id);
+                toggleBtn.setAttribute('aria-controls', "".concat(id));
+              }
+            });
+          })();
+
+          var container = drawer.parentNode;
+          var btn = document.getElementById(drawer.getAttribute('aria-labelledby'));
+          var toggleBtns = drawer.querySelectorAll("".concat(_this2.args.toggle));
+          var subMenus = drawer.querySelectorAll(_this2.args.submenu);
+
+          var closeDrawer = function closeDrawer() {
+            _this2._close(btn);
+
+            _this2._hidden(drawer);
+
+            _this2._forEachHtmlNodes(toggleBtns, function (element) {
+              return _this2._close(element);
+            });
+
+            _this2._forEachHtmlNodes(subMenus, function (element) {
+              return _this2._hidden(element);
+            });
+          };
+
+          var closeDrawerOnResize = function closeDrawerOnResize() {
+            if (window.innerWidth !== _this2.windowWidth) {
+              _this2._hidden(drawer);
+
+              _this2._close(btn);
+
+              _this2.windowWidth = window.innerWidth;
+            }
+          };
+
+          var toggleMenu = function toggleMenu(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            var toggleBtn = event.currentTarget;
+            var menu = document.getElementById(toggleBtn.getAttribute('aria-controls'));
+
+            if ('false' == toggleBtn.getAttribute('aria-expanded')) {
+              _this2._open(toggleBtn);
+
+              _this2._show(menu);
+            } else {
+              _this2._close(toggleBtn);
+
+              _this2._hidden(menu);
+
+              _this2._forEachHtmlNodes(menu.querySelectorAll(_this2.args.toggle), function (element) {
+                return _this2._close(element);
+              });
+
+              _this2._forEachHtmlNodes(menu.querySelectorAll(_this2.args.submenu), function (element) {
+                return _this2._hidden(element);
+              });
+            }
+          };
+
+          drawer.addEventListener('click', function (event) {
+            return event.stopPropagation();
+          }, false);
+          window.addEventListener('resize', closeDrawerOnResize, false);
+
+          if (!!container) {
+            container.addEventListener('click', closeDrawer, false);
           }
+
+          var drawerItemLinks = drawer.querySelectorAll("".concat(_this2.args.item, " > a"));
+
+          _this2._forEachHtmlNodes(drawerItemLinks, function (element) {
+            return element.addEventListener('click', closeDrawer, false);
+          });
+
+          var drawerSubItemLinks = drawer.querySelectorAll("".concat(_this2.args.subitem, " > a"));
+
+          _this2._forEachHtmlNodes(drawerSubItemLinks, function (element) {
+            return element.addEventListener('click', closeDrawer, false);
+          });
+
+          _this2._forEachHtmlNodes(toggleBtns, function (element) {
+            return element.addEventListener('click', toggleMenu, false);
+          });
         });
+      }
+    }, {
+      key: "_open",
+      value: function _open(target) {
+        target.setAttribute('aria-expanded', 'true');
+      }
+    }, {
+      key: "_close",
+      value: function _close(target) {
+        target.setAttribute('aria-expanded', 'false');
+      }
+    }, {
+      key: "_show",
+      value: function _show(target) {
+        target.setAttribute('aria-hidden', 'false');
+      }
+    }, {
+      key: "_hidden",
+      value: function _hidden(target) {
+        target.setAttribute('aria-hidden', 'true');
+      }
+    }, {
+      key: "_forEachHtmlNodes",
+      value: function _forEachHtmlNodes(htmlNodes, callback) {
+        if (0 < htmlNodes.length) {
+          [].forEach.call(htmlNodes, function (htmlNode) {
+            return callback(htmlNode);
+          });
+        }
       }
     }]);
 
