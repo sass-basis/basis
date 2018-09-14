@@ -1,5 +1,8 @@
 #Changelog
 
+## September 14, 2018 v9.1.4
+* Add `_pre()`
+
 ## August 31, 2018 v9.1.3
 * Close drawer when link clicked.
 

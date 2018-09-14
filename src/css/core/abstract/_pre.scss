@@ -1,0 +1,36 @@
+/*
+---
+name: _pre()
+category:
+  - core/abstract
+---
+Abstract pre component
+
+### scss
+```scss
+pre {
+  @include _pre();
+}
+```
+
+## html
+```ejs
+<pre>pre</pre>
+```
+*/
+
+@mixin _pre() {
+  background-color: _lightest($_color-gray);
+  border: 1px solid _lighter($_color-gray);
+  border-radius: $_border-radius;
+  padding: $_base-font-size;
+  overflow: auto;
+
+  code {
+    background-color: transparent;
+    border: none;
+    color: $_color-text;
+    font-size: 100%;
+    padding: 0;
+  }
+}
