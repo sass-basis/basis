@@ -3122,6 +3122,26 @@ Abstract pagination component
 */
 /*
 ---
+name: _pre()
+category:
+  - core/abstract
+---
+Abstract pre component
+
+### scss
+```scss
+pre {
+  @include _pre();
+}
+```
+
+## html
+```ejs
+<pre>pre</pre>
+```
+*/
+/*
+---
 name: _radio()
 category:
   - core/abstract
