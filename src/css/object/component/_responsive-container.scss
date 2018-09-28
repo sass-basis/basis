@@ -1,0 +1,46 @@
+.#{$_prefix}c-responsive-container-16-9,
+.#{$_prefix}c-responsive-container-4-3 {
+  @include _responsive-container();
+}
+
+/*
+---
+name: .c-responsive-container-16-9
+category:
+  - object/component
+  - object/component/responsive-container
+---
+Responsive container component
+
+### html
+```html
+<div class="c-responsive-container-16-9">
+  <iframe></iframe>
+</div>
+```
+*/
+
+.#{$_prefix}c-responsive-container-16-9 {
+  padding-bottom: (9 / 16 * 100%);
+}
+
+/*
+---
+name: .c-responsive-container-4-3
+category:
+  - object/component
+  - object/component/responsive-container
+---
+Responsive container component
+
+### html
+```html
+<div class="c-responsive-container-4-3">
+  <iframe></iframe>
+</div>
+```
+*/
+
+.#{$_prefix}c-responsive-container-4-3 {
+  padding-bottom: (3 / 4 * 100%);
+}

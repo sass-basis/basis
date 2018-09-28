@@ -1,5 +1,10 @@
 #Changelog
 
+## September 28, 2018 v9.2.0
+* Add `_responsive-container()`
+* Add `.c-responsive-container-16-9`
+* Add `.c-responsive-container-4-3`
+
 ## September 14, 2018 v9.1.4
 * Add `_pre()`
 
