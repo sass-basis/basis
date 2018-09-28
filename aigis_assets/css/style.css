@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v9.1.4
+ * Name: Basis v9.2.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -3179,6 +3179,29 @@ Abstract radio button component
 */
 /*
 ---
+name: _responsive-container()
+category:
+  - core/abstract
+---
+Abstract responsive container component
+
+### scss
+```scss
+.c-responsive-container-16-9 {
+  @include _responsive-container();
+  padding-bottom: (9 / 16 * 100%);
+}
+```
+
+### html
+```ejs
+<div class="c-responsive-container-16-9">
+  <iframe></iframe>
+</div>
+```
+*/
+/*
+---
 name: _radio()
 category:
   - core/abstract
@@ -5380,6 +5403,60 @@ Radio button component
       width: 8px;
       border-radius: 100%;
       opacity: 0; }
+
+.c-responsive-container-16-9,
+.c-responsive-container-4-3 {
+  position: relative;
+  height: 0; }
+  .c-responsive-container-16-9 iframe,
+  .c-responsive-container-16-9 embed,
+  .c-responsive-container-16-9 object,
+  .c-responsive-container-4-3 iframe,
+  .c-responsive-container-4-3 embed,
+  .c-responsive-container-4-3 object {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%; }
+
+/*
+---
+name: .c-responsive-container-16-9
+category:
+  - object/component
+  - object/component/responsive-container
+---
+Responsive container component
+
+### html
+```html
+<div class="c-responsive-container-16-9">
+  <iframe></iframe>
+</div>
+```
+*/
+.c-responsive-container-16-9 {
+  padding-bottom: 56.25%; }
+
+/*
+---
+name: .c-responsive-container-4-3
+category:
+  - object/component
+  - object/component/responsive-container
+---
+Responsive container component
+
+### html
+```html
+<div class="c-responsive-container-4-3">
+  <iframe></iframe>
+</div>
+```
+*/
+.c-responsive-container-4-3 {
+  padding-bottom: 75%; }
 
 /*
 ---
@@ -8494,7 +8571,7 @@ Visible utility for xl or more
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v9.1.4
+ * Name: Basis v9.2.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -11673,6 +11750,29 @@ Abstract radio button component
 */
 /*
 ---
+name: _responsive-container()
+category:
+  - core/abstract
+---
+Abstract responsive container component
+
+### scss
+```scss
+.c-responsive-container-16-9 {
+  @include _responsive-container();
+  padding-bottom: (9 / 16 * 100%);
+}
+```
+
+### html
+```ejs
+<div class="c-responsive-container-16-9">
+  <iframe></iframe>
+</div>
+```
+*/
+/*
+---
 name: _radio()
 category:
   - core/abstract
@@ -13860,6 +13960,60 @@ Radio button component
       width: 7.5px;
       border-radius: 100%;
       opacity: 0; }
+
+.c-responsive-container-16-9,
+.c-responsive-container-4-3 {
+  position: relative;
+  height: 0; }
+  .c-responsive-container-16-9 iframe,
+  .c-responsive-container-16-9 embed,
+  .c-responsive-container-16-9 object,
+  .c-responsive-container-4-3 iframe,
+  .c-responsive-container-4-3 embed,
+  .c-responsive-container-4-3 object {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%; }
+
+/*
+---
+name: .c-responsive-container-16-9
+category:
+  - object/component
+  - object/component/responsive-container
+---
+Responsive container component
+
+### html
+```html
+<div class="c-responsive-container-16-9">
+  <iframe></iframe>
+</div>
+```
+*/
+.c-responsive-container-16-9 {
+  padding-bottom: 56.25%; }
+
+/*
+---
+name: .c-responsive-container-4-3
+category:
+  - object/component
+  - object/component/responsive-container
+---
+Responsive container component
+
+### html
+```html
+<div class="c-responsive-container-4-3">
+  <iframe></iframe>
+</div>
+```
+*/
+.c-responsive-container-4-3 {
+  padding-bottom: 75%; }
 
 /*
 ---

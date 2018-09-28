@@ -3171,6 +3171,29 @@ Abstract radio button component
 */
 /*
 ---
+name: _responsive-container()
+category:
+  - core/abstract
+---
+Abstract responsive container component
+
+### scss
+```scss
+.c-responsive-container-16-9 {
+  @include _responsive-container();
+  padding-bottom: (9 / 16 * 100%);
+}
+```
+
+### html
+```ejs
+<div class="c-responsive-container-16-9">
+  <iframe></iframe>
+</div>
+```
+*/
+/*
+---
 name: _radio()
 category:
   - core/abstract
