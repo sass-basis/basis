@@ -4,7 +4,7 @@ import babel from 'rollup-plugin-babel';
 
 export default {
   output: {
-    format: 'es',
+    format: 'iife',
     globals: {
       jquery: "jQuery"
     }
@@ -26,5 +26,6 @@ export default {
       ],
       babelrc: false
     })
-  ]
+  ],
+  experimentalCodeSplitting: true
 };

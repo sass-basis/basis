@@ -1,5 +1,9 @@
 #Changelog
 
+## October 31, 2018 v9.2.1
+* Update npm-scripts
+* Change if `$_font-path` is null, `@font-face` is not output
+
 ## September 28, 2018 v9.2.0
 * Add `_responsive-container()`
 * Add `.c-responsive-container-16-9`
