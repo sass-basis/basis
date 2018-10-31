@@ -117,7 +117,6 @@ background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6
   line-height: 40px;
   min-width: 200px;
   font-size: 20px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 .ex-ag-btn--primary {
   color: black;
@@ -193,7 +192,6 @@ tag: latest
   bottom: 0;
   left: 0;
   width: 280px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #f9faf9;
   color: #33331a;
@@ -253,7 +251,6 @@ tag: latest
   text-decoration: none; }
 
 .aigis-categoryList li:hover a[href]:hover{
-  -webkit-box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1);
   background-color: #5D5D5D;
   color: #fff; }
@@ -444,7 +441,6 @@ body {
   border-radius: 3px; }
 
 .aigis-container {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: auto;
   min-width: 960px;
@@ -455,7 +451,6 @@ body {
   clear: both; }
 
 .aigis-contents {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding-right: 10px;
   padding-left: 280px;
@@ -494,6 +489,7 @@ body {
 	tab-size: 4;
 
 	-webkit-hyphens: none;
+	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none; }
 .aigis-contents__body > pre > code {
