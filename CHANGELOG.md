@@ -1,5 +1,8 @@
 #Changelog
 
+## November 12, 2018 v9.2.2
+* Update `.c-input-group` for iOS Safari.
+
 ## October 31, 2018 v9.2.1
 * Update npm-scripts
 * Change if `$_font-path` is null, `@font-face` is not output

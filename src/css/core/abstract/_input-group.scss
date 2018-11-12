@@ -71,6 +71,7 @@ Abstract input group component
     > input[type='text'],
     > input[type='url'] {
       @include _form-control();
+      -webkit-appearance: none;
       border-radius: 0;
       flex: 1;
       width: 100%;
