@@ -4517,6 +4517,8 @@ Drawer component
   left: 0;
   z-index: 2;
   cursor: pointer; }
+  .c-drawer-close-zone--fixed {
+    position: fixed; }
 
 /*
 ---
@@ -12326,6 +12328,8 @@ Drawer component
   left: 0;
   z-index: 2;
   cursor: pointer; }
+  .c-drawer-close-zone--fixed {
+    position: fixed; }
 
 /*
 ---

@@ -342,6 +342,11 @@
 
         var closeZone = document.createElement('div');
         closeZone.classList.add('c-drawer-close-zone');
+
+        if (drawer.classList.contains('c-drawer--fixed')) {
+          closeZone.classList.add('c-drawer-close-zone--fixed');
+        }
+
         closeZone.setAttribute('id', this._generateCloseZoneId(drawerId));
         drawer.parentNode.appendChild(closeZone);
       }
