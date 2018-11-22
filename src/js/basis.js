@@ -6,6 +6,9 @@ new BasisHamburgerBtn();
 import BasisDrawer from './_drawer.js';
 new BasisDrawer();
 
+import BasisDrawerCloseZone from './_drawer-close-zone.js';
+new BasisDrawerCloseZone();
+
 import BasisNavbar from './_navbar.js';
 new BasisNavbar();
 

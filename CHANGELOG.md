@@ -1,5 +1,8 @@
 #Changelog
 
+## November 22, 2018 v9.2.3
+* Refactoring `.c-hamburger-btn` and `.c-drawer`
+
 ## November 12, 2018 v9.2.2
 * Update `.c-input-group` for iOS Safari.
 

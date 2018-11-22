@@ -1,5 +1,7 @@
 'use strict';
 
+import addCustomEvent from './_add-custom-event.js';
+
 export default class BasisDrawer {
   constructor(args = {}) {
     this.args = args;
@@ -71,10 +73,25 @@ export default class BasisDrawer {
       }
 
       drawer.addEventListener('click', (event) => event.stopPropagation(), false);
-      window.addEventListener('resize', closeDrawerOnResize, false);
+
+      btn.addEventListener('clickHamburgerBtn', () => {
+        if ('false' === btn.getAttribute('aria-expanded')) {
+          drawer.setAttribute('aria-hidden', 'false');
+        } else {
+          drawer.setAttribute('aria-hidden', 'true');
+        }
+      }, false);
+
+      window.addEventListener('resize', () => {
+        addCustomEvent(drawer, 'resizeDrawer');
+        closeDrawerOnResize();
+      }, false);
 
       if (!! container) {
-        container.addEventListener('click', closeDrawer, false);
+        container.addEventListener('click', () => {
+          addCustomEvent(container, 'clickDrawerContainer');
+          closeDrawer();
+        }, false);
       }
 
       const drawerItemLinks = drawer.querySelectorAll(`${this.args.item} > a`);

@@ -1,5 +1,7 @@
 'use strict';
 
+import addCustomEvent from './_add-custom-event.js';
+
 export default class BasisHamburgerBtn {
   constructor(args = {}) {
     this.args = args;
@@ -10,11 +12,16 @@ export default class BasisHamburgerBtn {
 
   _DOMContentLoaded() {
     const hamburgerBtns = document.querySelectorAll(this.args.btn);
-    this._forEachHtmlNodes(hamburgerBtns, (element) => element.addEventListener('click', this._click, false));
+    this._forEachHtmlNodes(hamburgerBtns, (element) => {
+
+      element.addEventListener('click', (event) => {
+        addCustomEvent(element, 'clickHamburgerBtn');
+        this._click(event.currentTarget);
+      }, false);
+    });
   }
 
-  _click(event) {
-    const hamburgerBtn = event.currentTarget;
+  _click(hamburgerBtn) {
     const drawer = document.getElementById(hamburgerBtn.getAttribute('aria-controls'));
     if (! drawer) {
       return;
@@ -25,10 +32,8 @@ export default class BasisHamburgerBtn {
 
     if ('false' === hamburgerBtn.getAttribute('aria-expanded')) {
       hamburgerBtn.setAttribute('aria-expanded', 'true');
-      drawer.setAttribute('aria-hidden', 'false');
     } else {
       hamburgerBtn.setAttribute('aria-expanded', 'false');
-      drawer.setAttribute('aria-hidden', 'true');
     }
   }
 

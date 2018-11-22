@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v9.2.2
+ * Name: Basis v9.2.3
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -20,6 +20,7 @@
 @import 'object/component/checkbox';
 @import 'object/component/container';
 @import 'object/component/drawer';
+@import 'object/component/drawer-close-zone';
 @import 'object/component/entries';
 @import 'object/component/entry';
 @import 'object/component/form-control';

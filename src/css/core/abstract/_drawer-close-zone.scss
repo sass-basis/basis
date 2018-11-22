@@ -1,0 +1,4 @@
+@mixin _drawer-close-zone() {
+  @include _position(absolute, 0, 0, 0, 0, 2);
+  cursor: pointer;
+}

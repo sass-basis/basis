@@ -10,7 +10,7 @@ Drawer component
 ### html
 ```html
 <div style="min-height: 200px; position: relative">
-  <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="hamburger-btn">
+  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-hamburger-btn">
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -28,7 +28,7 @@ Drawer component
   </nav>
 </div>
 
-<div id="hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
+<div id="my-hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
   <div class="c-hamburger-btn__bars">
     <div class="c-hamburger-btn__bar"></div>
     <div class="c-hamburger-btn__bar"></div>
