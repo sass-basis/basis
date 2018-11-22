@@ -25,6 +25,19 @@
     return Constructor;
   }
 
+  function addCustomEvent(element, eventName) {
+    var event;
+
+    try {
+      event = new CustomEvent(eventName);
+    } catch (e) {
+      event = document.createEvent('CustomEvent');
+      event.initCustomEvent(eventName, false, false, null);
+    }
+
+    element.dispatchEvent(event);
+  }
+
   var BasisHamburgerBtn =
   /*#__PURE__*/
   function () {
@@ -50,13 +63,16 @@
         var hamburgerBtns = document.querySelectorAll(this.args.btn);
 
         this._forEachHtmlNodes(hamburgerBtns, function (element) {
-          return element.addEventListener('click', _this2._click, false);
+          element.addEventListener('click', function (event) {
+            addCustomEvent(element, 'clickHamburgerBtn');
+
+            _this2._click(event.currentTarget);
+          }, false);
         });
       }
     }, {
       key: "_click",
-      value: function _click(event) {
-        var hamburgerBtn = event.currentTarget;
+      value: function _click(hamburgerBtn) {
         var drawer = document.getElementById(hamburgerBtn.getAttribute('aria-controls'));
 
         if (!drawer) {
@@ -68,10 +84,8 @@
 
         if ('false' === hamburgerBtn.getAttribute('aria-expanded')) {
           hamburgerBtn.setAttribute('aria-expanded', 'true');
-          drawer.setAttribute('aria-hidden', 'false');
         } else {
           hamburgerBtn.setAttribute('aria-expanded', 'false');
-          drawer.setAttribute('aria-hidden', 'true');
         }
       }
     }, {
@@ -191,10 +205,23 @@
           drawer.addEventListener('click', function (event) {
             return event.stopPropagation();
           }, false);
-          window.addEventListener('resize', closeDrawerOnResize, false);
+          btn.addEventListener('clickHamburgerBtn', function () {
+            if ('false' === btn.getAttribute('aria-expanded')) {
+              drawer.setAttribute('aria-hidden', 'false');
+            } else {
+              drawer.setAttribute('aria-hidden', 'true');
+            }
+          }, false);
+          window.addEventListener('resize', function () {
+            addCustomEvent(drawer, 'resizeDrawer');
+            closeDrawerOnResize();
+          }, false);
 
           if (!!container) {
-            container.addEventListener('click', closeDrawer, false);
+            container.addEventListener('click', function () {
+              addCustomEvent(container, 'clickDrawerContainer');
+              closeDrawer();
+            }, false);
           }
 
           var drawerItemLinks = drawer.querySelectorAll("".concat(_this2.args.item, " > a"));
@@ -246,6 +273,119 @@
     }]);
 
     return BasisDrawer;
+  }();
+
+  var BasisDrawerCloseZone =
+  /*#__PURE__*/
+  function () {
+    function BasisDrawerCloseZone() {
+      var _this = this;
+
+      var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+      _classCallCheck(this, BasisDrawerCloseZone);
+
+      this.args = args;
+      this.args.btn = !!this.args.btn ? this.args.btn : '.c-hamburger-btn';
+      window.addEventListener('DOMContentLoaded', function () {
+        return _this._DOMContentLoaded();
+      }, false);
+    }
+
+    _createClass(BasisDrawerCloseZone, [{
+      key: "_DOMContentLoaded",
+      value: function _DOMContentLoaded() {
+        var _this2 = this;
+
+        var hamburgerBtns = document.querySelectorAll(this.args.btn);
+
+        this._forEachHtmlNodes(hamburgerBtns, function (element) {
+          element.addEventListener('clickHamburgerBtn', function () {
+            _this2._clickHamburgerBtn(element);
+          }, false);
+          var drawerId = element.getAttribute('aria-controls');
+
+          var drawer = _this2._getDrawer(drawerId);
+
+          if (null !== drawer) {
+            drawer.addEventListener('resizeDrawer', function () {
+              _this2._removeCloseZone(drawerId);
+            }, false);
+          }
+
+          drawer.parentNode.addEventListener('clickDrawerContainer', function () {
+            _this2._removeCloseZone(drawerId);
+          }, false);
+        });
+      }
+    }, {
+      key: "_clickHamburgerBtn",
+      value: function _clickHamburgerBtn(hamburgerBtn) {
+        if ('false' === hamburgerBtn.getAttribute('aria-expanded')) {
+          this._createCloseZone(hamburgerBtn.getAttribute('aria-controls'));
+        } else {
+          this._removeCloseZone(hamburgerBtn.getAttribute('aria-controls'));
+        }
+      }
+    }, {
+      key: "_createCloseZone",
+      value: function _createCloseZone(drawerId) {
+        var drawer = this._getDrawer(drawerId);
+
+        if (!drawer) {
+          return;
+        }
+
+        if (null !== this._getCloseZone(drawerId)) {
+          return;
+        }
+
+        var closeZone = document.createElement('div');
+        closeZone.classList.add('c-drawer-close-zone');
+        closeZone.setAttribute('id', this._generateCloseZoneId(drawerId));
+        drawer.parentNode.appendChild(closeZone);
+      }
+    }, {
+      key: "_removeCloseZone",
+      value: function _removeCloseZone(drawerId) {
+        var closeZone = this._getCloseZone(drawerId);
+
+        if (null === closeZone) {
+          return;
+        }
+
+        closeZone.parentNode.removeChild(closeZone);
+      }
+    }, {
+      key: "_generateCloseZoneId",
+      value: function _generateCloseZoneId(drawerId) {
+        return "".concat(drawerId, "-close-zone");
+      }
+    }, {
+      key: "_getDrawer",
+      value: function _getDrawer(drawerId) {
+        return document.getElementById(drawerId);
+      }
+    }, {
+      key: "_getCloseZone",
+      value: function _getCloseZone(drawerId) {
+        var closeZoneId = this._generateCloseZoneId(drawerId);
+
+        var closeZone = document.getElementById(closeZoneId);
+        return closeZone;
+      }
+    }, {
+      key: "_forEachHtmlNodes",
+      value: function _forEachHtmlNodes(htmlNodes, callback) {
+        if (0 < htmlNodes.length) {
+          [].forEach.call(htmlNodes, function (htmlNode) {
+            return callback(htmlNode);
+          });
+        }
+      }
+    }]);
+
+    return BasisDrawerCloseZone;
   }();
 
   var BasisNavbar =
@@ -406,6 +546,7 @@
 
   new BasisHamburgerBtn();
   new BasisDrawer();
+  new BasisDrawerCloseZone();
   new BasisNavbar();
   new BasisPageEffect();
   new BasisSelect();

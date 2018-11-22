@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v9.2.2
+ * Name: Basis v9.2.3
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -4427,7 +4427,7 @@ Drawer component
 ### html
 ```html
 <div style="min-height: 200px; position: relative">
-  <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="hamburger-btn">
+  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-hamburger-btn">
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -4445,7 +4445,7 @@ Drawer component
   </nav>
 </div>
 
-<div id="hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
+<div id="my-hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
   <div class="c-hamburger-btn__bars">
     <div class="c-hamburger-btn__bar"></div>
     <div class="c-hamburger-btn__bar"></div>
@@ -4508,6 +4508,15 @@ Drawer component
     justify-content: center; }
   .c-drawer--fixed {
     position: fixed; }
+
+.c-drawer-close-zone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer; }
 
 /*
 ---
@@ -7800,7 +7809,7 @@ Visible utility for xl or more
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v9.2.2
+ * Name: Basis v9.2.3
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -12227,7 +12236,7 @@ Drawer component
 ### html
 ```html
 <div style="min-height: 200px; position: relative">
-  <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="hamburger-btn">
+  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-hamburger-btn">
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -12245,7 +12254,7 @@ Drawer component
   </nav>
 </div>
 
-<div id="hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
+<div id="my-hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
   <div class="c-hamburger-btn__bars">
     <div class="c-hamburger-btn__bar"></div>
     <div class="c-hamburger-btn__bar"></div>
@@ -12308,6 +12317,15 @@ Drawer component
     justify-content: center; }
   .c-drawer--fixed {
     position: fixed; }
+
+.c-drawer-close-zone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer; }
 
 /*
 ---
