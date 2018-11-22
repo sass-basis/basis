@@ -1,5 +1,8 @@
 #Changelog
 
+## November 22, 2018 v9.2.4
+* Refactoring `.c-drawer-close-zone`
+
 ## November 22, 2018 v9.2.3
 * Refactoring `.c-hamburger-btn` and `.c-drawer`
 

@@ -1,3 +1,7 @@
 .#{$_prefix}c-drawer-close-zone {
   @include _drawer-close-zone();
+
+  &--fixed {
+    position: fixed;
+  }
 }
