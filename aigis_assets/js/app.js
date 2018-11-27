@@ -64,10 +64,24 @@
 
         this._forEachHtmlNodes(hamburgerBtns, function (element) {
           element.addEventListener('click', function (event) {
-            addCustomEvent(element, 'clickHamburgerBtn');
-
-            _this2._click(event);
+            return _this2._click(event);
           }, false);
+          element.addEventListener('openHamburgerBtn', function (event) {
+            return BasisHamburgerBtn.open(element);
+          }, false);
+          element.addEventListener('closeHamburgerBtn', function (event) {
+            return BasisHamburgerBtn.close(element);
+          }, false);
+          var drawer = document.getElementById(element.getAttribute('aria-controls'));
+
+          if (null !== drawer) {
+            drawer.addEventListener('closeDrawer', function (event) {
+              return BasisHamburgerBtn.close(element);
+            }, false);
+            drawer.addEventListener('openDrawer', function (event) {
+              return BasisHamburgerBtn.open(element);
+            }, false);
+          }
         });
       }
     }, {
@@ -84,9 +98,9 @@
         event.stopPropagation();
 
         if ('false' === hamburgerBtn.getAttribute('aria-expanded')) {
-          hamburgerBtn.setAttribute('aria-expanded', 'true');
+          addCustomEvent(hamburgerBtn, 'openHamburgerBtn');
         } else {
-          hamburgerBtn.setAttribute('aria-expanded', 'false');
+          addCustomEvent(hamburgerBtn, 'closeHamburgerBtn');
         }
       }
     }, {
@@ -97,6 +111,16 @@
             return callback(htmlNode);
           });
         }
+      }
+    }], [{
+      key: "open",
+      value: function open(hamburgerBtn) {
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+      }
+    }, {
+      key: "close",
+      value: function close(hamburgerBtn) {
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
       }
     }]);
 
@@ -133,112 +157,50 @@
         var drawers = document.querySelectorAll(this.args.drawer);
 
         this._forEachHtmlNodes(drawers, function (drawer) {
-          (function () {
-            var submenus = drawer.querySelectorAll("".concat(_this2.args.submenu, "[aria-hidden]"));
+          _this2._setSubmenusId(drawer);
 
-            _this2._forEachHtmlNodes(submenus, function (submenu) {
-              var random = Math.floor(Math.random() * (9999999 - 1000000) + 1000000);
-              var time = new Date().getTime();
-              var id = "drawer-".concat(time).concat(random);
-              var toggleBtn = submenu.parentNode.querySelector(_this2.args.toggle);
-
-              if (!!submenu && !!toggleBtn) {
-                submenu.setAttribute('id', id);
-                toggleBtn.setAttribute('aria-controls', "".concat(id));
-              }
-            });
-          })();
-
-          var container = drawer.parentNode;
-          var btn = document.getElementById(drawer.getAttribute('aria-labelledby'));
-          var toggleBtns = drawer.querySelectorAll("".concat(_this2.args.toggle));
-          var subMenus = drawer.querySelectorAll(_this2.args.submenu);
-
-          var closeDrawer = function closeDrawer() {
-            _this2._close(btn);
-
-            _this2._hidden(drawer);
-
-            _this2._forEachHtmlNodes(toggleBtns, function (element) {
-              return _this2._close(element);
-            });
-
-            _this2._forEachHtmlNodes(subMenus, function (element) {
-              return _this2._hidden(element);
-            });
-          };
-
-          var closeDrawerOnResize = function closeDrawerOnResize() {
-            if (window.innerWidth !== _this2.windowWidth) {
-              _this2._hidden(drawer);
-
-              _this2._close(btn);
-
-              _this2.windowWidth = window.innerWidth;
-            }
-          };
-
-          var toggleMenu = function toggleMenu(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            var toggleBtn = event.currentTarget;
-            var menu = document.getElementById(toggleBtn.getAttribute('aria-controls'));
-
-            if ('false' == toggleBtn.getAttribute('aria-expanded')) {
-              _this2._open(toggleBtn);
-
-              _this2._show(menu);
-            } else {
-              _this2._close(toggleBtn);
-
-              _this2._hidden(menu);
-
-              _this2._forEachHtmlNodes(menu.querySelectorAll(_this2.args.toggle), function (element) {
-                return _this2._close(element);
-              });
-
-              _this2._forEachHtmlNodes(menu.querySelectorAll(_this2.args.submenu), function (element) {
-                return _this2._hidden(element);
-              });
-            }
-          };
-
+          window.addEventListener('resize', function (event) {
+            return _this2._resizeWindow(drawer);
+          }, false);
+          drawer.addEventListener('closeDrawer', function (event) {
+            return _this2._closeAllSubmenus(drawer);
+          }, false);
           drawer.addEventListener('click', function (event) {
             return event.stopPropagation();
           }, false);
-          btn.addEventListener('clickHamburgerBtn', function () {
-            if ('false' === btn.getAttribute('aria-expanded')) {
-              drawer.setAttribute('aria-hidden', 'false');
-            } else {
-              drawer.setAttribute('aria-hidden', 'true');
-            }
-          }, false);
-          window.addEventListener('resize', function () {
-            addCustomEvent(drawer, 'resizeDrawer');
-            closeDrawerOnResize();
-          }, false);
+          var btn = document.getElementById(drawer.getAttribute('aria-labelledby'));
 
-          if (!!container) {
-            container.addEventListener('click', function () {
-              addCustomEvent(container, 'clickDrawerContainer');
-              closeDrawer();
+          if (!!btn) {
+            btn.addEventListener('openHamburgerBtn', function (event) {
+              return BasisDrawer.open(drawer);
+            }, false);
+            btn.addEventListener('closeHamburgerBtn', function (event) {
+              return BasisDrawer.close(drawer);
             }, false);
           }
 
           var drawerItemLinks = drawer.querySelectorAll("".concat(_this2.args.item, " > a"));
 
           _this2._forEachHtmlNodes(drawerItemLinks, function (element) {
-            return element.addEventListener('click', closeDrawer, false);
+            element.addEventListener('click', function (event) {
+              return addCustomEvent(element, 'clickDrawerItemLink');
+            }, false);
           });
 
           var drawerSubItemLinks = drawer.querySelectorAll("".concat(_this2.args.subitem, " > a"));
 
           _this2._forEachHtmlNodes(drawerSubItemLinks, function (element) {
-            return element.addEventListener('click', closeDrawer, false);
+            element.addEventListener('click', function (event) {
+              return addCustomEvent(element, 'clickDrawerSubItemLink');
+            }, false);
           });
 
+          var toggleBtns = drawer.querySelectorAll("".concat(_this2.args.toggle));
+
           _this2._forEachHtmlNodes(toggleBtns, function (element) {
-            return element.addEventListener('click', toggleMenu, false);
+            element.addEventListener('click', function (event) {
+              return _this2._clickToggleBtns(event);
+            }, false);
           });
         });
       }
@@ -263,12 +225,103 @@
         target.setAttribute('aria-hidden', 'true');
       }
     }, {
+      key: "_setSubmenusId",
+      value: function _setSubmenusId(drawer) {
+        var _this3 = this;
+
+        var submenus = drawer.querySelectorAll("".concat(this.args.submenu, "[aria-hidden]"));
+
+        this._forEachHtmlNodes(submenus, function (submenu) {
+          var random = Math.floor(Math.random() * (9999999 - 1000000) + 1000000);
+          var time = new Date().getTime();
+          var id = "drawer-".concat(time).concat(random);
+          var toggleBtn = submenu.parentNode.querySelector(_this3.args.toggle);
+
+          if (!!submenu && !!toggleBtn) {
+            submenu.setAttribute('id', id);
+            toggleBtn.setAttribute('aria-controls', "".concat(id));
+          }
+        });
+      }
+    }, {
+      key: "_resizeWindow",
+      value: function _resizeWindow(drawer) {
+        addCustomEvent(drawer, 'resizeDrawer');
+
+        if (window.innerWidth !== this.windowWidth) {
+          BasisDrawer.close(drawer);
+          this.windowWidth = window.innerWidth;
+        }
+      }
+    }, {
+      key: "_closeSubmenu",
+      value: function _closeSubmenu(submenu) {
+        var toggleBtn = submenu.parentNode.querySelector(this.args.toggle);
+
+        this._hidden(submenu);
+
+        this._close(toggleBtn);
+      }
+    }, {
+      key: "_closeAllSubmenus",
+      value: function _closeAllSubmenus(drawer) {
+        var _this4 = this;
+
+        var submenus = drawer.querySelectorAll(this.args.submenu);
+
+        this._forEachHtmlNodes(submenus, function (element) {
+          return _this4._closeSubmenu(element);
+        });
+      }
+    }, {
+      key: "_clickToggleBtns",
+      value: function _clickToggleBtns(event) {
+        var _this5 = this;
+
+        event.preventDefault();
+        event.stopPropagation();
+        var toggleBtn = event.currentTarget;
+        var menu = document.getElementById(toggleBtn.getAttribute('aria-controls'));
+
+        if ('false' == toggleBtn.getAttribute('aria-expanded')) {
+          this._open(toggleBtn);
+
+          this._show(menu);
+        } else {
+          this._closeSubmenu(menu);
+
+          this._forEachHtmlNodes(menu.querySelectorAll(this.args.submenu), function (element) {
+            return _this5._closeSubmenu(element);
+          });
+        }
+      }
+    }, {
       key: "_forEachHtmlNodes",
       value: function _forEachHtmlNodes(htmlNodes, callback) {
         if (0 < htmlNodes.length) {
           [].forEach.call(htmlNodes, function (htmlNode) {
             return callback(htmlNode);
           });
+        }
+      }
+    }], [{
+      key: "close",
+      value: function close(drawer) {
+        addCustomEvent(drawer, 'closeDrawer');
+        drawer.setAttribute('aria-hidden', 'true');
+      }
+    }, {
+      key: "open",
+      value: function open(drawer) {
+        addCustomEvent(drawer, 'openDrawer');
+        drawer.setAttribute('aria-hidden', 'false');
+        var drawerId = drawer.getAttribute('id');
+        var closeZone = document.querySelector(".c-drawer-close-zone[aria-controls=\"".concat(drawerId, "\"]"));
+
+        if (!!closeZone) {
+          closeZone.addEventListener('clickDrawerCloseZone', function (event) {
+            return BasisDrawer.close(drawer);
+          }, false);
         }
       }
     }]);
@@ -287,7 +340,7 @@
       _classCallCheck(this, BasisDrawerCloseZone);
 
       this.args = args;
-      this.args.btn = !!this.args.btn ? this.args.btn : '.c-hamburger-btn';
+      this.args.drawer = !!this.args.drawer ? this.args.drawer : '.c-drawer';
       window.addEventListener('DOMContentLoaded', function () {
         return _this._DOMContentLoaded();
       }, false);
@@ -296,48 +349,30 @@
     _createClass(BasisDrawerCloseZone, [{
       key: "_DOMContentLoaded",
       value: function _DOMContentLoaded() {
-        var _this2 = this;
+        var drawers = document.querySelectorAll(this.args.drawer);
 
-        var hamburgerBtns = document.querySelectorAll(this.args.btn);
-
-        this._forEachHtmlNodes(hamburgerBtns, function (element) {
-          element.addEventListener('clickHamburgerBtn', function () {
-            _this2._clickHamburgerBtn(element);
+        this._forEachHtmlNodes(drawers, function (drawer) {
+          drawer.addEventListener('openDrawer', function (event) {
+            BasisDrawerCloseZone.createCloseZone(drawer);
           }, false);
-          var drawerId = element.getAttribute('aria-controls');
-
-          var drawer = _this2._getDrawer(drawerId);
-
-          if (null !== drawer) {
-            drawer.addEventListener('resizeDrawer', function () {
-              _this2._removeCloseZone(drawerId);
-            }, false);
-          }
-
-          drawer.parentNode.addEventListener('clickDrawerContainer', function () {
-            _this2._removeCloseZone(drawerId);
+          drawer.addEventListener('closeDrawer', function (event) {
+            BasisDrawerCloseZone.removeCloseZone(drawer);
           }, false);
         });
       }
     }, {
-      key: "_clickHamburgerBtn",
-      value: function _clickHamburgerBtn(hamburgerBtn) {
-        if ('false' === hamburgerBtn.getAttribute('aria-expanded')) {
-          this._createCloseZone(hamburgerBtn.getAttribute('aria-controls'));
-        } else {
-          this._removeCloseZone(hamburgerBtn.getAttribute('aria-controls'));
+      key: "_forEachHtmlNodes",
+      value: function _forEachHtmlNodes(htmlNodes, callback) {
+        if (0 < htmlNodes.length) {
+          [].forEach.call(htmlNodes, function (htmlNode) {
+            return callback(htmlNode);
+          });
         }
       }
-    }, {
-      key: "_createCloseZone",
-      value: function _createCloseZone(drawerId) {
-        var drawer = this._getDrawer(drawerId);
-
-        if (!drawer) {
-          return;
-        }
-
-        if (null !== this._getCloseZone(drawerId)) {
+    }], [{
+      key: "createCloseZone",
+      value: function createCloseZone(drawer) {
+        if (null !== BasisDrawerCloseZone.getCloseZone(drawer)) {
           return;
         }
 
@@ -348,13 +383,18 @@
           closeZone.classList.add('c-drawer-close-zone--fixed');
         }
 
-        closeZone.setAttribute('id', this._generateCloseZoneId(drawerId));
+        var drawerId = drawer.getAttribute('id');
+        closeZone.setAttribute('id', BasisDrawerCloseZone.generateCloseZoneId(drawerId));
+        closeZone.setAttribute('aria-controls', drawerId);
+        closeZone.addEventListener('click', function (event) {
+          addCustomEvent(closeZone, 'clickDrawerCloseZone');
+        }, false);
         drawer.parentNode.appendChild(closeZone);
       }
     }, {
-      key: "_removeCloseZone",
-      value: function _removeCloseZone(drawerId) {
-        var closeZone = this._getCloseZone(drawerId);
+      key: "removeCloseZone",
+      value: function removeCloseZone(drawer) {
+        var closeZone = BasisDrawerCloseZone.getCloseZone(drawer);
 
         if (null === closeZone) {
           return;
@@ -363,31 +403,16 @@
         closeZone.parentNode.removeChild(closeZone);
       }
     }, {
-      key: "_generateCloseZoneId",
-      value: function _generateCloseZoneId(drawerId) {
+      key: "generateCloseZoneId",
+      value: function generateCloseZoneId(drawerId) {
         return "".concat(drawerId, "-close-zone");
       }
     }, {
-      key: "_getDrawer",
-      value: function _getDrawer(drawerId) {
-        return document.getElementById(drawerId);
-      }
-    }, {
-      key: "_getCloseZone",
-      value: function _getCloseZone(drawerId) {
-        var closeZoneId = this._generateCloseZoneId(drawerId);
-
-        var closeZone = document.getElementById(closeZoneId);
-        return closeZone;
-      }
-    }, {
-      key: "_forEachHtmlNodes",
-      value: function _forEachHtmlNodes(htmlNodes, callback) {
-        if (0 < htmlNodes.length) {
-          [].forEach.call(htmlNodes, function (htmlNode) {
-            return callback(htmlNode);
-          });
-        }
+      key: "getCloseZone",
+      value: function getCloseZone(drawer) {
+        var drawerId = drawer.getAttribute('id');
+        var closeZoneId = BasisDrawerCloseZone.generateCloseZoneId(drawerId);
+        return document.getElementById(closeZoneId);
       }
     }]);
 
