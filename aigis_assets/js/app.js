@@ -66,13 +66,14 @@
           element.addEventListener('click', function (event) {
             addCustomEvent(element, 'clickHamburgerBtn');
 
-            _this2._click(event.currentTarget);
+            _this2._click(event);
           }, false);
         });
       }
     }, {
       key: "_click",
-      value: function _click(hamburgerBtn) {
+      value: function _click(event) {
+        var hamburgerBtn = event.currentTarget;
         var drawer = document.getElementById(hamburgerBtn.getAttribute('aria-controls'));
 
         if (!drawer) {
