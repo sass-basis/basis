@@ -1,5 +1,8 @@
 #Changelog
 
+## November 27, 2018 v9.2.5
+* Fix hamburger button bug on FireFox.
+
 ## November 22, 2018 v9.2.4
 * Refactoring `.c-drawer-close-zone`
 

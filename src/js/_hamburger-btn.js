@@ -16,12 +16,13 @@ export default class BasisHamburgerBtn {
 
       element.addEventListener('click', (event) => {
         addCustomEvent(element, 'clickHamburgerBtn');
-        this._click(event.currentTarget);
+        this._click(event);
       }, false);
     });
   }
 
-  _click(hamburgerBtn) {
+  _click(event) {
+    const hamburgerBtn = event.currentTarget;
     const drawer = document.getElementById(hamburgerBtn.getAttribute('aria-controls'));
     if (! drawer) {
       return;
