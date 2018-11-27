@@ -1,5 +1,8 @@
 #Changelog
 
+## November 27, 2018 v9.2.6
+* Refactoring drawer and hamburger button.
+
 ## November 27, 2018 v9.2.5
 * Fix hamburger button bug on FireFox.
 

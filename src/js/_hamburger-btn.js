@@ -13,12 +13,24 @@ export default class BasisHamburgerBtn {
   _DOMContentLoaded() {
     const hamburgerBtns = document.querySelectorAll(this.args.btn);
     this._forEachHtmlNodes(hamburgerBtns, (element) => {
+      element.addEventListener('click', (event) => this._click(event), false);
+      element.addEventListener('openHamburgerBtn', (event) => BasisHamburgerBtn.open(element), false);
+      element.addEventListener('closeHamburgerBtn', (event) => BasisHamburgerBtn.close(element), false);
 
-      element.addEventListener('click', (event) => {
-        addCustomEvent(element, 'clickHamburgerBtn');
-        this._click(event);
-      }, false);
+      const drawer = document.getElementById(element.getAttribute('aria-controls'));
+      if (null !== drawer) {
+        drawer.addEventListener('closeDrawer', (event) => BasisHamburgerBtn.close(element), false);
+        drawer.addEventListener('openDrawer', (event) => BasisHamburgerBtn.open(element), false);
+      }
     });
+  }
+
+  static open(hamburgerBtn) {
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  static close(hamburgerBtn) {
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
   }
 
   _click(event) {
@@ -32,9 +44,9 @@ export default class BasisHamburgerBtn {
     event.stopPropagation();
 
     if ('false' === hamburgerBtn.getAttribute('aria-expanded')) {
-      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      addCustomEvent(hamburgerBtn, 'openHamburgerBtn');
     } else {
-      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      addCustomEvent(hamburgerBtn, 'closeHamburgerBtn');
     }
   }
 

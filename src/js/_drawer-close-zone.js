@@ -1,49 +1,30 @@
 'use strict';
 
+import addCustomEvent from './_add-custom-event.js';
+
 export default class BasisDrawerCloseZone {
   constructor(args = {}) {
     this.args = args;
-    this.args.btn = !! this.args.btn ? this.args.btn : '.c-hamburger-btn';
+    this.args.drawer = !! this.args.drawer ? this.args.drawer : '.c-drawer';
 
     window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
   }
 
   _DOMContentLoaded() {
-    const hamburgerBtns = document.querySelectorAll(this.args.btn);
-    this._forEachHtmlNodes(hamburgerBtns, (element) => {
-      element.addEventListener('clickHamburgerBtn', () => {
-        this._clickHamburgerBtn(element);
+    const drawers = document.querySelectorAll(this.args.drawer);
+    this._forEachHtmlNodes(drawers, (drawer) => {
+      drawer.addEventListener('openDrawer', (event) => {
+        BasisDrawerCloseZone.createCloseZone(drawer);
       }, false);
 
-      const drawerId = element.getAttribute('aria-controls');
-      const drawer = this._getDrawer(drawerId);
-      if (null !== drawer) {
-        drawer.addEventListener('resizeDrawer', () => {
-          this._removeCloseZone(drawerId);
-        }, false);
-      }
-
-      drawer.parentNode.addEventListener('clickDrawerContainer', () => {
-        this._removeCloseZone(drawerId);
+      drawer.addEventListener('closeDrawer', (event) => {
+        BasisDrawerCloseZone.removeCloseZone(drawer);
       }, false);
     });
   }
 
-  _clickHamburgerBtn(hamburgerBtn) {
-    if ('false' === hamburgerBtn.getAttribute('aria-expanded')) {
-      this._createCloseZone(hamburgerBtn.getAttribute('aria-controls'));
-    } else {
-      this._removeCloseZone(hamburgerBtn.getAttribute('aria-controls'));
-    }
-  }
-
-  _createCloseZone(drawerId) {
-    const drawer = this._getDrawer(drawerId);
-    if (! drawer) {
-      return;
-    }
-
-    if (null !== this._getCloseZone(drawerId)) {
+  static createCloseZone(drawer) {
+    if (null !== BasisDrawerCloseZone.getCloseZone(drawer)) {
       return;
     }
 
@@ -54,13 +35,19 @@ export default class BasisDrawerCloseZone {
       closeZone.classList.add('c-drawer-close-zone--fixed');
     }
 
-    closeZone.setAttribute('id', this._generateCloseZoneId(drawerId));
+    const drawerId = drawer.getAttribute('id');
+    closeZone.setAttribute('id', BasisDrawerCloseZone.generateCloseZoneId(drawerId));
+    closeZone.setAttribute('aria-controls', drawerId);
+
+    closeZone.addEventListener('click', (event) => {
+      addCustomEvent(closeZone, 'clickDrawerCloseZone');
+    }, false);
+
     drawer.parentNode.appendChild(closeZone);
   }
 
-  _removeCloseZone(drawerId) {
-    const closeZone = this._getCloseZone(drawerId);
-
+  static removeCloseZone(drawer) {
+    const closeZone = BasisDrawerCloseZone.getCloseZone(drawer);
     if (null === closeZone) {
       return;
     }
@@ -68,18 +55,15 @@ export default class BasisDrawerCloseZone {
     closeZone.parentNode.removeChild(closeZone);
   }
 
-  _generateCloseZoneId(drawerId) {
+  static generateCloseZoneId(drawerId) {
     return `${drawerId}-close-zone`;;
   }
 
-  _getDrawer(drawerId) {
-    return document.getElementById(drawerId);
-  }
+  static getCloseZone(drawer) {
+    const drawerId    = drawer.getAttribute('id');
+    const closeZoneId = BasisDrawerCloseZone.generateCloseZoneId(drawerId);
 
-  _getCloseZone(drawerId) {
-    const closeZoneId = this._generateCloseZoneId(drawerId);
-    const closeZone = document.getElementById(closeZoneId);
-    return closeZone;
+    return document.getElementById(closeZoneId);
   }
 
   _forEachHtmlNodes(htmlNodes, callback) {
