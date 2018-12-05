@@ -1,5 +1,8 @@
 #Changelog
 
+## December 5, 2018 v9.2.7
+* Add `.c-form-control--has-icon`
+
 ## November 27, 2018 v9.2.6
 * Refactoring drawer and hamburger button.
 
