@@ -15,6 +15,14 @@ Form control component
 <textarea class="c-form-control"></textarea>
 ```
 ```html
+<div class="c-form-control">
+  <div class="c-form-control__icon">
+    ●
+  </div>
+  <input type="text">
+</div>
+```
+```html
 <input type="text" class="c-form-control" disabled>
 ```
 ```html
@@ -24,6 +32,21 @@ Form control component
 
 .#{$_prefix}c-form-control {
   @include _form-control();
+
+  &--has-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > * {
+      flex: 1 1 0%;
+    }
+
+    > .#{$_prefix}c-form-control__icon {
+      flex: 0 0 0%;
+      margin-right: .5em;
+    }
+  }
 
   &[disabled] {
     background-color: _lighter($_color-gray);

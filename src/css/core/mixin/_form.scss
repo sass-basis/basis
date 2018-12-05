@@ -103,7 +103,14 @@ select {
 
   &:active,
   &:focus,
+  &:focus-within,
   &[aria-selected="true"] {
     border-color: $_form-control-border-color-focus;
+  }
+
+  > input,
+  > textarea {
+    border: none;
+    outline: none;
   }
 }
