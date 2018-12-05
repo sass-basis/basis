@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v9.2.6
+ * Name: Basis v9.2.7
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -4584,6 +4584,14 @@ Form control component
 <textarea class="c-form-control"></textarea>
 ```
 ```html
+<div class="c-form-control c-form-control--has-icon">
+  <div class="c-form-control__icon">
+    ●
+  </div>
+  <input type="text">
+</div>
+```
+```html
 <input type="text" class="c-form-control" disabled>
 ```
 ```html
@@ -4596,14 +4604,28 @@ Form control component
   outline: 0;
   transition: border 0.1s ease-out;
   padding: 0.375rem 0.75rem;
+  background-color: #fff;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035); }
   .c-form-control:hover {
     border-color: #999; }
-  .c-form-control:active, .c-form-control:focus, .c-form-control[aria-selected="true"] {
+  .c-form-control:active, .c-form-control:focus, .c-form-control:focus-within, .c-form-control[aria-selected="true"] {
     border-color: #85b7d9; }
+  .c-form-control > input,
+  .c-form-control > textarea {
+    border: none;
+    outline: none; }
   textarea.c-form-control {
     height: auto;
     width: 100%; }
+  .c-form-control--has-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .c-form-control--has-icon > * {
+      flex: 1 1 0%; }
+    .c-form-control--has-icon > .c-form-control__icon {
+      flex: 0 0 0%;
+      margin-right: .5em; }
   .c-form-control[disabled] {
     background-color: #eeeeee;
     cursor: not-allowed; }
@@ -4857,6 +4879,7 @@ Input group component
       outline: 0;
       transition: border 0.1s ease-out;
       padding: 0.375rem 0.75rem;
+      background-color: #fff;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
       -webkit-appearance: none;
       border-radius: 0;
@@ -4870,26 +4893,48 @@ Input group component
       .c-input-group__field > input[type='text']:hover,
       .c-input-group__field > input[type='url']:hover {
         border-color: #999; }
-      .c-input-group__field > input[type='email']:active, .c-input-group__field > input[type='email']:focus, .c-input-group__field > input[type='email'][aria-selected="true"],
+      .c-input-group__field > input[type='email']:active, .c-input-group__field > input[type='email']:focus, .c-input-group__field > input[type='email']:focus-within, .c-input-group__field > input[type='email'][aria-selected="true"],
       .c-input-group__field > input[type='number']:active,
       .c-input-group__field > input[type='number']:focus,
+      .c-input-group__field > input[type='number']:focus-within,
       .c-input-group__field > input[type='number'][aria-selected="true"],
       .c-input-group__field > input[type='password']:active,
       .c-input-group__field > input[type='password']:focus,
+      .c-input-group__field > input[type='password']:focus-within,
       .c-input-group__field > input[type='password'][aria-selected="true"],
       .c-input-group__field > input[type='search']:active,
       .c-input-group__field > input[type='search']:focus,
+      .c-input-group__field > input[type='search']:focus-within,
       .c-input-group__field > input[type='search'][aria-selected="true"],
       .c-input-group__field > input[type='tel']:active,
       .c-input-group__field > input[type='tel']:focus,
+      .c-input-group__field > input[type='tel']:focus-within,
       .c-input-group__field > input[type='tel'][aria-selected="true"],
       .c-input-group__field > input[type='text']:active,
       .c-input-group__field > input[type='text']:focus,
+      .c-input-group__field > input[type='text']:focus-within,
       .c-input-group__field > input[type='text'][aria-selected="true"],
       .c-input-group__field > input[type='url']:active,
       .c-input-group__field > input[type='url']:focus,
+      .c-input-group__field > input[type='url']:focus-within,
       .c-input-group__field > input[type='url'][aria-selected="true"] {
         border-color: #85b7d9; }
+      .c-input-group__field > input[type='email'] > input,
+      .c-input-group__field > input[type='email'] > textarea,
+      .c-input-group__field > input[type='number'] > input,
+      .c-input-group__field > input[type='number'] > textarea,
+      .c-input-group__field > input[type='password'] > input,
+      .c-input-group__field > input[type='password'] > textarea,
+      .c-input-group__field > input[type='search'] > input,
+      .c-input-group__field > input[type='search'] > textarea,
+      .c-input-group__field > input[type='tel'] > input,
+      .c-input-group__field > input[type='tel'] > textarea,
+      .c-input-group__field > input[type='text'] > input,
+      .c-input-group__field > input[type='text'] > textarea,
+      .c-input-group__field > input[type='url'] > input,
+      .c-input-group__field > input[type='url'] > textarea {
+        border: none;
+        outline: none; }
       textarea.c-input-group__field > input[type='email'], .c-input-group__field > input[type='number'], .c-input-group__field > input[type='password'], .c-input-group__field > input[type='search'], .c-input-group__field > input[type='tel'], .c-input-group__field > input[type='text'], .c-input-group__field > input[type='url'] {
         height: auto;
         width: 100%; }
@@ -4912,8 +4957,12 @@ Input group component
     overflow: visible; }
     .c-input-group__btn:hover {
       border-color: #999; }
-    .c-input-group__btn:active, .c-input-group__btn:focus, .c-input-group__btn[aria-selected="true"] {
+    .c-input-group__btn:active, .c-input-group__btn:focus, .c-input-group__btn:focus-within, .c-input-group__btn[aria-selected="true"] {
       border-color: #85b7d9; }
+    .c-input-group__btn > input,
+    .c-input-group__btn > textarea {
+      border: none;
+      outline: none; }
 
 /*
 ---
@@ -6776,8 +6825,12 @@ Select box component
   transition: border 0.1s ease-out; }
   .c-select:hover {
     border-color: #999; }
-  .c-select:active, .c-select:focus, .c-select[aria-selected="true"] {
+  .c-select:active, .c-select:focus, .c-select:focus-within, .c-select[aria-selected="true"] {
     border-color: #85b7d9; }
+  .c-select > input,
+  .c-select > textarea {
+    border: none;
+    outline: none; }
   .c-select::before {
     position: absolute;
     top: 50%;
@@ -7811,7 +7864,7 @@ Visible utility for xl or more
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v9.2.6
+ * Name: Basis v9.2.7
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -12395,6 +12448,14 @@ Form control component
 <textarea class="c-form-control"></textarea>
 ```
 ```html
+<div class="c-form-control c-form-control--has-icon">
+  <div class="c-form-control__icon">
+    ●
+  </div>
+  <input type="text">
+</div>
+```
+```html
 <input type="text" class="c-form-control" disabled>
 ```
 ```html
@@ -12407,14 +12468,28 @@ Form control component
   outline: 0;
   transition: border 0.1s ease-out;
   padding: 0.375rem 0.75rem;
+  background-color: #fff;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035); }
   .c-form-control:hover {
     border-color: #999; }
-  .c-form-control:active, .c-form-control:focus, .c-form-control[aria-selected="true"] {
+  .c-form-control:active, .c-form-control:focus, .c-form-control:focus-within, .c-form-control[aria-selected="true"] {
     border-color: #85b7d9; }
+  .c-form-control > input,
+  .c-form-control > textarea {
+    border: none;
+    outline: none; }
   textarea.c-form-control {
     height: auto;
     width: 100%; }
+  .c-form-control--has-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .c-form-control--has-icon > * {
+      flex: 1 1 0%; }
+    .c-form-control--has-icon > .c-form-control__icon {
+      flex: 0 0 0%;
+      margin-right: .5em; }
   .c-form-control[disabled] {
     background-color: #eeeeee;
     cursor: not-allowed; }
@@ -12668,6 +12743,7 @@ Input group component
       outline: 0;
       transition: border 0.1s ease-out;
       padding: 0.375rem 0.75rem;
+      background-color: #fff;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
       -webkit-appearance: none;
       border-radius: 0;
@@ -12681,26 +12757,48 @@ Input group component
       .c-input-group__field > input[type='text']:hover,
       .c-input-group__field > input[type='url']:hover {
         border-color: #999; }
-      .c-input-group__field > input[type='email']:active, .c-input-group__field > input[type='email']:focus, .c-input-group__field > input[type='email'][aria-selected="true"],
+      .c-input-group__field > input[type='email']:active, .c-input-group__field > input[type='email']:focus, .c-input-group__field > input[type='email']:focus-within, .c-input-group__field > input[type='email'][aria-selected="true"],
       .c-input-group__field > input[type='number']:active,
       .c-input-group__field > input[type='number']:focus,
+      .c-input-group__field > input[type='number']:focus-within,
       .c-input-group__field > input[type='number'][aria-selected="true"],
       .c-input-group__field > input[type='password']:active,
       .c-input-group__field > input[type='password']:focus,
+      .c-input-group__field > input[type='password']:focus-within,
       .c-input-group__field > input[type='password'][aria-selected="true"],
       .c-input-group__field > input[type='search']:active,
       .c-input-group__field > input[type='search']:focus,
+      .c-input-group__field > input[type='search']:focus-within,
       .c-input-group__field > input[type='search'][aria-selected="true"],
       .c-input-group__field > input[type='tel']:active,
       .c-input-group__field > input[type='tel']:focus,
+      .c-input-group__field > input[type='tel']:focus-within,
       .c-input-group__field > input[type='tel'][aria-selected="true"],
       .c-input-group__field > input[type='text']:active,
       .c-input-group__field > input[type='text']:focus,
+      .c-input-group__field > input[type='text']:focus-within,
       .c-input-group__field > input[type='text'][aria-selected="true"],
       .c-input-group__field > input[type='url']:active,
       .c-input-group__field > input[type='url']:focus,
+      .c-input-group__field > input[type='url']:focus-within,
       .c-input-group__field > input[type='url'][aria-selected="true"] {
         border-color: #85b7d9; }
+      .c-input-group__field > input[type='email'] > input,
+      .c-input-group__field > input[type='email'] > textarea,
+      .c-input-group__field > input[type='number'] > input,
+      .c-input-group__field > input[type='number'] > textarea,
+      .c-input-group__field > input[type='password'] > input,
+      .c-input-group__field > input[type='password'] > textarea,
+      .c-input-group__field > input[type='search'] > input,
+      .c-input-group__field > input[type='search'] > textarea,
+      .c-input-group__field > input[type='tel'] > input,
+      .c-input-group__field > input[type='tel'] > textarea,
+      .c-input-group__field > input[type='text'] > input,
+      .c-input-group__field > input[type='text'] > textarea,
+      .c-input-group__field > input[type='url'] > input,
+      .c-input-group__field > input[type='url'] > textarea {
+        border: none;
+        outline: none; }
       textarea.c-input-group__field > input[type='email'], .c-input-group__field > input[type='number'], .c-input-group__field > input[type='password'], .c-input-group__field > input[type='search'], .c-input-group__field > input[type='tel'], .c-input-group__field > input[type='text'], .c-input-group__field > input[type='url'] {
         height: auto;
         width: 100%; }
@@ -12723,8 +12821,12 @@ Input group component
     overflow: visible; }
     .c-input-group__btn:hover {
       border-color: #999; }
-    .c-input-group__btn:active, .c-input-group__btn:focus, .c-input-group__btn[aria-selected="true"] {
+    .c-input-group__btn:active, .c-input-group__btn:focus, .c-input-group__btn:focus-within, .c-input-group__btn[aria-selected="true"] {
       border-color: #85b7d9; }
+    .c-input-group__btn > input,
+    .c-input-group__btn > textarea {
+      border: none;
+      outline: none; }
 
 /*
 ---
@@ -14587,8 +14689,12 @@ Select box component
   transition: border 0.1s ease-out; }
   .c-select:hover {
     border-color: #999; }
-  .c-select:active, .c-select:focus, .c-select[aria-selected="true"] {
+  .c-select:active, .c-select:focus, .c-select:focus-within, .c-select[aria-selected="true"] {
     border-color: #85b7d9; }
+  .c-select > input,
+  .c-select > textarea {
+    border: none;
+    outline: none; }
   .c-select::before {
     position: absolute;
     top: 50%;
