@@ -1,6 +1,6 @@
 {
   "name": "sass-basis",
-  "version": "9.2.8",
+  "version": "9.2.9",
   "main": "src/css/basis.scss",
   "author": "inc2734",
   "contributors": [
@@ -35,8 +35,6 @@
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
-    "@inc2734/add-custom-event": "^0.1.0",
-    "@inc2734/for-each-html-nodes": "^0.2.0",
     "autoprefixer": "^9.4.9",
     "browser-sync": "^2.26.3",
     "cpy-cli": "^2.0.0",
@@ -86,6 +84,8 @@
     "zip": "rimraf basis.zip && rsync -a --exclude '.*' --exclude '/basis/' --exclude '/node_modules/' --exclude '/bin/' ./ basis && cd basis && cd ../ && zip -9 -qmr basis.zip basis"
   },
   "dependencies": {
+    "@inc2734/add-custom-event": "^0.1.0",
+    "@inc2734/for-each-html-nodes": "^0.2.0",
     "html5shiv": "^3.7.3",
     "node-normalize-scss": "^8.0.0"
   },
