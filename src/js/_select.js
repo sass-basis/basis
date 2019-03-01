@@ -1,31 +1,35 @@
 'use strict';
 
-import $ from 'jquery';
+import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
 
 export default class BasisSelect {
   constructor(args = {}) {
-    this.args = $.extend({
-      select: '.c-select',
-      label : '.c-select__label'
-    }, args);
-    this.select = $(this.args.select);
-    this.select.each((i, e) => {
-      const selectWrapper = $(e);
-      const select = selectWrapper.find('select');
-      const label  = selectWrapper.find(this.args.label);
-      label.text(select.children('option:selected').text());
+    this.args = args;
+    this.args.select = this.args.select || '.c-select';
+    this.args.label = this.args.label || '.c-select__label';
 
-      select.on('change', (event) => {
-        label.text($(select[0].selectedOptions).text());
-      });
+    window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
+  }
 
-      select.on('focusin', (event) => {
-        selectWrapper.attr('aria-selected', 'true');
-      });
+  _DOMContentLoaded() {
+    const selects = document.querySelectorAll(this.args.select);
 
-      select.on('focusout', (event) => {
-        selectWrapper.attr('aria-selected', 'false');
-      });
+    forEachHtmlNodes(selects, (item, index) => {
+      const wrapper = item;
+      const select  = wrapper.querySelector('select');
+      const label   = wrapper.querySelector(this.args.label);
+
+      const setLabel = () => label.textContent = select.options[select.selectedIndex].textContent;
+
+      const changeEvent = () => setLabel();
+      const focusinEvent = () => wrapper.setAttribute('aria-selected', 'true');
+      const focusoutEvent = () => wrapper.setAttribute('aria-selected', 'false');
+
+      label.textContent = setLabel();
+
+      window.addEventListener('change', () => changeEvent(), false);
+      window.addEventListener('focusin', () => focusinEvent(), false);
+      window.addEventListener('focusout', () => focusoutEvent(), false);
     });
   }
 }

@@ -1,6 +1,7 @@
 'use strict';
 
-import addCustomEvent from './_add-custom-event.js';
+import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
+import addCustomEvent from '@inc2734/add-custom-event';
 
 export default class BasisDrawerCloseZone {
   constructor(args = {}) {
@@ -12,7 +13,7 @@ export default class BasisDrawerCloseZone {
 
   _DOMContentLoaded() {
     const drawers = document.querySelectorAll(this.args.drawer);
-    this._forEachHtmlNodes(drawers, (drawer) => {
+    forEachHtmlNodes(drawers, (drawer) => {
       drawer.addEventListener('openDrawer', (event) => {
         BasisDrawerCloseZone.createCloseZone(drawer);
       }, false);
@@ -64,11 +65,5 @@ export default class BasisDrawerCloseZone {
     const closeZoneId = BasisDrawerCloseZone.generateCloseZoneId(drawerId);
 
     return document.getElementById(closeZoneId);
-  }
-
-  _forEachHtmlNodes(htmlNodes, callback) {
-    if (0 < htmlNodes.length) {
-      [].forEach.call(htmlNodes, (htmlNode) => callback(htmlNode));
-    }
   }
 }

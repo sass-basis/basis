@@ -1,6 +1,7 @@
 'use strict';
 
-import addCustomEvent from './_add-custom-event.js';
+import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
+import addCustomEvent from '@inc2734/add-custom-event';
 
 export default class BasisDrawer {
   constructor(args = {}) {
@@ -18,7 +19,7 @@ export default class BasisDrawer {
     this.windowWidth = window.innerWidth;
 
     const drawers = document.querySelectorAll(this.args.drawer);
-    this._forEachHtmlNodes(drawers, (drawer) => {
+    forEachHtmlNodes(drawers, (drawer) => {
       this._setSubmenusId(drawer);
 
       window.addEventListener('resize', (event) => this._resizeWindow(drawer), false);
@@ -33,17 +34,17 @@ export default class BasisDrawer {
       }
 
       const drawerItemLinks = drawer.querySelectorAll(`${this.args.item} > a`);
-      this._forEachHtmlNodes(drawerItemLinks, (element) => {
+      forEachHtmlNodes(drawerItemLinks, (element) => {
         element.addEventListener('click', (event) => addCustomEvent(element, 'clickDrawerItemLink'), false);
       });
 
       const drawerSubItemLinks = drawer.querySelectorAll(`${this.args.subitem} > a`);
-      this._forEachHtmlNodes(drawerSubItemLinks, (element) => {
+      forEachHtmlNodes(drawerSubItemLinks, (element) => {
         element.addEventListener('click', (event) => addCustomEvent(element, 'clickDrawerSubItemLink'), false);
       });
 
       const toggleBtns = drawer.querySelectorAll(`${this.args.toggle}`);
-      this._forEachHtmlNodes(toggleBtns, (element) => {
+      forEachHtmlNodes(toggleBtns, (element) => {
         element.addEventListener('click', (event) => this._clickToggleBtns(event), false);
       });
     });
@@ -83,7 +84,7 @@ export default class BasisDrawer {
 
   _setSubmenusId(drawer) {
     const submenus = drawer.querySelectorAll(`${this.args.submenu}[aria-hidden]`);
-    this._forEachHtmlNodes(submenus, (submenu) => {
+    forEachHtmlNodes(submenus, (submenu) => {
       const random    = Math.floor((Math.random() * (9999999 - 1000000)) + 1000000);
       const time      = new Date().getTime();
       const id        = `drawer-${time}${random}`;
@@ -113,7 +114,7 @@ export default class BasisDrawer {
 
   _closeAllSubmenus(drawer) {
     const submenus = drawer.querySelectorAll(this.args.submenu);
-    this._forEachHtmlNodes(submenus, (element) => this._closeSubmenu(element));
+    forEachHtmlNodes(submenus, (element) => this._closeSubmenu(element));
   }
 
   _clickToggleBtns(event) {
@@ -128,13 +129,7 @@ export default class BasisDrawer {
       this._show(menu);
     } else {
       this._closeSubmenu(menu);
-      this._forEachHtmlNodes(menu.querySelectorAll(this.args.submenu), (element) => this._closeSubmenu(element));
-    }
-  }
-
-  _forEachHtmlNodes(htmlNodes, callback) {
-    if (0 < htmlNodes.length) {
-      [].forEach.call(htmlNodes, (htmlNode) => callback(htmlNode));
+      forEachHtmlNodes(menu.querySelectorAll(this.args.submenu), (element) => this._closeSubmenu(element));
     }
   }
 }
