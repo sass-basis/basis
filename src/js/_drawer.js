@@ -6,11 +6,11 @@ import addCustomEvent from '@inc2734/add-custom-event';
 export default class BasisDrawer {
   constructor(args = {}) {
     this.args = args;
-    this.args.drawer  = !! this.args.drawer ? this.args.drawer : '.c-drawer';
-    this.args.toggle  = !! this.args.toggle ? this.args.toggle : '.c-drawer__toggle';
-    this.args.submenu = !! this.args.submenu ? this.args.submenu : '.c-drawer__submenu';
-    this.args.item    = !! this.args.item ? this.args.item : '.c-drawer__item';
-    this.args.subitem = !! this.args.subitem ? this.args.subitem : '.c-drawer__subitem';
+    this.args.drawer  = this.args.drawer || '.c-drawer';
+    this.args.toggle  = this.args.toggle || '.c-drawer__toggle';
+    this.args.submenu = this.args.submenu || '.c-drawer__submenu';
+    this.args.item    = this.args.item || '.c-drawer__item';
+    this.args.subitem = this.args.subitem || '.c-drawer__subitem';
 
     window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
   }
@@ -19,35 +19,42 @@ export default class BasisDrawer {
     this.windowWidth = window.innerWidth;
 
     const drawers = document.querySelectorAll(this.args.drawer);
-    forEachHtmlNodes(drawers, (drawer) => {
-      this._setSubmenusId(drawer);
 
-      window.addEventListener('resize', (event) => this._resizeWindow(drawer), false);
+    forEachHtmlNodes(
+      drawers,
+      (drawer) => {
+        this._setSubmenusId(drawer);
 
-      drawer.addEventListener('closeDrawer', (event) => this._closeAllSubmenus(drawer), false);
-      drawer.addEventListener('click', (event) => event.stopPropagation(), false);
+        window.addEventListener('resize', () => this._resizeWindow(drawer), false);
 
-      const btn = document.getElementById(drawer.getAttribute('aria-labelledby'));
-      if (!! btn) {
-        btn.addEventListener('openHamburgerBtn', (event) => BasisDrawer.open(drawer), false);
-        btn.addEventListener('closeHamburgerBtn', (event) => BasisDrawer.close(drawer), false);
+        drawer.addEventListener('closeDrawer', () => this._closeAllSubmenus(drawer), false);
+        drawer.addEventListener('click', () => event.stopPropagation(), false);
+
+        const btn = document.getElementById(drawer.getAttribute('aria-labelledby'));
+        if (!! btn) {
+          btn.addEventListener('openHamburgerBtn', () => BasisDrawer.open(drawer), false);
+          btn.addEventListener('closeHamburgerBtn', () => BasisDrawer.close(drawer), false);
+        }
+
+        const drawerItemLinks = drawer.querySelectorAll(`${this.args.item} > a`);
+        forEachHtmlNodes(
+          drawerItemLinks,
+          (element) => element.addEventListener('click', () => addCustomEvent(element, 'clickDrawerItemLink'), false)
+        );
+
+        const drawerSubItemLinks = drawer.querySelectorAll(`${this.args.subitem} > a`);
+        forEachHtmlNodes(
+          drawerSubItemLinks,
+          (element) => element.addEventListener('click', () => addCustomEvent(element, 'clickDrawerSubItemLink'), false)
+        );
+
+        const toggleBtns = drawer.querySelectorAll(`${this.args.toggle}`);
+        forEachHtmlNodes(
+          toggleBtns,
+          (element) => element.addEventListener('click', () => this._clickToggleBtns(event), false)
+        );
       }
-
-      const drawerItemLinks = drawer.querySelectorAll(`${this.args.item} > a`);
-      forEachHtmlNodes(drawerItemLinks, (element) => {
-        element.addEventListener('click', (event) => addCustomEvent(element, 'clickDrawerItemLink'), false);
-      });
-
-      const drawerSubItemLinks = drawer.querySelectorAll(`${this.args.subitem} > a`);
-      forEachHtmlNodes(drawerSubItemLinks, (element) => {
-        element.addEventListener('click', (event) => addCustomEvent(element, 'clickDrawerSubItemLink'), false);
-      });
-
-      const toggleBtns = drawer.querySelectorAll(`${this.args.toggle}`);
-      forEachHtmlNodes(toggleBtns, (element) => {
-        element.addEventListener('click', (event) => this._clickToggleBtns(event), false);
-      });
-    });
+    );
   }
 
   static close(drawer) {
@@ -62,7 +69,7 @@ export default class BasisDrawer {
     const drawerId  = drawer.getAttribute('id');
     const closeZone = document.querySelector(`.c-drawer-close-zone[aria-controls="${drawerId}"]`);
     if (!! closeZone) {
-      closeZone.addEventListener('clickDrawerCloseZone', (event) => BasisDrawer.close(drawer), false);
+      closeZone.addEventListener('clickDrawerCloseZone', () => BasisDrawer.close(drawer), false);
     }
   }
 
@@ -84,17 +91,21 @@ export default class BasisDrawer {
 
   _setSubmenusId(drawer) {
     const submenus = drawer.querySelectorAll(`${this.args.submenu}[aria-hidden]`);
-    forEachHtmlNodes(submenus, (submenu) => {
-      const random    = Math.floor((Math.random() * (9999999 - 1000000)) + 1000000);
-      const time      = new Date().getTime();
-      const id        = `drawer-${time}${random}`;
-      const toggleBtn = submenu.parentNode.querySelector(this.args.toggle);
 
-      if (!! submenu && !! toggleBtn) {
-        submenu.setAttribute('id', id);
-        toggleBtn.setAttribute('aria-controls', `${id}`);
+    forEachHtmlNodes(
+      submenus,
+      (submenu) => {
+        const random    = Math.floor((Math.random() * (9999999 - 1000000)) + 1000000);
+        const time      = new Date().getTime();
+        const id        = `drawer-${time}${random}`;
+        const toggleBtn = submenu.parentNode.querySelector(this.args.toggle);
+
+        if (!! submenu && !! toggleBtn) {
+          submenu.setAttribute('id', id);
+          toggleBtn.setAttribute('aria-controls', `${id}`);
+        }
       }
-    });
+    );
   }
 
   _resizeWindow(drawer) {
