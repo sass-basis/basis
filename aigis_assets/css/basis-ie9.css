@@ -2991,14 +2991,30 @@ new BasisNavbar({
         <a href="#">submenu</a>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
         </ul>
       </li>
     </ul>
   </li>
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
   </li>
-  <li class="c-navbar__item" aria-haspopup="true">
+  <li class="c-navbar__item">
     <a href="#">menu</a>
   </li>
 </ul>

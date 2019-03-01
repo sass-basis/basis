@@ -1,7 +1,5 @@
-(function ($) {
+(function () {
   'use strict';
-
-  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -23,6 +21,16 @@
     if (protoProps) _defineProperties(Constructor.prototype, protoProps);
     if (staticProps) _defineProperties(Constructor, staticProps);
     return Constructor;
+  }
+
+  function forEachHtmlNodes(htmlNodes, callback) {
+    if (0 < htmlNodes.length) {
+      var index = 0;
+      [].forEach.call(htmlNodes, function (htmlNode) {
+        callback(htmlNode, index);
+        index++;
+      });
+    }
   }
 
   function addCustomEvent(element, eventName) {
@@ -49,7 +57,7 @@
       _classCallCheck(this, BasisHamburgerBtn);
 
       this.args = args;
-      this.args.btn = !!this.args.btn ? this.args.btn : '.c-hamburger-btn';
+      this.args.btn = this.args.btn || '.c-hamburger-btn';
       window.addEventListener('DOMContentLoaded', function () {
         return _this._DOMContentLoaded();
       }, false);
@@ -61,24 +69,23 @@
         var _this2 = this;
 
         var hamburgerBtns = document.querySelectorAll(this.args.btn);
-
-        this._forEachHtmlNodes(hamburgerBtns, function (element) {
+        forEachHtmlNodes(hamburgerBtns, function (element) {
           element.addEventListener('click', function (event) {
             return _this2._click(event);
           }, false);
-          element.addEventListener('openHamburgerBtn', function (event) {
+          element.addEventListener('openHamburgerBtn', function () {
             return BasisHamburgerBtn.open(element);
           }, false);
-          element.addEventListener('closeHamburgerBtn', function (event) {
+          element.addEventListener('closeHamburgerBtn', function () {
             return BasisHamburgerBtn.close(element);
           }, false);
           var drawer = document.getElementById(element.getAttribute('aria-controls'));
 
           if (null !== drawer) {
-            drawer.addEventListener('closeDrawer', function (event) {
+            drawer.addEventListener('closeDrawer', function () {
               return BasisHamburgerBtn.close(element);
             }, false);
-            drawer.addEventListener('openDrawer', function (event) {
+            drawer.addEventListener('openDrawer', function () {
               return BasisHamburgerBtn.open(element);
             }, false);
           }
@@ -101,15 +108,6 @@
           addCustomEvent(hamburgerBtn, 'openHamburgerBtn');
         } else {
           addCustomEvent(hamburgerBtn, 'closeHamburgerBtn');
-        }
-      }
-    }, {
-      key: "_forEachHtmlNodes",
-      value: function _forEachHtmlNodes(htmlNodes, callback) {
-        if (0 < htmlNodes.length) {
-          [].forEach.call(htmlNodes, function (htmlNode) {
-            return callback(htmlNode);
-          });
         }
       }
     }], [{
@@ -138,11 +136,11 @@
       _classCallCheck(this, BasisDrawer);
 
       this.args = args;
-      this.args.drawer = !!this.args.drawer ? this.args.drawer : '.c-drawer';
-      this.args.toggle = !!this.args.toggle ? this.args.toggle : '.c-drawer__toggle';
-      this.args.submenu = !!this.args.submenu ? this.args.submenu : '.c-drawer__submenu';
-      this.args.item = !!this.args.item ? this.args.item : '.c-drawer__item';
-      this.args.subitem = !!this.args.subitem ? this.args.subitem : '.c-drawer__subitem';
+      this.args.drawer = this.args.drawer || '.c-drawer';
+      this.args.toggle = this.args.toggle || '.c-drawer__toggle';
+      this.args.submenu = this.args.submenu || '.c-drawer__submenu';
+      this.args.item = this.args.item || '.c-drawer__item';
+      this.args.subitem = this.args.subitem || '.c-drawer__subitem';
       window.addEventListener('DOMContentLoaded', function () {
         return _this._DOMContentLoaded();
       }, false);
@@ -155,50 +153,44 @@
 
         this.windowWidth = window.innerWidth;
         var drawers = document.querySelectorAll(this.args.drawer);
-
-        this._forEachHtmlNodes(drawers, function (drawer) {
+        forEachHtmlNodes(drawers, function (drawer) {
           _this2._setSubmenusId(drawer);
 
-          window.addEventListener('resize', function (event) {
+          window.addEventListener('resize', function () {
             return _this2._resizeWindow(drawer);
           }, false);
-          drawer.addEventListener('closeDrawer', function (event) {
+          drawer.addEventListener('closeDrawer', function () {
             return _this2._closeAllSubmenus(drawer);
           }, false);
-          drawer.addEventListener('click', function (event) {
+          drawer.addEventListener('click', function () {
             return event.stopPropagation();
           }, false);
           var btn = document.getElementById(drawer.getAttribute('aria-labelledby'));
 
           if (!!btn) {
-            btn.addEventListener('openHamburgerBtn', function (event) {
+            btn.addEventListener('openHamburgerBtn', function () {
               return BasisDrawer.open(drawer);
             }, false);
-            btn.addEventListener('closeHamburgerBtn', function (event) {
+            btn.addEventListener('closeHamburgerBtn', function () {
               return BasisDrawer.close(drawer);
             }, false);
           }
 
           var drawerItemLinks = drawer.querySelectorAll("".concat(_this2.args.item, " > a"));
-
-          _this2._forEachHtmlNodes(drawerItemLinks, function (element) {
-            element.addEventListener('click', function (event) {
+          forEachHtmlNodes(drawerItemLinks, function (element) {
+            return element.addEventListener('click', function () {
               return addCustomEvent(element, 'clickDrawerItemLink');
             }, false);
           });
-
           var drawerSubItemLinks = drawer.querySelectorAll("".concat(_this2.args.subitem, " > a"));
-
-          _this2._forEachHtmlNodes(drawerSubItemLinks, function (element) {
-            element.addEventListener('click', function (event) {
+          forEachHtmlNodes(drawerSubItemLinks, function (element) {
+            return element.addEventListener('click', function () {
               return addCustomEvent(element, 'clickDrawerSubItemLink');
             }, false);
           });
-
           var toggleBtns = drawer.querySelectorAll("".concat(_this2.args.toggle));
-
-          _this2._forEachHtmlNodes(toggleBtns, function (element) {
-            element.addEventListener('click', function (event) {
+          forEachHtmlNodes(toggleBtns, function (element) {
+            return element.addEventListener('click', function () {
               return _this2._clickToggleBtns(event);
             }, false);
           });
@@ -230,8 +222,7 @@
         var _this3 = this;
 
         var submenus = drawer.querySelectorAll("".concat(this.args.submenu, "[aria-hidden]"));
-
-        this._forEachHtmlNodes(submenus, function (submenu) {
+        forEachHtmlNodes(submenus, function (submenu) {
           var random = Math.floor(Math.random() * (9999999 - 1000000) + 1000000);
           var time = new Date().getTime();
           var id = "drawer-".concat(time).concat(random);
@@ -268,8 +259,7 @@
         var _this4 = this;
 
         var submenus = drawer.querySelectorAll(this.args.submenu);
-
-        this._forEachHtmlNodes(submenus, function (element) {
+        forEachHtmlNodes(submenus, function (element) {
           return _this4._closeSubmenu(element);
         });
       }
@@ -290,17 +280,8 @@
         } else {
           this._closeSubmenu(menu);
 
-          this._forEachHtmlNodes(menu.querySelectorAll(this.args.submenu), function (element) {
+          forEachHtmlNodes(menu.querySelectorAll(this.args.submenu), function (element) {
             return _this5._closeSubmenu(element);
-          });
-        }
-      }
-    }, {
-      key: "_forEachHtmlNodes",
-      value: function _forEachHtmlNodes(htmlNodes, callback) {
-        if (0 < htmlNodes.length) {
-          [].forEach.call(htmlNodes, function (htmlNode) {
-            return callback(htmlNode);
           });
         }
       }
@@ -319,7 +300,7 @@
         var closeZone = document.querySelector(".c-drawer-close-zone[aria-controls=\"".concat(drawerId, "\"]"));
 
         if (!!closeZone) {
-          closeZone.addEventListener('clickDrawerCloseZone', function (event) {
+          closeZone.addEventListener('clickDrawerCloseZone', function () {
             return BasisDrawer.close(drawer);
           }, false);
         }
@@ -340,7 +321,7 @@
       _classCallCheck(this, BasisDrawerCloseZone);
 
       this.args = args;
-      this.args.drawer = !!this.args.drawer ? this.args.drawer : '.c-drawer';
+      this.args.drawer = this.args.drawer || '.c-drawer';
       window.addEventListener('DOMContentLoaded', function () {
         return _this._DOMContentLoaded();
       }, false);
@@ -350,24 +331,14 @@
       key: "_DOMContentLoaded",
       value: function _DOMContentLoaded() {
         var drawers = document.querySelectorAll(this.args.drawer);
-
-        this._forEachHtmlNodes(drawers, function (drawer) {
-          drawer.addEventListener('openDrawer', function (event) {
-            BasisDrawerCloseZone.createCloseZone(drawer);
+        forEachHtmlNodes(drawers, function (drawer) {
+          drawer.addEventListener('openDrawer', function () {
+            return BasisDrawerCloseZone.createCloseZone(drawer);
           }, false);
-          drawer.addEventListener('closeDrawer', function (event) {
-            BasisDrawerCloseZone.removeCloseZone(drawer);
+          drawer.addEventListener('closeDrawer', function () {
+            return BasisDrawerCloseZone.removeCloseZone(drawer);
           }, false);
         });
-      }
-    }, {
-      key: "_forEachHtmlNodes",
-      value: function _forEachHtmlNodes(htmlNodes, callback) {
-        if (0 < htmlNodes.length) {
-          [].forEach.call(htmlNodes, function (htmlNode) {
-            return callback(htmlNode);
-          });
-        }
       }
     }], [{
       key: "createCloseZone",
@@ -387,7 +358,7 @@
         closeZone.setAttribute('id', BasisDrawerCloseZone.generateCloseZoneId(drawerId));
         closeZone.setAttribute('aria-controls', drawerId);
         closeZone.addEventListener('click', function (event) {
-          addCustomEvent(closeZone, 'clickDrawerCloseZone');
+          return addCustomEvent(closeZone, 'clickDrawerCloseZone');
         }, false);
         drawer.parentNode.appendChild(closeZone);
       }
@@ -423,55 +394,69 @@
   /*#__PURE__*/
   function () {
     function BasisNavbar() {
+      var _this = this;
+
       var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
       _classCallCheck(this, BasisNavbar);
 
-      this.args = $.extend({
-        item: '.c-navbar__item',
-        submenu: '.c-navbar__submenu',
-        subitem: '.c-navbar__subitem'
-      }, args);
-      this.items = $("".concat(this.args.item, "[aria-haspopup=\"true\"], ").concat(this.args.subitem, "[aria-haspopup=\"true\"]"));
-      this.setListener();
+      this.args = args;
+      this.args.item = this.args.item || '.c-navbar__item';
+      this.args.submenu = this.args.submenu || '.c-navbar__submenu';
+      this.args.subitem = this.args.subitem || '.c-navbar__subitem';
+      window.addEventListener('DOMContentLoaded', function () {
+        return _this._DOMContentLoaded();
+      }, false);
     }
 
     _createClass(BasisNavbar, [{
-      key: "setListener",
-      value: function setListener() {
-        var _this = this;
+      key: "_DOMContentLoaded",
+      value: function _DOMContentLoaded() {
+        var _this2 = this;
 
-        this.items.each(function (i, e) {
-          var item = $(e);
-          item.on('mouseover focusin', function (event) {
-            _this.show(item.children(_this.args.submenu));
-          });
-          item.on('mouseleave blur', function (event) {
-            _this.hidden(item.children(_this.args.submenu));
-          });
-        });
-        $(this.args.item).each(function (i, e) {
-          var item = $(e);
-          item.on('focusin', function (event) {
-            _this.hidden(item.siblings(_this.args.item).find(_this.args.submenu));
-          });
-          item.find(_this.args.subitem).each(function (i, e) {
-            var subitem = $(e);
-            subitem.on('focusin', function (event) {
-              _this.hidden(subitem.siblings(_this.args.subitem).find(_this.args.submenu));
+        var show = function show(submenu) {
+          return submenu.setAttribute('aria-hidden', 'false');
+        };
+
+        var hidden = function hidden(submenu) {
+          return submenu.setAttribute('aria-hidden', 'true');
+        };
+
+        var itemsHasPopup = document.querySelectorAll(["".concat(this.args.item, "[aria-haspopup=\"true\"]"), "".concat(this.args.subitem, "[aria-haspopup=\"true\"]")].join(','));
+        forEachHtmlNodes(itemsHasPopup, function (item) {
+          var mouseoverEvent = function mouseoverEvent() {
+            return forEachHtmlNodes(item.children, function (child) {
+              return child.classList.contains(_this2.args.submenu.replace(/^\./, '')) && show(child);
             });
-          });
+          };
+
+          var mouseleaveEvent = function mouseleaveEvent() {
+            return forEachHtmlNodes(item.querySelectorAll(_this2.args.submenu), function (child) {
+              return hidden(child);
+            });
+          };
+
+          item.addEventListener('mouseover', function () {
+            return mouseoverEvent();
+          }, false);
+          item.addEventListener('focusin', function () {
+            return mouseoverEvent();
+          }, false);
+          item.addEventListener('mouseleave', function () {
+            return mouseleaveEvent();
+          }, false);
         });
-      }
-    }, {
-      key: "show",
-      value: function show(submenu) {
-        submenu.attr('aria-hidden', 'false');
-      }
-    }, {
-      key: "hidden",
-      value: function hidden(submenu) {
-        submenu.attr('aria-hidden', 'true');
+        var items = document.querySelectorAll([this.args.item, this.args.subitem].join(','));
+        forEachHtmlNodes(items, function (item) {
+          item.addEventListener('focusin', function () {
+            forEachHtmlNodes(item.parentNode.children, function (child) {
+              var submenus = child.querySelectorAll(_this2.args.submenu);
+              child !== item && forEachHtmlNodes(submenus, function (submenu) {
+                return hidden(submenu);
+              });
+            });
+          }, false);
+        });
       }
     }]);
 
@@ -482,98 +467,134 @@
   /*#__PURE__*/
   function () {
     function BasisPageEffect() {
+      var _this = this;
+
       var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
       _classCallCheck(this, BasisPageEffect);
 
-      this.args = $.extend({
-        pageEffect: '.c-page-effect',
-        duration: 200
-      }, args);
-      this.container = $(this.args.pageEffect);
-      this.pageOutObject = $('[data-page-effect-link="true"], a[href]:not([target="_blank"], [href^="#"], [href*="javascript"], [href*=".jpg"], [href*=".jpeg"], [href*=".gif"], [href*=".png"], [href*=".mov"], [href*=".swf"], [href*=".mp4"], [href*=".flv"], [href*=".avi"], [href*=".mp3"], [href*=".pdf"], [href*=".zip"], [href^="mailto:"], [data-page-effect-link="false"])');
-      this.setListener();
+      this.args = args;
+      this.args.pageEffect = this.args.pageEffect || '.c-page-effect';
+      this.args.duration = this.args.duration || 0 === this.args.duration ? this.args.duration : 200;
+      window.addEventListener('DOMContentLoaded', function () {
+        return _this._DOMContentLoaded();
+      }, false);
     }
 
     _createClass(BasisPageEffect, [{
-      key: "setListener",
-      value: function setListener() {
-        var _this = this;
+      key: "_DOMContentLoaded",
+      value: function _DOMContentLoaded() {
+        var _this2 = this;
 
-        $(window).on('load', function (event) {
-          _this.hide();
-        });
-        this.pageOutObject.each(function (i, e) {
-          var link = $(e);
-          link.on('click', function (event) {
+        this.container = document.querySelector(this.args.pageEffect);
+        this.pageOutObjects = document.querySelectorAll('[data-page-effect-link="true"], a[href]:not([target="_blank"]):not([href^="#"]):not([href*="javascript"]):not([href*=".jpg"]):not([href*=".jpeg"]):not([href*=".gif"]):not([href*=".png"]):not([href*=".mov"]):not([href*=".swf"]):not([href*=".mp4"]):not([href*=".flv"]):not([href*=".avi"]):not([href*=".mp3"]):not([href*=".pdf"]):not([href*=".zip"]):not([href^="mailto:"]):not([data-page-effect-link="false"])');
+
+        if (!this.container) {
+          return;
+        }
+
+        window.addEventListener('load', function () {
+          return _this2._fadeInPage();
+        }, false);
+        forEachHtmlNodes(this.pageOutObjects, function (link) {
+          link.addEventListener('click', function (event) {
             if (event.shiftKey || event.ctrlKey || event.metaKey) {
-              return;
-            }
-
-            if ('true' !== link.attr('data-page-effect-link')) {
               return;
             }
 
             event.preventDefault();
 
-            _this.show();
+            _this2._fadeOutPage();
 
-            var url = link.attr('href');
-
-            _this.moveLocation(url);
-          });
+            _this2._moveLocation(link.getAttribute('href'));
+          }, false);
         });
       }
     }, {
-      key: "moveLocation",
-      value: function moveLocation(url) {
+      key: "_moveLocation",
+      value: function _moveLocation(url) {
         setTimeout(function () {
-          location.href = url;
+          return location.href = url;
         }, this.args['duration']);
       }
     }, {
-      key: "hide",
-      value: function hide() {
-        this.container.attr('aria-hidden', 'true').attr('data-page-effect', 'fadein');
+      key: "_fadeInPage",
+      value: function _fadeInPage() {
+        this.container.setAttribute('aria-hidden', 'true');
+        this.container.setAttribute('data-page-effect', 'fadein');
       }
     }, {
-      key: "show",
-      value: function show() {
-        this.container.attr('aria-hidden', 'false').attr('data-page-effect', 'fadeout');
+      key: "_fadeOutPage",
+      value: function _fadeOutPage() {
+        this.container.setAttribute('aria-hidden', 'false');
+        this.container.setAttribute('data-page-effect', 'fadeout');
       }
     }]);
 
     return BasisPageEffect;
   }();
 
-  var BasisSelect = function BasisSelect() {
-    var _this = this;
+  var BasisSelect =
+  /*#__PURE__*/
+  function () {
+    function BasisSelect() {
+      var _this = this;
 
-    var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-    _classCallCheck(this, BasisSelect);
+      _classCallCheck(this, BasisSelect);
 
-    this.args = $.extend({
-      select: '.c-select',
-      label: '.c-select__label'
-    }, args);
-    this.select = $(this.args.select);
-    this.select.each(function (i, e) {
-      var selectWrapper = $(e);
-      var select = selectWrapper.find('select');
-      var label = selectWrapper.find(_this.args.label);
-      label.text(select.children('option:selected').text());
-      select.on('change', function (event) {
-        label.text($(select[0].selectedOptions).text());
-      });
-      select.on('focusin', function (event) {
-        selectWrapper.attr('aria-selected', 'true');
-      });
-      select.on('focusout', function (event) {
-        selectWrapper.attr('aria-selected', 'false');
-      });
-    });
-  };
+      this.args = args;
+      this.args.select = this.args.select || '.c-select';
+      this.args.label = this.args.label || '.c-select__label';
+      window.addEventListener('DOMContentLoaded', function () {
+        return _this._DOMContentLoaded();
+      }, false);
+    }
+
+    _createClass(BasisSelect, [{
+      key: "_DOMContentLoaded",
+      value: function _DOMContentLoaded() {
+        var _this2 = this;
+
+        var selects = document.querySelectorAll(this.args.select);
+        forEachHtmlNodes(selects, function (item, index) {
+          var wrapper = item;
+          var select = wrapper.querySelector('select');
+          var label = wrapper.querySelector(_this2.args.label);
+
+          var setLabel = function setLabel() {
+            return label.textContent = select.options[select.selectedIndex].textContent;
+          };
+
+          var changeEvent = function changeEvent() {
+            return setLabel();
+          };
+
+          var focusinEvent = function focusinEvent() {
+            return wrapper.setAttribute('aria-selected', 'true');
+          };
+
+          var focusoutEvent = function focusoutEvent() {
+            return wrapper.setAttribute('aria-selected', 'false');
+          };
+
+          label.textContent = setLabel();
+          select.addEventListener('change', function () {
+            return changeEvent();
+          }, false);
+          select.addEventListener('focusin', function () {
+            return focusinEvent();
+          }, false);
+          select.addEventListener('focusout', function () {
+            return focusoutEvent();
+          }, false);
+        });
+      }
+    }]);
+
+    return BasisSelect;
+  }();
 
   new BasisHamburgerBtn();
   new BasisDrawer();
@@ -604,4 +625,4 @@
     label: '.sg-c-select__label'
   });
 
-}(jQuery));
+}());
