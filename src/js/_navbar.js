@@ -1,50 +1,71 @@
 'use strict';
 
-import $ from 'jquery';
+import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
 
 export default class BasisNavbar {
   constructor(args = {}) {
-    this.args = $.extend({
-      item   : '.c-navbar__item',
-      submenu: '.c-navbar__submenu',
-      subitem: '.c-navbar__subitem'
-    }, args);
-    this.items = $(`${this.args.item}[aria-haspopup="true"], ${this.args.subitem}[aria-haspopup="true"]`);
-    this.setListener();
+    this.args = args;
+    this.args.item = this.args.item || '.c-navbar__item';
+    this.args.submenu = this.args.submenu || '.c-navbar__submenu';
+    this.args.subitem = this.args.subitem || '.c-navbar__subitem';
+
+    window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
   }
 
-  setListener() {
-    this.items.each((i, e) => {
-      const item = $(e);
-      item.on('mouseover focusin', (event) => {
-        this.show(item.children(this.args.submenu));
-      });
+  _DOMContentLoaded() {
+    const show = (submenu) => submenu.setAttribute('aria-hidden', 'false');
+    const hidden = (submenu) => submenu.setAttribute('aria-hidden', 'true');
 
-      item.on('mouseleave blur', (event) => {
-        this.hidden(item.children(this.args.submenu));
-      });
-    });
+    const itemsHasPopup = document.querySelectorAll(
+      [
+        `${this.args.item}[aria-haspopup="true"]`,
+        `${this.args.subitem}[aria-haspopup="true"]`,
+      ].join(',')
+    );
 
-    $(this.args.item).each((i, e) => {
-      const item = $(e);
-      item.on('focusin', (event) => {
-        this.hidden(item.siblings(this.args.item).find(this.args.submenu));
-      });
+    forEachHtmlNodes(
+      itemsHasPopup,
+      (item) => {
+        const mouseoverEvent = () => forEachHtmlNodes(
+          item.children,
+          (child) => child.classList.contains(this.args.submenu.replace(/^\./, '')) && show(child)
+        );
 
-      item.find(this.args.subitem).each((i, e) => {
-        const subitem = $(e);
-        subitem.on('focusin', (event) => {
-          this.hidden(subitem.siblings(this.args.subitem).find(this.args.submenu));
-        });
-      });
-    });
-  }
+        const mouseleaveEvent = () => forEachHtmlNodes(
+          item.querySelectorAll(this.args.submenu),
+          (child) => hidden(child)
+        );
 
-  show(submenu) {
-    submenu.attr('aria-hidden', 'false');
-  }
+        item.addEventListener('mouseover', () => mouseoverEvent(), false);
+        item.addEventListener('focusin', () => mouseoverEvent(), false);
+        item.addEventListener('mouseleave', () => mouseleaveEvent(), false);
+      }
+    );
 
-  hidden(submenu) {
-    submenu.attr('aria-hidden', 'true');
+    const items = document.querySelectorAll(
+      [
+        this.args.item,
+        this.args.subitem,
+      ].join(',')
+    );
+
+    forEachHtmlNodes(
+      items,
+      (item) => {
+        item.addEventListener(
+          'focusin',
+          () => {
+            forEachHtmlNodes(
+              item.parentNode.children,
+              (child) => {
+                const submenus = child.querySelectorAll(this.args.submenu);
+                child !== item && forEachHtmlNodes(submenus, (submenu) => hidden(submenu));
+              }
+            );
+          },
+          false
+        );
+      }
+    );
   }
 }

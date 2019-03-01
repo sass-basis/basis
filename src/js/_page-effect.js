@@ -1,57 +1,57 @@
 'use strict';
 
-import $ from 'jquery';
+import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
 
 export default class BasisPageEffect {
   constructor(args = {}) {
-    this.args = $.extend({
-      pageEffect: '.c-page-effect',
-      duration: 200
-    }, args);
-    this.container     = $(this.args.pageEffect);
-    this.pageOutObject = $('[data-page-effect-link="true"], a[href]:not([target="_blank"], [href^="#"], [href*="javascript"], [href*=".jpg"], [href*=".jpeg"], [href*=".gif"], [href*=".png"], [href*=".mov"], [href*=".swf"], [href*=".mp4"], [href*=".flv"], [href*=".avi"], [href*=".mp3"], [href*=".pdf"], [href*=".zip"], [href^="mailto:"], [data-page-effect-link="false"])');
-    this.setListener();
+    this.args = args;
+    this.args.pageEffect = this.args.pageEffect || '.c-page-effect';
+    this.args.duration = this.args.duration || 0 === this.args.duration ? this.args.duration : 200;
+
+    window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
   }
 
-  setListener() {
-    $(window).on('load', (event) => {
-      this.hide();
-    });
+  _DOMContentLoaded() {
+    this.container      = document.querySelector(this.args.pageEffect);
+    this.pageOutObjects = document.querySelectorAll('[data-page-effect-link="true"], a[href]:not([target="_blank"]):not([href^="#"]):not([href*="javascript"]):not([href*=".jpg"]):not([href*=".jpeg"]):not([href*=".gif"]):not([href*=".png"]):not([href*=".mov"]):not([href*=".swf"]):not([href*=".mp4"]):not([href*=".flv"]):not([href*=".avi"]):not([href*=".mp3"]):not([href*=".pdf"]):not([href*=".zip"]):not([href^="mailto:"]):not([data-page-effect-link="false"])');
 
-    this.pageOutObject.each((i, e) => {
-      const link = $(e);
-      link.on('click', (event) => {
-        if (event.shiftKey || event.ctrlKey || event.metaKey) {
-          return;
-        }
+    if (! this.container) {
+      return;
+    }
 
-        if ('true' !== link.attr('data-page-effect-link')) {
-          return;
-        }
+    window.addEventListener('load', () => this._fadeInPage(), false);
 
-        event.preventDefault();
-        this.show();
-        const url = link.attr('href');
-        this.moveLocation(url);
-      });
-    });
+    forEachHtmlNodes(
+      this.pageOutObjects,
+      (link) => {
+        link.addEventListener(
+          'click',
+          (event) => {
+            if (event.shiftKey || event.ctrlKey || event.metaKey) {
+              return;
+            }
+
+            event.preventDefault();
+            this._fadeOutPage();
+            this._moveLocation(link.getAttribute('href'));
+          },
+          false
+        );
+      }
+    );
   }
 
-  moveLocation(url) {
-    setTimeout(() => {
-      location.href = url
-    }, this.args['duration']);
+  _moveLocation(url) {
+    setTimeout(() => location.href = url, this.args['duration']);
   }
 
-  hide() {
-    this.container
-      .attr('aria-hidden', 'true')
-      .attr('data-page-effect', 'fadein');
+  _fadeInPage() {
+    this.container.setAttribute('aria-hidden', 'true');
+    this.container.setAttribute('data-page-effect', 'fadein');
   }
 
-  show() {
-    this.container
-      .attr('aria-hidden', 'false')
-      .attr('data-page-effect', 'fadeout');
+  _fadeOutPage() {
+    this.container.setAttribute('aria-hidden', 'false');
+    this.container.setAttribute('data-page-effect', 'fadeout');
   }
 }

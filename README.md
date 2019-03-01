@@ -45,7 +45,7 @@ Imports Basis your Sass/SCSS.
 @import node_modules/sass-basis/src/css/basis-core;
 ```
 
-Imports JavaScripts ( Require jQuery )
+Imports JavaScript
 ```
 import 'node_modules/sass-basis/src/js/basis.js';
 ```
@@ -70,10 +70,6 @@ or Just this link.
 
 Loads JavaScripts
 ```
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
 <script src="node_modules/sass-basis/dist/js/basis.min.js"></script>
 ```
 

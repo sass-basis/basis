@@ -5,11 +5,7 @@ import babel from 'rollup-plugin-babel';
 export default {
   output: {
     format: 'iife',
-    globals: {
-      jquery: "jQuery"
-    }
   },
-  external: ['jquery'],
   plugins: [
     resolve({ jsnext: true }),
     commonjs(),

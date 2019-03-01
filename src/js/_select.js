@@ -14,22 +14,25 @@ export default class BasisSelect {
   _DOMContentLoaded() {
     const selects = document.querySelectorAll(this.args.select);
 
-    forEachHtmlNodes(selects, (item, index) => {
-      const wrapper = item;
-      const select  = wrapper.querySelector('select');
-      const label   = wrapper.querySelector(this.args.label);
+    forEachHtmlNodes(
+      selects,
+      (item, index) => {
+        const wrapper = item;
+        const select  = wrapper.querySelector('select');
+        const label   = wrapper.querySelector(this.args.label);
 
-      const setLabel = () => label.textContent = select.options[select.selectedIndex].textContent;
+        const setLabel = () => label.textContent = select.options[select.selectedIndex].textContent;
 
-      const changeEvent = () => setLabel();
-      const focusinEvent = () => wrapper.setAttribute('aria-selected', 'true');
-      const focusoutEvent = () => wrapper.setAttribute('aria-selected', 'false');
+        const changeEvent = () => setLabel();
+        const focusinEvent = () => wrapper.setAttribute('aria-selected', 'true');
+        const focusoutEvent = () => wrapper.setAttribute('aria-selected', 'false');
 
-      label.textContent = setLabel();
+        label.textContent = setLabel();
 
-      window.addEventListener('change', () => changeEvent(), false);
-      window.addEventListener('focusin', () => focusinEvent(), false);
-      window.addEventListener('focusout', () => focusoutEvent(), false);
-    });
+        select.addEventListener('change', () => changeEvent(), false);
+        select.addEventListener('focusin', () => focusinEvent(), false);
+        select.addEventListener('focusout', () => focusoutEvent(), false);
+      }
+    );
   }
 }
