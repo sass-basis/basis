@@ -1,5 +1,9 @@
 #Changelog
 
+## March 1, 2019 v9.2.8
+* Fixed a bug that `.c-select` not working on IE11
+* Remove jQuery code
+
 ## December 5, 2018 v9.2.7
 * Add `.c-form-control--has-icon`
 

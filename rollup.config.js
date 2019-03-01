@@ -22,6 +22,5 @@ export default {
       ],
       babelrc: false
     })
-  ],
-  experimentalCodeSplitting: true
+  ]
 };
