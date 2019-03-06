@@ -9,10 +9,6 @@ export default class BasisNavbar {
     this.args.submenu = this.args.submenu || '.c-navbar__submenu';
     this.args.subitem = this.args.subitem || '.c-navbar__subitem';
 
-    window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
-  }
-
-  _DOMContentLoaded() {
     const show = (submenu) => submenu.setAttribute('aria-hidden', 'false');
     const hidden = (submenu) => submenu.setAttribute('aria-hidden', 'true');
 

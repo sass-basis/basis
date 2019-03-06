@@ -8,14 +8,8 @@ export default class BasisSelect {
     this.args.select = this.args.select || '.c-select';
     this.args.label = this.args.label || '.c-select__label';
 
-    window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
-  }
-
-  _DOMContentLoaded() {
-    const selects = document.querySelectorAll(this.args.select);
-
     forEachHtmlNodes(
-      selects,
+      document.querySelectorAll(this.args.select),
       (item, index) => {
         const wrapper = item;
         const select  = wrapper.querySelector('select');

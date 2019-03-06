@@ -8,14 +8,8 @@ export default class BasisDrawerCloseZone {
     this.args = args;
     this.args.drawer = this.args.drawer || '.c-drawer';
 
-    window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
-  }
-
-  _DOMContentLoaded() {
-    const drawers = document.querySelectorAll(this.args.drawer);
-
     forEachHtmlNodes(
-      drawers,
+      document.querySelectorAll(this.args.drawer),
       (drawer) => {
         drawer.addEventListener('openDrawer', () => BasisDrawerCloseZone.createCloseZone(drawer), false);
         drawer.addEventListener('closeDrawer', () => BasisDrawerCloseZone.removeCloseZone(drawer), false);

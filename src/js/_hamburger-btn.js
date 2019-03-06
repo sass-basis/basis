@@ -8,14 +8,8 @@ export default class BasisHamburgerBtn {
     this.args = args;
     this.args.btn = this.args.btn || '.c-hamburger-btn';
 
-    window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
-  }
-
-  _DOMContentLoaded() {
-    const hamburgerBtns = document.querySelectorAll(this.args.btn);
-
     forEachHtmlNodes(
-      hamburgerBtns,
+      document.querySelectorAll(this.args.btn),
       (element) => {
         element.addEventListener('click', (event) => this._click(event), false);
         element.addEventListener('openHamburgerBtn', () => BasisHamburgerBtn.open(element), false);

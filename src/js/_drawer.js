@@ -12,16 +12,10 @@ export default class BasisDrawer {
     this.args.item    = this.args.item || '.c-drawer__item';
     this.args.subitem = this.args.subitem || '.c-drawer__subitem';
 
-    window.addEventListener('DOMContentLoaded', () => this._DOMContentLoaded(), false);
-  }
-
-  _DOMContentLoaded() {
     this.windowWidth = window.innerWidth;
 
-    const drawers = document.querySelectorAll(this.args.drawer);
-
     forEachHtmlNodes(
-      drawers,
+      document.querySelectorAll(this.args.drawer),
       (drawer) => {
         this._setSubmenusId(drawer);
 
