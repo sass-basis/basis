@@ -39,7 +39,7 @@ Abstract checkbox component
   $params: map-merge(
     (
       size: $_base-font-size-px,
-      border-radius: $_border-radius,
+      border-radius: 2px,
     ),
     $params
   );
@@ -84,6 +84,7 @@ Abstract checkbox component
     }
 
     &::after {
+      left: 1px;
       @include _ic();
       content: "\e901";
       opacity: 0;
