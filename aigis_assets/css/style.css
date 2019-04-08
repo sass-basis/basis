@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v9.2.10
+ * Name: Basis v9.2.11
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -4362,6 +4362,7 @@ Checkbox component
       border: 1px solid #cccccc;
       border-radius: 3px; }
     .c-checkbox__control::after {
+      left: 1px;
       font-family: 'basis';
       speak: none;
       font-style: normal;
@@ -7944,7 +7945,7 @@ Visible utility for xl or more
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v9.2.10
+ * Name: Basis v9.2.11
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -12306,6 +12307,7 @@ Checkbox component
       border: 1px solid #cccccc;
       border-radius: 3px; }
     .c-checkbox__control::after {
+      left: 1px;
       font-family: 'basis';
       speak: none;
       font-style: normal;
