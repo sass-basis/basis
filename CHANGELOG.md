@@ -1,5 +1,9 @@
 #Changelog
 
+## April 8, 2019 v9.2.11
+* Update drawer accesible
+* Update checkbox styles
+
 ## March 6, 2019 v9.2.10
 * Refactoring JavaScript codes
 
