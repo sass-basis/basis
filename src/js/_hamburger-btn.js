@@ -30,6 +30,7 @@ export default class BasisHamburgerBtn {
 
   static close(hamburgerBtn) {
     hamburgerBtn.setAttribute('aria-expanded', 'false');
+    hamburgerBtn.focus();
   }
 
   _click(event) {

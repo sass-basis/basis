@@ -47,6 +47,15 @@ export default class BasisDrawer {
           toggleBtns,
           (element) => element.addEventListener('click', () => this._clickToggleBtns(event), false)
         );
+
+        drawer.addEventListener(
+          'keydown',
+          (event) => {
+            if ( 27 === event.keyCode ) {
+              BasisDrawer.close(drawer)
+            }
+          }
+        );
       }
     );
   }
@@ -59,6 +68,9 @@ export default class BasisDrawer {
   static open(drawer) {
     addCustomEvent(drawer, 'openDrawer');
     drawer.setAttribute('aria-hidden', 'false');
+
+    const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+    drawer.querySelector(focusableSelector).focus();
 
     const drawerId  = drawer.getAttribute('id');
     const closeZone = document.querySelector(`.c-drawer-close-zone[aria-controls="${drawerId}"]`);
