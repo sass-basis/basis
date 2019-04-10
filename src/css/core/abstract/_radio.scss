@@ -16,10 +16,18 @@ Abstract radio button component
 }
 ```
 
+### js
+```js
+import BasisRadio from 'node_modules/sass-basis/src/js/_radio.js';
+new BasisRadio({
+  radio: '.c-radio',
+});
+```
+
 ### html
 ```ejs
 <label>
-  <span class="c-radio">
+  <span class="c-radio" aria-checked="false">
     <input type="radio">
     <span class="c-radio__control"></span>
   </span>
@@ -69,7 +77,7 @@ Abstract radio button component
     &::before {
       content: '';
       background-color: #fff;
-      border: 1px solid _light($_color-gray);
+      border: 1px solid $_form-control-border-color;
     }
 
     &::after {
@@ -80,6 +88,21 @@ Abstract radio button component
       background-color: $_color-text;
       @include _square(($size / 2), 100%);
       opacity: 0;
+    }
+  }
+
+  &:hover {
+    #{$root}__control::before {
+      border-color: $_form-control-border-color-hover;
+    }
+  }
+
+  &:active,
+  &:focus,
+  &:focus-within,
+  &[aria-checked="true"] {
+    #{$root}__control::before {
+      border-color: $_form-control-border-color-focus;
     }
   }
 }

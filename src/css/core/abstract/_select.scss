@@ -16,7 +16,7 @@ Abstract selectbox component
 
 ### js
 ```js
-import BasisSelect from 'node_modules/sass-basis/src/js/select.js';
+import BasisSelect from 'node_modules/sass-basis/src/js/_select.js';
 new BasisSelect({
   select: '.c-select',
   label : '.c-select__label'

@@ -1,5 +1,10 @@
 #Changelog
 
+## April 10, 2019 v9.2.12
+* Update checkbox accesible
+* Update radio accesible
+* Update textarea default style
+
 ## April 8, 2019 v9.2.11
 * Update drawer accesible
 * Update checkbox styles

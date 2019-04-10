@@ -15,18 +15,42 @@ export default class BasisSelect {
         const select  = wrapper.querySelector('select');
         const label   = wrapper.querySelector(this.args.label);
 
-        const setLabel = () => label.textContent = select.options[select.selectedIndex].textContent;
-
-        const changeEvent = () => setLabel();
-        const focusinEvent = () => wrapper.setAttribute('aria-selected', 'true');
-        const focusoutEvent = () => wrapper.setAttribute('aria-selected', 'false');
-
-        label.textContent = setLabel();
-
-        select.addEventListener('change', () => changeEvent(), false);
-        select.addEventListener('focusin', () => focusinEvent(), false);
-        select.addEventListener('focusout', () => focusoutEvent(), false);
+        this._addEventListener(wrapper, select, label);
       }
     );
+
+    forEachHtmlNodes(
+      document.getElementsByTagName('form'),
+      (item, index) => {
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+              if (typeof node.matches === 'function' && node.matches(this.args.select)) {
+                const wrapper = node;
+                const select  = wrapper.querySelector('select');
+                const label   = wrapper.querySelector(this.args.label);
+
+                this._addEventListener(wrapper, select, label);
+              }
+            });
+          });
+        });
+        observer.observe(item, {childList: true, subtree: true});
+      }
+    );
+  }
+
+  _addEventListener(wrapper, select, label) {
+    const setLabel = () => label.textContent = select.options[select.selectedIndex].textContent;
+
+    const changeEvent = () => setLabel();
+    const focusinEvent = () => wrapper.setAttribute('aria-selected', 'true');
+    const focusoutEvent = () => wrapper.setAttribute('aria-selected', 'false');
+
+    label.textContent = setLabel();
+
+    select.addEventListener('change', () => changeEvent(), false);
+    select.addEventListener('focusin', () => focusinEvent(), false);
+    select.addEventListener('focusout', () => focusoutEvent(), false);
   }
 }

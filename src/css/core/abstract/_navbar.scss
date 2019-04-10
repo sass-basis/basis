@@ -20,7 +20,7 @@ Abstract navbar component
 
 ### js
 ```js
-import BasisNavbar from 'node_modules/sass-basis/src/js/navbar.js';
+import BasisNavbar from 'node_modules/sass-basis/src/js/_navbar.js';
 new BasisNavbar({
   item   : '.c-navbar__item',
   submenu: '.c-navbar__submenu',

@@ -35,7 +35,7 @@ Abstract page effect component
 
 ### js
 ```js
-import BasisPageEffect from 'node_modules/sass-basis/src/js/page-effect.js';
+import BasisPageEffect from 'node_modules/sass-basis/src/js/_page-effect.js';
 new BasisPageEffect({
   pageEffect: '.c-page-effect',
   duration: 200

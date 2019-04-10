@@ -18,15 +18,23 @@ Abstract checkbox component
 .c-checkbox {
   @include _checkbox((
     size: $_base-font-size-px,
-    border-radius: $_border-radius,
+    border-radius: 2px
   ));
 }
+```
+
+### js
+```js
+import BasisCheckbox from 'node_modules/sass-basis/src/js/_checkbox.js';
+new BasisCheckbox({
+  checkbox: '.c-checkbox',
+});
 ```
 
 ### html
 ```ejs
 <label>
-  <span class="c-checkbox">
+  <span class="c-checkbox" aria-checked="false">
     <input type="checkbox">
     <span class="c-checkbox__control"></span>
   </span>
@@ -79,7 +87,7 @@ Abstract checkbox component
     &::before {
       content: '';
       background-color: #fff;
-      border: 1px solid _light($_color-gray);
+      border: 1px solid $_form-control-border-color;
       border-radius: $border-radius;
     }
 
@@ -91,6 +99,21 @@ Abstract checkbox component
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+
+  &:hover {
+    #{$root}__control::before {
+      border-color: $_form-control-border-color-hover;
+    }
+  }
+
+  &:active,
+  &:focus,
+  &:focus-within,
+  &[aria-checked="true"] {
+    #{$root}__control::before {
+      border-color: $_form-control-border-color-focus;
     }
   }
 }

@@ -20,7 +20,7 @@ Abstract hamburger button component
 
 ### js
 ```js
-import BasisHamburgerBtn from 'node_modules/sass-basis/src/js/hamburger-btn.js';
+import BasisHamburgerBtn from 'node_modules/sass-basis/src/js/_hamburger-btn.js';
 new BasisHamburgerBtn({
   btn: '.c-hamburger-btn'
 });

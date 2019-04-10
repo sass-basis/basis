@@ -56,7 +56,7 @@ Abstract drawer component
 
 ### js
 ```js
-import BasisDrawer from 'node_modules/sass-basis/src/js/drawer.js';
+import BasisDrawer from 'node_modules/sass-basis/src/js/_drawer.js';
 new BasisDrawer({
   drawer : '.c-drawer',
   toggle : '.c-drawer__toggle',

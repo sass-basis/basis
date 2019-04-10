@@ -10,7 +10,7 @@ Radio button component
 ### html
 ```html
 <label>
-  <span class="c-radio">
+  <span class="c-radio" aria-checked="false">
     <input type="radio">
     <span class="c-radio__control"></span>
   </span>
