@@ -2312,15 +2312,23 @@ Abstract checkbox component
 .c-checkbox {
   @include _checkbox((
     size: $_base-font-size-px,
-    border-radius: $_border-radius,
+    border-radius: 2px
   ));
 }
+```
+
+### js
+```js
+import BasisCheckbox from 'node_modules/sass-basis/src/js/_checkbox.js';
+new BasisCheckbox({
+  checkbox: '.c-checkbox',
+});
 ```
 
 ### html
 ```ejs
 <label>
-  <span class="c-checkbox">
+  <span class="c-checkbox" aria-checked="false">
     <input type="checkbox">
     <span class="c-checkbox__control"></span>
   </span>
@@ -2470,7 +2478,7 @@ Abstract drawer component
 
 ### js
 ```js
-import BasisDrawer from 'node_modules/sass-basis/src/js/drawer.js';
+import BasisDrawer from 'node_modules/sass-basis/src/js/_drawer.js';
 new BasisDrawer({
   drawer : '.c-drawer',
   toggle : '.c-drawer__toggle',
@@ -2618,7 +2626,7 @@ Abstract hamburger button component
 
 ### js
 ```js
-import BasisHamburgerBtn from 'node_modules/sass-basis/src/js/hamburger-btn.js';
+import BasisHamburgerBtn from 'node_modules/sass-basis/src/js/_hamburger-btn.js';
 new BasisHamburgerBtn({
   btn: '.c-hamburger-btn'
 });
@@ -2973,7 +2981,7 @@ Abstract navbar component
 
 ### js
 ```js
-import BasisNavbar from 'node_modules/sass-basis/src/js/navbar.js';
+import BasisNavbar from 'node_modules/sass-basis/src/js/_navbar.js';
 new BasisNavbar({
   item   : '.c-navbar__item',
   submenu: '.c-navbar__submenu',
@@ -3054,7 +3062,7 @@ Abstract page effect component
 
 ### js
 ```js
-import BasisPageEffect from 'node_modules/sass-basis/src/js/page-effect.js';
+import BasisPageEffect from 'node_modules/sass-basis/src/js/_page-effect.js';
 new BasisPageEffect({
   pageEffect: '.c-page-effect',
   duration: 200
@@ -3174,10 +3182,18 @@ Abstract radio button component
 }
 ```
 
+### js
+```js
+import BasisRadio from 'node_modules/sass-basis/src/js/_radio.js';
+new BasisRadio({
+  radio: '.c-radio',
+});
+```
+
 ### html
 ```ejs
 <label>
-  <span class="c-radio">
+  <span class="c-radio" aria-checked="false">
     <input type="radio">
     <span class="c-radio__control"></span>
   </span>
@@ -3210,7 +3226,7 @@ Abstract responsive container component
 */
 /*
 ---
-name: _radio()
+name: _responsive-table()
 category:
   - core/abstract
 ---
@@ -3467,7 +3483,7 @@ Abstract selectbox component
 
 ### js
 ```js
-import BasisSelect from 'node_modules/sass-basis/src/js/select.js';
+import BasisSelect from 'node_modules/sass-basis/src/js/_select.js';
 new BasisSelect({
   select: '.c-select',
   label : '.c-select__label'
