@@ -11,9 +11,9 @@ export default class BasisHamburgerBtn {
     forEachHtmlNodes(
       document.querySelectorAll(this.args.btn),
       (element) => {
-        element.addEventListener('click', (event) => this._click(event), false);
         element.addEventListener('openHamburgerBtn', () => BasisHamburgerBtn.open(element), false);
         element.addEventListener('closeHamburgerBtn', () => BasisHamburgerBtn.close(element), false);
+        element.addEventListener('click', (event) => this._click(event), false);
 
         const drawer = document.getElementById(element.getAttribute('aria-controls'));
         if (null !== drawer) {
@@ -25,12 +25,19 @@ export default class BasisHamburgerBtn {
   }
 
   static open(hamburgerBtn) {
+    if ('true' === hamburgerBtn.getAttribute('aria-expanded')) {
+      return;
+    }
+
     hamburgerBtn.setAttribute('aria-expanded', 'true');
   }
 
   static close(hamburgerBtn) {
+    if ('false' === hamburgerBtn.getAttribute('aria-expanded')) {
+      return;
+    }
+
     hamburgerBtn.setAttribute('aria-expanded', 'false');
-    hamburgerBtn.focus();
   }
 
   _click(event) {

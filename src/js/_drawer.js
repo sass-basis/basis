@@ -3,6 +3,8 @@
 import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
 import addCustomEvent from '@inc2734/add-custom-event';
 
+let lastActiveElement = document.activeElement;
+
 export default class BasisDrawer {
   constructor(args = {}) {
     this.args = args;
@@ -62,12 +64,17 @@ export default class BasisDrawer {
 
   static close(drawer) {
     addCustomEvent(drawer, 'closeDrawer');
+
+    lastActiveElement.focus();
+
     drawer.setAttribute('aria-hidden', 'true');
   }
 
   static open(drawer) {
     addCustomEvent(drawer, 'openDrawer');
     drawer.setAttribute('aria-hidden', 'false');
+
+    lastActiveElement = document.activeElement;
 
     const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
     drawer.querySelector(focusableSelector).focus();
