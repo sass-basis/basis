@@ -1,5 +1,8 @@
 #Changelog
 
+## April 11, 2019 v9.2.13
+* Corrected focus to return to correct position when the drawer is closed
+
 ## April 10, 2019 v9.2.12
 * Update checkbox accesible
 * Update radio accesible
