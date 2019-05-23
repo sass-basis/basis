@@ -25,10 +25,11 @@ Generate balloon triangle
 ```
 */
 
-@mixin _balloon-triangle($position, $size, $background-color, $border-size: 0, $border-color: transparent) {
+@mixin _balloon-triangle($position, $size, $background-color, $border-size: null, $border-color: null) {
   $before: ($size * -1);
   $after: $before;
-  @if (0 < $border-size) {
+
+  @if (not _is-null($border-size)) {
     $after: $after + $border-size + 1;
   }
 
@@ -43,19 +44,21 @@ Generate balloon triangle
     }
   }
 
-  &::before {
-    @if ('top' == $position) {
-      @include _position(absolute, $before, null, null, 50%);
-      @include _triangle-top($size, $size, $border-color);
-    } @else if ('right' == $position) {
-      @include _position(absolute, 50%, $before, null, null);
-      @include _triangle-right($size, $size, $border-color);
-    } @else if ('bottom' == $position) {
-      @include _position(absolute, null, null, $before, 50%);
-      @include _triangle-bottom($size, $size, $border-color);
-    } @else if ('left' == $position) {
-      @include _position(absolute, 50%, null, null, $before);
-      @include _triangle-left($size, $size, $border-color);
+  @if (not _is-null($border-size) and not _is-null($border-color)) {
+    &::before {
+      @if ('top' == $position) {
+        @include _position(absolute, $before, null, null, 50%);
+        @include _triangle-top($size, $size, $border-color);
+      } @else if ('right' == $position) {
+        @include _position(absolute, 50%, $before, null, null);
+        @include _triangle-right($size, $size, $border-color);
+      } @else if ('bottom' == $position) {
+        @include _position(absolute, null, null, $before, 50%);
+        @include _triangle-bottom($size, $size, $border-color);
+      } @else if ('left' == $position) {
+        @include _position(absolute, 50%, null, null, $before);
+        @include _triangle-left($size, $size, $border-color);
+      }
     }
   }
 

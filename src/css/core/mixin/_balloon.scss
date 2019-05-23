@@ -42,7 +42,7 @@ Generate balloon
 
   position: relative;
 
-  @if (not _is-null($border-size)) {
+  @if (not _is-null($background-color)) {
     background-color: $background-color;
   }
 
