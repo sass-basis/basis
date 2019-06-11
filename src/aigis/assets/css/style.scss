@@ -40,3 +40,7 @@ $_prefix: '';
 @import 'object/project/show-grid';
 @import 'object/project/social-nav';
 @import 'object/project/table-of-contents';
+
+.aigis-preview {
+  min-height: 150px;
+}

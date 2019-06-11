@@ -10,15 +10,11 @@ new SgBasisHamburgerBtn({
 import SgBasisDrawer from '../../../js/_drawer.js';
 new SgBasisDrawer({
   drawer : '.sg-c-drawer',
-  toggle : '.sg-c-drawer__toggle',
-  submenu: '.sg-c-drawer__submenu'
 });
 
 import SgBasisNavbar from '../../../js/_navbar.js';
 new SgBasisNavbar({
-  item   : '.sg-c-navbar__item',
-  submenu: '.sg-c-navbar__submenu',
-  subitem: '.sg-c-navbar__subitem'
+  wrapper: '.sg-c-navbar',
 });
 
 import SgBasisPageEffect from '../../../js/_page-effect.js';

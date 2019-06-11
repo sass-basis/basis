@@ -59,8 +59,6 @@ Abstract drawer component
 import BasisDrawer from 'node_modules/sass-basis/src/js/_drawer.js';
 new BasisDrawer({
   drawer : '.c-drawer',
-  toggle : '.c-drawer__toggle',
-  submenu: '.c-drawer__submenu'
 });
 ```
 

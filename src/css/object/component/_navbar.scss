@@ -156,6 +156,58 @@ Navbar component
   </li>
 </ul>
 ```
+```html
+<ul class="c-navbar" data-popup-mode="click">
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <div class="c-navbar__toggle" aria-expanded="false">
+      <span class="c-ic-angle-right" aria-hidden="true"></span>
+    </div>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <div class="c-navbar__toggle" aria-expanded="false">
+      <span class="c-ic-angle-right" aria-hidden="true"></span>
+    </div>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item">
+    <a href="#">menu</a>
+  </li>
+</ul>
+```
 */
 
 .#{$_prefix}c-navbar {
@@ -191,5 +243,22 @@ Navbar component
         @include _position(absolute, 0, 100%, null, auto);
       }
     }
+  }
+
+  &[data-popup-mode="click"] {
+    .#{$_prefix}c-navbar__item,
+    .#{$_prefix}c-navbar__subitem {
+      position: relative;
+      @include _padding(.25, 1, .25, 0);
+    }
+  }
+
+  &__toggle {
+    @include _position(absolute, 50%, 5px);
+    transform: translateY(-50%);
+    @include _square($_base-line-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

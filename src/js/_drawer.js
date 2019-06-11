@@ -9,10 +9,10 @@ export default class BasisDrawer {
   constructor(args = {}) {
     this.args = args;
     this.args.drawer  = this.args.drawer || '.c-drawer';
-    this.args.toggle  = this.args.toggle || '.c-drawer__toggle';
-    this.args.submenu = this.args.submenu || '.c-drawer__submenu';
-    this.args.item    = this.args.item || '.c-drawer__item';
-    this.args.subitem = this.args.subitem || '.c-drawer__subitem';
+    this.args.toggle  = this.args.toggle || `${this.args.drawer}__toggle`;
+    this.args.submenu = this.args.submenu || `${this.args.drawer}__submenu`;
+    this.args.item    = this.args.item || `${this.args.drawer}__item`;
+    this.args.subitem = this.args.subitem || `${this.args.drawer}__subitem`;
 
     this.windowWidth = window.innerWidth;
 
