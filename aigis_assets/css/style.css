@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v9.2.14
+ * Name: Basis v9.3.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -2489,8 +2489,6 @@ Abstract drawer component
 import BasisDrawer from 'node_modules/sass-basis/src/js/_drawer.js';
 new BasisDrawer({
   drawer : '.c-drawer',
-  toggle : '.c-drawer__toggle',
-  submenu: '.c-drawer__submenu'
 });
 ```
 
@@ -2991,9 +2989,7 @@ Abstract navbar component
 ```js
 import BasisNavbar from 'node_modules/sass-basis/src/js/_navbar.js';
 new BasisNavbar({
-  item   : '.c-navbar__item',
-  submenu: '.c-navbar__submenu',
-  subitem: '.c-navbar__subitem'
+  wrapper: '.c-navbar',
 });
 ```
 
@@ -3024,6 +3020,57 @@ new BasisNavbar({
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item">
+    <a href="#">menu</a>
+  </li>
+</ul>
+``````html
+<ul class="c-navbar" data-popup-mode="click">
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <div class="c-navbar__toggle" aria-expanded="false">
+      <span class="c-ic-angle-right" aria-hidden="true"></span>
+    </div>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <div class="c-navbar__toggle" aria-expanded="false">
+      <span class="c-ic-angle-right" aria-hidden="true"></span>
+    </div>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
         </ul>
@@ -5222,6 +5269,58 @@ Navbar component
   </li>
 </ul>
 ```
+```html
+<ul class="c-navbar" data-popup-mode="click">
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <div class="c-navbar__toggle" aria-expanded="false">
+      <span class="c-ic-angle-right" aria-hidden="true"></span>
+    </div>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <div class="c-navbar__toggle" aria-expanded="false">
+      <span class="c-ic-angle-right" aria-hidden="true"></span>
+    </div>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item">
+    <a href="#">menu</a>
+  </li>
+</ul>
+```
 */
 .c-navbar {
   list-style: none;
@@ -5266,6 +5365,8 @@ Navbar component
     .c-navbar__submenu[aria-hidden="false"] {
       visibility: visible;
       opacity: 1; }
+  .c-navbar__toggle {
+    cursor: pointer; }
   .c-navbar--center {
     justify-content: center; }
     .c-navbar--center .c-navbar__item {
@@ -5286,6 +5387,20 @@ Navbar component
       top: 0;
       right: 100%;
       left: auto; }
+  .c-navbar[data-popup-mode="click"] .c-navbar__item,
+  .c-navbar[data-popup-mode="click"] .c-navbar__subitem {
+    position: relative;
+    padding: 0.375rem 1.5rem 0.375rem 0; }
+  .c-navbar__toggle {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
 
 /*
 ---
@@ -7969,7 +8084,7 @@ Visible utility for xl or more
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v9.2.14
+ * Name: Basis v9.3.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -10458,8 +10573,6 @@ Abstract drawer component
 import BasisDrawer from 'node_modules/sass-basis/src/js/_drawer.js';
 new BasisDrawer({
   drawer : '.c-drawer',
-  toggle : '.c-drawer__toggle',
-  submenu: '.c-drawer__submenu'
 });
 ```
 
@@ -10960,9 +11073,7 @@ Abstract navbar component
 ```js
 import BasisNavbar from 'node_modules/sass-basis/src/js/_navbar.js';
 new BasisNavbar({
-  item   : '.c-navbar__item',
-  submenu: '.c-navbar__submenu',
-  subitem: '.c-navbar__subitem'
+  wrapper: '.c-navbar',
 });
 ```
 
@@ -10993,6 +11104,57 @@ new BasisNavbar({
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item">
+    <a href="#">menu</a>
+  </li>
+</ul>
+``````html
+<ul class="c-navbar" data-popup-mode="click">
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <div class="c-navbar__toggle" aria-expanded="false">
+      <span class="c-ic-angle-right" aria-hidden="true"></span>
+    </div>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <div class="c-navbar__toggle" aria-expanded="false">
+      <span class="c-ic-angle-right" aria-hidden="true"></span>
+    </div>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
         </ul>
@@ -13191,6 +13353,58 @@ Navbar component
   </li>
 </ul>
 ```
+```html
+<ul class="c-navbar" data-popup-mode="click">
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <div class="c-navbar__toggle" aria-expanded="false">
+      <span class="c-ic-angle-right" aria-hidden="true"></span>
+    </div>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item" aria-haspopup="true">
+    <a href="#">menu</a>
+    <div class="c-navbar__toggle" aria-expanded="false">
+      <span class="c-ic-angle-right" aria-hidden="true"></span>
+    </div>
+    <ul class="c-navbar__submenu" aria-hidden="true">
+      <li class="c-navbar__subitem" aria-haspopup="true">
+        <a href="#">submenu</a>
+        <div class="c-navbar__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-navbar__submenu" aria-hidden="true">
+          <li class="c-navbar__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="c-navbar__item">
+    <a href="#">menu</a>
+  </li>
+</ul>
+```
 */
 .c-navbar {
   list-style: none;
@@ -13235,6 +13449,8 @@ Navbar component
     .c-navbar__submenu[aria-hidden="false"] {
       visibility: visible;
       opacity: 1; }
+  .c-navbar__toggle {
+    cursor: pointer; }
   .c-navbar--center {
     justify-content: center; }
     .c-navbar--center .c-navbar__item {
@@ -13255,6 +13471,20 @@ Navbar component
       top: 0;
       right: 100%;
       left: auto; }
+  .c-navbar[data-popup-mode="click"] .c-navbar__item,
+  .c-navbar[data-popup-mode="click"] .c-navbar__subitem {
+    position: relative;
+    padding: 0.375rem 1.5rem 0.375rem 0; }
+  .c-navbar__toggle {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
 
 /*
 ---
@@ -16291,3 +16521,6 @@ pre {
       text-decoration: none; }
       .p-table-of-contents__item > a:hover, .p-table-of-contents__item > a:active, .p-table-of-contents__item > a:focus {
         opacity: .8; }
+
+.aigis-preview {
+  min-height: 150px; }
