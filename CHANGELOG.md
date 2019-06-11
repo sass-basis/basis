@@ -1,5 +1,8 @@
 #Changelog
 
+## June 11, 2019 v9.3.0
+* Add `.c-navbar[data-popup-mode="click"]`
+
 ## May 23, 2019 v9.2.14
 * Fix `_balloon()` bug.
 
