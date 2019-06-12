@@ -249,13 +249,17 @@ Navbar component
     .#{$_prefix}c-navbar__item,
     .#{$_prefix}c-navbar__subitem {
       position: relative;
-      @include _padding(.25, 1, .25, 0);
+
+      &[aria-haspopup="true"] {
+        @include _padding-right(1);
+      }
     }
   }
 
   &__toggle {
-    @include _position(absolute, 50%, 5px);
-    transform: translateY(-50%);
+    position: absolute;
+    top: calc(50% - #{$_base-line-height / 2});
+    right: 5px;
     @include _square($_base-line-height);
     display: flex;
     align-items: center;
