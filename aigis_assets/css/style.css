@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v9.3.0
+ * Name: Basis v9.3.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -5389,13 +5389,14 @@ Navbar component
       left: auto; }
   .c-navbar[data-popup-mode="click"] .c-navbar__item,
   .c-navbar[data-popup-mode="click"] .c-navbar__subitem {
-    position: relative;
-    padding: 0.375rem 1.5rem 0.375rem 0; }
+    position: relative; }
+    .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"],
+    .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] {
+      padding-right: 1.5rem; }
   .c-navbar__toggle {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 0.75rem);
     right: 5px;
-    transform: translateY(-50%);
     height: 1.5rem;
     width: 1.5rem;
     display: flex;
@@ -8084,7 +8085,7 @@ Visible utility for xl or more
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v9.3.0
+ * Name: Basis v9.3.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -13473,13 +13474,14 @@ Navbar component
       left: auto; }
   .c-navbar[data-popup-mode="click"] .c-navbar__item,
   .c-navbar[data-popup-mode="click"] .c-navbar__subitem {
-    position: relative;
-    padding: 0.375rem 1.5rem 0.375rem 0; }
+    position: relative; }
+    .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"],
+    .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] {
+      padding-right: 1.5rem; }
   .c-navbar__toggle {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 0.75rem);
     right: 5px;
-    transform: translateY(-50%);
     height: 1.5rem;
     width: 1.5rem;
     display: flex;
