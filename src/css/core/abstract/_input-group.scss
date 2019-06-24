@@ -73,7 +73,7 @@ Abstract input group component
       @include _form-control();
       -webkit-appearance: none;
       border-radius: 0;
-      flex: 1;
+      flex: 1 1 0%;
       width: 100%;
     }
   }
