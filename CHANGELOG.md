@@ -1,5 +1,8 @@
 #Changelog
 
+## June 24, 2019 v9.3.2
+* Fixed the bug that input group button might be hidden.
+
 ## June 11, 2019 v9.3.0
 * Add `.c-navbar[data-popup-mode="click"]`
 
