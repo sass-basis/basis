@@ -1958,11 +1958,13 @@ Transition helper
 //
 
 a {
-  @include _transition(all);
+  @include _transition(color, font-size);
   color: #f00;
+  font-size: 12px;
 
   @include _hover() {
     color: #f9c;
+    font-size: 14px;
   }
 }
 ```
