@@ -13,16 +13,25 @@ Transition helper
 //
 
 a {
-  @include _transition(all);
+  @include _transition(color, font-size);
   color: #f00;
+  font-size: 12px;
 
   @include _hover() {
     color: #f9c;
+    font-size: 14px;
   }
 }
 ```
 */
 
-@mixin _transition($property: all) {
-  transition: $property $_transition-duration $_transition-function-timing;
+@mixin _transition($property: all, $property2...) {
+  $properties: join($property, $property2);
+  $transitions: ();
+
+  @each $property in $properties {
+    $transitions: append($transitions, ($property $_transition-duration $_transition-function-timing), comma);
+  }
+
+  transition: $transitions;
 }

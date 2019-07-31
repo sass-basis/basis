@@ -1,5 +1,11 @@
 #Changelog
 
+## July 30, 2019 v9.4.0
+* Support multi property at `_transition()`.
+* Change default transition duration .1s to .2s.
+* Fix bug that animation not apply when closing drawer.
++ Drawer animation abstract to component.
+
 ## June 24, 2019 v9.3.2
 * Fixed the bug that input group button might be hidden.
 

@@ -43,6 +43,12 @@ Drawer component
   $item-padding-coefficient: 1;
 
   @include _drawer();
+  @include _transition(left, visibility);
+  transition-timing-function: ease-in;
+
+  &[aria-hidden="false"] {
+    transition-timing-function: ease-out;
+  }
 
   &__menu {
     @include _list-unstyled();

@@ -107,7 +107,6 @@ new BasisDrawer({
   $max-width: map-get($params, 'max-width');
 
   @include _position(absolute, 0, null, 0, -100%, 10);
-  @include _transition(left);
   width: $width;
   max-width: $max-width;
   overflow-y: auto;
