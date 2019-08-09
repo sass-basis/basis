@@ -1,0 +1,21 @@
+/*
+---
+name: .u-noscroll
+category:
+  - object/utility
+  - object/utility/noscroll
+---
+Noscroll utility
+
+### html
+```html
+<body class="u-noscroll">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</body>
+```
+*/
+
+.#{$_prefix}u-noscroll {
+  overflow: hidden;
+  touch-action: pinch-zoom;
+}

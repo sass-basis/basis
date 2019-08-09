@@ -54,7 +54,7 @@ export default class BasisDrawer {
           'keydown',
           (event) => {
             if (27 === event.keyCode) {
-              BasisDrawer.close(drawer)
+              BasisDrawer.close(drawer);
             }
           }
         );
@@ -63,6 +63,13 @@ export default class BasisDrawer {
   }
 
   static close(drawer) {
+    // Approval body scroll
+    const wrapper  = drawer.parentNode;
+    const mainClass = drawer.classList[0];
+    if (drawer.classList.contains(`${mainClass}--fixed`) && 'body' === wrapper.tagName.toLowerCase()) {
+      wrapper.classList.remove('u-noscroll');
+    }
+
     addCustomEvent(drawer, 'closeDrawer');
 
     lastActiveElement.focus();
@@ -71,6 +78,24 @@ export default class BasisDrawer {
   }
 
   static open(drawer) {
+    const wrapper  = drawer.parentNode;
+    const mainClass = drawer.classList[0];
+
+    // All sibling drawer close
+    forEachHtmlNodes(
+      wrapper.children,
+      (child) => {
+        if (child.classList.contains(mainClass)) {
+          BasisDrawer.close(child);
+        }
+      }
+    );
+
+    // Prevent body scroll
+    if (drawer.classList.contains(`${mainClass}--fixed`) && 'body' === wrapper.tagName.toLowerCase()) {
+      wrapper.classList.add('u-noscroll');
+    }
+
     addCustomEvent(drawer, 'openDrawer');
     drawer.setAttribute('aria-hidden', 'false');
 
