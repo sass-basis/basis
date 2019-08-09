@@ -26,11 +26,13 @@ export default class BasisDrawer {
         drawer.addEventListener('closeDrawer', () => this._closeAllSubmenus(drawer), false);
         drawer.addEventListener('click', () => event.stopPropagation(), false);
 
+        /*
         const btn = document.getElementById(drawer.getAttribute('aria-labelledby'));
         if (!! btn) {
           btn.addEventListener('openHamburgerBtn', () => BasisDrawer.open(drawer), false);
           btn.addEventListener('closeHamburgerBtn', () => BasisDrawer.close(drawer), false);
         }
+        */
 
         const drawerItemLinks = drawer.querySelectorAll(`${this.args.item} > a`);
         forEachHtmlNodes(
@@ -64,7 +66,7 @@ export default class BasisDrawer {
 
   static close(drawer) {
     // Approval body scroll
-    const wrapper  = drawer.parentNode;
+    const wrapper   = drawer.parentNode;
     const mainClass = drawer.classList[0];
     if (drawer.classList.contains(`${mainClass}--fixed`) && 'body' === wrapper.tagName.toLowerCase()) {
       wrapper.classList.remove('u-noscroll');
@@ -78,7 +80,7 @@ export default class BasisDrawer {
   }
 
   static open(drawer) {
-    const wrapper  = drawer.parentNode;
+    const wrapper   = drawer.parentNode;
     const mainClass = drawer.classList[0];
 
     // All sibling drawer close
@@ -103,6 +105,7 @@ export default class BasisDrawer {
 
     const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
     drawer.querySelector(focusableSelector).focus();
+    drawer.scrollTop = 0;
 
     const drawerId  = drawer.getAttribute('id');
     const closeZone = document.querySelector(`.c-drawer-close-zone[aria-controls="${drawerId}"]`);
