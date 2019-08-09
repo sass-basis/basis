@@ -2497,7 +2497,7 @@ new BasisDrawer({
 ### html
 ```ejs
 <div style="min-height: 200px">
-  <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="hamburger-btn">
+  <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -2515,7 +2515,99 @@ new BasisDrawer({
   </nav>
 </div>
 
-<div id="hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
+<div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU</div>
+</div>
+```
+*/
+/*
+---
+name: _dropdown()
+category:
+  - core/abstract
+---
+Abstract dropdown component
+
+### scss
+```scss
+.c-dropdown {
+  $item-padding-coefficient: 1;
+
+  @include _dropdown();
+  @include _transition(bottom, visibility);
+  transition-timing-function: ease-in;
+
+  &[aria-hidden="false"] {
+    transition-timing-function: ease-out;
+  }
+
+  &__menu {
+    @include _list-unstyled();
+  }
+
+  &__item, &__subitem {
+    position: relative;
+  }
+
+  &__item {
+    @include _padding(.5, $item-padding-coefficient, 0);
+  }
+
+  &__submenu {
+    @include _list-unstyled();
+    @include _margin(0, ($item-padding-coefficient * -1), 0, 0);
+    padding-left: 1em;
+  }
+
+  &__subitem {
+    @include _padding(.5, $item-padding-coefficient, 0, 0);
+  }
+
+  &__toggle {
+    @include _position(absolute, _space(.5), 5px, 0);
+    @include _square($_base-line-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+```
+
+### js
+```js
+import BasisDrawer from 'node_modules/sass-basis/src/js/_drawer.js';
+new BasisDrawer({
+  drawer : '.c-dropdown',
+});
+```
+
+### html
+```ejs
+<div style="min-height: 200px; position: relative">
+  <nav id="my-dropdown" class="c-dropdown" role="navigation" aria-hidden="true" aria-labelledby="my-dropdown-btn">
+    <ul class="c-dropdown__menu">
+      <li class="c-dropdown__item"><a href="#">menu</a></li>
+      <li class="c-dropdown__item"><a href="#">menu</a></li>
+      <li class="c-dropdown__item">
+        <a href="#">menu</a>
+        <div class="c-dropdown__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-dropdown__submenu" aria-hidden="true">
+          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
   <div class="c-hamburger-btn__bars">
     <div class="c-hamburger-btn__bar"></div>
     <div class="c-hamburger-btn__bar"></div>
@@ -4494,7 +4586,7 @@ Drawer component
 ### html
 ```html
 <div style="min-height: 200px; position: relative">
-  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-hamburger-btn">
+  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -4512,7 +4604,7 @@ Drawer component
   </nav>
 </div>
 
-<div id="my-hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
+<div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
   <div class="c-hamburger-btn__bars">
     <div class="c-hamburger-btn__bar"></div>
     <div class="c-hamburger-btn__bar"></div>
@@ -4577,6 +4669,102 @@ Drawer component
     align-items: center;
     justify-content: center; }
   .c-drawer--fixed {
+    position: fixed; }
+
+/*
+---
+name: .c-dropdown
+category:
+  - object/component
+  - object/component/dropdown
+---
+Dropdown component
+
+### html
+```html
+<div style="min-height: 200px; position: relative">
+  <nav id="my-dropdown" class="c-dropdown" role="navigation" aria-hidden="true" aria-labelledby="my-dropdown-btn">
+    <ul class="c-dropdown__menu">
+      <li class="c-dropdown__item"><a href="#">menu</a></li>
+      <li class="c-dropdown__item"><a href="#">menu</a></li>
+      <li class="c-dropdown__item">
+        <a href="#">menu</a>
+        <div class="c-dropdown__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-dropdown__submenu" aria-hidden="true">
+          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU</div>
+</div>
+```
+*/
+.c-dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 10;
+  overflow-y: auto;
+  visibility: hidden;
+  transition: bottom 0.2s ease-out, visibility 0.2s ease-out;
+  transition-timing-function: ease-in; }
+  .c-dropdown[aria-hidden="false"] {
+    visibility: visible;
+    bottom: 0; }
+  .c-dropdown__submenu {
+    height: 0;
+    overflow: hidden; }
+    .c-dropdown__submenu[aria-hidden="false"] {
+      height: auto;
+      overflow: visible; }
+  .c-dropdown__item > a, .c-dropdown__subitem > a {
+    display: block;
+    text-decoration: none; }
+  .c-dropdown__toggle {
+    cursor: pointer; }
+  .c-dropdown[aria-hidden="false"] {
+    transition-timing-function: ease-out; }
+  .c-dropdown__menu {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0; }
+  .c-dropdown__item, .c-dropdown__subitem {
+    position: relative; }
+  .c-dropdown__item {
+    padding: 0.75rem 1.5rem 0; }
+  .c-dropdown__submenu {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin: 0 -1.5rem 0 0;
+    padding-left: 1em; }
+  .c-dropdown__subitem {
+    padding: 0.75rem 1.5rem 0 0; }
+  .c-dropdown__toggle {
+    position: absolute;
+    top: 0.75rem;
+    right: 5px;
+    bottom: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .c-dropdown--fixed {
     position: fixed; }
 
 .c-drawer-close-zone {
@@ -4729,7 +4917,8 @@ Hamburger button component
 .c-hamburger-btn {
   display: inline-block;
   cursor: pointer;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   .c-hamburger-btn__bars {
     position: relative;
     display: inline-block;
@@ -4754,6 +4943,8 @@ Hamburger button component
     font-family: "Arial Narrow", Verdana, sans-serif;
     font-size: 8px;
     line-height: 1; }
+  .c-hamburger-btn[aria-expanded="true"] {
+    z-index: 11; }
   .c-hamburger-btn[aria-expanded="true"] > .c-hamburger-btn__bars > .c-hamburger-btn__bar:nth-of-type(1), .c-hamburger-btn[aria-expanded="true"] > .c-hamburger-btn__bars > .c-hamburger-btn__bar:nth-of-type(3) {
     top: 7px; }
   .c-hamburger-btn[aria-expanded="true"] > .c-hamburger-btn__bars > .c-hamburger-btn__bar:nth-of-type(1) {
@@ -7762,6 +7953,26 @@ Retina image size utility
 
 /*
 ---
+name: .u-noscroll
+category:
+  - object/utility
+  - object/utility/noscroll
+---
+Noscroll utility
+
+### html
+```html
+<body class="u-noscroll">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</body>
+```
+*/
+.u-noscroll {
+  overflow: hidden;
+  touch-action: pinch-zoom; }
+
+/*
+---
 name: .u-pull-right
 category:
   - object/utility
@@ -10570,7 +10781,7 @@ new BasisDrawer({
 ### html
 ```ejs
 <div style="min-height: 200px">
-  <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="hamburger-btn">
+  <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -10588,7 +10799,99 @@ new BasisDrawer({
   </nav>
 </div>
 
-<div id="hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
+<div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU</div>
+</div>
+```
+*/
+/*
+---
+name: _dropdown()
+category:
+  - core/abstract
+---
+Abstract dropdown component
+
+### scss
+```scss
+.c-dropdown {
+  $item-padding-coefficient: 1;
+
+  @include _dropdown();
+  @include _transition(bottom, visibility);
+  transition-timing-function: ease-in;
+
+  &[aria-hidden="false"] {
+    transition-timing-function: ease-out;
+  }
+
+  &__menu {
+    @include _list-unstyled();
+  }
+
+  &__item, &__subitem {
+    position: relative;
+  }
+
+  &__item {
+    @include _padding(.5, $item-padding-coefficient, 0);
+  }
+
+  &__submenu {
+    @include _list-unstyled();
+    @include _margin(0, ($item-padding-coefficient * -1), 0, 0);
+    padding-left: 1em;
+  }
+
+  &__subitem {
+    @include _padding(.5, $item-padding-coefficient, 0, 0);
+  }
+
+  &__toggle {
+    @include _position(absolute, _space(.5), 5px, 0);
+    @include _square($_base-line-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+```
+
+### js
+```js
+import BasisDrawer from 'node_modules/sass-basis/src/js/_drawer.js';
+new BasisDrawer({
+  drawer : '.c-dropdown',
+});
+```
+
+### html
+```ejs
+<div style="min-height: 200px; position: relative">
+  <nav id="my-dropdown" class="c-dropdown" role="navigation" aria-hidden="true" aria-labelledby="my-dropdown-btn">
+    <ul class="c-dropdown__menu">
+      <li class="c-dropdown__item"><a href="#">menu</a></li>
+      <li class="c-dropdown__item"><a href="#">menu</a></li>
+      <li class="c-dropdown__item">
+        <a href="#">menu</a>
+        <div class="c-dropdown__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-dropdown__submenu" aria-hidden="true">
+          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
   <div class="c-hamburger-btn__bars">
     <div class="c-hamburger-btn__bar"></div>
     <div class="c-hamburger-btn__bar"></div>
@@ -12567,7 +12870,7 @@ Drawer component
 ### html
 ```html
 <div style="min-height: 200px; position: relative">
-  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-hamburger-btn">
+  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -12585,7 +12888,7 @@ Drawer component
   </nav>
 </div>
 
-<div id="my-hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
+<div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
   <div class="c-hamburger-btn__bars">
     <div class="c-hamburger-btn__bar"></div>
     <div class="c-hamburger-btn__bar"></div>
@@ -12650,6 +12953,102 @@ Drawer component
     align-items: center;
     justify-content: center; }
   .c-drawer--fixed {
+    position: fixed; }
+
+/*
+---
+name: .c-dropdown
+category:
+  - object/component
+  - object/component/dropdown
+---
+Dropdown component
+
+### html
+```html
+<div style="min-height: 200px; position: relative">
+  <nav id="my-dropdown" class="c-dropdown" role="navigation" aria-hidden="true" aria-labelledby="my-dropdown-btn">
+    <ul class="c-dropdown__menu">
+      <li class="c-dropdown__item"><a href="#">menu</a></li>
+      <li class="c-dropdown__item"><a href="#">menu</a></li>
+      <li class="c-dropdown__item">
+        <a href="#">menu</a>
+        <div class="c-dropdown__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-dropdown__submenu" aria-hidden="true">
+          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU</div>
+</div>
+```
+*/
+.c-dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 10;
+  overflow-y: auto;
+  visibility: hidden;
+  transition: bottom 0.2s ease-out, visibility 0.2s ease-out;
+  transition-timing-function: ease-in; }
+  .c-dropdown[aria-hidden="false"] {
+    visibility: visible;
+    bottom: 0; }
+  .c-dropdown__submenu {
+    height: 0;
+    overflow: hidden; }
+    .c-dropdown__submenu[aria-hidden="false"] {
+      height: auto;
+      overflow: visible; }
+  .c-dropdown__item > a, .c-dropdown__subitem > a {
+    display: block;
+    text-decoration: none; }
+  .c-dropdown__toggle {
+    cursor: pointer; }
+  .c-dropdown[aria-hidden="false"] {
+    transition-timing-function: ease-out; }
+  .c-dropdown__menu {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0; }
+  .c-dropdown__item, .c-dropdown__subitem {
+    position: relative; }
+  .c-dropdown__item {
+    padding: 0.75rem 1.5rem 0; }
+  .c-dropdown__submenu {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin: 0 -1.5rem 0 0;
+    padding-left: 1em; }
+  .c-dropdown__subitem {
+    padding: 0.75rem 1.5rem 0 0; }
+  .c-dropdown__toggle {
+    position: absolute;
+    top: 0.75rem;
+    right: 5px;
+    bottom: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .c-dropdown--fixed {
     position: fixed; }
 
 .c-drawer-close-zone {
@@ -12802,7 +13201,8 @@ Hamburger button component
 .c-hamburger-btn {
   display: inline-block;
   cursor: pointer;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   .c-hamburger-btn__bars {
     position: relative;
     display: inline-block;
@@ -12827,6 +13227,8 @@ Hamburger button component
     font-family: "Arial Narrow", Verdana, sans-serif;
     font-size: 8px;
     line-height: 1; }
+  .c-hamburger-btn[aria-expanded="true"] {
+    z-index: 11; }
   .c-hamburger-btn[aria-expanded="true"] > .c-hamburger-btn__bars > .c-hamburger-btn__bar:nth-of-type(1), .c-hamburger-btn[aria-expanded="true"] > .c-hamburger-btn__bars > .c-hamburger-btn__bar:nth-of-type(3) {
     top: 7px; }
   .c-hamburger-btn[aria-expanded="true"] > .c-hamburger-btn__bars > .c-hamburger-btn__bar:nth-of-type(1) {
@@ -15832,6 +16234,26 @@ Retina image size utility
 */
 .u-img-2x {
   zoom: 0.5 !important; }
+
+/*
+---
+name: .u-noscroll
+category:
+  - object/utility
+  - object/utility/noscroll
+---
+Noscroll utility
+
+### html
+```html
+<body class="u-noscroll">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</body>
+```
+*/
+.u-noscroll {
+  overflow: hidden;
+  touch-action: pinch-zoom; }
 
 /*
 ---
