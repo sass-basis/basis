@@ -1,5 +1,11 @@
 #Changelog
 
+## August 9, 2019 v9.5.0
+* Add `_dropdown()`;
+* Add `.c-dropdown`;
+* Add `.u-noscroll`;
+* Prevent body scroll when `.c-drawer--fixed` and `.c-dropdown--fixed` just below the body is opened.
+
 ## July 30, 2019 v9.4.0
 * Support multi property at `_transition()`.
 * Change default transition duration .1s to .2s.
