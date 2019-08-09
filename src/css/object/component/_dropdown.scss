@@ -47,6 +47,7 @@ Dropdown component
   transition-timing-function: ease-in;
 
   &[aria-hidden="false"] {
+  @include _transition(bottom);
     transition-timing-function: ease-out;
   }
 

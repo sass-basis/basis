@@ -47,6 +47,7 @@ Drawer component
   transition-timing-function: ease-in;
 
   &[aria-hidden="false"] {
+    @include _transition(left);
     transition-timing-function: ease-out;
   }
 
