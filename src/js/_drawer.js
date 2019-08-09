@@ -53,7 +53,7 @@ export default class BasisDrawer {
         drawer.addEventListener(
           'keydown',
           (event) => {
-            if ( 27 === event.keyCode ) {
+            if (27 === event.keyCode) {
               BasisDrawer.close(drawer)
             }
           }

@@ -13,7 +13,8 @@ document.addEventListener(
   'DOMContentLoaded',
   () => {
     new BasisDrawerCloseZone();
-    new BasisDrawer();
+    new BasisDrawer({drawer: '.c-drawer'});
+    new BasisDrawer({drawer: '.c-dropdown'});
     new BasisHamburgerBtn();
     new BasisNavbar();
     new BasisPageEffect();

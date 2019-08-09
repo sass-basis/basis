@@ -31,6 +31,12 @@ Hamburger button component
     bar-height: $bar-height,
   ));
 
+  position: relative;
+
+  &[aria-expanded="true"] {
+    z-index: 11;
+  }
+
   &[aria-expanded="true"] > &__bars > &__bar {
     &:nth-of-type(1), &:nth-of-type(3) {
       top: ($height / 2 - $bar-height / 2);
