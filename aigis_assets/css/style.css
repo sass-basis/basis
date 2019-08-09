@@ -4641,6 +4641,7 @@ Drawer component
   .c-drawer__toggle {
     cursor: pointer; }
   .c-drawer[aria-hidden="false"] {
+    transition: left 0.2s ease-out;
     transition-timing-function: ease-out; }
   .c-drawer__menu {
     list-style: none;
@@ -4737,6 +4738,7 @@ Dropdown component
   .c-dropdown__toggle {
     cursor: pointer; }
   .c-dropdown[aria-hidden="false"] {
+    transition: bottom 0.2s ease-out;
     transition-timing-function: ease-out; }
   .c-dropdown__menu {
     list-style: none;
@@ -12925,6 +12927,7 @@ Drawer component
   .c-drawer__toggle {
     cursor: pointer; }
   .c-drawer[aria-hidden="false"] {
+    transition: left 0.2s ease-out;
     transition-timing-function: ease-out; }
   .c-drawer__menu {
     list-style: none;
@@ -13021,6 +13024,7 @@ Dropdown component
   .c-dropdown__toggle {
     cursor: pointer; }
   .c-dropdown[aria-hidden="false"] {
+    transition: bottom 0.2s ease-out;
     transition-timing-function: ease-out; }
   .c-dropdown__menu {
     list-style: none;
