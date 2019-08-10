@@ -1,5 +1,9 @@
 #Changelog
 
+## August 10, 2019 v9.5.1
+* Prevent body scrolling when open the `.c-drawer--fixed` and `.c-dropdown--fixed`.
+* Fix bug that focus not move when drawer opening.
+
 ## August 9, 2019 v9.5.0
 * Add `_dropdown()`;
 * Add `.c-dropdown`;
