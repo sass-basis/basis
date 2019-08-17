@@ -30,6 +30,7 @@ export default class BasisPageEffect {
     }
 
     window.addEventListener('load', () => fadeInPage(), false);
+    window.addEventListener('pageshow', () => fadeInPage(), false);
 
     forEachHtmlNodes(
       pageOutObjects,
