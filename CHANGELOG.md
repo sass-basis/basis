@@ -1,5 +1,8 @@
 #Changelog
 
+## August 17, 2019 v9.5.2
+* Fix a bug that c-page-effect does not disappear when page back on iOS Safari.
+
 ## August 10, 2019 v9.5.1
 * Prevent body scrolling when open the `.c-drawer--fixed` and `.c-dropdown--fixed`.
 * Fix bug that focus not move when drawer opening.
