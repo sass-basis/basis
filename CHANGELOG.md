@@ -1,5 +1,8 @@
 #Changelog
 
+## August 29, 2019 v9.5.3
+* Some fixes for drawer.
+
 ## August 17, 2019 v9.5.2
 * Fix a bug that c-page-effect does not disappear when page back on iOS Safari.
 
