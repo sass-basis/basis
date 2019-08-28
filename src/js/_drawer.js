@@ -26,14 +26,6 @@ export default class BasisDrawer {
         drawer.addEventListener('closeDrawer', () => this._closeAllSubmenus(drawer), false);
         drawer.addEventListener('click', () => event.stopPropagation(), false);
 
-        /*
-        const btn = document.getElementById(drawer.getAttribute('aria-labelledby'));
-        if (!! btn) {
-          btn.addEventListener('openHamburgerBtn', () => BasisDrawer.open(drawer), false);
-          btn.addEventListener('closeHamburgerBtn', () => BasisDrawer.close(drawer), false);
-        }
-        */
-
         const drawerItemLinks = drawer.querySelectorAll(`${this.args.item} > a`);
         forEachHtmlNodes(
           drawerItemLinks,
@@ -74,7 +66,9 @@ export default class BasisDrawer {
 
     addCustomEvent(drawer, 'closeDrawer');
 
-    lastActiveElement.focus();
+    if (null !== lastActiveElement) {
+      lastActiveElement.focus();
+    }
 
     drawer.setAttribute('aria-hidden', 'true');
   }
@@ -104,7 +98,12 @@ export default class BasisDrawer {
     lastActiveElement = document.activeElement;
 
     const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
-    drawer.querySelector(focusableSelector).focus();
+    const focusableItem = drawer.querySelector(focusableSelector);
+
+    if (null !== focusableItem) {
+      focusableItem.focus();
+    }
+
     drawer.scrollTop = 0;
 
     const drawerId  = drawer.getAttribute('id');
