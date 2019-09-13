@@ -3,6 +3,7 @@
 import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
 import addCustomEvent from '@inc2734/add-custom-event';
 import BasisDrawer from './_drawer.js';
+import { open, close } from './_helper';
 
 export default class BasisHamburgerBtn {
   constructor(args = {}) {
@@ -30,7 +31,7 @@ export default class BasisHamburgerBtn {
       return;
     }
 
-    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    open(hamburgerBtn);
   }
 
   static close(hamburgerBtn) {
@@ -38,7 +39,7 @@ export default class BasisHamburgerBtn {
       return;
     }
 
-    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    close(hamburgerBtn);
   }
 
   _click(event) {

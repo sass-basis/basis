@@ -2,6 +2,8 @@
 
 import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
 import addCustomEvent from '@inc2734/add-custom-event';
+import '@inc2734/dispatch-custom-resize-event';
+import { show, hide, open, close } from './_helper';
 
 let lastActiveElement = document.activeElement;
 
@@ -14,14 +16,12 @@ export default class BasisDrawer {
     this.args.item    = this.args.item || `${this.args.drawer}__item`;
     this.args.subitem = this.args.subitem || `${this.args.drawer}__subitem`;
 
-    this.windowWidth = window.innerWidth;
-
     forEachHtmlNodes(
       document.querySelectorAll(this.args.drawer),
       (drawer) => {
         this._setSubmenusId(drawer);
 
-        window.addEventListener('resize', () => this._resizeWindow(drawer), false);
+        window.addEventListener('resize:width', () => this._resizeWindow(drawer), false);
 
         drawer.addEventListener('closeDrawer', () => this._closeAllSubmenus(drawer), false);
         drawer.addEventListener('click', () => event.stopPropagation(), false);
@@ -70,7 +70,7 @@ export default class BasisDrawer {
       lastActiveElement.focus();
     }
 
-    drawer.setAttribute('aria-hidden', 'true');
+    hide(drawer);
   }
 
   static open(drawer) {
@@ -93,7 +93,7 @@ export default class BasisDrawer {
     }
 
     addCustomEvent(drawer, 'openDrawer');
-    drawer.setAttribute('aria-hidden', 'false');
+    show(drawer);
 
     lastActiveElement = document.activeElement;
 
@@ -111,22 +111,6 @@ export default class BasisDrawer {
     if (!! closeZone) {
       closeZone.addEventListener('clickDrawerCloseZone', () => BasisDrawer.close(drawer), false);
     }
-  }
-
-  _open(target) {
-    target.setAttribute('aria-expanded', 'true');
-  }
-
-  _close(target) {
-    target.setAttribute('aria-expanded', 'false');
-  }
-
-  _show(target) {
-    target.setAttribute('aria-hidden', 'false');
-  }
-
-  _hidden(target) {
-    target.setAttribute('aria-hidden', 'true');
   }
 
   _setSubmenusId(drawer) {
@@ -150,17 +134,13 @@ export default class BasisDrawer {
 
   _resizeWindow(drawer) {
     addCustomEvent(drawer, 'resizeDrawer');
-
-    if (window.innerWidth !== this.windowWidth) {
-      BasisDrawer.close(drawer);
-      this.windowWidth = window.innerWidth;
-    }
+    BasisDrawer.close(drawer);
   }
 
   _closeSubmenu(submenu) {
     const toggleBtn = submenu.parentNode.querySelector(this.args.toggle);
-    this._hidden(submenu);
-    this._close(toggleBtn);
+    hide(submenu);
+    close(toggleBtn);
   }
 
   _closeAllSubmenus(drawer) {
@@ -176,8 +156,8 @@ export default class BasisDrawer {
     const menu = document.getElementById(toggleBtn.getAttribute('aria-controls'));
 
     if ('false' == toggleBtn.getAttribute('aria-expanded')) {
-      this._open(toggleBtn);
-      this._show(menu);
+      open(toggleBtn);
+      show(menu);
     } else {
       this._closeSubmenu(menu);
       forEachHtmlNodes(menu.querySelectorAll(this.args.submenu), (element) => this._closeSubmenu(element));

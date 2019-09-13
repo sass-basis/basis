@@ -33,11 +33,11 @@
     "README.md"
   ],
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
     "babel-loader": "^8.0.6",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7",
+    "webpack": "^4.40.0",
+    "webpack-cli": "^3.3.8",
     "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
     "cpy-cli": "^2.0.0",
@@ -79,6 +79,7 @@
   },
   "dependencies": {
     "@inc2734/add-custom-event": "^0.1.0",
+    "@inc2734/dispatch-custom-resize-event": "^0.2.0",
     "@inc2734/for-each-html-nodes": "^0.2.0",
     "html5shiv": "^3.7.3",
     "node-normalize-scss": "^8.0.1"
