@@ -5,79 +5,44 @@ import '@inc2734/dispatch-custom-resize-event';
 import { show, hide, open, close, uniqueId } from './_helper';
 import BasisToggleBtn from './_toggle-btn';
 
-export default class BasisNavbar {
-  constructor(args = {}) {
+class BasisNavbarBase {
+  constructor(wrapper, args) {
+    this.wrapper = wrapper;
     this.args = args;
-    this.args.wrapper = this.args.wrapper || '.c-navbar';
-    this.args.item = this.args.item || `${this.args.wrapper}__item`;
-    this.args.submenu = this.args.submenu || `${this.args.wrapper}__submenu`;
-    this.args.subitem = this.args.subitem || `${this.args.wrapper}__subitem`;
-    this.args.toggle = this.args.toggle || `${this.args.wrapper}__toggle`;
 
-    const wrappers = document.querySelectorAll(this.args.wrapper);
+    window.addEventListener('resize:width', () => this._closeAllSubmenus(), false);
 
-    forEachHtmlNodes(wrappers, (wrapper) => this.init(wrapper));
+    forEachHtmlNodes(
+      this.wrapper.querySelectorAll([this.args.item, this.args.subitem].join(',')),
+      (item) => item.addEventListener('focusin', () => this._closeOtherSubmenus(item), false)
+    );
+
+    this._init();
   }
 
-  getItemsHasPopup(wrapper) {
-    return wrapper.querySelectorAll(
+  _getItemsHasPopup() {
+    return this.wrapper.querySelectorAll(
       [
         `${this.args.item}[aria-haspopup="true"]`,
         `${this.args.subitem}[aria-haspopup="true"]`,
       ].join(',')
     );
   }
+}
 
-  closeSubmenu(submenu) {
-    hide(submenu);
-    forEachHtmlNodes(submenu.querySelectorAll(this.args.submenu), (element) => this.closeSubmenu(element));
-  };
-
-  closeOtherSubmenus(item) {
-    forEachHtmlNodes(
-      item.parentNode.children,
-      (child) => {
-        const toggleBtns = child.querySelectorAll(this.args.toggle);
-        const submenus = child.querySelectorAll(this.args.submenu);
-        if (toggleBtns.length) {
-          child !== item && forEachHtmlNodes(toggleBtns, (toggleBtn) => BasisToggleBtn.close(toggleBtn));
-        } else if (submenus.length) {
-          child !== item && forEachHtmlNodes(submenus, (submenu) => this.closeSubmenu(submenu));
-        }
-      }
-    );
+class BasisNavbarHover extends BasisNavbarBase {
+  constructor(wrapper, args) {
+    super(wrapper, args);
   }
 
-  init(wrapper) {
-    const closeAllSubmenus = (wrapper) => {
-      const toggleBtns = wrapper.querySelectorAll(this.args.toggle);
-      const submenus = wrapper.querySelectorAll(this.args.submenu);
-      if (toggleBtns.length) {
-        forEachHtmlNodes(toggleBtns, (toggleBtn) => BasisToggleBtn.close(toggleBtn));
-      } else if (submenus.length) {
-        forEachHtmlNodes(submenus, (submenu) => this.closeSubmenu(submenu));
-      }
-    };
-
-    window.addEventListener('resize:width', () => closeAllSubmenus(wrapper), false);
-
-    const items = wrapper.querySelectorAll([this.args.item, this.args.subitem].join(','));
-    forEachHtmlNodes(items, (item) => item.addEventListener('focusin', () => this.closeOtherSubmenus(item), false));
-
-    const popupMode = wrapper.getAttribute('data-popup-mode') || 'hover';
-    'hover' === popupMode
-      ? this.applyHoverEffect(wrapper)
-      : this.applyClickEffect(wrapper);
-  }
-
-  applyHoverEffect(wrapper) {
+  _init() {
     forEachHtmlNodes(
-      this.getItemsHasPopup(wrapper),
+      this._getItemsHasPopup(),
       (item) => {
         const submenu = item.querySelector(this.args.submenu);
         const mouseover = (submenu) => {
           show(submenu);
-          this.closeOtherSubmenus(item)
+          this._closeOtherSubmenus(item)
         };
         const mouseleave = (submenu) => hide(submenu);
 
@@ -88,10 +53,42 @@ export default class BasisNavbar {
     );
   }
 
-  applyClickEffect(wrapper) {
-    const toggleBtns = wrapper.querySelectorAll(this.args.toggle);
+  _closeAllSubmenus() {
     forEachHtmlNodes(
-      toggleBtns,
+      this.wrapper.querySelectorAll(this.args.submenu),
+      (submenu) => this._closeSubmenu(submenu)
+    );
+  }
+
+  _closeOtherSubmenus(item) {
+    forEachHtmlNodes(
+      item.parentNode.children,
+      (child) => {
+        child !== item && forEachHtmlNodes(
+          child.querySelectorAll(this.args.submenu),
+          (submenu) => this._closeSubmenu(submenu)
+        );
+      }
+    );
+  }
+
+  _closeSubmenu(submenu) {
+    hide(submenu);
+    forEachHtmlNodes(
+      submenu.querySelectorAll(this.args.submenu),
+      (element) => this._closeSubmenu(element)
+    );
+  };
+}
+
+class BasisNavbarClick extends BasisNavbarBase {
+  constructor(wrapper, args) {
+    super(wrapper, args);
+  }
+
+  _init() {
+    forEachHtmlNodes(
+      this.wrapper.querySelectorAll(this.args.toggle),
       (toggleBtn) => {
         new BasisToggleBtn(toggleBtn, 'navbar');
         toggleBtn.addEventListener(
@@ -100,7 +97,7 @@ export default class BasisNavbar {
             event.preventDefault();
             event.stopPropagation();
             const item = event.currentTarget.parentNode;
-            this.closeOtherSubmenus(item);
+            this._closeOtherSubmenus(item);
           },
           false
         );
@@ -108,17 +105,58 @@ export default class BasisNavbar {
     );
 
     forEachHtmlNodes(
-      this.getItemsHasPopup(wrapper),
+      this._getItemsHasPopup(),
       (item) => {
         item.addEventListener(
           'focusin',
           () => {
             const toggleBtn = item.querySelector(this.args.toggle);
             toggleBtn && BasisToggleBtn.open(toggleBtn);
-            this.closeOtherSubmenus(item);
+            this._closeOtherSubmenus(item);
           },
           false
         );
+      }
+    );
+  }
+
+  _closeAllSubmenus() {
+    forEachHtmlNodes(
+      this.wrapper.querySelectorAll(this.args.toggle),
+      (toggleBtn) => BasisToggleBtn.close(toggleBtn)
+    );
+  }
+
+  _closeOtherSubmenus(item) {
+    forEachHtmlNodes(
+      item.parentNode.children,
+      (child) => {
+        child !== item && forEachHtmlNodes(
+          child.querySelectorAll(this.args.toggle),
+          (toggleBtn) => BasisToggleBtn.close(toggleBtn)
+        );
+      }
+    );
+  }
+}
+
+export default class BasisNavbar {
+  constructor(args = {}) {
+    this.args = args;
+    this.args.wrapper = this.args.wrapper || '.c-navbar';
+    this.args.item = this.args.item || `${this.args.wrapper}__item`;
+    this.args.submenu = this.args.submenu || `${this.args.wrapper}__submenu`;
+    this.args.subitem = this.args.subitem || `${this.args.wrapper}__subitem`;
+    this.args.toggle = this.args.toggle || `${this.args.wrapper}__toggle`;
+
+    forEachHtmlNodes(
+      document.querySelectorAll(this.args.wrapper),
+      (wrapper) => {
+        const popupMode = wrapper.getAttribute('data-popup-mode') || 'hover';
+
+        'hover' === popupMode
+          ? new BasisNavbarHover(wrapper, args)
+          : new BasisNavbarClick(wrapper, args);
       }
     );
   }
