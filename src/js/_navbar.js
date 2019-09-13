@@ -3,6 +3,7 @@
 import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
 import '@inc2734/dispatch-custom-resize-event';
 import { show, hide, open, close, uniqueId } from './_helper';
+import BasisToggleBtn from './_toggle-btn';
 
 export default class BasisNavbar {
   constructor(args = {}) {
@@ -28,8 +29,6 @@ export default class BasisNavbar {
   }
 
   closeSubmenu(submenu) {
-    const toggleBtn = submenu.parentNode.querySelector(this.args.toggle);
-    toggleBtn && close(toggleBtn);
     hide(submenu);
     forEachHtmlNodes(submenu.querySelectorAll(this.args.submenu), (element) => this.closeSubmenu(element));
   };
@@ -38,28 +37,32 @@ export default class BasisNavbar {
     forEachHtmlNodes(
       item.parentNode.children,
       (child) => {
+        const toggleBtns = child.querySelectorAll(this.args.toggle);
         const submenus = child.querySelectorAll(this.args.submenu);
-        child !== item && forEachHtmlNodes(submenus, (submenu) => this.closeSubmenu(submenu));
+        if (toggleBtns.length) {
+          child !== item && forEachHtmlNodes(toggleBtns, (toggleBtn) => BasisToggleBtn.close(toggleBtn));
+        } else if (submenus.length) {
+          child !== item && forEachHtmlNodes(submenus, (submenu) => this.closeSubmenu(submenu));
+        }
       }
     );
   }
 
   init(wrapper) {
     const closeAllSubmenus = (wrapper) => {
+      const toggleBtns = wrapper.querySelectorAll(this.args.toggle);
       const submenus = wrapper.querySelectorAll(this.args.submenu);
-      forEachHtmlNodes(submenus, (element) => this.closeSubmenu(element));
+      if (toggleBtns.length) {
+        forEachHtmlNodes(toggleBtns, (toggleBtn) => BasisToggleBtn.close(toggleBtn));
+      } else if (submenus.length) {
+        forEachHtmlNodes(submenus, (submenu) => this.closeSubmenu(submenu));
+      }
     };
 
     window.addEventListener('resize:width', () => closeAllSubmenus(wrapper), false);
 
-    const items = wrapper.querySelectorAll(
-      [
-        this.args.item,
-        this.args.subitem,
-      ].join(',')
-    );
-
-    forEachHtmlNodes(items, (item) => item.addEventListener('focusin', () => this.closeOtherSubmenus(item), false) );
+    const items = wrapper.querySelectorAll([this.args.item, this.args.subitem].join(','));
+    forEachHtmlNodes(items, (item) => item.addEventListener('focusin', () => this.closeOtherSubmenus(item), false));
 
     const popupMode = wrapper.getAttribute('data-popup-mode') || 'hover';
     'hover' === popupMode
@@ -86,54 +89,18 @@ export default class BasisNavbar {
   }
 
   applyClickEffect(wrapper) {
-    const setSubmenusId = (wrapper) => {
-      const submenus = wrapper.querySelectorAll(`${this.args.submenu}[aria-hidden]`);
-
-      forEachHtmlNodes(
-        submenus,
-        (submenu) => {
-          const toggleBtn = submenu.parentNode.querySelector(this.args.toggle);
-          if (!! submenu && !! toggleBtn) {
-            const id = uniqueId('navbar');
-            submenu.setAttribute('id', id);
-            toggleBtn.setAttribute('aria-controls', `${id}`);
-          }
-        }
-      );
-    };
-
-    const openToggleBtn = (toggleBtn) => {
-      const menu = document.getElementById(toggleBtn.getAttribute('aria-controls'));
-      open(toggleBtn);
-      show(menu);
-    };
-
-    const closeToggleBtn = (toggleBtn) => {
-      const menu = document.getElementById(toggleBtn.getAttribute('aria-controls'));
-      this.closeSubmenu(menu);
-    };
-
-    const clickToggleBtn = (toggleBtn) => {
-      const item = toggleBtn.parentNode;
-      this.closeOtherSubmenus(item);
-
-      'false' == toggleBtn.getAttribute('aria-expanded')
-        ? openToggleBtn(toggleBtn)
-        : closeToggleBtn(toggleBtn);
-    };
-
-    setSubmenusId(wrapper);
-
     const toggleBtns = wrapper.querySelectorAll(this.args.toggle);
     forEachHtmlNodes(
       toggleBtns,
-      (element) => {
-        element.addEventListener(
+      (toggleBtn) => {
+        new BasisToggleBtn(toggleBtn, 'navbar');
+        toggleBtn.addEventListener(
           'click',
           (event) => {
             event.preventDefault();
             event.stopPropagation();
-            clickToggleBtn(element);
+            const item = event.currentTarget.parentNode;
+            this.closeOtherSubmenus(item);
           },
           false
         );
@@ -143,8 +110,15 @@ export default class BasisNavbar {
     forEachHtmlNodes(
       this.getItemsHasPopup(wrapper),
       (item) => {
-        const toggleBtn = item.querySelector(this.args.toggle);
-        item.addEventListener('focusin', () => openToggleBtn(toggleBtn), false);
+        item.addEventListener(
+          'focusin',
+          () => {
+            const toggleBtn = item.querySelector(this.args.toggle);
+            toggleBtn && BasisToggleBtn.open(toggleBtn);
+            this.closeOtherSubmenus(item);
+          },
+          false
+        );
       }
     );
   }

@@ -66,20 +66,38 @@ new BasisDrawer({
 ```ejs
 <div style="min-height: 200px">
   <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
-    <ul class="c-drawer__menu">
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item">
-        <a href="#">menu</a>
-        <div class="c-drawer__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-drawer__submenu" aria-hidden="true">
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+  <ul class="c-drawer__menu">
+    <li class="c-drawer__item"><a href="#">menu</a></li>
+    <li class="c-drawer__item"><a href="#">menu</a></li>
+    <li class="c-drawer__item">
+      <a href="#">menu</a>
+      <div class="c-drawer__toggle" aria-expanded="false">
+        <span class="c-ic-angle-right" aria-hidden="true"></span>
+      </div>
+      <ul class="c-drawer__submenu" aria-hidden="true">
+        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+        <li class="c-drawer__subitem">
+          <a href="#">submenu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="c-drawer__item">
+      <a href="#">menu</a>
+      <div class="c-drawer__toggle" aria-expanded="false">
+        <span class="c-ic-angle-right" aria-hidden="true"></span>
+      </div>
+      <ul class="c-drawer__submenu" aria-hidden="true">
+        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+      </ul>
+    </li>
+  </ul>
   </nav>
 </div>
 
