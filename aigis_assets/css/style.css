@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v9.5.3
+ * Name: Basis v9.5.4
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -2498,20 +2498,38 @@ new BasisDrawer({
 ```ejs
 <div style="min-height: 200px">
   <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
-    <ul class="c-drawer__menu">
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item">
-        <a href="#">menu</a>
-        <div class="c-drawer__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-drawer__submenu" aria-hidden="true">
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+  <ul class="c-drawer__menu">
+    <li class="c-drawer__item"><a href="#">menu</a></li>
+    <li class="c-drawer__item"><a href="#">menu</a></li>
+    <li class="c-drawer__item">
+      <a href="#">menu</a>
+      <div class="c-drawer__toggle" aria-expanded="false">
+        <span class="c-ic-angle-right" aria-hidden="true"></span>
+      </div>
+      <ul class="c-drawer__submenu" aria-hidden="true">
+        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+        <li class="c-drawer__subitem">
+          <a href="#">submenu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="c-drawer__item">
+      <a href="#">menu</a>
+      <div class="c-drawer__toggle" aria-expanded="false">
+        <span class="c-ic-angle-right" aria-hidden="true"></span>
+      </div>
+      <ul class="c-drawer__submenu" aria-hidden="true">
+        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+      </ul>
+    </li>
+  </ul>
   </nav>
 </div>
 
@@ -4600,6 +4618,24 @@ Drawer component
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
+      <li class="c-drawer__item">
+        <a href="#">menu</a>
+        <div class="c-drawer__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-drawer__submenu" aria-hidden="true">
+          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          <li class="c-drawer__subitem">
+            <a href="#">submenu</a>
+            <div class="c-drawer__toggle" aria-expanded="false">
+              <span class="c-ic-angle-right" aria-hidden="true"></span>
+            </div>
+            <ul class="c-drawer__submenu" aria-hidden="true">
+              <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
       <li class="c-drawer__item">
         <a href="#">menu</a>
         <div class="c-drawer__toggle" aria-expanded="false">
@@ -8303,7 +8339,7 @@ Visible utility for xl or more
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v9.5.3
+ * Name: Basis v9.5.4
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -10801,20 +10837,38 @@ new BasisDrawer({
 ```ejs
 <div style="min-height: 200px">
   <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
-    <ul class="c-drawer__menu">
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item">
-        <a href="#">menu</a>
-        <div class="c-drawer__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-drawer__submenu" aria-hidden="true">
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+  <ul class="c-drawer__menu">
+    <li class="c-drawer__item"><a href="#">menu</a></li>
+    <li class="c-drawer__item"><a href="#">menu</a></li>
+    <li class="c-drawer__item">
+      <a href="#">menu</a>
+      <div class="c-drawer__toggle" aria-expanded="false">
+        <span class="c-ic-angle-right" aria-hidden="true"></span>
+      </div>
+      <ul class="c-drawer__submenu" aria-hidden="true">
+        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+        <li class="c-drawer__subitem">
+          <a href="#">submenu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="c-drawer__item">
+      <a href="#">menu</a>
+      <div class="c-drawer__toggle" aria-expanded="false">
+        <span class="c-ic-angle-right" aria-hidden="true"></span>
+      </div>
+      <ul class="c-drawer__submenu" aria-hidden="true">
+        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+      </ul>
+    </li>
+  </ul>
   </nav>
 </div>
 
@@ -12903,6 +12957,24 @@ Drawer component
     <ul class="c-drawer__menu">
       <li class="c-drawer__item"><a href="#">menu</a></li>
       <li class="c-drawer__item"><a href="#">menu</a></li>
+      <li class="c-drawer__item">
+        <a href="#">menu</a>
+        <div class="c-drawer__toggle" aria-expanded="false">
+          <span class="c-ic-angle-right" aria-hidden="true"></span>
+        </div>
+        <ul class="c-drawer__submenu" aria-hidden="true">
+          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          <li class="c-drawer__subitem">
+            <a href="#">submenu</a>
+            <div class="c-drawer__toggle" aria-expanded="false">
+              <span class="c-ic-angle-right" aria-hidden="true"></span>
+            </div>
+            <ul class="c-drawer__submenu" aria-hidden="true">
+              <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
       <li class="c-drawer__item">
         <a href="#">menu</a>
         <div class="c-drawer__toggle" aria-expanded="false">
