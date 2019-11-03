@@ -64,7 +64,7 @@ Hidden utility for md
 
 .#{$_prefix}u-hidden-md {
   @include _media-only(md) {
-    display: none !important;
+    @include _hidden();
   }
 }
 

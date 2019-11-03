@@ -2,6 +2,7 @@
 
 ## November 3, 2019 v9.5.5
 * Fix `.c-navbar--center` bug.
+* Fix `.u-hidden` bug.
 
 ## September 13, 2019 v9.5.4
 * Refactoring drawer script.
