@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v9.5.4
+ * Name: Basis v9.5.5
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -5604,7 +5604,7 @@ Navbar component
   .c-navbar--center {
     justify-content: center; }
     .c-navbar--center .c-navbar__item {
-      flex: none; }
+      flex: 0 1 auto; }
   .c-navbar--left .c-navbar__item {
     flex: 0 1 auto; }
   .c-navbar--right {
@@ -7867,7 +7867,10 @@ Hidden utility for md
 */
 @media (min-width: 40em) and (max-width: 63.9375em) {
   .u-hidden-md {
-    display: none !important; } }
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    speak: none !important;
+    visibility: hidden !important; } }
 
 /*
 ---
@@ -8339,7 +8342,7 @@ Visible utility for xl or more
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v9.5.4
+ * Name: Basis v9.5.5
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -13943,7 +13946,7 @@ Navbar component
   .c-navbar--center {
     justify-content: center; }
     .c-navbar--center .c-navbar__item {
-      flex: none; }
+      flex: 0 1 auto; }
   .c-navbar--left .c-navbar__item {
     flex: 0 1 auto; }
   .c-navbar--right {
@@ -16206,7 +16209,10 @@ Hidden utility for md
 */
 @media (min-width: 40em) and (max-width: 63.93333em) {
   .u-hidden-md {
-    display: none !important; } }
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    speak: none !important;
+    visibility: hidden !important; } }
 
 /*
 ---
