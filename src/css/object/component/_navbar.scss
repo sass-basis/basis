@@ -217,7 +217,7 @@ Navbar component
     justify-content: center;
 
     .#{$_prefix}c-navbar__item {
-      flex: none;
+      flex: 0 1 auto;
     }
   }
 
