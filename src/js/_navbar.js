@@ -40,9 +40,13 @@ class BasisNavbarHover extends BasisNavbarBase {
       this._getItemsHasPopup(),
       (item) => {
         const submenu = item.querySelector(this.args.submenu);
+        if (! submenu) {
+          return;
+        }
+
         const mouseover = (submenu) => {
           show(submenu);
-          this._closeOtherSubmenus(item)
+          this._closeOtherSubmenus(item);
         };
         const mouseleave = (submenu) => hide(submenu);
 
