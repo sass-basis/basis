@@ -1,5 +1,8 @@
 #Changelog
 
+## December 13, 2019 v9.5.6
+* Fix navbar js error.
+
 ## November 3, 2019 v9.5.5
 * Fix `.c-navbar--center` bug.
 * Fix `.u-hidden` bug.
