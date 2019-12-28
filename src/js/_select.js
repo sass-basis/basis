@@ -23,17 +23,23 @@ export default class BasisSelect {
       document.getElementsByTagName('form'),
       (item, index) => {
         const observer = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
-            mutation.addedNodes.forEach((node) => {
-              if (typeof node.matches === 'function' && node.matches(this.args.select)) {
-                const wrapper = node;
-                const select  = wrapper.querySelector('select');
-                const label   = wrapper.querySelector(this.args.label);
+          forEachHtmlNodes(
+            mutations,
+            (mutation) => {
+              forEachHtmlNodes(
+                mutation.addedNodes,
+                (node) => {
+                  if (typeof node.matches === 'function' && node.matches(this.args.select)) {
+                    const wrapper = node;
+                    const select  = wrapper.querySelector('select');
+                    const label   = wrapper.querySelector(this.args.label);
 
-                this._addEventListener(wrapper, select, label);
-              }
-            });
-          });
+                    this._addEventListener(wrapper, select, label);
+                  }
+                }
+              );
+            }
+          );
         });
         observer.observe(item, {childList: true, subtree: true});
       }

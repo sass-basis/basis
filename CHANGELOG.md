@@ -1,5 +1,8 @@
 #Changelog
 
+## December 28, 2019 v9.5.8
+* Fix IE11 JS error.
+
 ## December 28, 2019 v9.5.7
 * Update npm packages.
 

@@ -20,13 +20,14 @@ export default class BasisChecked {
       document.getElementsByTagName('form'),
       (item, index) => {
         const observer = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
-            mutation.addedNodes.forEach((node) => {
+          forEachHtmlNodes(
+            mutations,
+            (node) => {
               if (typeof node.matches === 'function' && node.matches(this.args.target)) {
                 this._addEventListener(node);
               }
-            });
-          });
+            }
+          );
         });
         observer.observe(item, {childList: true, subtree: true});
       }
