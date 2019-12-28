@@ -1,6 +1,6 @@
 {
   "name": "sass-basis",
-  "version": "9.5.6",
+  "version": "9.5.7",
   "main": "src/css/basis.scss",
   "author": "inc2734",
   "contributors": [
@@ -26,17 +26,16 @@
   "files": [
     "src",
     "dist",
-    "tests",
     "package.json",
     "LICENSE",
     "CHANGELOG.md",
     "README.md"
   ],
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
     "babel-loader": "^8.0.6",
-    "webpack": "^4.41.2",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "autoprefixer": "^9.7.3",
     "browser-sync": "^2.26.7",
@@ -78,9 +77,9 @@
     "zip": "rimraf basis.zip && rsync -a --exclude '.*' --exclude '/basis/' --exclude '/node_modules/' --exclude '/bin/' ./ basis && cd basis && cd ../ && zip -9 -qmr basis.zip basis"
   },
   "dependencies": {
-    "@inc2734/add-custom-event": "^0.1.0",
-    "@inc2734/dispatch-custom-resize-event": "^0.2.0",
-    "@inc2734/for-each-html-nodes": "^0.2.0",
+    "@inc2734/add-custom-event": "^0.4.0",
+    "@inc2734/dispatch-custom-resize-event": "^0.4.0",
+    "@inc2734/for-each-html-nodes": "^0.4.0",
     "html5shiv": "^3.7.3",
     "node-normalize-scss": "^8.0.1"
   },

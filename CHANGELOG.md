@@ -1,5 +1,8 @@
 #Changelog
 
+## December 28, 2019 v9.5.7
+* Update npm packages.
+
 ## December 13, 2019 v9.5.6
 * Fix navbar js error.
 
