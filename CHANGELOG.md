@@ -1,5 +1,8 @@
 #Changelog
 
+## December 28, 2019 v9.5.9
+* Fixed a drawer not closing when clicking a link in the drawer.
+
 ## December 28, 2019 v9.5.8
 * Fix IE11 JS error.
 
