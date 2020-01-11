@@ -29,13 +29,27 @@ export default class BasisDrawer {
         const drawerItemLinks = drawer.querySelectorAll(`${this.args.item} > a`);
         forEachHtmlNodes(
           drawerItemLinks,
-          (element) => element.addEventListener('click', () => addCustomEvent(element, 'clickDrawerItemLink'), false)
+          (element) => element.addEventListener(
+            'click',
+            () => {
+              addCustomEvent(element, 'clickDrawerItemLink');
+              BasisDrawer.close(drawer);
+            },
+            false
+          )
         );
 
         const drawerSubItemLinks = drawer.querySelectorAll(`${this.args.subitem} > a`);
         forEachHtmlNodes(
           drawerSubItemLinks,
-          (element) => element.addEventListener('click', () => addCustomEvent(element, 'clickDrawerSubItemLink'), false)
+          (element) => element.addEventListener(
+            'click',
+            () => {
+              addCustomEvent(element, 'clickDrawerSubItemLink');
+              BasisDrawer.close(drawer);
+            },
+            false
+          )
         );
 
         const toggleBtns = drawer.querySelectorAll(`${this.args.toggle}`);
