@@ -487,7 +487,6 @@ Return line height ( px ) for vertical rhythum
 ```scss
 //
 // @param   px   font-size
-// @param   int  coefficient
 // @return  int
 //
 
@@ -4126,7 +4125,7 @@ body {
 code, kbd, pre, samp {
   font-size: 14px;
   font-size: 0.875rem;
-  line-height: 1.57143;
+  line-height: 1.42857;
   font-family: '_', monospace; }
 
 input, textarea, keygen, select, button {
@@ -4151,7 +4150,7 @@ h1 {
 h2 {
   font-size: 32px;
   font-size: 2rem;
-  line-height: 1.1875; }
+  line-height: 1.25; }
 
 h3 {
   font-size: 24px;
@@ -7346,7 +7345,7 @@ Site branding component
   margin: 0;
   font-size: 32px;
   font-size: 2rem;
-  line-height: 1.1875; }
+  line-height: 1.25; }
 
 /*
 ---
@@ -7486,21 +7485,21 @@ Shake vertical utility
 <div class="u-shake-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-shake-vertical:hover, .u-shake-vertical:active, .u-shake-vertical:focus {
-  position: relative;
-  animation: _bounce_vertical_4px 0.5s; }
-
-@keyframes _bounce_vertical_4px {
-  0% {
-    top: -4px; }
-  25% {
-    top: 4px; }
-  50% {
-    top: -2px; }
-  75% {
-    top: 2px; }
-  100% {
-    top: 0; } }
+@media (min-width: false) {
+  .u-shake-vertical:hover, .u-shake-vertical:active, .u-shake-vertical:focus {
+    position: relative;
+    animation: _bounce_vertical_4px 0.5s; }
+  @keyframes _bounce_vertical_4px {
+    0% {
+      top: -4px; }
+    25% {
+      top: 4px; }
+    50% {
+      top: -2px; }
+    75% {
+      top: 2px; }
+    100% {
+      top: 0; } } }
 
 /*
 ---
@@ -7517,21 +7516,21 @@ Vibrate vertical utility
 <div class="u-vibrate-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-vibrate-vertical:hover, .u-vibrate-vertical:active, .u-vibrate-vertical:focus {
-  position: relative;
-  animation: _bounce_vertical_2px 0.2s; }
-
-@keyframes _bounce_vertical_2px {
-  0% {
-    top: -2px; }
-  25% {
-    top: 2px; }
-  50% {
-    top: -1px; }
-  75% {
-    top: 1px; }
-  100% {
-    top: 0; } }
+@media (min-width: false) {
+  .u-vibrate-vertical:hover, .u-vibrate-vertical:active, .u-vibrate-vertical:focus {
+    position: relative;
+    animation: _bounce_vertical_2px 0.2s; }
+  @keyframes _bounce_vertical_2px {
+    0% {
+      top: -2px; }
+    25% {
+      top: 2px; }
+    50% {
+      top: -1px; }
+    75% {
+      top: 1px; }
+    100% {
+      top: 0; } } }
 
 /*
 ---
@@ -7548,21 +7547,21 @@ Shake horizontal utility
 <div class="u-shake-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-shake-horizontal:hover, .u-shake-horizontal:active, .u-shake-horizontal:focus {
-  position: relative;
-  animation: _bounce_horizontal_4px 0.5s; }
-
-@keyframes _bounce_horizontal_4px {
-  0% {
-    left: -4px; }
-  25% {
-    left: 4px; }
-  50% {
-    left: -2px; }
-  75% {
-    left: 2px; }
-  100% {
-    left: 0; } }
+@media (min-width: false) {
+  .u-shake-horizontal:hover, .u-shake-horizontal:active, .u-shake-horizontal:focus {
+    position: relative;
+    animation: _bounce_horizontal_4px 0.5s; }
+  @keyframes _bounce_horizontal_4px {
+    0% {
+      left: -4px; }
+    25% {
+      left: 4px; }
+    50% {
+      left: -2px; }
+    75% {
+      left: 2px; }
+    100% {
+      left: 0; } } }
 
 /*
 ---
@@ -7579,21 +7578,21 @@ Vibrate horizontal utility
 <div class="u-vibrate-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-vibrate-horizontal:hover, .u-vibrate-horizontal:active, .u-vibrate-horizontal:focus {
-  position: relative;
-  animation: _bounce_horizontal_2px 0.2s; }
-
-@keyframes _bounce_horizontal_2px {
-  0% {
-    left: -2px; }
-  25% {
-    left: 2px; }
-  50% {
-    left: -1px; }
-  75% {
-    left: 1px; }
-  100% {
-    left: 0; } }
+@media (min-width: false) {
+  .u-vibrate-horizontal:hover, .u-vibrate-horizontal:active, .u-vibrate-horizontal:focus {
+    position: relative;
+    animation: _bounce_horizontal_2px 0.2s; }
+  @keyframes _bounce_horizontal_2px {
+    0% {
+      left: -2px; }
+    25% {
+      left: 2px; }
+    50% {
+      left: -1px; }
+    75% {
+      left: 1px; }
+    100% {
+      left: 0; } } }
 
 /*
 ---
@@ -7610,20 +7609,20 @@ Shake scale utility
 <div class="u-shake-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-shake-scale:hover, .u-shake-scale:active, .u-shake-scale:focus {
-  animation: _bounce_scale_120 0.5s ease-out; }
-
-@keyframes _bounce_scale_120 {
-  0% {
-    transform: scale(1); }
-  25% {
-    transform: scale(1.2); }
-  50% {
-    transform: scale(1); }
-  75% {
-    transform: scale(1.1); }
-  100% {
-    transform: scale(1); } }
+@media (min-width: false) {
+  .u-shake-scale:hover, .u-shake-scale:active, .u-shake-scale:focus {
+    animation: _bounce_scale_120 0.5s ease-out; }
+  @keyframes _bounce_scale_120 {
+    0% {
+      transform: scale(1); }
+    25% {
+      transform: scale(1.2); }
+    50% {
+      transform: scale(1); }
+    75% {
+      transform: scale(1.1); }
+    100% {
+      transform: scale(1); } } }
 
 /*
 ---
@@ -7640,20 +7639,20 @@ Vibrate scale utility
 <div class="u-vibrate-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-vibrate-scale:hover, .u-vibrate-scale:active, .u-vibrate-scale:focus {
-  animation: _bounce_scale_110 0.2s ease-out; }
-
-@keyframes _bounce_scale_110 {
-  0% {
-    transform: scale(1); }
-  25% {
-    transform: scale(1.1); }
-  50% {
-    transform: scale(1); }
-  75% {
-    transform: scale(1.05); }
-  100% {
-    transform: scale(1); } }
+@media (min-width: false) {
+  .u-vibrate-scale:hover, .u-vibrate-scale:active, .u-vibrate-scale:focus {
+    animation: _bounce_scale_110 0.2s ease-out; }
+  @keyframes _bounce_scale_110 {
+    0% {
+      transform: scale(1); }
+    25% {
+      transform: scale(1.1); }
+    50% {
+      transform: scale(1); }
+    75% {
+      transform: scale(1.05); }
+    100% {
+      transform: scale(1); } } }
 
 /*
 ---
@@ -7683,8 +7682,9 @@ Extend underline utility
     transition: width 0.2s ease-out;
     transform: translateX(-50%);
     background-color: #333; }
-  .u-extend-underline:hover::after, .u-extend-underline:active::after, .u-extend-underline:focus::after {
-    width: 100%; }
+  @media (min-width: false) {
+    .u-extend-underline:hover::after, .u-extend-underline:active::after, .u-extend-underline:focus::after {
+      width: 100%; } }
 
 /*
 ---
@@ -7817,6 +7817,36 @@ Hidden utility
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 </div>
 ```
+```html
+<div class="u-hidden-sm">
+  u-hidden-sm
+</div>
+```
+```html
+<div class="u-hidden-md">
+  u-hidden-md
+</div>
+```
+```html
+<div class="u-hidden-md-up">
+  u-hidden-md-up
+</div>
+```
+```html
+<div class="u-hidden-lg">
+  u-hidden-lg
+</div>
+```
+```html
+<div class="u-hidden-lg-up">
+  u-hidden-lg-up
+</div>
+```
+```html
+<div class="u-hidden-xl">
+  u-hidden-xl
+</div>
+```
 */
 .u-hidden {
   position: absolute !important;
@@ -7824,23 +7854,6 @@ Hidden utility
   speak: none !important;
   visibility: hidden !important; }
 
-/*
----
-name: .u-hidden-sm
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-sm
----
-Hidden utility for sm
-
-### html
-```html
-<div class="u-hidden-sm">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (max-width: 39.9375em) {
   .u-hidden-sm {
     position: absolute !important;
@@ -7848,47 +7861,6 @@ Hidden utility for sm
     speak: none !important;
     visibility: hidden !important; } }
 
-/*
----
-name: .u-hidden-md
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-md
----
-Hidden utility for md
-
-### html
-```html
-<div class="u-hidden-md">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 40em) and (max-width: 63.9375em) {
-  .u-hidden-md {
-    position: absolute !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
-
-/*
----
-name: .u-hidden-md-up
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-md-up
----
-Hidden utility for md or more
-
-### html
-```html
-<div class="u-hidden-md-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 40em) {
   .u-hidden-md-up {
     position: absolute !important;
@@ -7896,47 +7868,13 @@ Hidden utility for md or more
     speak: none !important;
     visibility: hidden !important; } }
 
-/*
----
-name: .u-hidden-lg
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-lg
----
-Hidden utility for lg
-
-### html
-```html
-<div class="u-hidden-lg">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 64em) and (max-width: 79.9375em) {
-  .u-hidden-lg {
+@media (min-width: 40em) and (max-width: 63.9375em) {
+  .u-hidden-md {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     speak: none !important;
     visibility: hidden !important; } }
 
-/*
----
-name: .u-hidden-lg-up
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-lg-up
----
-Hidden utility for lg or more
-
-### html
-```html
-<div class="u-hidden-lg-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 64em) {
   .u-hidden-lg-up {
     position: absolute !important;
@@ -7944,49 +7882,15 @@ Hidden utility for lg or more
     speak: none !important;
     visibility: hidden !important; } }
 
-/*
----
-name: .u-hidden-xl
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-xl
----
-Hidden utility for xl
-
-### html
-```html
-<div class="u-hidden-xl">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 80em) {
-  .u-hidden-xl {
+@media (min-width: 64em) and (max-width: 79.9375em) {
+  .u-hidden-lg {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     speak: none !important;
     visibility: hidden !important; } }
 
-/*
----
-name: .u-hidden-xl-up
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-xl-up
----
-Hidden utility for xl or more
-
-### html
-```html
-<div class="u-hidden-xl-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 80em) {
-  .u-hidden-xl-up {
+  .u-hidden-xl {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     speak: none !important;
@@ -8166,6 +8070,36 @@ Visible utility
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 </div>
 ```
+```html
+<div class="u-hidden u-visible-sm">
+  u-hidden u-visible-sm
+</div>
+```
+```html
+<div class="u-hidden u-visible-md">
+  u-hidden u-visible-md
+</div>
+```
+```html
+<div class="u-hidden u-visible-md-up">
+  u-hidden u-visible-md-up
+</div>
+```
+```html
+<div class="u-hidden u-visible-lg">
+  u-hidden u-visible-lg
+</div>
+```
+```html
+<div class="u-hidden u-visible-lg-up">
+  u-hidden u-visible-lg-up
+</div>
+```
+```html
+<div class="u-hidden u-visible-xl">
+  u-hidden u-visible-xl
+</div>
+```
 */
 .u-visible {
   position: static !important;
@@ -8173,23 +8107,6 @@ Visible utility
   speak: normal !important;
   visibility: visible !important; }
 
-/*
----
-name: .u-visible-sm
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-sm
----
-Visible utility for sm
-
-### html
-```html
-<div class="u-hidden u-visible-sm">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (max-width: 39.9375em) {
   .u-visible-sm {
     position: static !important;
@@ -8197,47 +8114,6 @@ Visible utility for sm
     speak: normal !important;
     visibility: visible !important; } }
 
-/*
----
-name: .u-visible-md
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-md
----
-Visible utility for md
-
-### html
-```html
-<div class="u-hidden u-visible-md">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 40em) and (max-width: 63.9375em) {
-  .u-visible-md {
-    position: static !important;
-    clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
-
-/*
----
-name: .u-visible-md-up
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-md-up
----
-Visible utility for md or more
-
-### html
-```html
-<div class="u-hidden u-visible-md-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 40em) {
   .u-visible-md-up {
     position: static !important;
@@ -8245,47 +8121,13 @@ Visible utility for md or more
     speak: normal !important;
     visibility: visible !important; } }
 
-/*
----
-name: .u-visible-lg
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-lg
----
-Visible utility for lg
-
-### html
-```html
-<div class="u-hidden u-visible-lg">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 64em) and (max-width: 79.9375em) {
-  .u-visible-lg {
+@media (min-width: 40em) and (max-width: 63.9375em) {
+  .u-visible-md {
     position: static !important;
     clip: auto !important;
     speak: normal !important;
     visibility: visible !important; } }
 
-/*
----
-name: .u-visible-lg-up
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-lg-up
----
-Visible utility for lg or more
-
-### html
-```html
-<div class="u-hidden u-visible-lg-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 64em) {
   .u-visible-lg-up {
     position: static !important;
@@ -8293,49 +8135,15 @@ Visible utility for lg or more
     speak: normal !important;
     visibility: visible !important; } }
 
-/*
----
-name: .u-visible-xl
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-xl
----
-Visible utility for xl
-
-### html
-```html
-<div class="u-hidden u-visible-xl">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 80em) {
-  .u-visible-xl {
+@media (min-width: 64em) and (max-width: 79.9375em) {
+  .u-visible-lg {
     position: static !important;
     clip: auto !important;
     speak: normal !important;
     visibility: visible !important; } }
 
-/*
----
-name: .u-visible-xl-up
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-xl-up
----
-Visible utility for xl or more
-
-### html
-```html
-<div class="u-hidden u-visible-xl-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 80em) {
-  .u-visible-xl-up {
+  .u-visible-xl {
     position: static !important;
     clip: auto !important;
     speak: normal !important;
@@ -8829,7 +8637,6 @@ Return line height ( px ) for vertical rhythum
 ```scss
 //
 // @param   px   font-size
-// @param   int  coefficient
 // @return  int
 //
 
@@ -12468,7 +12275,7 @@ body {
 code, kbd, pre, samp {
   font-size: 13px;
   font-size: 0.86667rem;
-  line-height: 1.76923;
+  line-height: 1.61538;
   font-family: '_', monospace; }
 
 input, textarea, keygen, select, button {
@@ -12493,7 +12300,7 @@ h1 {
 h2 {
   font-size: 30px;
   font-size: 2rem;
-  line-height: 1.25; }
+  line-height: 1.33333; }
 
 h3 {
   font-size: 22.5px;
@@ -15688,7 +15495,7 @@ Site branding component
   margin: 0;
   font-size: 30px;
   font-size: 2rem;
-  line-height: 1.25; }
+  line-height: 1.33333; }
 
 /*
 ---
@@ -15828,21 +15635,21 @@ Shake vertical utility
 <div class="u-shake-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-shake-vertical:hover, .u-shake-vertical:active, .u-shake-vertical:focus {
-  position: relative;
-  animation: _bounce_vertical_4px 0.5s; }
-
-@keyframes _bounce_vertical_4px {
-  0% {
-    top: -4px; }
-  25% {
-    top: 4px; }
-  50% {
-    top: -2px; }
-  75% {
-    top: 2px; }
-  100% {
-    top: 0; } }
+@media (min-width: false) {
+  .u-shake-vertical:hover, .u-shake-vertical:active, .u-shake-vertical:focus {
+    position: relative;
+    animation: _bounce_vertical_4px 0.5s; }
+  @keyframes _bounce_vertical_4px {
+    0% {
+      top: -4px; }
+    25% {
+      top: 4px; }
+    50% {
+      top: -2px; }
+    75% {
+      top: 2px; }
+    100% {
+      top: 0; } } }
 
 /*
 ---
@@ -15859,21 +15666,21 @@ Vibrate vertical utility
 <div class="u-vibrate-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-vibrate-vertical:hover, .u-vibrate-vertical:active, .u-vibrate-vertical:focus {
-  position: relative;
-  animation: _bounce_vertical_2px 0.2s; }
-
-@keyframes _bounce_vertical_2px {
-  0% {
-    top: -2px; }
-  25% {
-    top: 2px; }
-  50% {
-    top: -1px; }
-  75% {
-    top: 1px; }
-  100% {
-    top: 0; } }
+@media (min-width: false) {
+  .u-vibrate-vertical:hover, .u-vibrate-vertical:active, .u-vibrate-vertical:focus {
+    position: relative;
+    animation: _bounce_vertical_2px 0.2s; }
+  @keyframes _bounce_vertical_2px {
+    0% {
+      top: -2px; }
+    25% {
+      top: 2px; }
+    50% {
+      top: -1px; }
+    75% {
+      top: 1px; }
+    100% {
+      top: 0; } } }
 
 /*
 ---
@@ -15890,21 +15697,21 @@ Shake horizontal utility
 <div class="u-shake-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-shake-horizontal:hover, .u-shake-horizontal:active, .u-shake-horizontal:focus {
-  position: relative;
-  animation: _bounce_horizontal_4px 0.5s; }
-
-@keyframes _bounce_horizontal_4px {
-  0% {
-    left: -4px; }
-  25% {
-    left: 4px; }
-  50% {
-    left: -2px; }
-  75% {
-    left: 2px; }
-  100% {
-    left: 0; } }
+@media (min-width: false) {
+  .u-shake-horizontal:hover, .u-shake-horizontal:active, .u-shake-horizontal:focus {
+    position: relative;
+    animation: _bounce_horizontal_4px 0.5s; }
+  @keyframes _bounce_horizontal_4px {
+    0% {
+      left: -4px; }
+    25% {
+      left: 4px; }
+    50% {
+      left: -2px; }
+    75% {
+      left: 2px; }
+    100% {
+      left: 0; } } }
 
 /*
 ---
@@ -15921,21 +15728,21 @@ Vibrate horizontal utility
 <div class="u-vibrate-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-vibrate-horizontal:hover, .u-vibrate-horizontal:active, .u-vibrate-horizontal:focus {
-  position: relative;
-  animation: _bounce_horizontal_2px 0.2s; }
-
-@keyframes _bounce_horizontal_2px {
-  0% {
-    left: -2px; }
-  25% {
-    left: 2px; }
-  50% {
-    left: -1px; }
-  75% {
-    left: 1px; }
-  100% {
-    left: 0; } }
+@media (min-width: false) {
+  .u-vibrate-horizontal:hover, .u-vibrate-horizontal:active, .u-vibrate-horizontal:focus {
+    position: relative;
+    animation: _bounce_horizontal_2px 0.2s; }
+  @keyframes _bounce_horizontal_2px {
+    0% {
+      left: -2px; }
+    25% {
+      left: 2px; }
+    50% {
+      left: -1px; }
+    75% {
+      left: 1px; }
+    100% {
+      left: 0; } } }
 
 /*
 ---
@@ -15952,20 +15759,20 @@ Shake scale utility
 <div class="u-shake-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-shake-scale:hover, .u-shake-scale:active, .u-shake-scale:focus {
-  animation: _bounce_scale_120 0.5s ease-out; }
-
-@keyframes _bounce_scale_120 {
-  0% {
-    transform: scale(1); }
-  25% {
-    transform: scale(1.2); }
-  50% {
-    transform: scale(1); }
-  75% {
-    transform: scale(1.1); }
-  100% {
-    transform: scale(1); } }
+@media (min-width: false) {
+  .u-shake-scale:hover, .u-shake-scale:active, .u-shake-scale:focus {
+    animation: _bounce_scale_120 0.5s ease-out; }
+  @keyframes _bounce_scale_120 {
+    0% {
+      transform: scale(1); }
+    25% {
+      transform: scale(1.2); }
+    50% {
+      transform: scale(1); }
+    75% {
+      transform: scale(1.1); }
+    100% {
+      transform: scale(1); } } }
 
 /*
 ---
@@ -15982,20 +15789,20 @@ Vibrate scale utility
 <div class="u-vibrate-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-.u-vibrate-scale:hover, .u-vibrate-scale:active, .u-vibrate-scale:focus {
-  animation: _bounce_scale_110 0.2s ease-out; }
-
-@keyframes _bounce_scale_110 {
-  0% {
-    transform: scale(1); }
-  25% {
-    transform: scale(1.1); }
-  50% {
-    transform: scale(1); }
-  75% {
-    transform: scale(1.05); }
-  100% {
-    transform: scale(1); } }
+@media (min-width: false) {
+  .u-vibrate-scale:hover, .u-vibrate-scale:active, .u-vibrate-scale:focus {
+    animation: _bounce_scale_110 0.2s ease-out; }
+  @keyframes _bounce_scale_110 {
+    0% {
+      transform: scale(1); }
+    25% {
+      transform: scale(1.1); }
+    50% {
+      transform: scale(1); }
+    75% {
+      transform: scale(1.05); }
+    100% {
+      transform: scale(1); } } }
 
 /*
 ---
@@ -16025,8 +15832,9 @@ Extend underline utility
     transition: width 0.2s ease-out;
     transform: translateX(-50%);
     background-color: #444; }
-  .u-extend-underline:hover::after, .u-extend-underline:active::after, .u-extend-underline:focus::after {
-    width: 100%; }
+  @media (min-width: false) {
+    .u-extend-underline:hover::after, .u-extend-underline:active::after, .u-extend-underline:focus::after {
+      width: 100%; } }
 
 /*
 ---
@@ -16159,6 +15967,36 @@ Hidden utility
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 </div>
 ```
+```html
+<div class="u-hidden-sm">
+  u-hidden-sm
+</div>
+```
+```html
+<div class="u-hidden-md">
+  u-hidden-md
+</div>
+```
+```html
+<div class="u-hidden-md-up">
+  u-hidden-md-up
+</div>
+```
+```html
+<div class="u-hidden-lg">
+  u-hidden-lg
+</div>
+```
+```html
+<div class="u-hidden-lg-up">
+  u-hidden-lg-up
+</div>
+```
+```html
+<div class="u-hidden-xl">
+  u-hidden-xl
+</div>
+```
 */
 .u-hidden {
   position: absolute !important;
@@ -16166,23 +16004,6 @@ Hidden utility
   speak: none !important;
   visibility: hidden !important; }
 
-/*
----
-name: .u-hidden-sm
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-sm
----
-Hidden utility for sm
-
-### html
-```html
-<div class="u-hidden-sm">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (max-width: 39.93333em) {
   .u-hidden-sm {
     position: absolute !important;
@@ -16190,47 +16011,6 @@ Hidden utility for sm
     speak: none !important;
     visibility: hidden !important; } }
 
-/*
----
-name: .u-hidden-md
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-md
----
-Hidden utility for md
-
-### html
-```html
-<div class="u-hidden-md">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 40em) and (max-width: 63.93333em) {
-  .u-hidden-md {
-    position: absolute !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
-
-/*
----
-name: .u-hidden-md-up
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-md-up
----
-Hidden utility for md or more
-
-### html
-```html
-<div class="u-hidden-md-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 40em) {
   .u-hidden-md-up {
     position: absolute !important;
@@ -16238,47 +16018,13 @@ Hidden utility for md or more
     speak: none !important;
     visibility: hidden !important; } }
 
-/*
----
-name: .u-hidden-lg
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-lg
----
-Hidden utility for lg
-
-### html
-```html
-<div class="u-hidden-lg">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 64em) and (max-width: 79.93333em) {
-  .u-hidden-lg {
+@media (min-width: 40em) and (max-width: 63.93333em) {
+  .u-hidden-md {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     speak: none !important;
     visibility: hidden !important; } }
 
-/*
----
-name: .u-hidden-lg-up
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-lg-up
----
-Hidden utility for lg or more
-
-### html
-```html
-<div class="u-hidden-lg-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 64em) {
   .u-hidden-lg-up {
     position: absolute !important;
@@ -16286,49 +16032,15 @@ Hidden utility for lg or more
     speak: none !important;
     visibility: hidden !important; } }
 
-/*
----
-name: .u-hidden-xl
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-xl
----
-Hidden utility for xl
-
-### html
-```html
-<div class="u-hidden-xl">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 80em) {
-  .u-hidden-xl {
+@media (min-width: 64em) and (max-width: 79.93333em) {
+  .u-hidden-lg {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     speak: none !important;
     visibility: hidden !important; } }
 
-/*
----
-name: .u-hidden-xl-up
-category:
-  - object/utility
-  - object/utility/hidden
-  - object/utility/hidden/hidden-xl-up
----
-Hidden utility for xl or more
-
-### html
-```html
-<div class="u-hidden-xl-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 80em) {
-  .u-hidden-xl-up {
+  .u-hidden-xl {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     speak: none !important;
@@ -16508,6 +16220,36 @@ Visible utility
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 </div>
 ```
+```html
+<div class="u-hidden u-visible-sm">
+  u-hidden u-visible-sm
+</div>
+```
+```html
+<div class="u-hidden u-visible-md">
+  u-hidden u-visible-md
+</div>
+```
+```html
+<div class="u-hidden u-visible-md-up">
+  u-hidden u-visible-md-up
+</div>
+```
+```html
+<div class="u-hidden u-visible-lg">
+  u-hidden u-visible-lg
+</div>
+```
+```html
+<div class="u-hidden u-visible-lg-up">
+  u-hidden u-visible-lg-up
+</div>
+```
+```html
+<div class="u-hidden u-visible-xl">
+  u-hidden u-visible-xl
+</div>
+```
 */
 .u-visible {
   position: static !important;
@@ -16515,23 +16257,6 @@ Visible utility
   speak: normal !important;
   visibility: visible !important; }
 
-/*
----
-name: .u-visible-sm
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-sm
----
-Visible utility for sm
-
-### html
-```html
-<div class="u-hidden u-visible-sm">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (max-width: 39.93333em) {
   .u-visible-sm {
     position: static !important;
@@ -16539,47 +16264,6 @@ Visible utility for sm
     speak: normal !important;
     visibility: visible !important; } }
 
-/*
----
-name: .u-visible-md
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-md
----
-Visible utility for md
-
-### html
-```html
-<div class="u-hidden u-visible-md">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 40em) and (max-width: 63.93333em) {
-  .u-visible-md {
-    position: static !important;
-    clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
-
-/*
----
-name: .u-visible-md-up
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-md-up
----
-Visible utility for md or more
-
-### html
-```html
-<div class="u-hidden u-visible-md-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 40em) {
   .u-visible-md-up {
     position: static !important;
@@ -16587,47 +16271,13 @@ Visible utility for md or more
     speak: normal !important;
     visibility: visible !important; } }
 
-/*
----
-name: .u-visible-lg
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-lg
----
-Visible utility for lg
-
-### html
-```html
-<div class="u-hidden u-visible-lg">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 64em) and (max-width: 79.93333em) {
-  .u-visible-lg {
+@media (min-width: 40em) and (max-width: 63.93333em) {
+  .u-visible-md {
     position: static !important;
     clip: auto !important;
     speak: normal !important;
     visibility: visible !important; } }
 
-/*
----
-name: .u-visible-lg-up
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-lg-up
----
-Visible utility for lg or more
-
-### html
-```html
-<div class="u-hidden u-visible-lg-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 64em) {
   .u-visible-lg-up {
     position: static !important;
@@ -16635,49 +16285,15 @@ Visible utility for lg or more
     speak: normal !important;
     visibility: visible !important; } }
 
-/*
----
-name: .u-visible-xl
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-xl
----
-Visible utility for xl
-
-### html
-```html
-<div class="u-hidden u-visible-xl">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
-@media (min-width: 80em) {
-  .u-visible-xl {
+@media (min-width: 64em) and (max-width: 79.93333em) {
+  .u-visible-lg {
     position: static !important;
     clip: auto !important;
     speak: normal !important;
     visibility: visible !important; } }
 
-/*
----
-name: .u-visible-xl-up
-category:
-  - object/utility
-  - object/utility/visible
-  - object/utility/visible/visible-xl-up
----
-Visible utility for xl or more
-
-### html
-```html
-<div class="u-hidden u-visible-xl-up">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</div>
-```
-*/
 @media (min-width: 80em) {
-  .u-visible-xl-up {
+  .u-visible-xl {
     position: static !important;
     clip: auto !important;
     speak: normal !important;
@@ -16734,9 +16350,10 @@ pre {
   height: 150px;
   width: 150px;
   opacity: 1; }
-  .c-animate-image:hover, .c-animate-image:active, .c-animate-image:focus {
-    width: 100%;
-    opacity: 0.5; }
+  @media (min-width: false) {
+    .c-animate-image:hover, .c-animate-image:active, .c-animate-image:focus {
+      width: 100%;
+      opacity: 0.5; } }
 
 .c-btn {
   transition: all 0.2s ease-out;
@@ -16751,8 +16368,9 @@ pre {
   .c-btn--launch, .c-btn--download, .c-btn--buy {
     background-color: #00DAE6;
     color: #fff; }
-    .c-btn--launch:hover, .c-btn--launch:active, .c-btn--launch:focus, .c-btn--download:hover, .c-btn--download:active, .c-btn--download:focus, .c-btn--buy:hover, .c-btn--buy:active, .c-btn--buy:focus {
-      opacity: .8; }
+    @media (min-width: false) {
+      .c-btn--launch:hover, .c-btn--launch:active, .c-btn--launch:focus, .c-btn--download:hover, .c-btn--download:active, .c-btn--download:focus, .c-btn--buy:hover, .c-btn--buy:active, .c-btn--buy:focus {
+        opacity: .8; } }
     .c-btn--launch .fa, .c-btn--download .fa, .c-btn--buy .fa {
       margin-right: 8px; }
   .c-btn--buy {
@@ -16761,7 +16379,7 @@ pre {
 .l-footer .c-copyright {
   font-size: 14px;
   font-size: 0.93333rem;
-  line-height: 1.71429;
+  line-height: 1.64286;
   padding: 1.5rem 0 3rem; }
   .l-footer .c-copyright a {
     color: #999; }
@@ -16842,8 +16460,9 @@ pre {
   height: 150px;
   width: 150px;
   opacity: 1; }
-  .c-fade-image:hover, .c-fade-image:active, .c-fade-image:focus {
-    opacity: 0.5; }
+  @media (min-width: false) {
+    .c-fade-image:hover, .c-fade-image:active, .c-fade-image:focus {
+      opacity: 0.5; } }
 
 .c-label {
   display: inline-block;
@@ -16858,7 +16477,7 @@ pre {
 .c-meta {
   font-size: 13px;
   font-size: 0.86667rem;
-  line-height: 1.76923; }
+  line-height: 1.61538; }
   .c-meta, .c-meta a {
     color: #999; }
 
@@ -16870,7 +16489,7 @@ pre {
   font-weight: normal;
   font-size: 30px;
   font-size: 2rem;
-  line-height: 1.25;
+  line-height: 1.33333;
   margin: 0; }
   .l-header .c-site-branding__title a {
     text-decoration: none; }
@@ -16893,7 +16512,7 @@ pre {
 .p-footer-nav {
   font-size: 14px;
   font-size: 0.93333rem;
-  line-height: 1.71429; }
+  line-height: 1.64286; }
   .p-footer-nav__list {
     list-style: none;
     margin: 0;
@@ -16907,7 +16526,7 @@ pre {
 .p-global-nav {
   font-size: 14px;
   font-size: 0.93333rem;
-  line-height: 1.71429; }
+  line-height: 1.64286; }
   .p-global-nav .c-navbar__item a {
     padding: 0.375rem 0.75rem; }
 
@@ -16924,8 +16543,9 @@ pre {
 .p-local-nav a[href] {
   color: #777777;
   text-decoration: none; }
-  .p-local-nav a[href]:hover, .p-local-nav a[href]:active, .p-local-nav a[href]:focus {
-    text-decoration: underline; }
+  @media (min-width: false) {
+    .p-local-nav a[href]:hover, .p-local-nav a[href]:active, .p-local-nav a[href]:focus {
+      text-decoration: underline; } }
 
 .p-local-nav a:not([href]) {
   color: #a2a2a2;
@@ -17035,8 +16655,9 @@ pre {
       padding: 0.75rem 0;
       color: #444;
       text-decoration: none; }
-      .p-table-of-contents__item > a:hover, .p-table-of-contents__item > a:active, .p-table-of-contents__item > a:focus {
-        opacity: .8; }
+      @media (min-width: false) {
+        .p-table-of-contents__item > a:hover, .p-table-of-contents__item > a:active, .p-table-of-contents__item > a:focus {
+          opacity: .8; } }
 
 .aigis-preview {
   min-height: 150px; }

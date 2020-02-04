@@ -479,7 +479,6 @@ Return line height ( px ) for vertical rhythum
 ```scss
 //
 // @param   px   font-size
-// @param   int  coefficient
 // @return  int
 //
 
