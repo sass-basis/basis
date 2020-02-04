@@ -1,5 +1,9 @@
 #Changelog
 
+## February 4, 2020 v9.5.10
+* Review the balance of vertical-rhythm when the font size is small.
+* Fixed a bug that `hidden-xx` and `visible-xx` were not linked with `$_sizes`.
+
 ## December 28, 2019 v9.5.9
 * Fixed a drawer not closing when clicking a link in the drawer.
 
