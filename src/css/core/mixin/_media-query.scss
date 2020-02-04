@@ -22,8 +22,10 @@ min-width media query
 */
 
 @mixin _media-min($size) {
-  $prev_size: _prev-size-key($size);
-  @if (0 == $size or (false == $prev_size and 'number' != type-of($size))) {
+  $sizes-keys: map-keys($_sizes);
+  $min-key: nth($sizes-keys, 1);
+
+  @if (0 == $size or $min-key == $size) {
     @content;
   } @else {
     @media (min-width: _min($size)) {
@@ -56,14 +58,12 @@ max-width media query
 */
 
 @mixin _media-max($size) {
-  $next_size: _next-size-key($size);
-  @if (false != $next_size) {
-    @media (max-width: _max($size)) {
-      @content;
-    }
-  } @else if (map-get($_sizes, $size)) {
+  $sizes-keys: map-keys($_sizes);
+  $max-key: nth($sizes-keys, -1);
+
+  @if $max-key == $size {
     @content;
-  } @else if ('number' == type-of($size)) {
+  } @else {
     @media (max-width: _max($size)) {
       @content;
     }
@@ -94,17 +94,15 @@ Specific size only media query
 */
 
 @mixin _media-only($size) {
-  $prev_size: _prev-size-key($size);
-  $next_size: _next-size-key($size);
-  @if (false == $prev_size and false == $next_size) {
-    @media (min-width: _min($size)) and (max-width: _max($size)) {
-      @content;
-    }
-  } @else if (false == $prev_size) {
+  $sizes-keys: map-keys($_sizes);
+  $min-key: nth($sizes-keys, 1);
+  $max-key: nth($sizes-keys, -1);
+
+  @if $min-key == $size {
     @include _media-max($size) {
       @content;
     }
-  } @else if (false == $next_size) {
+  } @else if $max-key == $size {
     @include _media-min($size) {
       @content;
     }

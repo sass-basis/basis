@@ -18,11 +18,12 @@ $prefix: _size-prefix(md); // -> --md
 ```
 */
 
-
 @function _size-prefix($size) {
   $prefix: '-';
 
-  @if ('sm' != $size) {
+  $sizes-keys: map-keys($_sizes);
+  $min-key: nth($sizes-keys, 1);
+  @if ($min-key != $size) {
     $prefix: '--' + $size;
   }
 
