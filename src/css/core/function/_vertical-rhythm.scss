@@ -10,7 +10,6 @@ Return line height ( px ) for vertical rhythum
 ```scss
 //
 // @param   px   font-size
-// @param   int  coefficient
 // @return  int
 //
 
@@ -18,20 +17,16 @@ line-height: (_vertical-rhythm(16px) / 16);
 ```
 */
 
-@function _vertical-rhythm($font-size, $coefficient: 1) {
-  $between-lines   : _strip-unit(_rem2px($_between-lines));
-  $base-line-height: _strip-unit(_rem2px($_base-line-height));
-  $base-font-size  : _strip-unit(_rem2px($_base-font-size));
-  $font-size       : _strip-unit($font-size);
+@function _vertical-rhythm($font-size) {
+  $font-size: _strip-unit($font-size);
+  $base-font-size-px: _strip-unit($_base-font-size-px);
+  $between-lines: _strip-unit(_rem2px($_between-lines));
+  $default-line-height: $font-size + ($between-lines * 2);
 
-  $line-height: $font-size + ($between-lines * $coefficient);
-
-  @if ($line-height < $font-size + ($between-lines * 2)) {
-    @return _vertical-rhythm($font-size, ($coefficient + 1));
+  @if ($font-size >= $base-font-size-px) {
+    @return $default-line-height;
   } @else {
-    @if ($font-size % $base-font-size == 0 and $font-size > $base-font-size) {
-      @return $line-height - ($between-lines / 2);
-    }
-    @return $line-height;
+    $diff: $base-font-size-px - $font-size;
+    @return $default-line-height - $diff;
   }
 }
