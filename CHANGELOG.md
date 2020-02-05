@@ -1,5 +1,9 @@
 #Changelog
 
+## February 5, 2020 v9.6.0
+* Add `_lattice()` abstract.
+* Review the balance of vertical-rhythm when the font size is small.
+
 ## February 4, 2020 v9.5.10
 * Review the balance of vertical-rhythm when the font size is small.
 * Fixed a bug that `hidden-xx` and `visible-xx` were not linked with `$_sizes`.
