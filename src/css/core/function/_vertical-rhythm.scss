@@ -27,6 +27,6 @@ line-height: (_vertical-rhythm(16px) / 16);
     @return $default-line-height;
   } @else {
     $diff: $base-font-size-px - $font-size;
-    @return $default-line-height - $diff;
+    @return $default-line-height - $diff / 2;
   }
 }

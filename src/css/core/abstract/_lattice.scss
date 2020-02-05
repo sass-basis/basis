@@ -1,0 +1,90 @@
+/*
+---
+name: _lattice()
+category:
+  - core/abstract
+  - core/abstract/grid-system/lattice
+---
+Abstract row component of flexbox based grid system
+
+### scss
+```scss
+.c-lattice {
+  @include _lattice();
+
+  &__col {
+    @include _lattice__col();
+
+    &--1-3 {
+      @include _lattice__col(1, 3);
+    }
+  }
+}
+```
+
+### html
+```html
+<div class="c-lattice">
+  <div class="c-c-lattice__col c-row__c-lattice--1-3">
+    ...
+  </div>
+</div>
+```
+*/
+
+@mixin _lattice() {
+  @include _row();
+  @include _row--margin(.5);
+
+  @include _media-min(md) {
+    @include _row--margin(1);
+  }
+}
+
+/*
+---
+name: _lattice__col()
+category:
+  - core/abstract
+  - core/abstract/grid-system/lattice
+---
+Abstract column element of flexbox based grid system
+
+### scss
+```scss
+//
+// @param  int  $columns      molecule column size
+// @param  int  $max-columns  denominator column size
+//
+
+.c-lattice {
+  @include _lattice();
+
+  &__col {
+    @include _lattice__col();
+
+    &--1-3 {
+      @include _lattice__col(1, 3);
+    }
+  }
+}
+```
+
+### html
+```html
+<div class="c-lattice">
+  <div class="c-c-lattice__col c-row__c-lattice--1-3">
+    ...
+  </div>
+</div>
+```
+*/
+
+@mixin _lattice__col($columns: null, $max-columns: null) {
+  @include _row__col($columns, $max-columns);
+  @include _row__col--margin(.5);
+
+  @include _media-min(md) {
+    @include _row__col--margin(1);
+  }
+}
