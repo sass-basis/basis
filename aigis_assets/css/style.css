@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v9.6.0
+ * Name: Basis v9.6.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -5647,8 +5647,11 @@ Navbar component
     .c-navbar__item > .c-navbar__submenu {
       position: absolute;
       top: 100%;
-      right: 0;
-      left: 0; }
+      right: auto;
+      left: auto; }
+      .c-navbar__item > .c-navbar__submenu--turn-left .c-navbar__submenu {
+        right: 100%;
+        left: auto; }
   .c-navbar__subitem {
     position: relative; }
     .c-navbar__subitem > a {
@@ -5657,12 +5660,14 @@ Navbar component
     .c-navbar__subitem > .c-navbar__submenu {
       position: absolute;
       top: 0;
+      right: auto;
       left: 100%; }
   .c-navbar__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
     min-width: 220px;
+    white-space: nowrap;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease-out; }
@@ -8221,7 +8226,7 @@ Visible utility
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v9.6.0
+ * Name: Basis v9.6.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -13868,8 +13873,11 @@ Navbar component
     .c-navbar__item > .c-navbar__submenu {
       position: absolute;
       top: 100%;
-      right: 0;
-      left: 0; }
+      right: auto;
+      left: auto; }
+      .c-navbar__item > .c-navbar__submenu--turn-left .c-navbar__submenu {
+        right: 100%;
+        left: auto; }
   .c-navbar__subitem {
     position: relative; }
     .c-navbar__subitem > a {
@@ -13878,12 +13886,14 @@ Navbar component
     .c-navbar__subitem > .c-navbar__submenu {
       position: absolute;
       top: 0;
+      right: auto;
       left: 100%; }
   .c-navbar__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
     min-width: 220px;
+    white-space: nowrap;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease-out; }
