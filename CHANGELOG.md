@@ -1,5 +1,8 @@
 #Changelog
 
+## March 4, 2020 9.6.1
+* Update expand direction the submenu of c-navbar
+
 ## February 5, 2020 v9.6.0
 * Add `_lattice()` abstract.
 * Review the balance of vertical-rhythm when the font size is small.
