@@ -139,7 +139,14 @@ new BasisNavbar({
     }
 
     > #{$root}__submenu {
-      @include _position(absolute, 100%, 0, null, 0);
+      @include _position(absolute, 100%, auto, null, auto);
+
+      &--turn-left {
+        #{$root}__submenu {
+          right: 100%;
+          left: auto;
+        }
+      }
     }
   }
 
@@ -152,13 +159,14 @@ new BasisNavbar({
     }
 
     > #{$root}__submenu {
-      @include _position(absolute, 0, null, null, 100%);
+      @include _position(absolute, 0, auto, null, 100%);
     }
   }
 
   &__submenu {
     @include _list-unstyled();
     min-width: 220px;
+    white-space: nowrap;
     opacity: 0;
     visibility: hidden;
     @include _transition(opacity);

@@ -10,14 +10,53 @@ class BasisNavbarBase {
     this.wrapper = wrapper;
     this.args = args;
 
-    window.addEventListener('resize:width', () => this._closeAllSubmenus(), false);
+    window.addEventListener(
+      'resize:width',
+      () => {
+        this._closeAllSubmenus();
+        this._setSubmenuOpenDirection();
+      },
+      false
+    );
 
     forEachHtmlNodes(
       this.wrapper.querySelectorAll([this.args.item, this.args.subitem].join(',')),
       (item) => item.addEventListener('focusin', () => this._closeOtherSubmenus(item), false)
     );
 
+    this._setSubmenuOpenDirection();
     this._init();
+  }
+
+  _setSubmenuOpenDirection() {
+    forEachHtmlNodes(
+      this.wrapper.querySelectorAll(`${this.args.item}[aria-haspopup="true"]`),
+      (item) => {
+        const allsubmenus = [].slice.call(item.querySelectorAll(this.args.submenu));
+        if (1 > allsubmenus.length) {
+          return;
+        }
+
+        const itemRect = item.getBoundingClientRect();
+        const itemCenterX = itemRect.left + itemRect.width / 2;
+        const windowCenterX = window.innerWidth / 2
+        if (itemCenterX < windowCenterX) {
+          return;
+        }
+
+        const firstSubmenu = allsubmenus.slice(0)[0];
+        firstSubmenu.classList.remove('c-navbar__submenu--turn-left')
+
+        const lastSubmenu = allsubmenus.slice(-1)[0];
+        const rect = lastSubmenu.getBoundingClientRect();
+        const overRight = window.innerWidth < rect.right;
+        if (! overRight) {
+          return;
+        }
+
+        firstSubmenu.classList.add('c-navbar__submenu--turn-left');
+      }
+    );
   }
 
   _getItemsHasPopup() {
