@@ -18,7 +18,7 @@ $_container-margin: $_base-line-height;
 ```
 */
 
-$_container-margin: $_base-line-height !default;
+$_container-margin: $_base-line-height / 2 !default;
 
 /*
 ---
@@ -45,12 +45,14 @@ Abstract fluid container component
 */
 
 @mixin _fluid-container() {
-  padding-right: ($_container-margin / 2);
-  padding-left: ($_container-margin / 2);
+  padding-right: $_container-margin; // for IE11
+  padding-left: $_container-margin; // for IE11
+
+  padding-right: var(--_container-margin, #{$_container-margin});
+  padding-left: var(--_container-margin, #{$_container-margin});
 
   @include _media-min(md) {
-    padding-right: $_container-margin;
-    padding-left: $_container-margin;
+    --_container-margin: #{$_container-margin * 2};
   }
 }
 

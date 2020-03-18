@@ -1,5 +1,117 @@
 /*
 ---
+name: _margin-top()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin-top
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _margin-top(1);
+@include _margin-top(10px);
+```
+*/
+
+@mixin _margin-top($coefficient) {
+  margin-top: _space($coefficient);
+
+  @if 'auto' != $coefficient and 0 != $coefficient {
+    margin-top: calc(#{_space($coefficient)} * var(--_margin-scale, 1));
+  }
+}
+
+/*
+---
+name: _margin-right()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin-right
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _margin-right(1);
+@include _margin-right(10px);
+```
+*/
+
+@mixin _margin-right($coefficient) {
+  margin-right: _space($coefficient);
+
+  @if 'auto' != $coefficient and 0 != $coefficient {
+    margin-right: calc(#{_space($coefficient)} * var(--_margin-scale, 1));
+  }
+}
+
+/*
+---
+name: _margin-bottom()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin-bottom
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _margin-bottom(1);
+@include _margin-bottom(10px);
+```
+*/
+
+@mixin _margin-bottom($coefficient) {
+  margin-bottom: _space($coefficient);
+
+  @if 'auto' != $coefficient and 0 != $coefficient {
+    margin-bottom: calc(#{_space($coefficient)} * var(--_margin-scale, 1));
+  }
+}
+
+/*
+---
+name: _margin-left()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin-left
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _margin-left(1);
+@include _margin-left(10px);
+```
+*/
+
+@mixin _margin-left($coefficient) {
+  margin-left: _space($coefficient);
+
+  @if 'auto' != $coefficient and 0 != $coefficient {
+    margin-left: calc(#{_space($coefficient)} * var(--_margin-scale, 1));
+  }
+}
+
+/*
+---
 name: _margin()
 category:
   - core/mixin
@@ -26,118 +138,44 @@ Sets margin
 
 @mixin _margin($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
   @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
-    $margin: _space($coefficient-1);
-    margin: $margin;
+    $margin-top: _space($coefficient-1);
+    $margin-right: _space($coefficient-1);
+    $margin-bottom: _space($coefficient-1);
+    $margin-left: _space($coefficient-1);
+
+    @include _margin-top($margin-top);
+    @include _margin-right($margin-right);
+    @include _margin-bottom($margin-bottom);
+    @include _margin-left($margin-left);
   } @else if (_is-null($coefficient-3) and _is-null($coefficient-4)) {
-    $margin-vertical  : _space($coefficient-1);
-    $margin-horizontal: _space($coefficient-2);
-    margin: $margin-vertical $margin-horizontal;
+    $margin-top: _space($coefficient-1);
+    $margin-right: _space($coefficient-2);
+    $margin-bottom: _space($coefficient-1);
+    $margin-left: _space($coefficient-2);
+
+    @include _margin-top($margin-top);
+    @include _margin-right($margin-right);
+    @include _margin-bottom($margin-bottom);
+    @include _margin-left($margin-left);
   } @else if (_is-null($coefficient-4)) {
-    $margin-top       : _space($coefficient-1);
-    $margin-horizontal: _space($coefficient-2);
-    $margin-bottom    : _space($coefficient-3);
-    margin: $margin-top $margin-horizontal $margin-bottom;
+    $margin-top: _space($coefficient-1);
+    $margin-right: _space($coefficient-2);
+    $margin-bottom: _space($coefficient-3);
+    $margin-left: _space($coefficient-2);
+
+    @include _margin-top($margin-top);
+    @include _margin-right($margin-right);
+    @include _margin-bottom($margin-bottom);
+    @include _margin-left($margin-left);
   } @else {
     $margin-top   : _space($coefficient-1);
     $margin-right : _space($coefficient-2);
     $margin-bottom: _space($coefficient-3);
     $margin-left  : _space($coefficient-4);
-    margin: $margin-top $margin-right $margin-bottom $margin-left;
+
+    @include _margin-top($margin-top);
+    @include _margin-right($margin-right);
+    @include _margin-bottom($margin-bottom);
+    @include _margin-left($margin-left);
   }
-}
-
-/*
----
-name: _margin-top()
-category:
-  - core/mixin
-  - core/mixin/margin
----
-Sets margin-top
-
-### scss
-```scss
-//
-// @param  int  $coefficient
-//
-
-@include _margin-top(1);
-@include _margin-top(10px);
-```
-*/
-
-@mixin _margin-top($coefficient) {
-  margin-top: _space($coefficient);
-}
-
-/*
----
-name: _margin-right()
-category:
-  - core/mixin
-  - core/mixin/margin
----
-Sets margin-right
-
-### scss
-```scss
-//
-// @param  int  $coefficient
-//
-
-@include _margin-right(1);
-@include _margin-right(10px);
-```
-*/
-
-@mixin _margin-right($coefficient) {
-  margin-right: _space($coefficient);
-}
-
-/*
----
-name: _margin-bottom()
-category:
-  - core/mixin
-  - core/mixin/margin
----
-Sets margin-bottom
-
-### scss
-```scss
-//
-// @param  int  $coefficient
-//
-
-@include _margin-bottom(1);
-@include _margin-bottom(10px);
-```
-*/
-
-@mixin _margin-bottom($coefficient) {
-  margin-bottom: _space($coefficient);
-}
-
-/*
----
-name: _margin-left()
-category:
-  - core/mixin
-  - core/mixin/margin
----
-Sets margin-left
-
-### scss
-```scss
-//
-// @param  int  $coefficient
-//
-
-@include _margin-left(1);
-@include _margin-left(10px);
-```
-*/
-
-@mixin _margin-left($coefficient) {
-  margin-left: _space($coefficient);
 }

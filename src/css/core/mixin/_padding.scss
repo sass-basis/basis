@@ -1,53 +1,5 @@
 /*
 ---
-name: _padding()
-category:
-  - core/mixin
-  - core/mixin/padding
----
-Sets padding
-
-### scss
-```scss
-//
-// @param  int  $coefficient-1
-// @param  int  $coefficient-2
-// @param  int  $coefficient-3
-// @param  int  $coefficient-4
-//
-
-@include _padding(1);
-@include _padding(1, 2);
-@include _padding(1, 2, .5);
-@include _padding(1, 2, .5, 2);
-@include _padding(10px);
-```
-*/
-
-@mixin _padding($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
-  @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
-    $padding: _space($coefficient-1);
-    padding: $padding;
-  } @else if (_is-null($coefficient-3) and _is-null($coefficient-4)) {
-    $padding-vertical  : _space($coefficient-1);
-    $padding-horizontal: _space($coefficient-2);
-    padding: $padding-vertical $padding-horizontal;
-  } @else if (_is-null($coefficient-4)) {
-    $padding-top       : _space($coefficient-1);
-    $padding-horizontal: _space($coefficient-2);
-    $padding-bottom    : _space($coefficient-3);
-    padding: $padding-top $padding-horizontal $padding-bottom;
-  } @else {
-    $padding-top   : _space($coefficient-1);
-    $padding-right : _space($coefficient-2);
-    $padding-bottom: _space($coefficient-3);
-    $padding-left  : _space($coefficient-4);
-    padding: $padding-top $padding-right $padding-bottom $padding-left;
-  }
-}
-
-/*
----
 name: _padding-top()
 category:
   - core/mixin
@@ -140,4 +92,74 @@ Sets padding-left
 
 @mixin _padding-left($coefficient) {
   padding-left: _space($coefficient);
+}
+
+/*
+---
+name: _padding()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding
+
+### scss
+```scss
+//
+// @param  int  $coefficient-1
+// @param  int  $coefficient-2
+// @param  int  $coefficient-3
+// @param  int  $coefficient-4
+//
+
+@include _padding(1);
+@include _padding(1, 2);
+@include _padding(1, 2, .5);
+@include _padding(1, 2, .5, 2);
+@include _padding(10px);
+```
+*/
+
+@mixin _padding($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
+  @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
+    $padding-top: _space($coefficient-1);
+    $padding-right: _space($coefficient-1);
+    $padding-bottom: _space($coefficient-1);
+    $padding-left: _space($coefficient-1);
+
+    @include _padding-top($padding-top);
+    @include _padding-right($padding-right);
+    @include _padding-bottom($padding-bottom);
+    @include _padding-left($padding-left);
+  } @else if (_is-null($coefficient-3) and _is-null($coefficient-4)) {
+    $padding-top: _space($coefficient-1);
+    $padding-right: _space($coefficient-2);
+    $padding-bottom: _space($coefficient-1);
+    $padding-left: _space($coefficient-2);
+
+    @include _padding-top($padding-top);
+    @include _padding-right($padding-right);
+    @include _padding-bottom($padding-bottom);
+    @include _padding-left($padding-left);
+  } @else if (_is-null($coefficient-4)) {
+    $padding-top: _space($coefficient-1);
+    $padding-right: _space($coefficient-2);
+    $padding-bottom: _space($coefficient-3);
+    $padding-left: _space($coefficient-2);
+
+    @include _padding-top($padding-top);
+    @include _padding-right($padding-right);
+    @include _padding-bottom($padding-bottom);
+    @include _padding-left($padding-left);
+  } @else {
+    $padding-top   : _space($coefficient-1);
+    $padding-right : _space($coefficient-2);
+    $padding-bottom: _space($coefficient-3);
+    $padding-left  : _space($coefficient-4);
+
+    @include _padding-top($padding-top);
+    @include _padding-right($padding-right);
+    @include _padding-bottom($padding-bottom);
+    @include _padding-left($padding-left);
+  }
 }
