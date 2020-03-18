@@ -1516,31 +1516,6 @@ ul.u-inline-list {
 */
 /*
 ---
-name: _margin()
-category:
-  - core/mixin
-  - core/mixin/margin
----
-Sets margin
-
-### scss
-```scss
-//
-// @param  int  $coefficient-1
-// @param  int  $coefficient-2
-// @param  int  $coefficient-3
-// @param  int  $coefficient-4
-//
-
-@include _margin(1);
-@include _margin(1, 2);
-@include _margin(1, 2, .5);
-@include _margin(1, 2, .5, 2);
-@include _margin(10px);
-```
-*/
-/*
----
 name: _margin-top()
 category:
   - core/mixin
@@ -1617,6 +1592,31 @@ Sets margin-left
 */
 /*
 ---
+name: _margin()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient-1
+// @param  int  $coefficient-2
+// @param  int  $coefficient-3
+// @param  int  $coefficient-4
+//
+
+@include _margin(1);
+@include _margin(1, 2);
+@include _margin(1, 2, .5);
+@include _margin(1, 2, .5, 2);
+@include _margin(10px);
+```
+*/
+/*
+---
 name: _overlay()
 category:
   - core/mixin
@@ -1633,31 +1633,6 @@ Overlay helper
 .c-foo {
   @include _overlay(#fff, .5);
 }
-```
-*/
-/*
----
-name: _padding()
-category:
-  - core/mixin
-  - core/mixin/padding
----
-Sets padding
-
-### scss
-```scss
-//
-// @param  int  $coefficient-1
-// @param  int  $coefficient-2
-// @param  int  $coefficient-3
-// @param  int  $coefficient-4
-//
-
-@include _padding(1);
-@include _padding(1, 2);
-@include _padding(1, 2, .5);
-@include _padding(1, 2, .5, 2);
-@include _padding(10px);
 ```
 */
 /*
@@ -1734,6 +1709,31 @@ Sets padding-left
 
 @include _padding-left(1);
 @include _padding-left(10px);
+```
+*/
+/*
+---
+name: _padding()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding
+
+### scss
+```scss
+//
+// @param  int  $coefficient-1
+// @param  int  $coefficient-2
+// @param  int  $coefficient-3
+// @param  int  $coefficient-4
+//
+
+@include _padding(1);
+@include _padding(1, 2);
+@include _padding(1, 2, .5);
+@include _padding(1, 2, .5, 2);
+@include _padding(10px);
 ```
 */
 /*
@@ -4502,7 +4502,12 @@ Breadcrumbs component
   .c-breadcrumbs__item {
     display: inline; }
     .c-breadcrumbs__item:nth-child(n + 2)::before {
-      margin: 0 5px;
+      margin-top: 0;
+      margin-right: 5px;
+      margin-right: calc(5px * var(--_margin-scale, 1));
+      margin-bottom: 0;
+      margin-left: 5px;
+      margin-left: calc(5px * var(--_margin-scale, 1));
       font-family: 'basis';
       speak: none;
       font-style: normal;
@@ -4636,11 +4641,12 @@ Fluid container component
 */
 .c-fluid-container {
   padding-right: 0.75rem;
-  padding-left: 0.75rem; }
+  padding-left: 0.75rem;
+  padding-right: var(--_container-margin, 0.75rem);
+  padding-left: var(--_container-margin, 0.75rem); }
   @media (min-width: 40em) {
     .c-fluid-container {
-      padding-right: 1.5rem;
-      padding-left: 1.5rem; } }
+      --_container-margin: 1.5rem; } }
 
 /*
 ---
@@ -4662,12 +4668,13 @@ Container component
 .c-container {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
+  padding-right: var(--_container-margin, 0.75rem);
+  padding-left: var(--_container-margin, 0.75rem);
   margin-right: auto;
   margin-left: auto; }
   @media (min-width: 40em) {
     .c-container {
-      padding-right: 1.5rem;
-      padding-left: 1.5rem; } }
+      --_container-margin: 1.5rem; } }
   @media (min-width: 64em) {
     .c-container {
       max-width: 1200px; } }
@@ -4766,15 +4773,25 @@ Drawer component
   .c-drawer__item, .c-drawer__subitem {
     position: relative; }
   .c-drawer__item {
-    padding: 0.75rem 1.5rem 0; }
+    padding-top: 0.75rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    padding-left: 1.5rem; }
   .c-drawer__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-    margin: 0 -1.5rem 0 0;
+    margin-top: 0;
+    margin-right: -1.5rem;
+    margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+    margin-bottom: 0;
+    margin-left: 0;
     padding-left: 1em; }
   .c-drawer__subitem {
-    padding: 0.75rem 1.5rem 0 0; }
+    padding-top: 0.75rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    padding-left: 0; }
   .c-drawer__toggle {
     position: absolute;
     top: 0.75rem;
@@ -4873,15 +4890,25 @@ Dropdown component
   .c-dropdown__item, .c-dropdown__subitem {
     position: relative; }
   .c-dropdown__item {
-    padding: 0.75rem 1.5rem 0; }
+    padding-top: 0.75rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    padding-left: 1.5rem; }
   .c-dropdown__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-    margin: 0 -1.5rem 0 0;
+    margin-top: 0;
+    margin-right: -1.5rem;
+    margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+    margin-bottom: 0;
+    margin-left: 0;
     padding-left: 1em; }
   .c-dropdown__subitem {
-    padding: 0.75rem 1.5rem 0 0; }
+    padding-top: 0.75rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    padding-left: 0; }
   .c-dropdown__toggle {
     position: absolute;
     top: 0.75rem;
@@ -4989,7 +5016,10 @@ Form control component
   border-radius: 3px;
   outline: 0;
   transition: border 0.2s ease-out;
-  padding: 0.375rem 0.75rem;
+  padding-top: 0.375rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.375rem;
+  padding-left: 0.75rem;
   background-color: #fff;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
   max-width: 100%; }
@@ -5249,7 +5279,10 @@ Input group component
       z-index: 1; }
   .c-input-group__addon {
     border: 1px solid #cccccc;
-    padding: 0.375rem 0.75rem;
+    padding-top: 0.375rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
     flex: none; }
   .c-input-group__field {
     display: flex;
@@ -5265,7 +5298,10 @@ Input group component
       border-radius: 3px;
       outline: 0;
       transition: border 0.2s ease-out;
-      padding: 0.375rem 0.75rem;
+      padding-top: 0.375rem;
+      padding-right: 0.75rem;
+      padding-bottom: 0.375rem;
+      padding-left: 0.75rem;
       background-color: #fff;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
       max-width: 100%;
@@ -5339,7 +5375,10 @@ Input group component
     border-radius: 3px;
     outline: 0;
     transition: border 0.2s ease-out;
-    padding: 0.375rem 0.75rem;
+    padding-top: 0.375rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
     color: #333;
     flex: none;
     overflow: visible; }
@@ -6272,32 +6311,52 @@ Row component of flexbox based grid system
     margin-bottom: 0; }
     .c-row--collapse > .c-row__col {
       padding-right: 0;
+      padding-right: calc(0 * var(--_margin-scale));
       padding-left: 0;
+      padding-left: calc(0 * var(--_margin-scale));
       margin-bottom: 0; }
   .c-row--margin {
     margin-right: -0.75rem;
+    margin-right: calc(-0.75rem * var(--_margin-scale, 1));
     margin-left: -0.75rem;
-    margin-bottom: -1.5rem; }
+    margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+    margin-bottom: -1.5rem;
+    margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
     .c-row--margin > .c-row__col {
       padding-right: 0.75rem;
+      padding-right: calc(0.75rem * var(--_margin-scale));
       padding-left: 0.75rem;
-      margin-bottom: 1.5rem; }
+      padding-left: calc(0.75rem * var(--_margin-scale));
+      margin-bottom: 1.5rem;
+      margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
     .c-row--margin-s {
       margin-right: -0.375rem;
+      margin-right: calc(-0.375rem * var(--_margin-scale, 1));
       margin-left: -0.375rem;
-      margin-bottom: -0.75rem; }
+      margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+      margin-bottom: -0.75rem;
+      margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
       .c-row--margin-s > .c-row__col {
         padding-right: 0.375rem;
+        padding-right: calc(0.375rem * var(--_margin-scale));
         padding-left: 0.375rem;
-        margin-bottom: 0.75rem; }
+        padding-left: calc(0.375rem * var(--_margin-scale));
+        margin-bottom: 0.75rem;
+        margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
     .c-row--margin-l {
       margin-right: -1.5rem;
+      margin-right: calc(-1.5rem * var(--_margin-scale, 1));
       margin-left: -1.5rem;
-      margin-bottom: -3rem; }
+      margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+      margin-bottom: -3rem;
+      margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
       .c-row--margin-l > .c-row__col {
         padding-right: 1.5rem;
+        padding-right: calc(1.5rem * var(--_margin-scale));
         padding-left: 1.5rem;
-        margin-bottom: 3rem; }
+        padding-left: calc(1.5rem * var(--_margin-scale));
+        margin-bottom: 3rem;
+        margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
   .c-row--fill > .c-row__col {
     display: flex; }
     .c-row--fill > .c-row__col > * {
@@ -6330,32 +6389,52 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--md-collapse > .c-row__col {
         padding-right: 0;
+        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
+        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--md-margin {
       margin-right: -0.75rem;
+      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-bottom: -1.5rem; }
+      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-bottom: -1.5rem;
+      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
       .c-row--md-margin > .c-row__col {
         padding-right: 0.75rem;
+        padding-right: calc(0.75rem * var(--_margin-scale));
         padding-left: 0.75rem;
-        margin-bottom: 1.5rem; }
+        padding-left: calc(0.75rem * var(--_margin-scale));
+        margin-bottom: 1.5rem;
+        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
       .c-row--md-margin-s {
         margin-right: -0.375rem;
+        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-bottom: -0.75rem; }
+        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-bottom: -0.75rem;
+        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
         .c-row--md-margin-s > .c-row__col {
           padding-right: 0.375rem;
+          padding-right: calc(0.375rem * var(--_margin-scale));
           padding-left: 0.375rem;
-          margin-bottom: 0.75rem; }
+          padding-left: calc(0.375rem * var(--_margin-scale));
+          margin-bottom: 0.75rem;
+          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
       .c-row--md-margin-l {
         margin-right: -1.5rem;
+        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-bottom: -3rem; }
+        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-bottom: -3rem;
+        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
         .c-row--md-margin-l > .c-row__col {
           padding-right: 1.5rem;
+          padding-right: calc(1.5rem * var(--_margin-scale));
           padding-left: 1.5rem;
-          margin-bottom: 3rem; }
+          padding-left: calc(1.5rem * var(--_margin-scale));
+          margin-bottom: 3rem;
+          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
     .c-row--md-fill > .c-row__col {
       display: flex; }
       .c-row--md-fill > .c-row__col > * {
@@ -6388,32 +6467,52 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--lg-collapse > .c-row__col {
         padding-right: 0;
+        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
+        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--lg-margin {
       margin-right: -0.75rem;
+      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-bottom: -1.5rem; }
+      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-bottom: -1.5rem;
+      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
       .c-row--lg-margin > .c-row__col {
         padding-right: 0.75rem;
+        padding-right: calc(0.75rem * var(--_margin-scale));
         padding-left: 0.75rem;
-        margin-bottom: 1.5rem; }
+        padding-left: calc(0.75rem * var(--_margin-scale));
+        margin-bottom: 1.5rem;
+        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
       .c-row--lg-margin-s {
         margin-right: -0.375rem;
+        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-bottom: -0.75rem; }
+        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-bottom: -0.75rem;
+        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
         .c-row--lg-margin-s > .c-row__col {
           padding-right: 0.375rem;
+          padding-right: calc(0.375rem * var(--_margin-scale));
           padding-left: 0.375rem;
-          margin-bottom: 0.75rem; }
+          padding-left: calc(0.375rem * var(--_margin-scale));
+          margin-bottom: 0.75rem;
+          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
       .c-row--lg-margin-l {
         margin-right: -1.5rem;
+        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-bottom: -3rem; }
+        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-bottom: -3rem;
+        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
         .c-row--lg-margin-l > .c-row__col {
           padding-right: 1.5rem;
+          padding-right: calc(1.5rem * var(--_margin-scale));
           padding-left: 1.5rem;
-          margin-bottom: 3rem; }
+          padding-left: calc(1.5rem * var(--_margin-scale));
+          margin-bottom: 3rem;
+          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
     .c-row--lg-fill > .c-row__col {
       display: flex; }
       .c-row--lg-fill > .c-row__col > * {
@@ -6446,32 +6545,52 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--xl-collapse > .c-row__col {
         padding-right: 0;
+        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
+        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--xl-margin {
       margin-right: -0.75rem;
+      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-bottom: -1.5rem; }
+      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-bottom: -1.5rem;
+      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
       .c-row--xl-margin > .c-row__col {
         padding-right: 0.75rem;
+        padding-right: calc(0.75rem * var(--_margin-scale));
         padding-left: 0.75rem;
-        margin-bottom: 1.5rem; }
+        padding-left: calc(0.75rem * var(--_margin-scale));
+        margin-bottom: 1.5rem;
+        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
       .c-row--xl-margin-s {
         margin-right: -0.375rem;
+        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-bottom: -0.75rem; }
+        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-bottom: -0.75rem;
+        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
         .c-row--xl-margin-s > .c-row__col {
           padding-right: 0.375rem;
+          padding-right: calc(0.375rem * var(--_margin-scale));
           padding-left: 0.375rem;
-          margin-bottom: 0.75rem; }
+          padding-left: calc(0.375rem * var(--_margin-scale));
+          margin-bottom: 0.75rem;
+          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
       .c-row--xl-margin-l {
         margin-right: -1.5rem;
+        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-bottom: -3rem; }
+        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-bottom: -3rem;
+        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
         .c-row--xl-margin-l > .c-row__col {
           padding-right: 1.5rem;
+          padding-right: calc(1.5rem * var(--_margin-scale));
           padding-left: 1.5rem;
-          margin-bottom: 3rem; }
+          padding-left: calc(1.5rem * var(--_margin-scale));
+          margin-bottom: 3rem;
+          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
     .c-row--xl-fill > .c-row__col {
       display: flex; }
       .c-row--xl-fill > .c-row__col > * {
@@ -7378,7 +7497,10 @@ Select box component
     -moz-osx-font-smoothing: grayscale;
     content: "\e902"; }
   .c-select > select, .c-select__label {
-    padding: 0.375rem 0.75rem; }
+    padding-top: 0.375rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem; }
   .c-select > select {
     position: relative;
     z-index: 1;
@@ -7842,31 +7964,43 @@ Content utility
 ```
 */
 .u-content > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-  margin-top: 1.5rem; }
+  margin-top: 1.5rem;
+  margin-top: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .u-content > h1 {
   margin-top: 0;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .u-content > h2 {
   margin-top: 3rem;
-  margin-bottom: 1.5rem; }
+  margin-top: calc(3rem * var(--_margin-scale, 1));
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .u-content > h3 {
   margin-top: 2.25rem;
-  margin-bottom: 1.5rem; }
+  margin-top: calc(2.25rem * var(--_margin-scale, 1));
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .u-content > h4 {
   margin-top: 1.875rem;
-  margin-bottom: 1.5rem; }
+  margin-top: calc(1.875rem * var(--_margin-scale, 1));
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .u-content > h5 {
   margin-top: 1.5rem;
-  margin-bottom: 0.75rem; }
+  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-bottom: 0.75rem;
+  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
 
 .u-content > h6 {
   margin-top: 1.5rem;
-  margin-bottom: 0.75rem; }
+  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-bottom: 0.75rem;
+  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
 
 .u-content > :first-child {
   margin-top: 0; }
@@ -9742,31 +9876,6 @@ ul.u-inline-list {
 */
 /*
 ---
-name: _margin()
-category:
-  - core/mixin
-  - core/mixin/margin
----
-Sets margin
-
-### scss
-```scss
-//
-// @param  int  $coefficient-1
-// @param  int  $coefficient-2
-// @param  int  $coefficient-3
-// @param  int  $coefficient-4
-//
-
-@include _margin(1);
-@include _margin(1, 2);
-@include _margin(1, 2, .5);
-@include _margin(1, 2, .5, 2);
-@include _margin(10px);
-```
-*/
-/*
----
 name: _margin-top()
 category:
   - core/mixin
@@ -9843,6 +9952,31 @@ Sets margin-left
 */
 /*
 ---
+name: _margin()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient-1
+// @param  int  $coefficient-2
+// @param  int  $coefficient-3
+// @param  int  $coefficient-4
+//
+
+@include _margin(1);
+@include _margin(1, 2);
+@include _margin(1, 2, .5);
+@include _margin(1, 2, .5, 2);
+@include _margin(10px);
+```
+*/
+/*
+---
 name: _overlay()
 category:
   - core/mixin
@@ -9859,31 +9993,6 @@ Overlay helper
 .c-foo {
   @include _overlay(#fff, .5);
 }
-```
-*/
-/*
----
-name: _padding()
-category:
-  - core/mixin
-  - core/mixin/padding
----
-Sets padding
-
-### scss
-```scss
-//
-// @param  int  $coefficient-1
-// @param  int  $coefficient-2
-// @param  int  $coefficient-3
-// @param  int  $coefficient-4
-//
-
-@include _padding(1);
-@include _padding(1, 2);
-@include _padding(1, 2, .5);
-@include _padding(1, 2, .5, 2);
-@include _padding(10px);
 ```
 */
 /*
@@ -9960,6 +10069,31 @@ Sets padding-left
 
 @include _padding-left(1);
 @include _padding-left(10px);
+```
+*/
+/*
+---
+name: _padding()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding
+
+### scss
+```scss
+//
+// @param  int  $coefficient-1
+// @param  int  $coefficient-2
+// @param  int  $coefficient-3
+// @param  int  $coefficient-4
+//
+
+@include _padding(1);
+@include _padding(1, 2);
+@include _padding(1, 2, .5);
+@include _padding(1, 2, .5, 2);
+@include _padding(10px);
 ```
 */
 /*
@@ -12728,7 +12862,12 @@ Breadcrumbs component
   .c-breadcrumbs__item {
     display: inline; }
     .c-breadcrumbs__item:nth-child(n + 2)::before {
-      margin: 0 5px;
+      margin-top: 0;
+      margin-right: 5px;
+      margin-right: calc(5px * var(--_margin-scale, 1));
+      margin-bottom: 0;
+      margin-left: 5px;
+      margin-left: calc(5px * var(--_margin-scale, 1));
       font-family: 'basis';
       speak: none;
       font-style: normal;
@@ -12862,11 +13001,12 @@ Fluid container component
 */
 .c-fluid-container {
   padding-right: 0.75rem;
-  padding-left: 0.75rem; }
+  padding-left: 0.75rem;
+  padding-right: var(--_container-margin, 0.75rem);
+  padding-left: var(--_container-margin, 0.75rem); }
   @media (min-width: 40em) {
     .c-fluid-container {
-      padding-right: 1.5rem;
-      padding-left: 1.5rem; } }
+      --_container-margin: 1.5rem; } }
 
 /*
 ---
@@ -12888,12 +13028,13 @@ Container component
 .c-container {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
+  padding-right: var(--_container-margin, 0.75rem);
+  padding-left: var(--_container-margin, 0.75rem);
   margin-right: auto;
   margin-left: auto; }
   @media (min-width: 40em) {
     .c-container {
-      padding-right: 1.5rem;
-      padding-left: 1.5rem; } }
+      --_container-margin: 1.5rem; } }
   @media (min-width: 64em) {
     .c-container {
       max-width: 1200px; } }
@@ -12992,15 +13133,25 @@ Drawer component
   .c-drawer__item, .c-drawer__subitem {
     position: relative; }
   .c-drawer__item {
-    padding: 0.75rem 1.5rem 0; }
+    padding-top: 0.75rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    padding-left: 1.5rem; }
   .c-drawer__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-    margin: 0 -1.5rem 0 0;
+    margin-top: 0;
+    margin-right: -1.5rem;
+    margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+    margin-bottom: 0;
+    margin-left: 0;
     padding-left: 1em; }
   .c-drawer__subitem {
-    padding: 0.75rem 1.5rem 0 0; }
+    padding-top: 0.75rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    padding-left: 0; }
   .c-drawer__toggle {
     position: absolute;
     top: 0.75rem;
@@ -13099,15 +13250,25 @@ Dropdown component
   .c-dropdown__item, .c-dropdown__subitem {
     position: relative; }
   .c-dropdown__item {
-    padding: 0.75rem 1.5rem 0; }
+    padding-top: 0.75rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    padding-left: 1.5rem; }
   .c-dropdown__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-    margin: 0 -1.5rem 0 0;
+    margin-top: 0;
+    margin-right: -1.5rem;
+    margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+    margin-bottom: 0;
+    margin-left: 0;
     padding-left: 1em; }
   .c-dropdown__subitem {
-    padding: 0.75rem 1.5rem 0 0; }
+    padding-top: 0.75rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    padding-left: 0; }
   .c-dropdown__toggle {
     position: absolute;
     top: 0.75rem;
@@ -13215,7 +13376,10 @@ Form control component
   border-radius: 3px;
   outline: 0;
   transition: border 0.2s ease-out;
-  padding: 0.375rem 0.75rem;
+  padding-top: 0.375rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.375rem;
+  padding-left: 0.75rem;
   background-color: #fff;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
   max-width: 100%; }
@@ -13475,7 +13639,10 @@ Input group component
       z-index: 1; }
   .c-input-group__addon {
     border: 1px solid #cccccc;
-    padding: 0.375rem 0.75rem;
+    padding-top: 0.375rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
     flex: none; }
   .c-input-group__field {
     display: flex;
@@ -13491,7 +13658,10 @@ Input group component
       border-radius: 3px;
       outline: 0;
       transition: border 0.2s ease-out;
-      padding: 0.375rem 0.75rem;
+      padding-top: 0.375rem;
+      padding-right: 0.75rem;
+      padding-bottom: 0.375rem;
+      padding-left: 0.75rem;
       background-color: #fff;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
       max-width: 100%;
@@ -13565,7 +13735,10 @@ Input group component
     border-radius: 3px;
     outline: 0;
     transition: border 0.2s ease-out;
-    padding: 0.375rem 0.75rem;
+    padding-top: 0.375rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
     color: #444;
     flex: none;
     overflow: visible; }
@@ -14498,32 +14671,52 @@ Row component of flexbox based grid system
     margin-bottom: 0; }
     .c-row--collapse > .c-row__col {
       padding-right: 0;
+      padding-right: calc(0 * var(--_margin-scale));
       padding-left: 0;
+      padding-left: calc(0 * var(--_margin-scale));
       margin-bottom: 0; }
   .c-row--margin {
     margin-right: -0.75rem;
+    margin-right: calc(-0.75rem * var(--_margin-scale, 1));
     margin-left: -0.75rem;
-    margin-bottom: -1.5rem; }
+    margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+    margin-bottom: -1.5rem;
+    margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
     .c-row--margin > .c-row__col {
       padding-right: 0.75rem;
+      padding-right: calc(0.75rem * var(--_margin-scale));
       padding-left: 0.75rem;
-      margin-bottom: 1.5rem; }
+      padding-left: calc(0.75rem * var(--_margin-scale));
+      margin-bottom: 1.5rem;
+      margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
     .c-row--margin-s {
       margin-right: -0.375rem;
+      margin-right: calc(-0.375rem * var(--_margin-scale, 1));
       margin-left: -0.375rem;
-      margin-bottom: -0.75rem; }
+      margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+      margin-bottom: -0.75rem;
+      margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
       .c-row--margin-s > .c-row__col {
         padding-right: 0.375rem;
+        padding-right: calc(0.375rem * var(--_margin-scale));
         padding-left: 0.375rem;
-        margin-bottom: 0.75rem; }
+        padding-left: calc(0.375rem * var(--_margin-scale));
+        margin-bottom: 0.75rem;
+        margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
     .c-row--margin-l {
       margin-right: -1.5rem;
+      margin-right: calc(-1.5rem * var(--_margin-scale, 1));
       margin-left: -1.5rem;
-      margin-bottom: -3rem; }
+      margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+      margin-bottom: -3rem;
+      margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
       .c-row--margin-l > .c-row__col {
         padding-right: 1.5rem;
+        padding-right: calc(1.5rem * var(--_margin-scale));
         padding-left: 1.5rem;
-        margin-bottom: 3rem; }
+        padding-left: calc(1.5rem * var(--_margin-scale));
+        margin-bottom: 3rem;
+        margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
   .c-row--fill > .c-row__col {
     display: flex; }
     .c-row--fill > .c-row__col > * {
@@ -14556,32 +14749,52 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--md-collapse > .c-row__col {
         padding-right: 0;
+        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
+        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--md-margin {
       margin-right: -0.75rem;
+      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-bottom: -1.5rem; }
+      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-bottom: -1.5rem;
+      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
       .c-row--md-margin > .c-row__col {
         padding-right: 0.75rem;
+        padding-right: calc(0.75rem * var(--_margin-scale));
         padding-left: 0.75rem;
-        margin-bottom: 1.5rem; }
+        padding-left: calc(0.75rem * var(--_margin-scale));
+        margin-bottom: 1.5rem;
+        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
       .c-row--md-margin-s {
         margin-right: -0.375rem;
+        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-bottom: -0.75rem; }
+        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-bottom: -0.75rem;
+        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
         .c-row--md-margin-s > .c-row__col {
           padding-right: 0.375rem;
+          padding-right: calc(0.375rem * var(--_margin-scale));
           padding-left: 0.375rem;
-          margin-bottom: 0.75rem; }
+          padding-left: calc(0.375rem * var(--_margin-scale));
+          margin-bottom: 0.75rem;
+          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
       .c-row--md-margin-l {
         margin-right: -1.5rem;
+        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-bottom: -3rem; }
+        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-bottom: -3rem;
+        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
         .c-row--md-margin-l > .c-row__col {
           padding-right: 1.5rem;
+          padding-right: calc(1.5rem * var(--_margin-scale));
           padding-left: 1.5rem;
-          margin-bottom: 3rem; }
+          padding-left: calc(1.5rem * var(--_margin-scale));
+          margin-bottom: 3rem;
+          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
     .c-row--md-fill > .c-row__col {
       display: flex; }
       .c-row--md-fill > .c-row__col > * {
@@ -14614,32 +14827,52 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--lg-collapse > .c-row__col {
         padding-right: 0;
+        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
+        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--lg-margin {
       margin-right: -0.75rem;
+      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-bottom: -1.5rem; }
+      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-bottom: -1.5rem;
+      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
       .c-row--lg-margin > .c-row__col {
         padding-right: 0.75rem;
+        padding-right: calc(0.75rem * var(--_margin-scale));
         padding-left: 0.75rem;
-        margin-bottom: 1.5rem; }
+        padding-left: calc(0.75rem * var(--_margin-scale));
+        margin-bottom: 1.5rem;
+        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
       .c-row--lg-margin-s {
         margin-right: -0.375rem;
+        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-bottom: -0.75rem; }
+        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-bottom: -0.75rem;
+        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
         .c-row--lg-margin-s > .c-row__col {
           padding-right: 0.375rem;
+          padding-right: calc(0.375rem * var(--_margin-scale));
           padding-left: 0.375rem;
-          margin-bottom: 0.75rem; }
+          padding-left: calc(0.375rem * var(--_margin-scale));
+          margin-bottom: 0.75rem;
+          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
       .c-row--lg-margin-l {
         margin-right: -1.5rem;
+        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-bottom: -3rem; }
+        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-bottom: -3rem;
+        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
         .c-row--lg-margin-l > .c-row__col {
           padding-right: 1.5rem;
+          padding-right: calc(1.5rem * var(--_margin-scale));
           padding-left: 1.5rem;
-          margin-bottom: 3rem; }
+          padding-left: calc(1.5rem * var(--_margin-scale));
+          margin-bottom: 3rem;
+          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
     .c-row--lg-fill > .c-row__col {
       display: flex; }
       .c-row--lg-fill > .c-row__col > * {
@@ -14672,32 +14905,52 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--xl-collapse > .c-row__col {
         padding-right: 0;
+        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
+        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--xl-margin {
       margin-right: -0.75rem;
+      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-bottom: -1.5rem; }
+      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-bottom: -1.5rem;
+      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
       .c-row--xl-margin > .c-row__col {
         padding-right: 0.75rem;
+        padding-right: calc(0.75rem * var(--_margin-scale));
         padding-left: 0.75rem;
-        margin-bottom: 1.5rem; }
+        padding-left: calc(0.75rem * var(--_margin-scale));
+        margin-bottom: 1.5rem;
+        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
       .c-row--xl-margin-s {
         margin-right: -0.375rem;
+        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-bottom: -0.75rem; }
+        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-bottom: -0.75rem;
+        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
         .c-row--xl-margin-s > .c-row__col {
           padding-right: 0.375rem;
+          padding-right: calc(0.375rem * var(--_margin-scale));
           padding-left: 0.375rem;
-          margin-bottom: 0.75rem; }
+          padding-left: calc(0.375rem * var(--_margin-scale));
+          margin-bottom: 0.75rem;
+          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
       .c-row--xl-margin-l {
         margin-right: -1.5rem;
+        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-bottom: -3rem; }
+        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-bottom: -3rem;
+        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
         .c-row--xl-margin-l > .c-row__col {
           padding-right: 1.5rem;
+          padding-right: calc(1.5rem * var(--_margin-scale));
           padding-left: 1.5rem;
-          margin-bottom: 3rem; }
+          padding-left: calc(1.5rem * var(--_margin-scale));
+          margin-bottom: 3rem;
+          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
     .c-row--xl-fill > .c-row__col {
       display: flex; }
       .c-row--xl-fill > .c-row__col > * {
@@ -15604,7 +15857,10 @@ Select box component
     -moz-osx-font-smoothing: grayscale;
     content: "\e902"; }
   .c-select > select, .c-select__label {
-    padding: 0.375rem 0.75rem; }
+    padding-top: 0.375rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem; }
   .c-select > select {
     position: relative;
     z-index: 1;
@@ -16068,31 +16324,43 @@ Content utility
 ```
 */
 .u-content > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-  margin-top: 1.5rem; }
+  margin-top: 1.5rem;
+  margin-top: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .u-content > h1 {
   margin-top: 0;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .u-content > h2 {
   margin-top: 3rem;
-  margin-bottom: 1.5rem; }
+  margin-top: calc(3rem * var(--_margin-scale, 1));
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .u-content > h3 {
   margin-top: 2.25rem;
-  margin-bottom: 1.5rem; }
+  margin-top: calc(2.25rem * var(--_margin-scale, 1));
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .u-content > h4 {
   margin-top: 1.875rem;
-  margin-bottom: 1.5rem; }
+  margin-top: calc(1.875rem * var(--_margin-scale, 1));
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .u-content > h5 {
   margin-top: 1.5rem;
-  margin-bottom: 0.75rem; }
+  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-bottom: 0.75rem;
+  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
 
 .u-content > h6 {
   margin-top: 1.5rem;
-  margin-bottom: 0.75rem; }
+  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-bottom: 0.75rem;
+  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
 
 .u-content > :first-child {
   margin-top: 0; }
@@ -16465,7 +16733,10 @@ pre {
   border: none; }
 
 .l-main, .l-sub {
-  padding: 3rem 0; }
+  padding-top: 3rem;
+  padding-right: 0;
+  padding-bottom: 3rem;
+  padding-left: 0; }
 
 .l-footer {
   padding: 3rem 0 0;
@@ -16511,7 +16782,10 @@ pre {
   transition: all 0.2s ease-out;
   border: none;
   border-radius: 3px;
-  padding: 0.75rem 1.5rem; }
+  padding-top: 0.75rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem; }
   .c-btn--block {
     display: block; }
   .c-btn--ghost {
@@ -16532,25 +16806,37 @@ pre {
   font-size: 14px;
   font-size: 0.93333rem;
   line-height: 1.67857;
-  padding: 1.5rem 0 3rem; }
+  padding-top: 1.5rem;
+  padding-right: 0;
+  padding-bottom: 3rem;
+  padding-left: 0; }
   .l-footer .c-copyright a {
     color: #999; }
 
 .l-body > .c-drawer {
   background-color: #444;
-  padding: 0.75rem; }
+  padding-top: 0.75rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem; }
   .l-body > .c-drawer, .l-body > .c-drawer a {
     color: #fff; }
   .l-body > .c-drawer a {
     display: block;
     text-decoration: none;
-    padding: 0.375rem 0; }
+    padding-top: 0.375rem;
+    padding-right: 0;
+    padding-bottom: 0.375rem;
+    padding-left: 0; }
   .l-body > .c-drawer ul {
     list-style: none;
     margin-left: 0;
     padding-left: 0; }
   .l-body > .c-drawer li li {
-    padding: 0 0 0 0.75rem; }
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0.75rem; }
 
 .c-dummy-image {
   background-color: #333;
@@ -16561,39 +16847,61 @@ pre {
     padding-top: 75%; }
 
 .l-main > .c-entry .c-entry__header {
-  margin: 0 0 1.5rem; }
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1));
+  margin-left: 0; }
 
 .l-main > .c-entry .c-entry__title {
-  padding: 0 0 0.375rem;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0.375rem;
+  padding-left: 0;
   border-bottom: 1px solid #cccccc;
-  padding: 0 0 0.375rem; }
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0.375rem;
+  padding-left: 0; }
 
 .l-main > .c-entry .c-entry__content > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-  margin-top: 1.5rem; }
+  margin-top: 1.5rem;
+  margin-top: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h1 {
   margin-top: 0;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h2 {
   margin-top: 3rem;
-  margin-bottom: 1.5rem; }
+  margin-top: calc(3rem * var(--_margin-scale, 1));
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h3 {
   margin-top: 2.25rem;
-  margin-bottom: 1.5rem; }
+  margin-top: calc(2.25rem * var(--_margin-scale, 1));
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h4 {
   margin-top: 1.875rem;
-  margin-bottom: 1.5rem; }
+  margin-top: calc(1.875rem * var(--_margin-scale, 1));
+  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h5 {
   margin-top: 1.5rem;
-  margin-bottom: 0.75rem; }
+  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-bottom: 0.75rem;
+  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h6 {
   margin-top: 1.5rem;
-  margin-bottom: 0.75rem; }
+  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-bottom: 0.75rem;
+  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > :first-child {
   margin-top: 0; }
@@ -16605,7 +16913,8 @@ pre {
   margin-bottom: 0; }
 
 .l-main > .c-entry + .c-entry {
-  margin-top: 3rem; }
+  margin-top: 3rem;
+  margin-top: calc(3rem * var(--_margin-scale, 1)); }
 
 .c-fade-image {
   background-color: #e74c3c;
@@ -16634,7 +16943,10 @@ pre {
     color: #999; }
 
 .l-contents > .c-page-header {
-  padding: 3rem 0 0; }
+  padding-top: 3rem;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0; }
 
 .l-header .c-site-branding__title {
   font-family: 'Noto Sans', sans-serif;
@@ -16671,7 +16983,10 @@ pre {
     padding: 0; }
   .p-footer-nav__item {
     margin: 0;
-    padding: 0 0 0.75rem; }
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0.75rem;
+    padding-left: 0; }
     .p-footer-nav__item a {
       text-decoration: none; }
 
@@ -16680,7 +16995,10 @@ pre {
   font-size: 0.93333rem;
   line-height: 1.67857; }
   .p-global-nav .c-navbar__item a {
-    padding: 0.375rem 0.75rem; }
+    padding-top: 0.375rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem; }
 
 .p-local-nav ul {
   list-style: none;
@@ -16688,7 +17006,10 @@ pre {
   padding-left: 0; }
 
 .p-local-nav li li {
-  padding: 0 0 0 0.75rem; }
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0.75rem; }
   .p-local-nav li li li {
     display: none; }
 
@@ -16785,16 +17106,27 @@ pre {
   list-style: none;
   padding: 0; }
   .p-social-nav__item {
-    margin: 0 0.75rem 0 0;
+    margin-top: 0;
+    margin-right: 0.75rem;
+    margin-right: calc(0.75rem * var(--_margin-scale, 1));
+    margin-bottom: 0;
+    margin-left: 0;
     display: inline-block;
     padding: 0; }
 
 .p-table-of-contents {
-  margin: 0 0 3rem;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 3rem;
+  margin-bottom: calc(3rem * var(--_margin-scale, 1));
+  margin-left: 0;
   list-style: none;
   margin-left: 0;
   padding-left: 0;
-  padding: 0 1.5rem;
+  padding-top: 0;
+  padding-right: 1.5rem;
+  padding-bottom: 0;
+  padding-left: 1.5rem;
   background-color: #fafafa;
   border: 1px solid #eeeeee;
   border-radius: 3px; }
@@ -16804,7 +17136,10 @@ pre {
       border-bottom: none; }
     .p-table-of-contents__item > a {
       display: block;
-      padding: 0.75rem 0;
+      padding-top: 0.75rem;
+      padding-right: 0;
+      padding-bottom: 0.75rem;
+      padding-left: 0;
       color: #444;
       text-decoration: none; }
       @media (min-width: false) {

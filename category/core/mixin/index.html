@@ -199,10 +199,6 @@
               </li>
             
               <li class="p-table-of-contents__item">
-                <a href="#_margin()">_margin()</a>
-              </li>
-            
-              <li class="p-table-of-contents__item">
                 <a href="#_margin-top()">_margin-top()</a>
               </li>
             
@@ -216,6 +212,10 @@
             
               <li class="p-table-of-contents__item">
                 <a href="#_margin-left()">_margin-left()</a>
+              </li>
+            
+              <li class="p-table-of-contents__item">
+                <a href="#_margin()">_margin()</a>
               </li>
             
               <li class="p-table-of-contents__item">
@@ -235,10 +235,6 @@
               </li>
             
               <li class="p-table-of-contents__item">
-                <a href="#_padding()">_padding()</a>
-              </li>
-            
-              <li class="p-table-of-contents__item">
                 <a href="#_padding-top()">_padding-top()</a>
               </li>
             
@@ -252,6 +248,10 @@
             
               <li class="p-table-of-contents__item">
                 <a href="#_padding-left()">_padding-left()</a>
+              </li>
+            
+              <li class="p-table-of-contents__item">
+                <a href="#_padding()">_padding()</a>
               </li>
             
               <li class="p-table-of-contents__item">
@@ -911,35 +911,6 @@ select </span><span class="token punctuation" >{</span>
           
             <article class="c-entry">
               <header class="c-entry__header">
-                <h2 class="c-entry__title" id="_margin()">_margin()</h2>
-                <ul class="c-meta">
-                  <li class="c-meta__item">
-                    /src/css/core/mixin/_margin.scss
-                  </li>
-                </ul>
-              </header>
-              <div class="c-entry__content">
-                <p>Sets margin</p>
-<h3 id="scss">scss</h3>
-<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
-<span class="token comment" spellcheck="true">// @param  int  $coefficient-1</span>
-<span class="token comment" spellcheck="true">// @param  int  $coefficient-2</span>
-<span class="token comment" spellcheck="true">// @param  int  $coefficient-3</span>
-<span class="token comment" spellcheck="true">// @param  int  $coefficient-4</span>
-<span class="token comment" spellcheck="true">//</span>
-
-<span class="token keyword" >@include</span> _<span class="token function" >margin</span><span class="token punctuation" >(</span><span class="token number" >1</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token keyword" >@include</span> _<span class="token function" >margin</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token keyword" >@include</span> _<span class="token function" >margin</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span>, <span class="token number" >.5</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token keyword" >@include</span> _<span class="token function" >margin</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span>, <span class="token number" >.5</span>, <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token keyword" >@include</span> _<span class="token function" >margin</span><span class="token punctuation" >(</span><span class="token number" >10</span>px<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-</code></pre>
-
-              </div>
-            </article>
-          
-            <article class="c-entry">
-              <header class="c-entry__header">
                 <h2 class="c-entry__title" id="_margin-top()">_margin-top()</h2>
                 <ul class="c-meta">
                   <li class="c-meta__item">
@@ -1025,6 +996,35 @@ select </span><span class="token punctuation" >{</span>
 
 <span class="token keyword" >@include</span> _<span class="token function" >margin-left</span><span class="token punctuation" >(</span><span class="token number" >1</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token keyword" >@include</span> _<span class="token function" >margin-left</span><span class="token punctuation" >(</span><span class="token number" >10</span>px<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+</code></pre>
+
+              </div>
+            </article>
+          
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title" id="_margin()">_margin()</h2>
+                <ul class="c-meta">
+                  <li class="c-meta__item">
+                    /src/css/core/mixin/_margin.scss
+                  </li>
+                </ul>
+              </header>
+              <div class="c-entry__content">
+                <p>Sets margin</p>
+<h3 id="scss">scss</h3>
+<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">// @param  int  $coefficient-1</span>
+<span class="token comment" spellcheck="true">// @param  int  $coefficient-2</span>
+<span class="token comment" spellcheck="true">// @param  int  $coefficient-3</span>
+<span class="token comment" spellcheck="true">// @param  int  $coefficient-4</span>
+<span class="token comment" spellcheck="true">//</span>
+
+<span class="token keyword" >@include</span> _<span class="token function" >margin</span><span class="token punctuation" >(</span><span class="token number" >1</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >@include</span> _<span class="token function" >margin</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >@include</span> _<span class="token function" >margin</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span>, <span class="token number" >.5</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >@include</span> _<span class="token function" >margin</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span>, <span class="token number" >.5</span>, <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >@include</span> _<span class="token function" >margin</span><span class="token punctuation" >(</span><span class="token number" >10</span>px<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 </code></pre>
 
               </div>
@@ -1135,35 +1135,6 @@ select </span><span class="token punctuation" >{</span>
           
             <article class="c-entry">
               <header class="c-entry__header">
-                <h2 class="c-entry__title" id="_padding()">_padding()</h2>
-                <ul class="c-meta">
-                  <li class="c-meta__item">
-                    /src/css/core/mixin/_padding.scss
-                  </li>
-                </ul>
-              </header>
-              <div class="c-entry__content">
-                <p>Sets padding</p>
-<h3 id="scss">scss</h3>
-<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
-<span class="token comment" spellcheck="true">// @param  int  $coefficient-1</span>
-<span class="token comment" spellcheck="true">// @param  int  $coefficient-2</span>
-<span class="token comment" spellcheck="true">// @param  int  $coefficient-3</span>
-<span class="token comment" spellcheck="true">// @param  int  $coefficient-4</span>
-<span class="token comment" spellcheck="true">//</span>
-
-<span class="token keyword" >@include</span> _<span class="token function" >padding</span><span class="token punctuation" >(</span><span class="token number" >1</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token keyword" >@include</span> _<span class="token function" >padding</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token keyword" >@include</span> _<span class="token function" >padding</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span>, <span class="token number" >.5</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token keyword" >@include</span> _<span class="token function" >padding</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span>, <span class="token number" >.5</span>, <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token keyword" >@include</span> _<span class="token function" >padding</span><span class="token punctuation" >(</span><span class="token number" >10</span>px<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-</code></pre>
-
-              </div>
-            </article>
-          
-            <article class="c-entry">
-              <header class="c-entry__header">
                 <h2 class="c-entry__title" id="_padding-top()">_padding-top()</h2>
                 <ul class="c-meta">
                   <li class="c-meta__item">
@@ -1249,6 +1220,35 @@ select </span><span class="token punctuation" >{</span>
 
 <span class="token keyword" >@include</span> _<span class="token function" >padding-left</span><span class="token punctuation" >(</span><span class="token number" >1</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token keyword" >@include</span> _<span class="token function" >padding-left</span><span class="token punctuation" >(</span><span class="token number" >10</span>px<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+</code></pre>
+
+              </div>
+            </article>
+          
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title" id="_padding()">_padding()</h2>
+                <ul class="c-meta">
+                  <li class="c-meta__item">
+                    /src/css/core/mixin/_padding.scss
+                  </li>
+                </ul>
+              </header>
+              <div class="c-entry__content">
+                <p>Sets padding</p>
+<h3 id="scss">scss</h3>
+<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">// @param  int  $coefficient-1</span>
+<span class="token comment" spellcheck="true">// @param  int  $coefficient-2</span>
+<span class="token comment" spellcheck="true">// @param  int  $coefficient-3</span>
+<span class="token comment" spellcheck="true">// @param  int  $coefficient-4</span>
+<span class="token comment" spellcheck="true">//</span>
+
+<span class="token keyword" >@include</span> _<span class="token function" >padding</span><span class="token punctuation" >(</span><span class="token number" >1</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >@include</span> _<span class="token function" >padding</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >@include</span> _<span class="token function" >padding</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span>, <span class="token number" >.5</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >@include</span> _<span class="token function" >padding</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span>, <span class="token number" >.5</span>, <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >@include</span> _<span class="token function" >padding</span><span class="token punctuation" >(</span><span class="token number" >10</span>px<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 </code></pre>
 
               </div>

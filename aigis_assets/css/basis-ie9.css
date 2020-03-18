@@ -1508,31 +1508,6 @@ ul.u-inline-list {
 */
 /*
 ---
-name: _margin()
-category:
-  - core/mixin
-  - core/mixin/margin
----
-Sets margin
-
-### scss
-```scss
-//
-// @param  int  $coefficient-1
-// @param  int  $coefficient-2
-// @param  int  $coefficient-3
-// @param  int  $coefficient-4
-//
-
-@include _margin(1);
-@include _margin(1, 2);
-@include _margin(1, 2, .5);
-@include _margin(1, 2, .5, 2);
-@include _margin(10px);
-```
-*/
-/*
----
 name: _margin-top()
 category:
   - core/mixin
@@ -1609,6 +1584,31 @@ Sets margin-left
 */
 /*
 ---
+name: _margin()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient-1
+// @param  int  $coefficient-2
+// @param  int  $coefficient-3
+// @param  int  $coefficient-4
+//
+
+@include _margin(1);
+@include _margin(1, 2);
+@include _margin(1, 2, .5);
+@include _margin(1, 2, .5, 2);
+@include _margin(10px);
+```
+*/
+/*
+---
 name: _overlay()
 category:
   - core/mixin
@@ -1625,31 +1625,6 @@ Overlay helper
 .c-foo {
   @include _overlay(#fff, .5);
 }
-```
-*/
-/*
----
-name: _padding()
-category:
-  - core/mixin
-  - core/mixin/padding
----
-Sets padding
-
-### scss
-```scss
-//
-// @param  int  $coefficient-1
-// @param  int  $coefficient-2
-// @param  int  $coefficient-3
-// @param  int  $coefficient-4
-//
-
-@include _padding(1);
-@include _padding(1, 2);
-@include _padding(1, 2, .5);
-@include _padding(1, 2, .5, 2);
-@include _padding(10px);
 ```
 */
 /*
@@ -1726,6 +1701,31 @@ Sets padding-left
 
 @include _padding-left(1);
 @include _padding-left(10px);
+```
+*/
+/*
+---
+name: _padding()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding
+
+### scss
+```scss
+//
+// @param  int  $coefficient-1
+// @param  int  $coefficient-2
+// @param  int  $coefficient-3
+// @param  int  $coefficient-4
+//
+
+@include _padding(1);
+@include _padding(1, 2);
+@include _padding(1, 2, .5);
+@include _padding(1, 2, .5, 2);
+@include _padding(10px);
 ```
 */
 /*
