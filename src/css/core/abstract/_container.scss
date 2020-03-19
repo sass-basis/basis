@@ -1,24 +1,4 @@
-/*
----
-name: $_container-margin
-category:
-  - core/abstract
-  - core/abstract/container
-  - core/variable/container
----
-Container side margin
 
-### scss
-```scss
-//
-// @var  length
-//
-
-$_container-margin: $_base-line-height;
-```
-*/
-
-$_container-margin: $_base-line-height / 2 !default;
 
 /*
 ---
@@ -48,35 +28,13 @@ Abstract fluid container component
   padding-right: $_container-margin; // for IE11
   padding-left: $_container-margin; // for IE11
 
-  padding-right: var(--_container-margin, #{$_container-margin});
-  padding-left: var(--_container-margin, #{$_container-margin});
+  padding-right: _var-container-margin();
+  padding-left: _var-container-margin();
 
   @include _media-min(md) {
     --_container-margin: #{$_container-margin * 2};
   }
 }
-
-/*
----
-name: $_container-max-width
-category:
-  - core/abstract
-  - core/abstract/container
-  - core/variable/container
----
-Container max width
-
-### scss
-```scss
-//
-// @var  length
-//
-
-$_container-max-width: 1200px;
-```
-*/
-
-$_container-max-width: 1200px !default;
 
 /*
 ---

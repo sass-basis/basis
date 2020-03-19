@@ -84,7 +84,10 @@ Dropdown component
   }
 
   &__toggle {
-    @include _position(absolute, _space(.5), 5px, 0);
+    position: absolute;
+    @include _top(.5);
+    @include _right(5px);
+    @include _bottom(0);
     @include _square($_base-line-height);
     display: flex;
     align-items: center;

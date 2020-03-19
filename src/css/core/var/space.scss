@@ -1,0 +1,3 @@
+@function _var-space() {
+  @return var(--_space, $_base-line-height + $_base-line-height * ($_margin-coefficient - 1));
+}

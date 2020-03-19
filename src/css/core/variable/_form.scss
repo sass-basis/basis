@@ -1,0 +1,52 @@
+/*
+---
+name: $_form-control-border-color
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color
+
+### scss
+```scss
+$_form-control-border-color: _light($_color-gray);
+```
+*/
+
+$_form-control-border-color: _light($_color-gray) !default;
+
+/*
+---
+name: $_form-control-border-color-hover
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color when hover
+
+### scss
+```scss
+$_form-control-border-color-hover: $_color-gray;
+```
+*/
+
+$_form-control-border-color-hover: $_color-gray !default;
+
+/*
+---
+name: $_form-control-border-color-focus
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color when focus
+
+### scss
+```scss
+$_form-control-border-color-focus: #85B7D9;
+```
+*/
+$_form-control-border-color-focus: #85b7d9 !default;

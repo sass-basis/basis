@@ -11,7 +11,7 @@ Return the margin conforming to the rhythm
 ### scss
 ```scss
 //
-// @param   int|length  $coefficient
+// @param   number  $coefficient
 // @return  length
 //
 
@@ -23,14 +23,10 @@ padding: _space(1);
   @if (0 == $coefficient) {
     @return 0;
   }
-  @if (_is-length($coefficient)) {
-    @return $coefficient;
-  }
-  $margin    : ($_base-line-height * $coefficient);
-  $add-margin: ($_base-line-height * ($_margin-coefficient - 1));
-  $space     : ($margin + $add-margin);
-  @if (0 == $space) {
-    @return 0;
-  }
+
+  $margin    : $_base-line-height * $coefficient;
+  $add-margin: $_base-line-height * ($_margin-coefficient - 1);
+  $space     : $margin + $add-margin;
+
   @return $space;
 }

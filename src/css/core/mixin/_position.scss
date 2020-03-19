@@ -3,6 +3,7 @@
 name: _position()
 category:
   - core/mixin
+  - core/mixin/position
 ---
 The position shorthand
 
@@ -24,23 +25,139 @@ The position shorthand
 @mixin _position($position, $top: null, $right: null, $bottom: null, $left: null, $z-index: null) {
   position: $position;
 
-  @if (_is-number($top) or _is-length($top)) {
-    top: $top;
+  @if not _is-null($top) {
+    @include _top($top);
   }
 
-  @if (_is-length($right) or _is-length($right)) {
-    right: $right;
+  @if not _is-null($right) {
+    @include _right($right);
   }
 
-  @if (_is-length($bottom) or _is-length($bottom)) {
-    bottom: $bottom;
+  @if not _is-null($bottom) {
+    @include _bottom($bottom);
   }
 
-  @if (_is-length($left) or _is-length($left)) {
-    left: $left;
+  @if not _is-null($left) {
+    @include _left($left);
   }
 
   @if (_is-int($z-index) or _is-length($z-index)) {
     z-index: _strip-unit($z-index);
+  }
+}
+
+/*
+---
+name: _top()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets top
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _top(1);
+@include _top(10px);
+```
+*/
+
+@mixin _top($coefficient) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    top: _space($coefficient);
+    top: calc(#{ _var-space() } * #{ $coefficient });
+  } @else {
+    top: $coefficient;
+  }
+}
+
+/*
+---
+name: _right()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets right
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _right(1);
+@include _right(10px);
+```
+*/
+
+@mixin _right($coefficient) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    right: _space($coefficient);
+    right: calc(#{ _var-space() } * #{ $coefficient });
+  } @else {
+    right: $coefficient;
+  }
+}
+
+/*
+---
+name: _bottom()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets bottom
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _bottom(1);
+@include _bottom(10px);
+```
+*/
+
+@mixin _bottom($coefficient) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    bottom: _space($coefficient);
+    bottom: calc(#{ _var-space() } * #{ $coefficient });
+  } @else {
+    bottom: $coefficient;
+  }
+}
+
+/*
+---
+name: _left()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets left
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _left(1);
+@include _left(10px);
+```
+*/
+
+@mixin _left($coefficient) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    left: _space($coefficient);
+    left: calc(#{ _var-space() } * #{ $coefficient });
+  } @else {
+    left: $coefficient;
   }
 }

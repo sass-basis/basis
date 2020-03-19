@@ -1,0 +1,43 @@
+/*
+---
+name: $_container-margin
+category:
+  - core/abstract
+  - core/abstract/container
+  - core/variable/container
+---
+Container side margin
+
+### scss
+```scss
+//
+// @var  length
+//
+
+$_container-margin: $_base-line-height;
+```
+*/
+
+$_container-margin: $_base-line-height / 2 !default;
+
+/*
+---
+name: $_container-max-width
+category:
+  - core/abstract
+  - core/abstract/container
+  - core/variable/container
+---
+Container max width
+
+### scss
+```scss
+//
+// @var  length
+//
+
+$_container-max-width: 1200px;
+```
+*/
+
+$_container-max-width: 1200px !default;

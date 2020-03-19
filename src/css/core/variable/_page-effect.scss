@@ -1,0 +1,16 @@
+/*
+---
+name: $_page-effect-z-index
+category:
+  - core/abstract
+  - core/variable/page-effect
+---
+`z-index` of page effect
+
+### scss
+```scss
+$_page-effect-z-index: 1000000;
+```
+*/
+
+$_page-effect-z-index: 1000000 !default;

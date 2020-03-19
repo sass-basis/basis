@@ -88,3 +88,36 @@ Abstract column element of flexbox based grid system
     @include _row__col--margin(1);
   }
 }
+
+/*
+---
+name: _lattice__col--width()
+category:
+  - core/abstract
+  - core/abstract/grid-system/lattice
+---
+Sets column width of flexbox based grid system
+
+### scss
+```scss
+//
+// @param  length  $width
+//
+
+.c-lattice {
+  @include _lattice();
+
+  &__col {
+    @include _lattice__col(1, 2);
+
+    @include _media-min(lg) {
+      @include _lattice__col--width(1 / 3 * 100%);
+    }
+  }
+}
+```
+*/
+
+@mixin _lattice__col--width($width) {
+  @include _row__col--width($width);
+}

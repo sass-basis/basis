@@ -11,6 +11,7 @@ Sets padding-top
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-top(1);
@@ -18,8 +19,18 @@ Sets padding-top
 ```
 */
 
-@mixin _padding-top($coefficient) {
-  padding-top: _space($coefficient);
+@mixin _padding-top($coefficient, $apply-margin-scale: false) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    padding-top: _space($coefficient);
+
+    @if false == $apply-margin-scale {
+      padding-top: calc(#{ _var-space() } * #{ $coefficient });
+    } @else {
+      padding-top: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    }
+  } @else {
+    padding-top: $coefficient;
+  }
 }
 
 /*
@@ -35,6 +46,7 @@ Sets padding-right
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-right(1);
@@ -42,8 +54,18 @@ Sets padding-right
 ```
 */
 
-@mixin _padding-right($coefficient) {
-  padding-right: _space($coefficient);
+@mixin _padding-right($coefficient, $apply-margin-scale: false) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    padding-right: _space($coefficient);
+
+    @if false == $apply-margin-scale {
+      padding-right: calc(#{ _var-space() } * #{ $coefficient });
+    } @else {
+      padding-right: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    }
+  } @else {
+    padding-right: $coefficient;
+  }
 }
 
 /*
@@ -59,6 +81,7 @@ Sets padding-bottom
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-bottom(1);
@@ -66,8 +89,18 @@ Sets padding-bottom
 ```
 */
 
-@mixin _padding-bottom($coefficient) {
-  padding-bottom: _space($coefficient);
+@mixin _padding-bottom($coefficient, $apply-margin-scale: false) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    padding-bottom: _space($coefficient);
+
+    @if false == $apply-margin-scale {
+      padding-bottom: calc(#{ _var-space() } * #{ $coefficient });
+    } @else {
+      padding-bottom: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    }
+  } @else {
+    padding-bottom: $coefficient;
+  }
 }
 
 /*
@@ -83,6 +116,7 @@ Sets padding-left
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-left(1);
@@ -90,8 +124,18 @@ Sets padding-left
 ```
 */
 
-@mixin _padding-left($coefficient) {
-  padding-left: _space($coefficient);
+@mixin _padding-left($coefficient, $apply-margin-scale: false) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    padding-left: _space($coefficient);
+
+    @if false == $apply-margin-scale {
+      padding-left: calc(#{ _var-space() } * #{ $coefficient });
+    } @else {
+      padding-left: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    }
+  } @else {
+    padding-left: $coefficient;
+  }
 }
 
 /*
@@ -122,44 +166,24 @@ Sets padding
 
 @mixin _padding($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
   @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
-    $padding-top: _space($coefficient-1);
-    $padding-right: _space($coefficient-1);
-    $padding-bottom: _space($coefficient-1);
-    $padding-left: _space($coefficient-1);
-
-    @include _padding-top($padding-top);
-    @include _padding-right($padding-right);
-    @include _padding-bottom($padding-bottom);
-    @include _padding-left($padding-left);
+    @include _padding-top($coefficient-1);
+    @include _padding-right($coefficient-1);
+    @include _padding-bottom($coefficient-1);
+    @include _padding-left($coefficient-1);
   } @else if (_is-null($coefficient-3) and _is-null($coefficient-4)) {
-    $padding-top: _space($coefficient-1);
-    $padding-right: _space($coefficient-2);
-    $padding-bottom: _space($coefficient-1);
-    $padding-left: _space($coefficient-2);
-
-    @include _padding-top($padding-top);
-    @include _padding-right($padding-right);
-    @include _padding-bottom($padding-bottom);
-    @include _padding-left($padding-left);
+    @include _padding-top($coefficient-1);
+    @include _padding-right($coefficient-2);
+    @include _padding-bottom($coefficient-1);
+    @include _padding-left($coefficient-2);
   } @else if (_is-null($coefficient-4)) {
-    $padding-top: _space($coefficient-1);
-    $padding-right: _space($coefficient-2);
-    $padding-bottom: _space($coefficient-3);
-    $padding-left: _space($coefficient-2);
-
-    @include _padding-top($padding-top);
-    @include _padding-right($padding-right);
-    @include _padding-bottom($padding-bottom);
-    @include _padding-left($padding-left);
+    @include _padding-top($coefficient-1);
+    @include _padding-right($coefficient-2);
+    @include _padding-bottom($coefficient-3);
+    @include _padding-left($coefficient-2);
   } @else {
-    $padding-top   : _space($coefficient-1);
-    $padding-right : _space($coefficient-2);
-    $padding-bottom: _space($coefficient-3);
-    $padding-left  : _space($coefficient-4);
-
-    @include _padding-top($padding-top);
-    @include _padding-right($padding-right);
-    @include _padding-bottom($padding-bottom);
-    @include _padding-left($padding-left);
+    @include _padding-top($coefficient-1);
+    @include _padding-right($coefficient-2);
+    @include _padding-bottom($coefficient-3);
+    @include _padding-left($coefficient-4);
   }
 }
