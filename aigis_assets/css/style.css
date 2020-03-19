@@ -450,7 +450,7 @@ Return the margin conforming to the rhythm
 ### scss
 ```scss
 //
-// @param   int|length  $coefficient
+// @param   number  $coefficient
 // @return  length
 //
 
@@ -1014,6 +1014,103 @@ $_sizes: (
 */
 /*
 ---
+name: $_container-margin
+category:
+  - core/abstract
+  - core/abstract/container
+  - core/variable/container
+---
+Container side margin
+
+### scss
+```scss
+//
+// @var  length
+//
+
+$_container-margin: $_base-line-height;
+```
+*/
+/*
+---
+name: $_container-max-width
+category:
+  - core/abstract
+  - core/abstract/container
+  - core/variable/container
+---
+Container max width
+
+### scss
+```scss
+//
+// @var  length
+//
+
+$_container-max-width: 1200px;
+```
+*/
+/*
+---
+name: $_form-control-border-color
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color
+
+### scss
+```scss
+$_form-control-border-color: _light($_color-gray);
+```
+*/
+/*
+---
+name: $_form-control-border-color-hover
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color when hover
+
+### scss
+```scss
+$_form-control-border-color-hover: $_color-gray;
+```
+*/
+/*
+---
+name: $_form-control-border-color-focus
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color when focus
+
+### scss
+```scss
+$_form-control-border-color-focus: #85B7D9;
+```
+*/
+/*
+---
+name: $_page-effect-z-index
+category:
+  - core/abstract
+  - core/variable/page-effect
+---
+`z-index` of page effect
+
+### scss
+```scss
+$_page-effect-z-index: 1000000;
+```
+*/
+/*
+---
 name: _bounce-vertical()
 category:
   - core/mixin
@@ -1391,51 +1488,6 @@ select {
 */
 /*
 ---
-name: $_form-control-border-color
-category:
-  - core/mixin
-  - core/mixin/form
-  - core/variable/form
----
-Form Control border color
-
-### scss
-```scss
-$_form-control-border-color: _light($_color-gray);
-```
-*/
-/*
----
-name: $_form-control-border-color-hover
-category:
-  - core/mixin
-  - core/mixin/form
-  - core/variable/form
----
-Form Control border color when hover
-
-### scss
-```scss
-$_form-control-border-color-hover: $_color-gray;
-```
-*/
-/*
----
-name: $_form-control-border-color-focus
-category:
-  - core/mixin
-  - core/mixin/form
-  - core/variable/form
----
-Form Control border color when focus
-
-### scss
-```scss
-$_form-control-border-color-focus: #85B7D9;
-```
-*/
-/*
----
 name: _form-control-base-border()
 category:
   - core/mixin
@@ -1648,6 +1700,7 @@ Sets padding-top
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-top(1);
@@ -1667,6 +1720,7 @@ Sets padding-right
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-right(1);
@@ -1686,6 +1740,7 @@ Sets padding-bottom
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-bottom(1);
@@ -1705,6 +1760,7 @@ Sets padding-left
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-left(1);
@@ -1741,6 +1797,7 @@ Sets padding
 name: _position()
 category:
   - core/mixin
+  - core/mixin/position
 ---
 The position shorthand
 
@@ -1756,6 +1813,82 @@ The position shorthand
 //
 
 @include _position(absolute, 10px, null, null, 10px, 1);
+```
+*/
+/*
+---
+name: _top()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets top
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _top(1);
+@include _top(10px);
+```
+*/
+/*
+---
+name: _right()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets right
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _right(1);
+@include _right(10px);
+```
+*/
+/*
+---
+name: _bottom()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets bottom
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _bottom(1);
+@include _bottom(10px);
+```
+*/
+/*
+---
+name: _left()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets left
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _left(1);
+@include _left(10px);
 ```
 */
 /*
@@ -2347,25 +2480,6 @@ new BasisCheckbox({
 */
 /*
 ---
-name: $_container-margin
-category:
-  - core/abstract
-  - core/abstract/container
-  - core/variable/container
----
-Container side margin
-
-### scss
-```scss
-//
-// @var  length
-//
-
-$_container-margin: $_base-line-height;
-```
-*/
-/*
----
 name: _fluid-container()
 category:
   - core/abstract
@@ -2385,25 +2499,6 @@ Abstract fluid container component
 <div class="c-fluid-container">
   ...
 </div>
-```
-*/
-/*
----
-name: $_container-max-width
-category:
-  - core/abstract
-  - core/abstract/container
-  - core/variable/container
----
-Container max width
-
-### scss
-```scss
-//
-// @var  length
-//
-
-$_container-max-width: 1200px;
 ```
 */
 /*
@@ -2476,7 +2571,10 @@ Abstract drawer component
   }
 
   &__toggle {
-    @include _position(absolute, _space(.5), 5px, 0);
+    position: absolute;
+    @include _top(.5);
+    @include _right(5px);
+    @include _bottom(0);
     @include _square($_base-line-height);
     display: flex;
     align-items: center;
@@ -2586,7 +2684,10 @@ Abstract dropdown component
   }
 
   &__toggle {
-    @include _position(absolute, _space(.5), 5px, 0);
+    position: absolute;
+    @include _top(.5);
+    @include _right(5px);
+    @include _bottom(0);
     @include _square($_base-line-height);
     display: flex;
     align-items: center;
@@ -3206,20 +3307,6 @@ new BasisNavbar({
 */
 /*
 ---
-name: $_page-effect-z-index
-category:
-  - core/abstract
-  - core/variable/page-effect
----
-`z-index` of page effect
-
-### scss
-```scss
-$_page-effect-z-index: 1000000;
-```
-*/
-/*
----
 name: _page-effect()
 category:
   - core/abstract
@@ -3672,6 +3759,34 @@ Abstract column element of flexbox based grid system
     ...
   </div>
 </div>
+```
+*/
+/*
+---
+name: _lattice__col--width()
+category:
+  - core/abstract
+  - core/abstract/grid-system/lattice
+---
+Sets column width of flexbox based grid system
+
+### scss
+```scss
+//
+// @param  length  $width
+//
+
+.c-lattice {
+  @include _lattice();
+
+  &__col {
+    @include _lattice__col(1, 2);
+
+    @include _media-min(lg) {
+      @include _lattice__col--width(1 / 3 * 100%);
+    }
+  }
+}
 ```
 */
 /*
@@ -4504,10 +4619,8 @@ Breadcrumbs component
     .c-breadcrumbs__item:nth-child(n + 2)::before {
       margin-top: 0;
       margin-right: 5px;
-      margin-right: calc(5px * var(--_margin-scale, 1));
       margin-bottom: 0;
       margin-left: 5px;
-      margin-left: calc(5px * var(--_margin-scale, 1));
       font-family: 'basis';
       speak: none;
       font-style: normal;
@@ -4774,27 +4887,33 @@ Drawer component
     position: relative; }
   .c-drawer__item {
     padding-top: 0.75rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.5);
     padding-right: 1.5rem;
+    padding-right: calc(var(--_space, 1.5rem) * 1);
     padding-bottom: 0;
-    padding-left: 1.5rem; }
+    padding-left: 1.5rem;
+    padding-left: calc(var(--_space, 1.5rem) * 1); }
   .c-drawer__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
     margin-top: 0;
     margin-right: -1.5rem;
-    margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+    margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
     margin-bottom: 0;
     margin-left: 0;
     padding-left: 1em; }
   .c-drawer__subitem {
     padding-top: 0.75rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.5);
     padding-right: 1.5rem;
+    padding-right: calc(var(--_space, 1.5rem) * 1);
     padding-bottom: 0;
     padding-left: 0; }
   .c-drawer__toggle {
     position: absolute;
     top: 0.75rem;
+    top: calc(var(--_space, 1.5rem) * 0.5);
     right: 5px;
     bottom: 0;
     height: 1.5rem;
@@ -4891,27 +5010,33 @@ Dropdown component
     position: relative; }
   .c-dropdown__item {
     padding-top: 0.75rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.5);
     padding-right: 1.5rem;
+    padding-right: calc(var(--_space, 1.5rem) * 1);
     padding-bottom: 0;
-    padding-left: 1.5rem; }
+    padding-left: 1.5rem;
+    padding-left: calc(var(--_space, 1.5rem) * 1); }
   .c-dropdown__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
     margin-top: 0;
     margin-right: -1.5rem;
-    margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+    margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
     margin-bottom: 0;
     margin-left: 0;
     padding-left: 1em; }
   .c-dropdown__subitem {
     padding-top: 0.75rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.5);
     padding-right: 1.5rem;
+    padding-right: calc(var(--_space, 1.5rem) * 1);
     padding-bottom: 0;
     padding-left: 0; }
   .c-dropdown__toggle {
     position: absolute;
     top: 0.75rem;
+    top: calc(var(--_space, 1.5rem) * 0.5);
     right: 5px;
     bottom: 0;
     height: 1.5rem;
@@ -5017,9 +5142,13 @@ Form control component
   outline: 0;
   transition: border 0.2s ease-out;
   padding-top: 0.375rem;
+  padding-top: calc(var(--_space, 1.5rem) * 0.25);
   padding-right: 0.75rem;
+  padding-right: calc(var(--_space, 1.5rem) * 0.5);
   padding-bottom: 0.375rem;
+  padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
   padding-left: 0.75rem;
+  padding-left: calc(var(--_space, 1.5rem) * 0.5);
   background-color: #fff;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
   max-width: 100%; }
@@ -5280,9 +5409,13 @@ Input group component
   .c-input-group__addon {
     border: 1px solid #cccccc;
     padding-top: 0.375rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.25);
     padding-right: 0.75rem;
+    padding-right: calc(var(--_space, 1.5rem) * 0.5);
     padding-bottom: 0.375rem;
+    padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
     padding-left: 0.75rem;
+    padding-left: calc(var(--_space, 1.5rem) * 0.5);
     flex: none; }
   .c-input-group__field {
     display: flex;
@@ -5299,9 +5432,13 @@ Input group component
       outline: 0;
       transition: border 0.2s ease-out;
       padding-top: 0.375rem;
+      padding-top: calc(var(--_space, 1.5rem) * 0.25);
       padding-right: 0.75rem;
+      padding-right: calc(var(--_space, 1.5rem) * 0.5);
       padding-bottom: 0.375rem;
+      padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
       padding-left: 0.75rem;
+      padding-left: calc(var(--_space, 1.5rem) * 0.5);
       background-color: #fff;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
       max-width: 100%;
@@ -5376,9 +5513,13 @@ Input group component
     outline: 0;
     transition: border 0.2s ease-out;
     padding-top: 0.375rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.25);
     padding-right: 0.75rem;
+    padding-right: calc(var(--_space, 1.5rem) * 0.5);
     padding-bottom: 0.375rem;
+    padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
     padding-left: 0.75rem;
+    padding-left: calc(var(--_space, 1.5rem) * 0.5);
     color: #333;
     flex: none;
     overflow: visible; }
@@ -5740,7 +5881,8 @@ Navbar component
     position: relative; }
     .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"],
     .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] {
-      padding-right: 1.5rem; }
+      padding-right: 1.5rem;
+      padding-right: calc(var(--_space, 1.5rem) * 1); }
   .c-navbar__toggle {
     position: absolute;
     top: calc(50% - 0.75rem);
@@ -6311,52 +6453,50 @@ Row component of flexbox based grid system
     margin-bottom: 0; }
     .c-row--collapse > .c-row__col {
       padding-right: 0;
-      padding-right: calc(0 * var(--_margin-scale));
       padding-left: 0;
-      padding-left: calc(0 * var(--_margin-scale));
       margin-bottom: 0; }
   .c-row--margin {
     margin-right: -0.75rem;
-    margin-right: calc(-0.75rem * var(--_margin-scale, 1));
+    margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
     margin-left: -0.75rem;
-    margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+    margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
     margin-bottom: -1.5rem;
-    margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
+    margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
     .c-row--margin > .c-row__col {
       padding-right: 0.75rem;
-      padding-right: calc(0.75rem * var(--_margin-scale));
+      padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
       padding-left: 0.75rem;
-      padding-left: calc(0.75rem * var(--_margin-scale));
+      padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
       margin-bottom: 1.5rem;
-      margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
     .c-row--margin-s {
       margin-right: -0.375rem;
-      margin-right: calc(-0.375rem * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
       margin-left: -0.375rem;
-      margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
       margin-bottom: -0.75rem;
-      margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
       .c-row--margin-s > .c-row__col {
         padding-right: 0.375rem;
-        padding-right: calc(0.375rem * var(--_margin-scale));
+        padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
         padding-left: 0.375rem;
-        padding-left: calc(0.375rem * var(--_margin-scale));
+        padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
         margin-bottom: 0.75rem;
-        margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
     .c-row--margin-l {
       margin-right: -1.5rem;
-      margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
       margin-left: -1.5rem;
-      margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
       margin-bottom: -3rem;
-      margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
       .c-row--margin-l > .c-row__col {
         padding-right: 1.5rem;
-        padding-right: calc(1.5rem * var(--_margin-scale));
+        padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
         padding-left: 1.5rem;
-        padding-left: calc(1.5rem * var(--_margin-scale));
+        padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
         margin-bottom: 3rem;
-        margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
   .c-row--fill > .c-row__col {
     display: flex; }
     .c-row--fill > .c-row__col > * {
@@ -6389,52 +6529,50 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--md-collapse > .c-row__col {
         padding-right: 0;
-        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
-        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--md-margin {
       margin-right: -0.75rem;
-      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-bottom: -1.5rem;
-      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--md-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(0.75rem * var(--_margin-scale));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         padding-left: 0.75rem;
-        padding-left: calc(0.75rem * var(--_margin-scale));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         margin-bottom: 1.5rem;
-        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--md-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-bottom: -0.75rem;
-        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--md-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(0.375rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           padding-left: 0.375rem;
-          padding-left: calc(0.375rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           margin-bottom: 0.75rem;
-          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--md-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-bottom: -3rem;
-        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--md-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(1.5rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           padding-left: 1.5rem;
-          padding-left: calc(1.5rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           margin-bottom: 3rem;
-          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--md-fill > .c-row__col {
       display: flex; }
       .c-row--md-fill > .c-row__col > * {
@@ -6467,52 +6605,50 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--lg-collapse > .c-row__col {
         padding-right: 0;
-        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
-        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--lg-margin {
       margin-right: -0.75rem;
-      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-bottom: -1.5rem;
-      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--lg-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(0.75rem * var(--_margin-scale));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         padding-left: 0.75rem;
-        padding-left: calc(0.75rem * var(--_margin-scale));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         margin-bottom: 1.5rem;
-        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--lg-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-bottom: -0.75rem;
-        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--lg-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(0.375rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           padding-left: 0.375rem;
-          padding-left: calc(0.375rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           margin-bottom: 0.75rem;
-          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--lg-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-bottom: -3rem;
-        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--lg-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(1.5rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           padding-left: 1.5rem;
-          padding-left: calc(1.5rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           margin-bottom: 3rem;
-          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--lg-fill > .c-row__col {
       display: flex; }
       .c-row--lg-fill > .c-row__col > * {
@@ -6545,52 +6681,50 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--xl-collapse > .c-row__col {
         padding-right: 0;
-        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
-        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--xl-margin {
       margin-right: -0.75rem;
-      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-bottom: -1.5rem;
-      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--xl-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(0.75rem * var(--_margin-scale));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         padding-left: 0.75rem;
-        padding-left: calc(0.75rem * var(--_margin-scale));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         margin-bottom: 1.5rem;
-        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--xl-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-bottom: -0.75rem;
-        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--xl-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(0.375rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           padding-left: 0.375rem;
-          padding-left: calc(0.375rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           margin-bottom: 0.75rem;
-          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--xl-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-bottom: -3rem;
-        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--xl-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(1.5rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           padding-left: 1.5rem;
-          padding-left: calc(1.5rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           margin-bottom: 3rem;
-          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--xl-fill > .c-row__col {
       display: flex; }
       .c-row--xl-fill > .c-row__col > * {
@@ -7498,9 +7632,13 @@ Select box component
     content: "\e902"; }
   .c-select > select, .c-select__label {
     padding-top: 0.375rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.25);
     padding-right: 0.75rem;
+    padding-right: calc(var(--_space, 1.5rem) * 0.5);
     padding-bottom: 0.375rem;
-    padding-left: 0.75rem; }
+    padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
+    padding-left: 0.75rem;
+    padding-left: calc(var(--_space, 1.5rem) * 0.5); }
   .c-select > select {
     position: relative;
     z-index: 1;
@@ -7509,7 +7647,8 @@ Select box component
     appearance: none;
     border: none;
     outline: 0;
-    padding-right: 2.25rem; }
+    padding-right: 2.25rem;
+    padding-right: calc(var(--_space, 1.5rem) * 1.5); }
   .c-select__label {
     position: absolute;
     top: 0;
@@ -7965,42 +8104,42 @@ Content utility
 */
 .u-content > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
   margin-top: 1.5rem;
-  margin-top: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .u-content > h1 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .u-content > h2 {
   margin-top: 3rem;
-  margin-top: calc(3rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1));
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .u-content > h3 {
   margin-top: 2.25rem;
-  margin-top: calc(2.25rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1.5 * var(--_margin-scale, 1));
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .u-content > h4 {
   margin-top: 1.875rem;
-  margin-top: calc(1.875rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1.25 * var(--_margin-scale, 1));
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .u-content > h5 {
   margin-top: 1.5rem;
-  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-bottom: 0.75rem;
-  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
 
 .u-content > h6 {
   margin-top: 1.5rem;
-  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-bottom: 0.75rem;
-  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
 
 .u-content > :first-child {
   margin-top: 0; }
@@ -8810,7 +8949,7 @@ Return the margin conforming to the rhythm
 ### scss
 ```scss
 //
-// @param   int|length  $coefficient
+// @param   number  $coefficient
 // @return  length
 //
 
@@ -9374,6 +9513,103 @@ $_sizes: (
 */
 /*
 ---
+name: $_container-margin
+category:
+  - core/abstract
+  - core/abstract/container
+  - core/variable/container
+---
+Container side margin
+
+### scss
+```scss
+//
+// @var  length
+//
+
+$_container-margin: $_base-line-height;
+```
+*/
+/*
+---
+name: $_container-max-width
+category:
+  - core/abstract
+  - core/abstract/container
+  - core/variable/container
+---
+Container max width
+
+### scss
+```scss
+//
+// @var  length
+//
+
+$_container-max-width: 1200px;
+```
+*/
+/*
+---
+name: $_form-control-border-color
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color
+
+### scss
+```scss
+$_form-control-border-color: _light($_color-gray);
+```
+*/
+/*
+---
+name: $_form-control-border-color-hover
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color when hover
+
+### scss
+```scss
+$_form-control-border-color-hover: $_color-gray;
+```
+*/
+/*
+---
+name: $_form-control-border-color-focus
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color when focus
+
+### scss
+```scss
+$_form-control-border-color-focus: #85B7D9;
+```
+*/
+/*
+---
+name: $_page-effect-z-index
+category:
+  - core/abstract
+  - core/variable/page-effect
+---
+`z-index` of page effect
+
+### scss
+```scss
+$_page-effect-z-index: 1000000;
+```
+*/
+/*
+---
 name: _bounce-vertical()
 category:
   - core/mixin
@@ -9751,51 +9987,6 @@ select {
 */
 /*
 ---
-name: $_form-control-border-color
-category:
-  - core/mixin
-  - core/mixin/form
-  - core/variable/form
----
-Form Control border color
-
-### scss
-```scss
-$_form-control-border-color: _light($_color-gray);
-```
-*/
-/*
----
-name: $_form-control-border-color-hover
-category:
-  - core/mixin
-  - core/mixin/form
-  - core/variable/form
----
-Form Control border color when hover
-
-### scss
-```scss
-$_form-control-border-color-hover: $_color-gray;
-```
-*/
-/*
----
-name: $_form-control-border-color-focus
-category:
-  - core/mixin
-  - core/mixin/form
-  - core/variable/form
----
-Form Control border color when focus
-
-### scss
-```scss
-$_form-control-border-color-focus: #85B7D9;
-```
-*/
-/*
----
 name: _form-control-base-border()
 category:
   - core/mixin
@@ -10008,6 +10199,7 @@ Sets padding-top
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-top(1);
@@ -10027,6 +10219,7 @@ Sets padding-right
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-right(1);
@@ -10046,6 +10239,7 @@ Sets padding-bottom
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-bottom(1);
@@ -10065,6 +10259,7 @@ Sets padding-left
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-left(1);
@@ -10101,6 +10296,7 @@ Sets padding
 name: _position()
 category:
   - core/mixin
+  - core/mixin/position
 ---
 The position shorthand
 
@@ -10116,6 +10312,82 @@ The position shorthand
 //
 
 @include _position(absolute, 10px, null, null, 10px, 1);
+```
+*/
+/*
+---
+name: _top()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets top
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _top(1);
+@include _top(10px);
+```
+*/
+/*
+---
+name: _right()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets right
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _right(1);
+@include _right(10px);
+```
+*/
+/*
+---
+name: _bottom()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets bottom
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _bottom(1);
+@include _bottom(10px);
+```
+*/
+/*
+---
+name: _left()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets left
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _left(1);
+@include _left(10px);
 ```
 */
 /*
@@ -10707,25 +10979,6 @@ new BasisCheckbox({
 */
 /*
 ---
-name: $_container-margin
-category:
-  - core/abstract
-  - core/abstract/container
-  - core/variable/container
----
-Container side margin
-
-### scss
-```scss
-//
-// @var  length
-//
-
-$_container-margin: $_base-line-height;
-```
-*/
-/*
----
 name: _fluid-container()
 category:
   - core/abstract
@@ -10745,25 +10998,6 @@ Abstract fluid container component
 <div class="c-fluid-container">
   ...
 </div>
-```
-*/
-/*
----
-name: $_container-max-width
-category:
-  - core/abstract
-  - core/abstract/container
-  - core/variable/container
----
-Container max width
-
-### scss
-```scss
-//
-// @var  length
-//
-
-$_container-max-width: 1200px;
 ```
 */
 /*
@@ -10836,7 +11070,10 @@ Abstract drawer component
   }
 
   &__toggle {
-    @include _position(absolute, _space(.5), 5px, 0);
+    position: absolute;
+    @include _top(.5);
+    @include _right(5px);
+    @include _bottom(0);
     @include _square($_base-line-height);
     display: flex;
     align-items: center;
@@ -10946,7 +11183,10 @@ Abstract dropdown component
   }
 
   &__toggle {
-    @include _position(absolute, _space(.5), 5px, 0);
+    position: absolute;
+    @include _top(.5);
+    @include _right(5px);
+    @include _bottom(0);
     @include _square($_base-line-height);
     display: flex;
     align-items: center;
@@ -11566,20 +11806,6 @@ new BasisNavbar({
 */
 /*
 ---
-name: $_page-effect-z-index
-category:
-  - core/abstract
-  - core/variable/page-effect
----
-`z-index` of page effect
-
-### scss
-```scss
-$_page-effect-z-index: 1000000;
-```
-*/
-/*
----
 name: _page-effect()
 category:
   - core/abstract
@@ -12032,6 +12258,34 @@ Abstract column element of flexbox based grid system
     ...
   </div>
 </div>
+```
+*/
+/*
+---
+name: _lattice__col--width()
+category:
+  - core/abstract
+  - core/abstract/grid-system/lattice
+---
+Sets column width of flexbox based grid system
+
+### scss
+```scss
+//
+// @param  length  $width
+//
+
+.c-lattice {
+  @include _lattice();
+
+  &__col {
+    @include _lattice__col(1, 2);
+
+    @include _media-min(lg) {
+      @include _lattice__col--width(1 / 3 * 100%);
+    }
+  }
+}
 ```
 */
 /*
@@ -12864,10 +13118,8 @@ Breadcrumbs component
     .c-breadcrumbs__item:nth-child(n + 2)::before {
       margin-top: 0;
       margin-right: 5px;
-      margin-right: calc(5px * var(--_margin-scale, 1));
       margin-bottom: 0;
       margin-left: 5px;
-      margin-left: calc(5px * var(--_margin-scale, 1));
       font-family: 'basis';
       speak: none;
       font-style: normal;
@@ -13134,27 +13386,33 @@ Drawer component
     position: relative; }
   .c-drawer__item {
     padding-top: 0.75rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.5);
     padding-right: 1.5rem;
+    padding-right: calc(var(--_space, 1.5rem) * 1);
     padding-bottom: 0;
-    padding-left: 1.5rem; }
+    padding-left: 1.5rem;
+    padding-left: calc(var(--_space, 1.5rem) * 1); }
   .c-drawer__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
     margin-top: 0;
     margin-right: -1.5rem;
-    margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+    margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
     margin-bottom: 0;
     margin-left: 0;
     padding-left: 1em; }
   .c-drawer__subitem {
     padding-top: 0.75rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.5);
     padding-right: 1.5rem;
+    padding-right: calc(var(--_space, 1.5rem) * 1);
     padding-bottom: 0;
     padding-left: 0; }
   .c-drawer__toggle {
     position: absolute;
     top: 0.75rem;
+    top: calc(var(--_space, 1.5rem) * 0.5);
     right: 5px;
     bottom: 0;
     height: 1.5rem;
@@ -13251,27 +13509,33 @@ Dropdown component
     position: relative; }
   .c-dropdown__item {
     padding-top: 0.75rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.5);
     padding-right: 1.5rem;
+    padding-right: calc(var(--_space, 1.5rem) * 1);
     padding-bottom: 0;
-    padding-left: 1.5rem; }
+    padding-left: 1.5rem;
+    padding-left: calc(var(--_space, 1.5rem) * 1); }
   .c-dropdown__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
     margin-top: 0;
     margin-right: -1.5rem;
-    margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+    margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
     margin-bottom: 0;
     margin-left: 0;
     padding-left: 1em; }
   .c-dropdown__subitem {
     padding-top: 0.75rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.5);
     padding-right: 1.5rem;
+    padding-right: calc(var(--_space, 1.5rem) * 1);
     padding-bottom: 0;
     padding-left: 0; }
   .c-dropdown__toggle {
     position: absolute;
     top: 0.75rem;
+    top: calc(var(--_space, 1.5rem) * 0.5);
     right: 5px;
     bottom: 0;
     height: 1.5rem;
@@ -13377,9 +13641,13 @@ Form control component
   outline: 0;
   transition: border 0.2s ease-out;
   padding-top: 0.375rem;
+  padding-top: calc(var(--_space, 1.5rem) * 0.25);
   padding-right: 0.75rem;
+  padding-right: calc(var(--_space, 1.5rem) * 0.5);
   padding-bottom: 0.375rem;
+  padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
   padding-left: 0.75rem;
+  padding-left: calc(var(--_space, 1.5rem) * 0.5);
   background-color: #fff;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
   max-width: 100%; }
@@ -13640,9 +13908,13 @@ Input group component
   .c-input-group__addon {
     border: 1px solid #cccccc;
     padding-top: 0.375rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.25);
     padding-right: 0.75rem;
+    padding-right: calc(var(--_space, 1.5rem) * 0.5);
     padding-bottom: 0.375rem;
+    padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
     padding-left: 0.75rem;
+    padding-left: calc(var(--_space, 1.5rem) * 0.5);
     flex: none; }
   .c-input-group__field {
     display: flex;
@@ -13659,9 +13931,13 @@ Input group component
       outline: 0;
       transition: border 0.2s ease-out;
       padding-top: 0.375rem;
+      padding-top: calc(var(--_space, 1.5rem) * 0.25);
       padding-right: 0.75rem;
+      padding-right: calc(var(--_space, 1.5rem) * 0.5);
       padding-bottom: 0.375rem;
+      padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
       padding-left: 0.75rem;
+      padding-left: calc(var(--_space, 1.5rem) * 0.5);
       background-color: #fff;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
       max-width: 100%;
@@ -13736,9 +14012,13 @@ Input group component
     outline: 0;
     transition: border 0.2s ease-out;
     padding-top: 0.375rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.25);
     padding-right: 0.75rem;
+    padding-right: calc(var(--_space, 1.5rem) * 0.5);
     padding-bottom: 0.375rem;
+    padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
     padding-left: 0.75rem;
+    padding-left: calc(var(--_space, 1.5rem) * 0.5);
     color: #444;
     flex: none;
     overflow: visible; }
@@ -14100,7 +14380,8 @@ Navbar component
     position: relative; }
     .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"],
     .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] {
-      padding-right: 1.5rem; }
+      padding-right: 1.5rem;
+      padding-right: calc(var(--_space, 1.5rem) * 1); }
   .c-navbar__toggle {
     position: absolute;
     top: calc(50% - 0.75rem);
@@ -14671,52 +14952,50 @@ Row component of flexbox based grid system
     margin-bottom: 0; }
     .c-row--collapse > .c-row__col {
       padding-right: 0;
-      padding-right: calc(0 * var(--_margin-scale));
       padding-left: 0;
-      padding-left: calc(0 * var(--_margin-scale));
       margin-bottom: 0; }
   .c-row--margin {
     margin-right: -0.75rem;
-    margin-right: calc(-0.75rem * var(--_margin-scale, 1));
+    margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
     margin-left: -0.75rem;
-    margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+    margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
     margin-bottom: -1.5rem;
-    margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
+    margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
     .c-row--margin > .c-row__col {
       padding-right: 0.75rem;
-      padding-right: calc(0.75rem * var(--_margin-scale));
+      padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
       padding-left: 0.75rem;
-      padding-left: calc(0.75rem * var(--_margin-scale));
+      padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
       margin-bottom: 1.5rem;
-      margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
     .c-row--margin-s {
       margin-right: -0.375rem;
-      margin-right: calc(-0.375rem * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
       margin-left: -0.375rem;
-      margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
       margin-bottom: -0.75rem;
-      margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
       .c-row--margin-s > .c-row__col {
         padding-right: 0.375rem;
-        padding-right: calc(0.375rem * var(--_margin-scale));
+        padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
         padding-left: 0.375rem;
-        padding-left: calc(0.375rem * var(--_margin-scale));
+        padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
         margin-bottom: 0.75rem;
-        margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
     .c-row--margin-l {
       margin-right: -1.5rem;
-      margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
       margin-left: -1.5rem;
-      margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
       margin-bottom: -3rem;
-      margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
       .c-row--margin-l > .c-row__col {
         padding-right: 1.5rem;
-        padding-right: calc(1.5rem * var(--_margin-scale));
+        padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
         padding-left: 1.5rem;
-        padding-left: calc(1.5rem * var(--_margin-scale));
+        padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
         margin-bottom: 3rem;
-        margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
   .c-row--fill > .c-row__col {
     display: flex; }
     .c-row--fill > .c-row__col > * {
@@ -14749,52 +15028,50 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--md-collapse > .c-row__col {
         padding-right: 0;
-        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
-        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--md-margin {
       margin-right: -0.75rem;
-      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-bottom: -1.5rem;
-      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--md-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(0.75rem * var(--_margin-scale));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         padding-left: 0.75rem;
-        padding-left: calc(0.75rem * var(--_margin-scale));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         margin-bottom: 1.5rem;
-        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--md-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-bottom: -0.75rem;
-        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--md-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(0.375rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           padding-left: 0.375rem;
-          padding-left: calc(0.375rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           margin-bottom: 0.75rem;
-          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--md-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-bottom: -3rem;
-        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--md-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(1.5rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           padding-left: 1.5rem;
-          padding-left: calc(1.5rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           margin-bottom: 3rem;
-          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--md-fill > .c-row__col {
       display: flex; }
       .c-row--md-fill > .c-row__col > * {
@@ -14827,52 +15104,50 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--lg-collapse > .c-row__col {
         padding-right: 0;
-        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
-        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--lg-margin {
       margin-right: -0.75rem;
-      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-bottom: -1.5rem;
-      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--lg-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(0.75rem * var(--_margin-scale));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         padding-left: 0.75rem;
-        padding-left: calc(0.75rem * var(--_margin-scale));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         margin-bottom: 1.5rem;
-        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--lg-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-bottom: -0.75rem;
-        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--lg-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(0.375rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           padding-left: 0.375rem;
-          padding-left: calc(0.375rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           margin-bottom: 0.75rem;
-          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--lg-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-bottom: -3rem;
-        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--lg-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(1.5rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           padding-left: 1.5rem;
-          padding-left: calc(1.5rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           margin-bottom: 3rem;
-          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--lg-fill > .c-row__col {
       display: flex; }
       .c-row--lg-fill > .c-row__col > * {
@@ -14905,52 +15180,50 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
       .c-row--xl-collapse > .c-row__col {
         padding-right: 0;
-        padding-right: calc(0 * var(--_margin-scale));
         padding-left: 0;
-        padding-left: calc(0 * var(--_margin-scale));
         margin-bottom: 0; }
     .c-row--xl-margin {
       margin-right: -0.75rem;
-      margin-right: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-left: -0.75rem;
-      margin-left: calc(-0.75rem * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
       margin-bottom: -1.5rem;
-      margin-bottom: calc(-1.5rem * var(--_margin-scale, 1)); }
+      margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--xl-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(0.75rem * var(--_margin-scale));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         padding-left: 0.75rem;
-        padding-left: calc(0.75rem * var(--_margin-scale));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
         margin-bottom: 1.5rem;
-        margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--xl-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-left: -0.375rem;
-        margin-left: calc(-0.375rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
         margin-bottom: -0.75rem;
-        margin-bottom: calc(-0.75rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--xl-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(0.375rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           padding-left: 0.375rem;
-          padding-left: calc(0.375rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
           margin-bottom: 0.75rem;
-          margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--xl-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-left: -1.5rem;
-        margin-left: calc(-1.5rem * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
         margin-bottom: -3rem;
-        margin-bottom: calc(-3rem * var(--_margin-scale, 1)); }
+        margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--xl-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(1.5rem * var(--_margin-scale));
+          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           padding-left: 1.5rem;
-          padding-left: calc(1.5rem * var(--_margin-scale));
+          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
           margin-bottom: 3rem;
-          margin-bottom: calc(3rem * var(--_margin-scale, 1)); }
+          margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--xl-fill > .c-row__col {
       display: flex; }
       .c-row--xl-fill > .c-row__col > * {
@@ -15858,9 +16131,13 @@ Select box component
     content: "\e902"; }
   .c-select > select, .c-select__label {
     padding-top: 0.375rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.25);
     padding-right: 0.75rem;
+    padding-right: calc(var(--_space, 1.5rem) * 0.5);
     padding-bottom: 0.375rem;
-    padding-left: 0.75rem; }
+    padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
+    padding-left: 0.75rem;
+    padding-left: calc(var(--_space, 1.5rem) * 0.5); }
   .c-select > select {
     position: relative;
     z-index: 1;
@@ -15869,7 +16146,8 @@ Select box component
     appearance: none;
     border: none;
     outline: 0;
-    padding-right: 2.25rem; }
+    padding-right: 2.25rem;
+    padding-right: calc(var(--_space, 1.5rem) * 1.5); }
   .c-select__label {
     position: absolute;
     top: 0;
@@ -16325,42 +16603,42 @@ Content utility
 */
 .u-content > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
   margin-top: 1.5rem;
-  margin-top: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .u-content > h1 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .u-content > h2 {
   margin-top: 3rem;
-  margin-top: calc(3rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1));
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .u-content > h3 {
   margin-top: 2.25rem;
-  margin-top: calc(2.25rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1.5 * var(--_margin-scale, 1));
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .u-content > h4 {
   margin-top: 1.875rem;
-  margin-top: calc(1.875rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1.25 * var(--_margin-scale, 1));
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .u-content > h5 {
   margin-top: 1.5rem;
-  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-bottom: 0.75rem;
-  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
 
 .u-content > h6 {
   margin-top: 1.5rem;
-  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-bottom: 0.75rem;
-  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
 
 .u-content > :first-child {
   margin-top: 0; }
@@ -16734,8 +17012,10 @@ pre {
 
 .l-main, .l-sub {
   padding-top: 3rem;
+  padding-top: calc(var(--_space, 1.5rem) * 2);
   padding-right: 0;
   padding-bottom: 3rem;
+  padding-bottom: calc(var(--_space, 1.5rem) * 2);
   padding-left: 0; }
 
 .l-footer {
@@ -16783,9 +17063,13 @@ pre {
   border: none;
   border-radius: 3px;
   padding-top: 0.75rem;
+  padding-top: calc(var(--_space, 1.5rem) * 0.5);
   padding-right: 1.5rem;
+  padding-right: calc(var(--_space, 1.5rem) * 1);
   padding-bottom: 0.75rem;
-  padding-left: 1.5rem; }
+  padding-bottom: calc(var(--_space, 1.5rem) * 0.5);
+  padding-left: 1.5rem;
+  padding-left: calc(var(--_space, 1.5rem) * 1); }
   .c-btn--block {
     display: block; }
   .c-btn--ghost {
@@ -16807,8 +17091,10 @@ pre {
   font-size: 0.93333rem;
   line-height: 1.67857;
   padding-top: 1.5rem;
+  padding-top: calc(var(--_space, 1.5rem) * 1);
   padding-right: 0;
   padding-bottom: 3rem;
+  padding-bottom: calc(var(--_space, 1.5rem) * 2);
   padding-left: 0; }
   .l-footer .c-copyright a {
     color: #999; }
@@ -16816,17 +17102,23 @@ pre {
 .l-body > .c-drawer {
   background-color: #444;
   padding-top: 0.75rem;
+  padding-top: calc(var(--_space, 1.5rem) * 0.5);
   padding-right: 0.75rem;
+  padding-right: calc(var(--_space, 1.5rem) * 0.5);
   padding-bottom: 0.75rem;
-  padding-left: 0.75rem; }
+  padding-bottom: calc(var(--_space, 1.5rem) * 0.5);
+  padding-left: 0.75rem;
+  padding-left: calc(var(--_space, 1.5rem) * 0.5); }
   .l-body > .c-drawer, .l-body > .c-drawer a {
     color: #fff; }
   .l-body > .c-drawer a {
     display: block;
     text-decoration: none;
     padding-top: 0.375rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.25);
     padding-right: 0;
     padding-bottom: 0.375rem;
+    padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
     padding-left: 0; }
   .l-body > .c-drawer ul {
     list-style: none;
@@ -16836,7 +17128,8 @@ pre {
     padding-top: 0;
     padding-right: 0;
     padding-bottom: 0;
-    padding-left: 0.75rem; }
+    padding-left: 0.75rem;
+    padding-left: calc(var(--_space, 1.5rem) * 0.5); }
 
 .c-dummy-image {
   background-color: #333;
@@ -16850,58 +17143,60 @@ pre {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1));
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-left: 0; }
 
 .l-main > .c-entry .c-entry__title {
   padding-top: 0;
   padding-right: 0;
   padding-bottom: 0.375rem;
+  padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
   padding-left: 0;
   border-bottom: 1px solid #cccccc;
   padding-top: 0;
   padding-right: 0;
   padding-bottom: 0.375rem;
+  padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
   padding-left: 0; }
 
 .l-main > .c-entry .c-entry__content > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
   margin-top: 1.5rem;
-  margin-top: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h1 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h2 {
   margin-top: 3rem;
-  margin-top: calc(3rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1));
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h3 {
   margin-top: 2.25rem;
-  margin-top: calc(2.25rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1.5 * var(--_margin-scale, 1));
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h4 {
   margin-top: 1.875rem;
-  margin-top: calc(1.875rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1.25 * var(--_margin-scale, 1));
   margin-bottom: 1.5rem;
-  margin-bottom: calc(1.5rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h5 {
   margin-top: 1.5rem;
-  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-bottom: 0.75rem;
-  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > h6 {
   margin-top: 1.5rem;
-  margin-top: calc(1.5rem * var(--_margin-scale, 1));
+  margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-bottom: 0.75rem;
-  margin-bottom: calc(0.75rem * var(--_margin-scale, 1)); }
+  margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry .c-entry__content > :first-child {
   margin-top: 0; }
@@ -16914,7 +17209,7 @@ pre {
 
 .l-main > .c-entry + .c-entry {
   margin-top: 3rem;
-  margin-top: calc(3rem * var(--_margin-scale, 1)); }
+  margin-top: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
 
 .c-fade-image {
   background-color: #e74c3c;
@@ -16944,6 +17239,7 @@ pre {
 
 .l-contents > .c-page-header {
   padding-top: 3rem;
+  padding-top: calc(var(--_space, 1.5rem) * 2);
   padding-right: 0;
   padding-bottom: 0;
   padding-left: 0; }
@@ -16986,6 +17282,7 @@ pre {
     padding-top: 0;
     padding-right: 0;
     padding-bottom: 0.75rem;
+    padding-bottom: calc(var(--_space, 1.5rem) * 0.5);
     padding-left: 0; }
     .p-footer-nav__item a {
       text-decoration: none; }
@@ -16996,9 +17293,13 @@ pre {
   line-height: 1.67857; }
   .p-global-nav .c-navbar__item a {
     padding-top: 0.375rem;
+    padding-top: calc(var(--_space, 1.5rem) * 0.25);
     padding-right: 0.75rem;
+    padding-right: calc(var(--_space, 1.5rem) * 0.5);
     padding-bottom: 0.375rem;
-    padding-left: 0.75rem; }
+    padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
+    padding-left: 0.75rem;
+    padding-left: calc(var(--_space, 1.5rem) * 0.5); }
 
 .p-local-nav ul {
   list-style: none;
@@ -17009,7 +17310,8 @@ pre {
   padding-top: 0;
   padding-right: 0;
   padding-bottom: 0;
-  padding-left: 0.75rem; }
+  padding-left: 0.75rem;
+  padding-left: calc(var(--_space, 1.5rem) * 0.5); }
   .p-local-nav li li li {
     display: none; }
 
@@ -17108,7 +17410,7 @@ pre {
   .p-social-nav__item {
     margin-top: 0;
     margin-right: 0.75rem;
-    margin-right: calc(0.75rem * var(--_margin-scale, 1));
+    margin-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
     margin-bottom: 0;
     margin-left: 0;
     display: inline-block;
@@ -17118,15 +17420,17 @@ pre {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 3rem;
-  margin-bottom: calc(3rem * var(--_margin-scale, 1));
+  margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1));
   margin-left: 0;
   list-style: none;
   margin-left: 0;
   padding-left: 0;
   padding-top: 0;
   padding-right: 1.5rem;
+  padding-right: calc(var(--_space, 1.5rem) * 1);
   padding-bottom: 0;
   padding-left: 1.5rem;
+  padding-left: calc(var(--_space, 1.5rem) * 1);
   background-color: #fafafa;
   border: 1px solid #eeeeee;
   border-radius: 3px; }
@@ -17137,8 +17441,10 @@ pre {
     .p-table-of-contents__item > a {
       display: block;
       padding-top: 0.75rem;
+      padding-top: calc(var(--_space, 1.5rem) * 0.5);
       padding-right: 0;
       padding-bottom: 0.75rem;
+      padding-bottom: calc(var(--_space, 1.5rem) * 0.5);
       padding-left: 0;
       color: #444;
       text-decoration: none; }

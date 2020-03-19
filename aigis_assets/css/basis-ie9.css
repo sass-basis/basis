@@ -442,7 +442,7 @@ Return the margin conforming to the rhythm
 ### scss
 ```scss
 //
-// @param   int|length  $coefficient
+// @param   number  $coefficient
 // @return  length
 //
 
@@ -1006,6 +1006,103 @@ $_sizes: (
 */
 /*
 ---
+name: $_container-margin
+category:
+  - core/abstract
+  - core/abstract/container
+  - core/variable/container
+---
+Container side margin
+
+### scss
+```scss
+//
+// @var  length
+//
+
+$_container-margin: $_base-line-height;
+```
+*/
+/*
+---
+name: $_container-max-width
+category:
+  - core/abstract
+  - core/abstract/container
+  - core/variable/container
+---
+Container max width
+
+### scss
+```scss
+//
+// @var  length
+//
+
+$_container-max-width: 1200px;
+```
+*/
+/*
+---
+name: $_form-control-border-color
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color
+
+### scss
+```scss
+$_form-control-border-color: _light($_color-gray);
+```
+*/
+/*
+---
+name: $_form-control-border-color-hover
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color when hover
+
+### scss
+```scss
+$_form-control-border-color-hover: $_color-gray;
+```
+*/
+/*
+---
+name: $_form-control-border-color-focus
+category:
+  - core/mixin
+  - core/mixin/form
+  - core/variable/form
+---
+Form Control border color when focus
+
+### scss
+```scss
+$_form-control-border-color-focus: #85B7D9;
+```
+*/
+/*
+---
+name: $_page-effect-z-index
+category:
+  - core/abstract
+  - core/variable/page-effect
+---
+`z-index` of page effect
+
+### scss
+```scss
+$_page-effect-z-index: 1000000;
+```
+*/
+/*
+---
 name: _bounce-vertical()
 category:
   - core/mixin
@@ -1383,51 +1480,6 @@ select {
 */
 /*
 ---
-name: $_form-control-border-color
-category:
-  - core/mixin
-  - core/mixin/form
-  - core/variable/form
----
-Form Control border color
-
-### scss
-```scss
-$_form-control-border-color: _light($_color-gray);
-```
-*/
-/*
----
-name: $_form-control-border-color-hover
-category:
-  - core/mixin
-  - core/mixin/form
-  - core/variable/form
----
-Form Control border color when hover
-
-### scss
-```scss
-$_form-control-border-color-hover: $_color-gray;
-```
-*/
-/*
----
-name: $_form-control-border-color-focus
-category:
-  - core/mixin
-  - core/mixin/form
-  - core/variable/form
----
-Form Control border color when focus
-
-### scss
-```scss
-$_form-control-border-color-focus: #85B7D9;
-```
-*/
-/*
----
 name: _form-control-base-border()
 category:
   - core/mixin
@@ -1640,6 +1692,7 @@ Sets padding-top
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-top(1);
@@ -1659,6 +1712,7 @@ Sets padding-right
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-right(1);
@@ -1678,6 +1732,7 @@ Sets padding-bottom
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-bottom(1);
@@ -1697,6 +1752,7 @@ Sets padding-left
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _padding-left(1);
@@ -1733,6 +1789,7 @@ Sets padding
 name: _position()
 category:
   - core/mixin
+  - core/mixin/position
 ---
 The position shorthand
 
@@ -1748,6 +1805,82 @@ The position shorthand
 //
 
 @include _position(absolute, 10px, null, null, 10px, 1);
+```
+*/
+/*
+---
+name: _top()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets top
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _top(1);
+@include _top(10px);
+```
+*/
+/*
+---
+name: _right()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets right
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _right(1);
+@include _right(10px);
+```
+*/
+/*
+---
+name: _bottom()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets bottom
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _bottom(1);
+@include _bottom(10px);
+```
+*/
+/*
+---
+name: _left()
+category:
+  - core/mixin
+  - core/mixin/position
+---
+Sets left
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _left(1);
+@include _left(10px);
 ```
 */
 /*
@@ -2339,25 +2472,6 @@ new BasisCheckbox({
 */
 /*
 ---
-name: $_container-margin
-category:
-  - core/abstract
-  - core/abstract/container
-  - core/variable/container
----
-Container side margin
-
-### scss
-```scss
-//
-// @var  length
-//
-
-$_container-margin: $_base-line-height;
-```
-*/
-/*
----
 name: _fluid-container()
 category:
   - core/abstract
@@ -2377,25 +2491,6 @@ Abstract fluid container component
 <div class="c-fluid-container">
   ...
 </div>
-```
-*/
-/*
----
-name: $_container-max-width
-category:
-  - core/abstract
-  - core/abstract/container
-  - core/variable/container
----
-Container max width
-
-### scss
-```scss
-//
-// @var  length
-//
-
-$_container-max-width: 1200px;
 ```
 */
 /*
@@ -2468,7 +2563,10 @@ Abstract drawer component
   }
 
   &__toggle {
-    @include _position(absolute, _space(.5), 5px, 0);
+    position: absolute;
+    @include _top(.5);
+    @include _right(5px);
+    @include _bottom(0);
     @include _square($_base-line-height);
     display: flex;
     align-items: center;
@@ -2578,7 +2676,10 @@ Abstract dropdown component
   }
 
   &__toggle {
-    @include _position(absolute, _space(.5), 5px, 0);
+    position: absolute;
+    @include _top(.5);
+    @include _right(5px);
+    @include _bottom(0);
     @include _square($_base-line-height);
     display: flex;
     align-items: center;
@@ -3198,20 +3299,6 @@ new BasisNavbar({
 */
 /*
 ---
-name: $_page-effect-z-index
-category:
-  - core/abstract
-  - core/variable/page-effect
----
-`z-index` of page effect
-
-### scss
-```scss
-$_page-effect-z-index: 1000000;
-```
-*/
-/*
----
 name: _page-effect()
 category:
   - core/abstract
@@ -3664,6 +3751,34 @@ Abstract column element of flexbox based grid system
     ...
   </div>
 </div>
+```
+*/
+/*
+---
+name: _lattice__col--width()
+category:
+  - core/abstract
+  - core/abstract/grid-system/lattice
+---
+Sets column width of flexbox based grid system
+
+### scss
+```scss
+//
+// @param  length  $width
+//
+
+.c-lattice {
+  @include _lattice();
+
+  &__col {
+    @include _lattice__col(1, 2);
+
+    @include _media-min(lg) {
+      @include _lattice__col--width(1 / 3 * 100%);
+    }
+  }
+}
 ```
 */
 /*
