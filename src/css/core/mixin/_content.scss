@@ -1,5 +1,42 @@
 /*
 ---
+name: _between-content()
+category:
+  - core/mixin
+---
+Sets Child elements margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+.u-between-content {
+  @include _between-content(1);
+}
+```
+
+### html
+```ejs
+<div class="u-between-content">
+  ...
+</div>
+```
+*/
+
+@mixin _between-content($coefficient: 1) {
+  > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    @include _margin-top($_base-margin-bottom * $coefficient);
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+/*
+---
 name: _content()
 category:
   - core/mixin
@@ -26,9 +63,7 @@ Sets Child elements margin
 */
 
 @mixin _content($coefficient: 1) {
-  > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-    @include _margin-top($_base-margin-bottom * $coefficient);
-  }
+  @include _between-content($coefficient);
 
   > h1 {
     @include _margin-top($_h1-margin-top * $coefficient);
@@ -58,10 +93,6 @@ Sets Child elements margin
   > h6 {
     @include _margin-top($_h6-margin-top * $coefficient);
     @include _margin-bottom($_h6-margin-bottom * $coefficient);
-  }
-
-  > :first-child {
-    margin-top: 0;
   }
 
   > ol ol,
