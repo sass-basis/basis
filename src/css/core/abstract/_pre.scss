@@ -22,7 +22,8 @@ pre {
 @mixin _pre() {
   background-color: _lightest($_color-gray);
   border: 1px solid _lighter($_color-gray);
-  border-radius: $_border-radius;
+  border-radius: $_border-radius; // for IE11
+  border-radius: _var-border-radius();
   padding: $_base-font-size;
   overflow: auto;
 

@@ -1,0 +1,3 @@
+@function _var-border-radius() {
+  @return var(--_border-radius, $_border-radius);
+}

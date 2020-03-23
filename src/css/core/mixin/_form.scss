@@ -40,7 +40,8 @@ select {
 
 @mixin _form-control-base-border() {
   border: 1px solid $_form-control-border-color;
-  border-radius: $_border-radius;
+  border-radius: $_border-radius; // for IE11
+  border-radius: _var-border-radius();
   outline: 0;
   @include _transition(border);
 

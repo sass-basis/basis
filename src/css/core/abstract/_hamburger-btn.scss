@@ -56,7 +56,6 @@ new BasisHamburgerBtn({
   $width: map-get($params, 'width');
   $bar-height: map-get($params, 'bar-height');
   $color: map-get($params, 'color');
-  --_color-text: $color;
 
   display: inline-block;
   cursor: pointer;
