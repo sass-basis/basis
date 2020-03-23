@@ -159,6 +159,10 @@
               </li>
             
               <li class="p-table-of-contents__item">
+                <a href="#_between-content()">_between-content()</a>
+              </li>
+            
+              <li class="p-table-of-contents__item">
                 <a href="#_content()">_content()</a>
               </li>
             
@@ -688,6 +692,35 @@
 <pre><code class="language-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>clearfix<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
   <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>img</span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >float</span><span class="token punctuation" >:</span> right</span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
   ....
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+              </div>
+            </article>
+          
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title" id="_between-content()">_between-content()</h2>
+                <ul class="c-meta">
+                  <li class="c-meta__item">
+                    /src/css/core/mixin/_content.scss
+                  </li>
+                </ul>
+              </header>
+              <div class="c-entry__content">
+                <p>Sets Child elements margin</p>
+<h3 id="scss">scss</h3>
+<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">// @param  int  $coefficient</span>
+<span class="token comment" spellcheck="true">//</span>
+
+<span class="token selector" >.u-between-content </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >between-content</span><span class="token punctuation" >(</span><span class="token number" >1</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+<h3 id="html">html</h3>
+<pre><code class="language-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>u-between-content<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  ...
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
 </code></pre>
 

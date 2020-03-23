@@ -1410,6 +1410,32 @@ Clearfix helper
 */
 /*
 ---
+name: _between-content()
+category:
+  - core/mixin
+---
+Sets Child elements margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+.u-between-content {
+  @include _between-content(1);
+}
+```
+
+### html
+```ejs
+<div class="u-between-content">
+  ...
+</div>
+```
+*/
+/*
+---
 name: _content()
 category:
   - core/mixin

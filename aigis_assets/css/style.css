@@ -1418,6 +1418,32 @@ Clearfix helper
 */
 /*
 ---
+name: _between-content()
+category:
+  - core/mixin
+---
+Sets Child elements margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+.u-between-content {
+  @include _between-content(1);
+}
+```
+
+### html
+```ejs
+<div class="u-between-content">
+  ...
+</div>
+```
+*/
+/*
+---
 name: _content()
 category:
   - core/mixin
@@ -4284,6 +4310,9 @@ template, [hidden] {
 /**
  * Add the correct display in IE 10.
  */
+:root {
+  --_background-color: transparent; }
+
 * {
   box-sizing: border-box; }
   *:before, *:after {
@@ -4300,7 +4329,9 @@ html {
   font-size: 100%; }
 
 body {
+  background-color: var(--_background-color);
   color: #333;
+  color: var(--_color-text, #333);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -4318,6 +4349,8 @@ input, textarea, keygen, select, button {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 input, textarea, optgroup, select, button {
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5; }
 
 img {
@@ -5202,6 +5235,7 @@ Hamburger button component
 ```
 */
 .c-hamburger-btn {
+  --_color-text: $color;
   display: inline-block;
   cursor: pointer;
   text-align: center; }
@@ -5217,6 +5251,7 @@ Hamburger button component
     left: 0;
     display: block;
     background-color: #333;
+    background-color: var(--_color-text, #333);
     height: 2px;
     transition: transform 0.2s ease-out; }
     .c-hamburger-btn__bar:nth-of-type(1) {
@@ -5407,6 +5442,7 @@ Input group component
     .c-input-group > :last-child:hover, .c-input-group > :last-child:active, .c-input-group > :last-child:focus {
       z-index: 1; }
   .c-input-group__addon {
+    background-color: #fff;
     border: 1px solid #cccccc;
     padding-top: 0.375rem;
     padding-top: calc(var(--_space, 1.5rem) * 0.25);
@@ -5520,6 +5556,7 @@ Input group component
     padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
     padding-left: 0.75rem;
     padding-left: calc(var(--_space, 1.5rem) * 0.5);
+    background-color: #fff;
     color: #333;
     flex: none;
     overflow: visible; }
@@ -8106,6 +8143,9 @@ Content utility
   margin-top: 1.5rem;
   margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
+.u-content > :first-child {
+  margin-top: 0; }
+
 .u-content > h1 {
   margin-top: 0;
   margin-bottom: 1.5rem;
@@ -8140,9 +8180,6 @@ Content utility
   margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-bottom: 0.75rem;
   margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
-
-.u-content > :first-child {
-  margin-top: 0; }
 
 .u-content > ol ol,
 .u-content > ol ul,
@@ -9912,6 +9949,32 @@ Clearfix helper
 <div class="clearfix">
   <img style="float: right">
   ....
+</div>
+```
+*/
+/*
+---
+name: _between-content()
+category:
+  - core/mixin
+---
+Sets Child elements margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+.u-between-content {
+  @include _between-content(1);
+}
+```
+
+### html
+```ejs
+<div class="u-between-content">
+  ...
 </div>
 ```
 */
@@ -12783,6 +12846,9 @@ template, [hidden] {
 /**
  * Add the correct display in IE 10.
  */
+:root {
+  --_background-color: transparent; }
+
 * {
   box-sizing: border-box; }
   *:before, *:after {
@@ -12799,7 +12865,9 @@ html {
   font-size: 93.75%; }
 
 body {
+  background-color: var(--_background-color);
   color: #444;
+  color: var(--_color-text, #444);
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 15px;
   font-size: 1rem;
@@ -12817,6 +12885,8 @@ input, textarea, keygen, select, button {
   font-family: "Helvetica Neue", Helvetica, sans-serif; }
 
 input, textarea, optgroup, select, button {
+  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.66667; }
 
 img {
@@ -13701,6 +13771,7 @@ Hamburger button component
 ```
 */
 .c-hamburger-btn {
+  --_color-text: $color;
   display: inline-block;
   cursor: pointer;
   text-align: center; }
@@ -13716,6 +13787,7 @@ Hamburger button component
     left: 0;
     display: block;
     background-color: #444;
+    background-color: var(--_color-text, #444);
     height: 2px;
     transition: transform 0.2s ease-out; }
     .c-hamburger-btn__bar:nth-of-type(1) {
@@ -13906,6 +13978,7 @@ Input group component
     .c-input-group > :last-child:hover, .c-input-group > :last-child:active, .c-input-group > :last-child:focus {
       z-index: 1; }
   .c-input-group__addon {
+    background-color: #fff;
     border: 1px solid #cccccc;
     padding-top: 0.375rem;
     padding-top: calc(var(--_space, 1.5rem) * 0.25);
@@ -14019,6 +14092,7 @@ Input group component
     padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
     padding-left: 0.75rem;
     padding-left: calc(var(--_space, 1.5rem) * 0.5);
+    background-color: #fff;
     color: #444;
     flex: none;
     overflow: visible; }
@@ -16605,6 +16679,9 @@ Content utility
   margin-top: 1.5rem;
   margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
+.u-content > :first-child {
+  margin-top: 0; }
+
 .u-content > h1 {
   margin-top: 0;
   margin-bottom: 1.5rem;
@@ -16639,9 +16716,6 @@ Content utility
   margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-bottom: 0.75rem;
   margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
-
-.u-content > :first-child {
-  margin-top: 0; }
 
 .u-content > ol ol,
 .u-content > ol ul,
@@ -17163,6 +17237,9 @@ pre {
   margin-top: 1.5rem;
   margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
 
+.l-main > .c-entry .c-entry__content > :first-child {
+  margin-top: 0; }
+
 .l-main > .c-entry .c-entry__content > h1 {
   margin-top: 0;
   margin-bottom: 1.5rem;
@@ -17197,9 +17274,6 @@ pre {
   margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-bottom: 0.75rem;
   margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
-
-.l-main > .c-entry .c-entry__content > :first-child {
-  margin-top: 0; }
 
 .l-main > .c-entry .c-entry__content > ol ol,
 .l-main > .c-entry .c-entry__content > ol ul,
