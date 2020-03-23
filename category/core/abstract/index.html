@@ -561,32 +561,16 @@
               <div class="c-entry__content">
                 <p>Abstract checkbox component</p>
 <h3 id="scss">scss</h3>
-<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
-<span class="token comment" spellcheck="true">// @param  hash  $params</span>
-<span class="token comment" spellcheck="true">//   size           length</span>
-<span class="token comment" spellcheck="true">//   border-radius  length</span>
-<span class="token comment" spellcheck="true">//</span>
-
-<span class="token selector" >.c-checkbox </span><span class="token punctuation" >{</span>
-  <span class="token keyword" >@include</span> _<span class="token function" >checkbox</span><span class="token punctuation" >(</span><span class="token punctuation" >(</span>
-    <span class="token property" >size</span><span class="token punctuation" >:</span> <span class="token variable" >$_base-font-size-px</span>,
-    <span class="token property" >border-radius</span><span class="token punctuation" >:</span> <span class="token number" >2</span>px
-  <span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<pre><code class="language-scss"><span class="token selector" >.c-checkbox </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >checkbox</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span>
-</code></pre>
-<h3 id="js">js</h3>
-<pre><code class="language-js"><span class="token keyword" >import</span> BasisCheckbox <span class="token keyword" >from</span> <span class="token string" >'node_modules/sass-basis/src/js/_checkbox.js'</span><span class="token punctuation" >;</span>
-<span class="token keyword" >new</span> <span class="token class-name" >BasisCheckbox</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
-  checkbox<span class="token punctuation" >:</span> <span class="token string" >'.c-checkbox'</span><span class="token punctuation" >,</span>
-<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 </code></pre>
 <h3 id="html">html</h3>
 <pre><code class="language-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>label</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-checkbox<span class="token punctuation" >"</span></span> <span class="token attr-name" >aria-checked</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>false<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>checkbox<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-checkbox__control<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-checkbox<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>checkbox<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-checkbox__control<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-checkbox__label<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>...<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
   <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
-  ...
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>label</span><span class="token punctuation" >></span></span>
 </code></pre>
 
@@ -1732,24 +1716,15 @@
                 <p>Abstract radio button component</p>
 <h3 id="scss">scss</h3>
 <pre><code class="language-scss"><span class="token selector" >.c-radio </span><span class="token punctuation" >{</span>
-  <span class="token keyword" >@include</span> _<span class="token function" >radio</span><span class="token punctuation" >(</span><span class="token punctuation" >(</span>
-    <span class="token property" >size</span><span class="token punctuation" >:</span> <span class="token variable" >$_base-font-size-px</span>,
-  <span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >radio</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span>
-</code></pre>
-<h3 id="js">js</h3>
-<pre><code class="language-js"><span class="token keyword" >import</span> BasisRadio <span class="token keyword" >from</span> <span class="token string" >'node_modules/sass-basis/src/js/_radio.js'</span><span class="token punctuation" >;</span>
-<span class="token keyword" >new</span> <span class="token class-name" >BasisRadio</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
-  radio<span class="token punctuation" >:</span> <span class="token string" >'.c-radio'</span><span class="token punctuation" >,</span>
-<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 </code></pre>
 <h3 id="html">html</h3>
 <pre><code class="language-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>label</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-radio<span class="token punctuation" >"</span></span> <span class="token attr-name" >aria-checked</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>false<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>radio<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-radio__control<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-radio<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>radio<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-radio__control<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-radio__label<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>...<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
   <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
-  ...
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>label</span><span class="token punctuation" >></span></span>
 </code></pre>
 
@@ -2081,22 +2056,15 @@
   <span class="token keyword" >@include</span> _<span class="token function" >select</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span>
 </code></pre>
-<h3 id="js">js</h3>
-<pre><code class="language-js"><span class="token keyword" >import</span> BasisSelect <span class="token keyword" >from</span> <span class="token string" >'node_modules/sass-basis/src/js/_select.js'</span><span class="token punctuation" >;</span>
-<span class="token keyword" >new</span> <span class="token class-name" >BasisSelect</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
-  select<span class="token punctuation" >:</span> <span class="token string" >'.c-select'</span><span class="token punctuation" >,</span>
-  label <span class="token punctuation" >:</span> <span class="token string" >'.c-select__label'</span>
-<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-</code></pre>
 <h3 id="html">html</h3>
-<pre><code class="language-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-select c-select--block<span class="token punctuation" >"</span></span> <span class="token attr-name" >aria-selected</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>false<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>select</span><span class="token punctuation" >></span></span>
+<pre><code class="language-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-select<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>select</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-select__control<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>option</span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>1<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>label-1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>option</span><span class="token punctuation" >></span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>option</span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>2<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>label-2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>option</span><span class="token punctuation" >></span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>option</span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>3<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>label-3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>option</span><span class="token punctuation" >></span></span>
   <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>select</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-select__label<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-select__toggle<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
 </code></pre>
 
               </div>

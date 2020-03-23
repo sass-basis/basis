@@ -2471,36 +2471,18 @@ Abstract checkbox component
 
 ### scss
 ```scss
-//
-// @param  hash  $params
-//   size           length
-//   border-radius  length
-//
-
 .c-checkbox {
-  @include _checkbox((
-    size: $_base-font-size-px,
-    border-radius: 2px
-  ));
+  @include _checkbox();
 }
-```
-
-### js
-```js
-import BasisCheckbox from 'node_modules/sass-basis/src/js/_checkbox.js';
-new BasisCheckbox({
-  checkbox: '.c-checkbox',
-});
 ```
 
 ### html
 ```ejs
 <label>
-  <span class="c-checkbox" aria-checked="false">
-    <input type="checkbox">
-    <span class="c-checkbox__control"></span>
+  <span class="c-checkbox">
+    <input type="checkbox" class="c-checkbox__control">
+    <span class="c-checkbox__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
@@ -3465,28 +3447,17 @@ Abstract radio button component
 ### scss
 ```scss
 .c-radio {
-  @include _radio((
-    size: $_base-font-size-px,
-  ));
+  @include _radio();
 }
-```
-
-### js
-```js
-import BasisRadio from 'node_modules/sass-basis/src/js/_radio.js';
-new BasisRadio({
-  radio: '.c-radio',
-});
 ```
 
 ### html
 ```ejs
 <label>
-  <span class="c-radio" aria-checked="false">
-    <input type="radio">
-    <span class="c-radio__control"></span>
+  <span class="c-radio">
+    <input type="radio" class="c-radio__control">
+    <span class="c-radio__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
@@ -3869,25 +3840,16 @@ Abstract selectbox component
 }
 ```
 
-### js
-```js
-import BasisSelect from 'node_modules/sass-basis/src/js/_select.js';
-new BasisSelect({
-  select: '.c-select',
-  label : '.c-select__label'
-});
-```
-
 ### html
 ```ejs
-<span class="c-select c-select--block" aria-selected="false">
-  <select>
+<div class="c-select">
+  <select class="c-select__control">
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label"></span>
-</span>
+  <span class="c-select__toggle"></span>
+</div>
 ```
 */
 /*
@@ -4716,60 +4678,61 @@ Checkbox component
 ### html
 ```html
 <label>
-  <span class="c-checkbox" aria-checked="false">
-    <input type="checkbox">
-    <span class="c-checkbox__control"></span>
+  <span class="c-checkbox">
+    <input type="checkbox" class="c-checkbox__control">
+    <span class="c-checkbox__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
 .c-checkbox {
-  position: relative;
-  display: inline-block;
-  height: 16px;
-  width: 16px; }
-  .c-checkbox > [type="checkbox"], .c-checkbox__control, .c-checkbox__control::before, .c-checkbox__control::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 16px;
-    width: 16px; }
-  .c-checkbox > [type="checkbox"] {
-    z-index: 1;
-    cursor: pointer;
-    opacity: 0 !important;
-    outline: 0; }
-    .c-checkbox > [type="checkbox"]:checked ~ .c-checkbox__control::after {
-      opacity: 1; }
-  .c-checkbox__control {
-    z-index: 0; }
-    .c-checkbox__control::before {
-      content: '';
-      background-color: #fff;
+  display: inline-flex;
+  align-items: center; }
+  @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+    .c-checkbox__control {
+      appearance: none;
+      position: relative;
+      display: inline-block;
       border: 1px solid #cccccc;
-      border-radius: 2px; }
-    .c-checkbox__control::after {
-      left: 1px;
-      font-family: 'basis';
-      speak: none;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: "\e901";
-      opacity: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-  .c-checkbox:hover .c-checkbox__control::before {
-    border-color: #999; }
-  .c-checkbox:active .c-checkbox__control::before, .c-checkbox:focus .c-checkbox__control::before, .c-checkbox:focus-within .c-checkbox__control::before, .c-checkbox[aria-checked="true"] .c-checkbox__control::before {
-    border-color: #85b7d9; }
+      border-radius: 3px;
+      border-radius: var(--_border-radius, 3px);
+      outline: 0;
+      transition: border 0.2s ease-out;
+      background-color: #fff;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
+      height: 16px;
+      width: 16px; }
+      .c-checkbox__control:hover {
+        border-color: #999; }
+      .c-checkbox__control:active, .c-checkbox__control:focus, .c-checkbox__control:focus-within, .c-checkbox__control[aria-selected="true"] {
+        border-color: #85b7d9; }
+      .c-checkbox__control > input,
+      .c-checkbox__control > textarea {
+        border: none;
+        outline: none; }
+      .c-checkbox__control::before {
+        top: calc(50% - 5px);
+        left: calc(50% - 3px);
+        transform: rotate(45deg);
+        margin: 0 !important;
+        height: 8px;
+        width: 6px;
+        border-style: solid;
+        border-color: #fff;
+        border-width: 0 2px 2px 0;
+        visibility: hidden; }
+      .c-checkbox__control:checked {
+        background-color: #3a87fd;
+        border-color: #3a87fd; }
+        .c-checkbox__control:checked::before {
+          position: absolute;
+          content: '';
+          display: block;
+          visibility: visible; }
+      .c-checkbox__control:disabled {
+        background-color: #f7f7f7; }
+        .c-checkbox__control:disabled::before {
+          border-color: #666666; } }
 
 /*
 ---
@@ -5196,6 +5159,8 @@ Form control component
   .c-form-control > textarea {
     border: none;
     outline: none; }
+  .c-form-control:disabled {
+    background-color: #f7f7f7; }
   textarea.c-form-control {
     height: auto;
     width: 100%; }
@@ -5538,6 +5503,14 @@ Input group component
       .c-input-group__field > input[type='url'] > textarea {
         border: none;
         outline: none; }
+      .c-input-group__field > input[type='email']:disabled,
+      .c-input-group__field > input[type='number']:disabled,
+      .c-input-group__field > input[type='password']:disabled,
+      .c-input-group__field > input[type='search']:disabled,
+      .c-input-group__field > input[type='tel']:disabled,
+      .c-input-group__field > input[type='text']:disabled,
+      .c-input-group__field > input[type='url']:disabled {
+        background-color: #f7f7f7; }
       textarea.c-input-group__field > input[type='email'], .c-input-group__field > input[type='number'], .c-input-group__field > input[type='password'], .c-input-group__field > input[type='search'], .c-input-group__field > input[type='tel'], .c-input-group__field > input[type='text'], .c-input-group__field > input[type='url'] {
         height: auto;
         width: 100%; }
@@ -6047,56 +6020,61 @@ Radio button component
 ### html
 ```html
 <label>
-  <span class="c-radio" aria-checked="false">
-    <input type="radio">
-    <span class="c-radio__control"></span>
+  <span class="c-radio">
+    <input type="radio" class="c-radio__control">
+    <span class="c-radio__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
 .c-radio {
-  position: relative;
-  display: inline-block;
-  height: 16px;
-  width: 16px; }
-  .c-radio > [type="radio"], .c-radio__control, .c-radio__control::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 16px;
-    width: 16px;
-    border-radius: 100%; }
-  .c-radio > [type="radio"] {
-    z-index: 1;
-    cursor: pointer;
-    opacity: 0 !important;
-    outline: 0; }
-    .c-radio > [type="radio"]:checked ~ .c-radio__control::after {
-      opacity: 1; }
-  .c-radio__control {
-    z-index: 0; }
-    .c-radio__control::before {
-      content: '';
+  display: inline-flex;
+  align-items: center; }
+  @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+    .c-radio__control {
+      appearance: none;
+      position: relative;
+      display: inline-block;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      border-radius: var(--_border-radius, 3px);
+      outline: 0;
+      transition: border 0.2s ease-out;
       background-color: #fff;
-      border: 1px solid #cccccc; }
-    .c-radio__control::after {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      content: '';
-      display: block;
-      background-color: #333;
-      height: 8px;
-      width: 8px;
-      border-radius: 100%;
-      opacity: 0; }
-  .c-radio:hover .c-radio__control::before {
-    border-color: #999; }
-  .c-radio:active .c-radio__control::before, .c-radio:focus .c-radio__control::before, .c-radio:focus-within .c-radio__control::before, .c-radio[aria-checked="true"] .c-radio__control::before {
-    border-color: #85b7d9; }
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
+      height: 16px;
+      width: 16px;
+      border-radius: 100%; }
+      .c-radio__control:hover {
+        border-color: #999; }
+      .c-radio__control:active, .c-radio__control:focus, .c-radio__control:focus-within, .c-radio__control[aria-selected="true"] {
+        border-color: #85b7d9; }
+      .c-radio__control > input,
+      .c-radio__control > textarea {
+        border: none;
+        outline: none; }
+      .c-radio__control::before {
+        top: calc(50% - 3px);
+        left: calc(50% - 3px);
+        margin: 0 !important;
+        border-radius: 100%;
+        height: 6px;
+        width: 6px;
+        overflow: hidden;
+        background-color: #fff;
+        visibility: hidden; }
+      .c-radio__control:checked {
+        background-color: #3a87fd;
+        border-color: #3a87fd; }
+        .c-radio__control:checked::before {
+          position: absolute;
+          content: '';
+          display: block;
+          visibility: visible; }
+      .c-radio__control:disabled {
+        background-color: #f7f7f7; }
+        .c-radio__control:disabled::before {
+          background-color: #666666; } }
 
 .c-responsive-container-16-9,
 .c-responsive-container-4-3 {
@@ -7621,91 +7599,89 @@ Select box component
 
 ### html
 ```html
-<span class="c-select" aria-selected="false">
-  <select>
+<div class="c-select">
+  <select class="c-select__control">
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label"></span>
-</span>
+  <span class="c-select__toggle"></span>
+</div>
 ```
 ```html
-<span class="c-select c-select--block" aria-selected="false">
-  <select>
+<div class="c-select c-select--block">
+  <select class="c-select__control">
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label"></span>
-</span>
+  <span class="c-select__toggle"></span>
+</div>
 ```
 */
 .c-select {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  background-color: #fff;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
-  border-radius: var(--_border-radius, 3px);
-  outline: 0;
-  transition: border 0.2s ease-out; }
-  .c-select:hover {
-    border-color: #999; }
-  .c-select:active, .c-select:focus, .c-select:focus-within, .c-select[aria-selected="true"] {
-    border-color: #85b7d9; }
-  .c-select > input,
-  .c-select > textarea {
-    border: none;
-    outline: none; }
-  .c-select::before {
-    position: absolute;
-    top: 50%;
-    right: 0.5rem;
-    z-index: 1;
-    transform: translateY(-50%);
-    font-family: 'basis';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "\e902"; }
-  .c-select > select, .c-select__label {
-    padding-top: 0.375rem;
-    padding-top: calc(var(--_space, 1.5rem) * 0.25);
-    padding-right: 0.75rem;
-    padding-right: calc(var(--_space, 1.5rem) * 0.5);
-    padding-bottom: 0.375rem;
-    padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
-    padding-left: 0.75rem;
-    padding-left: calc(var(--_space, 1.5rem) * 0.5); }
-  .c-select > select {
-    position: relative;
-    z-index: 1;
-    opacity: 0 !important;
-    margin: 0;
-    appearance: none;
-    border: none;
-    outline: 0;
-    padding-right: 2.25rem;
-    padding-right: calc(var(--_space, 1.5rem) * 1.5); }
-  .c-select__label {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    padding-right: 0; }
+  display: inline-block; }
+  .c-select__toggle {
+    display: none; }
+  @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+    .c-select {
+      position: relative; }
+      .c-select__control {
+        position: relative;
+        z-index: 1;
+        appearance: none;
+        display: inline-block;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        border-radius: var(--_border-radius, 3px);
+        outline: 0;
+        transition: border 0.2s ease-out;
+        background-color: transparent;
+        line-height: 1;
+        max-width: 100%;
+        padding-top: 0.75rem;
+        padding-top: calc(var(--_space, 1.5rem) * 0.5);
+        padding-right: 1.875rem;
+        padding-right: calc(var(--_space, 1.5rem) * 1.25);
+        padding-bottom: 0.75rem;
+        padding-bottom: calc(var(--_space, 1.5rem) * 0.5);
+        padding-left: 0.75rem;
+        padding-left: calc(var(--_space, 1.5rem) * 0.5); }
+        .c-select__control:hover {
+          border-color: #999; }
+        .c-select__control:active, .c-select__control:focus, .c-select__control:focus-within, .c-select__control[aria-selected="true"] {
+          border-color: #85b7d9; }
+        .c-select__control > input,
+        .c-select__control > textarea {
+          border: none;
+          outline: none; }
+        .c-select__control:focus + .smf-select-control__toggle::before {
+          border-color: #3a87fd; }
+        .c-select__control:disabled + .smf-select-control__toggle {
+          background-color: #f7f7f7; }
+      .c-select__toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        display: block;
+        background-color: #fff; }
+        .c-select__toggle::before {
+          position: absolute;
+          top: calc(50% - 4px);
+          right: 0.75rem;
+          content: '';
+          display: block;
+          height: 6px;
+          width: 6px;
+          border-style: solid;
+          border-color: #000;
+          border-width: 0 1px 1px 0;
+          transform: rotate(45deg); } }
   .c-select--block {
     display: block; }
-    .c-select--block > select {
-      width: 100%; }
 
 /*
 ---
@@ -11015,36 +10991,18 @@ Abstract checkbox component
 
 ### scss
 ```scss
-//
-// @param  hash  $params
-//   size           length
-//   border-radius  length
-//
-
 .c-checkbox {
-  @include _checkbox((
-    size: $_base-font-size-px,
-    border-radius: 2px
-  ));
+  @include _checkbox();
 }
-```
-
-### js
-```js
-import BasisCheckbox from 'node_modules/sass-basis/src/js/_checkbox.js';
-new BasisCheckbox({
-  checkbox: '.c-checkbox',
-});
 ```
 
 ### html
 ```ejs
 <label>
-  <span class="c-checkbox" aria-checked="false">
-    <input type="checkbox">
-    <span class="c-checkbox__control"></span>
+  <span class="c-checkbox">
+    <input type="checkbox" class="c-checkbox__control">
+    <span class="c-checkbox__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
@@ -12009,28 +11967,17 @@ Abstract radio button component
 ### scss
 ```scss
 .c-radio {
-  @include _radio((
-    size: $_base-font-size-px,
-  ));
+  @include _radio();
 }
-```
-
-### js
-```js
-import BasisRadio from 'node_modules/sass-basis/src/js/_radio.js';
-new BasisRadio({
-  radio: '.c-radio',
-});
 ```
 
 ### html
 ```ejs
 <label>
-  <span class="c-radio" aria-checked="false">
-    <input type="radio">
-    <span class="c-radio__control"></span>
+  <span class="c-radio">
+    <input type="radio" class="c-radio__control">
+    <span class="c-radio__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
@@ -12413,25 +12360,16 @@ Abstract selectbox component
 }
 ```
 
-### js
-```js
-import BasisSelect from 'node_modules/sass-basis/src/js/_select.js';
-new BasisSelect({
-  select: '.c-select',
-  label : '.c-select__label'
-});
-```
-
 ### html
 ```ejs
-<span class="c-select c-select--block" aria-selected="false">
-  <select>
+<div class="c-select">
+  <select class="c-select__control">
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label"></span>
-</span>
+  <span class="c-select__toggle"></span>
+</div>
 ```
 */
 /*
@@ -13260,60 +13198,61 @@ Checkbox component
 ### html
 ```html
 <label>
-  <span class="c-checkbox" aria-checked="false">
-    <input type="checkbox">
-    <span class="c-checkbox__control"></span>
+  <span class="c-checkbox">
+    <input type="checkbox" class="c-checkbox__control">
+    <span class="c-checkbox__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
 .c-checkbox {
-  position: relative;
-  display: inline-block;
-  height: 15px;
-  width: 15px; }
-  .c-checkbox > [type="checkbox"], .c-checkbox__control, .c-checkbox__control::before, .c-checkbox__control::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 15px;
-    width: 15px; }
-  .c-checkbox > [type="checkbox"] {
-    z-index: 1;
-    cursor: pointer;
-    opacity: 0 !important;
-    outline: 0; }
-    .c-checkbox > [type="checkbox"]:checked ~ .c-checkbox__control::after {
-      opacity: 1; }
-  .c-checkbox__control {
-    z-index: 0; }
-    .c-checkbox__control::before {
-      content: '';
-      background-color: #fff;
+  display: inline-flex;
+  align-items: center; }
+  @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+    .c-checkbox__control {
+      appearance: none;
+      position: relative;
+      display: inline-block;
       border: 1px solid #cccccc;
-      border-radius: 2px; }
-    .c-checkbox__control::after {
-      left: 1px;
-      font-family: 'basis';
-      speak: none;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: "\e901";
-      opacity: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-  .c-checkbox:hover .c-checkbox__control::before {
-    border-color: #999; }
-  .c-checkbox:active .c-checkbox__control::before, .c-checkbox:focus .c-checkbox__control::before, .c-checkbox:focus-within .c-checkbox__control::before, .c-checkbox[aria-checked="true"] .c-checkbox__control::before {
-    border-color: #85b7d9; }
+      border-radius: 3px;
+      border-radius: var(--_border-radius, 3px);
+      outline: 0;
+      transition: border 0.2s ease-out;
+      background-color: #fff;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
+      height: 16px;
+      width: 16px; }
+      .c-checkbox__control:hover {
+        border-color: #999; }
+      .c-checkbox__control:active, .c-checkbox__control:focus, .c-checkbox__control:focus-within, .c-checkbox__control[aria-selected="true"] {
+        border-color: #85b7d9; }
+      .c-checkbox__control > input,
+      .c-checkbox__control > textarea {
+        border: none;
+        outline: none; }
+      .c-checkbox__control::before {
+        top: calc(50% - 5px);
+        left: calc(50% - 3px);
+        transform: rotate(45deg);
+        margin: 0 !important;
+        height: 8px;
+        width: 6px;
+        border-style: solid;
+        border-color: #fff;
+        border-width: 0 2px 2px 0;
+        visibility: hidden; }
+      .c-checkbox__control:checked {
+        background-color: #3a87fd;
+        border-color: #3a87fd; }
+        .c-checkbox__control:checked::before {
+          position: absolute;
+          content: '';
+          display: block;
+          visibility: visible; }
+      .c-checkbox__control:disabled {
+        background-color: #f7f7f7; }
+        .c-checkbox__control:disabled::before {
+          border-color: #666666; } }
 
 /*
 ---
@@ -13740,6 +13679,8 @@ Form control component
   .c-form-control > textarea {
     border: none;
     outline: none; }
+  .c-form-control:disabled {
+    background-color: #f7f7f7; }
   textarea.c-form-control {
     height: auto;
     width: 100%; }
@@ -14082,6 +14023,14 @@ Input group component
       .c-input-group__field > input[type='url'] > textarea {
         border: none;
         outline: none; }
+      .c-input-group__field > input[type='email']:disabled,
+      .c-input-group__field > input[type='number']:disabled,
+      .c-input-group__field > input[type='password']:disabled,
+      .c-input-group__field > input[type='search']:disabled,
+      .c-input-group__field > input[type='tel']:disabled,
+      .c-input-group__field > input[type='text']:disabled,
+      .c-input-group__field > input[type='url']:disabled {
+        background-color: #f7f7f7; }
       textarea.c-input-group__field > input[type='email'], .c-input-group__field > input[type='number'], .c-input-group__field > input[type='password'], .c-input-group__field > input[type='search'], .c-input-group__field > input[type='tel'], .c-input-group__field > input[type='text'], .c-input-group__field > input[type='url'] {
         height: auto;
         width: 100%; }
@@ -14591,56 +14540,61 @@ Radio button component
 ### html
 ```html
 <label>
-  <span class="c-radio" aria-checked="false">
-    <input type="radio">
-    <span class="c-radio__control"></span>
+  <span class="c-radio">
+    <input type="radio" class="c-radio__control">
+    <span class="c-radio__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
 .c-radio {
-  position: relative;
-  display: inline-block;
-  height: 15px;
-  width: 15px; }
-  .c-radio > [type="radio"], .c-radio__control, .c-radio__control::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 15px;
-    width: 15px;
-    border-radius: 100%; }
-  .c-radio > [type="radio"] {
-    z-index: 1;
-    cursor: pointer;
-    opacity: 0 !important;
-    outline: 0; }
-    .c-radio > [type="radio"]:checked ~ .c-radio__control::after {
-      opacity: 1; }
-  .c-radio__control {
-    z-index: 0; }
-    .c-radio__control::before {
-      content: '';
+  display: inline-flex;
+  align-items: center; }
+  @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+    .c-radio__control {
+      appearance: none;
+      position: relative;
+      display: inline-block;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      border-radius: var(--_border-radius, 3px);
+      outline: 0;
+      transition: border 0.2s ease-out;
       background-color: #fff;
-      border: 1px solid #cccccc; }
-    .c-radio__control::after {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      content: '';
-      display: block;
-      background-color: #444;
-      height: 7.5px;
-      width: 7.5px;
-      border-radius: 100%;
-      opacity: 0; }
-  .c-radio:hover .c-radio__control::before {
-    border-color: #999; }
-  .c-radio:active .c-radio__control::before, .c-radio:focus .c-radio__control::before, .c-radio:focus-within .c-radio__control::before, .c-radio[aria-checked="true"] .c-radio__control::before {
-    border-color: #85b7d9; }
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
+      height: 16px;
+      width: 16px;
+      border-radius: 100%; }
+      .c-radio__control:hover {
+        border-color: #999; }
+      .c-radio__control:active, .c-radio__control:focus, .c-radio__control:focus-within, .c-radio__control[aria-selected="true"] {
+        border-color: #85b7d9; }
+      .c-radio__control > input,
+      .c-radio__control > textarea {
+        border: none;
+        outline: none; }
+      .c-radio__control::before {
+        top: calc(50% - 3px);
+        left: calc(50% - 3px);
+        margin: 0 !important;
+        border-radius: 100%;
+        height: 6px;
+        width: 6px;
+        overflow: hidden;
+        background-color: #fff;
+        visibility: hidden; }
+      .c-radio__control:checked {
+        background-color: #3a87fd;
+        border-color: #3a87fd; }
+        .c-radio__control:checked::before {
+          position: absolute;
+          content: '';
+          display: block;
+          visibility: visible; }
+      .c-radio__control:disabled {
+        background-color: #f7f7f7; }
+        .c-radio__control:disabled::before {
+          background-color: #666666; } }
 
 .c-responsive-container-16-9,
 .c-responsive-container-4-3 {
@@ -16165,91 +16119,89 @@ Select box component
 
 ### html
 ```html
-<span class="c-select" aria-selected="false">
-  <select>
+<div class="c-select">
+  <select class="c-select__control">
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label"></span>
-</span>
+  <span class="c-select__toggle"></span>
+</div>
 ```
 ```html
-<span class="c-select c-select--block" aria-selected="false">
-  <select>
+<div class="c-select c-select--block">
+  <select class="c-select__control">
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label"></span>
-</span>
+  <span class="c-select__toggle"></span>
+</div>
 ```
 */
 .c-select {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  background-color: #fff;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
-  border-radius: var(--_border-radius, 3px);
-  outline: 0;
-  transition: border 0.2s ease-out; }
-  .c-select:hover {
-    border-color: #999; }
-  .c-select:active, .c-select:focus, .c-select:focus-within, .c-select[aria-selected="true"] {
-    border-color: #85b7d9; }
-  .c-select > input,
-  .c-select > textarea {
-    border: none;
-    outline: none; }
-  .c-select::before {
-    position: absolute;
-    top: 50%;
-    right: 0.66667rem;
-    z-index: 1;
-    transform: translateY(-50%);
-    font-family: 'basis';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "\e902"; }
-  .c-select > select, .c-select__label {
-    padding-top: 0.375rem;
-    padding-top: calc(var(--_space, 1.5rem) * 0.25);
-    padding-right: 0.75rem;
-    padding-right: calc(var(--_space, 1.5rem) * 0.5);
-    padding-bottom: 0.375rem;
-    padding-bottom: calc(var(--_space, 1.5rem) * 0.25);
-    padding-left: 0.75rem;
-    padding-left: calc(var(--_space, 1.5rem) * 0.5); }
-  .c-select > select {
-    position: relative;
-    z-index: 1;
-    opacity: 0 !important;
-    margin: 0;
-    appearance: none;
-    border: none;
-    outline: 0;
-    padding-right: 2.25rem;
-    padding-right: calc(var(--_space, 1.5rem) * 1.5); }
-  .c-select__label {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    padding-right: 0; }
+  display: inline-block; }
+  .c-select__toggle {
+    display: none; }
+  @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+    .c-select {
+      position: relative; }
+      .c-select__control {
+        position: relative;
+        z-index: 1;
+        appearance: none;
+        display: inline-block;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        border-radius: var(--_border-radius, 3px);
+        outline: 0;
+        transition: border 0.2s ease-out;
+        background-color: transparent;
+        line-height: 1;
+        max-width: 100%;
+        padding-top: 0.75rem;
+        padding-top: calc(var(--_space, 1.5rem) * 0.5);
+        padding-right: 1.875rem;
+        padding-right: calc(var(--_space, 1.5rem) * 1.25);
+        padding-bottom: 0.75rem;
+        padding-bottom: calc(var(--_space, 1.5rem) * 0.5);
+        padding-left: 0.75rem;
+        padding-left: calc(var(--_space, 1.5rem) * 0.5); }
+        .c-select__control:hover {
+          border-color: #999; }
+        .c-select__control:active, .c-select__control:focus, .c-select__control:focus-within, .c-select__control[aria-selected="true"] {
+          border-color: #85b7d9; }
+        .c-select__control > input,
+        .c-select__control > textarea {
+          border: none;
+          outline: none; }
+        .c-select__control:focus + .smf-select-control__toggle::before {
+          border-color: #3a87fd; }
+        .c-select__control:disabled + .smf-select-control__toggle {
+          background-color: #f7f7f7; }
+      .c-select__toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        display: block;
+        background-color: #fff; }
+        .c-select__toggle::before {
+          position: absolute;
+          top: calc(50% - 4px);
+          right: 0.75rem;
+          content: '';
+          display: block;
+          height: 6px;
+          width: 6px;
+          border-style: solid;
+          border-color: #000;
+          border-width: 0 1px 1px 0;
+          transform: rotate(45deg); } }
   .c-select--block {
     display: block; }
-    .c-select--block > select {
-      width: 100%; }
 
 /*
 ---

@@ -2463,36 +2463,18 @@ Abstract checkbox component
 
 ### scss
 ```scss
-//
-// @param  hash  $params
-//   size           length
-//   border-radius  length
-//
-
 .c-checkbox {
-  @include _checkbox((
-    size: $_base-font-size-px,
-    border-radius: 2px
-  ));
+  @include _checkbox();
 }
-```
-
-### js
-```js
-import BasisCheckbox from 'node_modules/sass-basis/src/js/_checkbox.js';
-new BasisCheckbox({
-  checkbox: '.c-checkbox',
-});
 ```
 
 ### html
 ```ejs
 <label>
-  <span class="c-checkbox" aria-checked="false">
-    <input type="checkbox">
-    <span class="c-checkbox__control"></span>
+  <span class="c-checkbox">
+    <input type="checkbox" class="c-checkbox__control">
+    <span class="c-checkbox__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
@@ -3457,28 +3439,17 @@ Abstract radio button component
 ### scss
 ```scss
 .c-radio {
-  @include _radio((
-    size: $_base-font-size-px,
-  ));
+  @include _radio();
 }
-```
-
-### js
-```js
-import BasisRadio from 'node_modules/sass-basis/src/js/_radio.js';
-new BasisRadio({
-  radio: '.c-radio',
-});
 ```
 
 ### html
 ```ejs
 <label>
-  <span class="c-radio" aria-checked="false">
-    <input type="radio">
-    <span class="c-radio__control"></span>
+  <span class="c-radio">
+    <input type="radio" class="c-radio__control">
+    <span class="c-radio__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
@@ -3861,25 +3832,16 @@ Abstract selectbox component
 }
 ```
 
-### js
-```js
-import BasisSelect from 'node_modules/sass-basis/src/js/_select.js';
-new BasisSelect({
-  select: '.c-select',
-  label : '.c-select__label'
-});
-```
-
 ### html
 ```ejs
-<span class="c-select c-select--block" aria-selected="false">
-  <select>
+<div class="c-select">
+  <select class="c-select__control">
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label"></span>
-</span>
+  <span class="c-select__toggle"></span>
+</div>
 ```
 */
 /*
