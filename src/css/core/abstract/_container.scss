@@ -67,6 +67,7 @@ Abstract container component
   margin-left: auto;
 
   @include _media-min(lg) {
-    max-width: $_container-max-width;
+    max-width: $_container-max-width; // for IE11
+    max-width: _var-container-max-width();
   }
 }
