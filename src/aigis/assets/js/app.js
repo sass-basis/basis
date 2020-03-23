@@ -22,9 +22,3 @@ new SgBasisPageEffect({
   pageEffect: '.sg-c-page-effect',
   duration: 200
 });
-
-import SgBasisSelect from '../../../js/_select.js';
-new SgBasisSelect({
-  select: '.sg-c-select',
-  label : '.sg-c-select__label'
-});
