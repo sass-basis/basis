@@ -54,6 +54,7 @@ Abstract input group component
   }
 
   &__addon {
+    background-color: #fff;
     border: 1px solid $_form-control-border-color;
     @include _form-control-base-padding();
     flex: none;
@@ -82,6 +83,7 @@ Abstract input group component
     @include _btn();
     @include _form-control-base-border();
     @include _form-control-base-padding();
+    background-color: #fff;
     color: $_color-text;
     flex: none;
     overflow: visible;

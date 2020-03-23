@@ -56,6 +56,7 @@ new BasisHamburgerBtn({
   $width: map-get($params, 'width');
   $bar-height: map-get($params, 'bar-height');
   $color: map-get($params, 'color');
+  --_color-text: $color;
 
   display: inline-block;
   cursor: pointer;
@@ -72,7 +73,8 @@ new BasisHamburgerBtn({
   &__bar {
     @include _position(absolute, null, 0, null, 0);
     display: block;
-    background-color: $color;
+    background-color: $color; // for IE11
+    background-color: _var-color-text();
     height: $bar-height;
     @include _transition(transform);
 

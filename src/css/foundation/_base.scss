@@ -1,3 +1,7 @@
+:root {
+  --_background-color: transparent;
+}
+
 * {
   box-sizing: border-box;
 
@@ -19,7 +23,9 @@ html {
 }
 
 body {
-  color: $_color-text;
+  background-color: var(--_background-color);
+  color: $_color-text; // for IE11
+  color: _var-color-text();
   font-family: $_font-family;
   @include _font-size-line-height($_base-font-size);
   -webkit-font-smoothing: antialiased;
@@ -36,7 +42,7 @@ input, textarea, keygen, select, button {
 }
 
 input, textarea, optgroup, select, button {
-  @include _line-height($_base-font-size);
+  @include _font-size-line-height($_base-font-size);
 }
 
 img {

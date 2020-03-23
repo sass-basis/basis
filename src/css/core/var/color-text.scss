@@ -1,0 +1,3 @@
+@function _var-color-text() {
+  @return var(--_color-text, $_color-text);
+}
