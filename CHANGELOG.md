@@ -1,5 +1,16 @@
 #Changelog
 
+## March 23, 2020 10.0.0
+* Add CSS custom property: `--_container-margin`
+* Add CSS custom property: `--_container-max-width`
+* Add CSS custom property: `--_border-radius`
+* Add CSS custom property: `--_color-text`
+* Add CSS custom property: `--_background-color`
+* Add CSS custom property: `--_space`
+* Add CSS custom property: `--_margin-scale`
+* Add mixin `_between-content()`
+* Redesigned form controls. See more https://github.com/sass-basis/basis/issues/122
+
 ## March 4, 2020 9.6.1
 * Update expand direction the submenu of c-navbar
 
