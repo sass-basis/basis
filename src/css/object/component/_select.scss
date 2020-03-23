@@ -9,24 +9,24 @@ Select box component
 
 ### html
 ```html
-<span class="c-select" aria-selected="false">
-  <select>
+<div class="c-select">
+  <select class="c-select__control">
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label"></span>
-</span>
+  <span class="c-select__toggle"></span>
+</div>
 ```
 ```html
-<span class="c-select c-select--block" aria-selected="false">
-  <select>
+<div class="c-select c-select--block">
+  <select class="c-select__control">
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label"></span>
-</span>
+  <span class="c-select__toggle"></span>
+</div>
 ```
 */
 
@@ -35,9 +35,5 @@ Select box component
 
   &--block {
     display: block;
-
-    > select {
-      width: 100%;
-    }
   }
 }

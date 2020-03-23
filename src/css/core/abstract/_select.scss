@@ -14,59 +14,77 @@ Abstract selectbox component
 }
 ```
 
-### js
-```js
-import BasisSelect from 'node_modules/sass-basis/src/js/_select.js';
-new BasisSelect({
-  select: '.c-select',
-  label : '.c-select__label'
-});
-```
-
 ### html
 ```ejs
-<span class="c-select c-select--block" aria-selected="false">
-  <select>
+<div class="c-select">
+  <select class="c-select__control">
     <option value="1">label-1</option>
     <option value="2">label-2</option>
     <option value="3">label-3</option>
   </select>
-  <span class="c-select__label"></span>
-</span>
+  <span class="c-select__toggle"></span>
+</div>
 ```
 */
 
 @mixin _select() {
-  position: relative;
   display: inline-block;
-  overflow: hidden;
-  background-color: #fff;
-  @include _form-control-base-border();
 
-  &::before {
-    @include _position(absolute, 50%, ($_between-lines * 2), null, null, 1);
-    transform: translateY(-50%);
-    @include _ic();
-    content: "\e902";
+  &__toggle {
+    display: none;
   }
 
-  > select,
-  &__label {
-    @include _form-control-base-padding();
-  }
+  @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+    position: relative;
 
-  > select {
-    @include _position(relative, null, null, null, null, 1);
-    opacity: 0 !important;
-    margin: 0;
-    appearance: none;
-    border: none;
-    outline: 0;
-    @include _padding-right(1.5);
-  }
+    &__control {
+      position: relative;
+      z-index: 1;
+      appearance: none;
+      display:inline-block;
+      @include _form-control-base-border();
+      background-color: transparent;
+      line-height: 1;
+      max-width: 100%;
+      @include _padding(.5, 1.25, .5, .5);
 
-  &__label {
-    @include _position(absolute, 0, 0, 0, 0, 0);
-    padding-right: 0;
+      &:focus {
+        & + .smf-select-control__toggle {
+          &::before {
+            border-color: #3a87fd;
+          }
+        }
+      }
+
+      &:disabled {
+        & + .smf-select-control__toggle {
+          background-color: _lightest($_color-gray);
+        }
+      }
+    }
+
+    &__toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      display: block;
+      background-color: #fff;
+
+      &::before {
+        position: absolute;
+        top: calc(50% - 4px);
+        right: _space(.5);
+        content: '';
+        display: block;
+        @include _square(6px);
+        border-style: solid;
+        border-color: #000;
+        border-width: 0 1px 1px 0;
+        transform: rotate(45deg);
+      }
+    }
   }
 }

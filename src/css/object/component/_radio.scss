@@ -10,17 +10,14 @@ Radio button component
 ### html
 ```html
 <label>
-  <span class="c-radio" aria-checked="false">
-    <input type="radio">
-    <span class="c-radio__control"></span>
+  <span class="c-radio">
+    <input type="radio" class="c-radio__control">
+    <span class="c-radio__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
 
 .#{$_prefix}c-radio {
-  @include _radio((
-    size: $_base-font-size-px,
-  ));
+  @include _radio();
 }

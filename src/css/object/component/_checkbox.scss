@@ -10,18 +10,14 @@ Checkbox component
 ### html
 ```html
 <label>
-  <span class="c-checkbox" aria-checked="false">
-    <input type="checkbox">
-    <span class="c-checkbox__control"></span>
+  <span class="c-checkbox">
+    <input type="checkbox" class="c-checkbox__control">
+    <span class="c-checkbox__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
 
 .#{$_prefix}c-checkbox {
-  @include _checkbox((
-    size: $_base-font-size-px,
-    border-radius: 2px,
-  ));
+  @include _checkbox();
 }

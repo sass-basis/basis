@@ -10,99 +10,64 @@ Abstract radio button component
 ### scss
 ```scss
 .c-radio {
-  @include _radio((
-    size: $_base-font-size-px,
-  ));
+  @include _radio();
 }
-```
-
-### js
-```js
-import BasisRadio from 'node_modules/sass-basis/src/js/_radio.js';
-new BasisRadio({
-  radio: '.c-radio',
-});
 ```
 
 ### html
 ```ejs
 <label>
-  <span class="c-radio" aria-checked="false">
-    <input type="radio">
-    <span class="c-radio__control"></span>
+  <span class="c-radio">
+    <input type="radio" class="c-radio__control">
+    <span class="c-radio__label">...</span>
   </span>
-  ...
 </label>
 ```
 */
 
-@mixin _radio($params: ()) {
-  $params: map-merge(
-    (
-      size: $_base-font-size-px,
-    ),
-    $params
-  );
+@mixin _radio() {
+  display: inline-flex;
+  align-items: center;
 
-  $z-index: 1;
-  $size: map-get($params, 'size');
-  $root: #{&};
-
-  position: relative;
-  display: inline-block;
-  @include _square($size);
-
-  > [type="radio"],
-  &__control,
-  &__control::before {
-    @include _position(absolute, 0, null, null, 0);
-    display: block;
-    @include _square($size, 100%);
-  }
-
-  > [type="radio"] {
-    z-index: $z-index;
-    cursor: pointer;
-    opacity: 0 !important;
-    outline: 0;
-
-    &:checked ~ #{$root}__control::after {
-      opacity: 1;
-    }
-  }
-
-  &__control {
-    z-index: ($z-index - 1);
-
-    &::before {
-      content: '';
+  @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+    &__control {
+      appearance: none;
+      position: relative;
+      display: inline-block;
+      @include _form-control-base-border();
       background-color: #fff;
-      border: 1px solid $_form-control-border-color;
-    }
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
+      @include _square(16px);
+      border-radius: 100%;
 
-    &::after {
-      @include _position(absolute, 50%, null, null, 50%);
-      transform: translate(-50%, -50%);
-      content: '';
-      display: block;
-      background-color: $_color-text;
-      @include _square(($size / 2), 100%);
-      opacity: 0;
-    }
-  }
+      &::before {
+        top: calc(50% - 3px);
+        left: calc(50% - 3px);
+        margin: 0 !important;
+        @include _circle(6px);
+        background-color: #fff;
+        visibility: hidden;
+      }
 
-  &:hover {
-    #{$root}__control::before {
-      border-color: $_form-control-border-color-hover;
-    }
-  }
+      &:checked {
+        background-color: #3a87fd;
+        border-color: #3a87fd;
 
-  &:active,
-  &:focus,
-  &:focus-within,
-  &[aria-checked="true"] {
-    #{$root}__control::before {
-      border-color: $_form-control-border-color-focus;
+        &::before {
+          position: absolute;
+          content: '';
+          display: block;
+          visibility: visible;
+        }
+      }
+
+      &:disabled {
+        background-color: _lightest($_color-gray);
+
+        &::before {
+          background-color: _dark($_color-gray);
+        }
+      }
     }
   }
 }
