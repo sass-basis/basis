@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  background-color: var(--_background-color);
+  background-color: _var-background-color();
   color: $_color-text; // for IE11
   color: _var-color-text();
   font-family: $_font-family;

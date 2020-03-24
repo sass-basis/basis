@@ -1,5 +1,8 @@
 #Changelog
 
+## March 24, 2020 10.0.1
+* Add function: `_var-background-color()`
+
 ## March 23, 2020 10.0.0
 * Add CSS custom property: `--_container-margin`
 * Add CSS custom property: `--_container-max-width`
@@ -8,6 +11,12 @@
 * Add CSS custom property: `--_background-color`
 * Add CSS custom property: `--_space`
 * Add CSS custom property: `--_margin-scale`
+* Add function: `_var-container-margin()`
+* Add function: `_var-container-max-width()`
+* Add function: `_var-border-radius()`
+* Add function: `_var-color-text()`
+* Add function: `_var-space()`
+* Add function: `_var-margin-scale()`
 * Add mixin `_between-content()`
 * Redesigned form controls. See more https://github.com/sass-basis/basis/issues/122
 
