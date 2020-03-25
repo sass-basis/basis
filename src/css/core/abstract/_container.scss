@@ -28,11 +28,12 @@ Abstract fluid container component
   padding-right: $_container-margin; // for IE11
   padding-left: $_container-margin; // for IE11
 
-  padding-right: _var-container-margin();
-  padding-left: _var-container-margin();
+  padding-right: _var-container-margin-sm();
+  padding-left: _var-container-margin-sm();
 
   @include _media-min(md) {
-    --_container-margin: #{$_container-margin * 2};
+    padding-right: _var-container-margin();
+    padding-left: _var-container-margin();
   }
 }
 

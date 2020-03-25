@@ -1,5 +1,9 @@
 #Changelog
 
+## March 25, 2020 10.1.0
+* Add CSS custom property: `--_container-margin-sm`
+* Add function: `_var-container-margin-sm()`
+
 ## March 24, 2020 10.0.1
 * Add function: `_var-background-color()`
 
