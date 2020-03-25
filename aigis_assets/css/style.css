@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v10.0.1
+ * Name: Basis v10.1.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -4753,11 +4753,12 @@ Fluid container component
 .c-fluid-container {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  padding-right: var(--_container-margin, 0.75rem);
-  padding-left: var(--_container-margin, 0.75rem); }
+  padding-right: var(--_container-margin-sm, 0.75rem);
+  padding-left: var(--_container-margin-sm, 0.75rem); }
   @media (min-width: 40em) {
     .c-fluid-container {
-      --_container-margin: 1.5rem; } }
+      padding-right: var(--_container-margin, 1.5rem);
+      padding-left: var(--_container-margin, 1.5rem); } }
 
 /*
 ---
@@ -4779,13 +4780,14 @@ Container component
 .c-container {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  padding-right: var(--_container-margin, 0.75rem);
-  padding-left: var(--_container-margin, 0.75rem);
+  padding-right: var(--_container-margin-sm, 0.75rem);
+  padding-left: var(--_container-margin-sm, 0.75rem);
   margin-right: auto;
   margin-left: auto; }
   @media (min-width: 40em) {
     .c-container {
-      --_container-margin: 1.5rem; } }
+      padding-right: var(--_container-margin, 1.5rem);
+      padding-left: var(--_container-margin, 1.5rem); } }
   @media (min-width: 64em) {
     .c-container {
       max-width: 1200px;
@@ -8521,7 +8523,7 @@ Visible utility
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v10.0.1
+ * Name: Basis v10.1.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -13274,11 +13276,12 @@ Fluid container component
 .c-fluid-container {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  padding-right: var(--_container-margin, 0.75rem);
-  padding-left: var(--_container-margin, 0.75rem); }
+  padding-right: var(--_container-margin-sm, 0.75rem);
+  padding-left: var(--_container-margin-sm, 0.75rem); }
   @media (min-width: 40em) {
     .c-fluid-container {
-      --_container-margin: 1.5rem; } }
+      padding-right: var(--_container-margin, 1.5rem);
+      padding-left: var(--_container-margin, 1.5rem); } }
 
 /*
 ---
@@ -13300,13 +13303,14 @@ Container component
 .c-container {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  padding-right: var(--_container-margin, 0.75rem);
-  padding-left: var(--_container-margin, 0.75rem);
+  padding-right: var(--_container-margin-sm, 0.75rem);
+  padding-left: var(--_container-margin-sm, 0.75rem);
   margin-right: auto;
   margin-left: auto; }
   @media (min-width: 40em) {
     .c-container {
-      --_container-margin: 1.5rem; } }
+      padding-right: var(--_container-margin, 1.5rem);
+      padding-left: var(--_container-margin, 1.5rem); } }
   @media (min-width: 64em) {
     .c-container {
       max-width: 1200px;
