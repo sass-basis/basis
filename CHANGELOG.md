@@ -1,5 +1,8 @@
 #Changelog
 
+## April 3, 2020 10.1.1
+* Hover effect apply only lg size.
+
 ## March 25, 2020 10.1.0
 * Add CSS custom property: `--_container-margin-sm`
 * Add function: `_var-container-margin-sm()`
