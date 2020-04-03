@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v10.1.0
+ * Name: Basis v10.1.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -1126,7 +1126,7 @@ Bounce vertical
 //
 
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _bounce-vertical(4px, .5s);
   }
 }
@@ -1144,7 +1144,7 @@ Shake vertical
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _shake-vertical();
   }
 }
@@ -1162,7 +1162,7 @@ Vibrate vertical
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _vibrate-vertical();
   }
 }
@@ -1185,7 +1185,7 @@ Bounce horizontal
 //
 
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _bounce-horizontal(4px, .5s);
   }
 }
@@ -1203,7 +1203,7 @@ Shake horizontal
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _shake-horizontal();
   }
 }
@@ -1221,7 +1221,7 @@ Vibrate horizontal
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _vibrate-horizontal();
   }
 }
@@ -1244,7 +1244,7 @@ Bounce scale
 //
 
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _bounce-scale(1.2, .5s);
   }
 }
@@ -1262,7 +1262,7 @@ Shake scale
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _shake-scale();
   }
 }
@@ -1280,7 +1280,7 @@ Vibrate scale
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _vibrate-scale();
   }
 }
@@ -1300,7 +1300,7 @@ Extend the underline from the center.
 ### scss
 ```scss
 .c-foo a {
-  @include _hover() {
+  @include _hover(lg) {
     &::after {
       @include _extend-underline();
     }
@@ -1483,7 +1483,7 @@ Hover event helper
 //
 
 img {
-  @include _hover() {
+  @include _hover(lg) {
     opacity: .8;
   }
 }
@@ -2128,7 +2128,7 @@ a {
   color: #f00;
   font-size: 12px;
 
-  @include _hover() {
+  @include _hover(lg) {
     color: #f9c;
     font-size: 14px;
   }
@@ -7846,7 +7846,7 @@ Shake vertical utility
 <div class="u-shake-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-shake-vertical:hover, .u-shake-vertical:active, .u-shake-vertical:focus {
     position: relative;
     animation: _bounce_vertical_4px 0.5s; }
@@ -7877,7 +7877,7 @@ Vibrate vertical utility
 <div class="u-vibrate-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-vibrate-vertical:hover, .u-vibrate-vertical:active, .u-vibrate-vertical:focus {
     position: relative;
     animation: _bounce_vertical_2px 0.2s; }
@@ -7908,7 +7908,7 @@ Shake horizontal utility
 <div class="u-shake-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-shake-horizontal:hover, .u-shake-horizontal:active, .u-shake-horizontal:focus {
     position: relative;
     animation: _bounce_horizontal_4px 0.5s; }
@@ -7939,7 +7939,7 @@ Vibrate horizontal utility
 <div class="u-vibrate-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-vibrate-horizontal:hover, .u-vibrate-horizontal:active, .u-vibrate-horizontal:focus {
     position: relative;
     animation: _bounce_horizontal_2px 0.2s; }
@@ -7970,7 +7970,7 @@ Shake scale utility
 <div class="u-shake-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-shake-scale:hover, .u-shake-scale:active, .u-shake-scale:focus {
     animation: _bounce_scale_120 0.5s ease-out; }
   @keyframes _bounce_scale_120 {
@@ -8000,7 +8000,7 @@ Vibrate scale utility
 <div class="u-vibrate-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-vibrate-scale:hover, .u-vibrate-scale:active, .u-vibrate-scale:focus {
     animation: _bounce_scale_110 0.2s ease-out; }
   @keyframes _bounce_scale_110 {
@@ -8043,7 +8043,7 @@ Extend underline utility
     transition: width 0.2s ease-out;
     transform: translateX(-50%);
     background-color: #333; }
-  @media (min-width: false) {
+  @media (min-width: 64em) {
     .u-extend-underline:hover::after, .u-extend-underline:active::after, .u-extend-underline:focus::after {
       width: 100%; } }
 
@@ -8523,7 +8523,7 @@ Visible utility
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v10.1.0
+ * Name: Basis v10.1.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -9649,7 +9649,7 @@ Bounce vertical
 //
 
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _bounce-vertical(4px, .5s);
   }
 }
@@ -9667,7 +9667,7 @@ Shake vertical
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _shake-vertical();
   }
 }
@@ -9685,7 +9685,7 @@ Vibrate vertical
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _vibrate-vertical();
   }
 }
@@ -9708,7 +9708,7 @@ Bounce horizontal
 //
 
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _bounce-horizontal(4px, .5s);
   }
 }
@@ -9726,7 +9726,7 @@ Shake horizontal
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _shake-horizontal();
   }
 }
@@ -9744,7 +9744,7 @@ Vibrate horizontal
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _vibrate-horizontal();
   }
 }
@@ -9767,7 +9767,7 @@ Bounce scale
 //
 
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _bounce-scale(1.2, .5s);
   }
 }
@@ -9785,7 +9785,7 @@ Shake scale
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _shake-scale();
   }
 }
@@ -9803,7 +9803,7 @@ Vibrate scale
 ### scss
 ```scss
 .c-foo {
-  @include _hover() {
+  @include _hover(lg) {
     @include _vibrate-scale();
   }
 }
@@ -9823,7 +9823,7 @@ Extend the underline from the center.
 ### scss
 ```scss
 .c-foo a {
-  @include _hover() {
+  @include _hover(lg) {
     &::after {
       @include _extend-underline();
     }
@@ -10006,7 +10006,7 @@ Hover event helper
 //
 
 img {
-  @include _hover() {
+  @include _hover(lg) {
     opacity: .8;
   }
 }
@@ -10651,7 +10651,7 @@ a {
   color: #f00;
   font-size: 12px;
 
-  @include _hover() {
+  @include _hover(lg) {
     color: #f9c;
     font-size: 14px;
   }
@@ -16369,7 +16369,7 @@ Shake vertical utility
 <div class="u-shake-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-shake-vertical:hover, .u-shake-vertical:active, .u-shake-vertical:focus {
     position: relative;
     animation: _bounce_vertical_4px 0.5s; }
@@ -16400,7 +16400,7 @@ Vibrate vertical utility
 <div class="u-vibrate-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-vibrate-vertical:hover, .u-vibrate-vertical:active, .u-vibrate-vertical:focus {
     position: relative;
     animation: _bounce_vertical_2px 0.2s; }
@@ -16431,7 +16431,7 @@ Shake horizontal utility
 <div class="u-shake-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-shake-horizontal:hover, .u-shake-horizontal:active, .u-shake-horizontal:focus {
     position: relative;
     animation: _bounce_horizontal_4px 0.5s; }
@@ -16462,7 +16462,7 @@ Vibrate horizontal utility
 <div class="u-vibrate-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-vibrate-horizontal:hover, .u-vibrate-horizontal:active, .u-vibrate-horizontal:focus {
     position: relative;
     animation: _bounce_horizontal_2px 0.2s; }
@@ -16493,7 +16493,7 @@ Shake scale utility
 <div class="u-shake-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-shake-scale:hover, .u-shake-scale:active, .u-shake-scale:focus {
     animation: _bounce_scale_120 0.5s ease-out; }
   @keyframes _bounce_scale_120 {
@@ -16523,7 +16523,7 @@ Vibrate scale utility
 <div class="u-vibrate-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (min-width: false) {
+@media (min-width: 64em) {
   .u-vibrate-scale:hover, .u-vibrate-scale:active, .u-vibrate-scale:focus {
     animation: _bounce_scale_110 0.2s ease-out; }
   @keyframes _bounce_scale_110 {
@@ -16566,7 +16566,7 @@ Extend underline utility
     transition: width 0.2s ease-out;
     transform: translateX(-50%);
     background-color: #444; }
-  @media (min-width: false) {
+  @media (min-width: 64em) {
     .u-extend-underline:hover::after, .u-extend-underline:active::after, .u-extend-underline:focus::after {
       width: 100%; } }
 
@@ -17100,7 +17100,7 @@ pre {
   height: 150px;
   width: 150px;
   opacity: 1; }
-  @media (min-width: false) {
+  @media (min-width: 64em) {
     .c-animate-image:hover, .c-animate-image:active, .c-animate-image:focus {
       width: 100%;
       opacity: 0.5; } }
@@ -17125,7 +17125,7 @@ pre {
   .c-btn--launch, .c-btn--download, .c-btn--buy {
     background-color: #00DAE6;
     color: #fff; }
-    @media (min-width: false) {
+    @media (min-width: 64em) {
       .c-btn--launch:hover, .c-btn--launch:active, .c-btn--launch:focus, .c-btn--download:hover, .c-btn--download:active, .c-btn--download:focus, .c-btn--buy:hover, .c-btn--buy:active, .c-btn--buy:focus {
         opacity: .8; } }
     .c-btn--launch .fa, .c-btn--download .fa, .c-btn--buy .fa {
@@ -17263,7 +17263,7 @@ pre {
   height: 150px;
   width: 150px;
   opacity: 1; }
-  @media (min-width: false) {
+  @media (min-width: 64em) {
     .c-fade-image:hover, .c-fade-image:active, .c-fade-image:focus {
       opacity: 0.5; } }
 
@@ -17365,7 +17365,7 @@ pre {
 .p-local-nav a[href] {
   color: #777777;
   text-decoration: none; }
-  @media (min-width: false) {
+  @media (min-width: 64em) {
     .p-local-nav a[href]:hover, .p-local-nav a[href]:active, .p-local-nav a[href]:focus {
       text-decoration: underline; } }
 
@@ -17495,7 +17495,7 @@ pre {
       padding-left: 0;
       color: #444;
       text-decoration: none; }
-      @media (min-width: false) {
+      @media (min-width: 64em) {
         .p-table-of-contents__item > a:hover, .p-table-of-contents__item > a:active, .p-table-of-contents__item > a:focus {
           opacity: .8; } }
 
