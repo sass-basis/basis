@@ -13,7 +13,7 @@ Hover event helper
 //
 
 img {
-  @include _hover() {
+  @include _hover(lg) {
     opacity: .8;
   }
 }

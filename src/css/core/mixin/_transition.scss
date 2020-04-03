@@ -17,7 +17,7 @@ a {
   color: #f00;
   font-size: 12px;
 
-  @include _hover() {
+  @include _hover(lg) {
     color: #f9c;
     font-size: 14px;
   }

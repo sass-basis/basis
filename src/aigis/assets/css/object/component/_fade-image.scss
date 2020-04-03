@@ -3,7 +3,7 @@
   @include _square(150px);
   opacity: 1;
 
-  @include _hover() {
+  @include _hover(lg) {
     opacity: 0.5;
   }
 }

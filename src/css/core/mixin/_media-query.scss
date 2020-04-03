@@ -25,7 +25,7 @@ min-width media query
   $sizes-keys: map-keys($_sizes);
   $min-key: nth($sizes-keys, 1);
 
-  @if (0 == $size or $min-key == $size) {
+  @if (0 == $size or $min-key == $size or false == $size) {
     @content;
   } @else {
     @media (min-width: _min($size)) {
