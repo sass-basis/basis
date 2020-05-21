@@ -66,30 +66,32 @@ new BasisDrawer({
 ```ejs
 <div style="min-height: 200px; position: relative">
   <nav id="my-dropdown" class="c-dropdown" role="navigation" aria-hidden="true" aria-labelledby="my-dropdown-btn">
-    <ul class="c-dropdown__menu">
-      <li class="c-dropdown__item">
-        <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
-          <div class="c-hamburger-btn__bars">
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
+    <div class="c-dropdown__inner">
+      <ul class="c-dropdown__menu">
+        <li class="c-dropdown__item">
+          <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
+            <div class="c-hamburger-btn__bars">
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+            </div>
+            <div class="c-hamburger-btn__label">MENU</div>
           </div>
-          <div class="c-hamburger-btn__label">MENU</div>
-        </div>
-      </li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item">
-        <a href="#">menu</a>
-        <div class="c-dropdown__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-dropdown__submenu" aria-hidden="true">
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+        </li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item">
+          <a href="#">menu</a>
+          <div class="c-dropdown__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-dropdown__submenu" aria-hidden="true">
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
 
@@ -115,12 +117,16 @@ new BasisDrawer({
   $max-width: map-get($params, 'max-width');
 
   @include _position(absolute, 0, 0, 100%, 0, 10);
-  overflow-y: auto;
   visibility: hidden;
 
   &[aria-hidden="false"] {
     visibility: visible;
     bottom: 0;
+  }
+
+  &__inner {
+    height: 100%;
+    overflow-y: auto;
   }
 
   &__submenu {
