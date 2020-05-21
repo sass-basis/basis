@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v10.1.1
+ * Name: Basis v11.0.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -945,26 +945,6 @@ Default red color
 $_color-red: #e74c3c;
 ```
 */
-/*
----
-name: $_font-path
-category:
-  - core/variable
----
-Basis font relative path
-
-### scss
-```scss
-$_font-path: '../font';
-```
-*/
-@font-face {
-  font-family: 'basis';
-  src: url("../font/basis.eot");
-  src: url("../font/basis.eot#iefix") format("embedded-opentype"), url("../font/basis.ttf") format("truetype"), url("../font/basis.woff") format("woff"), url("../font/basis.svg#basis") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 /*
 ---
 name: $_min-columns
@@ -2432,8 +2412,8 @@ Abstract breadcrumbs component
 ### html
 ```ejs
 <ol class="c-breadcrumbs">
-  <li class="c-breadcrumbs__item"><a href="#">...</a></li>
-  <li class="c-breadcrumbs__item">...</li>
+  <li class="c-breadcrumbs__item"><a href="#">Lorem</a></li>
+  <li class="c-breadcrumbs__item">ipsum</li>
 </ol>
 ```
 */
@@ -2603,38 +2583,40 @@ new BasisDrawer({
 ```ejs
 <div style="min-height: 200px">
   <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
-  <ul class="c-drawer__menu">
-    <li class="c-drawer__item"><a href="#">menu</a></li>
-    <li class="c-drawer__item"><a href="#">menu</a></li>
-    <li class="c-drawer__item">
-      <a href="#">menu</a>
-      <div class="c-drawer__toggle" aria-expanded="false">
-        <span class="c-ic-angle-right" aria-hidden="true"></span>
-      </div>
-      <ul class="c-drawer__submenu" aria-hidden="true">
-        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        <li class="c-drawer__subitem">
-          <a href="#">submenu</a>
+    <div class="c-drawer__inner">
+      <ul class="c-drawer__menu">
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
           <div class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
           </div>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem">
+              <a href="#">submenu</a>
+              <div class="c-drawer__toggle" aria-expanded="false">
+                <span class="c-ic-angle-right" aria-hidden="true"></span>
+              </div>
+              <ul class="c-drawer__submenu" aria-hidden="true">
+                <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
           </ul>
         </li>
       </ul>
-    </li>
-    <li class="c-drawer__item">
-      <a href="#">menu</a>
-      <div class="c-drawer__toggle" aria-expanded="false">
-        <span class="c-ic-angle-right" aria-hidden="true"></span>
-      </div>
-      <ul class="c-drawer__submenu" aria-hidden="true">
-        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-      </ul>
-    </li>
-  </ul>
+    </div>
   </nav>
 </div>
 
@@ -2716,30 +2698,32 @@ new BasisDrawer({
 ```ejs
 <div style="min-height: 200px; position: relative">
   <nav id="my-dropdown" class="c-dropdown" role="navigation" aria-hidden="true" aria-labelledby="my-dropdown-btn">
-    <ul class="c-dropdown__menu">
-      <li class="c-dropdown__item">
-        <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
-          <div class="c-hamburger-btn__bars">
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
+    <div class="c-dropdown__inner">
+      <ul class="c-dropdown__menu">
+        <li class="c-dropdown__item">
+          <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
+            <div class="c-hamburger-btn__bars">
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+            </div>
+            <div class="c-hamburger-btn__label">MENU</div>
           </div>
-          <div class="c-hamburger-btn__label">MENU</div>
-        </div>
-      </li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item">
-        <a href="#">menu</a>
-        <div class="c-dropdown__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-dropdown__submenu" aria-hidden="true">
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+        </li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item">
+          <a href="#">menu</a>
+          <div class="c-dropdown__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-dropdown__submenu" aria-hidden="true">
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
 
@@ -2919,30 +2903,6 @@ Abstract hero component
     ...
   </div>
 </div>
-```
-*/
-/*
----
-name: _ic()
-category:
-  - core/abstract
----
-Abstract icon component
-
-### scss
-```scss
-.c-ic-angle-right {
-  @include _ic();
-
-  &::before {
-    content: "\e900";
-  }
-}
-```
-
-### html
-```ejs
-<span class="c-ic-angle-right" aria-hidden="true"></span>
 ```
 */
 /*
@@ -4602,8 +4562,8 @@ Breadcrumbs component
 ### html
 ```html
 <ol class="c-breadcrumbs">
-  <li class="c-breadcrumbs__item"><a href="#">...</a></li>
-  <li class="c-breadcrumbs__item">...</li>
+  <li class="c-breadcrumbs__item"><a href="#">Lorem</a></li>
+  <li class="c-breadcrumbs__item">ipsum</li>
 </ol>
 ```
 */
@@ -4614,20 +4574,16 @@ Breadcrumbs component
   .c-breadcrumbs__item {
     display: inline; }
     .c-breadcrumbs__item:nth-child(n + 2)::before {
-      margin-top: 0;
-      margin-right: 5px;
-      margin-bottom: 0;
-      margin-left: 5px;
-      font-family: 'basis';
-      speak: none;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: "\e900"; }
+      content: '';
+      margin: .45em .45em .15em .15em;
+      display: inline-block;
+      height: .4em;
+      width: .4em;
+      border-color: #333;
+      border-color: var(--_color-text, #333);
+      border-style: solid;
+      border-width: 1px 1px 0 0;
+      transform: rotate(45deg); }
 
 /*
 ---
@@ -4806,38 +4762,40 @@ Drawer component
 ```html
 <div style="min-height: 200px; position: relative">
   <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
-    <ul class="c-drawer__menu">
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item">
-        <a href="#">menu</a>
-        <div class="c-drawer__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-drawer__submenu" aria-hidden="true">
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-          <li class="c-drawer__subitem">
-            <a href="#">submenu</a>
-            <div class="c-drawer__toggle" aria-expanded="false">
-              <span class="c-ic-angle-right" aria-hidden="true"></span>
-            </div>
-            <ul class="c-drawer__submenu" aria-hidden="true">
-              <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li class="c-drawer__item">
-        <a href="#">menu</a>
-        <div class="c-drawer__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-drawer__submenu" aria-hidden="true">
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+    <div class="c-drawer__inner">
+      <ul class="c-drawer__menu">
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem">
+              <a href="#">submenu</a>
+              <div class="c-drawer__toggle" aria-expanded="false">
+                <span class="c-ic-angle-right" aria-hidden="true"></span>
+              </div>
+              <ul class="c-drawer__submenu" aria-hidden="true">
+                <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
 
@@ -4859,13 +4817,15 @@ Drawer component
   z-index: 10;
   width: 15rem;
   max-width: 80%;
-  overflow-y: auto;
   visibility: hidden;
   transition: left 0.2s ease-out, visibility 0.2s ease-out;
   transition-timing-function: ease-in; }
   .c-drawer[aria-hidden="false"] {
     visibility: visible;
     left: 0; }
+  .c-drawer__inner {
+    height: 100%;
+    overflow-y: auto; }
   .c-drawer__submenu {
     height: 0;
     overflow: hidden; }
@@ -4922,6 +4882,8 @@ Drawer component
     display: flex;
     align-items: center;
     justify-content: center; }
+    .c-drawer__toggle > .c-ic-angle-right {
+      transform: translateY(0); }
   .c-drawer--fixed {
     position: fixed; }
 
@@ -4938,30 +4900,32 @@ Dropdown component
 ```html
 <div style="min-height: 200px; position: relative">
   <nav id="my-dropdown" class="c-dropdown" role="navigation" aria-hidden="true" aria-labelledby="my-dropdown-btn">
-    <ul class="c-dropdown__menu">
-      <li class="c-dropdown__item">
-        <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
-          <div class="c-hamburger-btn__bars">
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
+    <div class="c-dropdown__inner">
+      <ul class="c-dropdown__menu">
+        <li class="c-dropdown__item">
+          <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
+            <div class="c-hamburger-btn__bars">
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+            </div>
+            <div class="c-hamburger-btn__label">MENU</div>
           </div>
-          <div class="c-hamburger-btn__label">MENU</div>
-        </div>
-      </li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item">
-        <a href="#">menu</a>
-        <div class="c-dropdown__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-dropdown__submenu" aria-hidden="true">
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+        </li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item">
+          <a href="#">menu</a>
+          <div class="c-dropdown__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-dropdown__submenu" aria-hidden="true">
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
 
@@ -4982,13 +4946,15 @@ Dropdown component
   bottom: 100%;
   left: 0;
   z-index: 10;
-  overflow-y: auto;
   visibility: hidden;
   transition: bottom 0.2s ease-out, visibility 0.2s ease-out;
   transition-timing-function: ease-in; }
   .c-dropdown[aria-hidden="false"] {
     visibility: visible;
     bottom: 0; }
+  .c-dropdown__inner {
+    height: 100%;
+    overflow-y: auto; }
   .c-dropdown__submenu {
     height: 0;
     overflow: hidden; }
@@ -5045,6 +5011,8 @@ Dropdown component
     display: flex;
     align-items: center;
     justify-content: center; }
+    .c-dropdown__toggle > .c-ic-angle-right {
+      transform: translateY(0); }
   .c-dropdown--fixed {
     position: fixed; }
 
@@ -5307,18 +5275,6 @@ Hero component
     .c-hero--fixed {
       background-attachment: fixed; } }
 
-[class^="c-ic-"],
-[class*=" c-ic-"] {
-  font-family: 'basis';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
 /*
 ---
 name: .c-ic-angle-right
@@ -5334,8 +5290,20 @@ Icon (Angle Right) component
 <span class="c-ic-angle-right" aria-hidden="true"></span>
 ```
 */
-.c-ic-angle-right::before {
-  content: "\e900"; }
+.c-ic-angle-right {
+  display: inline-block;
+  padding: 0 .25em;
+  transform: translateY(-0.15em); }
+  .c-ic-angle-right::before {
+    content: '';
+    display: block;
+    height: .4em;
+    width: .4em;
+    border-color: #333;
+    border-color: var(--_color-text, #333);
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg); }
 
 /*
 ---
@@ -5352,8 +5320,20 @@ Icon (Check) component
 <span class="c-ic-check" aria-hidden="true"></span>
 ```
 */
-.c-ic-check::before {
-  content: "\e901"; }
+.c-ic-check {
+  display: inline-block;
+  padding: 0 .25em;
+  transform: translateY(-0.2em); }
+  .c-ic-check::before {
+    content: '';
+    display: block;
+    height: .4em;
+    width: .25em;
+    border-color: #333;
+    border-color: var(--_color-text, #333);
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg); }
 
 /*
 ---
@@ -5370,8 +5350,20 @@ Icon (Angle Down) component
 <span class="c-ic-angle-down" aria-hidden="true"></span>
 ```
 */
-.c-ic-angle-down::before {
-  content: "\e902"; }
+.c-ic-angle-down {
+  display: inline-block;
+  padding: 0 .25em;
+  transform: translateY(-0.2em); }
+  .c-ic-angle-down::before {
+    content: '';
+    display: block;
+    height: .4em;
+    width: .4em;
+    border-color: #333;
+    border-color: var(--_color-text, #333);
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg); }
 
 /*
 ---
@@ -5912,6 +5904,8 @@ Navbar component
     display: flex;
     align-items: center;
     justify-content: center; }
+    .c-navbar__toggle > .c-ic-angle-right {
+      transform: translateY(0); }
 
 /*
 ---
@@ -8523,7 +8517,7 @@ Visible utility
     visibility: visible !important; } }
 
 /*!
- * Name: Basis v10.1.1
+ * Name: Basis v11.0.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -9468,26 +9462,6 @@ Default red color
 $_color-red: #e74c3c;
 ```
 */
-/*
----
-name: $_font-path
-category:
-  - core/variable
----
-Basis font relative path
-
-### scss
-```scss
-$_font-path: '../font';
-```
-*/
-@font-face {
-  font-family: 'basis';
-  src: url("../../font/basis.eot");
-  src: url("../../font/basis.eot#iefix") format("embedded-opentype"), url("../../font/basis.ttf") format("truetype"), url("../../font/basis.woff") format("woff"), url("../../font/basis.svg#basis") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 /*
 ---
 name: $_min-columns
@@ -10955,8 +10929,8 @@ Abstract breadcrumbs component
 ### html
 ```ejs
 <ol class="c-breadcrumbs">
-  <li class="c-breadcrumbs__item"><a href="#">...</a></li>
-  <li class="c-breadcrumbs__item">...</li>
+  <li class="c-breadcrumbs__item"><a href="#">Lorem</a></li>
+  <li class="c-breadcrumbs__item">ipsum</li>
 </ol>
 ```
 */
@@ -11126,38 +11100,40 @@ new BasisDrawer({
 ```ejs
 <div style="min-height: 200px">
   <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
-  <ul class="c-drawer__menu">
-    <li class="c-drawer__item"><a href="#">menu</a></li>
-    <li class="c-drawer__item"><a href="#">menu</a></li>
-    <li class="c-drawer__item">
-      <a href="#">menu</a>
-      <div class="c-drawer__toggle" aria-expanded="false">
-        <span class="c-ic-angle-right" aria-hidden="true"></span>
-      </div>
-      <ul class="c-drawer__submenu" aria-hidden="true">
-        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        <li class="c-drawer__subitem">
-          <a href="#">submenu</a>
+    <div class="c-drawer__inner">
+      <ul class="c-drawer__menu">
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
           <div class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
           </div>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem">
+              <a href="#">submenu</a>
+              <div class="c-drawer__toggle" aria-expanded="false">
+                <span class="c-ic-angle-right" aria-hidden="true"></span>
+              </div>
+              <ul class="c-drawer__submenu" aria-hidden="true">
+                <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
           </ul>
         </li>
       </ul>
-    </li>
-    <li class="c-drawer__item">
-      <a href="#">menu</a>
-      <div class="c-drawer__toggle" aria-expanded="false">
-        <span class="c-ic-angle-right" aria-hidden="true"></span>
-      </div>
-      <ul class="c-drawer__submenu" aria-hidden="true">
-        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-      </ul>
-    </li>
-  </ul>
+    </div>
   </nav>
 </div>
 
@@ -11239,30 +11215,32 @@ new BasisDrawer({
 ```ejs
 <div style="min-height: 200px; position: relative">
   <nav id="my-dropdown" class="c-dropdown" role="navigation" aria-hidden="true" aria-labelledby="my-dropdown-btn">
-    <ul class="c-dropdown__menu">
-      <li class="c-dropdown__item">
-        <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
-          <div class="c-hamburger-btn__bars">
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
+    <div class="c-dropdown__inner">
+      <ul class="c-dropdown__menu">
+        <li class="c-dropdown__item">
+          <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
+            <div class="c-hamburger-btn__bars">
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+            </div>
+            <div class="c-hamburger-btn__label">MENU</div>
           </div>
-          <div class="c-hamburger-btn__label">MENU</div>
-        </div>
-      </li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item">
-        <a href="#">menu</a>
-        <div class="c-dropdown__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-dropdown__submenu" aria-hidden="true">
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+        </li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item">
+          <a href="#">menu</a>
+          <div class="c-dropdown__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-dropdown__submenu" aria-hidden="true">
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
 
@@ -11442,30 +11420,6 @@ Abstract hero component
     ...
   </div>
 </div>
-```
-*/
-/*
----
-name: _ic()
-category:
-  - core/abstract
----
-Abstract icon component
-
-### scss
-```scss
-.c-ic-angle-right {
-  @include _ic();
-
-  &::before {
-    content: "\e900";
-  }
-}
-```
-
-### html
-```ejs
-<span class="c-ic-angle-right" aria-hidden="true"></span>
 ```
 */
 /*
@@ -13125,8 +13079,8 @@ Breadcrumbs component
 ### html
 ```html
 <ol class="c-breadcrumbs">
-  <li class="c-breadcrumbs__item"><a href="#">...</a></li>
-  <li class="c-breadcrumbs__item">...</li>
+  <li class="c-breadcrumbs__item"><a href="#">Lorem</a></li>
+  <li class="c-breadcrumbs__item">ipsum</li>
 </ol>
 ```
 */
@@ -13137,20 +13091,16 @@ Breadcrumbs component
   .c-breadcrumbs__item {
     display: inline; }
     .c-breadcrumbs__item:nth-child(n + 2)::before {
-      margin-top: 0;
-      margin-right: 5px;
-      margin-bottom: 0;
-      margin-left: 5px;
-      font-family: 'basis';
-      speak: none;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: "\e900"; }
+      content: '';
+      margin: .45em .45em .15em .15em;
+      display: inline-block;
+      height: .4em;
+      width: .4em;
+      border-color: #444;
+      border-color: var(--_color-text, #444);
+      border-style: solid;
+      border-width: 1px 1px 0 0;
+      transform: rotate(45deg); }
 
 /*
 ---
@@ -13329,38 +13279,40 @@ Drawer component
 ```html
 <div style="min-height: 200px; position: relative">
   <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
-    <ul class="c-drawer__menu">
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item">
-        <a href="#">menu</a>
-        <div class="c-drawer__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-drawer__submenu" aria-hidden="true">
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-          <li class="c-drawer__subitem">
-            <a href="#">submenu</a>
-            <div class="c-drawer__toggle" aria-expanded="false">
-              <span class="c-ic-angle-right" aria-hidden="true"></span>
-            </div>
-            <ul class="c-drawer__submenu" aria-hidden="true">
-              <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li class="c-drawer__item">
-        <a href="#">menu</a>
-        <div class="c-drawer__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-drawer__submenu" aria-hidden="true">
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+    <div class="c-drawer__inner">
+      <ul class="c-drawer__menu">
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem">
+              <a href="#">submenu</a>
+              <div class="c-drawer__toggle" aria-expanded="false">
+                <span class="c-ic-angle-right" aria-hidden="true"></span>
+              </div>
+              <ul class="c-drawer__submenu" aria-hidden="true">
+                <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
 
@@ -13382,13 +13334,15 @@ Drawer component
   z-index: 10;
   width: 15rem;
   max-width: 80%;
-  overflow-y: auto;
   visibility: hidden;
   transition: left 0.2s ease-out, visibility 0.2s ease-out;
   transition-timing-function: ease-in; }
   .c-drawer[aria-hidden="false"] {
     visibility: visible;
     left: 0; }
+  .c-drawer__inner {
+    height: 100%;
+    overflow-y: auto; }
   .c-drawer__submenu {
     height: 0;
     overflow: hidden; }
@@ -13445,6 +13399,8 @@ Drawer component
     display: flex;
     align-items: center;
     justify-content: center; }
+    .c-drawer__toggle > .c-ic-angle-right {
+      transform: translateY(0); }
   .c-drawer--fixed {
     position: fixed; }
 
@@ -13461,30 +13417,32 @@ Dropdown component
 ```html
 <div style="min-height: 200px; position: relative">
   <nav id="my-dropdown" class="c-dropdown" role="navigation" aria-hidden="true" aria-labelledby="my-dropdown-btn">
-    <ul class="c-dropdown__menu">
-      <li class="c-dropdown__item">
-        <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
-          <div class="c-hamburger-btn__bars">
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
+    <div class="c-dropdown__inner">
+      <ul class="c-dropdown__menu">
+        <li class="c-dropdown__item">
+          <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
+            <div class="c-hamburger-btn__bars">
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+            </div>
+            <div class="c-hamburger-btn__label">MENU</div>
           </div>
-          <div class="c-hamburger-btn__label">MENU</div>
-        </div>
-      </li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item">
-        <a href="#">menu</a>
-        <div class="c-dropdown__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-dropdown__submenu" aria-hidden="true">
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+        </li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item">
+          <a href="#">menu</a>
+          <div class="c-dropdown__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-dropdown__submenu" aria-hidden="true">
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
 
@@ -13505,13 +13463,15 @@ Dropdown component
   bottom: 100%;
   left: 0;
   z-index: 10;
-  overflow-y: auto;
   visibility: hidden;
   transition: bottom 0.2s ease-out, visibility 0.2s ease-out;
   transition-timing-function: ease-in; }
   .c-dropdown[aria-hidden="false"] {
     visibility: visible;
     bottom: 0; }
+  .c-dropdown__inner {
+    height: 100%;
+    overflow-y: auto; }
   .c-dropdown__submenu {
     height: 0;
     overflow: hidden; }
@@ -13568,6 +13528,8 @@ Dropdown component
     display: flex;
     align-items: center;
     justify-content: center; }
+    .c-dropdown__toggle > .c-ic-angle-right {
+      transform: translateY(0); }
   .c-dropdown--fixed {
     position: fixed; }
 
@@ -13830,18 +13792,6 @@ Hero component
     .c-hero--fixed {
       background-attachment: fixed; } }
 
-[class^="c-ic-"],
-[class*=" c-ic-"] {
-  font-family: 'basis';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
 /*
 ---
 name: .c-ic-angle-right
@@ -13857,8 +13807,20 @@ Icon (Angle Right) component
 <span class="c-ic-angle-right" aria-hidden="true"></span>
 ```
 */
-.c-ic-angle-right::before {
-  content: "\e900"; }
+.c-ic-angle-right {
+  display: inline-block;
+  padding: 0 .25em;
+  transform: translateY(-0.15em); }
+  .c-ic-angle-right::before {
+    content: '';
+    display: block;
+    height: .4em;
+    width: .4em;
+    border-color: #444;
+    border-color: var(--_color-text, #444);
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg); }
 
 /*
 ---
@@ -13875,8 +13837,20 @@ Icon (Check) component
 <span class="c-ic-check" aria-hidden="true"></span>
 ```
 */
-.c-ic-check::before {
-  content: "\e901"; }
+.c-ic-check {
+  display: inline-block;
+  padding: 0 .25em;
+  transform: translateY(-0.2em); }
+  .c-ic-check::before {
+    content: '';
+    display: block;
+    height: .4em;
+    width: .25em;
+    border-color: #444;
+    border-color: var(--_color-text, #444);
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg); }
 
 /*
 ---
@@ -13893,8 +13867,20 @@ Icon (Angle Down) component
 <span class="c-ic-angle-down" aria-hidden="true"></span>
 ```
 */
-.c-ic-angle-down::before {
-  content: "\e902"; }
+.c-ic-angle-down {
+  display: inline-block;
+  padding: 0 .25em;
+  transform: translateY(-0.2em); }
+  .c-ic-angle-down::before {
+    content: '';
+    display: block;
+    height: .4em;
+    width: .4em;
+    border-color: #444;
+    border-color: var(--_color-text, #444);
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg); }
 
 /*
 ---
@@ -14435,6 +14421,8 @@ Navbar component
     display: flex;
     align-items: center;
     justify-content: center; }
+    .c-navbar__toggle > .c-ic-angle-right {
+      transform: translateY(0); }
 
 /*
 ---

@@ -939,26 +939,6 @@ $_color-red: #e74c3c;
 */
 /*
 ---
-name: $_font-path
-category:
-  - core/variable
----
-Basis font relative path
-
-### scss
-```scss
-$_font-path: '../font';
-```
-*/
-@font-face {
-  font-family: 'basis';
-  src: url("../font/basis.eot");
-  src: url("../font/basis.eot#iefix") format("embedded-opentype"), url("../font/basis.ttf") format("truetype"), url("../font/basis.woff") format("woff"), url("../font/basis.svg#basis") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-/*
----
 name: $_min-columns
 category:
   - core/variable
@@ -2424,8 +2404,8 @@ Abstract breadcrumbs component
 ### html
 ```ejs
 <ol class="c-breadcrumbs">
-  <li class="c-breadcrumbs__item"><a href="#">...</a></li>
-  <li class="c-breadcrumbs__item">...</li>
+  <li class="c-breadcrumbs__item"><a href="#">Lorem</a></li>
+  <li class="c-breadcrumbs__item">ipsum</li>
 </ol>
 ```
 */
@@ -2595,38 +2575,40 @@ new BasisDrawer({
 ```ejs
 <div style="min-height: 200px">
   <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
-  <ul class="c-drawer__menu">
-    <li class="c-drawer__item"><a href="#">menu</a></li>
-    <li class="c-drawer__item"><a href="#">menu</a></li>
-    <li class="c-drawer__item">
-      <a href="#">menu</a>
-      <div class="c-drawer__toggle" aria-expanded="false">
-        <span class="c-ic-angle-right" aria-hidden="true"></span>
-      </div>
-      <ul class="c-drawer__submenu" aria-hidden="true">
-        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        <li class="c-drawer__subitem">
-          <a href="#">submenu</a>
+    <div class="c-drawer__inner">
+      <ul class="c-drawer__menu">
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
           <div class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
           </div>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem">
+              <a href="#">submenu</a>
+              <div class="c-drawer__toggle" aria-expanded="false">
+                <span class="c-ic-angle-right" aria-hidden="true"></span>
+              </div>
+              <ul class="c-drawer__submenu" aria-hidden="true">
+                <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
           </ul>
         </li>
       </ul>
-    </li>
-    <li class="c-drawer__item">
-      <a href="#">menu</a>
-      <div class="c-drawer__toggle" aria-expanded="false">
-        <span class="c-ic-angle-right" aria-hidden="true"></span>
-      </div>
-      <ul class="c-drawer__submenu" aria-hidden="true">
-        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-      </ul>
-    </li>
-  </ul>
+    </div>
   </nav>
 </div>
 
@@ -2708,30 +2690,32 @@ new BasisDrawer({
 ```ejs
 <div style="min-height: 200px; position: relative">
   <nav id="my-dropdown" class="c-dropdown" role="navigation" aria-hidden="true" aria-labelledby="my-dropdown-btn">
-    <ul class="c-dropdown__menu">
-      <li class="c-dropdown__item">
-        <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
-          <div class="c-hamburger-btn__bars">
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
-            <div class="c-hamburger-btn__bar"></div>
+    <div class="c-dropdown__inner">
+      <ul class="c-dropdown__menu">
+        <li class="c-dropdown__item">
+          <div class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="my-dropdown">
+            <div class="c-hamburger-btn__bars">
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+              <div class="c-hamburger-btn__bar"></div>
+            </div>
+            <div class="c-hamburger-btn__label">MENU</div>
           </div>
-          <div class="c-hamburger-btn__label">MENU</div>
-        </div>
-      </li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item"><a href="#">menu</a></li>
-      <li class="c-dropdown__item">
-        <a href="#">menu</a>
-        <div class="c-dropdown__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-dropdown__submenu" aria-hidden="true">
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-          <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+        </li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item"><a href="#">menu</a></li>
+        <li class="c-dropdown__item">
+          <a href="#">menu</a>
+          <div class="c-dropdown__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-dropdown__submenu" aria-hidden="true">
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+            <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
 
@@ -2911,30 +2895,6 @@ Abstract hero component
     ...
   </div>
 </div>
-```
-*/
-/*
----
-name: _ic()
-category:
-  - core/abstract
----
-Abstract icon component
-
-### scss
-```scss
-.c-ic-angle-right {
-  @include _ic();
-
-  &::before {
-    content: "\e900";
-  }
-}
-```
-
-### html
-```ejs
-<span class="c-ic-angle-right" aria-hidden="true"></span>
 ```
 */
 /*
