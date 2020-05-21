@@ -1,5 +1,10 @@
 #Changelog
 
+## May 21, 2020 11.0.0
+* Fixed a bug that `_drawer` and `.c-drawer` does not scroll correctly on iOS Safari.
+* Fixed a bug that `_dropdown` and `.c-dropdown` does not scroll correctly on iOS Safari.
+* Remove Basis font. The following components are affected: `.c-ic-*`, `.c-breadcrumbs`, `.c-drawer`, `.c-dropdown` and `.c-navbar[data-popup-mode="click"]`.
+
 ## April 3, 2020 10.1.1
 * Hover effect apply only lg size.
 
