@@ -92,6 +92,10 @@ Dropdown component
     display: flex;
     align-items: center;
     justify-content: center;
+
+    > .c-ic-angle-right {
+      transform: translateY(0);
+    }
   }
 
   &--fixed {

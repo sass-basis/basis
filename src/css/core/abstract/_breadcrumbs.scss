@@ -16,8 +16,8 @@ Abstract breadcrumbs component
 ### html
 ```ejs
 <ol class="c-breadcrumbs">
-  <li class="c-breadcrumbs__item"><a href="#">...</a></li>
-  <li class="c-breadcrumbs__item">...</li>
+  <li class="c-breadcrumbs__item"><a href="#">Lorem</a></li>
+  <li class="c-breadcrumbs__item">ipsum</li>
 </ol>
 ```
 */
@@ -30,9 +30,16 @@ Abstract breadcrumbs component
 
     &:nth-child(n + 2) {
       &::before {
-        @include _margin(0, 5px);
-        @include _ic();
-        content: "\e900";
+        content: '';
+        margin: .45em .45em .15em .15em;
+        display: inline-block;
+        height: .4em;
+        width: .4em;
+        border-color: $_color-text;
+        border-color: _var-color-text();
+        border-style: solid;
+        border-width: 1px 1px 0 0;
+        transform: rotate(45deg);
       }
     }
   }
