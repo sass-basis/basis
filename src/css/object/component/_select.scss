@@ -35,5 +35,9 @@ Select box component
 
   &--block {
     display: block;
+
+    > .c-select__control {
+      width: 100%;
+    }
   }
 }
