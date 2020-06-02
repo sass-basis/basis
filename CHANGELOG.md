@@ -1,5 +1,8 @@
 #Changelog
 
+## June 3, 2020 11.0.1
+* Fixed design collapse of `.c-select--block`.
+
 ## May 21, 2020 11.0.0
 * Fixed a bug that `_drawer` and `.c-drawer` does not scroll correctly on iOS Safari.
 * Fixed a bug that `_dropdown` and `.c-dropdown` does not scroll correctly on iOS Safari.
