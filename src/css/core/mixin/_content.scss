@@ -1,5 +1,79 @@
 /*
 ---
+name: _flex-between-content()
+category:
+  - core/mixin
+---
+Sets Child elements margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+.u-between-content {
+  @include _flex-between-content(1);
+}
+```
+
+### html
+```ejs
+<div class="u-between-content">
+  ...
+</div>
+```
+*/
+
+@mixin _flex-between-content($coefficient: 1) {
+  > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    @include _flex-margin-top($_base-margin-bottom * $coefficient);
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+/*
+---
+name: _fixed-between-content()
+category:
+  - core/mixin
+---
+Sets Child elements margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+.u-between-content {
+  @include _fixed-between-content(1);
+}
+```
+
+### html
+```ejs
+<div class="u-between-content">
+  ...
+</div>
+```
+*/
+
+@mixin _fixed-between-content($coefficient: 1) {
+  > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    @include _fixed-margin-top($_base-margin-bottom * $coefficient);
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+/*
+---
 name: _between-content()
 category:
   - core/mixin
@@ -26,12 +100,143 @@ Sets Child elements margin
 */
 
 @mixin _between-content($coefficient: 1) {
-  > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-    @include _margin-top($_base-margin-bottom * $coefficient);
+  @include _fixed-between-content($coefficient);
+  @include _flex-between-content($coefficient);
+}
+
+/*
+---
+name: _flex-content()
+category:
+  - core/mixin
+---
+Sets Child elements margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+.u-content {
+  @include _flex-content(1);
+}
+```
+
+### html
+```ejs
+<div class="u-content">
+  ...
+</div>
+```
+*/
+
+@mixin _flex-content($coefficient: 1) {
+  @include _flex-between-content($coefficient);
+
+  > h1 {
+    @include _flex-margin-top($_h1-margin-top * $coefficient);
+    @include _flex-margin-bottom($_h1-margin-bottom * $coefficient);
   }
 
-  > :first-child {
-    margin-top: 0;
+  > h2 {
+    @include _flex-margin-top($_h2-margin-top * $coefficient);
+    @include _flex-margin-bottom($_h2-margin-bottom * $coefficient);
+  }
+
+  > h3 {
+    @include _flex-margin-top($_h3-margin-top * $coefficient);
+    @include _flex-margin-bottom($_h3-margin-bottom * $coefficient);
+  }
+
+  > h4 {
+    @include _flex-margin-top($_h4-margin-top * $coefficient);
+    @include _flex-margin-bottom($_h4-margin-bottom * $coefficient);
+  }
+
+  > h5 {
+    @include _flex-margin-top($_h5-margin-top * $coefficient);
+    @include _flex-margin-bottom($_h5-margin-bottom * $coefficient);
+  }
+
+  > h6 {
+    @include _flex-margin-top($_h6-margin-top * $coefficient);
+    @include _flex-margin-bottom($_h6-margin-bottom * $coefficient);
+  }
+
+  > ol ol,
+  > ol ul,
+  > ul ol,
+  > ul ul {
+    margin-bottom: 0;
+  }
+}
+
+/*
+---
+name: _fixed-content()
+category:
+  - core/mixin
+---
+Sets Child elements margin
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+.u-content {
+  @include _fixed-content(1);
+}
+```
+
+### html
+```ejs
+<div class="u-content">
+  ...
+</div>
+```
+*/
+
+@mixin _fixed-content($coefficient: 1) {
+  @include _fixed-between-content($coefficient);
+
+  > h1 {
+    @include _fixed-margin-top($_h1-margin-top * $coefficient);
+    @include _fixed-margin-bottom($_h1-margin-bottom * $coefficient);
+  }
+
+  > h2 {
+    @include _fixed-margin-top($_h2-margin-top * $coefficient);
+    @include _fixed-margin-bottom($_h2-margin-bottom * $coefficient);
+  }
+
+  > h3 {
+    @include _fixed-margin-top($_h3-margin-top * $coefficient);
+    @include _fixed-margin-bottom($_h3-margin-bottom * $coefficient);
+  }
+
+  > h4 {
+    @include _fixed-margin-top($_h4-margin-top * $coefficient);
+    @include _fixed-margin-bottom($_h4-margin-bottom * $coefficient);
+  }
+
+  > h5 {
+    @include _fixed-margin-top($_h5-margin-top * $coefficient);
+    @include _fixed-margin-bottom($_h5-margin-bottom * $coefficient);
+  }
+
+  > h6 {
+    @include _fixed-margin-top($_h6-margin-top * $coefficient);
+    @include _fixed-margin-bottom($_h6-margin-bottom * $coefficient);
+  }
+
+  > ol ol,
+  > ol ul,
+  > ul ol,
+  > ul ul {
+    margin-bottom: 0;
   }
 }
 
@@ -63,42 +268,6 @@ Sets Child elements margin
 */
 
 @mixin _content($coefficient: 1) {
-  @include _between-content($coefficient);
-
-  > h1 {
-    @include _margin-top($_h1-margin-top * $coefficient);
-    @include _margin-bottom($_h1-margin-bottom * $coefficient);
-  }
-
-  > h2 {
-    @include _margin-top($_h2-margin-top * $coefficient);
-    @include _margin-bottom($_h2-margin-bottom * $coefficient);
-  }
-
-  > h3 {
-    @include _margin-top($_h3-margin-top * $coefficient);
-    @include _margin-bottom($_h3-margin-bottom * $coefficient);
-  }
-
-  > h4 {
-    @include _margin-top($_h4-margin-top * $coefficient);
-    @include _margin-bottom($_h4-margin-bottom * $coefficient);
-  }
-
-  > h5 {
-    @include _margin-top($_h5-margin-top * $coefficient);
-    @include _margin-bottom($_h5-margin-bottom * $coefficient);
-  }
-
-  > h6 {
-    @include _margin-top($_h6-margin-top * $coefficient);
-    @include _margin-bottom($_h6-margin-bottom * $coefficient);
-  }
-
-  > ol ol,
-  > ol ul,
-  > ul ol,
-  > ul ul {
-    margin-bottom: 0;
-  }
+  @include _fixed-content($coefficient);
+  @include _flex-content($coefficient);
 }

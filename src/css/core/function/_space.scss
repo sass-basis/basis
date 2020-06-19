@@ -24,6 +24,10 @@ padding: _space(1);
     @return 0;
   }
 
+  @if (not _is-number($coefficient)) {
+    @return $coefficient;
+  }
+
   $margin    : $_base-line-height * $coefficient;
   $add-margin: $_base-line-height * ($_margin-coefficient - 1);
   $space     : $margin + $add-margin;

@@ -1,5 +1,12 @@
 :root {
   --_background-color: transparent;
+  --_border-radius: #{ $_border-radius };
+  --_color-text: #{ $_color-text };
+  --_container-margin-sm: #{ $_container-margin };
+  --_container-margin: #{ $_container-margin * 2 };
+  --_container-max-width: #{ $_container-max-width };
+  --_margin-scale: 1;
+  --_space: #{ $_base-line-height + $_base-line-height * ($_margin-coefficient - 1) };
 }
 
 * {

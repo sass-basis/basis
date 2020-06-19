@@ -1,0 +1,21 @@
+@mixin _ie11-input-group() {
+  &__addon {
+    @include _ie11-form-control-base-padding();
+  }
+
+  &__field {
+    > input[type='email'],
+    > input[type='number'],
+    > input[type='password'],
+    > input[type='search'],
+    > input[type='tel'],
+    > input[type='text'],
+    > input[type='url'] {
+      @include _ie11-form-control();
+    }
+  }
+
+  &__btn {
+    @include _ie11-form-control-base-padding();
+  }
+}

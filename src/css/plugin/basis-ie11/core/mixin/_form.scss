@@ -1,0 +1,3 @@
+@mixin _ie11-form-control-base-padding() {
+  @include _fixed-padding(.25, .5);
+}

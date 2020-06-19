@@ -11,270 +11,304 @@ Row component of flexbox based grid system
 ```html
 <div class="c-row">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3
+    <div style="background: #eee">3</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--reverse">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3
+    <div style="background: #eee">3</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--nowrap">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3
+    <div style="background: #eee">3</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--left">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--right">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--center">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--between">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--around">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--top">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2<br>
-    2
+    <div style="background: #eee">
+      2<br>
+      2
+    </div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3<br>
-    3<br>
-    3
+    <div style="background: #eee">
+      3<br>
+      3<br>
+      3
+    </div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--bottom">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2<br>
-    2
+    <div style="background: #eee">
+      2<br>
+      2
+    </div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3<br>
-    3<br>
-    3
+    <div style="background: #eee">
+      3<br>
+      3<br>
+      3
+    </div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--middle">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2<br>
-    2
+    <div style="background: #eee">
+      2<br>
+      2
+    </div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3<br>
-    3<br>
-    3
+    <div style="background: #eee">
+      3<br>
+      3<br>
+      3
+    </div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--baseline">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2<br>
-    2
+    <div style="background: #eee">
+      2<br>
+      2
+    </div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3<br>
-    3<br>
-    3
+    <div style="background: #eee">
+      3<br>
+      3<br>
+      3
+    </div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--collapse">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3
+    <div style="background: #eee">3</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--margin">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3
+    <div style="background: #eee">3</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--margin-s">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3
+    <div style="background: #eee">3</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--margin-l">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2
+    <div style="background: #eee">2</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3
+    <div style="background: #eee">3</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--fill">
   <div class="c-row__col c-row__col--1-3">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    2<br>
-    2
+    <div style="background: #eee">
+      2<br>
+      2
+    </div>
   </div>
   <div class="c-row__col c-row__col--1-3">
-    3<br>
-    3<br>
-    3
+    <div style="background: #eee">
+      3<br>
+      3<br>
+      3
+    </div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--margin">
   <div class="c-row__col c-row__col--auto">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--auto">
-    22
+    <div style="background: #eee">22</div>
   </div>
   <div class="c-row__col c-row__col--auto">
-    333
+    <div style="background: #eee">333</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--margin">
   <div class="c-row__col c-row__col--justify">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--justify">
-    22
+    <div style="background: #eee">22</div>
   </div>
   <div class="c-row__col c-row__col--justify">
-    333
+    <div style="background: #eee">333</div>
   </div>
 </div>
 ```
 ```html
 <div class="c-row c-row--margin">
   <div class="c-row__col c-row__col--fit">
-    1
+    <div style="background: #eee">1</div>
   </div>
   <div class="c-row__col c-row__col--fit">
-    22
+    <div style="background: #eee">22</div>
   </div>
   <div class="c-row__col c-row__col--fit">
-    333
+    <div style="background: #eee">333</div>
   </div>
 </div>
 ```
 */
 
 .#{$_prefix}c-row {
+  --_row-margin--scale: 0;
+  --_row-margin: calc(#{ _var-space() } * var(--_row-margin--scale) * #{ _var-margin-scale() });
+
   @include _row();
+  margin-bottom: calc(var(--_row-margin) * -1);
 
   &__col {
+    --_row__col--width: 100%;
+
     @include _row__col(null, null);
+    flex: 0 1 var(--_row__col--width);
+    max-width: var(--_row__col--width);
+  }
+
+  > .#{$_prefix}c-row__col {
+    padding-right: calc(var(--_row-margin) / 2);
+    padding-left: calc(var(--_row-margin) / 2);
+    padding-bottom: var(--_row-margin);
   }
 
   &--reverse {
@@ -326,34 +360,18 @@ Row component of flexbox based grid system
       }
 
       &#{$prefix}-collapse {
-        @include _row--margin(0);
-
-        > .#{$_prefix}c-row__col {
-          @include _row__col--margin(0);
-        }
+        --_row-margin: 0;
       }
 
       &#{$prefix}-margin {
-        @include _row--margin(1);
-
-        > .#{$_prefix}c-row__col {
-          @include _row__col--margin(1);
-        }
+        --_row-margin--scale: 1;
 
         &-s {
-          @include _row--margin(.5);
-
-          > .#{$_prefix}c-row__col {
-            @include _row__col--margin(.5);
-          }
+          --_row-margin--scale: .5;
         }
 
         &-l {
-          @include _row--margin(2);
-
-          > .#{$_prefix}c-row__col {
-            @include _row__col--margin(2);
-          }
+          --_row-margin--scale: 2;
         }
       }
 
@@ -380,14 +398,14 @@ Row component of flexbox based grid system
 
         @if (1 == $gcd) {
           %_bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
-            @include _row__col($i, $max_columns);
+            --_row__col--width: #{ $i / $max_columns * 100% };
           }
         }
       }
     }
 
     %_bs-item#{$prefix}-full {
-      @include _row__col--width(100%);
+      --_row__col--width: 100%;
     }
 
     .#{$_prefix}c-row__col {

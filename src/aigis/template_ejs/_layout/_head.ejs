@@ -11,8 +11,18 @@
   <link rel="stylesheet" href="<%= root %>aigis_assets/css/theme.css">
   <link rel="stylesheet" href="<%= root %>aigis_assets/css/highlight/okadia.css">
   <!--[if lt IE 10]>
-  <link rel="stylesheet" href="/aigis_assets/css/plugin/basis-ie9/basis-ie9.min.css" />
+  <link rel="stylesheet" href="<%= root %>aigis_assets/css/basis-ie9.min.css" />
   <![endif]-->
+  <script>
+  var userAgent = window.navigator.userAgent.toLowerCase();
+  if (-1 !== userAgent.indexOf('trident') || -1 !== userAgent.indexOf('trident')) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '<%= root %>aigis_assets/css/basis-ie11.min.css';
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(link);
+  }
+  </script>
   <link href="//fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
   <link rel="shortcut icon" href="<%= root %>/aigis_assets/images/favicon.ico">

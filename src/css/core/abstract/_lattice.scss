@@ -33,11 +33,17 @@ Abstract row component of flexbox based grid system
 */
 
 @mixin _lattice() {
+  $coefficient: .5;
   @include _row();
-  @include _row--margin(.5);
+  @include _margin-right($coefficient / 2 * -1);
+  @include _margin-left($coefficient / 2 * -1);
+  @include _margin-bottom($coefficient * -1);
 
   @include _media-min(md) {
-    @include _row--margin(1);
+    $coefficient: 1;
+    @include _margin-right($coefficient / 2 * -1);
+    @include _margin-left($coefficient / 2 * -1);
+    @include _margin-bottom($coefficient * -1);
   }
 }
 
@@ -81,11 +87,17 @@ Abstract column element of flexbox based grid system
 */
 
 @mixin _lattice__col($columns: null, $max-columns: null) {
+  $coefficient: .5;
   @include _row__col($columns, $max-columns);
-  @include _row__col--margin(.5);
+  @include _padding-right($coefficient / 2, true);
+  @include _padding-left($coefficient / 2, true);
+  @include _margin-bottom($coefficient);
 
   @include _media-min(md) {
-    @include _row__col--margin(1);
+    $coefficient: 1;
+    @include _padding-right($coefficient / 2, true);
+    @include _padding-left($coefficient / 2, true);
+    @include _margin-bottom($coefficient);
   }
 }
 

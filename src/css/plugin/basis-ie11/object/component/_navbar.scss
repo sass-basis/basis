@@ -1,0 +1,24 @@
+.#{$_prefix}c-navbar {
+  &--right {
+    .#{$_prefix}c-navbar__item {
+      > .#{$_prefix}c-navbar__submenu {
+        @include _fixed-position(absolute, 100%, 0, null, auto);
+      }
+    }
+
+    .#{$_prefix}c-navbar__subitem {
+      > .#{$_prefix}c-navbar__submenu {
+        @include _fixed-position(absolute, 0, 100%, null, auto);
+      }
+    }
+  }
+
+  &[data-popup-mode="click"] {
+    .#{$_prefix}c-navbar__item,
+    .#{$_prefix}c-navbar__subitem {
+      &[aria-haspopup="true"] {
+        @include _fixed-padding-right(1);
+      }
+    }
+  }
+}

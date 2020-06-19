@@ -1,0 +1,11 @@
+@mixin _ie11-row--margin($coefficient) {
+  @include _fixed-margin-right($coefficient / 2 * -1);
+  @include _fixed-margin-left($coefficient / 2 * -1);
+  @include _fixed-margin-bottom($coefficient * -1);
+}
+
+@mixin _ie11-row__col--margin($coefficient) {
+  @include _fixed-padding-right($coefficient / 2);
+  @include _fixed-padding-left($coefficient / 2);
+  @include _fixed-margin-bottom($coefficient);
+}

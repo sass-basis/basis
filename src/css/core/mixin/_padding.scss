@@ -1,5 +1,349 @@
 /*
 ---
+name: _fixed-padding-top()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding-top
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _fixed-padding-top(1);
+@include _fixed-padding-top(10px);
+```
+*/
+
+@mixin _fixed-padding-top($coefficient) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    padding-top: _space($coefficient);
+  } @else {
+    padding-top: $coefficient;
+  }
+}
+
+/*
+---
+name: _fixed-padding-right()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding-right
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _fixed-padding-right(1);
+@include _fixed-padding-right(10px);
+```
+*/
+
+@mixin _fixed-padding-right($coefficient) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    padding-right: _space($coefficient);
+  } @else {
+    padding-right: $coefficient;
+  }
+}
+
+/*
+---
+name: _fixed-padding-bottom()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding-bottom
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _fixed-padding-bottom(1);
+@include _fixed-padding-bottom(10px);
+```
+*/
+
+@mixin _fixed-padding-bottom($coefficient) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    padding-bottom: _space($coefficient);
+  } @else {
+    padding-bottom: $coefficient;
+  }
+}
+
+/*
+---
+name: _fixed-padding-left()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding-left
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+//
+
+@include _fixed-padding-left(1);
+@include _fixed-padding-left(10px);
+```
+*/
+
+@mixin _fixed-padding-left($coefficient) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    padding-left: _space($coefficient);
+  } @else {
+    padding-left: $coefficient;
+  }
+}
+
+/*
+---
+name: _fixed-padding-bottompadding()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding
+
+### scss
+```scss
+//
+// @param  int  $coefficient-1
+// @param  int  $coefficient-2
+// @param  int  $coefficient-3
+// @param  int  $coefficient-4
+//
+
+@include _fixed-padding-bottompadding(1);
+@include _fixed-padding-bottompadding(1, 2);
+@include _fixed-padding-bottompadding(1, 2, .5);
+@include _fixed-padding-bottompadding(1, 2, .5, 2);
+@include _fixed-padding-bottompadding(10px);
+```
+*/
+
+@mixin _fixed-padding($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
+  @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
+    @include _fixed-padding-top($coefficient-1);
+    @include _fixed-padding-right($coefficient-1);
+    @include _fixed-padding-bottom($coefficient-1);
+    @include _fixed-padding-left($coefficient-1);
+  } @else if (_is-null($coefficient-3) and _is-null($coefficient-4)) {
+    @include _fixed-padding-top($coefficient-1);
+    @include _fixed-padding-right($coefficient-2);
+    @include _fixed-padding-bottom($coefficient-1);
+    @include _fixed-padding-left($coefficient-2);
+  } @else if (_is-null($coefficient-4)) {
+    @include _fixed-padding-top($coefficient-1);
+    @include _fixed-padding-right($coefficient-2);
+    @include _fixed-padding-bottom($coefficient-3);
+    @include _fixed-padding-left($coefficient-2);
+  } @else {
+    @include _fixed-padding-top($coefficient-1);
+    @include _fixed-padding-right($coefficient-2);
+    @include _fixed-padding-bottom($coefficient-3);
+    @include _fixed-padding-left($coefficient-4);
+  }
+}
+
+/*
+---
+name: _flex-padding-top()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding-top
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
+//
+
+@include _flex-padding-top(1);
+@include _flex-padding-top(10px);
+```
+*/
+
+@mixin _flex-padding-top($coefficient, $apply-margin-scale: false) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    @if false == $apply-margin-scale {
+      padding-top: calc(#{ _var-space() } * #{ $coefficient });
+    } @else {
+      padding-top: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    }
+  } @else {
+    padding-top: $coefficient;
+  }
+}
+
+/*
+---
+name: _flex-padding-right()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding-right
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
+//
+
+@include _flex-padding-right(1);
+@include _flex-padding-right(10px);
+```
+*/
+
+@mixin _flex-padding-right($coefficient, $apply-margin-scale: false) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    @if false == $apply-margin-scale {
+      padding-right: calc(#{ _var-space() } * #{ $coefficient });
+    } @else {
+      padding-right: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    }
+  } @else {
+    padding-right: $coefficient;
+  }
+}
+
+/*
+---
+name: _flex-padding-bottom()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding-bottom
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
+//
+
+@include _flex-padding-bottom(1);
+@include _flex-padding-bottom(10px);
+```
+*/
+
+@mixin _flex-padding-bottom($coefficient, $apply-margin-scale: false) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    @if false == $apply-margin-scale {
+      padding-bottom: calc(#{ _var-space() } * #{ $coefficient });
+    } @else {
+      padding-bottom: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    }
+  } @else {
+    padding-bottom: $coefficient;
+  }
+}
+
+/*
+---
+name: _flex-padding-left()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding-left
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
+//
+
+@include _flex-padding-left(1);
+@include _flex-padding-left(10px);
+```
+*/
+
+@mixin _flex-padding-left($coefficient, $apply-margin-scale: false) {
+  @if _is-number($coefficient) and 0 != $coefficient {
+    @if false == $apply-margin-scale {
+      padding-left: calc(#{ _var-space() } * #{ $coefficient });
+    } @else {
+      padding-left: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    }
+  } @else {
+    padding-left: $coefficient;
+  }
+}
+
+/*
+---
+name: _flex-padding-bottompadding()
+category:
+  - core/mixin
+  - core/mixin/padding
+---
+Sets padding
+
+### scss
+```scss
+//
+// @param  int  $coefficient-1
+// @param  int  $coefficient-2
+// @param  int  $coefficient-3
+// @param  int  $coefficient-4
+//
+
+@include _flex-padding-bottompadding(1);
+@include _flex-padding-bottompadding(1, 2);
+@include _flex-padding-bottompadding(1, 2, .5);
+@include _flex-padding-bottompadding(1, 2, .5, 2);
+@include _flex-padding-bottompadding(10px);
+```
+*/
+
+@mixin _flex-padding($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
+  @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
+    @include _flex-padding-top($coefficient-1);
+    @include _flex-padding-right($coefficient-1);
+    @include _flex-padding-bottom($coefficient-1);
+    @include _flex-padding-left($coefficient-1);
+  } @else if (_is-null($coefficient-3) and _is-null($coefficient-4)) {
+    @include _flex-padding-top($coefficient-1);
+    @include _flex-padding-right($coefficient-2);
+    @include _flex-padding-bottom($coefficient-1);
+    @include _flex-padding-left($coefficient-2);
+  } @else if (_is-null($coefficient-4)) {
+    @include _flex-padding-top($coefficient-1);
+    @include _flex-padding-right($coefficient-2);
+    @include _flex-padding-bottom($coefficient-3);
+    @include _flex-padding-left($coefficient-2);
+  } @else {
+    @include _flex-padding-top($coefficient-1);
+    @include _flex-padding-right($coefficient-2);
+    @include _flex-padding-bottom($coefficient-3);
+    @include _flex-padding-left($coefficient-4);
+  }
+}
+
+/*
+---
 name: _padding-top()
 category:
   - core/mixin
@@ -21,13 +365,8 @@ Sets padding-top
 
 @mixin _padding-top($coefficient, $apply-margin-scale: false) {
   @if _is-number($coefficient) and 0 != $coefficient {
-    padding-top: _space($coefficient);
-
-    @if false == $apply-margin-scale {
-      padding-top: calc(#{ _var-space() } * #{ $coefficient });
-    } @else {
-      padding-top: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
-    }
+    @include _fixed-padding-top($coefficient);
+    @include _flex-padding-top($coefficient, $apply-margin-scale);
   } @else {
     padding-top: $coefficient;
   }
@@ -56,13 +395,8 @@ Sets padding-right
 
 @mixin _padding-right($coefficient, $apply-margin-scale: false) {
   @if _is-number($coefficient) and 0 != $coefficient {
-    padding-right: _space($coefficient);
-
-    @if false == $apply-margin-scale {
-      padding-right: calc(#{ _var-space() } * #{ $coefficient });
-    } @else {
-      padding-right: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
-    }
+    @include _fixed-padding-right($coefficient);
+    @include _flex-padding-right($coefficient, $apply-margin-scale);
   } @else {
     padding-right: $coefficient;
   }
@@ -91,13 +425,8 @@ Sets padding-bottom
 
 @mixin _padding-bottom($coefficient, $apply-margin-scale: false) {
   @if _is-number($coefficient) and 0 != $coefficient {
-    padding-bottom: _space($coefficient);
-
-    @if false == $apply-margin-scale {
-      padding-bottom: calc(#{ _var-space() } * #{ $coefficient });
-    } @else {
-      padding-bottom: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
-    }
+    @include _fixed-padding-bottom($coefficient);
+    @include _flex-padding-bottom($coefficient, $apply-margin-scale);
   } @else {
     padding-bottom: $coefficient;
   }
@@ -126,13 +455,8 @@ Sets padding-left
 
 @mixin _padding-left($coefficient, $apply-margin-scale: false) {
   @if _is-number($coefficient) and 0 != $coefficient {
-    padding-left: _space($coefficient);
-
-    @if false == $apply-margin-scale {
-      padding-left: calc(#{ _var-space() } * #{ $coefficient });
-    } @else {
-      padding-left: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
-    }
+    @include _fixed-padding-left($coefficient);
+    @include _flex-padding-left($coefficient, $apply-margin-scale);
   } @else {
     padding-left: $coefficient;
   }

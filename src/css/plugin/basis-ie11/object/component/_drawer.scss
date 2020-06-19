@@ -1,0 +1,21 @@
+.#{$_prefix}c-drawer {
+  $item-padding-coefficient: 1;
+
+  &__item {
+    @include _fixed-padding(.5, $item-padding-coefficient, 0);
+  }
+
+  &__submenu {
+    @include _fixed-margin(0, ($item-padding-coefficient * -1), 0, 0);
+  }
+
+  &__subitem {
+    @include _fixed-padding(.5, $item-padding-coefficient, 0, 0);
+  }
+
+  &__toggle {
+    @include _fixed-top(.5);
+    @include _fixed-right(5px);
+    @include _fixed-bottom(0);
+  }
+}

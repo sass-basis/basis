@@ -1,0 +1,12 @@
+@mixin _ie11-fluid-container() {
+  padding-right: $_container-margin;
+  padding-left: $_container-margin;
+}
+
+@mixin _ie11-container() {
+  @include _ie11-fluid-container();
+
+  @include _media-min(lg) {
+    max-width: $_container-max-width;
+  }
+}

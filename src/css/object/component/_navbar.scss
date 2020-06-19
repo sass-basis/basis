@@ -234,13 +234,13 @@ Navbar component
       flex: 0 1 auto;
 
       > .#{$_prefix}c-navbar__submenu {
-        @include _position(absolute, 100%, 0, null, auto);
+        @include _flex-position(absolute, 100%, 0, null, auto);
       }
     }
 
     .#{$_prefix}c-navbar__subitem {
       > .#{$_prefix}c-navbar__submenu {
-        @include _position(absolute, 0, 100%, null, auto);
+        @include _flex-position(absolute, 0, 100%, null, auto);
       }
     }
   }
@@ -251,7 +251,7 @@ Navbar component
       position: relative;
 
       &[aria-haspopup="true"] {
-        @include _padding-right(1);
+        @include _flex-padding-right(1);
       }
     }
   }

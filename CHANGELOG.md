@@ -1,5 +1,10 @@
 #Changelog
 
+## June 3, 2020 12.0.0
+* Change default width of `.c-row__col`. justify to 100%; When you use `<div class="c-row"><div class="c-row__col">`, replace to `<div class="c-row c-row--justify"><div class="c-row__col">`.
+* Remove `_row--margin()`.
+* Remove `_row__col--margin()`.
+
 ## June 3, 2020 11.0.1
 * Fixed design collapse of `.c-select--block`.
 

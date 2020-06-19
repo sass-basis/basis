@@ -105,7 +105,7 @@ Support IE9 ( Not perfect )
 <![endif]-->
 ```
 
-And support IE8 ( Not perfect )
+Support IE8 ( Not perfect )
 
 ```html
 <!--[if lt IE 9]>
@@ -113,8 +113,32 @@ And support IE8 ( Not perfect )
 <![endif]-->
 ```
 
+Support IE11 ( Not perfect )
+
+```html
+<script>
+var userAgent = window.navigator.userAgent.toLowerCase();
+if (-1 !== userAgent.indexOf('trident') || -1 !== userAgent.indexOf('trident')) {
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'node_modules/sass-basis/dist/css/plugin/basis-ie11/basis-ie11.min.css';
+  var head = document.getElementsByTagName('head')[0];
+  head.appendChild(link);
+}
+</script>
+```
+
+```php
+$browser = strtolower($_SERVER['HTTP_USER_AGENT']);
+if (strstr($browser, 'trident') || strstr($browser, 'msie')) {
+  print(
+    '<link rel="stylesheet" href="node_modules/sass-basis/dist/css/plugin/basis-ie11/basis-ie11.min.css" />'
+  );
+}
+```
+
 ## Browser support
-Modern Browser and IE10+
+Modern Browser
 
 ## How to contribute
 

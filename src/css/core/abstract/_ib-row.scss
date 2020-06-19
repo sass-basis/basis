@@ -182,7 +182,9 @@ Sets row margin of inline-block based grid system
 */
 
 @mixin _ib-row--margin($coefficient) {
-  @include _row--margin($coefficient);
+  @include _margin-right($coefficient / 2 * -1);
+  @include _margin-left($coefficient / 2 * -1);
+  @include _margin-bottom($coefficient * -1);
 }
 
 /*
@@ -208,5 +210,7 @@ Sets column margin of inline-block based grid system
 */
 
 @mixin _ib-row__col--margin($coefficient) {
-  @include _row__col--margin($coefficient);
+  @include _padding-right($coefficient / 2, true);
+  @include _padding-left($coefficient / 2, true);
+  @include _margin-bottom($coefficient);
 }

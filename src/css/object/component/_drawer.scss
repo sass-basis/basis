@@ -80,24 +80,24 @@ Drawer component
   }
 
   &__item {
-    @include _padding(.5, $item-padding-coefficient, 0);
+    @include _flex-padding(.5, $item-padding-coefficient, 0);
   }
 
   &__submenu {
     @include _list-unstyled();
-    @include _margin(0, ($item-padding-coefficient * -1), 0, 0);
+    @include _flex-margin(0, ($item-padding-coefficient * -1), 0, 0);
     padding-left: 1em;
   }
 
   &__subitem {
-    @include _padding(.5, $item-padding-coefficient, 0, 0);
+    @include _flex-padding(.5, $item-padding-coefficient, 0, 0);
   }
 
   &__toggle {
     position: absolute;
-    @include _top(.5);
-    @include _right(5px);
-    @include _bottom(0);
+    @include _flex-top(.5);
+    @include _flex-right(5px);
+    @include _flex-bottom(0);
     @include _square($_base-line-height);
     display: flex;
     align-items: center;
