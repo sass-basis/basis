@@ -295,12 +295,13 @@ Row component of flexbox based grid system
   --_row-margin: calc(#{ _var-space() } * var(--_row-margin--scale) * #{ _var-margin-scale() });
 
   @include _row();
+  margin-right: calc(var(--_row-margin) / 2 * -1);
+  margin-left: calc(var(--_row-margin) / 2 * -1);
   margin-bottom: calc(var(--_row-margin) * -1);
 
   &__col {
     --_row__col--width: 100%;
 
-    @include _row__col(null, null);
     flex: 0 1 var(--_row__col--width);
     max-width: var(--_row__col--width);
   }
@@ -410,15 +411,17 @@ Row component of flexbox based grid system
 
     .#{$_prefix}c-row__col {
       &#{$prefix}-auto {
+        // @todo 例えば .c-row__col--auto .c-row__col--lg-1-2 とすると、.c-row__col--auto の flex で上書きされるため崩れる
         @include _row__col--width(auto);
       }
 
       &#{$prefix}-justify {
+        // @todo 例えば .c-row__col--justify .c-row__col--lg-1-2 とすると、.c-row__col--justify の flex で上書きされるため崩れる
         @include _row__col--width(1);
       }
 
       &#{$prefix}-fit {
-        flex: 0 1 auto;
+        --_row__col--width: auto;
       }
     }
   }
