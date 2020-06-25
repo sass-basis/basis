@@ -1,5 +1,10 @@
 #Changelog
 
+## June 26, 2020 11.0.2
+* Remove `speak` from `.u-hidden-xxx` and `.u-visible-xxx`.
+* Add `visibility: hidden` to `.u-hidden-xxx`.
+* Add `visibility: visible` to `.u-visible-xxx`.
+
 ## June 3, 2020 11.0.1
 * Fixed design collapse of `.c-select--block`.
 
