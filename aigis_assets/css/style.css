@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v11.0.1
+ * Name: Basis v11.0.2
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -8220,50 +8220,50 @@ Hidden utility
 .u-hidden {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
-  speak: none !important;
-  visibility: hidden !important; }
+  visibility: hidden !important;
+  overflow: hidden; }
 
 @media (max-width: 39.9375em) {
   .u-hidden-sm {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 @media (min-width: 40em) {
   .u-hidden-md-up {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 @media (min-width: 40em) and (max-width: 63.9375em) {
   .u-hidden-md {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 @media (min-width: 64em) {
   .u-hidden-lg-up {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 @media (min-width: 64em) and (max-width: 79.9375em) {
   .u-hidden-lg {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 @media (min-width: 80em) {
   .u-hidden-xl {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 /*
 ---
@@ -8473,53 +8473,53 @@ Visible utility
 .u-visible {
   position: static !important;
   clip: auto !important;
-  speak: normal !important;
-  visibility: visible !important; }
+  visibility: visible !important;
+  overflow: visible; }
 
 @media (max-width: 39.9375em) {
   .u-visible-sm {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 @media (min-width: 40em) {
   .u-visible-md-up {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 @media (min-width: 40em) and (max-width: 63.9375em) {
   .u-visible-md {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 @media (min-width: 64em) {
   .u-visible-lg-up {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 @media (min-width: 64em) and (max-width: 79.9375em) {
   .u-visible-lg {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 @media (min-width: 80em) {
   .u-visible-xl {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 /*!
- * Name: Basis v11.0.1
+ * Name: Basis v11.0.2
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -16739,50 +16739,50 @@ Hidden utility
 .u-hidden {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
-  speak: none !important;
-  visibility: hidden !important; }
+  visibility: hidden !important;
+  overflow: hidden; }
 
 @media (max-width: 39.93333em) {
   .u-hidden-sm {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 @media (min-width: 40em) {
   .u-hidden-md-up {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 @media (min-width: 40em) and (max-width: 63.93333em) {
   .u-hidden-md {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 @media (min-width: 64em) {
   .u-hidden-lg-up {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 @media (min-width: 64em) and (max-width: 79.93333em) {
   .u-hidden-lg {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 @media (min-width: 80em) {
   .u-hidden-xl {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
-    speak: none !important;
-    visibility: hidden !important; } }
+    visibility: hidden !important;
+    overflow: hidden; } }
 
 /*
 ---
@@ -16992,50 +16992,50 @@ Visible utility
 .u-visible {
   position: static !important;
   clip: auto !important;
-  speak: normal !important;
-  visibility: visible !important; }
+  visibility: visible !important;
+  overflow: visible; }
 
 @media (max-width: 39.93333em) {
   .u-visible-sm {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 @media (min-width: 40em) {
   .u-visible-md-up {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 @media (min-width: 40em) and (max-width: 63.93333em) {
   .u-visible-md {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 @media (min-width: 64em) {
   .u-visible-lg-up {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 @media (min-width: 64em) and (max-width: 79.93333em) {
   .u-visible-lg {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 @media (min-width: 80em) {
   .u-visible-xl {
     position: static !important;
     clip: auto !important;
-    speak: normal !important;
-    visibility: visible !important; } }
+    visibility: visible !important;
+    overflow: visible; } }
 
 body {
   letter-spacing: 1px; }
