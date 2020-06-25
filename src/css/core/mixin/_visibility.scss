@@ -25,8 +25,8 @@ Hidden helper
 @mixin _hidden() {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
-  speak: none !important;
   visibility: hidden !important;
+  overflow: hidden;
 }
 
 /*
@@ -56,6 +56,6 @@ Visible helper
 @mixin _visible() {
   position: static !important;
   clip: auto !important;
-  speak: normal !important;
   visibility: visible !important;
+  overflow: visible;
 }
