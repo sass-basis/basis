@@ -1,5 +1,8 @@
 #Changelog
 
+## June 29, 2020 11.0.3
+* Remove node-normalize-scss and install normalize.css
+
 ## June 26, 2020 11.0.2
 * Remove `speak` from `.u-hidden-xxx` and `.u-visible-xxx`.
 * Add `visibility: hidden` to `.u-hidden-xxx`.
