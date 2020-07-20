@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v11.0.3
+ * Name: Basis v11.1.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -2218,6 +2218,22 @@ Visible helper
   @include _media-min(md) {
       @include _visible();
   }
+}
+```
+*/
+/*
+---
+name: _invisible()
+category:
+  - core/mixin
+  - core/mixin/visibility
+---
+Invisible helper
+
+### scss
+```scss
+.c-foo {
+  @include _invisible();
 }
 ```
 */
@@ -8240,8 +8256,100 @@ Visible utility
     visibility: visible !important;
     overflow: visible; } }
 
+/*
+---
+name: .u-invisible
+category:
+  - object/utility
+  - object/utility/invisible
+  - object/utility/invisible/invisible
+---
+Invisible utility
+
+### html
+```html
+<div class="u-invisible">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+```html
+<div class="u-invisible-sm">
+  u-invisible-sm
+</div>
+```
+```html
+<div class="u-invisible-md">
+  u-invisible-md
+</div>
+```
+```html
+<div class="u-invisible-md-down">
+  u-invisible-md-down
+</div>
+```
+```html
+<div class="u-invisible-md-up">
+  u-invisible-md-up
+</div>
+```
+```html
+<div class="u-invisible-lg">
+  u-invisible-lg
+</div>
+```
+```html
+<div class="u-invisible-lg-down">
+  u-invisible-lg-down
+</div>
+```
+```html
+<div class="u-invisible-lg-up">
+  u-invisible-lg-up
+</div>
+```
+```html
+<div class="u-invisible-xl">
+  u-invisible-xl
+</div>
+```
+*/
+.u-invisible {
+  display: none !important; }
+
+@media (max-width: 39.9375em) {
+  .u-invisible-sm {
+    display: none !important; } }
+
+@media (min-width: 40em) {
+  .u-invisible-md-up {
+    display: none !important; } }
+
+@media (max-width: 63.9375em) {
+  .u-invisible-md-down {
+    display: none !important; } }
+
+@media (min-width: 40em) and (max-width: 63.9375em) {
+  .u-invisible-md {
+    display: none !important; } }
+
+@media (min-width: 64em) {
+  .u-invisible-lg-up {
+    display: none !important; } }
+
+@media (max-width: 79.9375em) {
+  .u-invisible-lg-down {
+    display: none !important; } }
+
+@media (min-width: 64em) and (max-width: 79.9375em) {
+  .u-invisible-lg {
+    display: none !important; } }
+
+@media (min-width: 80em) {
+  .u-invisible-xl {
+    display: none !important; } }
+
 /*!
- * Name: Basis v11.0.3
+ * Name: Basis v11.1.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -10459,6 +10567,22 @@ Visible helper
   @include _media-min(md) {
       @include _visible();
   }
+}
+```
+*/
+/*
+---
+name: _invisible()
+category:
+  - core/mixin
+  - core/mixin/visibility
+---
+Invisible helper
+
+### scss
+```scss
+.c-foo {
+  @include _invisible();
 }
 ```
 */
@@ -16479,6 +16603,98 @@ Visible utility
     visibility: visible !important;
     overflow: visible; } }
 
+/*
+---
+name: .u-invisible
+category:
+  - object/utility
+  - object/utility/invisible
+  - object/utility/invisible/invisible
+---
+Invisible utility
+
+### html
+```html
+<div class="u-invisible">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+```html
+<div class="u-invisible-sm">
+  u-invisible-sm
+</div>
+```
+```html
+<div class="u-invisible-md">
+  u-invisible-md
+</div>
+```
+```html
+<div class="u-invisible-md-down">
+  u-invisible-md-down
+</div>
+```
+```html
+<div class="u-invisible-md-up">
+  u-invisible-md-up
+</div>
+```
+```html
+<div class="u-invisible-lg">
+  u-invisible-lg
+</div>
+```
+```html
+<div class="u-invisible-lg-down">
+  u-invisible-lg-down
+</div>
+```
+```html
+<div class="u-invisible-lg-up">
+  u-invisible-lg-up
+</div>
+```
+```html
+<div class="u-invisible-xl">
+  u-invisible-xl
+</div>
+```
+*/
+.u-invisible {
+  display: none !important; }
+
+@media (max-width: 39.93333em) {
+  .u-invisible-sm {
+    display: none !important; } }
+
+@media (min-width: 40em) {
+  .u-invisible-md-up {
+    display: none !important; } }
+
+@media (max-width: 63.93333em) {
+  .u-invisible-md-down {
+    display: none !important; } }
+
+@media (min-width: 40em) and (max-width: 63.93333em) {
+  .u-invisible-md {
+    display: none !important; } }
+
+@media (min-width: 64em) {
+  .u-invisible-lg-up {
+    display: none !important; } }
+
+@media (max-width: 79.93333em) {
+  .u-invisible-lg-down {
+    display: none !important; } }
+
+@media (min-width: 64em) and (max-width: 79.93333em) {
+  .u-invisible-lg {
+    display: none !important; } }
+
+@media (min-width: 80em) {
+  .u-invisible-xl {
+    display: none !important; } }
+
 body {
   letter-spacing: 1px; }
 
@@ -16687,6 +16903,14 @@ pre {
 .l-main > .c-entry .c-entry__content > ul ol,
 .l-main > .c-entry .c-entry__content > ul ul {
   margin-bottom: 0; }
+
+.l-main > .c-entry .c-entry__content .aigis-preview + pre {
+  margin-top: 0.75rem;
+  margin-top: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
+
+.l-main > .c-entry .c-entry__content pre + .aigis-preview {
+  margin-top: 2.25rem;
+  margin-top: calc(var(--_space, 1.5rem) * 1.5 * var(--_margin-scale, 1)); }
 
 .l-main > .c-entry + .c-entry {
   margin-top: 3rem;
