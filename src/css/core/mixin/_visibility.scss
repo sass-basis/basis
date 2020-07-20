@@ -59,3 +59,24 @@ Visible helper
   visibility: visible !important;
   overflow: visible;
 }
+
+/*
+---
+name: _invisible()
+category:
+  - core/mixin
+  - core/mixin/visibility
+---
+Invisible helper
+
+### scss
+```scss
+.c-foo {
+  @include _invisible();
+}
+```
+*/
+
+@mixin _invisible() {
+  display: none !important;
+}

@@ -1,0 +1,86 @@
+/*
+---
+name: .u-invisible
+category:
+  - object/utility
+  - object/utility/invisible
+  - object/utility/invisible/invisible
+---
+Invisible utility
+
+### html
+```html
+<div class="u-invisible">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</div>
+```
+```html
+<div class="u-invisible-sm">
+  u-invisible-sm
+</div>
+```
+```html
+<div class="u-invisible-md">
+  u-invisible-md
+</div>
+```
+```html
+<div class="u-invisible-md-down">
+  u-invisible-md-down
+</div>
+```
+```html
+<div class="u-invisible-md-up">
+  u-invisible-md-up
+</div>
+```
+```html
+<div class="u-invisible-lg">
+  u-invisible-lg
+</div>
+```
+```html
+<div class="u-invisible-lg-down">
+  u-invisible-lg-down
+</div>
+```
+```html
+<div class="u-invisible-lg-up">
+  u-invisible-lg-up
+</div>
+```
+```html
+<div class="u-invisible-xl">
+  u-invisible-xl
+</div>
+```
+*/
+
+.#{$_prefix}u-invisible {
+  @include _invisible();
+}
+
+$sizes-keys: map-keys($_sizes);
+$min-key: nth($sizes-keys, 1);
+$max-key: nth($sizes-keys, -1);
+@each $size, $screen-min in $_sizes {
+  @if $size != $min-key and $size != $max-key {
+    .#{ $_prefix }u-invisible-#{ $size }-up {
+      @include _media-min($size) {
+        @include _invisible();
+      }
+    }
+
+    .#{ $_prefix }u-invisible-#{ $size }-down {
+      @include _media-max($size) {
+        @include _invisible();
+      }
+    }
+  }
+
+  .#{ $_prefix }u-invisible-#{ $size } {
+    @include _media-only($size) {
+      @include _invisible();
+    }
+  }
+}

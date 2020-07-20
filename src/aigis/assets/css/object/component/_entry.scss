@@ -11,6 +11,14 @@
 
   .#{$_prefix}c-entry__content {
     @include _content();
+
+    .aigis-preview + pre {
+      @include _margin-top(.5);
+    }
+
+    pre + .aigis-preview {
+      @include _margin-top(1.5);
+    }
   }
 
   & + .#{$_prefix}c-entry {
