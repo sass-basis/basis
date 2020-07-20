@@ -1,5 +1,9 @@
 #Changelog
 
+## July 20, 2020 11.1.0
+* Add `_invisible()`.
+* Add `u-invisible`, `u-invisible-xxx`, `u-invisible-xxx-up` and `u-invisible-xxx-down`.
+
 ## June 29, 2020 11.0.3
 * Remove node-normalize-scss and install normalize.css
 
