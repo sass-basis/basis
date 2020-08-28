@@ -1,4 +1,17 @@
 #Changelog
+## August 28, 2020 12.0.1
+* Add `--_dark-color-gray`.
+* Add `--_darker-color-gray`.
+* Add `--_darkest-color-gray`.
+* Add `--_light-color-gray`.
+* Add `--_lighter-color-gray`.
+* Add `--_lightest-color-gray`.
+* Add `--_dark-color-text`.
+* Add `--_darker-color-text`.
+* Add `--_darkest-color-text`.
+* Add `--_light-color-text`.
+* Add `--_lighter-color-text`.
+* Add `--_lightest-color-text`.
 
 ## August 28, 2020 12.0.0
 * Add `$_color-white`.
