@@ -1,0 +1,3 @@
+@function _var-color-black() {
+  @return var(--_color-black, $_color-black);
+}

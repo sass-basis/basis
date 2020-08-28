@@ -9,13 +9,16 @@
   }
 
   &--ghost {
-    border: 1px solid #fff;
+    border: 1px solid transparent;
+    border-color: $_color-white; // For IE11
+    border-color: _var-color-white();
     background-color: transparent;
   }
 
   &--launch, &--download, &--buy {
     background-color: $color-primary;
-    color: #fff;
+    color: $_color-white; // For IE11
+    color: _var-color-white();
 
     @include _hover(lg) {
       opacity: .8;

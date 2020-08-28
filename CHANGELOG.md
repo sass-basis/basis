@@ -1,5 +1,40 @@
 #Changelog
 
+## August 28, 2020 12.0.0
+* Add `$_color-white`.
+* Add `--_color-white`.
+* Add `--_color-black`.
+* Add `--_color-gray`.
+* Add `--_form-control-border-color`.
+* Add `--_form-control-border-color-hover`.
+* Add `--_form-control-border-color-focus`.
+* Add `_var-color-white()`.
+* Add `_var-color-black()`.
+* Add `_var-color-gray()`.
+* Add `_var-dark-color-gray()`.
+* Add `_var-darker-color-gray()`.
+* Add `_var-darkest-color-gray()`.
+* Add `_var-light-color-gray()`.
+* Add `_var-lighter-color-gray()`.
+* Add `_var-lightest-color-gray()`.
+* Add `_var-dark-color-text()`.
+* Add `_var-darker-color-text()`.
+* Add `_var-darkest-color-text()`.
+* Add `_var-light-color-text()`.
+* Add `_var-lighter-color-text()`.
+* Add `_var-lightest-color-text()`.
+* Add `_var-form-control-border-color()`.
+* Add `_var-form-control-border-color-hover()`.
+* Add `_var-form-control-border-color-focus()`.
+* `_hamburger-btn()` color now supports list.
+* `_page-effect()` background-color now supports list.
+* `_circle-spinner()` color now supports list.
+* Add accent-color to `_circle-spinner()`.
+* `_dots-spinner()` color now supports list.
+* `_pulse-spinner()` color now supports list.
+* `_balloon()` border-color, background-color now supports list.
+* `_ghost()` color now supports list.
+
 ## July 20, 2020 11.1.0
 * Add `_invisible()`.
 * Add `u-invisible`, `u-invisible-xxx`, `u-invisible-xxx-up` and `u-invisible-xxx-down`.

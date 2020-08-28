@@ -1,13 +1,12 @@
 .#{$_prefix}l-body > .#{$_prefix}c-drawer {
   background-color: $_color-text;
   @include _padding(.5);
-
-  &, a {
-    color: #fff;
-  }
+  color: $_color-white; // For IE11
+  color: _var-color-white();
 
   a {
     display: block;
+    color: inherit;
     text-decoration: none;
     @include _padding(.25, 0);
   }

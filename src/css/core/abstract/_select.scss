@@ -42,6 +42,7 @@ Abstract selectbox component
       z-index: 1;
       appearance: none;
       display:inline-block;
+      cursor: pointer;
       @include _form-control-base-border();
       background-color: transparent;
       line-height: 1;
@@ -58,7 +59,8 @@ Abstract selectbox component
 
       &:disabled {
         & + .smf-select-control__toggle {
-          background-color: _lightest($_color-gray);
+          background-color: _lightest($_color-gray); // For IE11
+          background-color: _var-lightest-color-gray();
         }
       }
     }
@@ -71,7 +73,8 @@ Abstract selectbox component
       left: 0;
       z-index: 0;
       display: block;
-      background-color: #fff;
+      background-color: $_color-white; // For IE11
+      background-color: _var-color-white();
 
       &::before {
         position: absolute;
@@ -81,7 +84,8 @@ Abstract selectbox component
         display: block;
         @include _square(6px);
         border-style: solid;
-        border-color: #000;
+        border-color: $_color-text; // For IE11
+        border-color: _var-color-text();
         border-width: 0 1px 1px 0;
         transform: rotate(45deg);
       }

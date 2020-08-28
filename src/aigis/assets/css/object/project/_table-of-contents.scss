@@ -3,11 +3,15 @@
   @include _list-unstyled();
   @include _padding(0, 1);
   background-color: #fafafa;
-  border: 1px solid _lighter($_color-gray);
+  border: 1px solid transparent;
+  border-color: _lighter($_color-gray); // For IE11
+  border-color: _var_lighter-color-gray();
   border-radius: $_border-radius;
 
   &__item {
-    border-bottom: 1px solid _lighter($_color-gray);
+    border-bottom: 1px solid transparent;
+    border-bottom-color: _lighter($_color-gray); // For IE11
+    border-bottom-color: _var-lighter-color-gray();
 
     &:last-child {
       border-bottom: none;

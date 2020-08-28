@@ -1,0 +1,27 @@
+@function _var-color-gray() {
+  @return var(--_color-gray, $_color-gray);
+}
+
+@function _var-dark-color-gray() {
+  @return var(--_color-gray, _dark($_color-gray));
+}
+
+@function _var-darker-color-gray() {
+  @return var(--_color-gray, _darker($_color-gray));
+}
+
+@function _var-darkest-color-gray() {
+  @return var(--_color-gray, _darkest($_color-gray));
+}
+
+@function _var-light-color-gray() {
+  @return var(--_color-gray, _light($_color-gray));
+}
+
+@function _var-lighter-color-gray() {
+  @return var(--_color-gray, _lighter($_color-gray));
+}
+
+@function _var-lightest-color-gray() {
+  @return var(--_color-gray, _lightest($_color-gray));
+}

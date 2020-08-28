@@ -34,6 +34,23 @@ $_color-black: #111 !default;
 
 /*
 ---
+name: $_color-white
+category:
+  - core/variable
+  - core/variable/color
+---
+Default white color
+
+### scss
+```scss
+$_color-white: #fff;
+```
+*/
+
+$_color-white: #fff !default;
+
+/*
+---
 name: $_color-gray
 category:
   - core/variable

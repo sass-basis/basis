@@ -1,9 +1,14 @@
 .#{$_prefix}p-show-grid {
   &__item {
     background-color: #00DAE6;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    color: #fff;
+    border-left: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left-color: $_color-white; // For IE11
+    border-left-color: _var-color-white();
+    border-bottom-color: $_color-white; // For IE11
+    border-bottom-color: _var-color-white();
+    color: $_color-white; // For IE11
+    color: _var-color-white();
     padding: 16px;
 
     &--cloudy {

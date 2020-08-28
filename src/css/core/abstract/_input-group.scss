@@ -57,8 +57,11 @@ Abstract input group component
   }
 
   &__addon {
-    background-color: #fff;
-    border: 1px solid $_form-control-border-color;
+    background-color: $_color-white; // For IE11
+    background-color: _var-color-white();
+    border: 1px solid transparent;
+    border-color: $_form-control-border-color(); // For IE11
+    border-color: _var-form-control-border-color();
     @include _form-control-base-padding();
     flex: none;
   }
@@ -86,7 +89,8 @@ Abstract input group component
     @include _btn();
     @include _form-control-base-border();
     @include _form-control-base-padding();
-    background-color: #fff;
+    background-color: $_color-white; // For IE11
+    background-color: _var-color-white();
     color: $_color-text;
     flex: none;
     overflow: visible;

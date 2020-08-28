@@ -4,7 +4,8 @@
   overflow: hidden;
 
   &, a {
-    color: #fff;
+    color: $_color-white; // For IE11
+    color: _var-color-white();
     text-decoration: none;
   }
 
@@ -23,7 +24,8 @@
     transform: translateY(-50%);
 
     &__bar {
-      background-color: #fff;
+      background-color: $_color-white; // For IE11
+      background-color: _var-color-white();
     }
   }
 }

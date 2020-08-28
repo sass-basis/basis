@@ -2,6 +2,7 @@
   @include _font-size-line-height($_base-font-size-px - 2);
 
   &, a {
-    color: $_color-gray;
+    color: $_color-gray; // For IE11
+    color: _var-color-gray();
   }
 }

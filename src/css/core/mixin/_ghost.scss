@@ -34,12 +34,16 @@ category:
   $params: map-merge(
     (
       'border-size' : 1px,
-      'color'       : #fff,
+      'color'       : [$_color-white, _var-color-white()],
     ),
     $params
   );
 
   background-color: transparent !important;
-  border: map-get($params, 'border-size') solid map-get($params, 'color');
-  color: map-get($params, 'color');
+  border: map-get($params, 'border-size') transparent;
+
+  @each $color in map-get($params, 'color') {
+    border-color: $color;
+    color: $color;
+  }
 }

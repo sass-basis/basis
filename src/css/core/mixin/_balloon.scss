@@ -35,26 +35,32 @@ Generate balloon
     $params
   );
 
-  $background-color: map-get($params, 'background-color');
-  $border-color: map-get($params, 'border-color');
-  $border-size: map-get($params, 'border-size');
-  $triangle-size: map-get($params, 'triangle-size');
-
   position: relative;
 
-  @if (not _is-null($background-color)) {
-    background-color: $background-color;
+  $background-colors: map-get($params, 'background-color');
+  @if (not _is-null($background-colors)) {
+    @each $background-color in $background-colors {
+      background-color: $background-color;
+    }
   }
 
-  @if (not _is-null($border-size) and not _is-null($border-color)) {
-    border: $border-size solid $border-color;
+  $border-size: map-get($params, 'border-size');
+  $border-colors: map-get($params, 'border-color');
+  @if (not _is-null($border-size) and not _is-null($border-colors)) {
+    border: $border-size solid transparent;
+
+    @each $border-color in $border-colors {
+      border-color: $border-color;
+    }
   }
+
+  $triangle-size: map-get($params, 'triangle-size');
 
   @include _balloon-triangle(
     $angle,
     $triangle-size,
-    $background-color,
+    $background-colors,
     $border-size,
-    $border-color
+    $border-colors
   );
 }

@@ -1,0 +1,27 @@
+@function _var-color-text() {
+  @return var(--_color-text, $_color-text);
+}
+
+@function _var-dark-color-text() {
+  @return var(--_color-text, _dark($_color-text));
+}
+
+@function _var-darker-color-text() {
+  @return var(--_color-text, _darker($_color-text));
+}
+
+@function _var-darkest-color-text() {
+  @return var(--_color-text, _darkest($_color-text));
+}
+
+@function _var-light-color-text() {
+  @return var(--_color-text, _light($_color-text));
+}
+
+@function _var-lighter-color-text() {
+  @return var(--_color-text, _lighter($_color-text));
+}
+
+@function _var-lightest-color-text() {
+  @return var(--_color-text, _lightest($_color-text));
+}

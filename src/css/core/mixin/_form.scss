@@ -39,21 +39,25 @@ select {
 */
 
 @mixin _form-control-base-border() {
-  border: 1px solid $_form-control-border-color;
+  border: 1px solid transparent;
+  border-color: $_form-control-border-color; // For IE11
+  border-color: _var-form-control-border-color();
   border-radius: $_border-radius; // for IE11
   border-radius: _var-border-radius();
   outline: 0;
   @include _transition(border);
 
   &:hover {
-    border-color: $_form-control-border-color-hover;
+    border-color: $_form-control-border-color-hover; // For IE11
+    border-color: _var-form-control-border-color-hover();
   }
 
   &:active,
   &:focus,
   &:focus-within,
   &[aria-selected="true"] {
-    border-color: $_form-control-border-color-focus;
+    border-color: $_form-control-border-color-focus; // For IE11
+    border-color: _var-form-control-border-color-focus();
   }
 
   > input,

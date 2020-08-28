@@ -1,9 +1,12 @@
 .#{$_prefix}l-footer {
   padding: ($_base-line-height * 2) 0 0;
-  background-color: _dark($_color-text);
-  color: #fff;
+  background-color: _dark($_color-text); // For IE11
+  background-color: _var-dark-color-text();
+  color: $_color-white; // For IE11
+  color: _var-color-white();
 
   a {
-    color: $_color-gray;
+    color: $_color-gray; // For IE11
+    color: _var-color-gray();
   }
 }

@@ -20,8 +20,11 @@ pre {
 */
 
 @mixin _pre() {
-  background-color: _lightest($_color-gray);
-  border: 1px solid _lighter($_color-gray);
+  background-color: _lightest($_color-gray); // For IE11
+  background-color: _var-lightest-color-gray();
+  border: 1px solid transparent;
+  border-color: _lighter($_color-gray); // For IE11
+  border-color: _var-lighter-color-gray();
   border-radius: $_border-radius; // for IE11
   border-radius: _var-border-radius();
   padding: $_base-font-size;

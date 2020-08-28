@@ -23,12 +23,14 @@ Abstract form control component
 @mixin _form-control() {
   @include _form-control-base-border();
   @include _form-control-base-padding();
-  background-color: #fff;
+  background-color: $_color-white; // For IE11
+  background-color: _var-color-white();
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
   max-width: 100%;
 
   &:disabled {
-    background-color: _lightest($_color-gray);
+    background-color: _lightest($_color-gray); // For IE11
+    background-color: _var-lightest-color-gray();
   }
 
   @at-root {

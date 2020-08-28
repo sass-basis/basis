@@ -1,0 +1,3 @@
+@function _var-color-white() {
+  @return var(--_color-white, $_color-white);
+}

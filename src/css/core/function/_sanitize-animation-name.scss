@@ -19,6 +19,6 @@ animation: $animation-name .2s ease-in 0s;
 */
 
 @function _sanitize-animation-name($name) {
-  $name: replace(('.', '(', ')', ',', ' ', '#', '-'), '_', $name);
+  $name: replace(('.', '(', ')', ',', ' ', '#', '-', '[', ']'), '_', $name);
   @return $name;
 }

@@ -39,13 +39,12 @@ new BasisPageEffect({
   $params: map-merge(
     (
       duration: .2s, // Must be the same as js location duration time.
-      background-color: #fff,
+      background-color: [$_color-white, _var-color-white()],
     ),
     $params
   );
 
   $duration: map-get($params, 'duration');
-  $background-color: map-get($params, 'background-color');
 
   $fadein-animation-name : _sanitize-animation-name(_page-effect-fadein- + zip(map-values($params)));
   $fadeout-animation-name: _sanitize-animation-name(_page-effect-fadeout- + zip(map-values($params)));
@@ -54,7 +53,10 @@ new BasisPageEffect({
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $background-color;
+
+  @each $background-color in map-get($params, 'background-color') {
+    background-color: $background-color;
+  }
 
   &[data-page-effect="fadein"][aria-hidden="true"] {
     opacity: 0;

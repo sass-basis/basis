@@ -51,7 +51,8 @@
   &__lead {
     margin: 0;
     padding: 0;
-    color: $_color-gray;
+    color: $_color-gray; // For IE11
+    color: _var-color-gray();
   }
 
   &__content {
