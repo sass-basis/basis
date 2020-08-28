@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v12.0.0
+ * Name: Basis v12.0.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -4077,29 +4077,29 @@ dd {
 blockquote {
   border-left: 0.5rem solid transparent;
   border-left-color: #eeeeee;
-  border-left-color: var(--_color-gray, #eeeeee);
+  border-left-color: var(--_lighter-color-gray, #eeeeee);
   margin-left: 0;
   padding: 1rem 0 1rem 1rem; }
   blockquote :last-child {
     margin-bottom: 0; }
   blockquote footer {
     color: #444444;
-    color: var(--_color-gray, #444444);
+    color: var(--_darker-color-gray, #444444);
     font-size: 90%; }
 
 code {
   background-color: #eeeeee;
-  background-color: var(--_color-gray, #eeeeee);
+  background-color: var(--_lighter-color-gray, #eeeeee);
   border-radius: 3px;
   border-radius: var(--_border-radius, 3px);
   padding: 2px 6px; }
 
 pre {
   background-color: #f7f7f7;
-  background-color: var(--_color-gray, #f7f7f7);
+  background-color: var(--_lightest-color-gray, #f7f7f7);
   border: 1px solid transparent;
   border-color: #eeeeee;
-  border-color: var(--_color-gray, #eeeeee);
+  border-color: var(--_lighter-color-gray, #eeeeee);
   border-radius: 3px;
   border-radius: var(--_border-radius, 3px);
   padding: 1rem;
@@ -4156,7 +4156,7 @@ Top balloon component
   background-color: var(--_color-white, #fff);
   border: 1px solid transparent;
   border-color: #cccccc;
-  border-color: var(--_color-gray, #cccccc); }
+  border-color: var(--_light-color-gray, #cccccc); }
   .c-top-balloon::before, .c-top-balloon::after {
     content: '';
     display: block;
@@ -4171,7 +4171,7 @@ Top balloon component
     border-width: 0 5px 10px 5px;
     border-color: transparent;
     border-bottom-color: #cccccc;
-    border-bottom-color: var(--_color-gray, #cccccc); }
+    border-bottom-color: var(--_light-color-gray, #cccccc); }
   .c-top-balloon::after {
     position: absolute;
     top: -8px;
@@ -4207,7 +4207,7 @@ Right balloon component
   background-color: var(--_color-white, #fff);
   border: 1px solid transparent;
   border-color: #cccccc;
-  border-color: var(--_color-gray, #cccccc); }
+  border-color: var(--_light-color-gray, #cccccc); }
   .c-right-balloon::before, .c-right-balloon::after {
     content: '';
     display: block;
@@ -4222,7 +4222,7 @@ Right balloon component
     border-width: 5px 0 5px 10px;
     border-color: transparent;
     border-left-color: #cccccc;
-    border-left-color: var(--_color-gray, #cccccc); }
+    border-left-color: var(--_light-color-gray, #cccccc); }
   .c-right-balloon::after {
     position: absolute;
     top: 50%;
@@ -4258,7 +4258,7 @@ Bottom balloon component
   background-color: var(--_color-white, #fff);
   border: 1px solid transparent;
   border-color: #cccccc;
-  border-color: var(--_color-gray, #cccccc); }
+  border-color: var(--_light-color-gray, #cccccc); }
   .c-bottom-balloon::before, .c-bottom-balloon::after {
     content: '';
     display: block;
@@ -4273,7 +4273,7 @@ Bottom balloon component
     border-width: 10px 5px 0 5px;
     border-color: transparent;
     border-top-color: #cccccc;
-    border-top-color: var(--_color-gray, #cccccc); }
+    border-top-color: var(--_light-color-gray, #cccccc); }
   .c-bottom-balloon::after {
     position: absolute;
     bottom: -8px;
@@ -4309,7 +4309,7 @@ Left balloon component
   background-color: var(--_color-white, #fff);
   border: 1px solid transparent;
   border-color: #cccccc;
-  border-color: var(--_color-gray, #cccccc); }
+  border-color: var(--_light-color-gray, #cccccc); }
   .c-left-balloon::before, .c-left-balloon::after {
     content: '';
     display: block;
@@ -4324,7 +4324,7 @@ Left balloon component
     border-width: 5px 10px 5px 0;
     border-color: transparent;
     border-right-color: #cccccc;
-    border-right-color: var(--_color-gray, #cccccc); }
+    border-right-color: var(--_light-color-gray, #cccccc); }
   .c-left-balloon::after {
     position: absolute;
     top: 50%;
@@ -4484,10 +4484,10 @@ Checkbox component
           visibility: visible; }
       .c-checkbox__control:disabled {
         background-color: #f7f7f7;
-        background-color: var(--_color-gray, #f7f7f7); }
+        background-color: var(--_lightest-color-gray, #f7f7f7); }
         .c-checkbox__control:disabled::before {
           border-color: #666666;
-          border-color: var(--_color-gray, #666666); } }
+          border-color: var(--_dark-color-gray, #666666); } }
 
 /*
 ---
@@ -4936,7 +4936,7 @@ Form control component
     outline: none; }
   .c-form-control:disabled {
     background-color: #f7f7f7;
-    background-color: var(--_color-gray, #f7f7f7); }
+    background-color: var(--_lightest-color-gray, #f7f7f7); }
   textarea.c-form-control {
     height: auto;
     width: 100%; }
@@ -4951,11 +4951,11 @@ Form control component
       margin-right: .5em; }
   .c-form-control[disabled] {
     background-color: #eeeeee;
-    background-color: var(--_color-gray, #eeeeee);
+    background-color: var(--_lighter-color-gray, #eeeeee);
     cursor: not-allowed; }
   .c-form-control[readonly] {
     background-color: #eeeeee;
-    background-color: var(--_color-gray, #eeeeee); }
+    background-color: var(--_lighter-color-gray, #eeeeee); }
 
 /*
 ---
@@ -5321,7 +5321,7 @@ Input group component
       .c-input-group__field > input[type='text']:disabled,
       .c-input-group__field > input[type='url']:disabled {
         background-color: #f7f7f7;
-        background-color: var(--_color-gray, #f7f7f7); }
+        background-color: var(--_lightest-color-gray, #f7f7f7); }
       textarea.c-input-group__field > input[type='email'], .c-input-group__field > input[type='number'], .c-input-group__field > input[type='password'], .c-input-group__field > input[type='search'], .c-input-group__field > input[type='tel'], .c-input-group__field > input[type='text'], .c-input-group__field > input[type='url'] {
         height: auto;
         width: 100%; }
@@ -5899,10 +5899,10 @@ Radio button component
           visibility: visible; }
       .c-radio__control:disabled {
         background-color: #f7f7f7;
-        background-color: var(--_color-gray, #f7f7f7); }
+        background-color: var(--_lightest-color-gray, #f7f7f7); }
         .c-radio__control:disabled::before {
           background-color: #666666;
-          background-color: var(--_color-gray, #666666); } }
+          background-color: var(--_dark-color-gray, #666666); } }
 
 .c-responsive-container-16-9,
 .c-responsive-container-4-3 {
@@ -7492,7 +7492,7 @@ Select box component
           border-color: #3a87fd; }
         .c-select__control:disabled + .smf-select-control__toggle {
           background-color: #f7f7f7;
-          background-color: var(--_color-gray, #f7f7f7); }
+          background-color: var(--_lightest-color-gray, #f7f7f7); }
       .c-select__toggle {
         position: absolute;
         top: 0;
@@ -7565,13 +7565,13 @@ Circle spinner component
   width: 20px;
   overflow: hidden;
   border: 3px solid transparent;
-  animation: _circle_spinner_20px____cccccc__var____color_gray___cccccc______999__var____color_gray___999____3px__0s__2s 2s linear 0s infinite;
+  animation: _circle_spinner_20px____cccccc__var____light_color_gray___cccccc______999__var____color_gray___999____3px__0s__2s 2s linear 0s infinite;
   border-color: #cccccc;
-  border-color: var(--_color-gray, #cccccc);
+  border-color: var(--_light-color-gray, #cccccc);
   border-top-color: #999;
   border-top-color: var(--_color-gray, #999); }
 
-@keyframes _circle_spinner_20px____cccccc__var____color_gray___cccccc______999__var____color_gray___999____3px__0s__2s {
+@keyframes _circle_spinner_20px____cccccc__var____light_color_gray___cccccc______999__var____color_gray___999____3px__0s__2s {
   0% {
     transform: rotate(0deg); }
   100% {
@@ -8455,7 +8455,7 @@ Invisible utility
     display: none !important; } }
 
 /*!
- * Name: Basis v12.0.0
+ * Name: Basis v12.0.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -12530,29 +12530,29 @@ dd {
 blockquote {
   border-left: 0.5rem solid transparent;
   border-left-color: #eeeeee;
-  border-left-color: var(--_color-gray, #eeeeee);
+  border-left-color: var(--_lighter-color-gray, #eeeeee);
   margin-left: 0;
   padding: 1rem 0 1rem 1rem; }
   blockquote :last-child {
     margin-bottom: 0; }
   blockquote footer {
     color: #444444;
-    color: var(--_color-gray, #444444);
+    color: var(--_darker-color-gray, #444444);
     font-size: 90%; }
 
 code {
   background-color: #eeeeee;
-  background-color: var(--_color-gray, #eeeeee);
+  background-color: var(--_lighter-color-gray, #eeeeee);
   border-radius: 3px;
   border-radius: var(--_border-radius, 3px);
   padding: 2px 6px; }
 
 pre {
   background-color: #f7f7f7;
-  background-color: var(--_color-gray, #f7f7f7);
+  background-color: var(--_lightest-color-gray, #f7f7f7);
   border: 1px solid transparent;
   border-color: #eeeeee;
-  border-color: var(--_color-gray, #eeeeee);
+  border-color: var(--_lighter-color-gray, #eeeeee);
   border-radius: 3px;
   border-radius: var(--_border-radius, 3px);
   padding: 1rem;
@@ -12609,7 +12609,7 @@ Top balloon component
   background-color: var(--_color-white, #fff);
   border: 1px solid transparent;
   border-color: #cccccc;
-  border-color: var(--_color-gray, #cccccc); }
+  border-color: var(--_light-color-gray, #cccccc); }
   .c-top-balloon::before, .c-top-balloon::after {
     content: '';
     display: block;
@@ -12624,7 +12624,7 @@ Top balloon component
     border-width: 0 5px 10px 5px;
     border-color: transparent;
     border-bottom-color: #cccccc;
-    border-bottom-color: var(--_color-gray, #cccccc); }
+    border-bottom-color: var(--_light-color-gray, #cccccc); }
   .c-top-balloon::after {
     position: absolute;
     top: -8px;
@@ -12660,7 +12660,7 @@ Right balloon component
   background-color: var(--_color-white, #fff);
   border: 1px solid transparent;
   border-color: #cccccc;
-  border-color: var(--_color-gray, #cccccc); }
+  border-color: var(--_light-color-gray, #cccccc); }
   .c-right-balloon::before, .c-right-balloon::after {
     content: '';
     display: block;
@@ -12675,7 +12675,7 @@ Right balloon component
     border-width: 5px 0 5px 10px;
     border-color: transparent;
     border-left-color: #cccccc;
-    border-left-color: var(--_color-gray, #cccccc); }
+    border-left-color: var(--_light-color-gray, #cccccc); }
   .c-right-balloon::after {
     position: absolute;
     top: 50%;
@@ -12711,7 +12711,7 @@ Bottom balloon component
   background-color: var(--_color-white, #fff);
   border: 1px solid transparent;
   border-color: #cccccc;
-  border-color: var(--_color-gray, #cccccc); }
+  border-color: var(--_light-color-gray, #cccccc); }
   .c-bottom-balloon::before, .c-bottom-balloon::after {
     content: '';
     display: block;
@@ -12726,7 +12726,7 @@ Bottom balloon component
     border-width: 10px 5px 0 5px;
     border-color: transparent;
     border-top-color: #cccccc;
-    border-top-color: var(--_color-gray, #cccccc); }
+    border-top-color: var(--_light-color-gray, #cccccc); }
   .c-bottom-balloon::after {
     position: absolute;
     bottom: -8px;
@@ -12762,7 +12762,7 @@ Left balloon component
   background-color: var(--_color-white, #fff);
   border: 1px solid transparent;
   border-color: #cccccc;
-  border-color: var(--_color-gray, #cccccc); }
+  border-color: var(--_light-color-gray, #cccccc); }
   .c-left-balloon::before, .c-left-balloon::after {
     content: '';
     display: block;
@@ -12777,7 +12777,7 @@ Left balloon component
     border-width: 5px 10px 5px 0;
     border-color: transparent;
     border-right-color: #cccccc;
-    border-right-color: var(--_color-gray, #cccccc); }
+    border-right-color: var(--_light-color-gray, #cccccc); }
   .c-left-balloon::after {
     position: absolute;
     top: 50%;
@@ -12937,10 +12937,10 @@ Checkbox component
           visibility: visible; }
       .c-checkbox__control:disabled {
         background-color: #f7f7f7;
-        background-color: var(--_color-gray, #f7f7f7); }
+        background-color: var(--_lightest-color-gray, #f7f7f7); }
         .c-checkbox__control:disabled::before {
           border-color: #666666;
-          border-color: var(--_color-gray, #666666); } }
+          border-color: var(--_dark-color-gray, #666666); } }
 
 /*
 ---
@@ -13389,7 +13389,7 @@ Form control component
     outline: none; }
   .c-form-control:disabled {
     background-color: #f7f7f7;
-    background-color: var(--_color-gray, #f7f7f7); }
+    background-color: var(--_lightest-color-gray, #f7f7f7); }
   textarea.c-form-control {
     height: auto;
     width: 100%; }
@@ -13404,11 +13404,11 @@ Form control component
       margin-right: .5em; }
   .c-form-control[disabled] {
     background-color: #eeeeee;
-    background-color: var(--_color-gray, #eeeeee);
+    background-color: var(--_lighter-color-gray, #eeeeee);
     cursor: not-allowed; }
   .c-form-control[readonly] {
     background-color: #eeeeee;
-    background-color: var(--_color-gray, #eeeeee); }
+    background-color: var(--_lighter-color-gray, #eeeeee); }
 
 /*
 ---
@@ -13774,7 +13774,7 @@ Input group component
       .c-input-group__field > input[type='text']:disabled,
       .c-input-group__field > input[type='url']:disabled {
         background-color: #f7f7f7;
-        background-color: var(--_color-gray, #f7f7f7); }
+        background-color: var(--_lightest-color-gray, #f7f7f7); }
       textarea.c-input-group__field > input[type='email'], .c-input-group__field > input[type='number'], .c-input-group__field > input[type='password'], .c-input-group__field > input[type='search'], .c-input-group__field > input[type='tel'], .c-input-group__field > input[type='text'], .c-input-group__field > input[type='url'] {
         height: auto;
         width: 100%; }
@@ -14352,10 +14352,10 @@ Radio button component
           visibility: visible; }
       .c-radio__control:disabled {
         background-color: #f7f7f7;
-        background-color: var(--_color-gray, #f7f7f7); }
+        background-color: var(--_lightest-color-gray, #f7f7f7); }
         .c-radio__control:disabled::before {
           background-color: #666666;
-          background-color: var(--_color-gray, #666666); } }
+          background-color: var(--_dark-color-gray, #666666); } }
 
 .c-responsive-container-16-9,
 .c-responsive-container-4-3 {
@@ -15945,7 +15945,7 @@ Select box component
           border-color: #3a87fd; }
         .c-select__control:disabled + .smf-select-control__toggle {
           background-color: #f7f7f7;
-          background-color: var(--_color-gray, #f7f7f7); }
+          background-color: var(--_lightest-color-gray, #f7f7f7); }
       .c-select__toggle {
         position: absolute;
         top: 0;
@@ -16018,13 +16018,13 @@ Circle spinner component
   width: 20px;
   overflow: hidden;
   border: 3px solid transparent;
-  animation: _circle_spinner_20px____cccccc__var____color_gray___cccccc______999__var____color_gray___999____3px__0s__2s 2s linear 0s infinite;
+  animation: _circle_spinner_20px____cccccc__var____light_color_gray___cccccc______999__var____color_gray___999____3px__0s__2s 2s linear 0s infinite;
   border-color: #cccccc;
-  border-color: var(--_color-gray, #cccccc);
+  border-color: var(--_light-color-gray, #cccccc);
   border-top-color: #999;
   border-top-color: var(--_color-gray, #999); }
 
-@keyframes _circle_spinner_20px____cccccc__var____color_gray___cccccc______999__var____color_gray___999____3px__0s__2s {
+@keyframes _circle_spinner_20px____cccccc__var____light_color_gray___cccccc______999__var____color_gray___999____3px__0s__2s {
   0% {
     transform: rotate(0deg); }
   100% {
@@ -16931,7 +16931,7 @@ pre {
 .l-footer {
   padding: 3rem 0 0;
   background-color: #111111;
-  background-color: var(--_color-text, #111111);
+  background-color: var(--_dark-color-text, #111111);
   color: #fff;
   color: var(--_color-white, #fff); }
   .l-footer a {
@@ -17073,7 +17073,7 @@ pre {
   padding-left: 0;
   border-bottom: 1px solid transparent;
   border-bottom-color: #cccccc;
-  border-bottom-color: var(--_color-gray, #cccccc);
+  border-bottom-color: var(--_light-color-gray, #cccccc);
   padding-top: 0;
   padding-right: 0;
   padding-bottom: 0.375rem;
@@ -17249,7 +17249,7 @@ pre {
 
 .p-local-nav a[href] {
   color: #777777;
-  color: var(--_color-text, #777777);
+  color: var(--_light-color-text, #777777);
   text-decoration: none; }
   @media (min-width: 64em) {
     .p-local-nav a[href]:hover, .p-local-nav a[href]:active, .p-local-nav a[href]:focus {
@@ -17257,7 +17257,7 @@ pre {
 
 .p-local-nav a:not([href]) {
   color: #a2a2a2;
-  color: var(--_color-text, #a2a2a2);
+  color: var(--_lightest-color-text, #a2a2a2);
   cursor: text;
   text-decoration: none; }
 
@@ -17375,12 +17375,12 @@ pre {
   background-color: #fafafa;
   border: 1px solid transparent;
   border-color: #eeeeee;
-  border-color: var(--_color-gray, #eeeeee);
+  border-color: var(--_lighter-color-gray, #eeeeee);
   border-radius: 3px; }
   .p-table-of-contents__item {
     border-bottom: 1px solid transparent;
     border-bottom-color: #eeeeee;
-    border-bottom-color: var(--_color-gray, #eeeeee); }
+    border-bottom-color: var(--_lighter-color-gray, #eeeeee); }
     .p-table-of-contents__item:last-child {
       border-bottom: none; }
     .p-table-of-contents__item > a {
