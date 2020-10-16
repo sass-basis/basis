@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v12.0.1
+ * Name: Basis v12.1.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -2611,8 +2611,45 @@ new BasisDrawer({
 
 ### html
 ```ejs
-<div style="min-height: 200px">
+<div style="min-height: 200px; overflow: hidden">
   <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
+    <div class="c-drawer__inner">
+      <ul class="c-drawer__menu">
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem">
+              <a href="#">submenu</a>
+              <div class="c-drawer__toggle" aria-expanded="false">
+                <span class="c-ic-angle-right" aria-hidden="true"></span>
+              </div>
+              <ul class="c-drawer__submenu" aria-hidden="true">
+                <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn-inverse">
     <div class="c-drawer__inner">
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -2657,6 +2694,15 @@ new BasisDrawer({
     <div class="c-hamburger-btn__bar"></div>
   </div>
   <div class="c-hamburger-btn__label">MENU</div>
+</div>
+
+<div id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer-inverse">
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU (Inverse)</div>
 </div>
 ```
 */
@@ -4559,8 +4605,45 @@ Drawer component
 
 ### html
 ```html
-<div style="min-height: 200px; position: relative">
+<div style="min-height: 200px; position: relative; overflow: hidden">
   <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
+    <div class="c-drawer__inner">
+      <ul class="c-drawer__menu">
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem">
+              <a href="#">submenu</a>
+              <div class="c-drawer__toggle" aria-expanded="false">
+                <span class="c-ic-angle-right" aria-hidden="true"></span>
+              </div>
+              <ul class="c-drawer__submenu" aria-hidden="true">
+                <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="my-drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn-inverse">
     <div class="c-drawer__inner">
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -4606,22 +4689,37 @@ Drawer component
   </div>
   <div class="c-hamburger-btn__label">MENU</div>
 </div>
+
+<div id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer-inverse">
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU (Inverse)</div>
+</div>
 ```
 */
 .c-drawer {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -100%;
   z-index: 10;
+  left: -100%;
   width: 15rem;
   max-width: 80%;
   visibility: hidden;
-  transition: left 0.2s ease-out, visibility 0.2s ease-out;
+  transition: left 0.2s ease-out, right 0.2s ease-out, visibility 0.2s ease-out;
   transition-timing-function: ease-in; }
   .c-drawer[aria-hidden="false"] {
     visibility: visible;
     left: 0; }
+  .c-drawer--inverse {
+    left: auto;
+    right: -100%; }
+    .c-drawer--inverse[aria-hidden="false"] {
+      left: auto;
+      right: 0; }
   .c-drawer__inner {
     height: 100%;
     overflow-y: auto; }
@@ -4637,7 +4735,7 @@ Drawer component
   .c-drawer__toggle {
     cursor: pointer; }
   .c-drawer[aria-hidden="false"] {
-    transition: left 0.2s ease-out;
+    transition: left 0.2s ease-out, right 0.2s ease-out;
     transition-timing-function: ease-out; }
   .c-drawer__menu {
     list-style: none;
@@ -8455,7 +8553,7 @@ Invisible utility
     display: none !important; } }
 
 /*!
- * Name: Basis v12.0.1
+ * Name: Basis v12.1.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -11066,8 +11164,45 @@ new BasisDrawer({
 
 ### html
 ```ejs
-<div style="min-height: 200px">
+<div style="min-height: 200px; overflow: hidden">
   <nav id="drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
+    <div class="c-drawer__inner">
+      <ul class="c-drawer__menu">
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem">
+              <a href="#">submenu</a>
+              <div class="c-drawer__toggle" aria-expanded="false">
+                <span class="c-ic-angle-right" aria-hidden="true"></span>
+              </div>
+              <ul class="c-drawer__submenu" aria-hidden="true">
+                <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn-inverse">
     <div class="c-drawer__inner">
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -11112,6 +11247,15 @@ new BasisDrawer({
     <div class="c-hamburger-btn__bar"></div>
   </div>
   <div class="c-hamburger-btn__label">MENU</div>
+</div>
+
+<div id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer-inverse">
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU (Inverse)</div>
 </div>
 ```
 */
@@ -13012,8 +13156,45 @@ Drawer component
 
 ### html
 ```html
-<div style="min-height: 200px; position: relative">
+<div style="min-height: 200px; position: relative; overflow: hidden">
   <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
+    <div class="c-drawer__inner">
+      <ul class="c-drawer__menu">
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem">
+              <a href="#">submenu</a>
+              <div class="c-drawer__toggle" aria-expanded="false">
+                <span class="c-ic-angle-right" aria-hidden="true"></span>
+              </div>
+              <ul class="c-drawer__submenu" aria-hidden="true">
+                <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="my-drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn-inverse">
     <div class="c-drawer__inner">
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -13059,22 +13240,37 @@ Drawer component
   </div>
   <div class="c-hamburger-btn__label">MENU</div>
 </div>
+
+<div id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer-inverse">
+  <div class="c-hamburger-btn__bars">
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+    <div class="c-hamburger-btn__bar"></div>
+  </div>
+  <div class="c-hamburger-btn__label">MENU (Inverse)</div>
+</div>
 ```
 */
 .c-drawer {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -100%;
   z-index: 10;
+  left: -100%;
   width: 15rem;
   max-width: 80%;
   visibility: hidden;
-  transition: left 0.2s ease-out, visibility 0.2s ease-out;
+  transition: left 0.2s ease-out, right 0.2s ease-out, visibility 0.2s ease-out;
   transition-timing-function: ease-in; }
   .c-drawer[aria-hidden="false"] {
     visibility: visible;
     left: 0; }
+  .c-drawer--inverse {
+    left: auto;
+    right: -100%; }
+    .c-drawer--inverse[aria-hidden="false"] {
+      left: auto;
+      right: 0; }
   .c-drawer__inner {
     height: 100%;
     overflow-y: auto; }
@@ -13090,7 +13286,7 @@ Drawer component
   .c-drawer__toggle {
     cursor: pointer; }
   .c-drawer[aria-hidden="false"] {
-    transition: left 0.2s ease-out;
+    transition: left 0.2s ease-out, right 0.2s ease-out;
     transition-timing-function: ease-out; }
   .c-drawer__menu {
     list-style: none;
