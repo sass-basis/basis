@@ -1,5 +1,8 @@
 #Changelog
 
+## November 13, 2020 12.1.1
+* When clicked on an anchor link in the same page, the fade-out loading screen appears and does not disappear.
+
 ## October 16, 2020 12.1.0
 * Add `.c-drawer--inverse`.
 
