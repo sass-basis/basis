@@ -43,6 +43,14 @@ export default class BasisPageEffect {
               return;
             }
 
+            if (link.hash) {
+              const _location = window.location.pathname + window.location.search;
+              const _link = link.pathname + link.search;
+              if (_location === _link) {
+                return;
+              }
+            }
+
             event.preventDefault();
             fadeOutPage();
             moveLocation(link.getAttribute('href'));
