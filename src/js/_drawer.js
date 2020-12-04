@@ -130,7 +130,7 @@ export default class BasisDrawer {
 
     lastActiveElement = document.activeElement;
 
-    const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+    const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [tabindex="-1"], [contenteditable]';
     const focusableItem = drawer.querySelector(focusableSelector);
 
     if (null !== focusableItem) {

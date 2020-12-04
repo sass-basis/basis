@@ -12,6 +12,7 @@ Drawer component
 <div style="min-height: 200px; position: relative; overflow: hidden">
   <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
     <div class="c-drawer__inner">
+      <div class="c-drawer__focus-point" tabindex="-1"></div>
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -115,6 +116,12 @@ Drawer component
   &[aria-hidden="false"] {
     @include _transition(left, right);
     transition-timing-function: ease-out;
+  }
+
+  &__focus-point {
+    height: 0px !important;
+    width: 0px !important;
+    opacity: 0 !important;
   }
 
   &__menu {
