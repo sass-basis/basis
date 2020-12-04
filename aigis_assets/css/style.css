@@ -4608,6 +4608,7 @@ Drawer component
 <div style="min-height: 200px; position: relative; overflow: hidden">
   <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
     <div class="c-drawer__inner">
+      <div class="c-drawer__focus-point" tabindex="-1"></div>
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -4737,6 +4738,10 @@ Drawer component
   .c-drawer[aria-hidden="false"] {
     transition: left 0.2s ease-out, right 0.2s ease-out;
     transition-timing-function: ease-out; }
+  .c-drawer__focus-point {
+    height: 0px !important;
+    width: 0px !important;
+    opacity: 0 !important; }
   .c-drawer__menu {
     list-style: none;
     margin-left: 0;
@@ -13159,6 +13164,7 @@ Drawer component
 <div style="min-height: 200px; position: relative; overflow: hidden">
   <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
     <div class="c-drawer__inner">
+      <div class="c-drawer__focus-point" tabindex="-1"></div>
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -13288,6 +13294,10 @@ Drawer component
   .c-drawer[aria-hidden="false"] {
     transition: left 0.2s ease-out, right 0.2s ease-out;
     transition-timing-function: ease-out; }
+  .c-drawer__focus-point {
+    height: 0px !important;
+    width: 0px !important;
+    opacity: 0 !important; }
   .c-drawer__menu {
     list-style: none;
     margin-left: 0;
