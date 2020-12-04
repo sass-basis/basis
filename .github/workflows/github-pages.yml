@@ -1,11 +1,11 @@
-name: CI
+name: GitHub Pages
 on:
   push:
     branches: master
 
 jobs:
   test:
-    name: Test
+    name: GitHub Pages
 
     runs-on: ubuntu-latest
 

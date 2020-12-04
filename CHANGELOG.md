@@ -1,5 +1,8 @@
 #Changelog
 
+## December 4, 2020 12.2.0
+* Add `.c-drawer__focus-point`
+
 ## November 13, 2020 12.1.1
 * When clicked on an anchor link in the same page, the fade-out loading screen appears and does not disappear.
 
