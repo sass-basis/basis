@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v12.2.0
+ * Name: Basis v12.2.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -4078,6 +4078,52 @@ img {
   max-width: 100%;
   vertical-align: middle; }
 
+pre {
+  background-color: #f7f7f7;
+  background-color: var(--_lightest-color-gray, #f7f7f7);
+  border: 1px solid transparent;
+  border-color: #eeeeee;
+  border-color: var(--_lighter-color-gray, #eeeeee);
+  border-radius: 3px;
+  border-radius: var(--_border-radius, 3px);
+  padding: 1rem;
+  overflow: auto; }
+  pre code {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 100%;
+    padding: 0; }
+
+code {
+  background-color: #eeeeee;
+  background-color: var(--_lighter-color-gray, #eeeeee);
+  border-radius: 3px;
+  border-radius: var(--_border-radius, 3px);
+  padding: 2px 6px; }
+
+label {
+  cursor: pointer; }
+
+/*
+---
+name: Headings
+category:
+  - foundation/typography
+  - foundation/typography/headings
+---
+Headings
+
+### html
+```html
+<h1>h1</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
+```
+*/
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold; }
 
@@ -4111,6 +4157,40 @@ h6 {
   font-size: 1rem;
   line-height: 1.5; }
 
+/*
+---
+name: Lists
+category:
+  - foundation/typography
+  - foundation/typography/lists
+---
+Lists
+
+### html
+```html
+<h3>ul</h3>
+<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>consectetur adipisicing elit</li>
+  <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+</ul>
+
+<h3>ol</h3>
+<ol>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>consectetur adipisicing elit</li>
+  <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+</ol>
+
+<h3>dl</h3>
+<dl>
+  <dt>Lorem ipsum dolor sit amet</dt>
+  <dd>consectetur adipisicing elit</dd>
+  <dt>Lorem ipsum dolor sit amet</dt>
+  <dd>consectetur adipisicing elit</dd>
+</dl>
+```
+*/
 ul, ol {
   margin-left: 1.5em; }
 
@@ -4120,45 +4200,81 @@ dt {
 dd {
   margin-left: 0; }
 
+/*
+---
+name: Blockquotes
+category:
+  - foundation/typography
+  - foundation/typography/blockquotes
+---
+Blockquotes
+
+### html
+```html
+<blockquote>
+  <h3>Blockquotes</h3>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+  </p>
+  <ul>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>consectetur adipisicing elit</li>
+    <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+  </ul>
+</blockquote>
+```
+*/
 blockquote {
   border-left: 0.5rem solid transparent;
   border-left-color: #eeeeee;
   border-left-color: var(--_lighter-color-gray, #eeeeee);
   margin-left: 0;
   padding: 1rem 0 1rem 1rem; }
+  blockquote > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    margin-top: 1.5rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > h1 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  blockquote > h2 {
+    margin-top: 3rem;
+    margin-top: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1));
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  blockquote > h3 {
+    margin-top: 2.25rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1.5 * var(--_margin-scale, 1));
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  blockquote > h4 {
+    margin-top: 1.875rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1.25 * var(--_margin-scale, 1));
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  blockquote > h5 {
+    margin-top: 1.5rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+    margin-bottom: 0.75rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
+  blockquote > h6 {
+    margin-top: 1.5rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+    margin-bottom: 0.75rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
+  blockquote > ol ol,
+  blockquote > ol ul,
+  blockquote > ul ol,
+  blockquote > ul ul {
+    margin-bottom: 0; }
   blockquote :last-child {
     margin-bottom: 0; }
   blockquote footer {
     color: #444444;
     color: var(--_darker-color-gray, #444444);
     font-size: 90%; }
-
-code {
-  background-color: #eeeeee;
-  background-color: var(--_lighter-color-gray, #eeeeee);
-  border-radius: 3px;
-  border-radius: var(--_border-radius, 3px);
-  padding: 2px 6px; }
-
-pre {
-  background-color: #f7f7f7;
-  background-color: var(--_lightest-color-gray, #f7f7f7);
-  border: 1px solid transparent;
-  border-color: #eeeeee;
-  border-color: var(--_lighter-color-gray, #eeeeee);
-  border-radius: 3px;
-  border-radius: var(--_border-radius, 3px);
-  padding: 1rem;
-  overflow: auto; }
-  pre code {
-    background-color: transparent;
-    border: none;
-    color: #333;
-    font-size: 100%;
-    padding: 0; }
-
-label {
-  cursor: pointer; }
 
 /*
 ---
@@ -8558,7 +8674,7 @@ Invisible utility
     display: none !important; } }
 
 /*!
- * Name: Basis v12.2.0
+ * Name: Basis v12.2.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -12634,6 +12750,52 @@ img {
   max-width: 100%;
   vertical-align: middle; }
 
+pre {
+  background-color: #f7f7f7;
+  background-color: var(--_lightest-color-gray, #f7f7f7);
+  border: 1px solid transparent;
+  border-color: #eeeeee;
+  border-color: var(--_lighter-color-gray, #eeeeee);
+  border-radius: 3px;
+  border-radius: var(--_border-radius, 3px);
+  padding: 1rem;
+  overflow: auto; }
+  pre code {
+    background-color: transparent;
+    border: none;
+    color: #444;
+    font-size: 100%;
+    padding: 0; }
+
+code {
+  background-color: #eeeeee;
+  background-color: var(--_lighter-color-gray, #eeeeee);
+  border-radius: 3px;
+  border-radius: var(--_border-radius, 3px);
+  padding: 2px 6px; }
+
+label {
+  cursor: pointer; }
+
+/*
+---
+name: Headings
+category:
+  - foundation/typography
+  - foundation/typography/headings
+---
+Headings
+
+### html
+```html
+<h1>h1</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
+```
+*/
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold; }
 
@@ -12667,6 +12829,40 @@ h6 {
   font-size: 1rem;
   line-height: 1.66667; }
 
+/*
+---
+name: Lists
+category:
+  - foundation/typography
+  - foundation/typography/lists
+---
+Lists
+
+### html
+```html
+<h3>ul</h3>
+<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>consectetur adipisicing elit</li>
+  <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+</ul>
+
+<h3>ol</h3>
+<ol>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>consectetur adipisicing elit</li>
+  <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+</ol>
+
+<h3>dl</h3>
+<dl>
+  <dt>Lorem ipsum dolor sit amet</dt>
+  <dd>consectetur adipisicing elit</dd>
+  <dt>Lorem ipsum dolor sit amet</dt>
+  <dd>consectetur adipisicing elit</dd>
+</dl>
+```
+*/
 ul, ol {
   margin-left: 1.5em; }
 
@@ -12676,45 +12872,81 @@ dt {
 dd {
   margin-left: 0; }
 
+/*
+---
+name: Blockquotes
+category:
+  - foundation/typography
+  - foundation/typography/blockquotes
+---
+Blockquotes
+
+### html
+```html
+<blockquote>
+  <h3>Blockquotes</h3>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+  </p>
+  <ul>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>consectetur adipisicing elit</li>
+    <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+  </ul>
+</blockquote>
+```
+*/
 blockquote {
   border-left: 0.5rem solid transparent;
   border-left-color: #eeeeee;
   border-left-color: var(--_lighter-color-gray, #eeeeee);
   margin-left: 0;
   padding: 1rem 0 1rem 1rem; }
+  blockquote > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    margin-top: 1.5rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > h1 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  blockquote > h2 {
+    margin-top: 3rem;
+    margin-top: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1));
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  blockquote > h3 {
+    margin-top: 2.25rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1.5 * var(--_margin-scale, 1));
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  blockquote > h4 {
+    margin-top: 1.875rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1.25 * var(--_margin-scale, 1));
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  blockquote > h5 {
+    margin-top: 1.5rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+    margin-bottom: 0.75rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
+  blockquote > h6 {
+    margin-top: 1.5rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+    margin-bottom: 0.75rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
+  blockquote > ol ol,
+  blockquote > ol ul,
+  blockquote > ul ol,
+  blockquote > ul ul {
+    margin-bottom: 0; }
   blockquote :last-child {
     margin-bottom: 0; }
   blockquote footer {
     color: #444444;
     color: var(--_darker-color-gray, #444444);
     font-size: 90%; }
-
-code {
-  background-color: #eeeeee;
-  background-color: var(--_lighter-color-gray, #eeeeee);
-  border-radius: 3px;
-  border-radius: var(--_border-radius, 3px);
-  padding: 2px 6px; }
-
-pre {
-  background-color: #f7f7f7;
-  background-color: var(--_lightest-color-gray, #f7f7f7);
-  border: 1px solid transparent;
-  border-color: #eeeeee;
-  border-color: var(--_lighter-color-gray, #eeeeee);
-  border-radius: 3px;
-  border-radius: var(--_border-radius, 3px);
-  padding: 1rem;
-  overflow: auto; }
-  pre code {
-    background-color: transparent;
-    border: none;
-    color: #444;
-    font-size: 100%;
-    padding: 0; }
-
-label {
-  cursor: pointer; }
 
 /*
 ---
@@ -17605,3 +17837,42 @@ pre {
 
 .aigis-preview {
   min-height: 150px; }
+  .aigis-preview > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    margin-top: 1.5rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  .aigis-preview > :first-child {
+    margin-top: 0; }
+  .aigis-preview > h1 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  .aigis-preview > h2 {
+    margin-top: 3rem;
+    margin-top: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1));
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  .aigis-preview > h3 {
+    margin-top: 2.25rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1.5 * var(--_margin-scale, 1));
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  .aigis-preview > h4 {
+    margin-top: 1.875rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1.25 * var(--_margin-scale, 1));
+    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
+  .aigis-preview > h5 {
+    margin-top: 1.5rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+    margin-bottom: 0.75rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
+  .aigis-preview > h6 {
+    margin-top: 1.5rem;
+    margin-top: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+    margin-bottom: 0.75rem;
+    margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
+  .aigis-preview > ol ol,
+  .aigis-preview > ol ul,
+  .aigis-preview > ul ol,
+  .aigis-preview > ul ul {
+    margin-bottom: 0; }
