@@ -1,5 +1,9 @@
 #Changelog
 
+## February 18, 2021 12.2.1
+* Add margins to elements in blockquote.
+* Add typography page.
+
 ## December 4, 2020 12.2.0
 * Add `.c-drawer__focus-point`
 
