@@ -1,0 +1,98 @@
+<%- include('_layout/_head', { 'title': 'Basis Styleguide' }) %>
+<body class="l-body" data-sticky-footer="true">
+<%- include('_parts/_ga') %>
+<%- include('_object/_component/_page-effect') %>
+
+<%- include('_object/_project/_drawer') %>
+
+<div id="container" class="l-container" data-l="container">
+  <%- include('_layout/_header') %>
+
+  <div id="contents" class="l-contents" data-l="contents">
+    <%- include('_object/_component/_page-header', { 'title': 'Typography' }) %>
+
+    <div class="c-container">
+      <div class="c-row c-row--margin-l">
+        <div class="c-row__col c-row__col--1-1 c-row__col--lg-3-4">
+          <main id="main" class="l-main" role="main">
+
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title">Headings</h2>
+              </header>
+              <div class="c-entry__content">
+                <h1>h1</h1>
+                <h2>h2</h2>
+                <h3>h3</h3>
+                <h4>h4</h4>
+                <h5>h5</h5>
+                <h6>h6</h6>
+              </div>
+            </article>
+
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title">Blockquotes</h2>
+              </header>
+              <div class="c-entry__content">
+                <blockquote>
+                  <h3>Blockquotes</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+                  </p>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>consectetur adipisicing elit</li>
+                    <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+                  </ul>
+                </blockquote>
+              </div>
+            </article>
+
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title">Lists</h2>
+              </header>
+              <div class="c-entry__content">
+                <h3>ul</h3>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet</li>
+                  <li>consectetur adipisicing elit</li>
+                  <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+                </ul>
+
+                <h3>ol</h3>
+                <ol>
+                  <li>Lorem ipsum dolor sit amet</li>
+                  <li>consectetur adipisicing elit</li>
+                  <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+                </ol>
+
+                <h3>dl</h3>
+                <dl>
+                  <dt>Lorem ipsum dolor sit amet</dt>
+                  <dd>consectetur adipisicing elit</dd>
+                  <dt>Lorem ipsum dolor sit amet</dt>
+                  <dd>consectetur adipisicing elit</dd>
+                </dl>
+              </div>
+            </article>
+
+          </main>
+        </div>
+        <div class="c-row__col c-row__col--1-1 c-row__col--lg-1-4 u-hidden u-visible-lg-up">
+          <aside id="sub" class="l-sub" role="complementary">
+            <nav class="p-local-nav">
+              <%- include('sidemenu') %>
+            </nav>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('_layout/_footer') %>
+</div>
+<%- include('_layout/_foot') %>
+</body>
+</html>

@@ -42,5 +42,6 @@ $_prefix: '';
 @import 'object/project/table-of-contents';
 
 .aigis-preview {
+  @include _content();
   min-height: 150px;
 }

@@ -51,6 +51,42 @@ img {
   vertical-align: middle;
 }
 
+pre {
+  @include _pre();
+}
+
+code {
+  background-color: _lighter($_color-gray); // For IE11
+  background-color: _var-lighter-color-gray();
+  border-radius: $_border-radius; // for IE11
+  border-radius: _var-border-radius();
+  padding: 2px 6px;
+}
+
+label {
+  cursor: pointer;
+}
+
+/*
+---
+name: Headings
+category:
+  - foundation/typography
+  - foundation/typography/headings
+---
+Headings
+
+### html
+```html
+<h1>h1</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
+```
+*/
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
@@ -79,6 +115,41 @@ h6 {
   @include _font-size-line-height($_base-font-size * $_h6-font-size-scale);
 }
 
+/*
+---
+name: Lists
+category:
+  - foundation/typography
+  - foundation/typography/lists
+---
+Lists
+
+### html
+```html
+<h3>ul</h3>
+<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>consectetur adipisicing elit</li>
+  <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+</ul>
+
+<h3>ol</h3>
+<ol>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>consectetur adipisicing elit</li>
+  <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+</ol>
+
+<h3>dl</h3>
+<dl>
+  <dt>Lorem ipsum dolor sit amet</dt>
+  <dd>consectetur adipisicing elit</dd>
+  <dt>Lorem ipsum dolor sit amet</dt>
+  <dd>consectetur adipisicing elit</dd>
+</dl>
+```
+*/
+
 ul, ol {
   margin-left: 1.5em;
 }
@@ -90,7 +161,34 @@ dd {
   margin-left: 0;
 }
 
+/*
+---
+name: Blockquotes
+category:
+  - foundation/typography
+  - foundation/typography/blockquotes
+---
+Blockquotes
+
+### html
+```html
+<blockquote>
+  <h3>Blockquotes</h3>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+  </p>
+  <ul>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>consectetur adipisicing elit</li>
+    <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+  </ul>
+</blockquote>
+```
+*/
+
 blockquote {
+  @include _content();
+
   border-left: ($_base-font-size / 2) solid transparent;
   border-left-color: _lighter($_color-gray); // For IE11
   border-left-color: _var-lighter-color-gray();
@@ -106,20 +204,4 @@ blockquote {
     color: _var-darker-color-gray();
     font-size: 90%;
   }
-}
-
-code {
-  background-color: _lighter($_color-gray); // For IE11
-  background-color: _var-lighter-color-gray();
-  border-radius: $_border-radius; // for IE11
-  border-radius: _var-border-radius();
-  padding: 2px 6px;
-}
-
-pre {
-  @include _pre();
-}
-
-label {
-  cursor: pointer;
 }
