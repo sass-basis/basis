@@ -1,5 +1,8 @@
 #Changelog
 
+## March 5, 2021 12.2.2
+* Fix page header layout broken bug for IE11.
+
 ## February 18, 2021 12.2.1
 * Add margins to elements in blockquote.
 * Add typography page.
