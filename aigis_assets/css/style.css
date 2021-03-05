@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v12.2.1
+ * Name: Basis v12.2.2
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -6019,7 +6019,8 @@ Page header component
 ```
 */
 .c-page-header__title {
-  margin: 0; }
+  margin: 0;
+  max-width: 100%; }
 
 /*
 ---
@@ -8674,7 +8675,7 @@ Invisible utility
     display: none !important; } }
 
 /*!
- * Name: Basis v12.2.1
+ * Name: Basis v12.2.2
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -14691,7 +14692,8 @@ Page header component
 ```
 */
 .c-page-header__title {
-  margin: 0; }
+  margin: 0;
+  max-width: 100%; }
 
 /*
 ---
