@@ -29,5 +29,6 @@ Abstract page header component
 @mixin _page-header() {
   &__title {
     margin: 0;
+    max-width: 100%; // For IE11
   }
 }
