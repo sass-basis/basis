@@ -11,17 +11,24 @@ Sets margin-top
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _margin-top(1);
 @include _margin-top(10px);
+@include _margin-top(1, false);
 ```
 */
 
-@mixin _margin-top($coefficient) {
+@mixin _margin-top($coefficient, $apply-margin-scale: true) {
   @if _is-number($coefficient) and 0 != $coefficient {
     margin-top: _space($coefficient);
-    margin-top: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+
+    @if $apply-margin-scale {
+      margin-top: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    } @else {
+      margin-top: calc(#{ _var-space() } * #{ $coefficient });
+    }
   } @else {
     margin-top: $coefficient;
   }
@@ -40,17 +47,24 @@ Sets margin-right
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _margin-right(1);
 @include _margin-right(10px);
+@include _margin-right(1, false);
 ```
 */
 
-@mixin _margin-right($coefficient) {
+@mixin _margin-right($coefficient, $apply-margin-scale: true) {
   @if _is-number($coefficient) and 0 != $coefficient {
     margin-right: _space($coefficient);
-    margin-right: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+
+    @if $apply-margin-scale {
+      margin-right: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    } @else {
+      margin-right: calc(#{ _var-space() } * #{ $coefficient });
+    }
   } @else {
     margin-right: $coefficient;
   }
@@ -69,17 +83,24 @@ Sets margin-bottom
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _margin-bottom(1);
 @include _margin-bottom(10px);
+@include _margin-bottom(1, false);
 ```
 */
 
-@mixin _margin-bottom($coefficient) {
+@mixin _margin-bottom($coefficient, $apply-margin-scale: true) {
   @if _is-number($coefficient) and 0 != $coefficient {
     margin-bottom: _space($coefficient);
-    margin-bottom: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+
+    @if $apply-margin-scale {
+      margin-bottom: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    } @else {
+      margin-bottom: calc(#{ _var-space() } * #{ $coefficient });
+    }
   } @else {
     margin-bottom: $coefficient;
   }
@@ -98,17 +119,24 @@ Sets margin-left
 ```scss
 //
 // @param  int  $coefficient
+// @param  boolean  $apply-margin-scale
 //
 
 @include _margin-left(1);
 @include _margin-left(10px);
+@include _margin-left(1, false);
 ```
 */
 
-@mixin _margin-left($coefficient) {
+@mixin _margin-left($coefficient, $apply-margin-scale: true) {
   @if _is-number($coefficient) and 0 != $coefficient {
     margin-left: _space($coefficient);
-    margin-left: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+
+    @if $apply-margin-scale {
+      margin-left: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    } @else {
+      margin-left: calc(#{ _var-space() } * #{ $coefficient });
+    }
   } @else {
     margin-left: $coefficient;
   }
@@ -130,6 +158,7 @@ Sets margin
 // @param  int  $coefficient-2
 // @param  int  $coefficient-3
 // @param  int  $coefficient-4
+// @param  boolean  $apply-margin-scale
 //
 
 @include _margin(1);
@@ -137,29 +166,30 @@ Sets margin
 @include _margin(1, 2, .5);
 @include _margin(1, 2, .5, 2);
 @include _margin(10px);
+@include _margin(1, null, null, null, false);
 ```
 */
 
-@mixin _margin($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null) {
+@mixin _margin($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null, $apply-margin-scale: false) {
   @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
-    @include _margin-top($coefficient-1);
-    @include _margin-right($coefficient-1);
-    @include _margin-bottom($coefficient-1);
-    @include _margin-left($coefficient-1);
+    @include _margin-top($coefficient-1, $apply-margin-scale);
+    @include _margin-right($coefficient-1, $apply-margin-scale);
+    @include _margin-bottom($coefficient-1, $apply-margin-scale);
+    @include _margin-left($coefficient-1, $apply-margin-scale);
   } @else if (_is-null($coefficient-3) and _is-null($coefficient-4)) {
-    @include _margin-top($coefficient-1);
-    @include _margin-right($coefficient-2);
-    @include _margin-bottom($coefficient-1);
-    @include _margin-left($coefficient-2);
+    @include _margin-top($coefficient-1, $apply-margin-scale);
+    @include _margin-right($coefficient-2, $apply-margin-scale);
+    @include _margin-bottom($coefficient-1, $apply-margin-scale);
+    @include _margin-left($coefficient-2, $apply-margin-scale);
   } @else if (_is-null($coefficient-4)) {
-    @include _margin-top($coefficient-1);
-    @include _margin-right($coefficient-2);
-    @include _margin-bottom($coefficient-3);
-    @include _margin-left($coefficient-2);
+    @include _margin-top($coefficient-1, $apply-margin-scale);
+    @include _margin-right($coefficient-2, $apply-margin-scale);
+    @include _margin-bottom($coefficient-3, $apply-margin-scale);
+    @include _margin-left($coefficient-2, $apply-margin-scale);
   } @else {
-    @include _margin-top($coefficient-1);
-    @include _margin-right($coefficient-2);
-    @include _margin-bottom($coefficient-3);
-    @include _margin-left($coefficient-4);
+    @include _margin-top($coefficient-1, $apply-margin-scale);
+    @include _margin-right($coefficient-2, $apply-margin-scale);
+    @include _margin-bottom($coefficient-3, $apply-margin-scale);
+    @include _margin-left($coefficient-4, $apply-margin-scale);
   }
 }

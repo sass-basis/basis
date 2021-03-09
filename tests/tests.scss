@@ -89,7 +89,6 @@
   @include _assert-equals(4.5rem, _space(3));
   @include _assert-equals(0, _space(0));
   @include _assert-equals(-1.5rem, _space(-1));
-  @include _assert-equals(calc(50% - 10px), _space(calc(50% - 10px)));
 }
 
 @include _test('[function] _is-null()') {
