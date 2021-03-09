@@ -1,5 +1,13 @@
 #Changelog
 
+## March 9, 2021 12.3.0
+* Add `$apply-margin-scale` arg to `_margin-top()`
+* Add `$apply-margin-scale` arg to `_margin-right()`
+* Add `$apply-margin-scale` arg to `_margin-bottom()`
+* Add `$apply-margin-scale` arg to `_margin-left()`
+* Add `$apply-margin-scale` arg to `_margin()`
+* Add `$apply-margin-scale` arg to `_padding()`
+
 ## March 5, 2021 12.2.2
 * Fix page header layout broken bug for IE11.
 

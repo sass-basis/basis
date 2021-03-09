@@ -1,6 +1,6 @@
 {
   "name": "sass-basis",
-  "version": "12.2.2",
+  "version": "12.3.0",
   "main": "src/css/basis.scss",
   "author": "inc2734",
   "contributors": [
@@ -32,10 +32,10 @@
     "README.md"
   ],
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@babel/preset-env": "^7.13.9",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
     "@wordpress/browserslist-config": "^3.0.1",
-    "autoprefixer": "^10.2.4",
+    "autoprefixer": "^10.2.5",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
     "cpy-cli": "^3.1.1",
@@ -47,7 +47,7 @@
     "postcss": "^8.2.7",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.0",
-    "webpack": "^5.24.3",
+    "webpack": "^5.24.4",
     "webpack-cli": "^4.5.0"
   },
   "scripts": {
