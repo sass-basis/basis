@@ -1,5 +1,8 @@
 #Changelog
 
+## March 9, 2021 12.3.1
+* Some fixes
+
 ## March 9, 2021 12.3.0
 * Add `$apply-margin-scale` arg to `_margin-top()`
 * Add `$apply-margin-scale` arg to `_margin-right()`
