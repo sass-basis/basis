@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v12.3.0
+ * Name: Basis v12.3.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -6543,44 +6543,44 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
   .c-row--margin {
     margin-right: -0.75rem;
-    margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+    margin-right: calc(var(--_space, 1.5rem) * -0.5);
     margin-left: -0.75rem;
-    margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+    margin-left: calc(var(--_space, 1.5rem) * -0.5);
     margin-bottom: -1.5rem;
     margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
     .c-row--margin > .c-row__col {
       padding-right: 0.75rem;
-      padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+      padding-right: calc(var(--_space, 1.5rem) * 0.5);
       padding-left: 0.75rem;
-      padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+      padding-left: calc(var(--_space, 1.5rem) * 0.5);
       margin-bottom: 1.5rem;
       margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
     .c-row--margin-s {
       margin-right: -0.375rem;
-      margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.25);
       margin-left: -0.375rem;
-      margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.25);
       margin-bottom: -0.75rem;
       margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
       .c-row--margin-s > .c-row__col {
         padding-right: 0.375rem;
-        padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+        padding-right: calc(var(--_space, 1.5rem) * 0.25);
         padding-left: 0.375rem;
-        padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+        padding-left: calc(var(--_space, 1.5rem) * 0.25);
         margin-bottom: 0.75rem;
         margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
     .c-row--margin-l {
       margin-right: -1.5rem;
-      margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -1);
       margin-left: -1.5rem;
-      margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -1);
       margin-bottom: -3rem;
       margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
       .c-row--margin-l > .c-row__col {
         padding-right: 1.5rem;
-        padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+        padding-right: calc(var(--_space, 1.5rem) * 1);
         padding-left: 1.5rem;
-        padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+        padding-left: calc(var(--_space, 1.5rem) * 1);
         margin-bottom: 3rem;
         margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
   .c-row--fill > .c-row__col {
@@ -6619,44 +6619,44 @@ Row component of flexbox based grid system
         margin-bottom: 0; }
     .c-row--md-margin {
       margin-right: -0.75rem;
-      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5);
       margin-left: -0.75rem;
-      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5);
       margin-bottom: -1.5rem;
       margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--md-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5);
         padding-left: 0.75rem;
-        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5);
         margin-bottom: 1.5rem;
         margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--md-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25);
         margin-left: -0.375rem;
-        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25);
         margin-bottom: -0.75rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--md-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25);
           padding-left: 0.375rem;
-          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25);
           margin-bottom: 0.75rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--md-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1);
         margin-left: -1.5rem;
-        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1);
         margin-bottom: -3rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--md-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 1);
           padding-left: 1.5rem;
-          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 1);
           margin-bottom: 3rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--md-fill > .c-row__col {
@@ -6695,44 +6695,44 @@ Row component of flexbox based grid system
         margin-bottom: 0; }
     .c-row--lg-margin {
       margin-right: -0.75rem;
-      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5);
       margin-left: -0.75rem;
-      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5);
       margin-bottom: -1.5rem;
       margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--lg-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5);
         padding-left: 0.75rem;
-        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5);
         margin-bottom: 1.5rem;
         margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--lg-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25);
         margin-left: -0.375rem;
-        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25);
         margin-bottom: -0.75rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--lg-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25);
           padding-left: 0.375rem;
-          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25);
           margin-bottom: 0.75rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--lg-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1);
         margin-left: -1.5rem;
-        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1);
         margin-bottom: -3rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--lg-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 1);
           padding-left: 1.5rem;
-          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 1);
           margin-bottom: 3rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--lg-fill > .c-row__col {
@@ -6771,44 +6771,44 @@ Row component of flexbox based grid system
         margin-bottom: 0; }
     .c-row--xl-margin {
       margin-right: -0.75rem;
-      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5);
       margin-left: -0.75rem;
-      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5);
       margin-bottom: -1.5rem;
       margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--xl-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5);
         padding-left: 0.75rem;
-        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5);
         margin-bottom: 1.5rem;
         margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--xl-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25);
         margin-left: -0.375rem;
-        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25);
         margin-bottom: -0.75rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--xl-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25);
           padding-left: 0.375rem;
-          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25);
           margin-bottom: 0.75rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--xl-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1);
         margin-left: -1.5rem;
-        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1);
         margin-bottom: -3rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--xl-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 1);
           padding-left: 1.5rem;
-          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 1);
           margin-bottom: 3rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--xl-fill > .c-row__col {
@@ -8691,7 +8691,7 @@ Invisible utility
     display: none !important; } }
 
 /*!
- * Name: Basis v12.3.0
+ * Name: Basis v12.3.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -15232,44 +15232,44 @@ Row component of flexbox based grid system
       margin-bottom: 0; }
   .c-row--margin {
     margin-right: -0.75rem;
-    margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+    margin-right: calc(var(--_space, 1.5rem) * -0.5);
     margin-left: -0.75rem;
-    margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+    margin-left: calc(var(--_space, 1.5rem) * -0.5);
     margin-bottom: -1.5rem;
     margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
     .c-row--margin > .c-row__col {
       padding-right: 0.75rem;
-      padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+      padding-right: calc(var(--_space, 1.5rem) * 0.5);
       padding-left: 0.75rem;
-      padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+      padding-left: calc(var(--_space, 1.5rem) * 0.5);
       margin-bottom: 1.5rem;
       margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
     .c-row--margin-s {
       margin-right: -0.375rem;
-      margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.25);
       margin-left: -0.375rem;
-      margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.25);
       margin-bottom: -0.75rem;
       margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
       .c-row--margin-s > .c-row__col {
         padding-right: 0.375rem;
-        padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+        padding-right: calc(var(--_space, 1.5rem) * 0.25);
         padding-left: 0.375rem;
-        padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+        padding-left: calc(var(--_space, 1.5rem) * 0.25);
         margin-bottom: 0.75rem;
         margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
     .c-row--margin-l {
       margin-right: -1.5rem;
-      margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -1);
       margin-left: -1.5rem;
-      margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -1);
       margin-bottom: -3rem;
       margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
       .c-row--margin-l > .c-row__col {
         padding-right: 1.5rem;
-        padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+        padding-right: calc(var(--_space, 1.5rem) * 1);
         padding-left: 1.5rem;
-        padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+        padding-left: calc(var(--_space, 1.5rem) * 1);
         margin-bottom: 3rem;
         margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
   .c-row--fill > .c-row__col {
@@ -15308,44 +15308,44 @@ Row component of flexbox based grid system
         margin-bottom: 0; }
     .c-row--md-margin {
       margin-right: -0.75rem;
-      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5);
       margin-left: -0.75rem;
-      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5);
       margin-bottom: -1.5rem;
       margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--md-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5);
         padding-left: 0.75rem;
-        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5);
         margin-bottom: 1.5rem;
         margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--md-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25);
         margin-left: -0.375rem;
-        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25);
         margin-bottom: -0.75rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--md-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25);
           padding-left: 0.375rem;
-          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25);
           margin-bottom: 0.75rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--md-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1);
         margin-left: -1.5rem;
-        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1);
         margin-bottom: -3rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--md-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 1);
           padding-left: 1.5rem;
-          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 1);
           margin-bottom: 3rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--md-fill > .c-row__col {
@@ -15384,44 +15384,44 @@ Row component of flexbox based grid system
         margin-bottom: 0; }
     .c-row--lg-margin {
       margin-right: -0.75rem;
-      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5);
       margin-left: -0.75rem;
-      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5);
       margin-bottom: -1.5rem;
       margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--lg-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5);
         padding-left: 0.75rem;
-        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5);
         margin-bottom: 1.5rem;
         margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--lg-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25);
         margin-left: -0.375rem;
-        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25);
         margin-bottom: -0.75rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--lg-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25);
           padding-left: 0.375rem;
-          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25);
           margin-bottom: 0.75rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--lg-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1);
         margin-left: -1.5rem;
-        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1);
         margin-bottom: -3rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--lg-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 1);
           padding-left: 1.5rem;
-          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 1);
           margin-bottom: 3rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--lg-fill > .c-row__col {
@@ -15460,44 +15460,44 @@ Row component of flexbox based grid system
         margin-bottom: 0; }
     .c-row--xl-margin {
       margin-right: -0.75rem;
-      margin-right: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-right: calc(var(--_space, 1.5rem) * -0.5);
       margin-left: -0.75rem;
-      margin-left: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1));
+      margin-left: calc(var(--_space, 1.5rem) * -0.5);
       margin-bottom: -1.5rem;
       margin-bottom: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1)); }
       .c-row--xl-margin > .c-row__col {
         padding-right: 0.75rem;
-        padding-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-right: calc(var(--_space, 1.5rem) * 0.5);
         padding-left: 0.75rem;
-        padding-left: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+        padding-left: calc(var(--_space, 1.5rem) * 0.5);
         margin-bottom: 1.5rem;
         margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
       .c-row--xl-margin-s {
         margin-right: -0.375rem;
-        margin-right: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -0.25);
         margin-left: -0.375rem;
-        margin-left: calc(var(--_space, 1.5rem) * -0.25 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -0.25);
         margin-bottom: -0.75rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -0.5 * var(--_margin-scale, 1)); }
         .c-row--xl-margin-s > .c-row__col {
           padding-right: 0.375rem;
-          padding-right: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 0.25);
           padding-left: 0.375rem;
-          padding-left: calc(var(--_space, 1.5rem) * 0.25 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 0.25);
           margin-bottom: 0.75rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1)); }
       .c-row--xl-margin-l {
         margin-right: -1.5rem;
-        margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-right: calc(var(--_space, 1.5rem) * -1);
         margin-left: -1.5rem;
-        margin-left: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
+        margin-left: calc(var(--_space, 1.5rem) * -1);
         margin-bottom: -3rem;
         margin-bottom: calc(var(--_space, 1.5rem) * -2 * var(--_margin-scale, 1)); }
         .c-row--xl-margin-l > .c-row__col {
           padding-right: 1.5rem;
-          padding-right: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-right: calc(var(--_space, 1.5rem) * 1);
           padding-left: 1.5rem;
-          padding-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
+          padding-left: calc(var(--_space, 1.5rem) * 1);
           margin-bottom: 3rem;
           margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1)); }
     .c-row--xl-fill > .c-row__col {
