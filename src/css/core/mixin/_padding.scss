@@ -24,10 +24,10 @@ Sets padding-top
   @if _is-number($coefficient) and 0 != $coefficient {
     padding-top: _space($coefficient);
 
-    @if false == $apply-margin-scale {
-      padding-top: calc(#{ _var-space() } * #{ $coefficient });
+    @if $apply-margin-scale {
+      padding-top: _space($coefficient, true, true);
     } @else {
-      padding-top: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+      padding-top: _space($coefficient, true);
     }
   } @else {
     padding-top: $coefficient;
@@ -60,10 +60,10 @@ Sets padding-right
   @if _is-number($coefficient) and 0 != $coefficient {
     padding-right: _space($coefficient);
 
-    @if false == $apply-margin-scale {
-      padding-right: calc(#{ _var-space() } * #{ $coefficient });
+    @if $apply-margin-scale {
+      padding-right: _space($coefficient, true, true);
     } @else {
-      padding-right: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+      padding-right: _space($coefficient, true);
     }
   } @else {
     padding-right: $coefficient;
@@ -96,10 +96,10 @@ Sets padding-bottom
   @if _is-number($coefficient) and 0 != $coefficient {
     padding-bottom: _space($coefficient);
 
-    @if false == $apply-margin-scale {
-      padding-bottom: calc(#{ _var-space() } * #{ $coefficient });
+    @if $apply-margin-scale {
+      padding-bottom: _space($coefficient, true, true);
     } @else {
-      padding-bottom: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+      padding-bottom: _space($coefficient, true);
     }
   } @else {
     padding-bottom: $coefficient;
@@ -132,10 +132,10 @@ Sets padding-left
   @if _is-number($coefficient) and 0 != $coefficient {
     padding-left: _space($coefficient);
 
-    @if false == $apply-margin-scale {
-      padding-left: calc(#{ _var-space() } * #{ $coefficient });
+    @if $apply-margin-scale {
+      padding-left: _space($coefficient, true, true);
     } @else {
-      padding-left: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+      padding-left: _space($coefficient, true);
     }
   } @else {
     padding-left: $coefficient;

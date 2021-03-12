@@ -25,9 +25,9 @@ Sets margin-top
     margin-top: _space($coefficient);
 
     @if $apply-margin-scale {
-      margin-top: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+      margin-top: _space($coefficient, true, true);
     } @else {
-      margin-top: calc(#{ _var-space() } * #{ $coefficient });
+      margin-top: _space($coefficient, true);
     }
   } @else {
     margin-top: $coefficient;
@@ -61,9 +61,9 @@ Sets margin-right
     margin-right: _space($coefficient);
 
     @if $apply-margin-scale {
-      margin-right: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+      margin-right: _space($coefficient, true, true);
     } @else {
-      margin-right: calc(#{ _var-space() } * #{ $coefficient });
+      margin-right: _space($coefficient, true);
     }
   } @else {
     margin-right: $coefficient;
@@ -97,9 +97,9 @@ Sets margin-bottom
     margin-bottom: _space($coefficient);
 
     @if $apply-margin-scale {
-      margin-bottom: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+      margin-bottom: _space($coefficient, true, true);
     } @else {
-      margin-bottom: calc(#{ _var-space() } * #{ $coefficient });
+      margin-bottom: _space($coefficient, true);
     }
   } @else {
     margin-bottom: $coefficient;
@@ -133,9 +133,9 @@ Sets margin-left
     margin-left: _space($coefficient);
 
     @if $apply-margin-scale {
-      margin-left: calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+      margin-left: _space($coefficient, true, true);
     } @else {
-      margin-left: calc(#{ _var-space() } * #{ $coefficient });
+      margin-left: _space($coefficient, true);
     }
   } @else {
     margin-left: $coefficient;
@@ -170,7 +170,7 @@ Sets margin
 ```
 */
 
-@mixin _margin($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null, $apply-margin-scale: false) {
+@mixin _margin($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null, $apply-margin-scale: true) {
   @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
     @include _margin-top($coefficient-1, $apply-margin-scale);
     @include _margin-right($coefficient-1, $apply-margin-scale);

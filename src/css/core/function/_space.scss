@@ -11,17 +11,27 @@ Return the margin conforming to the rhythm
 ### scss
 ```scss
 //
-// @param   number  $coefficient
+// @param   number   $coefficient
+// @param   boolean  $apply-space-scale
+// @param   boolean  $apply-margin-scale
 // @return  length
 //
 
 padding: _space(1);
+padding: _space(1, true);
+padding: _space(1, true, true);
 ```
 */
 
-@function _space($coefficient) {
+@function _space($coefficient, $apply-space-scale: false, $apply-margin-scale: false) {
   @if (0 == $coefficient) {
     @return 0;
+  }
+
+  @if $apply-space-scale and $apply-margin-scale {
+    @return calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+  } @else if $apply-space-scale {
+    @return calc(#{ _var-space() } * #{ $coefficient });
   }
 
   $margin    : $_base-line-height * $coefficient;

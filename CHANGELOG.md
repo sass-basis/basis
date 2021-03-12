@@ -1,5 +1,8 @@
 #Changelog
 
+## March 12, 2021 12.4.0
+* Add `$apply-space-scale` arg and `$apply-margin-scale` arg to `_space()`
+
 ## March 9, 2021 12.3.1
 * Some fixes
 
