@@ -1,0 +1,129 @@
+/*
+---
+name: .c-ed-row
+category:
+  - object/component
+  - object/component/grid-system
+---
+Row component of flexbox based grid system
+
+### html
+```html
+<div class="c-ed-row">
+  <div class="c-ed-row__col">
+    1
+  </div>
+  <div class="c-ed-row__col">
+    2
+  </div>
+  <div class="c-ed-row__col">
+    3
+  </div>
+</div>
+```
+```html
+<div class="c-ed-row c-ed-row--margin-s c-ed-row--md-margin c-ed-row--lg-margin-l">
+  <div class="c-ed-row__col">
+    1
+  </div>
+  <div class="c-ed-row__col">
+    2
+  </div>
+  <div class="c-ed-row__col">
+    3
+  </div>
+</div>
+```
+```html
+<div class="c-ed-row c-ed-row--columns-3">
+  <div class="c-ed-row__col">
+    1
+  </div>
+  <div class="c-ed-row__col">
+    2
+  </div>
+  <div class="c-ed-row__col">
+    3
+  </div>
+</div>
+```
+```html
+<div class="c-ed-row c-ed-row--columns-1 c-ed-row--md-columns-2 c-ed-row--lg-columns-4">
+  <div class="c-ed-row__col">
+    1
+  </div>
+  <div class="c-ed-row__col">
+    2
+  </div>
+  <div class="c-ed-row__col">
+    3
+  </div>
+  <div class="c-ed-row__col">
+    4
+  </div>
+</div>
+```
+```html
+<div class="c-ed-row c-ed-row--margin c-ed-row--columns-2">
+  <div class="c-ed-row__col">
+    1
+  </div>
+  <div class="c-ed-row__col">
+    2
+  </div>
+  <div class="c-ed-row__col">
+    3
+  </div>
+  <div class="c-ed-row__col">
+    4
+  </div>
+</div>
+```
+*/
+
+$margins: (
+  '': 1,
+);
+
+.#{ $_prefix }c-ed-row {
+  @include _ed-row();
+
+  &__col {
+    @include _ed-row__col();
+  }
+
+  @each $size, $screen-min in $_sizes {
+    @include _media-min($screen-min) {
+      $prefix: _size-prefix($size);
+
+      @for $i from $_min-ed-columns through $_max-ed-columns {
+        &#{ $prefix }-columns-#{ $i } {
+          > .#{ $_prefix }c-ed-row__col {
+            @include _ed-row__col--width(0, $i);
+          }
+        }
+      }
+
+      @each $slug, $coefficient in $margins {
+        &#{ $prefix }-margin#{ $slug } {
+          > .#{ $_prefix }c-ed-row__col {
+            @include _ed-row__col--margin($coefficient, 1);
+          }
+
+          @each $size2, $screen-min2 in $_sizes {
+            $prefix2: _size-prefix($size2);
+
+            @for $i from $_min-ed-columns through $_max-ed-columns {
+              &.#{ $_prefix }c-ed-row#{ $prefix2 }-columns-#{ $i } {
+                > .#{ $_prefix }c-ed-row__col {
+                  @include _ed-row__col--margin($coefficient, $i);
+                  @include _ed-row__col--width($coefficient, $i);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

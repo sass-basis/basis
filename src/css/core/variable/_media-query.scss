@@ -1,39 +1,5 @@
 /*
 ---
-name: $_min-columns
-category:
-  - core/variable
-  - core/variable/media-query
----
-The minimum number of columns
-
-### scss
-```scss
-$_min-columns: 1;
-```
-*/
-
-$_min-columns: 1 !default;
-
-/*
----
-name: $_max-columns
-category:
-  - core/variable
-  - core/variable/media-query
----
-The maximum number of columns
-
-### scss
-```scss
-$_max-columns: 12;
-```
-*/
-
-$_max-columns: 12 !default;
-
-/*
----
 name: $_sizes
 category:
   - core/variable

@@ -1,0 +1,158 @@
+/*
+---
+name: _ed-row()
+category:
+  - core/abstract
+  - core/abstract/grid-system/ed-row
+---
+Abstract row component of flexbox based grid system
+
+### scss
+//
+// @param  int  $columns  Molecule column sizee
+//
+```scss
+.c-ed-row {
+  @include _ed-row();
+
+  &__col {
+    @include _ed-row__col();
+  }
+}
+```
+
+### html
+```ejs
+<div class="c-ed-row c-ed-row--columns-3">
+  <div class="c-ed-row__col">
+    ...
+  </div>
+</div>
+```
+*/
+
+@mixin _ed-row() {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*
+---
+name: _ed-row__col()
+category:
+  - core/abstract
+  - core/abstract/grid-system/ed-row
+---
+Abstract column element of flexbox based grid system
+
+### scss
+```scss
+.c-ed-row {
+  @include _ed-row();
+
+  &__col {
+    @include _ed-row__col();
+  }
+}
+```
+
+### html
+```ejs
+<div class="c-ed-row c-ed-row--columns-3">
+  <div class="c-ed-row__col">
+    ...
+  </div>
+</div>
+```
+*/
+
+@mixin _ed-row__col() {
+  max-width: 100%;
+  flex: 1 1 100%;
+}
+
+/*
+---
+name: _ed-row__col--margin()
+category:
+  - core/abstract
+  - core/abstract/grid-system/ed-row
+---
+Sets column margin of flexbox based grid system
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+// @param  int  $columns
+//
+
+.c-ed-row {
+  $coefficient: 1;
+  @include _ed-row();
+  @include _ed-row--margin($coefficient);
+  @include _ed-row--width($coefficient);
+}
+```
+*/
+
+@mixin _ed-row__col--margin($coefficient, $columns: 1) {
+  @include _ed-row__col--base-margin();
+
+  &:not(:nth-child(#{ $columns }n + 1)) {
+    @include _ed-row__col--horizontal-margin($coefficient);
+  }
+
+  &:nth-child(n + #{ $columns + 1 }) {
+    @include _ed-row__col--vertical-margin($coefficient);
+  }
+}
+
+@mixin _ed-row__col--base-margin() {
+  margin-top: 0;
+  margin-left: 0;
+}
+
+@mixin _ed-row__col--horizontal-margin($coefficient) {
+  @include _margin-left($coefficient, false);
+}
+
+@mixin _ed-row__col--vertical-margin($coefficient) {
+  @include _margin-top($coefficient, false);
+}
+
+/*
+---
+name: _ed-row__col--width()
+category:
+  - core/abstract
+  - core/abstract/grid-system/ed-row
+---
+Sets column width of flexbox based grid system
+
+### scss
+```scss
+//
+// @param  int  $coefficient
+// @param  int  $columns
+//
+
+.c-ed-row {
+  $coefficient: 1;
+  @include _ed-row();
+  @include _ed-row--margin($coefficient);
+  @include _ed-row--width(3, $coefficient);
+}
+```
+*/
+
+@mixin _ed-row__col--width($coefficient: 0, $columns: 1) {
+  @if $columns > 1 {
+    @if $coefficient > 0 {
+      flex: 0 1 calc((100% - #{ ($columns - 1) } * #{ _space($coefficient) }) / #{ $columns });
+      flex-basis: calc((100% - #{ ($columns - 1) } * #{ _space($coefficient, true, true) }) / #{ $columns });
+    } @else {
+      flex: 0 1 calc(100% / #{ $columns });
+    }
+  }
+}

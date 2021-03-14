@@ -207,9 +207,9 @@ Sets column margin of flexbox based grid system
 // @param  int  $coefficient
 //
 
-.c-row {
-  @include _row();
-  @include _row--margin(1);
+.c-row__col {
+  @include _row__col();
+  @include _row__col--margin(1);
 }
 ```
 */
