@@ -450,11 +450,15 @@ Return the margin conforming to the rhythm
 ### scss
 ```scss
 //
-// @param   number  $coefficient
+// @param   number   $coefficient
+// @param   boolean  $apply-space-scale
+// @param   boolean  $apply-margin-scale
 // @return  length
 //
 
 padding: _space(1);
+padding: _space(1, true);
+padding: _space(1, true, true);
 ```
 */
 /*
@@ -4894,7 +4898,7 @@ Drawer component
     padding-left: 0;
     margin-top: 0;
     margin-right: -1.5rem;
-    margin-right: calc(var(--_space, 1.5rem) * -1);
+    margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
     margin-bottom: 0;
     margin-left: 0;
     padding-left: 1em; }
@@ -5023,7 +5027,7 @@ Dropdown component
     padding-left: 0;
     margin-top: 0;
     margin-right: -1.5rem;
-    margin-right: calc(var(--_space, 1.5rem) * -1);
+    margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
     margin-bottom: 0;
     margin-left: 0;
     padding-left: 1em; }
@@ -9141,11 +9145,15 @@ Return the margin conforming to the rhythm
 ### scss
 ```scss
 //
-// @param   number  $coefficient
+// @param   number   $coefficient
+// @param   boolean  $apply-space-scale
+// @param   boolean  $apply-margin-scale
 // @return  length
 //
 
 padding: _space(1);
+padding: _space(1, true);
+padding: _space(1, true, true);
 ```
 */
 /*
@@ -13583,7 +13591,7 @@ Drawer component
     padding-left: 0;
     margin-top: 0;
     margin-right: -1.5rem;
-    margin-right: calc(var(--_space, 1.5rem) * -1);
+    margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
     margin-bottom: 0;
     margin-left: 0;
     padding-left: 1em; }
@@ -13712,7 +13720,7 @@ Dropdown component
     padding-left: 0;
     margin-top: 0;
     margin-right: -1.5rem;
-    margin-right: calc(var(--_space, 1.5rem) * -1);
+    margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
     margin-bottom: 0;
     margin-left: 0;
     padding-left: 1em; }
@@ -17534,7 +17542,7 @@ pre {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 1.5rem;
-  margin-bottom: calc(var(--_space, 1.5rem) * 1);
+  margin-bottom: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1));
   margin-left: 0; }
 
 .l-main > .c-entry .c-entry__title {
@@ -17823,7 +17831,7 @@ pre {
   .p-social-nav__item {
     margin-top: 0;
     margin-right: 0.75rem;
-    margin-right: calc(var(--_space, 1.5rem) * 0.5);
+    margin-right: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
     margin-bottom: 0;
     margin-left: 0;
     display: inline-block;
@@ -17833,7 +17841,7 @@ pre {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 3rem;
-  margin-bottom: calc(var(--_space, 1.5rem) * 2);
+  margin-bottom: calc(var(--_space, 1.5rem) * 2 * var(--_margin-scale, 1));
   margin-left: 0;
   list-style: none;
   margin-left: 0;
