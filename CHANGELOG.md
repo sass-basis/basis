@@ -7,6 +7,8 @@
 * `$_base-line-height` cannot be overwritten.
 * Add `$_half-leading`.
 * Add `_var-half-leading()`.
+* Add `_container-padding()`.
+* Support safe area at `.c-container` and `_container()`.
 
 ## March 12, 2021 12.4.0
 * Add `$apply-space-scale` arg and `$apply-margin-scale` arg to `_space()`
