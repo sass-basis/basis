@@ -1,4 +1,38 @@
+@mixin _container-padding($use-safe-area: true) {
+  padding-right: $_container-margin; // for IE11
+  padding-left: $_container-margin; // for IE11
 
+  @if true == $use-safe-area {
+    padding-right: calc(#{ _var-container-margin-sm() } + constant(safe-area-inset-right));
+    padding-left: calc(#{ _var-container-margin-sm() } + constant(safe-area-inset-left));
+
+    padding-right: calc(#{ _var-container-margin-sm() } + env(safe-area-inset-right));
+    padding-left: calc(#{ _var-container-margin-sm() } + env(safe-area-inset-left));
+
+    @supports (-ms-ime-align: auto) {
+      padding-right: #{ _var-container-margin-sm() }; // for Edge
+      padding-left: #{ _var-container-margin-sm() }; // for Edge
+    }
+  }
+
+  @include _media-min(md) {
+    padding-right: $_container-margin * 2;
+    padding-left: $_container-margin * 2;
+
+    @if true == $use-safe-area {
+      padding-right: calc(#{ _var-container-margin() } + constant(safe-area-inset-right));
+      padding-left: calc(#{ _var-container-margin() } + constant(safe-area-inset-left));
+
+      padding-right: calc(#{ _var-container-margin() } + env(safe-area-inset-right));
+      padding-left: calc(#{ _var-container-margin() } + env(safe-area-inset-left));
+
+      @supports (-ms-ime-align: auto) {
+        padding-right: #{ _var-container-margin() }; // for Edge
+        padding-left: #{ _var-container-margin() }; // for Edge
+      }
+    }
+  }
+}
 
 /*
 ---
@@ -25,16 +59,7 @@ Abstract fluid container component
 */
 
 @mixin _fluid-container() {
-  padding-right: $_container-margin; // for IE11
-  padding-left: $_container-margin; // for IE11
-
-  padding-right: _var-container-margin-sm();
-  padding-left: _var-container-margin-sm();
-
-  @include _media-min(md) {
-    padding-right: _var-container-margin();
-    padding-left: _var-container-margin();
-  }
+  @include _container-padding();
 }
 
 /*
