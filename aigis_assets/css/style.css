@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v12.4.0
+ * Name: Basis v13.0.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -2162,8 +2162,10 @@ name: _font-size-line-height()
 category:
   - core/mixin
   - core/mixin/typography
+  - foundation/typography
+  - foundation/typography/lists
 ---
-Sets px and rem font-sizes and line-height for vertical rhythum
+Sets px and rem font-sizes and line-height for vertical rhythum.
 
 ### scss
 ```scss
@@ -2174,6 +2176,49 @@ Sets px and rem font-sizes and line-height for vertical rhythum
 .c-foo {
   @include _font-size-line-height(2);
 }
+```
+
+### html
+```html
+<p class="font-size-10px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-12px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-14px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-16px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-20px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-24px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-30px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-34px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-38px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-42px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
 ```
 */
 /*
@@ -4666,12 +4711,26 @@ Fluid container component
 .c-fluid-container {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  padding-right: var(--_container-margin-sm, 0.75rem);
-  padding-left: var(--_container-margin-sm, 0.75rem); }
+  padding-right: calc(var(--_container-margin-sm, 0.75rem) + constant(safe-area-inset-right));
+  padding-left: calc(var(--_container-margin-sm, 0.75rem) + constant(safe-area-inset-left));
+  padding-right: calc(var(--_container-margin-sm, 0.75rem) + env(safe-area-inset-right));
+  padding-left: calc(var(--_container-margin-sm, 0.75rem) + env(safe-area-inset-left)); }
+  @supports (-ms-ime-align: auto) {
+    .c-fluid-container {
+      padding-right: var(--_container-margin-sm, 0.75rem);
+      padding-left: var(--_container-margin-sm, 0.75rem); } }
   @media (min-width: 40em) {
     .c-fluid-container {
-      padding-right: var(--_container-margin, 1.5rem);
-      padding-left: var(--_container-margin, 1.5rem); } }
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+      padding-right: calc(var(--_container-margin, 1.5rem) + constant(safe-area-inset-right));
+      padding-left: calc(var(--_container-margin, 1.5rem) + constant(safe-area-inset-left));
+      padding-right: calc(var(--_container-margin, 1.5rem) + env(safe-area-inset-right));
+      padding-left: calc(var(--_container-margin, 1.5rem) + env(safe-area-inset-left)); }
+      @supports (-ms-ime-align: auto) {
+        .c-fluid-container {
+          padding-right: var(--_container-margin, 1.5rem);
+          padding-left: var(--_container-margin, 1.5rem); } } }
 
 /*
 ---
@@ -4693,14 +4752,28 @@ Container component
 .c-container {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  padding-right: var(--_container-margin-sm, 0.75rem);
-  padding-left: var(--_container-margin-sm, 0.75rem);
+  padding-right: calc(var(--_container-margin-sm, 0.75rem) + constant(safe-area-inset-right));
+  padding-left: calc(var(--_container-margin-sm, 0.75rem) + constant(safe-area-inset-left));
+  padding-right: calc(var(--_container-margin-sm, 0.75rem) + env(safe-area-inset-right));
+  padding-left: calc(var(--_container-margin-sm, 0.75rem) + env(safe-area-inset-left));
   margin-right: auto;
   margin-left: auto; }
+  @supports (-ms-ime-align: auto) {
+    .c-container {
+      padding-right: var(--_container-margin-sm, 0.75rem);
+      padding-left: var(--_container-margin-sm, 0.75rem); } }
   @media (min-width: 40em) {
     .c-container {
-      padding-right: var(--_container-margin, 1.5rem);
-      padding-left: var(--_container-margin, 1.5rem); } }
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+      padding-right: calc(var(--_container-margin, 1.5rem) + constant(safe-area-inset-right));
+      padding-left: calc(var(--_container-margin, 1.5rem) + constant(safe-area-inset-left));
+      padding-right: calc(var(--_container-margin, 1.5rem) + env(safe-area-inset-right));
+      padding-left: calc(var(--_container-margin, 1.5rem) + env(safe-area-inset-left)); }
+      @supports (-ms-ime-align: auto) {
+        .c-container {
+          padding-right: var(--_container-margin, 1.5rem);
+          padding-left: var(--_container-margin, 1.5rem); } } }
   @media (min-width: 64em) {
     .c-container {
       max-width: 1200px;
@@ -8672,7 +8745,7 @@ Invisible utility
     display: none !important; } }
 
 /*!
- * Name: Basis v12.4.0
+ * Name: Basis v13.0.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -10834,8 +10907,10 @@ name: _font-size-line-height()
 category:
   - core/mixin
   - core/mixin/typography
+  - foundation/typography
+  - foundation/typography/lists
 ---
-Sets px and rem font-sizes and line-height for vertical rhythum
+Sets px and rem font-sizes and line-height for vertical rhythum.
 
 ### scss
 ```scss
@@ -10846,6 +10921,49 @@ Sets px and rem font-sizes and line-height for vertical rhythum
 .c-foo {
   @include _font-size-line-height(2);
 }
+```
+
+### html
+```html
+<p class="font-size-10px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-12px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-14px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-16px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-20px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-24px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-30px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-34px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-38px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-42px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
 ```
 */
 /*
@@ -13336,12 +13454,26 @@ Fluid container component
 .c-fluid-container {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  padding-right: var(--_container-margin-sm, 0.75rem);
-  padding-left: var(--_container-margin-sm, 0.75rem); }
+  padding-right: calc(var(--_container-margin-sm, 0.75rem) + constant(safe-area-inset-right));
+  padding-left: calc(var(--_container-margin-sm, 0.75rem) + constant(safe-area-inset-left));
+  padding-right: calc(var(--_container-margin-sm, 0.75rem) + env(safe-area-inset-right));
+  padding-left: calc(var(--_container-margin-sm, 0.75rem) + env(safe-area-inset-left)); }
+  @supports (-ms-ime-align: auto) {
+    .c-fluid-container {
+      padding-right: var(--_container-margin-sm, 0.75rem);
+      padding-left: var(--_container-margin-sm, 0.75rem); } }
   @media (min-width: 40em) {
     .c-fluid-container {
-      padding-right: var(--_container-margin, 1.5rem);
-      padding-left: var(--_container-margin, 1.5rem); } }
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+      padding-right: calc(var(--_container-margin, 1.5rem) + constant(safe-area-inset-right));
+      padding-left: calc(var(--_container-margin, 1.5rem) + constant(safe-area-inset-left));
+      padding-right: calc(var(--_container-margin, 1.5rem) + env(safe-area-inset-right));
+      padding-left: calc(var(--_container-margin, 1.5rem) + env(safe-area-inset-left)); }
+      @supports (-ms-ime-align: auto) {
+        .c-fluid-container {
+          padding-right: var(--_container-margin, 1.5rem);
+          padding-left: var(--_container-margin, 1.5rem); } } }
 
 /*
 ---
@@ -13363,14 +13495,28 @@ Container component
 .c-container {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  padding-right: var(--_container-margin-sm, 0.75rem);
-  padding-left: var(--_container-margin-sm, 0.75rem);
+  padding-right: calc(var(--_container-margin-sm, 0.75rem) + constant(safe-area-inset-right));
+  padding-left: calc(var(--_container-margin-sm, 0.75rem) + constant(safe-area-inset-left));
+  padding-right: calc(var(--_container-margin-sm, 0.75rem) + env(safe-area-inset-right));
+  padding-left: calc(var(--_container-margin-sm, 0.75rem) + env(safe-area-inset-left));
   margin-right: auto;
   margin-left: auto; }
+  @supports (-ms-ime-align: auto) {
+    .c-container {
+      padding-right: var(--_container-margin-sm, 0.75rem);
+      padding-left: var(--_container-margin-sm, 0.75rem); } }
   @media (min-width: 40em) {
     .c-container {
-      padding-right: var(--_container-margin, 1.5rem);
-      padding-left: var(--_container-margin, 1.5rem); } }
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+      padding-right: calc(var(--_container-margin, 1.5rem) + constant(safe-area-inset-right));
+      padding-left: calc(var(--_container-margin, 1.5rem) + constant(safe-area-inset-left));
+      padding-right: calc(var(--_container-margin, 1.5rem) + env(safe-area-inset-right));
+      padding-left: calc(var(--_container-margin, 1.5rem) + env(safe-area-inset-left)); }
+      @supports (-ms-ime-align: auto) {
+        .c-container {
+          padding-right: var(--_container-margin, 1.5rem);
+          padding-left: var(--_container-margin, 1.5rem); } } }
   @media (min-width: 64em) {
     .c-container {
       max-width: 1200px;
@@ -17878,3 +18024,201 @@ pre {
   .aigis-preview > ul ol,
   .aigis-preview > ul ul {
     margin-bottom: 0; }
+
+.font-size-10px {
+  font-size: 10px;
+  font-size: 0.625rem;
+  line-height: 1.58173;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.09375) * 2); }
+
+.font-size-11px {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  line-height: 1.61298;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.07812) * 2); }
+
+.font-size-12px {
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1.64423;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.0625) * 2); }
+
+.font-size-13px {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 1.67548;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.04688) * 2); }
+
+.font-size-14px {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.70673;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.03125) * 2); }
+
+.font-size-15px {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.73798;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.01562) * 2); }
+
+.font-size-16px {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.76923;
+  line-height: calc(1 + var(--_half-leading, 0.38462) * 2); }
+
+.font-size-17px {
+  font-size: 17px;
+  font-size: 1.0625rem;
+  line-height: 1.75673;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.00625) * 2); }
+
+.font-size-18px {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.74423;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.0125) * 2); }
+
+.font-size-19px {
+  font-size: 19px;
+  font-size: 1.1875rem;
+  line-height: 1.73173;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.01875) * 2); }
+
+.font-size-20px {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.71923;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.025) * 2); }
+
+.font-size-21px {
+  font-size: 21px;
+  font-size: 1.3125rem;
+  line-height: 1.70673;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.03125) * 2); }
+
+.font-size-22px {
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.69423;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.0375) * 2); }
+
+.font-size-23px {
+  font-size: 23px;
+  font-size: 1.4375rem;
+  line-height: 1.68173;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.04375) * 2); }
+
+.font-size-24px {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.66923;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.05) * 2); }
+
+.font-size-25px {
+  font-size: 25px;
+  font-size: 1.5625rem;
+  line-height: 1.65673;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.05625) * 2); }
+
+.font-size-26px {
+  font-size: 26px;
+  font-size: 1.625rem;
+  line-height: 1.64423;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.0625) * 2); }
+
+.font-size-27px {
+  font-size: 27px;
+  font-size: 1.6875rem;
+  line-height: 1.63173;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.06875) * 2); }
+
+.font-size-28px {
+  font-size: 28px;
+  font-size: 1.75rem;
+  line-height: 1.61923;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.075) * 2); }
+
+.font-size-29px {
+  font-size: 29px;
+  font-size: 1.8125rem;
+  line-height: 1.60673;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.08125) * 2); }
+
+.font-size-30px {
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 1.59423;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.0875) * 2); }
+
+.font-size-31px {
+  font-size: 31px;
+  font-size: 1.9375rem;
+  line-height: 1.58173;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.09375) * 2); }
+
+.font-size-32px {
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.56923;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.1) * 2); }
+
+.font-size-33px {
+  font-size: 33px;
+  font-size: 2.0625rem;
+  line-height: 1.55673;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.10625) * 2); }
+
+.font-size-34px {
+  font-size: 34px;
+  font-size: 2.125rem;
+  line-height: 1.54423;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.1125) * 2); }
+
+.font-size-35px {
+  font-size: 35px;
+  font-size: 2.1875rem;
+  line-height: 1.53173;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.11875) * 2); }
+
+.font-size-36px {
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 1.51923;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.125) * 2); }
+
+.font-size-37px {
+  font-size: 37px;
+  font-size: 2.3125rem;
+  line-height: 1.50673;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.13125) * 2); }
+
+.font-size-38px {
+  font-size: 38px;
+  font-size: 2.375rem;
+  line-height: 1.49423;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.1375) * 2); }
+
+.font-size-39px {
+  font-size: 39px;
+  font-size: 2.4375rem;
+  line-height: 1.48173;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.14375) * 2); }
+
+.font-size-40px {
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1.46923;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.15) * 2); }
+
+.font-size-41px {
+  font-size: 41px;
+  font-size: 2.5625rem;
+  line-height: 1.45673;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.15625) * 2); }
+
+.font-size-42px {
+  font-size: 42px;
+  font-size: 2.625rem;
+  line-height: 1.44423;
+  line-height: calc(1 + (var(--_half-leading, 0.38462) - 0.1625) * 2); }
