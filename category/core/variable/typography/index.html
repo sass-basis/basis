@@ -102,11 +102,7 @@
               </li>
             
               <li class="p-table-of-contents__item">
-                <a href="#$_base-font-size">$_base-font-size</a>
-              </li>
-            
-              <li class="p-table-of-contents__item">
-                <a href="#$_between-lines">$_between-lines</a>
+                <a href="#$_half-leading">$_half-leading</a>
               </li>
             
               <li class="p-table-of-contents__item">
@@ -223,28 +219,7 @@
           
             <article class="c-entry">
               <header class="c-entry__header">
-                <h2 class="c-entry__title" id="$_base-font-size">$_base-font-size</h2>
-                <ul class="c-meta">
-                  <li class="c-meta__item">
-                    /src/css/core/variable/_typography.scss
-                  </li>
-                </ul>
-              </header>
-              <div class="c-entry__content">
-                <p>Default font size (rem)</p>
-<ul>
-<li><code>$_base-font-size-px</code> be not able to change. If you want to change base font size, overwrite <code>$_base-font-size-px</code>.</li>
-</ul>
-<h3 id="scss">scss</h3>
-<pre><code class="language-scss"><span class="token variable" >$_base-font-size-px</span><span class="token punctuation" >:</span> <span class="token number" >16</span>px<span class="token punctuation" >;</span>
-</code></pre>
-
-              </div>
-            </article>
-          
-            <article class="c-entry">
-              <header class="c-entry__header">
-                <h2 class="c-entry__title" id="$_between-lines">$_between-lines</h2>
+                <h2 class="c-entry__title" id="$_half-leading">$_half-leading</h2>
                 <ul class="c-meta">
                   <li class="c-meta__item">
                     /src/css/core/variable/_typography.scss
@@ -254,7 +229,7 @@
               <div class="c-entry__content">
                 <p>Between the character and line of line-height</p>
 <h3 id="scss">scss</h3>
-<pre><code class="language-scss"><span class="token variable" >$_between-lines</span><span class="token punctuation" >:</span> <span class="token punctuation" >(</span><span class="token variable" >$_base-font-size</span> <span class="token operator" >/</span> <span class="token number" >4</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<pre><code class="language-scss"><span class="token variable" >$_half-leading</span><span class="token punctuation" >:</span> <span class="token number" >1</span> <span class="token operator" >/</span> <span class="token number" >4</span><span class="token punctuation" >;</span>
 </code></pre>
 
               </div>
@@ -270,9 +245,9 @@
                 </ul>
               </header>
               <div class="c-entry__content">
-                <p>Default line height</p>
+                <p>Default line height rem</p>
 <h3 id="scss">scss</h3>
-<pre><code class="language-scss"><span class="token variable" >$_base-line-height</span><span class="token punctuation" >:</span> <span class="token punctuation" >(</span><span class="token variable" >$_base-font-size</span> <span class="token operator" >+</span> <span class="token variable" >$_between-lines</span> <span class="token operator" >*</span> <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<pre><code class="language-scss"><span class="token variable" >$_base-line-height</span><span class="token punctuation" >:</span> <span class="token number" >1</span> <span class="token operator" >+</span> <span class="token variable" >$_half-leading</span> <span class="token operator" >*</span> <span class="token number" >2</span>rem<span class="token punctuation" >;</span>
 </code></pre>
 
               </div>
