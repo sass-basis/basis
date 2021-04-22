@@ -24,6 +24,6 @@ Abstract site branding component
 @mixin _site-branding() {
   &__title {
     margin: 0;
-    @include _font-size-line-height($_base-font-size * 2);
+    @include _font-size-line-height($_base-font-size-px * 2);
   }
 }

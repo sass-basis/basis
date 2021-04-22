@@ -27,7 +27,7 @@ pre {
   border-color: _var-lighter-color-gray();
   border-radius: $_border-radius; // for IE11
   border-radius: _var-border-radius();
-  padding: $_base-font-size;
+  padding: $_base-font-size-px;
   overflow: auto;
 
   code {

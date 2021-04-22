@@ -82,7 +82,7 @@ Abstract column element of inline-block based grid system
 
 @mixin _ib-row__col($columns: null, $max-columns: null) {
   display: inline-block;
-  font-size: $_base-font-size;
+  font-size: $_base-font-size-px;
   text-align: left;
   vertical-align: top;
 

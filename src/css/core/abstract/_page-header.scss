@@ -13,7 +13,7 @@ Abstract page header component
   @include _padding(2, 0);
 
   &__title {
-    @include _font-size-line-height($_base-font-size * 2);
+    @include _font-size-line-height($_base-font-size-px * 2);
   }
 }
 ```

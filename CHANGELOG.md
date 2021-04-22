@@ -1,5 +1,13 @@
 #Changelog
 
+## April 22, 2021 13.0.0
+* Abandon `$_base-font-size`.
+* Abandon `$_between-lines`.
+* Avandon `_vertical-rhythm()`.
+* `$_base-line-height` cannot be overwritten.
+* Add `$_half-leading`.
+* Add `_var-half-leading()`.
+
 ## March 12, 2021 12.4.0
 * Add `$apply-space-scale` arg and `$apply-margin-scale` arg to `_space()`
 

@@ -10,7 +10,7 @@ Sets px and rem font-sizes
 ### scss
 ```scss
 //
-// @param  rem|px  $font-size
+// @param  int  $scale-or-font-size  Font size scaling factor.
 //
 
 .c-foo {
@@ -19,17 +19,29 @@ Sets px and rem font-sizes
 ```
 */
 
-@mixin _font-size($font-size) {
-  $unit: unit($font-size);
-  @if ('px' == $unit) {
-    font-size: $font-size;
-    font-size: _px2rem($font-size);
-  } @else if ('rem' == $unit) {
-    font-size: _rem2px($font-size);
-    font-size: $font-size;
+@mixin _font-size($scale-or-font-size) {
+  @if unitless($scale_or_font-size) {
+    $scale: $scale-or-font-size;
+    font-size: $_base-font-size-px * $scale;
+    font-size: $scale * 1rem;
   } @else {
-    font-size: $font-size;
+    $font-size: $scale-or-font-size;
+    @include _deprecated-font-size($font-size);
   }
+}
+
+@mixin _deprecated-font-size($font-size) {
+  $unit: unit($font-size);
+
+  $scale: false;
+  @if ('px' == $unit) {
+    $scale: $font-size / $_base-font-size-px;
+  } @else if ('rem' == $unit) {
+    $px: _rem2px($font-size);
+    $scale: $px / $_base-font-size-px;
+  }
+
+  @include _font-size($scale);
 }
 
 /*
@@ -44,7 +56,7 @@ Sets line-height for vertical rhythum
 ### scss
 ```scss
 //
-// @param  rem|px  $font-size  font size
+// @param  int  $scale-or-font-size  Font size scaling factor.
 //
 
 .c-foo {
@@ -53,13 +65,39 @@ Sets line-height for vertical rhythum
 ```
 */
 
-@mixin _line-height($font-size) {
-  $unit: unit($font-size);
-  $px  : $font-size;
-  @if ('rem' == $unit) {
-    $px: _rem2px($font-size);
+@mixin _line-height($scale-or-font-size) {
+  @if unitless($scale-or-font-size) {
+    $scale: $scale-or-font-size;
+
+    $diff: 1 - $scale;
+    @if 1 == $scale {
+      line-height: 1 + $_half-leading * 2;
+      line-height: calc(1 + #{ _var-half-leading() } * 2);
+    } @else if 1 > $scale {
+      line-height: 1 + ($_half-leading - $diff * .25) * 2;
+      line-height: calc(1 + (#{ _var-half-leading() } - #{ $diff * .25 }) * 2);
+    } @else if 1 < $scale {
+      line-height: 1 + ($_half-leading - abs($diff) * .1) * 2;
+      line-height: calc(1 + (#{ _var-half-leading() } - #{ abs($diff) * .1 }) * 2);
+    }
+  } @else {
+    $font-size: $scale-or-font-size;
+    @include _deprecated-line-height($font-size);
   }
-  line-height: (_vertical-rhythm($px) / _strip-unit($px));
+}
+
+@mixin _deprecated-line-height($font-size) {
+  $unit: unit($font-size);
+
+  $scale: false;
+  @if ('px' == $unit) {
+    $scale: $font-size / $_base-font-size-px;
+  } @else if ('rem' == $unit) {
+    $px: _rem2px($font-size);
+    $scale: $px / $_base-font-size-px;
+  }
+
+  @include _line-height($scale);
 }
 
 /*
@@ -74,21 +112,36 @@ Sets px and rem font-sizes and line-height for vertical rhythum
 ### scss
 ```scss
 //
-// @param  rem|px  $font-size
+// @param  int  $font-size
 //
 
 .c-foo {
-  @include _font-size-line-height(24px);
+  @include _font-size-line-height(2);
 }
 ```
 */
 
-@mixin _font-size-line-height($font-size) {
-  $unit: unit($font-size);
-  $rem : $font-size;
-  @if ('px' == $unit) {
-    $rem: _px2rem($font-size);
+@mixin _font-size-line-height($scale-or-font-size) {
+  @if unitless($scale-or-font-size) {
+    $scale: $scale-or-font-size;
+    @include _font-size($scale);
+    @include _line-height($scale);
+  } @else {
+    $font-size: $scale-or-font-size;
+    @include _deprecated-font-size-line-height($font-size);
   }
-  @include _font-size($rem);
-  @include _line-height($rem);
+}
+
+@mixin _deprecated-font-size-line-height($font-size) {
+  $unit: unit($font-size);
+
+  $scale: false;
+  @if ('px' == $unit) {
+    $scale: $font-size / $_base-font-size-px;
+  } @else if ('rem' == $unit) {
+    $px: _rem2px($font-size);
+    $scale: $px / $_base-font-size-px;
+  }
+
+  @include _font-size-line-height($scale);
 }

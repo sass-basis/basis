@@ -27,7 +27,7 @@ body {
   color: $_color-text; // for IE11
   color: _var-color-text();
   font-family: $_font-family;
-  @include _font-size-line-height($_base-font-size);
+  @include _font-size-line-height($_base-font-size-px);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -42,7 +42,7 @@ input, textarea, keygen, select, button {
 }
 
 input, textarea, optgroup, select, button {
-  @include _font-size-line-height($_base-font-size);
+  @include _font-size-line-height($_base-font-size-px);
 }
 
 img {
@@ -92,27 +92,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @include _font-size-line-height($_base-font-size * $_h1-font-size-scale);
+  @include _font-size-line-height($_h1-font-size-scale);
 }
 
 h2 {
-  @include _font-size-line-height($_base-font-size * $_h2-font-size-scale);
+  @include _font-size-line-height($_h2-font-size-scale);
 }
 
 h3 {
-  @include _font-size-line-height($_base-font-size * $_h3-font-size-scale);
+  @include _font-size-line-height($_h3-font-size-scale);
 }
 
 h4 {
-  @include _font-size-line-height($_base-font-size * $_h4-font-size-scale);
+  @include _font-size-line-height($_h4-font-size-scale);
 }
 
 h5 {
-  @include _font-size-line-height($_base-font-size * $_h5-font-size-scale);
+  @include _font-size-line-height($_h5-font-size-scale);
 }
 
 h6 {
-  @include _font-size-line-height($_base-font-size * $_h6-font-size-scale);
+  @include _font-size-line-height($_h6-font-size-scale);
 }
 
 /*
@@ -151,7 +151,7 @@ Lists
 */
 
 ul, ol {
-  margin-left: 1.5em;
+  padding-left: 1.5em;
 }
 
 dt {
@@ -189,11 +189,11 @@ Blockquotes
 blockquote {
   @include _content();
 
-  border-left: ($_base-font-size / 2) solid transparent;
+  border-left: $_base-font-size-px / 2 solid transparent;
   border-left-color: _lighter($_color-gray); // For IE11
   border-left-color: _var-lighter-color-gray();
   margin-left: 0;
-  padding: $_base-font-size 0 $_base-font-size $_base-font-size;
+  padding: $_base-font-size-px 0 $_base-font-size-px $_base-font-size-px;
 
   :last-child {
     margin-bottom: 0;

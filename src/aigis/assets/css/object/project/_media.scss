@@ -43,7 +43,7 @@
   &__title {
     margin: 0;
     color: #777;
-    @include _font-size-line-height($_base-font-size);
+    @include _font-size-line-height($_base-font-size-px);
     font-weight: normal;
     padding: 0;
   }

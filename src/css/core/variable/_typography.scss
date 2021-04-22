@@ -19,39 +19,22 @@ $_base-font-size-px: 16px !default;
 
 /*
 ---
-name: $_base-font-size
-category:
-  - core/variable
-  - core/variable/typography
----
-Default font size (rem)
-
-* `$_base-font-size-px` be not able to change. If you want to change base font size, overwrite `$_base-font-size-px`.
-
-### scss
-```scss
-$_base-font-size-px: 16px;
-```
-*/
-
-$_base-font-size: 1rem;
-
-/*
----
-name: $_between-lines
+name: $_half-leading
 category:
   - core/variable
   - core/variable/typography
 ---
 Between the character and line of line-height
 
+
 ### scss
 ```scss
-$_between-lines: ($_base-font-size / 4);
+$_half-leading: 1 / 4;
 ```
 */
 
-$_between-lines: ($_base-font-size / 4) !default;
+$_between-lines: _px2rem($_base-font-size-px) / 4 !default;
+$_half-leading: _strip-unit($_between-lines) !default;
 
 /*
 ---
@@ -60,15 +43,15 @@ category:
   - core/variable
   - core/variable/typography
 ---
-Default line height
+Default line height rem
 
 ### scss
 ```scss
-$_base-line-height: ($_base-font-size + $_between-lines * 2);
+$_base-line-height: 1 + $_half-leading * 2rem;
 ```
 */
 
-$_base-line-height: ($_base-font-size + $_between-lines * 2) !default;
+$_base-line-height: 1 + $_half-leading * 2rem;
 
 /*
 ---
