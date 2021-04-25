@@ -182,7 +182,7 @@ Sets row margin of inline-block based grid system
 */
 
 @mixin _ib-row--margin($coefficient) {
-  @include _row--margin($coefficient, false);
+  @include _row--margin($coefficient);
 }
 
 /*

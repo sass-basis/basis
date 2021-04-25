@@ -187,8 +187,8 @@ Sets row margin of flexbox based grid system
 */
 
 @mixin _row--margin($coefficient) {
-  @include _margin-right($coefficient / 2 * -1, false);
-  @include _margin-left($coefficient / 2 * -1, false);
+  @include _margin-right($coefficient / 2 * -1);
+  @include _margin-left($coefficient / 2 * -1);
   @include _margin-bottom($coefficient * -1);
 }
 
@@ -215,7 +215,7 @@ Sets column margin of flexbox based grid system
 */
 
 @mixin _row__col--margin($coefficient) {
-  @include _padding-right($coefficient / 2);
-  @include _padding-left($coefficient / 2);
+  @include _padding-right($coefficient / 2, true);
+  @include _padding-left($coefficient / 2, true);
   @include _margin-bottom($coefficient);
 }
