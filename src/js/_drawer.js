@@ -23,7 +23,7 @@ export default class BasisDrawer {
         window.addEventListener('resize:width', () => this._resizeWindow(drawer), false);
 
         drawer.addEventListener('closeDrawer', () => this._closeAllSubmenus(drawer), false);
-        drawer.addEventListener('click', () => event.stopPropagation(), false);
+        drawer.addEventListener('click', (event) => event.stopPropagation(), false);
         drawer.addEventListener('keydown', (event) => 27 === event.keyCode && BasisDrawer.close(drawer));
 
         const drawerItemLinks = drawer.querySelectorAll(`${this.args.item} > a`);
