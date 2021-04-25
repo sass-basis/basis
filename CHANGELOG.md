@@ -1,5 +1,8 @@
 #Changelog
 
+## April 22, 2021 13.0.1
+* Add `_var-margin-scale()` to `.c-row`, `_row()` and `_lattice()`.
+
 ## April 22, 2021 13.0.0
 * Abandon `$_base-font-size`.
 * Abandon `$_between-lines`.
