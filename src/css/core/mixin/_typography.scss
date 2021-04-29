@@ -65,20 +65,38 @@ Sets line-height for vertical rhythum
 ```
 */
 
+@function _pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
 @mixin _line-height($scale-or-font-size) {
   @if unitless($scale-or-font-size) {
     $scale: $scale-or-font-size;
-
     $diff: 1 - $scale;
-    @if 1 == $scale {
-      line-height: 1 + $_half-leading * 2;
-      line-height: calc(1 + #{ _var-half-leading() } * 2);
-    } @else if 1 > $scale {
-      line-height: 1 + ($_half-leading - $diff * .25) * 2;
-      line-height: calc(1 + (#{ _var-half-leading() } - #{ $diff * .25 }) * 2);
-    } @else if 1 < $scale {
-      line-height: 1 + ($_half-leading - abs($diff) * .1) * 2;
-      line-height: calc(1 + (#{ _var-half-leading() } - #{ abs($diff) * .1 }) * 2);
+    $font-size-px: $_base-font-size-px * $scale;
+
+    @if 0 < $diff {
+      $t: $_base-font-size-px / $font-size-px - 1;
+      $new-line-height: (1 + $_half-leading * 2) - $t * $t;
+      line-height: $new-line-height;
+
+      $t: $_base-font-size-px / $font-size-px - 1;
+      $new-line-height: calc((1 + #{ _var-half-leading() } * 2) - #{ $t } * #{ $t });
+      line-height: $new-line-height;
+    } @else {
+      $new-line-height: $_base-font-size-px / $font-size-px + $_half-leading * 2;
+      line-height: $new-line-height;
+
+      $new-line-height: calc(#{ $_base-font-size-px / $font-size-px } + #{ _var-half-leading() } * 2);
+      line-height: $new-line-height;
     }
   } @else {
     $font-size: $scale-or-font-size;
@@ -124,6 +142,8 @@ Sets px and rem font-sizes and line-height for vertical rhythum.
 
 ### html
 ```html
+<h3>English</h3>
+
 <p class="font-size-10px">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
 <p>
@@ -162,6 +182,64 @@ Sets px and rem font-sizes and line-height for vertical rhythum.
 
 <p class="font-size-42px">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-46px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-50px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<h3>Japanese</h3>
+
+<p class="font-size-10px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-12px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-14px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-16px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-20px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-24px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-30px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-34px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-38px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-42px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-46px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-50px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
 <p>
 ```
 */

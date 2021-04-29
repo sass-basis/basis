@@ -3,7 +3,7 @@
 $color-primary: #00DAE6;
 $_font-family : "Helvetica Neue", Helvetica, sans-serif;
 $_color-text  : #444;
-$_half-leading: _strip-unit(1rem / 2.6); // @todo
+$_half-leading: .4;
 $_font-path: '../../font';
 $_prefix: '';
 
@@ -45,9 +45,22 @@ $_prefix: '';
   min-height: 150px;
 }
 
-@for $i from 10 through 42 {
+@for $i from 10 through 500 {
   .font-size-#{ $i }px {
     @include _font-size-line-height(_strip-unit($i / $_base-font-size-px));
+
+    position: relative;
+    &::before {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      content: '#{ $i }px';
+      display: inline-block;
+      background-color: #111;
+      color: #fff;
+      font-size: 12px;
+      padding: .25em .5em;
+    }
   }
 }
 
