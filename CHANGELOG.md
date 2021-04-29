@@ -1,5 +1,8 @@
 #Changelog
 
+## April 29, 2021 13.0.2
+* Update calculating line-height.
+
 ## April 22, 2021 13.0.1
 * Add `_var-margin-scale()` to `.c-row`, `_row()` and `_lattice()`.
 
