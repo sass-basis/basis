@@ -1,5 +1,13 @@
 #Changelog
 
+## May 19, 2021 14.0.0
+* Refactoring JavaScript code.
+* `.c-drawer-close-zone` is generated automatically.
+* Remove event `clickDrawerCloseZone`.
+* Add event `closeDrawerCloseZone`.
+* Remove all static methods of `BasisDrawerCloseZone`.
+* Remove all static methods of `BasisDrawer`.
+
 ## April 29, 2021 13.0.2
 * Update calculating line-height.
 
