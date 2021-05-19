@@ -2740,6 +2740,7 @@ new BasisDrawer({
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="drawer" aria-hidden="true"></div>
 
   <nav id="drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn-inverse">
     <div class="c-drawer__inner">
@@ -2777,6 +2778,7 @@ new BasisDrawer({
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="drawer-inverse" aria-hidden="true"></div>
 </div>
 
 <div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
@@ -2798,6 +2800,11 @@ new BasisDrawer({
 </div>
 ```
 */
+@import url(normalize.css);
+@import url(normalize.css);
+[data-basis-drawer-toggle-btn] * {
+  pointer-events: none; }
+
 /*
 ---
 name: _dropdown()
@@ -4120,8 +4127,6 @@ Abstract pulse spinner component
 </div>
 ```
 */
-@import url(normalize.css);
-@import url(normalize.css);
 :root {
   --_background-color: transparent; }
 
@@ -4851,7 +4856,7 @@ Drawer component
 ### html
 ```html
 <div style="min-height: 200px; position: relative; overflow: hidden">
-  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
+  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true">
     <div class="c-drawer__inner">
       <div class="c-drawer__focus-point" tabindex="-1"></div>
       <ul class="c-drawer__menu">
@@ -4888,9 +4893,11 @@ Drawer component
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="my-drawer" aria-hidden="true"></div>
 
-  <nav id="my-drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn-inverse">
+  <nav id="my-drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation">
     <div class="c-drawer__inner">
+      <div class="c-drawer__focus-point" tabindex="-1"></div>
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -4925,6 +4932,7 @@ Drawer component
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="my-drawer-inverse" aria-hidden="true"></div>
 </div>
 
 <div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
@@ -4956,7 +4964,8 @@ Drawer component
   max-width: 80%;
   visibility: hidden;
   transition: left 0.2s ease-out, right 0.2s ease-out, visibility 0.2s ease-out;
-  transition-timing-function: ease-in; }
+  transition-timing-function: ease-in;
+  backface-visibility: hidden; }
   .c-drawer[aria-hidden="false"] {
     visibility: visible;
     left: 0; }
@@ -5171,6 +5180,8 @@ Dropdown component
   left: 0;
   z-index: 2;
   cursor: pointer; }
+  .c-drawer-close-zone[aria-hidden="true"] {
+    display: none; }
   .c-drawer-close-zone--fixed {
     position: fixed; }
 
@@ -11545,6 +11556,7 @@ new BasisDrawer({
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="drawer" aria-hidden="true"></div>
 
   <nav id="drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn-inverse">
     <div class="c-drawer__inner">
@@ -11582,6 +11594,7 @@ new BasisDrawer({
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="drawer-inverse" aria-hidden="true"></div>
 </div>
 
 <div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
@@ -11603,6 +11616,9 @@ new BasisDrawer({
 </div>
 ```
 */
+[data-basis-drawer-toggle-btn] * {
+  pointer-events: none; }
+
 /*
 ---
 name: _dropdown()
@@ -13654,7 +13670,7 @@ Drawer component
 ### html
 ```html
 <div style="min-height: 200px; position: relative; overflow: hidden">
-  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
+  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true">
     <div class="c-drawer__inner">
       <div class="c-drawer__focus-point" tabindex="-1"></div>
       <ul class="c-drawer__menu">
@@ -13691,9 +13707,11 @@ Drawer component
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="my-drawer" aria-hidden="true"></div>
 
-  <nav id="my-drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn-inverse">
+  <nav id="my-drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation">
     <div class="c-drawer__inner">
+      <div class="c-drawer__focus-point" tabindex="-1"></div>
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -13728,6 +13746,7 @@ Drawer component
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="my-drawer-inverse" aria-hidden="true"></div>
 </div>
 
 <div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
@@ -13759,7 +13778,8 @@ Drawer component
   max-width: 80%;
   visibility: hidden;
   transition: left 0.2s ease-out, right 0.2s ease-out, visibility 0.2s ease-out;
-  transition-timing-function: ease-in; }
+  transition-timing-function: ease-in;
+  backface-visibility: hidden; }
   .c-drawer[aria-hidden="false"] {
     visibility: visible;
     left: 0; }
@@ -13974,6 +13994,8 @@ Dropdown component
   left: 0;
   z-index: 2;
   cursor: pointer; }
+  .c-drawer-close-zone[aria-hidden="true"] {
+    display: none; }
   .c-drawer-close-zone--fixed {
     position: fixed; }
 
