@@ -104,6 +104,7 @@ new BasisDrawer({
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="drawer" aria-hidden="true"></div>
 
   <nav id="drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn-inverse">
     <div class="c-drawer__inner">
@@ -141,6 +142,7 @@ new BasisDrawer({
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="drawer-inverse" aria-hidden="true"></div>
 </div>
 
 <div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
@@ -221,4 +223,8 @@ new BasisDrawer({
   &__toggle {
     cursor: pointer;
   }
+}
+
+[data-basis-drawer-toggle-btn] * {
+  pointer-events: none;
 }

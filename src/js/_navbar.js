@@ -1,186 +1,299 @@
-'use strict';
-
 import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
 import '@inc2734/dispatch-custom-resize-event';
-import { show, hide, open, close, uniqueId } from './_helper';
-import BasisToggleBtn from './_toggle-btn';
+import { uniqueId } from './_helper';
 
-class BasisNavbarBase {
-  constructor(wrapper, args) {
-    this.wrapper = wrapper;
-    this.args = args;
+function NavbarBaseItemComponent(element, props) {
+  element.addEventListener(
+    'focusin',
+    (event) => {
+      event.stopPropagation();
+      props.onFocusin(event);
+    },
+    false
+  );
 
-    window.addEventListener(
-      'resize:width',
-      () => {
-        this._closeAllSubmenus();
-        this._setSubmenuOpenDirection();
-      },
-      false
-    );
+  forEachHtmlNodes(
+    element.querySelectorAll(props.args.submenu),
+    (submenu) => {
+      const useTurnLeft = () => {
+        const rect = submenu.getBoundingClientRect();
+        const submenuCenter = rect.left + rect.width / 2;
+        const windowCenter = window.innerWidth / 2
+        return submenuCenter < windowCenter
+          ? false
+          : true;
+      };
 
-    forEachHtmlNodes(
-      this.wrapper.querySelectorAll([this.args.item, this.args.subitem].join(',')),
-      (item) => item.addEventListener('focusin', () => this._closeOtherSubmenus(item), false)
-    );
-
-    this._setSubmenuOpenDirection();
-    this._init();
-  }
-
-  _setSubmenuOpenDirection() {
-    forEachHtmlNodes(
-      this.wrapper.querySelectorAll(`${this.args.item}[aria-haspopup="true"]`),
-      (item) => {
-        const allsubmenus = [].slice.call(item.querySelectorAll(this.args.submenu));
-        if (1 > allsubmenus.length) {
-          return;
+      new NavbarBaseSubmenuComponent(
+        submenu,
+        {
+          useTurnLeft,
         }
-
-        const itemRect = item.getBoundingClientRect();
-        const itemCenterX = itemRect.left + itemRect.width / 2;
-        const windowCenterX = window.innerWidth / 2
-        if (itemCenterX < windowCenterX) {
-          return;
-        }
-
-        const firstSubmenu = allsubmenus.slice(0)[0];
-        firstSubmenu.classList.remove('c-navbar__submenu--turn-left')
-
-        const lastSubmenu = allsubmenus.slice(-1)[0];
-        const rect = lastSubmenu.getBoundingClientRect();
-        const overRight = window.innerWidth < rect.right;
-        if (! overRight) {
-          return;
-        }
-
-        firstSubmenu.classList.add('c-navbar__submenu--turn-left');
-      }
-    );
-  }
-
-  _getItemsHasPopup() {
-    return this.wrapper.querySelectorAll(
-      [
-        `${this.args.item}[aria-haspopup="true"]`,
-        `${this.args.subitem}[aria-haspopup="true"]`,
-      ].join(',')
-    );
-  }
+      );
+    }
+  );
 }
 
-class BasisNavbarHover extends BasisNavbarBase {
-  constructor(wrapper, args) {
-    super(wrapper, args);
-  }
+function NavbarBaseSubmenuComponent(element, props) {
+  const init = () => {
+    props.useTurnLeft()
+      ? element.classList.add('c-navbar__submenu--turn-left')
+      : element.classList.remove('c-navbar__submenu--turn-left');
+  };
 
-  _init() {
-    forEachHtmlNodes(
-      this._getItemsHasPopup(),
-      (item) => {
-        const submenu = item.querySelector(this.args.submenu);
-        if (! submenu) {
-          return;
+  init();
+  window.addEventListener('resize:width', init, false);
+}
+
+function NavbarHoverComponent(element, props) {
+  this.items = [];
+
+  forEachHtmlNodes(
+    element.querySelectorAll(`${ props.args.item }`),
+    (item, index) => {
+      this.items[ index ] = new NavbarHoverItemComponent(
+        item,
+        {
+          args: props.args,
+          onFocusin: () => {
+            this.items[ index ].open();
+            this.items.forEach((item) => item !== this.items[ index ] && item.close());
+          },
+          onMouseleave: () => this.items[ index ].close(),
+          onMouseover: () => {
+            this.items[ index ].open();
+            this.items.forEach((item) => item !== this.items[ index ] && item.close());
+          },
         }
+      );
+    }
+  );
+}
 
-        const mouseover = (submenu) => {
-          show(submenu);
-          this._closeOtherSubmenus(item);
-        };
-        const mouseleave = (submenu) => hide(submenu);
+function NavbarHoverItemComponent(element, props) {
+  new NavbarBaseItemComponent(
+    element,
+    {
+      args: props.args,
+      onFocusin: props.onFocusin,
+    }
+  );
 
-        item.addEventListener('mouseover', () => mouseover(submenu), false);
-        item.addEventListener('mouseleave', () => mouseleave(submenu), false);
-        item.addEventListener('focusin', () => mouseover(submenu), false);
-      }
-    );
-  }
+  element.addEventListener(
+    'mouseover',
+    (event) => {
+      event.stopPropagation();
+      props.onMouseover(event)
+    },
+    false
+  );
 
-  _closeAllSubmenus() {
-    forEachHtmlNodes(
-      this.wrapper.querySelectorAll(this.args.submenu),
-      (submenu) => this._closeSubmenu(submenu)
-    );
-  }
+  element.addEventListener(
+    'mouseleave',
+    (event) => {
+      event.stopPropagation();
+      props.onMouseleave(event)
+    },
+    false
+  );
 
-  _closeOtherSubmenus(item) {
-    forEachHtmlNodes(
-      item.parentNode.children,
-      (child) => {
-        child !== item && forEachHtmlNodes(
-          child.querySelectorAll(this.args.submenu),
-          (submenu) => this._closeSubmenu(submenu)
+  this.submenu = undefined;
+
+  forEachHtmlNodes(
+    element.children,
+    (child) => {
+      if (child.classList.contains(props.args.submenu.slice(1))) {
+        this.submenu = new NavbarHoverSubmenuComponent(
+          child,
+          {
+            args: props.args,
+          }
         );
       }
-    );
-  }
+    }
+  );
 
-  _closeSubmenu(submenu) {
-    hide(submenu);
-    forEachHtmlNodes(
-      submenu.querySelectorAll(this.args.submenu),
-      (element) => this._closeSubmenu(element)
-    );
+  this.close = () => {
+    if (!! this.submenu) {
+      this.submenu.close();
+      this.submenu.subitems.forEach((subitem) => subitem.close());
+    }
+  };
+
+  this.open = () => {
+    if (!! this.submenu) {
+      this.submenu.open();
+    }
   };
 }
 
-class BasisNavbarClick extends BasisNavbarBase {
-  constructor(wrapper, args) {
-    super(wrapper, args);
-  }
+function NavbarHoverSubmenuComponent(element, props) {
+  this.subitems = [];
 
-  _init() {
-    forEachHtmlNodes(
-      this.wrapper.querySelectorAll(this.args.toggle),
-      (toggleBtn) => {
-        new BasisToggleBtn(toggleBtn, 'navbar');
-        toggleBtn.addEventListener(
-          'click',
-          (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            const item = event.currentTarget.parentNode;
-            this._closeOtherSubmenus(item);
+  forEachHtmlNodes(
+    element.children,
+    (child, index) => {
+      if (child.classList.contains(props.args.subitem.slice(1))) {
+        this.subitems[ index ] = new NavbarHoverItemComponent(
+          child,
+          {
+            args: props.args,
+            onFocusin: () => {
+              this.subitems[ index ].open();
+              this.subitems.forEach((subitem) => subitem !== this.subitems[ index ] && subitem.close());
+            },
+            onMouseleave: () => this.subitems[ index ].close(),
+            onMouseover: () => {
+              this.subitems[ index ].open();
+              this.subitems.forEach((subitem) => subitem !== this.subitems[ index ] && subitem.close());
+            },
+          }
+        );
+      }
+    }
+  );
+
+  this.close = () => element.setAttribute('aria-hidden', 'true');
+  this.open = () => element.setAttribute('aria-hidden', 'false');
+}
+
+function NavbarClickComponent(element, props) {
+  this.items = [];
+
+  forEachHtmlNodes(
+    element.querySelectorAll(props.args.item),
+    (item, index) => {
+      this.items[ index ] = new NavbarClickItemComponent(
+        item,
+        {
+          args: props.args,
+          onFocusin: () => {
+            this.items[ index ].open();
+            this.items.forEach((item) => item !== this.items[ index ] && item.close());
           },
-          false
-        );
-      }
-    );
-
-    forEachHtmlNodes(
-      this._getItemsHasPopup(),
-      (item) => {
-        item.addEventListener(
-          'focusin',
-          () => {
-            const toggleBtn = item.querySelector(this.args.toggle);
-            toggleBtn && BasisToggleBtn.open(toggleBtn);
-            this._closeOtherSubmenus(item);
+          onClose: () => this.items[ index ].close(),
+          onOpen: () => {
+            this.items[ index ].open();
+            this.items.forEach((item) => item !== this.items[ index ] && item.close());
           },
-          false
+        }
+      );
+    }
+  );
+}
+
+function NavbarClickItemComponent(element, props) {
+  new NavbarBaseItemComponent(
+    element,
+    {
+      args: props.args,
+      onFocusin: props.onFocusin,
+    }
+  );
+
+  this.toggleBtn = undefined;
+  this.submenu = undefined;
+
+  const id = uniqueId('navbar');
+
+  forEachHtmlNodes(
+    element.children,
+    (child) => {
+      // Toggle Button
+      if (child.classList.contains(props.args.toggle.slice(1))) {
+        this.toggleBtn = new NavbarClickToggleBtnComponent(
+          child,
+          {
+            args: props.args,
+            ariaControls: ! child.getAttribute('aria-controls') && id,
+            onClick: () => {
+              'false' === child.getAttribute('aria-expanded')
+                ? props.onOpen()
+                : props.onClose();
+            },
+            onResize: () => props.onClose(),
+          }
+        );
+
+      // Submenu
+      } else if (child.classList.contains(props.args.submenu.slice(1))) {
+        this.submenu = new NavbarClickSubmenuComponent(
+          child,
+          {
+            args: props.args,
+            id: ! child.getAttribute('id') && id,
+          }
         );
       }
-    );
-  }
+    }
+  );
 
-  _closeAllSubmenus() {
-    forEachHtmlNodes(
-      this.wrapper.querySelectorAll(this.args.toggle),
-      (toggleBtn) => BasisToggleBtn.close(toggleBtn)
-    );
-  }
+  this.close = () => {
+    if (!! this.toggleBtn && !! this.submenu) {
+      this.toggleBtn.close();
+      this.submenu.close();
+      this.submenu.subitems.forEach((subitem) => subitem.close());
+    }
+  };
 
-  _closeOtherSubmenus(item) {
-    forEachHtmlNodes(
-      item.parentNode.children,
-      (child) => {
-        child !== item && forEachHtmlNodes(
-          child.querySelectorAll(this.args.toggle),
-          (toggleBtn) => BasisToggleBtn.close(toggleBtn)
+  this.open = () => {
+    if (!! this.toggleBtn && !! this.submenu) {
+      this.toggleBtn.open();
+      this.submenu.open();
+    }
+  };
+}
+
+function NavbarClickToggleBtnComponent(element, props) {
+  element.addEventListener(
+    'click',
+    (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      props.onClick(event);
+    },
+    false
+  );
+
+  window.addEventListener('resize:width', props.onResize, false);
+
+  element.setAttribute('aria-controls', props.ariaControls);
+
+  this.close = () => element.setAttribute('aria-expanded', 'false');
+  this.open = () => element.setAttribute('aria-expanded', 'true');
+}
+
+function NavbarClickSubmenuComponent(element, props) {
+  element.setAttribute('id', props.id);
+
+  this.subitems = [];
+
+  forEachHtmlNodes(
+    element.children,
+    (child, index) => {
+      // Subitem
+      if (child.classList.contains(props.args.subitem.slice(1))) {
+        this.subitems[ index ] = new NavbarClickItemComponent(
+          child,
+          {
+            args: props.args,
+            onFocusin: () => {
+              this.subitems[ index ].open();
+              this.subitems.forEach((subitem) => subitem !== this.subitems[ index ] && subitem.close());
+            },
+            onClose: () => this.subitems[ index ].close(),
+            onOpen: () => {
+              this.subitems[ index ].open();
+              this.subitems.forEach((subitem) => subitem !== this.subitems[ index ] && subitem.close());
+            },
+          }
         );
       }
-    );
-  }
+    }
+  );
+
+  this.close = () => element.setAttribute('aria-hidden', 'true');
+  this.open = () => element.setAttribute('aria-hidden', 'false');
 }
 
 export default class BasisNavbar {
@@ -194,12 +307,22 @@ export default class BasisNavbar {
 
     forEachHtmlNodes(
       document.querySelectorAll(this.args.wrapper),
-      (wrapper) => {
-        const popupMode = wrapper.getAttribute('data-popup-mode') || 'hover';
+      (element) => {
+        const popupMode = element.getAttribute('data-popup-mode') || 'hover';
 
         'hover' === popupMode
-          ? new BasisNavbarHover(wrapper, args)
-          : new BasisNavbarClick(wrapper, args);
+          ? new NavbarHoverComponent(
+            element,
+            {
+              args,
+            }
+          )
+          : new NavbarClickComponent(
+            element,
+            {
+              args,
+            }
+          );
       }
     );
   }

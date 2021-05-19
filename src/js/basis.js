@@ -1,5 +1,3 @@
-'use strict';
-
 import BasisDrawerCloseZone from './_drawer-close-zone.js';
 import BasisDrawer from './_drawer.js';
 import BasisHamburgerBtn from './_hamburger-btn.js';

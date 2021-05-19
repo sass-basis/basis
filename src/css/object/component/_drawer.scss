@@ -10,7 +10,7 @@ Drawer component
 ### html
 ```html
 <div style="min-height: 200px; position: relative; overflow: hidden">
-  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
+  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true">
     <div class="c-drawer__inner">
       <div class="c-drawer__focus-point" tabindex="-1"></div>
       <ul class="c-drawer__menu">
@@ -47,9 +47,11 @@ Drawer component
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="my-drawer" aria-hidden="true"></div>
 
-  <nav id="my-drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn-inverse">
+  <nav id="my-drawer-inverse" class="c-drawer c-drawer--inverse" role="navigation">
     <div class="c-drawer__inner">
+      <div class="c-drawer__focus-point" tabindex="-1"></div>
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item"><a href="#">menu</a></li>
@@ -84,6 +86,7 @@ Drawer component
       </ul>
     </div>
   </nav>
+  <div class="c-drawer-close-zone" aria-controls="my-drawer-inverse" aria-hidden="true"></div>
 </div>
 
 <div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
@@ -112,6 +115,7 @@ Drawer component
   @include _drawer();
   @include _transition(left, right, visibility);
   transition-timing-function: ease-in;
+  backface-visibility: hidden;
 
   &[aria-hidden="false"] {
     @include _transition(left, right);
