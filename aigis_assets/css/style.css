@@ -2800,11 +2800,6 @@ new BasisDrawer({
 </div>
 ```
 */
-@import url(normalize.css);
-@import url(normalize.css);
-[data-basis-drawer-toggle-btn] * {
-  pointer-events: none; }
-
 /*
 ---
 name: _dropdown()
@@ -4127,6 +4122,8 @@ Abstract pulse spinner component
 </div>
 ```
 */
+@import url(normalize.css);
+@import url(normalize.css);
 :root {
   --_background-color: transparent; }
 
@@ -5042,6 +5039,9 @@ Drawer component
       transform: translateY(0); }
   .c-drawer--fixed {
     position: fixed; }
+
+[data-basis-drawer-toggle-btn] * {
+  pointer-events: none; }
 
 /*
 ---
@@ -11616,9 +11616,6 @@ new BasisDrawer({
 </div>
 ```
 */
-[data-basis-drawer-toggle-btn] * {
-  pointer-events: none; }
-
 /*
 ---
 name: _dropdown()
@@ -13856,6 +13853,9 @@ Drawer component
       transform: translateY(0); }
   .c-drawer--fixed {
     position: fixed; }
+
+[data-basis-drawer-toggle-btn] * {
+  pointer-events: none; }
 
 /*
 ---
