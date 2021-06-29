@@ -1,5 +1,8 @@
 #Changelog
 
+## June 29, 2021 14.0.1
+* Fixed a bug with raw CSS in the `_drawer()`.
+
 ## May 19, 2021 14.0.0
 * Refactoring JavaScript code.
 * `.c-drawer-close-zone` is generated automatically.
