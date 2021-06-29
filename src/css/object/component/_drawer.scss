@@ -169,3 +169,7 @@ Drawer component
     position: fixed;
   }
 }
+
+[data-basis-drawer-toggle-btn] * {
+  pointer-events: none;
+}
