@@ -2711,16 +2711,16 @@ new BasisDrawer({
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem">
               <a href="#">submenu</a>
-              <div class="c-drawer__toggle" aria-expanded="false">
+              <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
-              </div>
+              </button>
               <ul class="c-drawer__submenu" aria-hidden="true">
                 <li class="c-drawer__subitem"><a href="#">submenu</a></li>
               </ul>
@@ -2729,9 +2729,9 @@ new BasisDrawer({
         </li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
@@ -2749,16 +2749,16 @@ new BasisDrawer({
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem">
               <a href="#">submenu</a>
-              <div class="c-drawer__toggle" aria-expanded="false">
+              <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
-              </div>
+              </button>
               <ul class="c-drawer__submenu" aria-hidden="true">
                 <li class="c-drawer__subitem"><a href="#">submenu</a></li>
               </ul>
@@ -2767,9 +2767,9 @@ new BasisDrawer({
         </li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
@@ -2781,23 +2781,23 @@ new BasisDrawer({
   <div class="c-drawer-close-zone" aria-controls="drawer-inverse" aria-hidden="true"></div>
 </div>
 
-<div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 
-<div id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer-inverse">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU (Inverse)</div>
-</div>
+<button id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer-inverse">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU (Inverse)</span>
+</dibuttonv>
 ```
 */
 /*
@@ -2884,9 +2884,9 @@ new BasisDrawer({
         <li class="c-dropdown__item"><a href="#">menu</a></li>
         <li class="c-dropdown__item">
           <a href="#">menu</a>
-          <div class="c-dropdown__toggle" aria-expanded="false">
+          <button class="c-dropdown__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-dropdown__submenu" aria-hidden="true">
             <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
             <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
@@ -2897,14 +2897,14 @@ new BasisDrawer({
   </nav>
 </div>
 
-<div id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 ```
 */
 /*
@@ -3024,14 +3024,14 @@ new BasisHamburgerBtn({
 
 ### html
 ```ejs
-<div id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 
 <nav id="drawer" aria-labelledby="hamburger-btn">...</nav>
 ```
@@ -3394,15 +3394,15 @@ new BasisNavbar({
 <ul class="c-navbar" data-popup-mode="click">
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <div class="c-navbar__toggle" aria-expanded="false">
+    <button class="c-navbar__toggle" aria-expanded="false">
       <span class="c-ic-angle-right" aria-hidden="true"></span>
-    </div>
+    </button>
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
@@ -3410,9 +3410,9 @@ new BasisNavbar({
       </li>
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
@@ -3422,15 +3422,15 @@ new BasisNavbar({
   </li>
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <div class="c-navbar__toggle" aria-expanded="false">
+    <button class="c-navbar__toggle" aria-expanded="false">
       <span class="c-ic-angle-right" aria-hidden="true"></span>
-    </div>
+    </button>
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
         </ul>
@@ -4861,16 +4861,16 @@ Drawer component
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem">
               <a href="#">submenu</a>
-              <div class="c-drawer__toggle" aria-expanded="false">
+              <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
-              </div>
+              </button>
               <ul class="c-drawer__submenu" aria-hidden="true">
                 <li class="c-drawer__subitem"><a href="#">submenu</a></li>
               </ul>
@@ -4879,9 +4879,9 @@ Drawer component
         </li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
@@ -4900,16 +4900,16 @@ Drawer component
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem">
               <a href="#">submenu</a>
-              <div class="c-drawer__toggle" aria-expanded="false">
+              <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
-              </div>
+              </button>
               <ul class="c-drawer__submenu" aria-hidden="true">
                 <li class="c-drawer__subitem"><a href="#">submenu</a></li>
               </ul>
@@ -4918,9 +4918,9 @@ Drawer component
         </li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
@@ -4932,23 +4932,23 @@ Drawer component
   <div class="c-drawer-close-zone" aria-controls="my-drawer-inverse" aria-hidden="true"></div>
 </div>
 
-<div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 
-<div id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer-inverse">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU (Inverse)</div>
-</div>
+<button id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer-inverse">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU (Inverse)</span>
+</button>
 ```
 */
 .c-drawer {
@@ -4977,15 +4977,23 @@ Drawer component
     overflow-y: auto; }
   .c-drawer__submenu {
     height: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    visibility: hidden; }
     .c-drawer__submenu[aria-hidden="false"] {
       height: auto;
-      overflow: visible; }
+      overflow: visible;
+      visibility: visible; }
   .c-drawer__item > a, .c-drawer__subitem > a {
     display: block;
     text-decoration: none; }
   .c-drawer__toggle {
-    cursor: pointer; }
+    cursor: pointer;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle; }
   .c-drawer[aria-hidden="false"] {
     transition: left 0.2s ease-out, right 0.2s ease-out;
     transition-timing-function: ease-out; }
@@ -5072,9 +5080,9 @@ Dropdown component
         <li class="c-dropdown__item"><a href="#">menu</a></li>
         <li class="c-dropdown__item">
           <a href="#">menu</a>
-          <div class="c-dropdown__toggle" aria-expanded="false">
+          <button class="c-dropdown__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-dropdown__submenu" aria-hidden="true">
             <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
             <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
@@ -5085,14 +5093,14 @@ Dropdown component
   </nav>
 </div>
 
-<div id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 ```
 */
 .c-dropdown {
@@ -5113,15 +5121,23 @@ Dropdown component
     overflow-y: auto; }
   .c-dropdown__submenu {
     height: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    visibility: hidden; }
     .c-dropdown__submenu[aria-hidden="false"] {
       height: auto;
-      overflow: visible; }
+      overflow: visible;
+      visibility: visible; }
   .c-dropdown__item > a, .c-dropdown__subitem > a {
     display: block;
     text-decoration: none; }
   .c-dropdown__toggle {
-    cursor: pointer; }
+    cursor: pointer;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle; }
   .c-dropdown[aria-hidden="false"] {
     transition: bottom 0.2s ease-out;
     transition-timing-function: ease-out; }
@@ -5327,14 +5343,14 @@ Hamburger button component
 
 ### html
 ```html
-<div id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 
 <nav id="drawer" aria-labelledby="hamburger-btn">...</nav>
 ```
@@ -5342,7 +5358,12 @@ Hamburger button component
 .c-hamburger-btn {
   display: inline-block;
   cursor: pointer;
-  text-align: center; }
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+  vertical-align: middle; }
   .c-hamburger-btn__bars {
     position: relative;
     display: inline-block;
@@ -5365,6 +5386,7 @@ Hamburger button component
     .c-hamburger-btn__bar:nth-of-type(3) {
       top: 14px; }
   .c-hamburger-btn__label {
+    display: block;
     font-family: "Arial Narrow", Verdana, sans-serif;
     font-size: 8px;
     line-height: 1; }
@@ -5949,15 +5971,15 @@ Navbar component
 <ul class="c-navbar" data-popup-mode="click">
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <div class="c-navbar__toggle" aria-expanded="false">
+    <button class="c-navbar__toggle" aria-expanded="false">
       <span class="c-ic-angle-right" aria-hidden="true"></span>
-    </div>
+    </button>
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
@@ -5965,9 +5987,9 @@ Navbar component
       </li>
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
@@ -5977,15 +5999,15 @@ Navbar component
   </li>
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <div class="c-navbar__toggle" aria-expanded="false">
+    <button class="c-navbar__toggle" aria-expanded="false">
       <span class="c-ic-angle-right" aria-hidden="true"></span>
-    </div>
+    </button>
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
         </ul>
@@ -6047,7 +6069,13 @@ Navbar component
       visibility: visible;
       opacity: 1; }
   .c-navbar__toggle {
-    cursor: pointer; }
+    cursor: pointer;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle; }
   .c-navbar--center {
     justify-content: center; }
     .c-navbar--center .c-navbar__item {
@@ -11527,16 +11555,16 @@ new BasisDrawer({
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem">
               <a href="#">submenu</a>
-              <div class="c-drawer__toggle" aria-expanded="false">
+              <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
-              </div>
+              </button>
               <ul class="c-drawer__submenu" aria-hidden="true">
                 <li class="c-drawer__subitem"><a href="#">submenu</a></li>
               </ul>
@@ -11545,9 +11573,9 @@ new BasisDrawer({
         </li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
@@ -11565,16 +11593,16 @@ new BasisDrawer({
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem">
               <a href="#">submenu</a>
-              <div class="c-drawer__toggle" aria-expanded="false">
+              <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
-              </div>
+              </button>
               <ul class="c-drawer__submenu" aria-hidden="true">
                 <li class="c-drawer__subitem"><a href="#">submenu</a></li>
               </ul>
@@ -11583,9 +11611,9 @@ new BasisDrawer({
         </li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
@@ -11597,23 +11625,23 @@ new BasisDrawer({
   <div class="c-drawer-close-zone" aria-controls="drawer-inverse" aria-hidden="true"></div>
 </div>
 
-<div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 
-<div id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer-inverse">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU (Inverse)</div>
-</div>
+<button id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="drawer-inverse">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU (Inverse)</span>
+</dibuttonv>
 ```
 */
 /*
@@ -11700,9 +11728,9 @@ new BasisDrawer({
         <li class="c-dropdown__item"><a href="#">menu</a></li>
         <li class="c-dropdown__item">
           <a href="#">menu</a>
-          <div class="c-dropdown__toggle" aria-expanded="false">
+          <button class="c-dropdown__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-dropdown__submenu" aria-hidden="true">
             <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
             <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
@@ -11713,14 +11741,14 @@ new BasisDrawer({
   </nav>
 </div>
 
-<div id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 ```
 */
 /*
@@ -11840,14 +11868,14 @@ new BasisHamburgerBtn({
 
 ### html
 ```ejs
-<div id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 
 <nav id="drawer" aria-labelledby="hamburger-btn">...</nav>
 ```
@@ -12210,15 +12238,15 @@ new BasisNavbar({
 <ul class="c-navbar" data-popup-mode="click">
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <div class="c-navbar__toggle" aria-expanded="false">
+    <button class="c-navbar__toggle" aria-expanded="false">
       <span class="c-ic-angle-right" aria-hidden="true"></span>
-    </div>
+    </button>
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
@@ -12226,9 +12254,9 @@ new BasisNavbar({
       </li>
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
@@ -12238,15 +12266,15 @@ new BasisNavbar({
   </li>
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <div class="c-navbar__toggle" aria-expanded="false">
+    <button class="c-navbar__toggle" aria-expanded="false">
       <span class="c-ic-angle-right" aria-hidden="true"></span>
-    </div>
+    </button>
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
         </ul>
@@ -13675,16 +13703,16 @@ Drawer component
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem">
               <a href="#">submenu</a>
-              <div class="c-drawer__toggle" aria-expanded="false">
+              <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
-              </div>
+              </button>
               <ul class="c-drawer__submenu" aria-hidden="true">
                 <li class="c-drawer__subitem"><a href="#">submenu</a></li>
               </ul>
@@ -13693,9 +13721,9 @@ Drawer component
         </li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
@@ -13714,16 +13742,16 @@ Drawer component
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem">
               <a href="#">submenu</a>
-              <div class="c-drawer__toggle" aria-expanded="false">
+              <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
-              </div>
+              </button>
               <ul class="c-drawer__submenu" aria-hidden="true">
                 <li class="c-drawer__subitem"><a href="#">submenu</a></li>
               </ul>
@@ -13732,9 +13760,9 @@ Drawer component
         </li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
@@ -13746,23 +13774,23 @@ Drawer component
   <div class="c-drawer-close-zone" aria-controls="my-drawer-inverse" aria-hidden="true"></div>
 </div>
 
-<div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 
-<div id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer-inverse">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU (Inverse)</div>
-</div>
+<button id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer-inverse">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU (Inverse)</span>
+</button>
 ```
 */
 .c-drawer {
@@ -13791,15 +13819,23 @@ Drawer component
     overflow-y: auto; }
   .c-drawer__submenu {
     height: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    visibility: hidden; }
     .c-drawer__submenu[aria-hidden="false"] {
       height: auto;
-      overflow: visible; }
+      overflow: visible;
+      visibility: visible; }
   .c-drawer__item > a, .c-drawer__subitem > a {
     display: block;
     text-decoration: none; }
   .c-drawer__toggle {
-    cursor: pointer; }
+    cursor: pointer;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle; }
   .c-drawer[aria-hidden="false"] {
     transition: left 0.2s ease-out, right 0.2s ease-out;
     transition-timing-function: ease-out; }
@@ -13886,9 +13922,9 @@ Dropdown component
         <li class="c-dropdown__item"><a href="#">menu</a></li>
         <li class="c-dropdown__item">
           <a href="#">menu</a>
-          <div class="c-dropdown__toggle" aria-expanded="false">
+          <button class="c-dropdown__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-dropdown__submenu" aria-hidden="true">
             <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
             <li class="c-dropdown__subitem"><a href="#">submenu</a></li>
@@ -13899,14 +13935,14 @@ Dropdown component
   </nav>
 </div>
 
-<div id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="my-dropdown-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-dropdown">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 ```
 */
 .c-dropdown {
@@ -13927,15 +13963,23 @@ Dropdown component
     overflow-y: auto; }
   .c-dropdown__submenu {
     height: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    visibility: hidden; }
     .c-dropdown__submenu[aria-hidden="false"] {
       height: auto;
-      overflow: visible; }
+      overflow: visible;
+      visibility: visible; }
   .c-dropdown__item > a, .c-dropdown__subitem > a {
     display: block;
     text-decoration: none; }
   .c-dropdown__toggle {
-    cursor: pointer; }
+    cursor: pointer;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle; }
   .c-dropdown[aria-hidden="false"] {
     transition: bottom 0.2s ease-out;
     transition-timing-function: ease-out; }
@@ -14141,14 +14185,14 @@ Hamburger button component
 
 ### html
 ```html
-<div id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 
 <nav id="drawer" aria-labelledby="hamburger-btn">...</nav>
 ```
@@ -14156,7 +14200,12 @@ Hamburger button component
 .c-hamburger-btn {
   display: inline-block;
   cursor: pointer;
-  text-align: center; }
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+  vertical-align: middle; }
   .c-hamburger-btn__bars {
     position: relative;
     display: inline-block;
@@ -14179,6 +14228,7 @@ Hamburger button component
     .c-hamburger-btn__bar:nth-of-type(3) {
       top: 14px; }
   .c-hamburger-btn__label {
+    display: block;
     font-family: "Arial Narrow", Verdana, sans-serif;
     font-size: 8px;
     line-height: 1; }
@@ -14763,15 +14813,15 @@ Navbar component
 <ul class="c-navbar" data-popup-mode="click">
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <div class="c-navbar__toggle" aria-expanded="false">
+    <button class="c-navbar__toggle" aria-expanded="false">
       <span class="c-ic-angle-right" aria-hidden="true"></span>
-    </div>
+    </button>
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
@@ -14779,9 +14829,9 @@ Navbar component
       </li>
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
@@ -14791,15 +14841,15 @@ Navbar component
   </li>
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <div class="c-navbar__toggle" aria-expanded="false">
+    <button class="c-navbar__toggle" aria-expanded="false">
       <span class="c-ic-angle-right" aria-hidden="true"></span>
-    </div>
+    </button>
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
         </ul>
@@ -14861,7 +14911,13 @@ Navbar component
       visibility: visible;
       opacity: 1; }
   .c-navbar__toggle {
-    cursor: pointer; }
+    cursor: pointer;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle; }
   .c-navbar--center {
     justify-content: center; }
     .c-navbar--center .c-navbar__item {
