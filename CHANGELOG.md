@@ -1,5 +1,8 @@
 #Changelog
 
+## July 19, 2021 14.0.2
+* Fixes html grammar violations.
+
 ## June 29, 2021 14.0.1
 * Fixed a bug with raw CSS in the `_drawer()`.
 
