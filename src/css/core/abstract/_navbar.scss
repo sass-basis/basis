@@ -67,15 +67,15 @@ new BasisNavbar({
 <ul class="c-navbar" data-popup-mode="click">
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <div class="c-navbar__toggle" aria-expanded="false">
+    <button class="c-navbar__toggle" aria-expanded="false">
       <span class="c-ic-angle-right" aria-hidden="true"></span>
-    </div>
+    </button>
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
@@ -83,9 +83,9 @@ new BasisNavbar({
       </li>
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
@@ -95,15 +95,15 @@ new BasisNavbar({
   </li>
   <li class="c-navbar__item" aria-haspopup="true">
     <a href="#">menu</a>
-    <div class="c-navbar__toggle" aria-expanded="false">
+    <button class="c-navbar__toggle" aria-expanded="false">
       <span class="c-ic-angle-right" aria-hidden="true"></span>
-    </div>
+    </button>
     <ul class="c-navbar__submenu" aria-hidden="true">
       <li class="c-navbar__subitem" aria-haspopup="true">
         <a href="#">submenu</a>
-        <div class="c-navbar__toggle" aria-expanded="false">
+        <button class="c-navbar__toggle" aria-expanded="false">
           <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
+        </button>
         <ul class="c-navbar__submenu" aria-hidden="true">
           <li class="c-navbar__subitem"><a href="#">submenu</a></li>
         </ul>
@@ -179,5 +179,11 @@ new BasisNavbar({
 
   &__toggle {
     cursor: pointer;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle;
   }
 }

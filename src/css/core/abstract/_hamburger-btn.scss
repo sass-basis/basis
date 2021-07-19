@@ -28,14 +28,14 @@ new BasisHamburgerBtn({
 
 ### html
 ```ejs
-<div id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="hamburger-btn" class="c-hamburger-btn" role="button" aria-expanded="false" aria-controls="drawer">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 
 <nav id="drawer" aria-labelledby="hamburger-btn">...</nav>
 ```
@@ -59,6 +59,11 @@ new BasisHamburgerBtn({
   display: inline-block;
   cursor: pointer;
   text-align: center;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+  vertical-align: middle;
 
   &__bars {
     position: relative;
@@ -92,6 +97,7 @@ new BasisHamburgerBtn({
   }
 
   &__label {
+    display: block;
     font-family: "Arial Narrow", Verdana, sans-serif;
     font-size: 8px;
     line-height: 1;

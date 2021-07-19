@@ -57,7 +57,7 @@ function DrawerComponent(element, props) {
           args: props.args,
           closeDrawer: props.closeDrawer,
           onFocusin: () => {
-            this.items[ index ].open();
+            // this.items[ index ].open();
             this.items.forEach((item) => item !== this.items[ index ] && item.close());
           },
           onClose: () => this.items[ index ].close(),
@@ -206,7 +206,7 @@ function DrawerSubmenuComponent(element, props) {
             args: props.args,
             closeDrawer: props.closeDrawer,
             onFocusin: () => {
-              this.subitems[ index ].open();
+              // this.subitems[ index ].open();
               this.subitems.forEach((subitem) => subitem !== this.subitems[ index ] && subitem.close());
             },
             onClose: () => this.subitems[ index ].close(),

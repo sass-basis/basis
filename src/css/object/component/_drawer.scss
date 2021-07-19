@@ -18,16 +18,16 @@ Drawer component
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem">
               <a href="#">submenu</a>
-              <div class="c-drawer__toggle" aria-expanded="false">
+              <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
-              </div>
+              </button>
               <ul class="c-drawer__submenu" aria-hidden="true">
                 <li class="c-drawer__subitem"><a href="#">submenu</a></li>
               </ul>
@@ -36,9 +36,9 @@ Drawer component
         </li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
@@ -57,16 +57,16 @@ Drawer component
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem">
               <a href="#">submenu</a>
-              <div class="c-drawer__toggle" aria-expanded="false">
+              <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
-              </div>
+              </button>
               <ul class="c-drawer__submenu" aria-hidden="true">
                 <li class="c-drawer__subitem"><a href="#">submenu</a></li>
               </ul>
@@ -75,9 +75,9 @@ Drawer component
         </li>
         <li class="c-drawer__item">
           <a href="#">menu</a>
-          <div class="c-drawer__toggle" aria-expanded="false">
+          <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
-          </div>
+          </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
@@ -89,23 +89,23 @@ Drawer component
   <div class="c-drawer-close-zone" aria-controls="my-drawer-inverse" aria-hidden="true"></div>
 </div>
 
-<div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU</div>
-</div>
+<button id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU</span>
+</button>
 
-<div id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer-inverse">
-  <div class="c-hamburger-btn__bars">
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-    <div class="c-hamburger-btn__bar"></div>
-  </div>
-  <div class="c-hamburger-btn__label">MENU (Inverse)</div>
-</div>
+<button id="my-drawer-btn-inverse" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer-inverse">
+  <span class="c-hamburger-btn__bars">
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+    <span class="c-hamburger-btn__bar"></span>
+  </span>
+  <span class="c-hamburger-btn__label">MENU (Inverse)</span>
+</button>
 ```
 */
 

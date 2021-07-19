@@ -168,7 +168,7 @@ function NavbarClickComponent(element, props) {
         {
           args: props.args,
           onFocusin: () => {
-            this.items[ index ].open();
+            // this.items[ index ].open();
             this.items.forEach((item) => item !== this.items[ index ] && item.close());
           },
           onClose: () => this.items[ index ].close(),
@@ -278,7 +278,7 @@ function NavbarClickSubmenuComponent(element, props) {
           {
             args: props.args,
             onFocusin: () => {
-              this.subitems[ index ].open();
+              // this.subitems[ index ].open();
               this.subitems.forEach((subitem) => subitem !== this.subitems[ index ] && subitem.close());
             },
             onClose: () => this.subitems[ index ].close(),
