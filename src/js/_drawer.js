@@ -22,13 +22,14 @@ function DrawerComponent(element, props) {
   const id = element.getAttribute('id');
   if (id) {
     const controls = document.querySelectorAll(`[aria-controls~=${ id }]`);
-    controls.forEach(
+    forEachHtmlNodes(
+      controls,
       (control) => {
         control.addEventListener('closeHamburgerBtn', props.onCloseHamburgerBtn, false);
         control.addEventListener('openHamburgerBtn', props.onOpenHamburgerBtn, false);
         control.addEventListener('closeDrawerCloseZone', props.onCloseDrawerCloseZone, false);
       }
-    );
+    )
   }
 
   this.items = [];
