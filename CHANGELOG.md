@@ -1,5 +1,8 @@
 #Changelog
 
+## July 20, 2021 14.0.3
+* Fix bug that submenus of navbar is not opened on IE 11.
+
 ## July 19, 2021 14.0.2
 * Fixes html grammar violations.
 
