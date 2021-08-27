@@ -1,6 +1,6 @@
 #Changelog
 
-## August 27, 2021 15.0.1
+## August 28, 2021 15.0.2
 * Refactoring drawer / dropdown / navbar CSS.
 
 ## July 20, 2021 14.0.3
