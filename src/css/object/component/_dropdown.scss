@@ -25,7 +25,7 @@ Dropdown component
         </li>
         <li class="c-dropdown__item"><a href="#">menu</a></li>
         <li class="c-dropdown__item"><a href="#">menu</a></li>
-        <li class="c-dropdown__item">
+        <li class="c-dropdown__item c-dropdown__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-dropdown__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -52,8 +52,6 @@ Dropdown component
 */
 
 .#{$_prefix}c-dropdown {
-  $item-padding-coefficient: 1;
-
   @include _dropdown();
   @include _transition(bottom, visibility);
   transition-timing-function: ease-in;
@@ -67,30 +65,51 @@ Dropdown component
     @include _list-unstyled();
   }
 
-  &__item, &__subitem {
+  &__item,
+  &__subitem {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden;
+
+    &--has-submenu {
+      > a {
+        padding-right: 1rem;
+        max-width: calc(100% - 42px);
+      }
+    }
+
+    > a {
+      flex: 1 1 auto;
+    }
+
+    > .#{$_prefix}c-dropdown__toggle {
+      flex: 0 0 auto;
+      max-width: 42px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    > .#{$_prefix}c-dropdown__submenu {
+      flex: 1 1 100%;
+    }
   }
 
   &__item {
-    @include _padding(.5, $item-padding-coefficient, 0);
+    @include _margin(.5, 0, 0, 1);
   }
 
   &__submenu {
     @include _list-unstyled();
-    @include _margin(0, ($item-padding-coefficient * -1), 0, 0);
-    padding-left: 1em;
+    margin-left: 1em;
   }
 
   &__subitem {
-    @include _padding(.5, $item-padding-coefficient, 0, 0);
+    @include _margin(.5, 0, 0);
   }
 
   &__toggle {
-    position: absolute;
-    @include _top(.5);
-    @include _right(5px);
-    @include _bottom(0);
-    @include _square($_base-line-height);
     display: flex;
     align-items: center;
     justify-content: center;

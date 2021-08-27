@@ -215,7 +215,8 @@ new BasisDrawer({
     }
   }
 
-  &__item, &__subitem {
+  &__item,
+  &__subitem {
     > a {
       display: block;
       text-decoration: none;

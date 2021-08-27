@@ -249,18 +249,30 @@ Navbar component
     .#{$_prefix}c-navbar__item,
     .#{$_prefix}c-navbar__subitem {
       position: relative;
+      display: flex;
+      justify-content: space-between;
 
       &[aria-haspopup="true"] {
-        @include _padding-right(1);
+        > a {
+          padding-right: 1rem;
+          max-width: calc(100% - 42px);
+        }
+      }
+
+      > a {
+        flex: 1 1 auto;
+      }
+
+      > .#{$_prefix}c-navbar__toggle {
+        flex: 0 0 auto;
+        max-width: 42px;
+        width: 100%;
+        overflow: hidden;
       }
     }
   }
 
   &__toggle {
-    position: absolute;
-    top: calc(50% - #{$_base-line-height / 2});
-    right: 5px;
-    @include _square($_base-line-height);
     display: flex;
     align-items: center;
     justify-content: center;
