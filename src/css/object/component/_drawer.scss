@@ -126,52 +126,55 @@ Drawer component
     opacity: 0 !important;
   }
 
-  &__menu {
+  &__menu,
+  &__submenu {
     @include _list-unstyled();
+
+    > *:not(:first-child) {
+      @include _margin-top(.5, false);
+    }
   }
 
   &__item,
   &__subitem {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     overflow: hidden;
 
     &--has-submenu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      > * {
+        flex: 1 1 auto;
+      }
+
       > a {
-        padding-right: 1rem;
+        @include _padding-right(.5);
         max-width: calc(100% - 42px);
       }
-    }
 
-    > a {
-      flex: 1 1 auto;
-    }
+      > .#{$_prefix}c-drawer__toggle {
+        flex: 0 0 auto;
+        max-width: 42px;
+        width: 100%;
+        overflow: hidden;
+      }
 
-    > .#{$_prefix}c-drawer__toggle {
-      flex: 0 0 auto;
-      max-width: 42px;
-      width: 100%;
-      overflow: hidden;
+      > .#{$_prefix}c-drawer__submenu {
+        flex: 1 1 100%;
+      }
     }
-
-    > .#{$_prefix}c-drawer__submenu {
-      flex: 1 1 100%;
-    }
-  }
-
-  &__item {
-    @include _margin(.5, 0, 0, 1);
   }
 
   &__submenu {
-    @include _list-unstyled();
-    margin-left: 1em;
-  }
+    @include _margin-top(.5, false);
+    @include _margin-left(.5, false);
 
-  &__subitem {
-    @include _margin(.5, 0, 0);
+    &[aria-hidden="true"] {
+      display: none;
+      visibility: hidden;
+    }
   }
 
   &__toggle {
