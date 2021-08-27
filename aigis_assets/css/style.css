@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v15.0.1
+ * Name: Basis v15.0.2
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -5023,8 +5023,7 @@ Drawer component
         max-width: calc(100% - 42px); }
       .c-drawer__item--has-submenu > .c-drawer__toggle, .c-drawer__subitem--has-submenu > .c-drawer__toggle {
         flex: 0 0 auto;
-        max-width: 42px;
-        width: 100%;
+        width: 42px;
         overflow: hidden; }
       .c-drawer__item--has-submenu > .c-drawer__submenu, .c-drawer__subitem--has-submenu > .c-drawer__submenu {
         flex: 1 1 100%; }
@@ -5160,8 +5159,7 @@ Dropdown component
         max-width: calc(100% - 42px); }
       .c-dropdown__item--has-submenu > .c-dropdown__toggle, .c-dropdown__subitem--has-submenu > .c-dropdown__toggle {
         flex: 0 0 auto;
-        max-width: 42px;
-        width: 100%;
+        width: 42px;
         overflow: hidden; }
       .c-dropdown__item--has-submenu > .c-dropdown__submenu, .c-dropdown__subitem--has-submenu > .c-dropdown__submenu {
         flex: 1 1 100%; }
@@ -6054,8 +6052,7 @@ Navbar component
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-    min-width: 220px;
-    white-space: nowrap;
+    min-width: 240px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease-out; }
@@ -6092,22 +6089,27 @@ Navbar component
       left: auto; }
   .c-navbar[data-popup-mode="click"] .c-navbar__item,
   .c-navbar[data-popup-mode="click"] .c-navbar__subitem {
-    position: relative;
-    display: flex;
-    justify-content: space-between; }
-    .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > a,
-    .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > a {
-      padding-right: 1rem;
-      max-width: calc(100% - 42px); }
-    .c-navbar[data-popup-mode="click"] .c-navbar__item > a,
-    .c-navbar[data-popup-mode="click"] .c-navbar__subitem > a {
-      flex: 1 1 auto; }
-    .c-navbar[data-popup-mode="click"] .c-navbar__item > .c-navbar__toggle,
-    .c-navbar[data-popup-mode="click"] .c-navbar__subitem > .c-navbar__toggle {
-      flex: 0 0 auto;
-      max-width: 42px;
-      width: 100%;
-      overflow: hidden; }
+    position: relative; }
+    .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"],
+    .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] {
+      display: flex;
+      justify-content: space-between; }
+      .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > *,
+      .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > * {
+        flex: 1 1 auto; }
+      .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > a,
+      .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > a {
+        padding-right: 0.75rem;
+        padding-right: calc(var(--_space, 1.5rem) * 0.5);
+        max-width: calc(100% - 42px); }
+      .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > .c-navbar__toggle,
+      .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > .c-navbar__toggle {
+        flex: 0 0 auto;
+        width: 42px;
+        overflow: hidden; }
+      .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > .c-navbar__submenu,
+      .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > .c-navbar__submenu {
+        flex: 1 1 100%; }
   .c-navbar__toggle {
     display: flex;
     align-items: center;
@@ -8844,7 +8846,7 @@ Invisible utility
     display: none !important; } }
 
 /*!
- * Name: Basis v15.0.1
+ * Name: Basis v15.0.2
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -13865,8 +13867,7 @@ Drawer component
         max-width: calc(100% - 42px); }
       .c-drawer__item--has-submenu > .c-drawer__toggle, .c-drawer__subitem--has-submenu > .c-drawer__toggle {
         flex: 0 0 auto;
-        max-width: 42px;
-        width: 100%;
+        width: 42px;
         overflow: hidden; }
       .c-drawer__item--has-submenu > .c-drawer__submenu, .c-drawer__subitem--has-submenu > .c-drawer__submenu {
         flex: 1 1 100%; }
@@ -14002,8 +14003,7 @@ Dropdown component
         max-width: calc(100% - 42px); }
       .c-dropdown__item--has-submenu > .c-dropdown__toggle, .c-dropdown__subitem--has-submenu > .c-dropdown__toggle {
         flex: 0 0 auto;
-        max-width: 42px;
-        width: 100%;
+        width: 42px;
         overflow: hidden; }
       .c-dropdown__item--has-submenu > .c-dropdown__submenu, .c-dropdown__subitem--has-submenu > .c-dropdown__submenu {
         flex: 1 1 100%; }
@@ -14896,8 +14896,7 @@ Navbar component
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-    min-width: 220px;
-    white-space: nowrap;
+    min-width: 240px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease-out; }
@@ -14934,22 +14933,27 @@ Navbar component
       left: auto; }
   .c-navbar[data-popup-mode="click"] .c-navbar__item,
   .c-navbar[data-popup-mode="click"] .c-navbar__subitem {
-    position: relative;
-    display: flex;
-    justify-content: space-between; }
-    .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > a,
-    .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > a {
-      padding-right: 1rem;
-      max-width: calc(100% - 42px); }
-    .c-navbar[data-popup-mode="click"] .c-navbar__item > a,
-    .c-navbar[data-popup-mode="click"] .c-navbar__subitem > a {
-      flex: 1 1 auto; }
-    .c-navbar[data-popup-mode="click"] .c-navbar__item > .c-navbar__toggle,
-    .c-navbar[data-popup-mode="click"] .c-navbar__subitem > .c-navbar__toggle {
-      flex: 0 0 auto;
-      max-width: 42px;
-      width: 100%;
-      overflow: hidden; }
+    position: relative; }
+    .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"],
+    .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] {
+      display: flex;
+      justify-content: space-between; }
+      .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > *,
+      .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > * {
+        flex: 1 1 auto; }
+      .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > a,
+      .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > a {
+        padding-right: 0.9rem;
+        padding-right: calc(var(--_space, 1.8rem) * 0.5);
+        max-width: calc(100% - 42px); }
+      .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > .c-navbar__toggle,
+      .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > .c-navbar__toggle {
+        flex: 0 0 auto;
+        width: 42px;
+        overflow: hidden; }
+      .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > .c-navbar__submenu,
+      .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > .c-navbar__submenu {
+        flex: 1 1 100%; }
   .c-navbar__toggle {
     display: flex;
     align-items: center;
