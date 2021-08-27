@@ -210,19 +210,19 @@ Navbar component
 ```
 */
 
-.#{$_prefix}c-navbar {
+.#{ $_prefix }c-navbar {
   @include _navbar();
 
   &--center {
     justify-content: center;
 
-    .#{$_prefix}c-navbar__item {
+    .#{ $_prefix }c-navbar__item {
       flex: 0 1 auto;
     }
   }
 
   &--left {
-    .#{$_prefix}c-navbar__item {
+    .#{ $_prefix }c-navbar__item {
       flex: 0 1 auto;
     }
   }
@@ -230,44 +230,48 @@ Navbar component
   &--right {
     justify-content: flex-end;
 
-    .#{$_prefix}c-navbar__item {
+    .#{ $_prefix }c-navbar__item {
       flex: 0 1 auto;
 
-      > .#{$_prefix}c-navbar__submenu {
+      > .#{ $_prefix }c-navbar__submenu {
         @include _position(absolute, 100%, 0, null, auto);
       }
     }
 
-    .#{$_prefix}c-navbar__subitem {
-      > .#{$_prefix}c-navbar__submenu {
+    .#{ $_prefix }c-navbar__subitem {
+      > .#{ $_prefix }c-navbar__submenu {
         @include _position(absolute, 0, 100%, null, auto);
       }
     }
   }
 
   &[data-popup-mode="click"] {
-    .#{$_prefix}c-navbar__item,
-    .#{$_prefix}c-navbar__subitem {
+    .#{ $_prefix }c-navbar__item,
+    .#{ $_prefix }c-navbar__subitem {
       position: relative;
-      display: flex;
-      justify-content: space-between;
 
       &[aria-haspopup="true"] {
+        display: flex;
+        justify-content: space-between;
+
+        > * {
+          flex: 1 1 auto;
+        }
+
         > a {
-          padding-right: 1rem;
+          @include _padding-right(.5);
           max-width: calc(100% - 42px);
         }
-      }
 
-      > a {
-        flex: 1 1 auto;
-      }
+        > .#{ $_prefix }c-navbar__toggle {
+          flex: 0 0 auto;
+          width: 42px;
+          overflow: hidden;
+        }
 
-      > .#{$_prefix}c-navbar__toggle {
-        flex: 0 0 auto;
-        max-width: 42px;
-        width: 100%;
-        overflow: hidden;
+        > .#{ $_prefix }c-navbar__submenu {
+          flex: 1 1 100%;
+        }
       }
     }
   }

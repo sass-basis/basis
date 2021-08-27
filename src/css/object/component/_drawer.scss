@@ -109,7 +109,7 @@ Drawer component
 ```
 */
 
-.#{$_prefix}c-drawer {
+.#{ $_prefix }c-drawer {
   @include _drawer();
   @include _transition(left, right, visibility);
   transition-timing-function: ease-in;
@@ -154,14 +154,13 @@ Drawer component
         max-width: calc(100% - 42px);
       }
 
-      > .#{$_prefix}c-drawer__toggle {
+      > .#{ $_prefix }c-drawer__toggle {
         flex: 0 0 auto;
-        max-width: 42px;
-        width: 100%;
+        width: 42px;
         overflow: hidden;
       }
 
-      > .#{$_prefix}c-drawer__submenu {
+      > .#{ $_prefix }c-drawer__submenu {
         flex: 1 1 100%;
       }
     }

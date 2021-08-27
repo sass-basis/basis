@@ -51,7 +51,7 @@ Dropdown component
 ```
 */
 
-.#{$_prefix}c-dropdown {
+.#{ $_prefix }c-dropdown {
   @include _dropdown();
   @include _transition(bottom, visibility);
   transition-timing-function: ease-in;
@@ -89,14 +89,13 @@ Dropdown component
         max-width: calc(100% - 42px);
       }
 
-      > .#{$_prefix}c-dropdown__toggle {
+      > .#{ $_prefix }c-dropdown__toggle {
         flex: 0 0 auto;
-        max-width: 42px;
-        width: 100%;
+        width: 42px;
         overflow: hidden;
       }
 
-      > .#{$_prefix}c-dropdown__submenu {
+      > .#{ $_prefix }c-dropdown__submenu {
         flex: 1 1 100%;
       }
     }

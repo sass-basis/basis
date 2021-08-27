@@ -165,8 +165,7 @@ new BasisNavbar({
 
   &__submenu {
     @include _list-unstyled();
-    min-width: 220px;
-    white-space: nowrap;
+    min-width: 240px;
     opacity: 0;
     visibility: hidden;
     @include _transition(opacity);
