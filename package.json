@@ -1,6 +1,6 @@
 {
   "name": "sass-basis",
-  "version": "14.0.3",
+  "version": "15.0.0",
   "main": "src/css/basis.scss",
   "author": "inc2734",
   "contributors": [
