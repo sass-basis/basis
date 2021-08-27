@@ -4859,14 +4859,14 @@ Drawer component
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item"><a href="#">menu</a></li>
-        <li class="c-drawer__item">
+        <li class="c-drawer__item c-drawer__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
           </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-            <li class="c-drawer__subitem">
+            <li class="c-drawer__subitem c-drawer__subitem--has-submenu">
               <a href="#">submenu</a>
               <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -4877,7 +4877,7 @@ Drawer component
             </li>
           </ul>
         </li>
-        <li class="c-drawer__item">
+        <li class="c-drawer__item c-drawer__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -4898,14 +4898,14 @@ Drawer component
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item"><a href="#">menu</a></li>
-        <li class="c-drawer__item">
+        <li class="c-drawer__item c-drawer__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
           </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-            <li class="c-drawer__subitem">
+            <li class="c-drawer__subitem c-drawer__subitem--has-submenu">
               <a href="#">submenu</a>
               <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -4916,7 +4916,7 @@ Drawer component
             </li>
           </ul>
         </li>
-        <li class="c-drawer__item">
+        <li class="c-drawer__item c-drawer__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -5006,40 +5006,42 @@ Drawer component
     margin-left: 0;
     padding-left: 0; }
   .c-drawer__item, .c-drawer__subitem {
-    position: relative; }
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden; }
+    .c-drawer__item--has-submenu > a, .c-drawer__subitem--has-submenu > a {
+      padding-right: 1rem;
+      max-width: calc(100% - 42px); }
+    .c-drawer__item > a, .c-drawer__subitem > a {
+      flex: 1 1 auto; }
+    .c-drawer__item > .c-drawer__toggle, .c-drawer__subitem > .c-drawer__toggle {
+      flex: 0 0 auto;
+      max-width: 42px;
+      width: 100%;
+      overflow: hidden; }
+    .c-drawer__item > .c-drawer__submenu, .c-drawer__subitem > .c-drawer__submenu {
+      flex: 1 1 100%; }
   .c-drawer__item {
-    padding-top: 0.75rem;
-    padding-top: calc(var(--_space, 1.5rem) * 0.5);
-    padding-right: 1.5rem;
-    padding-right: calc(var(--_space, 1.5rem) * 1);
-    padding-bottom: 0;
-    padding-left: 1.5rem;
-    padding-left: calc(var(--_space, 1.5rem) * 1); }
+    margin-top: 0.75rem;
+    margin-top: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 1.5rem;
+    margin-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
   .c-drawer__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-    margin-top: 0;
-    margin-right: -1.5rem;
-    margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
-    margin-bottom: 0;
-    margin-left: 0;
-    padding-left: 1em; }
+    margin-left: 1em; }
   .c-drawer__subitem {
-    padding-top: 0.75rem;
-    padding-top: calc(var(--_space, 1.5rem) * 0.5);
-    padding-right: 1.5rem;
-    padding-right: calc(var(--_space, 1.5rem) * 1);
-    padding-bottom: 0;
-    padding-left: 0; }
+    margin-top: 0.75rem;
+    margin-top: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0; }
   .c-drawer__toggle {
-    position: absolute;
-    top: 0.75rem;
-    top: calc(var(--_space, 1.5rem) * 0.5);
-    right: 5px;
-    bottom: 0;
-    height: 1.5rem;
-    width: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center; }
@@ -5078,7 +5080,7 @@ Dropdown component
         </li>
         <li class="c-dropdown__item"><a href="#">menu</a></li>
         <li class="c-dropdown__item"><a href="#">menu</a></li>
-        <li class="c-dropdown__item">
+        <li class="c-dropdown__item c-dropdown__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-dropdown__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -5146,40 +5148,42 @@ Dropdown component
     margin-left: 0;
     padding-left: 0; }
   .c-dropdown__item, .c-dropdown__subitem {
-    position: relative; }
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden; }
+    .c-dropdown__item--has-submenu > a, .c-dropdown__subitem--has-submenu > a {
+      padding-right: 1rem;
+      max-width: calc(100% - 42px); }
+    .c-dropdown__item > a, .c-dropdown__subitem > a {
+      flex: 1 1 auto; }
+    .c-dropdown__item > .c-dropdown__toggle, .c-dropdown__subitem > .c-dropdown__toggle {
+      flex: 0 0 auto;
+      max-width: 42px;
+      width: 100%;
+      overflow: hidden; }
+    .c-dropdown__item > .c-dropdown__submenu, .c-dropdown__subitem > .c-dropdown__submenu {
+      flex: 1 1 100%; }
   .c-dropdown__item {
-    padding-top: 0.75rem;
-    padding-top: calc(var(--_space, 1.5rem) * 0.5);
-    padding-right: 1.5rem;
-    padding-right: calc(var(--_space, 1.5rem) * 1);
-    padding-bottom: 0;
-    padding-left: 1.5rem;
-    padding-left: calc(var(--_space, 1.5rem) * 1); }
+    margin-top: 0.75rem;
+    margin-top: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 1.5rem;
+    margin-left: calc(var(--_space, 1.5rem) * 1 * var(--_margin-scale, 1)); }
   .c-dropdown__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-    margin-top: 0;
-    margin-right: -1.5rem;
-    margin-right: calc(var(--_space, 1.5rem) * -1 * var(--_margin-scale, 1));
-    margin-bottom: 0;
-    margin-left: 0;
-    padding-left: 1em; }
+    margin-left: 1em; }
   .c-dropdown__subitem {
-    padding-top: 0.75rem;
-    padding-top: calc(var(--_space, 1.5rem) * 0.5);
-    padding-right: 1.5rem;
-    padding-right: calc(var(--_space, 1.5rem) * 1);
-    padding-bottom: 0;
-    padding-left: 0; }
+    margin-top: 0.75rem;
+    margin-top: calc(var(--_space, 1.5rem) * 0.5 * var(--_margin-scale, 1));
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0; }
   .c-dropdown__toggle {
-    position: absolute;
-    top: 0.75rem;
-    top: calc(var(--_space, 1.5rem) * 0.5);
-    right: 5px;
-    bottom: 0;
-    height: 1.5rem;
-    width: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center; }
@@ -6098,17 +6102,23 @@ Navbar component
       left: auto; }
   .c-navbar[data-popup-mode="click"] .c-navbar__item,
   .c-navbar[data-popup-mode="click"] .c-navbar__subitem {
-    position: relative; }
-    .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"],
-    .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] {
-      padding-right: 1.5rem;
-      padding-right: calc(var(--_space, 1.5rem) * 1); }
+    position: relative;
+    display: flex;
+    justify-content: space-between; }
+    .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > a,
+    .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > a {
+      padding-right: 1rem;
+      max-width: calc(100% - 42px); }
+    .c-navbar[data-popup-mode="click"] .c-navbar__item > a,
+    .c-navbar[data-popup-mode="click"] .c-navbar__subitem > a {
+      flex: 1 1 auto; }
+    .c-navbar[data-popup-mode="click"] .c-navbar__item > .c-navbar__toggle,
+    .c-navbar[data-popup-mode="click"] .c-navbar__subitem > .c-navbar__toggle {
+      flex: 0 0 auto;
+      max-width: 42px;
+      width: 100%;
+      overflow: hidden; }
   .c-navbar__toggle {
-    position: absolute;
-    top: calc(50% - 0.75rem);
-    right: 5px;
-    height: 1.5rem;
-    width: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center; }
@@ -13701,14 +13711,14 @@ Drawer component
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item"><a href="#">menu</a></li>
-        <li class="c-drawer__item">
+        <li class="c-drawer__item c-drawer__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
           </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-            <li class="c-drawer__subitem">
+            <li class="c-drawer__subitem c-drawer__subitem--has-submenu">
               <a href="#">submenu</a>
               <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -13719,7 +13729,7 @@ Drawer component
             </li>
           </ul>
         </li>
-        <li class="c-drawer__item">
+        <li class="c-drawer__item c-drawer__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -13740,14 +13750,14 @@ Drawer component
       <ul class="c-drawer__menu">
         <li class="c-drawer__item"><a href="#">menu</a></li>
         <li class="c-drawer__item"><a href="#">menu</a></li>
-        <li class="c-drawer__item">
+        <li class="c-drawer__item c-drawer__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
           </button>
           <ul class="c-drawer__submenu" aria-hidden="true">
             <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-            <li class="c-drawer__subitem">
+            <li class="c-drawer__subitem c-drawer__subitem--has-submenu">
               <a href="#">submenu</a>
               <button class="c-drawer__toggle" aria-expanded="false">
                 <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -13758,7 +13768,7 @@ Drawer component
             </li>
           </ul>
         </li>
-        <li class="c-drawer__item">
+        <li class="c-drawer__item c-drawer__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-drawer__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -13848,40 +13858,42 @@ Drawer component
     margin-left: 0;
     padding-left: 0; }
   .c-drawer__item, .c-drawer__subitem {
-    position: relative; }
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden; }
+    .c-drawer__item--has-submenu > a, .c-drawer__subitem--has-submenu > a {
+      padding-right: 1rem;
+      max-width: calc(100% - 42px); }
+    .c-drawer__item > a, .c-drawer__subitem > a {
+      flex: 1 1 auto; }
+    .c-drawer__item > .c-drawer__toggle, .c-drawer__subitem > .c-drawer__toggle {
+      flex: 0 0 auto;
+      max-width: 42px;
+      width: 100%;
+      overflow: hidden; }
+    .c-drawer__item > .c-drawer__submenu, .c-drawer__subitem > .c-drawer__submenu {
+      flex: 1 1 100%; }
   .c-drawer__item {
-    padding-top: 0.9rem;
-    padding-top: calc(var(--_space, 1.8rem) * 0.5);
-    padding-right: 1.8rem;
-    padding-right: calc(var(--_space, 1.8rem) * 1);
-    padding-bottom: 0;
-    padding-left: 1.8rem;
-    padding-left: calc(var(--_space, 1.8rem) * 1); }
+    margin-top: 0.9rem;
+    margin-top: calc(var(--_space, 1.8rem) * 0.5 * var(--_margin-scale, 1));
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 1.8rem;
+    margin-left: calc(var(--_space, 1.8rem) * 1 * var(--_margin-scale, 1)); }
   .c-drawer__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-    margin-top: 0;
-    margin-right: -1.8rem;
-    margin-right: calc(var(--_space, 1.8rem) * -1 * var(--_margin-scale, 1));
-    margin-bottom: 0;
-    margin-left: 0;
-    padding-left: 1em; }
+    margin-left: 1em; }
   .c-drawer__subitem {
-    padding-top: 0.9rem;
-    padding-top: calc(var(--_space, 1.8rem) * 0.5);
-    padding-right: 1.8rem;
-    padding-right: calc(var(--_space, 1.8rem) * 1);
-    padding-bottom: 0;
-    padding-left: 0; }
+    margin-top: 0.9rem;
+    margin-top: calc(var(--_space, 1.8rem) * 0.5 * var(--_margin-scale, 1));
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0; }
   .c-drawer__toggle {
-    position: absolute;
-    top: 0.9rem;
-    top: calc(var(--_space, 1.8rem) * 0.5);
-    right: 5px;
-    bottom: 0;
-    height: 1.8rem;
-    width: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center; }
@@ -13920,7 +13932,7 @@ Dropdown component
         </li>
         <li class="c-dropdown__item"><a href="#">menu</a></li>
         <li class="c-dropdown__item"><a href="#">menu</a></li>
-        <li class="c-dropdown__item">
+        <li class="c-dropdown__item c-dropdown__item--has-submenu">
           <a href="#">menu</a>
           <button class="c-dropdown__toggle" aria-expanded="false">
             <span class="c-ic-angle-right" aria-hidden="true"></span>
@@ -13988,40 +14000,42 @@ Dropdown component
     margin-left: 0;
     padding-left: 0; }
   .c-dropdown__item, .c-dropdown__subitem {
-    position: relative; }
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden; }
+    .c-dropdown__item--has-submenu > a, .c-dropdown__subitem--has-submenu > a {
+      padding-right: 1rem;
+      max-width: calc(100% - 42px); }
+    .c-dropdown__item > a, .c-dropdown__subitem > a {
+      flex: 1 1 auto; }
+    .c-dropdown__item > .c-dropdown__toggle, .c-dropdown__subitem > .c-dropdown__toggle {
+      flex: 0 0 auto;
+      max-width: 42px;
+      width: 100%;
+      overflow: hidden; }
+    .c-dropdown__item > .c-dropdown__submenu, .c-dropdown__subitem > .c-dropdown__submenu {
+      flex: 1 1 100%; }
   .c-dropdown__item {
-    padding-top: 0.9rem;
-    padding-top: calc(var(--_space, 1.8rem) * 0.5);
-    padding-right: 1.8rem;
-    padding-right: calc(var(--_space, 1.8rem) * 1);
-    padding-bottom: 0;
-    padding-left: 1.8rem;
-    padding-left: calc(var(--_space, 1.8rem) * 1); }
+    margin-top: 0.9rem;
+    margin-top: calc(var(--_space, 1.8rem) * 0.5 * var(--_margin-scale, 1));
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 1.8rem;
+    margin-left: calc(var(--_space, 1.8rem) * 1 * var(--_margin-scale, 1)); }
   .c-dropdown__submenu {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-    margin-top: 0;
-    margin-right: -1.8rem;
-    margin-right: calc(var(--_space, 1.8rem) * -1 * var(--_margin-scale, 1));
-    margin-bottom: 0;
-    margin-left: 0;
-    padding-left: 1em; }
+    margin-left: 1em; }
   .c-dropdown__subitem {
-    padding-top: 0.9rem;
-    padding-top: calc(var(--_space, 1.8rem) * 0.5);
-    padding-right: 1.8rem;
-    padding-right: calc(var(--_space, 1.8rem) * 1);
-    padding-bottom: 0;
-    padding-left: 0; }
+    margin-top: 0.9rem;
+    margin-top: calc(var(--_space, 1.8rem) * 0.5 * var(--_margin-scale, 1));
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0; }
   .c-dropdown__toggle {
-    position: absolute;
-    top: 0.9rem;
-    top: calc(var(--_space, 1.8rem) * 0.5);
-    right: 5px;
-    bottom: 0;
-    height: 1.8rem;
-    width: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center; }
@@ -14940,17 +14954,23 @@ Navbar component
       left: auto; }
   .c-navbar[data-popup-mode="click"] .c-navbar__item,
   .c-navbar[data-popup-mode="click"] .c-navbar__subitem {
-    position: relative; }
-    .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"],
-    .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] {
-      padding-right: 1.8rem;
-      padding-right: calc(var(--_space, 1.8rem) * 1); }
+    position: relative;
+    display: flex;
+    justify-content: space-between; }
+    .c-navbar[data-popup-mode="click"] .c-navbar__item[aria-haspopup="true"] > a,
+    .c-navbar[data-popup-mode="click"] .c-navbar__subitem[aria-haspopup="true"] > a {
+      padding-right: 1rem;
+      max-width: calc(100% - 42px); }
+    .c-navbar[data-popup-mode="click"] .c-navbar__item > a,
+    .c-navbar[data-popup-mode="click"] .c-navbar__subitem > a {
+      flex: 1 1 auto; }
+    .c-navbar[data-popup-mode="click"] .c-navbar__item > .c-navbar__toggle,
+    .c-navbar[data-popup-mode="click"] .c-navbar__subitem > .c-navbar__toggle {
+      flex: 0 0 auto;
+      max-width: 42px;
+      width: 100%;
+      overflow: hidden; }
   .c-navbar__toggle {
-    position: absolute;
-    top: calc(50% - 0.9rem);
-    right: 5px;
-    height: 1.8rem;
-    width: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center; }
