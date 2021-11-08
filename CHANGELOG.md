@@ -1,5 +1,8 @@
 #Changelog
 
+## November 8, 2021 15.0.3
+* Support sub navigation hover effect on mobile device.
+
 ## August 28, 2021 15.0.2
 * Refactoring drawer / dropdown / navbar CSS.
 
