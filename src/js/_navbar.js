@@ -79,22 +79,30 @@ function NavbarHoverItemComponent(element, props) {
     }
   );
 
-  element.addEventListener(
-    'mouseover',
-    (event) => {
-      event.stopPropagation();
-      props.onMouseover(event)
-    },
-    false
+  ['mouseover', 'touchstart'].forEach(
+    (eventName) => {
+      element.addEventListener(
+        eventName,
+        (event) => {
+          event.stopPropagation();
+          props.onMouseover(event)
+        },
+        false
+      );
+    }
   );
 
-  element.addEventListener(
-    'mouseleave',
-    (event) => {
-      event.stopPropagation();
-      props.onMouseleave(event)
-    },
-    false
+  ['mouseleave', 'touchend'].forEach(
+    (eventName) => {
+      element.addEventListener(
+        eventName,
+        (event) => {
+          event.stopPropagation();
+          props.onMouseleave(event)
+        },
+        false
+      );
+    }
   );
 
   this.submenu = undefined;
