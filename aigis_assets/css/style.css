@@ -17518,7 +17518,7 @@ body {
 
 a {
   transition: background-color var(--_transition-duration, 0.2s) var(--_transition-function-timing, ease-out), color var(--_transition-duration, 0.2s) var(--_transition-function-timing, ease-out);
-  color: _var-dark-color-primary(); }
+  color: #007980; }
 
 .hljs, pre {
   background-color: #15191d; }
