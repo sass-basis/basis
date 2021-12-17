@@ -5,7 +5,7 @@ body {
 a {
   transition: background-color #{ _var-transition-duration() } #{ _var-transition-function-timing() },
               color #{ _var-transition-duration() } #{ _var-transition-function-timing() };
-  color: _var-dark-color-primary();
+  color: _dark($_color-primary);
 }
 
 .hljs, pre {
