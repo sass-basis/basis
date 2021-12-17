@@ -1,3 +1,7 @@
 @function _var-half-leading() {
   @return var(--_half-leading, $_half-leading); // rem. but no unit.
 }
+
+@function _var-base-font-size-px() {
+  @return var(--_base-font-size-px, $_base-font-size-px);
+}

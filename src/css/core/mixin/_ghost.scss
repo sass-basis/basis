@@ -34,7 +34,7 @@ category:
   $params: map-merge(
     (
       'border-size' : 1px,
-      'color'       : [$_color-white, _var-color-white()],
+      'color'       : _var-color-white(),
     ),
     $params
   );

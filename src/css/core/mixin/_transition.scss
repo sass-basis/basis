@@ -30,7 +30,11 @@ a {
   $transitions: ();
 
   @each $property in $properties {
-    $transitions: append($transitions, ($property $_transition-duration $_transition-function-timing), comma);
+    $transitions: append(
+      $transitions,
+      ($property _var-transition-duration() _var-transition-function-timing()),
+      comma
+    );
   }
 
   transition: $transitions;

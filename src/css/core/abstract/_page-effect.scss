@@ -39,7 +39,7 @@ new BasisPageEffect({
   $params: map-merge(
     (
       duration: .2s, // Must be the same as js location duration time.
-      background-color: [$_color-white, _var-color-white()],
+      background-color: _var-color-white(),
     ),
     $params
   );

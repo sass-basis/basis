@@ -14,7 +14,6 @@
   }
 
   a[href] {
-    color: _light($_color-text); // For IE11
     color: _var-light-color-text();
     text-decoration: none;
 
@@ -24,7 +23,6 @@
   }
 
   a:not([href]) {
-    color: _lightest($_color-text); // For IE11
     color: _var-lightest-color-text();
     cursor: text;
     text-decoration: none;

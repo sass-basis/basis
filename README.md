@@ -95,26 +95,8 @@ https://cdn.jsdelivr.net/npm/sass-basis@latest/dist/
 <a class="c-btn c-btn--block">Btn</a>
 ```
 
-### Option
-
-Support IE9 ( Not perfect )
-
-```html
-<!--[if lt IE 10]>
-<link rel="stylesheet" href="node_modules/sass-basis/dist/css/plugin/basis-ie9/basis-ie9.min.css" />
-<![endif]-->
-```
-
-And support IE8 ( Not perfect )
-
-```html
-<!--[if lt IE 9]>
-<script src="node_modules/html5shiv/dist/html5shiv.js"></script>
-<![endif]-->
-```
-
 ## Browser support
-Modern Browser and IE10+
+Modern Browser only
 
 ## How to contribute
 

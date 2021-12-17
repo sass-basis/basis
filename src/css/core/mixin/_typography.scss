@@ -5,7 +5,7 @@ category:
   - core/mixin
   - core/mixin/typography
 ---
-Sets px and rem font-sizes
+Sets rem font-size
 
 ### scss
 ```scss
@@ -20,28 +20,11 @@ Sets px and rem font-sizes
 */
 
 @mixin _font-size($scale-or-font-size) {
-  @if unitless($scale_or_font-size) {
-    $scale: $scale-or-font-size;
-    font-size: $_base-font-size-px * $scale;
-    font-size: $scale * 1rem;
-  } @else {
-    $font-size: $scale-or-font-size;
-    @include _deprecated-font-size($font-size);
-  }
+  font-size: _font-size($scale-or-font-size);
 }
 
 @mixin _deprecated-font-size($font-size) {
-  $unit: unit($font-size);
-
-  $scale: false;
-  @if ('px' == $unit) {
-    $scale: $font-size / $_base-font-size-px;
-  } @else if ('rem' == $unit) {
-    $px: _rem2px($font-size);
-    $scale: $px / $_base-font-size-px;
-  }
-
-  @include _font-size($scale);
+  font-size: _deprecated-font-size($font-size);
 }
 
 /*
@@ -65,57 +48,12 @@ Sets line-height for vertical rhythum
 ```
 */
 
-@function _pow($number, $exponent) {
-  $value: 1;
-
-  @if $exponent > 0 {
-    @for $i from 1 through $exponent {
-      $value: $value * $number;
-    }
-  }
-
-  @return $value;
-}
-
 @mixin _line-height($scale-or-font-size) {
-  @if unitless($scale-or-font-size) {
-    $scale: $scale-or-font-size;
-    $diff: 1 - $scale;
-    $font-size-px: $_base-font-size-px * $scale;
-
-    @if 0 < $diff {
-      $t: $_base-font-size-px / $font-size-px - 1;
-      $new-line-height: (1 + $_half-leading * 2) - $t * $t;
-      line-height: $new-line-height;
-
-      $t: $_base-font-size-px / $font-size-px - 1;
-      $new-line-height: calc((1 + #{ _var-half-leading() } * 2) - #{ $t } * #{ $t });
-      line-height: $new-line-height;
-    } @else {
-      $new-line-height: $_base-font-size-px / $font-size-px + $_half-leading * 2;
-      line-height: $new-line-height;
-
-      $new-line-height: calc(#{ $_base-font-size-px / $font-size-px } + #{ _var-half-leading() } * 2);
-      line-height: $new-line-height;
-    }
-  } @else {
-    $font-size: $scale-or-font-size;
-    @include _deprecated-line-height($font-size);
-  }
+  line-height: _line-height($scale-or-font-size);
 }
 
 @mixin _deprecated-line-height($font-size) {
-  $unit: unit($font-size);
-
-  $scale: false;
-  @if ('px' == $unit) {
-    $scale: $font-size / $_base-font-size-px;
-  } @else if ('rem' == $unit) {
-    $px: _rem2px($font-size);
-    $scale: $px / $_base-font-size-px;
-  }
-
-  @include _line-height($scale);
+  line-height: _deprecated-line-height($font-size);
 }
 
 /*
@@ -127,7 +65,7 @@ category:
   - foundation/typography
   - foundation/typography/lists
 ---
-Sets px and rem font-sizes and line-height for vertical rhythum.
+Sets rem font-size and line-height for vertical rhythum.
 
 ### scss
 ```scss
@@ -192,6 +130,14 @@ Sets px and rem font-sizes and line-height for vertical rhythum.
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
 <p>
 
+<p class="font-size-100px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
+<p class="font-size-200px">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+<p>
+
 <h3>Japanese</h3>
 
 <p class="font-size-10px">
@@ -239,6 +185,14 @@ Sets px and rem font-sizes and line-height for vertical rhythum.
 <p>
 
 <p class="font-size-50px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-100px">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+<p>
+
+<p class="font-size-200px">
   あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
 <p>
 ```

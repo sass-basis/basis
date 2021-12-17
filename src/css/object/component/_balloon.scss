@@ -18,8 +18,8 @@ Top balloon component
 
 .#{$_prefix}c-top-balloon {
   @include _top-balloon((
-    background-color: [$_color-white, _var-color-white()],
-    border-color: [_light($_color-gray), _var-light-color-gray()],
+    background-color: _var-color-white(),
+    border-color: _var-light-color-gray(),
     border-size: 1px,
   ));
 }
@@ -44,8 +44,8 @@ Right balloon component
 
 .#{$_prefix}c-right-balloon {
   @include _right-balloon((
-    background-color: [$_color-white, _var-color-white()],
-    border-color: [_light($_color-gray), _var-light-color-gray()],
+    background-color: _var-color-white(),
+    border-color: _var-light-color-gray(),
     border-size: 1px,
   ));
 }
@@ -70,8 +70,8 @@ Bottom balloon component
 
 .#{$_prefix}c-bottom-balloon {
   @include _bottom-balloon((
-    background-color: [$_color-white, _var-color-white()],
-    border-color: [_light($_color-gray), _var-light-color-gray()],
+    background-color: _var-color-white(),
+    border-color: _var-light-color-gray(),
     border-size: 1px,
   ));
 }
@@ -96,8 +96,8 @@ Left balloon component
 
 .#{$_prefix}c-left-balloon {
   @include _left-balloon((
-    background-color: [$_color-white, _var-color-white()],
-    border-color: [_light($_color-gray), _var-light-color-gray()],
+    background-color: _var-color-white(),
+    border-color: _var-light-color-gray(),
     border-size: 1px,
   ));
 }

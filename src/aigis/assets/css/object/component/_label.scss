@@ -1,9 +1,7 @@
 .#{$_prefix}c-label {
   display: inline-block;
-  background-color: $_color-gray; // For IE11
   background-color: _var-color-gray();
   border-radius: 2px;
-  color: $_color-white; // For IE11
   color: _var-color-white();
   font-size: ($_base-font-size-px - 2);
   line-height: 1;

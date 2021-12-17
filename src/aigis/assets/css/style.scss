@@ -45,7 +45,7 @@ $_prefix: '';
   min-height: 150px;
 }
 
-@for $i from 10 through 500 {
+@for $i from 10 through 200 {
   .font-size-#{ $i }px {
     @include _font-size-line-height(_strip-unit($i / $_base-font-size-px));
 

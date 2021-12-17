@@ -9,7 +9,6 @@
     @include _square(48px);
     overflow: hidden;
     background-color: rgba( 0, 0, 0, .8 );
-    color: $_color-white; // For IE11
     color: _var-color-white();
     position: relative;
 

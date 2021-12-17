@@ -49,13 +49,11 @@ Form control component
   }
 
   &[disabled] {
-    background-color: _lighter($_color-gray); // For IE11
     background-color: _var-lighter-color-gray();
     cursor: not-allowed;
   }
 
   &[readonly] {
-    background-color: _lighter($_color-gray); // For IE11
     background-color: _var-lighter-color-gray();
   }
 }

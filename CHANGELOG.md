@@ -1,5 +1,16 @@
 #Changelog
 
+## December 17, 2021 16.0.0
+* Drop IE support.
+* Add new function: `_font-size()`.
+* Add new function: `_line-height()`.
+* Add new CSS custom property: `--_form-control-border-color`.
+* Add new CSS custom property: `--_form-control-border-color-hover`.
+* Add new CSS custom property: `--_form-control-border-color-focus`.
+* Add new CSS custom property: `--_transition-duration`.
+* Add new CSS custom property: `--_transition-function-timing`.
+* Add new CSS custom property: `--_base-font-size-px`.
+
 ## November 8, 2021 15.0.3
 * Support sub navigation hover effect on mobile device.
 

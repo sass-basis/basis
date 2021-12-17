@@ -19,12 +19,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 html {
-  font-size: (_strip-unit($_base-font-size-px) / 16 * 100%);
+  font-size: _var-base-font-size-px();
 }
 
 body {
   background-color: _var-background-color();
-  color: $_color-text; // for IE11
   color: _var-color-text();
   font-family: $_font-family;
   @include _font-size-line-height($_base-font-size-px);
@@ -56,9 +55,7 @@ pre {
 }
 
 code {
-  background-color: _lighter($_color-gray); // For IE11
   background-color: _var-lighter-color-gray();
-  border-radius: $_border-radius; // for IE11
   border-radius: _var-border-radius();
   padding: 2px 6px;
 }
@@ -189,18 +186,15 @@ Blockquotes
 blockquote {
   @include _content();
 
-  border-left: $_base-font-size-px / 2 solid transparent;
-  border-left-color: _lighter($_color-gray); // For IE11
-  border-left-color: _var-lighter-color-gray();
+  border-left: $_base-font-size-px / 2 solid _var-lighter-color-gray();
   margin-left: 0;
-  padding: $_base-font-size-px 0 $_base-font-size-px $_base-font-size-px;
+  padding: _var-base-font-size-px() 0 _var-base-font-size-px() _var-base-font-size-px();
 
   :last-child {
     margin-bottom: 0;
   }
 
   footer {
-    color: _darker($_color-gray); // For IE11
     color: _var-darker-color-gray();
     font-size: 90%;
   }

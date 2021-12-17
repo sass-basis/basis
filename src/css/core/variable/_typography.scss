@@ -8,6 +8,7 @@ category:
 Default font size
 
 * If html is `font-size: 62.5%`, set `10px`
+* If you change $_base-font-size-px, you must also change $_base-font-size.
 
 ### scss
 ```scss
@@ -25,7 +26,6 @@ category:
   - core/variable/typography
 ---
 Between the character and line of line-height
-
 
 ### scss
 ```scss

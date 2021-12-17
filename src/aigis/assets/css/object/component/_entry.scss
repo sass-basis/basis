@@ -5,9 +5,7 @@
 
   .#{$_prefix}c-entry__title {
     @include _padding(0, 0, .25);
-    border-bottom: 1px solid transparent;
-    border-bottom-color: _light($_color-gray); // For IE11
-    border-bottom-color: _var-light-color-gray();
+    border-bottom: 1px solid _var-light-color-gray();
     @include _padding(0, 0, .25);
   }
 

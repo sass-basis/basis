@@ -9,15 +9,12 @@
   }
 
   &--ghost {
-    border: 1px solid transparent;
-    border-color: $_color-white; // For IE11
-    border-color: _var-color-white();
+    border: 1px solid _var-color-white();
     background-color: transparent;
   }
 
   &--launch, &--download, &--buy {
     background-color: $color-primary;
-    color: $_color-white; // For IE11
     color: _var-color-white();
 
     @include _hover(lg) {

@@ -47,7 +47,7 @@ new BasisHamburgerBtn({
       height: 16px,
       width: 22px,
       bar-height: 2px,
-      color: [$_color-text, _var-color-text()],
+      color: _var-color-text(),
     ),
     $params
   );

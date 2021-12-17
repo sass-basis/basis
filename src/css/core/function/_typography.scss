@@ -1,0 +1,100 @@
+/*
+---
+name: _font-size()
+category:
+  - core/function
+  - core/function/typography
+---
+Return rem font-size
+
+### scss
+```scss
+//
+// @param  int  $scale-or-font-size  Font size scaling factor.
+// @return  rem
+//
+
+font-size: _font-size(1); // => 16px
+```
+*/
+
+@function _font-size($scale-or-font-size) {
+  @if unitless($scale_or_font-size) {
+    $scale: $scale-or-font-size;
+    @return $scale * 1rem;
+  }
+
+  $font-size: $scale-or-font-size;
+  @return _deprecated-font-size($font-size);
+}
+
+@function _deprecated-font-size($font-size) {
+  $unit: unit($font-size);
+
+  $scale: false;
+  @if ('px' == $unit) {
+    $scale: $font-size / $_base-font-size-px;
+  } @else if ('rem' == $unit) {
+    $px: _rem2px($font-size);
+    $scale: $px / $_base-font-size-px;
+  }
+  @return _font-size($scale);
+}
+
+/*
+---
+name: _line-height()
+category:
+  - core/function
+  - core/function/typography
+---
+Return line-height for vertical rhythum
+
+### scss
+```scss
+//
+// @param  int  $scale-or-font-size  Font size scaling factor.
+// @return  int
+//
+
+.c-foo {
+  line-height: _line-height(1); // line-height for 1rem
+}
+```
+*/
+
+@function _line-height($scale-or-font-size) {
+  @if unitless($scale-or-font-size) {
+    $scale: $scale-or-font-size;
+    $diff: 1 - $scale;
+    $font-size-px: $_base-font-size-px * $scale;
+
+    @if 0 < $diff {
+      $t: $scale - 1;
+      $new-line-height: calc(1 - (#{ $t * $t }) + #{ _var-half-leading() } * 2);
+      @return $new-line-height;;
+    }
+
+    $t: 1 - ($_base-font-size-px / $font-size-px);
+    $r: (($t - 1) * -1) + ($t * $t) - ($t * $t * $t * $t);
+    $new-line-height: calc(#{ $r } + #{ _var-half-leading() } * 2);
+    @return $new-line-height;
+  }
+
+  $font-size: $scale-or-font-size;
+  @return _deprecated-line-height($font-size);
+}
+
+@function _deprecated-line-height($font-size) {
+  $unit: unit($font-size);
+
+  $scale: false;
+  @if ('px' == $unit) {
+    $scale: $font-size / $_base-font-size-px;
+  } @else if ('rem' == $unit) {
+    $px: _rem2px($font-size);
+    $scale: $px / $_base-font-size-px;
+  }
+
+  @return _line-height($scale);
+}

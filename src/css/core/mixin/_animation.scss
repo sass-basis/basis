@@ -278,7 +278,7 @@ Extend the underline from the center.
   content: '';
   width: 0;
   height: 1px;
-  transition: width $_transition-duration $_transition-function-timing;
+  transition: width #{ _var-transition-duration() } #{ _var-transition-function-timing() };
   transform: translateX(-50%);
-  background-color: $_color-text;
+  background-color: _var-color-text();
 }

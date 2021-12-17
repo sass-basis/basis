@@ -1,11 +1,11 @@
 @function _var-form-control-border-color() {
-  @return var(--_form-control-border-color, $_form-control-border-color);
+  @return var(--_form-control-border-color, #{ _var-light-color-gray() });
 }
 
 @function _var-form-control-border-color-hover() {
-  @return var(--_form-control-border-color-hover, $_form-control-border-color-hover);
+  @return var(--_form-control-border-color-hover, #{ _var-color-gray() });
 }
 
 @function _var-form-control-border-color-focus() {
-  @return var(--_form-control-border-color-focus, $_form-control-border-color-focus);
+  @return var(--_form-control-border-color-focus, #85b7d9);
 }

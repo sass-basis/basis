@@ -3,9 +3,9 @@ body {
 }
 
 a {
-  transition: background-color $_transition-duration $_transition-function-timing,
-              color $_transition-duration $_transition-function-timing;
-  color: _dark($color-primary);
+  transition: background-color #{ _var-transition-duration() } #{ _var-transition-function-timing() },
+              color #{ _var-transition-duration() } #{ _var-transition-function-timing() };
+  color: _var-dark-color-primary();
 }
 
 .hljs, pre {

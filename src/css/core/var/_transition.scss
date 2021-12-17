@@ -1,0 +1,7 @@
+@function _var-transition-duration() {
+  @return var(--_transition-duration, $_transition-duration);
+}
+
+@function _var-transition-function-timing() {
+  @return var(--_transition-function-timing, $_transition-function-timing);
+}

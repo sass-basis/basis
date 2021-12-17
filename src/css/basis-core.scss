@@ -12,6 +12,7 @@
 @import 'core/function/size-prefix';
 @import 'core/function/space';
 @import 'core/function/strip-unit';
+@import 'core/function/typography';
 
 @import 'core/variable/typography';
 @import 'core/variable/transition';
@@ -19,8 +20,8 @@
 @import 'core/variable/color';
 @import 'core/variable/media-query';
 @import 'core/variable/container';
-@import 'core/variable/form';
 @import 'core/variable/page-effect';
+@import 'core/variable/transition';
 
 @import 'core/var/background-color';
 @import 'core/var/border-radius';
@@ -35,6 +36,7 @@
 @import 'core/var/margin-scale';
 @import 'core/var/space';
 @import 'core/var/typography';
+@import 'core/var/transition';
 
 @import 'core/mixin/animation';
 @import 'core/mixin/background-image';
