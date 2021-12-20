@@ -4186,7 +4186,7 @@ html {
 body {
   background-color: var(--_background-color, transparent);
   color: var(--_color-text, #333);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--_base-font-family, "Helvetica Neue", Helvetica, Arial, sans-serif);
   font-size: 1rem;
   line-height: calc(1 + var(--_half-leading, 0.25) * 2);
   -webkit-font-smoothing: antialiased;
@@ -4198,7 +4198,7 @@ code, kbd, pre, samp {
   font-family: '_', monospace; }
 
 input, textarea, keygen, select, button {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: var(--_base-font-family, "Helvetica Neue", Helvetica, Arial, sans-serif); }
 
 input, textarea, optgroup, select, button {
   font-size: 1rem;
@@ -12942,7 +12942,7 @@ html {
 body {
   background-color: var(--_background-color, transparent);
   color: var(--_color-text, #444);
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: var(--_base-font-family, "Helvetica Neue", Helvetica, sans-serif);
   font-size: 1rem;
   line-height: calc(1 + var(--_half-leading, 0.4) * 2);
   -webkit-font-smoothing: antialiased;
@@ -12954,7 +12954,7 @@ code, kbd, pre, samp {
   font-family: '_', monospace; }
 
 input, textarea, keygen, select, button {
-  font-family: "Helvetica Neue", Helvetica, sans-serif; }
+  font-family: var(--_base-font-family, "Helvetica Neue", Helvetica, sans-serif); }
 
 input, textarea, optgroup, select, button {
   font-size: 1rem;
