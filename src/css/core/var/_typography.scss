@@ -5,3 +5,7 @@
 @function _var-base-font-size-px() {
   @return var(--_base-font-size-px, $_base-font-size-px);
 }
+
+@function _var-base-font-family() {
+  @return var(--_base-font-family, $_font-family);
+}

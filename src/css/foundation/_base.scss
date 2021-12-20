@@ -25,7 +25,7 @@ html {
 body {
   background-color: _var-background-color();
   color: _var-color-text();
-  font-family: $_font-family;
+  font-family: _var-base-font-family();
   @include _font-size-line-height($_base-font-size-px);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,7 +37,7 @@ code, kbd, pre, samp {
 }
 
 input, textarea, keygen, select, button {
-  font-family: $_font-family;
+  font-family: _var-base-font-family();
 }
 
 input, textarea, optgroup, select, button {

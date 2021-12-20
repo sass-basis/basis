@@ -1,5 +1,8 @@
 #Changelog
 
+## December 20, 2021 16.0.1
++ Add new CSS custom property: `--_base-font-family`.
+
 ## December 17, 2021 16.0.0
 * Drop IE support.
 * Add new function: `_font-size()`.
