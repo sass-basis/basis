@@ -54,7 +54,7 @@ $_sizes: (
 
 $_sizes: (
   'sm': 0,
-  'md': (_px2rem(640px) / _px2rem($_base-font-size-px) * 1em),
-  'lg': (_px2rem(1024px) / _px2rem($_base-font-size-px) * 1em),
-  'xl': (_px2rem(1280px) / _px2rem($_base-font-size-px) * 1em)
+  'md': 640px,
+  'lg': 1024px,
+  'xl': 1280px
 ) !default;
