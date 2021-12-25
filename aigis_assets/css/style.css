@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v16.0.2
+ * Name: Basis v16.0.3
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -6302,7 +6302,7 @@ Responsive table component
 </div>
 ```
 */
-@media (max-width: 639.9375em) {
+@media (max-width: 10239px) {
   .c-responsive-table {
     overflow: auto;
     white-space: nowrap; }
@@ -8371,7 +8371,7 @@ Hidden utility
   visibility: hidden !important;
   overflow: hidden; }
 
-@media (max-width: 639.9375em) {
+@media (max-width: 10239px) {
   .u-hidden-sm {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -8385,7 +8385,7 @@ Hidden utility
     visibility: hidden !important;
     overflow: hidden; } }
 
-@media (min-width: 640px) and (max-width: 1023.9375em) {
+@media (min-width: 640px) and (max-width: 16383px) {
   .u-hidden-md {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -8399,7 +8399,7 @@ Hidden utility
     visibility: hidden !important;
     overflow: hidden; } }
 
-@media (min-width: 1024px) and (max-width: 1279.9375em) {
+@media (min-width: 1024px) and (max-width: 20479px) {
   .u-hidden-lg {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -8624,7 +8624,7 @@ Visible utility
   visibility: visible !important;
   overflow: visible; }
 
-@media (max-width: 639.9375em) {
+@media (max-width: 10239px) {
   .u-visible-sm {
     position: static !important;
     clip: auto !important;
@@ -8638,7 +8638,7 @@ Visible utility
     visibility: visible !important;
     overflow: visible; } }
 
-@media (min-width: 640px) and (max-width: 1023.9375em) {
+@media (min-width: 640px) and (max-width: 16383px) {
   .u-visible-md {
     position: static !important;
     clip: auto !important;
@@ -8652,7 +8652,7 @@ Visible utility
     visibility: visible !important;
     overflow: visible; } }
 
-@media (min-width: 1024px) and (max-width: 1279.9375em) {
+@media (min-width: 1024px) and (max-width: 20479px) {
   .u-visible-lg {
     position: static !important;
     clip: auto !important;
@@ -8726,7 +8726,7 @@ Invisible utility
 .u-invisible {
   display: none !important; }
 
-@media (max-width: 639.9375em) {
+@media (max-width: 10239px) {
   .u-invisible-sm {
     display: none !important; } }
 
@@ -8734,11 +8734,11 @@ Invisible utility
   .u-invisible-md-up {
     display: none !important; } }
 
-@media (max-width: 1023.9375em) {
+@media (max-width: 16383px) {
   .u-invisible-md-down {
     display: none !important; } }
 
-@media (min-width: 640px) and (max-width: 1023.9375em) {
+@media (min-width: 640px) and (max-width: 16383px) {
   .u-invisible-md {
     display: none !important; } }
 
@@ -8746,11 +8746,11 @@ Invisible utility
   .u-invisible-lg-up {
     display: none !important; } }
 
-@media (max-width: 1279.9375em) {
+@media (max-width: 20479px) {
   .u-invisible-lg-down {
     display: none !important; } }
 
-@media (min-width: 1024px) and (max-width: 1279.9375em) {
+@media (min-width: 1024px) and (max-width: 20479px) {
   .u-invisible-lg {
     display: none !important; } }
 
@@ -8759,7 +8759,7 @@ Invisible utility
     display: none !important; } }
 
 /*!
- * Name: Basis v16.0.2
+ * Name: Basis v16.0.3
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -15059,7 +15059,7 @@ Responsive table component
 </div>
 ```
 */
-@media (max-width: 639.9375em) {
+@media (max-width: 10239px) {
   .c-responsive-table {
     overflow: auto;
     white-space: nowrap; }
@@ -17128,7 +17128,7 @@ Hidden utility
   visibility: hidden !important;
   overflow: hidden; }
 
-@media (max-width: 639.9375em) {
+@media (max-width: 10239px) {
   .u-hidden-sm {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -17142,7 +17142,7 @@ Hidden utility
     visibility: hidden !important;
     overflow: hidden; } }
 
-@media (min-width: 640px) and (max-width: 1023.9375em) {
+@media (min-width: 640px) and (max-width: 16383px) {
   .u-hidden-md {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -17156,7 +17156,7 @@ Hidden utility
     visibility: hidden !important;
     overflow: hidden; } }
 
-@media (min-width: 1024px) and (max-width: 1279.9375em) {
+@media (min-width: 1024px) and (max-width: 20479px) {
   .u-hidden-lg {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -17381,7 +17381,7 @@ Visible utility
   visibility: visible !important;
   overflow: visible; }
 
-@media (max-width: 639.9375em) {
+@media (max-width: 10239px) {
   .u-visible-sm {
     position: static !important;
     clip: auto !important;
@@ -17395,7 +17395,7 @@ Visible utility
     visibility: visible !important;
     overflow: visible; } }
 
-@media (min-width: 640px) and (max-width: 1023.9375em) {
+@media (min-width: 640px) and (max-width: 16383px) {
   .u-visible-md {
     position: static !important;
     clip: auto !important;
@@ -17409,7 +17409,7 @@ Visible utility
     visibility: visible !important;
     overflow: visible; } }
 
-@media (min-width: 1024px) and (max-width: 1279.9375em) {
+@media (min-width: 1024px) and (max-width: 20479px) {
   .u-visible-lg {
     position: static !important;
     clip: auto !important;
@@ -17483,7 +17483,7 @@ Invisible utility
 .u-invisible {
   display: none !important; }
 
-@media (max-width: 639.9375em) {
+@media (max-width: 10239px) {
   .u-invisible-sm {
     display: none !important; } }
 
@@ -17491,11 +17491,11 @@ Invisible utility
   .u-invisible-md-up {
     display: none !important; } }
 
-@media (max-width: 1023.9375em) {
+@media (max-width: 16383px) {
   .u-invisible-md-down {
     display: none !important; } }
 
-@media (min-width: 640px) and (max-width: 1023.9375em) {
+@media (min-width: 640px) and (max-width: 16383px) {
   .u-invisible-md {
     display: none !important; } }
 
@@ -17503,11 +17503,11 @@ Invisible utility
   .u-invisible-lg-up {
     display: none !important; } }
 
-@media (max-width: 1279.9375em) {
+@media (max-width: 20479px) {
   .u-invisible-lg-down {
     display: none !important; } }
 
-@media (min-width: 1024px) and (max-width: 1279.9375em) {
+@media (min-width: 1024px) and (max-width: 20479px) {
   .u-invisible-lg {
     display: none !important; } }
 
