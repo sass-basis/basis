@@ -116,9 +116,9 @@
 }
 
 @include _test('[function] _max()') {
-  @include _assert-equals(_px2em(_rem2px(map-get($_sizes, md)) - 1px), _max(sm));
-  @include _assert-equals(_px2em(_rem2px(map-get($_sizes, lg)) - 1px), _max(md));
-  @include _assert-equals(_px2em(_rem2px(map-get($_sizes, xl)) - 1px), _max(lg));
+  @include _assert-equals(map-get($_sizes, md) - 1px, _max(sm));
+  @include _assert-equals(map-get($_sizes, lg) - 1px, _max(md));
+  @include _assert-equals(map-get($_sizes, xl) - 1px, _max(lg));
   @include _assert-equals(false, _max(xl));
   @include _assert-equals(false, _max(dummy));
   @include _assert-equals(0, _max(0));
