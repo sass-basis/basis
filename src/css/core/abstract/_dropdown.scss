@@ -113,9 +113,6 @@ new BasisDrawer({
     $params
   );
 
-  $width: map-get($params, 'width');
-  $max-width: map-get($params, 'max-width');
-
   @include _position(absolute, 0, 0, 100%, 0, 10);
   visibility: hidden;
 

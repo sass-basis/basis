@@ -1,0 +1,15 @@
+@function sass-min($numbers...) {
+  @return min($numbers...);
+}
+
+@function min($values...) {
+  @return unquote('min(#{$values})');
+}
+
+@function sass-max($numbers...) {
+  @return max($numbers...);
+}
+
+@function max($values...) {
+  @return unquote('max(#{$values})');
+}

@@ -168,7 +168,7 @@ new BasisDrawer({
 @mixin _drawer($params: ()) {
   $params: map-merge(
     (
-      width: ($_base-line-height * 10),
+      width: $_base-line-height * 10,
       max-width: 80%,
     ),
     $params
@@ -179,8 +179,7 @@ new BasisDrawer({
 
   @include _position(absolute, 0, null, 0, null, 10);
   left: -100%;
-  width: $width;
-  max-width: $max-width;
+  width: min(#{ $width }, #{ $max-width });
   visibility: hidden;
 
   &[aria-hidden="false"] {

@@ -50,6 +50,7 @@ Abstract fluid container component
 
 @mixin _fluid-container() {
   @include _container-padding();
+  max-width: 100%;
 }
 
 /*
