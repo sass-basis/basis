@@ -1,7 +1,11 @@
 #Changelog
 
+## December 25, 2021 16.0.2
+* Using CSS function, `min()` and `max()`.
+* Change breakpoints unit, `em` to `px`.
+
 ## December 20, 2021 16.0.1
-+ Add new CSS custom property: `--_base-font-family`.
+* Add new CSS custom property: `--_base-font-family`.
 
 ## December 17, 2021 16.0.0
 * Drop IE support.
