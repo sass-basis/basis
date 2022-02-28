@@ -29,11 +29,11 @@ Between the character and line of line-height
 
 ### scss
 ```scss
-$_half-leading: 1 / 4;
+$_half-leading: .4;
 ```
 */
 
-$_between-lines: _px2rem($_base-font-size-px) / 4 !default;
+$_between-lines: _px2rem($_base-font-size-px) / 3 !default;
 $_half-leading: _strip-unit($_between-lines) !default;
 
 /*
