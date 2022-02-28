@@ -1,5 +1,9 @@
 #Changelog
 
+## February 28, 2022 17.0.0
+* Change `_hover()`. Judge not by screen size, by whether hover is supported and whether the pointer device is supported.
+* Update `_line-height()`.
+
 ## December 25, 2021 16.0.4
 * Some fixes.
 
