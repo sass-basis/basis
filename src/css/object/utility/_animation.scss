@@ -15,7 +15,7 @@ Shake vertical utility
 */
 
 .#{$_prefix}u-shake-vertical {
-  @include _hover(lg) {
+  @include _hover() {
     @include _shake-vertical();
   }
 }
@@ -37,7 +37,7 @@ Vibrate vertical utility
 */
 
 .#{$_prefix}u-vibrate-vertical {
-  @include _hover(lg) {
+  @include _hover() {
     @include _vibrate-vertical();
   }
 }
@@ -59,7 +59,7 @@ Shake horizontal utility
 */
 
 .#{$_prefix}u-shake-horizontal {
-  @include _hover(lg) {
+  @include _hover() {
     @include _shake-horizontal();
   }
 }
@@ -81,7 +81,7 @@ Vibrate horizontal utility
 */
 
 .#{$_prefix}u-vibrate-horizontal {
-  @include _hover(lg) {
+  @include _hover() {
     @include _vibrate-horizontal();
   }
 }
@@ -103,7 +103,7 @@ Shake scale utility
 */
 
 .#{$_prefix}u-shake-scale {
-  @include _hover(lg) {
+  @include _hover() {
     @include _shake-scale();
   }
 }
@@ -125,7 +125,7 @@ Vibrate scale utility
 */
 
 .#{$_prefix}u-vibrate-scale {
-  @include _hover(lg) {
+  @include _hover() {
     @include _vibrate-scale();
   }
 }
@@ -153,7 +153,7 @@ Extend underline utility
     @include _extend-underline();
   }
 
-  @include _hover(lg) {
+  @include _hover() {
     &::after {
       width: 100%;
     }

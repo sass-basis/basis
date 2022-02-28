@@ -17,7 +17,7 @@
     background-color: $color-primary;
     color: _var-color-white();
 
-    @include _hover(lg) {
+    @include _hover() {
       opacity: .8;
     }
 

@@ -8,26 +8,16 @@ Hover event helper
 
 ### scss
 ```scss
-//
-// @param  size|length  $size
-//
-
 img {
-  @include _hover(lg) {
-    opacity: .8;
-  }
-}
-
-img {
-  @include _hover(md) {
+  @include _hover() {
     opacity: .8;
   }
 }
 ```
 */
 
-@mixin _hover($size: false) {
-  @include _media-min($size) {
+@mixin _hover() {
+  @media (hover: hover) and (pointer: fine) {
     &:hover, &:active, &:focus {
       @content;
     }
