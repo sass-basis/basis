@@ -5273,6 +5273,14 @@ Form control component
     cursor: not-allowed; }
   .c-form-control[readonly] {
     background-color: var(--_lighter-color-gray, #eeeeee); }
+  .c-form-control > input[type='email'],
+  .c-form-control > input[type='number'],
+  .c-form-control > input[type='password'],
+  .c-form-control > input[type='search'],
+  .c-form-control > input[type='tel'],
+  .c-form-control > input[type='text'],
+  .c-form-control > input[type='url'] {
+    width: 100%; }
 
 /*
 ---
@@ -14020,6 +14028,14 @@ Form control component
     cursor: not-allowed; }
   .c-form-control[readonly] {
     background-color: var(--_lighter-color-gray, #eeeeee); }
+  .c-form-control > input[type='email'],
+  .c-form-control > input[type='number'],
+  .c-form-control > input[type='password'],
+  .c-form-control > input[type='search'],
+  .c-form-control > input[type='tel'],
+  .c-form-control > input[type='text'],
+  .c-form-control > input[type='url'] {
+    width: 100%; }
 
 /*
 ---
