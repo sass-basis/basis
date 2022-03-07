@@ -56,4 +56,14 @@ Form control component
   &[readonly] {
     background-color: _var-lighter-color-gray();
   }
+
+  > input[type='email'],
+  > input[type='number'],
+  > input[type='password'],
+  > input[type='search'],
+  > input[type='tel'],
+  > input[type='text'],
+  > input[type='url'] {
+    width: 100%;
+  }
 }
