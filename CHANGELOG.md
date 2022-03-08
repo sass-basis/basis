@@ -1,5 +1,9 @@
 #Changelog
 
+## March 8, 2022 17.0.1
+* Fixed a bug that `.c-form-control > input[type=text]` ruled lines were missing on iPhone 8.
+* Update `_line-height()`.
+
 ## February 28, 2022 17.0.0
 * Change `_hover()`. Judge not by screen size, by whether hover is supported and whether the pointer device is supported.
 * Update `_line-height()`.
