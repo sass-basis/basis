@@ -66,7 +66,7 @@ Return line-height for vertical rhythum
 @function _line-height($scale-or-font-size) {
   @if unitless($scale-or-font-size) {
     $scale: $scale-or-font-size;
-    $new-line-height: calc(.4 + .6 / (1 + #{ $scale } * #{ $scale } / 3 - #{ $scale } / 3) + #{ _var-half-leading() } * 2);
+    $new-line-height: calc(.3 + .7 / (1 + #{ $scale } * #{ $scale } / 2.5 - #{ $scale } / 2.5) + #{ _var-half-leading() } * 2);
     @return $new-line-height;
   }
 
