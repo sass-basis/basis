@@ -5,3 +5,7 @@
 @function _var-transition-function-timing() {
   @return var(--_transition-function-timing, $_transition-function-timing);
 }
+
+@function _var-transition-delay() {
+  @return var(--_transition-delay, $_transition-delay);
+}

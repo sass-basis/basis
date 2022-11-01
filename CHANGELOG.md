@@ -1,5 +1,9 @@
 #Changelog
 
+## November 1, 2022 17.1.0
+* Add `_var-transition-delay()`.
+* Add new CSS custom property: `--_transition-delay`.
+
 ## March 8, 2022 17.0.1
 * Fixed a bug that `.c-form-control > input[type=text]` ruled lines were missing on iPhone 8.
 * Update `_line-height()`.

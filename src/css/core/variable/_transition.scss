@@ -33,3 +33,19 @@ $_transition-function-timing: ease-out;
 */
 
 $_transition-function-timing: ease-out !default;
+
+/*
+---
+name: $_transition-delay
+category:
+  - core/variable
+---
+Transition function timing
+
+### scss
+```scss
+$_transition-delay: 1s;
+```
+*/
+
+$_transition-delay: 0s !default;
