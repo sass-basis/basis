@@ -2,6 +2,7 @@ import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
 
 function PageEffectComponent(element, props) {
   window.addEventListener('load', props.onLoad, false);
+  window.addEventListener('pageshow', props.onLoad, false);
 
   this.close = () => {
     element.setAttribute('aria-hidden', 'true');
