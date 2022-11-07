@@ -1,4 +1,7 @@
-#Changelog
+# Changelog
+
+## November 7, 2022 17.1.1
+* Fix a bug that c-page-effect does not disappear when page back.
 
 ## November 1, 2022 17.1.0
 * Add `_var-transition-delay()`.
