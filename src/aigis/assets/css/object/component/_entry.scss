@@ -12,6 +12,10 @@
   .#{$_prefix}c-entry__content {
     @include _content();
 
+    pre {
+      @include _padding(.5);
+    }
+
     .aigis-preview + pre {
       @include _margin-top(.5);
     }

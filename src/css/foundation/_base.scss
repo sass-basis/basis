@@ -1,67 +1,148 @@
 :root {
   --_background-color: transparent;
+  --_base-font-family: #{ $_font-family };
+  --_base-font-size-px: #{ $_base-font-size-px };
+  --_border-radius: #{ $_border-radius };
+  --_color-text: #{ $_color-text };
+  --_lighter-color-gray: #{ _lighter($_color-gray) };
 }
 
 * {
   box-sizing: border-box;
 
-  &:before, &:after {
+  &:before,
+  &:after {
     box-sizing: inherit;
   }
 }
 
-html, body,
-p, ol, ul, li, dl, dt, dd, table,
-blockquote, figure, fieldset, legend, pre, iframe, hr,
-h1, h2, h3, h4, h5, h6 {
+:where(
+  html,
+  body,
+  p,
+  ol,
+  ul,
+  li,
+  dl,
+  dt,
+  dd,
+  table,
+  blockquote,
+  figure,
+  fieldset,
+  legend,
+  pre,
+  iframe,
+  hr,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+) {
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-size: _var-base-font-size-px();
+  font-size: var(--_base-font-size-px);
+  line-break: normal;
+  hanging-punctuation: allow-end;
+}
+
+:where(body) {
+  background-color: var(--_background-color);
+  color: var(--_color-text);
+  font-family: var(--_base-font-family);
 }
 
 body {
-  background-color: _var-background-color();
-  color: _var-color-text();
-  font-family: _var-base-font-family();
-  @include _font-size-line-height($_base-font-size-px);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // -moz-osx-font-smooting: grayscale; // White out elements will activate this.
+  @include _font-size-line-height($_base-font-size-px);
 }
 
-code, kbd, pre, samp {
+:where(
+  code,
+  kbd,
+  pre,
+  samp
+) {
   @include _font-size-line-height($_base-font-size-px - 2);
   font-family: '_', monospace;
 }
 
-input, textarea, keygen, select, button {
-  font-family: _var-base-font-family();
-}
-
-input, textarea, optgroup, select, button {
-  @include _font-size-line-height($_base-font-size-px);
-}
-
-img {
-  height: auto;
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-pre {
-  @include _pre();
-}
-
-code {
-  background-color: _var-lighter-color-gray();
-  border-radius: _var-border-radius();
+:where(
+  code,
+  kbd
+) {
+  background-color: var(--_lighter-color-gray);
+  border-radius: var(--_border-radius);
   padding: 2px 6px;
+}
+
+pre code {
+  display: block;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
+:where(
+  input,
+  textarea,
+  keygen,
+  select,
+  button
+) {
+  font-family: var(--_base-font-family);
+}
+
+:where(
+  input,
+  textarea,
+  optgroup,
+  select,
+  button
+) {
+  @include _font-size-line-height($_base-font-size-px);
 }
 
 label {
   cursor: pointer;
+}
+
+picture,
+figure {
+  width: fit-content;
+  max-width: 100%;
+}
+
+:where(figure, picture) {
+  :where(img, video) {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: table;
+  }
+
+  :where(img:not([width]), video:not([width])) {
+    width: 100%;
+  }
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+figcaption {
+  @include _font-size-line-height($_base-font-size-px - 2);
+
+  @include _margin(.25, 0, 0);
+  caption-side: bottom;
+  text-align: left;
 }
 
 /*
@@ -147,55 +228,13 @@ Lists
 ```
 */
 
-ul, ol {
+:where(
+  ul,
+  ol
+) {
   padding-left: 1.5em;
 }
 
-dt {
+:where(dt) {
   font-weight: bold;
-}
-dd {
-  margin-left: 0;
-}
-
-/*
----
-name: Blockquotes
-category:
-  - foundation/typography
-  - foundation/typography/blockquotes
----
-Blockquotes
-
-### html
-```html
-<blockquote>
-  <h3>Blockquotes</h3>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
-  </p>
-  <ul>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>consectetur adipisicing elit</li>
-    <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
-  </ul>
-</blockquote>
-```
-*/
-
-blockquote {
-  @include _content();
-
-  border-left: $_base-font-size-px / 2 solid _var-lighter-color-gray();
-  margin-left: 0;
-  padding: _var-base-font-size-px() 0 _var-base-font-size-px() _var-base-font-size-px();
-
-  :last-child {
-    margin-bottom: 0;
-  }
-
-  footer {
-    color: _var-darker-color-gray();
-    font-size: 90%;
-  }
 }
