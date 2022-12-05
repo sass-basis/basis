@@ -29,10 +29,8 @@ $_prefix: '';
 @import 'object/component/site-branding';
 @import 'object/component/table';
 
-@import 'object/project/footer-nav';
 @import 'object/project/global-nav';
 @import 'object/project/local-nav';
-@import 'object/project/media';
 @import 'object/project/scroll-top';
 @import 'object/project/show-grid';
 @import 'object/project/social-nav';
@@ -53,6 +51,25 @@ $_prefix: '';
       bottom: 100%;
       left: 0;
       content: '#{ $i }px';
+      display: inline-block;
+      background-color: #111;
+      color: #fff;
+      font-size: 12px;
+      padding: .25em .5em;
+    }
+  }
+}
+
+@for $i from -2 through 7 {
+  .font-size-level\:#{ $i } {
+    @include _set-font-size-level($i);
+
+    position: relative;
+    &::before {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      content: 'level: #{ $i }';
       display: inline-block;
       background-color: #111;
       color: #fff;

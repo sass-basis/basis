@@ -5,6 +5,8 @@ category:
   - core/abstract
   - core/abstract/container
   - core/variable/container
+tag:
+  - deprecated
 ---
 Container side margin
 
@@ -27,6 +29,8 @@ category:
   - core/abstract
   - core/abstract/container
   - core/variable/container
+tag:
+  - deprecated
 ---
 Container max width
 
@@ -36,8 +40,8 @@ Container max width
 // @var  length
 //
 
-$_container-max-width: 1200px;
+$_container-max-width: 1280px;
 ```
 */
 
-$_container-max-width: 1200px !default;
+$_container-max-width: 1280px !default;

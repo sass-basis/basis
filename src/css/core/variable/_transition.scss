@@ -3,6 +3,8 @@
 name: $_transition-duration
 category:
   - core/variable
+tag:
+  - deprecated
 ---
 Animation time
 
@@ -19,6 +21,8 @@ $_transition-duration: .2s !default;
 name: $_transition-function-timing
 category:
   - core/variable
+tag:
+  - deprecated
 ---
 Transition function timing
 
@@ -39,6 +43,8 @@ $_transition-function-timing: ease-out !default;
 name: $_transition-delay
 category:
   - core/variable
+tag:
+  - deprecated
 ---
 Transition function timing
 

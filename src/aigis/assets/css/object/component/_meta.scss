@@ -1,5 +1,5 @@
 .#{$_prefix}c-meta {
-  @include _font-size-line-height($_base-font-size-px - 2);
+  @include _set-font-size-level(-1);
   color: var(--_color-gray);
 
   a {

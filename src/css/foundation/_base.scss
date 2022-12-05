@@ -62,9 +62,39 @@
   --_h6-margin-bottom: #{ $_h6-margin-bottom };
 
   --_page-effect-z-index: #{ $_page-effect-z-index };
+
+  --_harmonic-sequence-base: 8;
+
+  /**
+    * The line-height slope. If smaller, the line-height is adjusted to a smaller value as the font size increases.
+    *
+    * A =(1, 1.6) // 1rem / 1.6
+    * B =(4, 1.1) // 4rem / 1.1
+    * y = -0.1666666666667x + 1.7666666666667 // y = line-height, x = Font size ratio
+    *
+    * @see https://www.geogebra.org/graphing?lang=ja
+    */
+  --_line-height-slope: -0.16666;
 }
 
 * {
+  /**
+   * Font size level.
+   * It is not recommended to override this value with :root in order to have the size determined based on 0.
+   */
+  --_font-size-level: 0;
+
+  $font-size-scale: calc(var(--_harmonic-sequence-base) / (var(--_harmonic-sequence-base) - var(--_font-size-level)));
+  $font-size: calc(#{ $font-size-scale } * 1rem);
+  $line-height: clamp(
+    1,
+    calc(var(--_line-height-slope) * #{ $font-size-scale } + 1 + 2 * var(--_half-leading) + -1 * var(--_line-height-slope)),
+    calc(2 * var(--_half-leading) + 1)
+  );
+
+  --_font-size: #{ $font-size };
+  --_line-height: #{ $line-height };
+
   box-sizing: border-box;
 
   &:before,
@@ -117,7 +147,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smooting: grayscale; // White out elements will activate this.
-  @include _font-size-line-height($_base-font-size-px);
+  @include _set-font-size-level(0);
 }
 
 :where(
@@ -126,7 +156,7 @@ body {
   pre,
   samp
 ) {
-  @include _font-size-line-height($_base-font-size-px - 2);
+  @include _set-font-size-level(-1);
   font-family: '_', monospace;
 }
 
@@ -163,7 +193,7 @@ pre code {
   select,
   button
 ) {
-  @include _font-size-line-height($_base-font-size-px);
+  @include _set-font-size-level(0);
 }
 
 label {
@@ -195,8 +225,7 @@ video {
 }
 
 figcaption {
-  @include _font-size-line-height($_base-font-size-px - 2);
-
+  @include _set-font-size-level(-1);
   @include _margin(.25, 0, 0);
   caption-side: bottom;
   text-align: left;
@@ -222,32 +251,39 @@ Headings
 ```
 */
 
-h1, h2, h3, h4, h5, h6 {
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+) {
   font-weight: bold;
 }
 
 h1 {
-  @include _font-size-line-height($_h1-font-size-scale);
+  @include _set-font-size-level(4);
 }
 
 h2 {
-  @include _font-size-line-height($_h2-font-size-scale);
+  @include _set-font-size-level(3);
 }
 
 h3 {
-  @include _font-size-line-height($_h3-font-size-scale);
+  @include _set-font-size-level(2);
 }
 
 h4 {
-  @include _font-size-line-height($_h4-font-size-scale);
+  @include _set-font-size-level(1);
 }
 
 h5 {
-  @include _font-size-line-height($_h5-font-size-scale);
+  @include _set-font-size-level(0);
 }
 
 h6 {
-  @include _font-size-line-height($_h6-font-size-scale);
+  @include _set-font-size-level(0);
 }
 
 /*
