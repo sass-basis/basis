@@ -66,23 +66,24 @@
   --_harmonic-sequence-base: 8;
 
   /**
-    * The line-height slope. If smaller, the line-height is adjusted to a smaller value as the font size increases.
-    *
-    * A =(1, 1.6) // 1rem / 1.6
-    * B =(4, 1.1) // 4rem / 1.1
-    * y = -0.1666666666667x + 1.7666666666667 // y = line-height, x = Font size ratio
-    *
-    * @see https://www.geogebra.org/graphing?lang=ja
-    */
+   * The line-height slope. If smaller, the line-height is adjusted to a smaller value as the font size increases.
+   *
+   * A =(1, 1.6) // 1rem / 1.6
+   * B =(4, 1.1) // 4rem / 1.1
+   * y = -0.1666666666667x + 1.7666666666667 // y = line-height, x = Font size ratio
+   *
+   * @see https://www.geogebra.org/graphing?lang=ja
+   */
   --_line-height-slope: -0.16666;
-}
 
-* {
   /**
    * Font size level.
    * It is not recommended to override this value with :root in order to have the size determined based on 0.
    */
   --_font-size-level: 0;
+}
+
+* {
 
   $font-size-scale: calc(var(--_harmonic-sequence-base) / (var(--_harmonic-sequence-base) - var(--_font-size-level)));
   $font-size: calc(#{ $font-size-scale } * 1rem);
