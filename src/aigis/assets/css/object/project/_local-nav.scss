@@ -14,7 +14,7 @@
   }
 
   a[href] {
-    color: _var-light-color-text();
+    color: var(--_light-color-text);
     text-decoration: none;
 
     @include _hover() {
@@ -23,7 +23,7 @@
   }
 
   a:not([href]) {
-    color: _var-lightest-color-text();
+    color: var(--_lightest-color-text);
     cursor: text;
     text-decoration: none;
   }

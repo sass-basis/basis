@@ -29,9 +29,9 @@ padding: _space(1, true, true);
   }
 
   @if $apply-space-scale and $apply-margin-scale {
-    @return calc(#{ _var-space() } * #{ $coefficient } * #{ _var-margin-scale() });
+    @return calc(var(--_space) * #{ $coefficient } * var(--_margin-scale));
   } @else if $apply-space-scale {
-    @return calc(#{ _var-space() } * #{ $coefficient });
+    @return calc(var(--_space) * #{ $coefficient });
   }
 
   $margin    : $_base-line-height * $coefficient;

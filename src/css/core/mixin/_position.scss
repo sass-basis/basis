@@ -69,7 +69,7 @@ Sets top
 @mixin _top($coefficient) {
   @if _is-number($coefficient) and 0 != $coefficient {
     top: _space($coefficient);
-    top: calc(#{ _var-space() } * #{ $coefficient });
+    top: calc(var(--_space) * #{ $coefficient });
   } @else {
     top: $coefficient;
   }
@@ -98,7 +98,7 @@ Sets right
 @mixin _right($coefficient) {
   @if _is-number($coefficient) and 0 != $coefficient {
     right: _space($coefficient);
-    right: calc(#{ _var-space() } * #{ $coefficient });
+    right: calc(var(--_space) * #{ $coefficient });
   } @else {
     right: $coefficient;
   }
@@ -127,7 +127,7 @@ Sets bottom
 @mixin _bottom($coefficient) {
   @if _is-number($coefficient) and 0 != $coefficient {
     bottom: _space($coefficient);
-    bottom: calc(#{ _var-space() } * #{ $coefficient });
+    bottom: calc(var(--_space) * #{ $coefficient });
   } @else {
     bottom: $coefficient;
   }
@@ -156,7 +156,7 @@ Sets left
 @mixin _left($coefficient) {
   @if _is-number($coefficient) and 0 != $coefficient {
     left: _space($coefficient);
-    left: calc(#{ _var-space() } * #{ $coefficient });
+    left: calc(var(--_space) * #{ $coefficient });
   } @else {
     left: $coefficient;
   }

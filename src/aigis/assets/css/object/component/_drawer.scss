@@ -1,7 +1,7 @@
 .#{$_prefix}l-body > .#{$_prefix}c-drawer {
-  background-color: _var-color-text();
+  background-color: currentColor;
   @include _padding(.5);
-  color: _var-color-white();
+  color: var(--_color-white);
 
   a {
     display: block;

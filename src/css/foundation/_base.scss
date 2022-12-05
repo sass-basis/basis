@@ -1,10 +1,50 @@
 :root {
   --_background-color: transparent;
+
   --_base-font-family: #{ $_font-family };
   --_base-font-size-px: #{ $_base-font-size-px };
+
   --_border-radius: #{ $_border-radius };
-  --_color-text: #{ $_color-text };
+
+  --_color-black: #{ $_color-black };
+
+  --_color-gray: #{ $_color-gray };
+  --_dark-color-gray: #{ _dark($_color-gray) };
+  --_darker-color-gray: #{ _darker($_color-gray) };
+  --_darkest-color-gray: #{ _darkest($_color-gray) };
+  --_light-color-gray: #{ _light($_color-gray) };
   --_lighter-color-gray: #{ _lighter($_color-gray) };
+  --_lightest-color-gray: #{ _lightest($_color-gray) };
+
+  --_color-text: #{ $_color-text };
+  --_dark-color-text: #{ _dark($_color-text) };
+  --_darker-color-text: #{ _darker($_color-text) };
+  --_darkest-color-text: #{ _darkest($_color-text) };
+  --_light-color-text: #{ _light($_color-text) };
+  --_lighter-color-text: #{ _lighter($_color-text) };
+  --_lightest-color-text: #{ _lightest($_color-text) };
+
+  --_color-white: #{ $_color-white };
+
+  --_container-margin-sm: #{ $_container-margin };
+  --_container-margin: #{ $_container-margin * 2 };
+
+  --_container-max-width: #{ $_container-max-width };
+
+  --_form-control-border-color: var(--_light-color-gray);
+  --_form-control-border-color-hover: var(--_color-gray);
+  --_form-control-border-color-focus: #85b7d9;
+
+  --_margin-scale: 1;
+  --_space: #{ $_base-line-height + $_base-line-height * ($_margin-coefficient - 1) };
+
+  --_transition-duration: #{ $_transition-duration };
+  --_transition-function-timing: #{ $_transition-function-timing };
+  --_transition-delay: #{ $_transition-delay };
+
+  --_half-leading: #{ $_half-leading }; // rem. but no unit.
+  --_base-font-size-px: #{ $_base-font-size-px };
+  --_base-font-family: #{ $_font-family };
 }
 
 * {

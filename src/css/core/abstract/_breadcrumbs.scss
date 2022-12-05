@@ -35,7 +35,7 @@ Abstract breadcrumbs component
         display: inline-block;
         height: .4em;
         width: .4em;
-        border-color: _var-color-text();
+        border-color: currentColor;
         border-style: solid;
         border-width: 1px 1px 0 0;
         transform: rotate(45deg);

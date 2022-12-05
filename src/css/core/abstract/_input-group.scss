@@ -29,11 +29,11 @@ Abstract input group component
 @mixin _input-group() {
   display: flex;
   flex-wrap: nowrap;
-  border-radius: _var-border-radius();
+  border-radius: var(--_border-radius);
 
   > :first-child {
     position: relative;
-    border-radius: _var-border-radius() 0 0 _var-border-radius();
+    border-radius: var(--_border-radius) 0 0 var(--_border-radius);
     border-right: none;
   }
 
@@ -46,7 +46,7 @@ Abstract input group component
     position: relative;
     z-index: 0;
     left: -1px;
-    border-radius: 0 _var-border-radius() _var-border-radius() 0;
+    border-radius: 0 var(--_border-radius) var(--_border-radius) 0;
 
     &:hover, &:active, &:focus {
       z-index: 1;
@@ -54,8 +54,8 @@ Abstract input group component
   }
 
   &__addon {
-    background-color: _var-color-white();
-    border: 1px solid _var-form-control-border-color();
+    background-color: var(--_color-white);
+    border: 1px solid var(--_form-control-border-color);
     @include _form-control-base-padding();
     flex: none;
   }
@@ -83,8 +83,8 @@ Abstract input group component
     @include _btn();
     @include _form-control-base-border();
     @include _form-control-base-padding();
-    background-color: _var-color-white();
-    color: _var-color-text();
+    background-color: var(--_color-white);
+    color: currentColor;
     flex: none;
     overflow: visible;
   }

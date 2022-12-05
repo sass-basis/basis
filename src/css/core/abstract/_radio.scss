@@ -36,7 +36,7 @@ Abstract radio button component
       display: inline-block;
       cursor: pointer;
       @include _form-control-base-border();
-      background-color: _var-color-white();
+      background-color: var(--_color-white);
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
       @include _square(16px);
       border-radius: 100%;
@@ -46,7 +46,7 @@ Abstract radio button component
         left: calc(50% - 3px);
         margin: 0 !important;
         @include _circle(6px);
-        background-color: _var-color-white();
+        background-color: var(--_color-white);
         visibility: hidden;
       }
 
@@ -63,10 +63,10 @@ Abstract radio button component
       }
 
       &:disabled {
-        background-color: _var-lightest-color-gray();
+        background-color: var(--_lightest-color-gray);
 
         &::before {
-          background-color: _var-dark-color-gray();
+          background-color: var(--_dark-color-gray);
         }
       }
     }

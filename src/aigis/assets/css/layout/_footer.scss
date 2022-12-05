@@ -1,9 +1,9 @@
 .#{$_prefix}l-footer {
   padding: ($_base-line-height * 2) 0 0;
-  background-color: _var-dark-color-text();
-  color: _var-color-white();
+  background-color: var(--_dark-color-text);
+  color: var(--_color-white);
 
   a {
-    color: _var-color-gray();
+    color: var(--_color-gray);
   }
 }

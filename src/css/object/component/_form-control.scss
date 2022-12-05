@@ -49,12 +49,12 @@ Form control component
   }
 
   &[disabled] {
-    background-color: _var-lighter-color-gray();
+    background-color: var(--_lighter-color-gray);
     cursor: not-allowed;
   }
 
   &[readonly] {
-    background-color: _var-lighter-color-gray();
+    background-color: var(--_lighter-color-gray);
   }
 
   > input[type='email'],

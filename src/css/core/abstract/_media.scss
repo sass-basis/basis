@@ -39,7 +39,7 @@ Abstract media component
 
     > * {
       vertical-align: top;
-      margin-top: calc(#{ _var-half-leading() } * 1rem);
+      margin-top: calc(var(--_half-leading) * 1rem);
     }
   }
 

@@ -1,11 +1,11 @@
 @function _var-form-control-border-color() {
-  @return var(--_form-control-border-color, #{ _var-light-color-gray() });
+  @return var(--_form-control-border-color);
 }
 
 @function _var-form-control-border-color-hover() {
-  @return var(--_form-control-border-color-hover, #{ _var-color-gray() });
+  @return var(--_form-control-border-color-hover);
 }
 
 @function _var-form-control-border-color-focus() {
-  @return var(--_form-control-border-color-focus, #85b7d9);
+  @return var(--_form-control-border-color-focus);
 }

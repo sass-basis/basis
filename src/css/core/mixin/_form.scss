@@ -39,20 +39,20 @@ select {
 */
 
 @mixin _form-control-base-border() {
-  border: 1px solid #{ _var-form-control-border-color() };
-  border-radius: _var-border-radius();
+  border: 1px solid var(--_form-control-border-color);
+  border-radius: var(--_border-radius);
   outline: 0;
   @include _transition(border);
 
   &:hover {
-    border-color: _var-form-control-border-color-hover();
+    border-color: var(--_form-control-border-color-hover);
   }
 
   &:active,
   &:focus,
   &:focus-within,
   &[aria-selected="true"] {
-    border-color: _var-form-control-border-color-focus();
+    border-color: var(--_form-control-border-color-focus);
   }
 
   > input,

@@ -51,7 +51,7 @@
   &__lead {
     margin: 0;
     padding: 0;
-    color: _var-color-gray();
+    color: var(--_color-gray);
   }
 
   &__content {

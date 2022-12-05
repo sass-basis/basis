@@ -36,7 +36,7 @@ Abstract checkbox component
       display: inline-block;
       cursor: pointer;
       @include _form-control-base-border();
-      background-color: _var-color-white();
+      background-color: var(--_color-white);
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
       @include _square(16px);
 
@@ -48,7 +48,7 @@ Abstract checkbox component
         height: 8px;
         width: 6px;
         border-style: solid;
-        border-color: _var-color-white();
+        border-color: var(--_color-white);
         border-width: 0 2px 2px 0;
         visibility: hidden;
       }
@@ -66,10 +66,10 @@ Abstract checkbox component
       }
 
       &:disabled {
-        background-color: _var-lightest-color-gray();
+        background-color: var(--_lightest-color-gray);
 
         &::before {
-          border-color: _var-dark-color-gray();
+          border-color: var(--_dark-color-gray);
         }
       }
     }

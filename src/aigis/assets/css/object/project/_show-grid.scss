@@ -1,9 +1,9 @@
 .#{$_prefix}p-show-grid {
   &__item {
     background-color: #00DAE6;
-    border-left: 1px solid _var-color-white();
-    border-bottom: 1px solid _var-color-white();
-    color: _var-color-white();
+    border-left: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    color: var(--_color-white);
     padding: 16px;
 
     &--cloudy {

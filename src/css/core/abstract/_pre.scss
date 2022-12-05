@@ -20,16 +20,16 @@ pre {
 */
 
 @mixin _pre() {
-  background-color: _var-lightest-color-gray();
-  border: 1px solid _var-lighter-color-gray();
-  border-radius: _var-border-radius();
-  padding: _var-base-font-size-px();
+  background-color: var(--_lightest-color-gray);
+  border: 1px solid var(--_lighter-color-gray);
+  border-radius: var(--_border-radius);
+  padding: var(--_base-font-size-px);
   overflow: auto;
 
   code {
     background-color: transparent;
     border: none;
-    color: _var-color-text();
+    color: inherit;
     font-size: 100%;
     padding: 0;
   }
