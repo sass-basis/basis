@@ -22,15 +22,15 @@ Sets margin-top
 
 @mixin _margin-top($coefficient, $apply-margin-scale: true) {
   @if _is-number($coefficient) and 0 != $coefficient {
-    margin-top: _space($coefficient);
+    margin-top: calc(var(--_margin-top, 1) * #{ _space($coefficient) });
 
     @if $apply-margin-scale {
-      margin-top: _space($coefficient, true, true);
+      margin-top: calc(var(--_margin-top, 1) * #{ _space($coefficient, true, true) });
     } @else {
-      margin-top: _space($coefficient, true);
+      margin-top: calc(var(--_margin-top, 1) * #{ _space($coefficient, true) });
     }
   } @else {
-    margin-top: $coefficient;
+    margin-top: calc(var(--_margin-top, 1) * #{ $coefficient });
   }
 }
 
@@ -94,15 +94,15 @@ Sets margin-bottom
 
 @mixin _margin-bottom($coefficient, $apply-margin-scale: true) {
   @if _is-number($coefficient) and 0 != $coefficient {
-    margin-bottom: _space($coefficient);
+    margin-bottom: calc(var(--_margin-bottom, 1) * #{ _space($coefficient) });
 
     @if $apply-margin-scale {
-      margin-bottom: _space($coefficient, true, true);
+      margin-bottom: calc(var(--_margin-bottom, 1) * #{ _space($coefficient, true, true) });
     } @else {
-      margin-bottom: _space($coefficient, true);
+      margin-bottom: calc(var(--_margin-bottom, 1) * #{ _space($coefficient, true) });
     }
   } @else {
-    margin-bottom: $coefficient;
+    margin-bottom: calc(var(--_margin-bottom, 1) * #{ $coefficient });
   }
 }
 

@@ -26,12 +26,17 @@ Sets Child elements margin
 */
 
 @mixin _between-content($coefficient: 1) {
-  > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-    @include _margin-top($_base-margin-bottom * $coefficient);
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
-  > :first-child {
-    margin-top: 0;
+  > *:not(:first-child) {
+    @include _margin-top($coefficient);
+  }
+
+  > *:not(:last-child) {
+    @include _margin-bottom($coefficient);
   }
 }
 
@@ -66,39 +71,32 @@ Sets Child elements margin
   @include _between-content($coefficient);
 
   > h1 {
-    @include _margin-top($_h1-margin-top * $coefficient);
-    @include _margin-bottom($_h1-margin-bottom * $coefficient);
+    --_margin-top: var(--_h1-margin-top);
+    --_margin-bottom: var(--_h1-margin-bottom);
   }
 
   > h2 {
-    @include _margin-top($_h2-margin-top * $coefficient);
-    @include _margin-bottom($_h2-margin-bottom * $coefficient);
+    --_margin-top: var(--_h2-margin-top);
+    --_margin-bottom: var(--_h2-margin-bottom);
   }
 
   > h3 {
-    @include _margin-top($_h3-margin-top * $coefficient);
-    @include _margin-bottom($_h3-margin-bottom * $coefficient);
+    --_margin-top: var(--_h3-margin-top);
+    --_margin-bottom: var(--_h3-margin-bottom);
   }
 
   > h4 {
-    @include _margin-top($_h4-margin-top * $coefficient);
-    @include _margin-bottom($_h4-margin-bottom * $coefficient);
+    --_margin-top: var(--_h4-margin-top);
+    --_margin-bottom: var(--_h4-margin-bottom);
   }
 
   > h5 {
-    @include _margin-top($_h5-margin-top * $coefficient);
-    @include _margin-bottom($_h5-margin-bottom * $coefficient);
+    --_margin-top: var(--_h5-margin-top);
+    --_margin-bottom: var(--_h5-margin-bottom);
   }
 
   > h6 {
-    @include _margin-top($_h6-margin-top * $coefficient);
-    @include _margin-bottom($_h6-margin-bottom * $coefficient);
-  }
-
-  > ol ol,
-  > ol ul,
-  > ul ol,
-  > ul ul {
-    margin-bottom: 0;
+    --_margin-top: var(--_h6-margin-top);
+    --_margin-bottom: var(--_h6-margin-bottom);
   }
 }

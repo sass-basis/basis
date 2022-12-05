@@ -14,13 +14,13 @@
   }
 
   .#{$_prefix}c-site-branding {
-    padding: ($_base-line-height / 2) 0;
+    padding: calc(var(--_base-line-height) / 2) 0;
   }
 
   .#{$_prefix}c-hamburger-btn {
     position: absolute;
     top: 50%;
-    right: $_base-line-height;
+    right: var(--_base-line-height);
     transform: translateY(-50%);
 
     &__bar {

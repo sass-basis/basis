@@ -3,7 +3,7 @@
   box-shadow: none;
 
   &__figure {
-    margin-bottom: ($_base-line-height / 2);
+    margin-bottom: calc(var(--_base-line-height) / 2);
 
     &--circle {
       width: 51%;
@@ -55,7 +55,7 @@
   }
 
   &__content {
-    margin: ($_base-line-height / 2) 0 0;
+    margin: calc(var(--_base-line-height) / 2) 0 0;
     padding: 0;
   }
 }

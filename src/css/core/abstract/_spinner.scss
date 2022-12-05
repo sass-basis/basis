@@ -21,7 +21,7 @@ Abstract circle spinner component
 .c-circle-spinner {
   @include _circle-spinner((
     size: 20px,
-    color: _light($_color-gray),
+    color: var(--_light-color-gray),
     border-size: 3px,
     delay: 0s,
     duration: 2s,
@@ -101,7 +101,7 @@ Abstract dots spinner component
 .c-dots-spinner {
   @include _dots-spinner((
     size: 10px,
-    color: $_color-gray,
+    color: var(--_color-gray),
     delay: 0s,
     duration: 2s,
     scale: 1.3,
@@ -200,7 +200,7 @@ Abstract pulse spinner component
   @include _pulse-spinner((
     height: 16px,
     width: 5px,
-    color: $_color-gray,
+    color: var(--_color-gray),
     delay: 0s,
     duration: 2s,
     scale: 1.3,

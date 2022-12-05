@@ -47,11 +47,11 @@ Default line height rem
 
 ### scss
 ```scss
-$_base-line-height: 1 + $_half-leading * 2rem;
+$_base-line-height: calc(1rem + var(--_half-leading) * 2rem)
 ```
 */
 
-$_base-line-height: 1 + $_half-leading * 2rem;
+$_base-line-height: calc(1rem + var(--_half-leading) * 2rem);
 
 /*
 ---
@@ -69,23 +69,6 @@ $_margin-coefficient: 1;
 */
 
 $_margin-coefficient: 1 !default;
-
-/*
----
-name: $_base-margin-bottom
-category:
-  - core/variable
-  - core/variable/typography
----
-HTML element margin coefficient
-
-### scss
-```scss
-$_base-margin-bottom: 1
-```
-*/
-
-$_base-margin-bottom: 1 !default;
 
 /*
 ---
@@ -216,11 +199,11 @@ category:
 
 ### scss
 ```scss
-$_h1-margin-bottom: $_base-margin-bottom;
+$_h1-margin-bottom: 1;
 ```
 */
 
-$_h1-margin-bottom: $_base-margin-bottom !default;
+$_h1-margin-bottom: 1 !default;
 
 /*
 ---
@@ -233,11 +216,11 @@ category:
 
 ### scss
 ```scss
-$_h2-margin-top: $_base-margin-bottom * 2;
+$_h2-margin-top: 2;
 ```
 */
 
-$_h2-margin-top: $_base-margin-bottom * 2 !default;
+$_h2-margin-top: 2 !default;
 
 /*
 ---
@@ -250,11 +233,11 @@ category:
 
 ### scss
 ```scss
-$_h2-margin-bottom: $_base-margin-bottom;
+$_h2-margin-bottom: 1;
 ```
 */
 
-$_h2-margin-bottom: $_base-margin-bottom !default;
+$_h2-margin-bottom: 1 !default;
 
 /*
 ---
@@ -267,11 +250,11 @@ category:
 
 ### scss
 ```scss
-$_h3-margin-top: $_base-margin-bottom * 1.5;
+$_h3-margin-top: 1.5;
 ```
 */
 
-$_h3-margin-top: $_base-margin-bottom * 1.5 !default;
+$_h3-margin-top: 1.5 !default;
 
 /*
 ---
@@ -284,11 +267,11 @@ category:
 
 ### scss
 ```scss
-$_h3-margin-bottom: $_base-margin-bottom;
+$_h3-margin-bottom: 1;
 ```
 */
 
-$_h3-margin-bottom: $_base-margin-bottom !default;
+$_h3-margin-bottom: 1 !default;
 
 /*
 ---
@@ -301,11 +284,11 @@ category:
 
 ### scss
 ```scss
-$_h4-margin-top: $_base-margin-bottom * 1.25;
+$_h4-margin-top: 1.25;
 ```
 */
 
-$_h4-margin-top: $_base-margin-bottom * 1.25 !default;
+$_h4-margin-top: 1.25 !default;
 
 /*
 ---
@@ -318,11 +301,11 @@ category:
 
 ### scss
 ```scss
-$_h4-margin-bottom: $_base-margin-bottom;
+$_h4-margin-bottom: 1;
 ```
 */
 
-$_h4-margin-bottom: $_base-margin-bottom !default;
+$_h4-margin-bottom: 1 !default;
 
 /*
 ---
@@ -335,11 +318,11 @@ category:
 
 ### scss
 ```scss
-$_h5-margin-top: $_base-margin-bottom;
+$_h5-margin-top: 1;
 ```
 */
 
-$_h5-margin-top: $_base-margin-bottom !default;
+$_h5-margin-top: 1 !default;
 
 /*
 ---
@@ -352,11 +335,11 @@ category:
 
 ### scss
 ```scss
-$_h5-margin-bottom: $_base-margin-bottom * .5;
+$_h5-margin-bottom: .5;
 ```
 */
 
-$_h5-margin-bottom: $_base-margin-bottom * .5 !default;
+$_h5-margin-bottom: .5 !default;
 
 /*
 ---
@@ -369,11 +352,11 @@ category:
 
 ### scss
 ```scss
-$_h6-margin-top: $_base-margin-bottom;
+$_h6-margin-top: 1;
 ```
 */
 
-$_h6-margin-top: $_base-margin-bottom !default;
+$_h6-margin-top: 1 !default;
 
 /*
 ---
@@ -386,11 +369,11 @@ category:
 
 ### scss
 ```scss
-$_h6-margin-bottom: $_base-margin-bottom * .5;
+$_h6-margin-bottom: .5;
 ```
 */
 
-$_h6-margin-bottom: $_base-margin-bottom * .5 !default;
+$_h6-margin-bottom: .5 !default;
 
 /*
 ---

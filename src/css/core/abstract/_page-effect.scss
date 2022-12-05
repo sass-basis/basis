@@ -49,7 +49,7 @@ new BasisPageEffect({
   $fadein-animation-name : _sanitize-animation-name(_page-effect-fadein- + zip(map-values($params)));
   $fadeout-animation-name: _sanitize-animation-name(_page-effect-fadeout- + zip(map-values($params)));
 
-  @include _position(fixed, 0, 0, 0, 0, $_page-effect-z-index);
+  @include _position(fixed, 0, 0, 0, 0, var(--_page-effect-z-index));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,13 +66,13 @@ new BasisPageEffect({
 
   &[data-page-effect="fadeout"][aria-hidden="false"] {
     opacity: 1;
-    z-index: $_page-effect-z-index;
+    z-index: var(--_page-effect-z-index);
     animation: $fadeout-animation-name $duration ease-in 0s;
   }
 
   @keyframes #{$fadein-animation-name} {
     0% {
-      z-index: $_page-effect-z-index;
+      z-index: var(--_page-effect-z-index);
       opacity: 1;
     }
     100% {
@@ -82,7 +82,7 @@ new BasisPageEffect({
 
   @keyframes #{$fadeout-animation-name} {
     0% {
-      z-index: $_page-effect-z-index;
+      z-index: var(--_page-effect-z-index);
       opacity: 0;
     }
     100% {

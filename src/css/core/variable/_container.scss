@@ -14,11 +14,11 @@ Container side margin
 // @var  length
 //
 
-$_container-margin: $_base-line-height;
+$_container-margin: var(--_base-line-height);
 ```
 */
 
-$_container-margin: $_base-line-height / 2 !default;
+$_container-margin: calc(var(--_base-line-height) / 2) !default;
 
 /*
 ---

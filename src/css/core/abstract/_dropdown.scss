@@ -46,7 +46,7 @@ Abstract dropdown component
     @include _top(.5);
     @include _right(5px);
     @include _bottom(0);
-    @include _square($_base-line-height);
+    @include _square(var(--_base-line-height));
     display: flex;
     align-items: center;
     justify-content: center;

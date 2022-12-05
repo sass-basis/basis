@@ -1,5 +1,5 @@
 .#{$_prefix}l-footer {
-  padding: ($_base-line-height * 2) 0 0;
+  padding: calc(var(--_base-line-height) * 2) 0 0;
   background-color: var(--_dark-color-text);
   color: var(--_color-white);
 

@@ -26,17 +26,14 @@
 
   --_color-white: #{ $_color-white };
 
-  --_container-margin-sm: #{ $_container-margin };
-  --_container-margin: #{ $_container-margin * 2 };
+  --_container-margin-sm: calc(#{ $_container-margin });
+  --_container-margin: calc(#{ $_container-margin } * 2);
 
   --_container-max-width: #{ $_container-max-width };
 
   --_form-control-border-color: var(--_light-color-gray);
   --_form-control-border-color-hover: var(--_color-gray);
   --_form-control-border-color-focus: #85b7d9;
-
-  --_margin-scale: 1;
-  --_space: #{ $_base-line-height + $_base-line-height * ($_margin-coefficient - 1) };
 
   --_transition-duration: #{ $_transition-duration };
   --_transition-function-timing: #{ $_transition-function-timing };
@@ -45,6 +42,26 @@
   --_half-leading: #{ $_half-leading }; // rem. but no unit.
   --_base-font-size-px: #{ $_base-font-size-px };
   --_base-font-family: #{ $_font-family };
+  --_base-line-height: #{ $_base-line-height };
+
+  --_margin-coefficient: #{ $_margin-coefficient };
+  --_margin-scale: 1;
+  --_space: calc(var(--_base-line-height) * var(--_margin-coefficient));
+
+  --_h1-margin-top: #{ $_h1-margin-top };
+  --_h1-margin-bottom: #{ $_h1-margin-bottom };
+  --_h2-margin-top: #{ $_h2-margin-top };
+  --_h2-margin-bottom: #{ $_h2-margin-bottom };
+  --_h3-margin-top: #{ $_h3-margin-top };
+  --_h3-margin-bottom: #{ $_h3-margin-bottom };
+  --_h4-margin-top: #{ $_h4-margin-top };
+  --_h4-margin-bottom: #{ $_h4-margin-bottom };
+  --_h5-margin-top: #{ $_h5-margin-top };
+  --_h5-margin-bottom: #{ $_h5-margin-bottom };
+  --_h6-margin-top: #{ $_h6-margin-top };
+  --_h6-margin-bottom: #{ $_h6-margin-bottom };
+
+  --_page-effect-z-index: #{ $_page-effect-z-index };
 }
 
 * {
@@ -247,14 +264,40 @@ Lists
 <h3>ul</h3>
 <ul>
   <li>Lorem ipsum dolor sit amet</li>
-  <li>consectetur adipisicing elit</li>
+  <li>
+    consectetur adipisicing elit
+    <ul>
+      <li>Lorem ipsum dolor sit amet</li>
+      <li>
+        consectetur adipisicing elit
+        <ul>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+        </ul>
+      </li>
+      <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+    </ul>
+  </li>
   <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
 </ul>
 
 <h3>ol</h3>
 <ol>
   <li>Lorem ipsum dolor sit amet</li>
-  <li>consectetur adipisicing elit</li>
+  <li>
+    consectetur adipisicing elit
+    <ol>
+      <li>Lorem ipsum dolor sit amet</li>
+      <li>
+        consectetur adipisicing elit
+        <ol>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+        </ol>
+      </li>
+      <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+    </ol>
+  </li>
   <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
 </ol>
 

@@ -13,7 +13,7 @@ Abstract hamburger button component
     height: 16px,
     width: 22px,
     bar-height: 2px,
-    color: $_color-text,
+    color: var(--_color-text),
   ));
 }
 ```
