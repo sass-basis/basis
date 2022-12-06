@@ -5,7 +5,7 @@
 
   li {
     li {
-      @include _set-padding-level(0, 0, 0, -1);
+      padding: 0 0 0 var(--_padding-1);
 
       li {
         display: none;

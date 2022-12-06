@@ -2,7 +2,6 @@
   position: fixed;
   bottom: 16px;
   right: 16px;
-  @include _position(fixed, null, 16px, 16px, null);
 
   > a {
     display: block;
@@ -13,7 +12,9 @@
     position: relative;
 
     > .fa {
-      @include _position(absolute, 50%, null, null, 50%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
     }
   }

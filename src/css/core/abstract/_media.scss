@@ -12,7 +12,7 @@ Abstract media component
   @include _media();
 
   &__figure {
-    @include _set-margin-right-level(1);
+    margin-right: var(--_margin1);
   }
 }
 ```

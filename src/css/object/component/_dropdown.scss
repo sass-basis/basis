@@ -66,7 +66,7 @@ Dropdown component
     @include _list-unstyled();
 
     > *:not(:first-child) {
-      @include _set-margin-top-level(-1);
+      margin-top: var(--_margin-1);
     }
   }
 
@@ -85,7 +85,7 @@ Dropdown component
       }
 
       > a {
-        @include _set-padding-right-level(-1);
+        padding-right: var(--_padding-1);
         max-width: calc(100% - 42px);
       }
 
@@ -102,8 +102,8 @@ Dropdown component
   }
 
   &__submenu {
-    @include _set-margin-top-level(-1);
-    @include _set-margin-left-level(-1);
+    margin-top: var(--_margin-1);
+    margin-left: var(--_margin-1);
 
     &[aria-hidden="true"] {
       display: none;

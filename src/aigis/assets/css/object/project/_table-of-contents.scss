@@ -1,11 +1,11 @@
 .#{$_prefix}p-table-of-contents {
-  @include _set-margin-bottom-level(2);
+  margin-bottom: var(--_margin2);
   @include _list-unstyled();
-  @include _set-padding-right-level(1);
-  @include _set-padding-left-level(1);
+  padding-right: var(--_padding1);
+  padding-left: var(--_padding1);
   background-color: #fafafa;
   border: 1px solid transparent;
-  border-color: _var_lighter-color-gray();
+  border-color: var(--_lighter-color-gray);
   border-radius: var(--_border-radius);
 
   &__item {
@@ -18,8 +18,8 @@
 
     > a {
       display: block;
-      @include _set-padding-top-level(-1);
-      @include _set-padding-bottom-level(-1);
+      padding-top: var(--_padding-1);
+      padding-bottom: var(--_padding-1);
       color: inherit;
       text-decoration: none;
 

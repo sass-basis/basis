@@ -2,6 +2,6 @@
   @include _set-font-size-level(-1);
 
   .#{$_prefix}c-navbar__item a {
-    @include _set-padding-level(-2, -1);
+    padding: var(--_padding-2) var(--_padding-1);
   }
 }

@@ -23,7 +23,11 @@ Overlay helper
   position: relative;
 
   &::before {
-    @include _position(absolute, 0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     content: '';
 
     @if (1 == $opacity) {

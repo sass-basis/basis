@@ -47,7 +47,7 @@ Abstract selectbox component
       background-color: transparent;
       line-height: 1;
       max-width: 100%;
-      @include _set-padding-level(-1, 2, -1, -1);
+      padding: var(--_padding-1) var(--_padding2) var(--_padding-1) var(--_padding-1);
 
       &:focus {
         & + .smf-select-control__toggle {
@@ -77,7 +77,7 @@ Abstract selectbox component
       &::before {
         position: absolute;
         top: calc(50% - 4px);
-        right: _space(.5);
+        right: calc(var(--_s-1) - 6px);
         content: '';
         display: block;
         @include _square(6px);

@@ -74,7 +74,9 @@ new BasisHamburgerBtn({
   }
 
   &__bar {
-    @include _position(absolute, null, 0, null, 0);
+    position: absolute;
+    right: 0;
+    left: 0;
     display: block;
     height: $bar-height;
     @include _transition(transform);

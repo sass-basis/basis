@@ -12,7 +12,7 @@ Abstract entry component
   @include _entry();
 
   &__header {
-    @include _set-margin-bottom-level(1);
+    margin-bottom: var(--_margin1);
     @include _set-font-size-level(3);
   }
 

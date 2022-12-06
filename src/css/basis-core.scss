@@ -1,5 +1,6 @@
 @import 'core/core';
 
+@import 'core/function/deprecated';
 @import 'core/function/sass';
 @import 'core/function/color';
 @import 'core/function/condition';
@@ -11,34 +12,15 @@
 @import 'core/function/replace';
 @import 'core/function/sanitize-animation-name';
 @import 'core/function/size-prefix';
-@import 'core/function/space';
 @import 'core/function/strip-unit';
-@import 'core/function/typography';
 
+@import 'core/variable/deprecated';
 @import 'core/variable/typography';
-@import 'core/variable/transition';
-@import 'core/variable/border-radius';
-@import 'core/variable/color';
 @import 'core/variable/media-query';
-@import 'core/variable/container';
-@import 'core/variable/page-effect';
-@import 'core/variable/transition';
 
-@import 'core/var/background-color';
-@import 'core/var/border-radius';
-@import 'core/var/color-black';
-@import 'core/var/color-white';
-@import 'core/var/color-gray';
-@import 'core/var/color-text';
-@import 'core/var/container-margin';
-@import 'core/var/container-margin-sm';
-@import 'core/var/container-max-width';
-@import 'core/var/form';
-@import 'core/var/margin-scale';
-@import 'core/var/space';
-@import 'core/var/typography';
-@import 'core/var/transition';
+@import 'core/var/deprecated';
 
+@import 'core/mixin/deprecated';
 @import 'core/mixin/animation';
 @import 'core/mixin/background-image';
 @import 'core/mixin/balloon-triangle';
@@ -52,13 +34,13 @@
 @import 'core/mixin/margin';
 @import 'core/mixin/overlay';
 @import 'core/mixin/padding';
-@import 'core/mixin/position';
 @import 'core/mixin/media-query';
 @import 'core/mixin/shape';
 @import 'core/mixin/transition';
 @import 'core/mixin/typography';
 @import 'core/mixin/visibility';
 
+@import 'core/abstract/deprecated';
 @import 'core/abstract/alert';
 @import 'core/abstract/balloon';
 @import 'core/abstract/breadcrumbs';
@@ -73,7 +55,6 @@
 @import 'core/abstract/form-control';
 @import 'core/abstract/hamburger-btn';
 @import 'core/abstract/hero';
-@import 'core/abstract/ib-row';
 @import 'core/abstract/input-group';
 @import 'core/abstract/media';
 @import 'core/abstract/meta';

@@ -311,33 +311,49 @@ Row component of flexbox based grid system
       }
 
       &#{$prefix}-collapse {
-        @include _row--set-margin-level(0);
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
 
         > .#{$_prefix}c-row__col {
-          @include _row__col--set-margin-level(0);
+          padding-right: 0;
+          margin-bottom: 0;
+          padding-left: 0;
         }
       }
 
       &#{$prefix}-margin {
-        @include _row--set-margin-level(1);
+        margin-right: calc(var(--_margin1) * .5 * -1);
+        margin-left: calc(var(--_margin1) * .5 * -1);
+        margin-bottom: calc(var(--_margin1) * -1);
 
         > .#{$_prefix}c-row__col {
-          @include _row__col--set-margin-level(1);
+          padding-right: calc(var(--_margin1) * .5);
+          padding-left: calc(var(--_margin1) * .5);
+          margin-bottom: var(--_margin1);
         }
 
         &-s {
-          @include _row--set-margin-level(-1);
+          margin-right: calc(var(--_margin-1) * .5 * -1);
+          margin-left: calc(var(--_margin-1) * .5 * -1);
+          margin-bottom: calc(var(--_margin-1) * -1);
 
           > .#{$_prefix}c-row__col {
-            @include _row__col--set-margin-level(-1);
+            padding-right: calc(var(--_margin-1) * .5);
+            padding-left: calc(var(--_margin-1) * .5);
+            margin-bottom: var(--_margin-1);
           }
         }
 
         &-l {
-          @include _row--set-margin-level(2);
+          margin-right: calc(var(--_margin2) * .5 * -1);
+          margin-left: calc(var(--_margin2) * .5 * -1);
+          margin-bottom: calc(var(--_margin2) * -1);
 
           > .#{$_prefix}c-row__col {
-            @include _row__col--set-margin-level(2);
+            padding-right: calc(var(--_margin2) * .5);
+            padding-left: calc(var(--_margin2) * .5);
+            margin-bottom: var(--_margin2);
           }
         }
       }

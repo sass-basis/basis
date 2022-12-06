@@ -10,10 +10,10 @@ Abstract section component
 ```scss
 .c-section {
   @include _section();
-  @include _set-padding-level(3, 0);
+  padding: var(--_padding3) 0;
 
   &__title {
-    @include _set-margin-bottom-level(2);
+    margin-bottom: var(--_margin2);
     @include _set-font-size-level(3);
     text-align: center;
   }

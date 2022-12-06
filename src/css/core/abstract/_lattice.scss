@@ -37,11 +37,9 @@ Abstract row component of flexbox based grid system
 
 @mixin _lattice() {
   @include _row();
-  @include _row--set-margin-level(-1);
-
-  @include _media-min(md) {
-    @include _row--set-margin-level(1);
-  }
+  margin-right: calc(var(--_margin1) * .5 * -1);
+  margin-left: calc(var(--_margin1) * .5 * -1);
+  margin-bottom: calc(var(--_margin1) -1);
 }
 
 /*
@@ -88,11 +86,9 @@ Abstract column element of flexbox based grid system
 
 @mixin _lattice__col($columns: null, $max-columns: null) {
   @include _row__col($columns, $max-columns);
-  @include _row__col--set-margin-level(-1);
-
-  @include _media-min(md) {
-    @include _row__col--set-margin-level(1);
-  }
+  padding-right: calc(var(--_margin1) * .5);
+  padding-left: calc(var(--_margin1) * .5);
+  margin-bottom: var(--_margin1);
 }
 
 /*

@@ -273,7 +273,9 @@ Extend the underline from the center.
 */
 
 @mixin _extend-underline() {
-  @include _position(absolute, null, null, 0, 50%);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
   display: block;
   content: '';
   width: 0;

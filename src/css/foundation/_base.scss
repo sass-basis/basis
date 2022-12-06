@@ -1,13 +1,22 @@
 :root {
+  /**
+   * Background color.
+   */
   --_background-color: transparent;
 
-  --_base-font-family: #{ $_font-family };
-  --_base-font-size-px: #{ $_base-font-size-px };
-
+  /**
+   * Border radius.
+   */
   --_border-radius: #{ $_border-radius };
 
+  /**
+   * Color: black.
+   */
   --_color-black: #{ $_color-black };
 
+  /**
+   * Color: gray.
+   */
   --_color-gray: #{ $_color-gray };
   --_dark-color-gray: #{ _dark($_color-gray) };
   --_darker-color-gray: #{ _darker($_color-gray) };
@@ -16,6 +25,9 @@
   --_lighter-color-gray: #{ _lighter($_color-gray) };
   --_lightest-color-gray: #{ _lightest($_color-gray) };
 
+  /**
+   * Color: text.
+   */
   --_color-text: #{ $_color-text };
   --_dark-color-text: #{ _dark($_color-text) };
   --_darker-color-text: #{ _darker($_color-text) };
@@ -24,44 +36,73 @@
   --_lighter-color-text: #{ _lighter($_color-text) };
   --_lightest-color-text: #{ _lightest($_color-text) };
 
+  /**
+   * Color: white.
+   */
   --_color-white: #{ $_color-white };
 
-  --_container-margin-sm: calc(#{ $_container-margin });
-  --_container-margin: calc(#{ $_container-margin } * 2);
+  /**
+   * Container gutter.
+   */
+  --_container-margin: var(--_s1);
 
+  /**
+   * Container max width.
+   */
   --_container-max-width: #{ $_container-max-width };
 
+  /**
+   * Border color for form controls.
+   */
   --_form-control-border-color: var(--_light-color-gray);
   --_form-control-border-color-hover: var(--_color-gray);
   --_form-control-border-color-focus: #85b7d9;
 
+  /**
+   * Transition properties.
+   */
   --_transition-duration: #{ $_transition-duration };
   --_transition-function-timing: #{ $_transition-function-timing };
   --_transition-delay: #{ $_transition-delay };
 
-  --_half-leading: #{ $_half-leading }; // rem. but no unit.
-  --_base-font-size-px: #{ $_base-font-size-px };
-  --_base-font-family: #{ $_font-family };
-  --_base-line-height: #{ $_base-line-height };
+  /**
+   * Half leading. em. but no unit.
+   */
+  --_half-leading: #{ $_half-leading };
 
+  /**
+   * Base line height. em. but no unit.
+   */
+  --_base-line-height: calc(1 + var(--_half-leading) * 2);
+
+  /**
+   * Font family.
+   */
+  --_base-font-family: #{ $_font-family };
+
+  /**
+   * Font size (px).
+   */
+  --_base-font-size-px: #{ $_base-font-size-px };
+
+  /**
+   * Scaling factor for margin.
+   */
   --_margin-scale: 1;
+
+  /**
+   * Base value for spaces. no unit.
+   */
   --_space: var(--_base-line-height);
 
-  // --_h1-margin-top: #{ $_h1-margin-top };
-  // --_h1-margin-bottom: #{ $_h1-margin-bottom };
-  // --_h2-margin-top: #{ $_h2-margin-top };
-  // --_h2-margin-bottom: #{ $_h2-margin-bottom };
-  // --_h3-margin-top: #{ $_h3-margin-top };
-  // --_h3-margin-bottom: #{ $_h3-margin-bottom };
-  // --_h4-margin-top: #{ $_h4-margin-top };
-  // --_h4-margin-bottom: #{ $_h4-margin-bottom };
-  // --_h5-margin-top: #{ $_h5-margin-top };
-  // --_h5-margin-bottom: #{ $_h5-margin-bottom };
-  // --_h6-margin-top: #{ $_h6-margin-top };
-  // --_h6-margin-bottom: #{ $_h6-margin-bottom };
-
+  /**
+   * z-index for page effect.
+   */
   --_page-effect-z-index: #{ $_page-effect-z-index };
 
+  /**
+   * Reference value for harmonic sequences.
+   */
   --_harmonic-sequence-base: 8;
 
   /**
@@ -81,30 +122,91 @@
    */
   --_font-size-level: 0;
 
+  /**
+   * A set of variables used to generate space variations.
+   */
   $fibonacci-sequence: 1, 2, 3, 5, 8, 13, 21, 34, 55;
-  --_s-2: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 1) });
-  --_s-1: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 2) });
+  $min-breakpoint: 22.5; // = 360px
+  $max-breakpoint: 80;   // = 1280px
+  $quotient: ($min-breakpoint / $max-breakpoint);
+
+  /**
+   * Function for quiescing fluid spaces.
+   */
+  @function _generate-fluid-spacing($min, $max) {
+    $slope: calc((#{ $max } - #{ $min }) / (#{ $max-breakpoint - $min-breakpoint }));
+    $yAxis: calc(#{ -1 * $min-breakpoint } * #{ $slope } + #{ $min });
+    $preferredValue: calc(#{ $yAxis } * 1rem + #{ $slope } * 100vw);
+    @return clamp(#{ $min } * 1rem, #{ $preferredValue }, #{ $max } * 1rem);
+  }
+
+  /**
+   * Modular scales for spaces.
+   */
+  --_ms-2: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 1) });
+  --_ms-1: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 2) });
+  --_ms0: 0rem;
+  --_ms1: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 3) });
+  --_ms2: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 4) });
+  --_ms3: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 5) });
+  --_ms4: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 6) });
+  --_ms5: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 7) });
+  --_ms6: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 8) });
+  --_ms7: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 9) });
+
+  /**
+   * Modular scales for spaces. rem.
+   */
+  --_s-2: calc(var(--_ms-2) * 1rem);
+  --_s-1: calc(var(--_ms-1) * 1rem);
   --_s0: 0rem;
-  --_s1: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 3) });
-  --_s2: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 4) });
-  --_s3: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 5) });
-  --_s4: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 6) });
-  --_s5: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 7) });
-  --_s6: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 8) });
-  --_s7: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 9) });
+  --_s1: calc(var(--_ms1) * 1rem);
+  --_s2: #{ _generate-fluid-spacing(calc(var(--_ms1) + var(--_ms2) * #{ $quotient }), var(--_ms2)) };
+  --_s3: #{ _generate-fluid-spacing(calc(var(--_ms1) + var(--_ms3) * #{ $quotient }), var(--_ms3)) };
+  --_s4: #{ _generate-fluid-spacing(calc(var(--_ms1) + var(--_ms4) * #{ $quotient }), var(--_ms4)) };
+  --_s5: #{ _generate-fluid-spacing(calc(var(--_ms1) + var(--_ms5) * #{ $quotient }), var(--_ms5)) };
+  --_s6: #{ _generate-fluid-spacing(calc(var(--_ms1) + var(--_ms6) * #{ $quotient }), var(--_ms6)) };
+  --_s7: #{ _generate-fluid-spacing(calc(var(--_ms1) + var(--_ms7) * #{ $quotient }), var(--_ms7)) };
+
+  /**
+   * Modular scales for margins. rem.
+   */
+  --_margin-2: calc(var(--_s-2) * var(--_margin-scale));
+  --_margin-1: calc(var(--_s-1) * var(--_margin-scale));
+  --_margin0: 0rem;
+  --_margin1: calc(var(--_s1) * var(--_margin-scale));
+  --_margin2: calc(var(--_s2) * var(--_margin-scale));
+  --_margin3: calc(var(--_s3) * var(--_margin-scale));
+  --_margin4: calc(var(--_s4) * var(--_margin-scale));
+  --_margin5: calc(var(--_s5) * var(--_margin-scale));
+  --_margin6: calc(var(--_s6) * var(--_margin-scale));
+  --_margin7: calc(var(--_s7) * var(--_margin-scale));
+
+  /**
+   * Modular scales for paddings. rem.
+   */
+  --_padding-2: var(--_s-2);
+  --_padding-1: var(--_s-1);
+  --_padding0: 0rem;
+  --_padding1: var(--_s1);
+  --_padding2: var(--_s2);
+  --_padding3: var(--_s3);
+  --_padding4: var(--_s4);
+  --_padding5: var(--_s5);
+  --_padding6: var(--_s6);
+  --_padding7: var(--_s7);
 }
 
 * {
+  /**
+   * Font size formula.
+   */
   --_font-size: #{ $_font-size };
+
+  /**
+   * Line height formula.
+   */
   --_line-height: #{ $_line-height };
-  --_margin-top-coefficient: 1;
-  --_margin-right-coefficient: 1;
-  --_margin-bottom-coefficient: 1;
-  --_margin-left-coefficient: 1;
-  --_padding-top-coefficient: 1;
-  --_padding-right-coefficient: 1;
-  --_padding-bottom-coefficient: 1;
-  --_padding-left-coefficient: 1;
 
   box-sizing: border-box;
 
@@ -241,7 +343,7 @@ video {
 
 figcaption {
   @include _set-font-size-level(-1);
-  @include _set-margin-level(-2, 0, 0);
+  margin: var(--_margin-2) 0 0;
   caption-side: bottom;
   text-align: left;
 }

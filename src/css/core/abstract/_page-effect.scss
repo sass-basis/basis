@@ -49,7 +49,12 @@ new BasisPageEffect({
   $fadein-animation-name : _sanitize-animation-name(_page-effect-fadein- + zip(map-values($params)));
   $fadeout-animation-name: _sanitize-animation-name(_page-effect-fadeout- + zip(map-values($params)));
 
-  @include _position(fixed, 0, 0, 0, 0, var(--_page-effect-z-index));
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--_page-effect-z-index);
   display: flex;
   align-items: center;
   justify-content: center;

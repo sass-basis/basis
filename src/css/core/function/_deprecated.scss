@@ -91,3 +91,48 @@ Return line-height for vertical rhythum
 
   @return _line-height($scale);
 }
+
+/*
+---
+name: _space()
+category:
+  - core/function
+tag:
+  - deprecated
+---
+Return the margin conforming to the rhythm
+
+* When coefficient is lenght return it as is
+
+### scss
+```scss
+//
+// @param   number   $coefficient
+// @param   boolean  $apply-space-scale
+// @param   boolean  $apply-margin-scale
+// @return  length
+//
+
+padding: _space(1);
+padding: _space(1, true);
+padding: _space(1, true, true);
+```
+*/
+
+@function _space($coefficient, $apply-space-scale: false, $apply-margin-scale: false) {
+  @if (0 == $coefficient) {
+    @return 0;
+  }
+
+  @if $apply-space-scale and $apply-margin-scale {
+    @return calc(var(--_space) * #{ $coefficient } * var(--_margin-scale));
+  } @else if $apply-space-scale {
+    @return calc(var(--_space) * #{ $coefficient });
+  }
+
+  $margin    : $_base-line-height * $coefficient;
+  $add-margin: $_base-line-height * ($_margin-coefficient - 1);
+  $space     : $margin + $add-margin;
+
+  @return $space;
+}

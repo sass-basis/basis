@@ -234,13 +234,19 @@ Navbar component
       flex: 0 1 auto;
 
       > .#{ $_prefix }c-navbar__submenu {
-        @include _position(absolute, 100%, 0, null, auto);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
       }
     }
 
     .#{ $_prefix }c-navbar__subitem {
       > .#{ $_prefix }c-navbar__submenu {
-        @include _position(absolute, 0, 100%, null, auto);
+        position: absolute;
+        top: 0;
+        right: 100%;
+        left: auto;
       }
     }
   }
@@ -259,7 +265,7 @@ Navbar component
         }
 
         > a {
-          @include _set-padding-right-level(-1);
+          padding-right: var(--_padding-1);
           max-width: calc(100% - 42px);
         }
 

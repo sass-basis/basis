@@ -3,6 +3,6 @@
 
 .#{$_prefix}l-main,
 .#{$_prefix}l-sub {
-  @include _set-padding-top-level(2);
-  @include _set-padding-bottom-level(2);
+  padding-top: var(--_padding2);
+  padding-bottom: var(--_padding2);
 }

@@ -47,16 +47,24 @@ Generate balloon triangle
   @if (not _is-null($border-size) and not _is-null($border-color)) {
     &::before {
       @if ('top' == $position) {
-        @include _position(absolute, $before, null, null, 50%);
+        position: absolute;
+        top: $before;
+        left: 50%;
         @include _triangle-top($size, $size, $border-color);
       } @else if ('right' == $position) {
-        @include _position(absolute, 50%, $before, null, null);
+        position: absolute;
+        top: 50%;
+        right: $before;
         @include _triangle-right($size, $size, $border-color);
       } @else if ('bottom' == $position) {
-        @include _position(absolute, null, null, $before, 50%);
+        position: absolute;
+        bottom: $before;
+        left: 50%;
         @include _triangle-bottom($size, $size, $border-color);
       } @else if ('left' == $position) {
-        @include _position(absolute, 50%, null, null, $before);
+        position: absolute;
+        top: 50%;
+        left: $before;
         @include _triangle-left($size, $size, $border-color);
       }
     }
@@ -64,16 +72,24 @@ Generate balloon triangle
 
   &::after {
     @if ('top' == $position) {
-      @include _position(absolute, $after, null, null, 50%);
+      position: absolute;
+      top: $after;
+      left: 50%;
       @include _triangle-top($size, $size, $background-color);
     } @else if ('right' == $position) {
-      @include _position(absolute, 50%, $after, null, null);
+      position: absolute;
+      top: 50%;
+      right: $after;
       @include _triangle-right($size, $size, $background-color);
     } @else if ('bottom' == $position) {
-      @include _position(absolute, null, null, $after, 50%);
+      position: absolute;
+      bottom: $after;
+      left: 50%;
       @include _triangle-bottom($size, $size, $background-color);
     } @else if ('left' == $position) {
-      @include _position(absolute, 50%, null, null, $after);
+      position: absolute;
+      top: 50%;
+      left: $after;
       @include _triangle-left($size, $size, $background-color);
     }
   }

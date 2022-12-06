@@ -2,7 +2,7 @@
   @include _transition(all);
   border: none;
   border-radius: var(--_border-radius);
-  @include _set-padding-level(-2, -1);
+  padding: var(--_padding-2) var(--_padding-1);
 
   &--block {
     display: block;

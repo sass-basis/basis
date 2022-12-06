@@ -13,7 +13,7 @@ Abstract navbar component
 
   &__item > a {
     color: inherit;
-    @include _set-padding-level(.5, 1);
+    padding: var(--_padding-1) var(--_padding1);
   }
 }
 ```
@@ -139,7 +139,10 @@ new BasisNavbar({
     }
 
     > #{$root}__submenu {
-      @include _position(absolute, 100%, auto, null, auto);
+      position: absolute;
+      top: 100%;
+      right: auto;
+      left: auto;
 
       &--turn-left {
         #{$root}__submenu {
@@ -159,7 +162,10 @@ new BasisNavbar({
     }
 
     > #{$root}__submenu {
-      @include _position(absolute, 0, auto, null, 100%);
+      position: absolute;
+      top: 0;
+      right: auto;
+      left: 100%;
     }
   }
 

@@ -28,7 +28,7 @@ Abstract drawer component
     @include _list-unstyled();
 
     > *:not(:first-child) {
-      @include _set-margin-top-level(-1);
+      margin-top: var(--_margin-1);
     }
   }
 
@@ -47,7 +47,7 @@ Abstract drawer component
       }
 
       > a {
-        @include _set-padding-right-level(-1);
+        padding-right: var(--_padding-1);
         max-width: calc(100% - 42px);
       }
 
@@ -64,8 +64,8 @@ Abstract drawer component
   }
 
   &__submenu {
-    @include _set-margin-top-level(-1);
-    @include _set-margin-left-level(-1);
+    margin-top: var(--_margin-1);
+    margin-left: var(--_margin-1);
 
     &[aria-hidden="true"] {
       display: none;
@@ -192,7 +192,7 @@ new BasisDrawer({
 @mixin _drawer($params: ()) {
   $params: map-merge(
     (
-      width: calc(var(--_base-line-height) * 10),
+      width: 20rem,
       max-width: 80%,
     ),
     $params
@@ -201,8 +201,11 @@ new BasisDrawer({
   $width: map-get($params, 'width');
   $max-width: map-get($params, 'max-width');
 
-  @include _position(absolute, 0, null, 0, null, 10);
+  position: absolute;
+  top: 0;
+  bottom: 0;
   left: -100%;
+  z-index: 10;
   width: min(#{ $width }, #{ $max-width });
   visibility: hidden;
 
