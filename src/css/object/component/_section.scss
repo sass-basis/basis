@@ -20,6 +20,6 @@ Section component
 ```
 */
 
-.#{$_prefix}c-section {
+.#{ $_prefix }c-section {
   @include _section();
 }

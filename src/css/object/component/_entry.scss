@@ -20,6 +20,6 @@ Entry component
 ```
 */
 
-.#{$_prefix}c-entry {
+.#{ $_prefix }c-entry {
   @include _entry();
 }

@@ -1,8 +1,8 @@
-.#{$_prefix}l-contents {
+.#{ $_prefix }l-contents {
 }
 
-.#{$_prefix}l-main,
-.#{$_prefix}l-sub {
+.#{ $_prefix }l-main,
+.#{ $_prefix }l-sub {
   padding-top: var(--_padding2);
   padding-bottom: var(--_padding2);
 }

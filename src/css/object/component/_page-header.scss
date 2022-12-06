@@ -15,6 +15,6 @@ Page header component
 ```
 */
 
-.#{$_prefix}c-page-header {
+.#{ $_prefix }c-page-header {
   @include _page-header();
 }

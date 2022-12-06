@@ -46,7 +46,7 @@ Visible utility
 ```
 */
 
-.#{$_prefix}u-visible {
+.#{ $_prefix }u-visible {
   @include _visible();
 }
 
@@ -55,14 +55,14 @@ $min-key: nth($sizes-keys, 1);
 $max-key: nth($sizes-keys, -1);
 @each $size, $screen-min in $_sizes {
   @if $size != $min-key and $size != $max-key {
-    .#{$_prefix}u-visible-#{$size}-up {
+    .#{ $_prefix }u-visible-#{$size}-up {
       @include _media-min($size) {
         @include _visible();
       }
     }
   }
 
-  .#{$_prefix}u-visible-#{$size} {
+  .#{ $_prefix }u-visible-#{$size} {
     @include _media-only($size) {
       @include _visible();
     }

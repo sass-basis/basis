@@ -1,5 +1,5 @@
-.#{$_prefix}c-responsive-container-16-9,
-.#{$_prefix}c-responsive-container-4-3 {
+.#{ $_prefix }c-responsive-container-16-9,
+.#{ $_prefix }c-responsive-container-4-3 {
   @include _responsive-container();
 }
 
@@ -20,7 +20,7 @@ Responsive container component
 ```
 */
 
-.#{$_prefix}c-responsive-container-16-9 {
+.#{ $_prefix }c-responsive-container-16-9 {
   padding-bottom: (9 / 16 * 100%);
 }
 
@@ -41,6 +41,6 @@ Responsive container component
 ```
 */
 
-.#{$_prefix}c-responsive-container-4-3 {
+.#{ $_prefix }c-responsive-container-4-3 {
   padding-bottom: (3 / 4 * 100%);
 }

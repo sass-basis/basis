@@ -1,4 +1,4 @@
-.#{$_prefix}l-header {
+.#{ $_prefix }l-header {
   z-index: 1;
   background-color: #00dae6;
   color: var(--_color-white);
@@ -9,15 +9,15 @@
     text-decoration: none;
   }
 
-  > .#{$_prefix}c-container {
+  > .#{ $_prefix }c-container {
     position: relative;
   }
 
-  .#{$_prefix}c-site-branding {
+  .#{ $_prefix }c-site-branding {
     padding: var(--_padding-1) 0;
   }
 
-  .#{$_prefix}c-hamburger-btn {
+  .#{ $_prefix }c-hamburger-btn {
     position: absolute;
     top: 50%;
     right: var(--_s1);

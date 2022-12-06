@@ -1,14 +1,14 @@
-.#{$_prefix}l-main > .#{$_prefix}c-entry {
-  .#{$_prefix}c-entry__header {
+.#{ $_prefix }l-main > .#{ $_prefix }c-entry {
+  .#{ $_prefix }c-entry__header {
     margin-bottom: var(--_margin1);
   }
 
-  .#{$_prefix}c-entry__title {
+  .#{ $_prefix }c-entry__title {
     border-bottom: 1px solid var(--_light-color-gray);
     padding-bottom: var(--_padding-2);
   }
 
-  .#{$_prefix}c-entry__content {
+  .#{ $_prefix }c-entry__content {
     @include _set-content-level(1);
 
     pre {
@@ -20,7 +20,7 @@
     }
   }
 
-  & + .#{$_prefix}c-entry {
+  & + .#{ $_prefix }c-entry {
     margin-top: var(--_margin2);
   }
 }

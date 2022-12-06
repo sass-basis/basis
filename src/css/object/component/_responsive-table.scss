@@ -26,7 +26,7 @@ Responsive table component
 ```
 */
 
-.#{$_prefix}c-responsive-table {
+.#{ $_prefix }c-responsive-table {
   @include _media-max(sm) {
     @include _responsive-table();
   }

@@ -53,6 +53,6 @@ Content utility
 ```
 */
 
-.#{$_prefix}u-content {
+.#{ $_prefix }u-content {
   @include _set-content-level(1);
 }

@@ -255,7 +255,7 @@ Row component of flexbox based grid system
 ```
 */
 
-.#{$_prefix}c-row {
+.#{ $_prefix }c-row {
   @include _row();
 
   &__col {
@@ -315,7 +315,7 @@ Row component of flexbox based grid system
         margin-bottom: 0;
         margin-left: 0;
 
-        > .#{$_prefix}c-row__col {
+        > .#{ $_prefix }c-row__col {
           padding-right: 0;
           margin-bottom: 0;
           padding-left: 0;
@@ -327,7 +327,7 @@ Row component of flexbox based grid system
         margin-left: calc(var(--_margin1) * .5 * -1);
         margin-bottom: calc(var(--_margin1) * -1);
 
-        > .#{$_prefix}c-row__col {
+        > .#{ $_prefix }c-row__col {
           padding-right: calc(var(--_margin1) * .5);
           padding-left: calc(var(--_margin1) * .5);
           margin-bottom: var(--_margin1);
@@ -338,7 +338,7 @@ Row component of flexbox based grid system
           margin-left: calc(var(--_margin-1) * .5 * -1);
           margin-bottom: calc(var(--_margin-1) * -1);
 
-          > .#{$_prefix}c-row__col {
+          > .#{ $_prefix }c-row__col {
             padding-right: calc(var(--_margin-1) * .5);
             padding-left: calc(var(--_margin-1) * .5);
             margin-bottom: var(--_margin-1);
@@ -350,7 +350,7 @@ Row component of flexbox based grid system
           margin-left: calc(var(--_margin2) * .5 * -1);
           margin-bottom: calc(var(--_margin2) * -1);
 
-          > .#{$_prefix}c-row__col {
+          > .#{ $_prefix }c-row__col {
             padding-right: calc(var(--_margin2) * .5);
             padding-left: calc(var(--_margin2) * .5);
             margin-bottom: var(--_margin2);
@@ -359,7 +359,7 @@ Row component of flexbox based grid system
       }
 
       &#{$prefix}-fill {
-        > .#{$_prefix}c-row__col {
+        > .#{ $_prefix }c-row__col {
           display: flex;
 
           > * {
@@ -391,7 +391,7 @@ Row component of flexbox based grid system
       @include _row__col--width(100%);
     }
 
-    .#{$_prefix}c-row__col {
+    .#{ $_prefix }c-row__col {
       &#{$prefix}-auto {
         @include _row__col--width(auto);
       }
@@ -407,7 +407,7 @@ Row component of flexbox based grid system
   }
 }
 
-.#{$_prefix}c-row__col {
+.#{ $_prefix }c-row__col {
   @each $size, $screen-min in $_sizes {
     @include _media-min($screen-min) {
       $prefix: _size-prefix($size);

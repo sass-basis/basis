@@ -19,7 +19,7 @@ Button component
 ```
 */
 
-.#{$_prefix}c-btn {
+.#{ $_prefix }c-btn {
   @include _btn();
 
   &--block {

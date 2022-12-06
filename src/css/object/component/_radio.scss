@@ -18,6 +18,6 @@ Radio button component
 ```
 */
 
-.#{$_prefix}c-radio {
+.#{ $_prefix }c-radio {
   @include _radio();
 }

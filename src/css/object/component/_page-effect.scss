@@ -17,6 +17,6 @@ Page effect component
 ```
 */
 
-.#{$_prefix}c-page-effect {
+.#{ $_prefix }c-page-effect {
   @include _page-effect();
 }

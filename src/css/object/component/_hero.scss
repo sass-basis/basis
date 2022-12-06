@@ -23,7 +23,7 @@ Hero component
 ```
 */
 
-.#{$_prefix}c-hero {
+.#{ $_prefix }c-hero {
   @include _hero();
 
   &--full {

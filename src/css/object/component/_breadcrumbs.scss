@@ -16,6 +16,6 @@ Breadcrumbs component
 ```
 */
 
-.#{$_prefix}c-breadcrumbs {
+.#{ $_prefix }c-breadcrumbs {
   @include _breadcrumbs();
 }

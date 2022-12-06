@@ -17,6 +17,6 @@ Entries component
 ```
 */
 
-.#{$_prefix}c-entries {
+.#{ $_prefix }c-entries {
   @include _entries();
 }

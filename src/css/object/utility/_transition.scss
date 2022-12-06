@@ -19,6 +19,6 @@ Transition utility
 ```
 */
 
-.#{$_prefix}u-transition {
+.#{ $_prefix }u-transition {
   @include _transition(all);
 }

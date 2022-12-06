@@ -14,7 +14,7 @@ Circle spinner component
 ```
 */
 
-.#{$_prefix}c-circle-spinner {
+.#{ $_prefix }c-circle-spinner {
   @include _circle-spinner();
 }
 
@@ -38,7 +38,7 @@ Dots spinner component
 ```
 */
 
-.#{$_prefix}c-dots-spinner {
+.#{ $_prefix }c-dots-spinner {
   @include _dots-spinner();
 
   &__dot {
@@ -66,7 +66,7 @@ Pulse spinner component
 ```
 */
 
-.#{$_prefix}c-pulse-spinner {
+.#{ $_prefix }c-pulse-spinner {
   @include _pulse-spinner();
 
   &__bar {

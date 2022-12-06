@@ -15,6 +15,6 @@ Site branding component
 ```
 */
 
-.#{$_prefix}c-site-branding {
+.#{ $_prefix }c-site-branding {
   @include _site-branding();
 }

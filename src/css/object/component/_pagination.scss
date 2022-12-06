@@ -19,6 +19,6 @@ Paginatiion component
 ```
 */
 
-.#{$_prefix}c-pagination {
+.#{ $_prefix }c-pagination {
   @include _pagination();
 }

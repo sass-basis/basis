@@ -19,6 +19,6 @@ Input group component
 ```
 */
 
-.#{$_prefix}c-input-group {
+.#{ $_prefix }c-input-group {
   @include _input-group();
 }

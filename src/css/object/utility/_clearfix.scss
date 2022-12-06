@@ -17,6 +17,6 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 ```
 */
 
-.#{$_prefix}u-clearfix {
+.#{ $_prefix }u-clearfix {
   @include _clearfix();
 }

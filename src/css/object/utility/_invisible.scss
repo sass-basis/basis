@@ -56,7 +56,7 @@ Invisible utility
 ```
 */
 
-.#{$_prefix}u-invisible {
+.#{ $_prefix }u-invisible {
   @include _invisible();
 }
 

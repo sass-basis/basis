@@ -30,7 +30,7 @@ Select box component
 ```
 */
 
-.#{$_prefix}c-select {
+.#{ $_prefix }c-select {
   @include _select();
 
   &--block {

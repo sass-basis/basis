@@ -15,7 +15,7 @@ Fluid container component
 ```
 */
 
-.#{$_prefix}c-fluid-container {
+.#{ $_prefix }c-fluid-container {
   @include _fluid-container();
 }
 
@@ -37,6 +37,6 @@ Container component
 ```
 */
 
-.#{$_prefix}c-container {
+.#{ $_prefix }c-container {
   @include _container();
 }
