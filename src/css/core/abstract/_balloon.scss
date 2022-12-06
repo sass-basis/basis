@@ -24,7 +24,7 @@ Abstract top balloon component
     border-size: null,
     triangle-size: 10px,
   ));
-  @include _padding(1);
+  @include _set-padding-level(1);
 }
 ```
 
@@ -66,7 +66,7 @@ Abstract right balloon component
     border-size: null,
     triangle-size: 10px,
   ));
-  @include _padding(1);
+  @include _set-padding-level(1);
 }
 ```
 
@@ -108,7 +108,7 @@ Abstract bottom balloon component
     border-size: null,
     triangle-size: 10px,
   ));
-  @include _padding(1);
+  @include _set-padding-level(1);
 }
 ```
 
@@ -150,7 +150,7 @@ Abstract left balloon component
     border-size: null,
     triangle-size: 10px,
   ));
-  @include _padding(1);
+  @include _set-padding-level(1);
 }
 ```
 

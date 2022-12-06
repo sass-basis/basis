@@ -4,12 +4,14 @@ name: _ib-row()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
+tag:
+  - deprecated
 ---
 Abstract row component of inline-block based grid system
 
 ### scss
 ```scss
-.c-row {
+.c-ib-row {
   @include _ib-row();
 
   &__col {
@@ -27,10 +29,13 @@ Abstract row component of inline-block based grid system
 ```
 
 ### html
-```ejs
-<div class="c-row">
-  <div class="c-row__col c-row__col--1-3">
-    ...
+```html
+<div class="c-ib-row">
+  <div class="c-ib-row__col c-ib-row__col--1-3">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </div>
+  <div class="c-ib-row__col c-ib-row__col--1-3">
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </div>
 </div>
 ```
@@ -39,6 +44,7 @@ Abstract row component of inline-block based grid system
 @mixin _ib-row() {
   display: block;
   font-size: 0;
+  letter-spacing: 0;
 }
 
 /*
@@ -47,6 +53,8 @@ name: _ib-row__col()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
+tag:
+  - deprecated
 ---
 Abstract column element of inline-block based grid system
 
@@ -57,7 +65,7 @@ Abstract column element of inline-block based grid system
 // @param  int  $max-columns  denominator column size
 //
 
-.c-row {
+.c-ib-row {
   @include _ib-row();
 
   &__col {
@@ -71,10 +79,13 @@ Abstract column element of inline-block based grid system
 ```
 
 ### html
-```ejs
-<div class="c-row">
-  <div class="c-row__col c-row__col--1-3">
-    ...
+```html
+<div class="c-ib-row">
+  <div class="c-ib-row__col c-ib-row__col--1-3">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </div>
+  <div class="c-ib-row__col c-ib-row__col--1-3">
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </div>
 </div>
 ```
@@ -100,6 +111,8 @@ name: _ib-row__col--width()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
+tag:
+  - deprecated
 ---
 Sets column width of inline-block based grid system
 
@@ -109,7 +122,7 @@ Sets column width of inline-block based grid system
 // @param  length  $width
 //
 
-.c-row {
+.c-ib-row {
   @include _ib-row();
 
   &__col {
@@ -134,6 +147,8 @@ name: _ib-row__col--offset()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
+tag:
+  - deprecated
 ---
 Sets column offset of inline-block based grid system
 
@@ -144,7 +159,7 @@ Sets column offset of inline-block based grid system
 // @param  int  $max-columns  denominator column size
 //
 
-.c-row {
+.c-ib-row {
   @include _ib-row();
 
   &__col {
@@ -165,6 +180,8 @@ name: _ib-row--margin()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
+tag:
+  - deprecated
 ---
 Sets row margin of inline-block based grid system
 
@@ -174,7 +191,7 @@ Sets row margin of inline-block based grid system
 // @param  int  $coefficient
 //
 
-.c-row {
+.c-ib-row {
   @include _ib-row();
   @include _ib-row--margin(1);
 }
@@ -191,6 +208,8 @@ name: _ib-row__col--margin()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
+tag:
+  - deprecated
 ---
 Sets column margin of inline-block based grid system
 
@@ -200,7 +219,7 @@ Sets column margin of inline-block based grid system
 // @param  int  $coefficient
 //
 
-.c-row {
+.c-ib-row {
   @include _ib-row();
   @include _ib-row--margin(1);
 }

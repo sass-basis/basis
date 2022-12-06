@@ -23,7 +23,9 @@ $_prefix: '';
 @import 'object/component/dummy-image';
 @import 'object/component/entry';
 @import 'object/component/fade-image';
+@import 'object/component/ib-row';
 @import 'object/component/label';
+@import 'object/component/lattice';
 @import 'object/component/meta';
 @import 'object/component/page-header';
 @import 'object/component/site-branding';
@@ -37,7 +39,7 @@ $_prefix: '';
 @import 'object/project/table-of-contents';
 
 .aigis-preview {
-  @include _content();
+  @include _set-content-level(1);
   min-height: 150px;
 }
 

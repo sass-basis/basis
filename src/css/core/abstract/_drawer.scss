@@ -15,41 +15,65 @@ Abstract drawer component
 //
 
 .c-drawer {
-  @include _drawer((
-    width: calc(var(--_base-line-height) * 10),
-    max-width: 80%,
-  ));
+  @include _drawer();
 
-  $item-padding-coefficient: 1;
+  &__focus-point {
+    height: 0px !important;
+    width: 0px !important;
+    opacity: 0 !important;
+  }
 
-  &__menu {
+  &__menu,
+  &__submenu {
     @include _list-unstyled();
+
+    > *:not(:first-child) {
+      @include _set-margin-top-level(-1);
+    }
   }
 
-  &__item, &__subitem {
+  &__item,
+  &__subitem {
     position: relative;
-  }
+    overflow: hidden;
 
-  &__item {
-    @include _padding(.5, $item-padding-coefficient, 0);
+    &--has-submenu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      > * {
+        flex: 1 1 auto;
+      }
+
+      > a {
+        @include _set-padding-right-level(-1);
+        max-width: calc(100% - 42px);
+      }
+
+      > .#{ $_prefix }c-drawer__toggle {
+        flex: 0 0 auto;
+        width: 42px;
+        overflow: hidden;
+      }
+
+      > .#{ $_prefix }c-drawer__submenu {
+        flex: 1 1 100%;
+      }
+    }
   }
 
   &__submenu {
-    @include _list-unstyled();
-    @include _margin(0, ($item-padding-coefficient * -1), 0, 0);
-    padding-left: 1em;
-  }
+    @include _set-margin-top-level(-1);
+    @include _set-margin-left-level(-1);
 
-  &__subitem {
-    @include _padding(.5, $item-padding-coefficient, 0, 0);
+    &[aria-hidden="true"] {
+      display: none;
+      visibility: hidden;
+    }
   }
 
   &__toggle {
-    position: absolute;
-    @include _top(.5);
-    @include _right(5px);
-    @include _bottom(0);
-    @include _square(var(--_base-line-height));
     display: flex;
     align-items: center;
     justify-content: center;

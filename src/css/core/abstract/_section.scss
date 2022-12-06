@@ -10,16 +10,16 @@ Abstract section component
 ```scss
 .c-section {
   @include _section();
-  @include _padding(2, 0);
+  @include _set-padding-level(3, 0);
 
   &__title {
-    @include _margin(0, 0, 2);
+    @include _set-margin-bottom-level(2);
     @include _set-font-size-level(3);
     text-align: center;
   }
 
   &__content {
-    @include _content();
+    @include _set-content-level(1);
   }
 }
 ```

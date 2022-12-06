@@ -13,7 +13,7 @@ Abstract navbar component
 
   &__item > a {
     color: inherit;
-    @include _padding(.5, 1);
+    @include _set-padding-level(.5, 1);
   }
 }
 ```

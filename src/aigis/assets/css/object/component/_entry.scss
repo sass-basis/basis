@@ -1,31 +1,26 @@
 .#{$_prefix}l-main > .#{$_prefix}c-entry {
   .#{$_prefix}c-entry__header {
-    @include _margin(0, 0, 1);
+    @include _set-margin-bottom-level(1);
   }
 
   .#{$_prefix}c-entry__title {
-    @include _padding(0, 0, .25);
     border-bottom: 1px solid var(--_light-color-gray);
-    @include _padding(0, 0, .25);
+    @include _set-padding-bottom-level(-2);
   }
 
   .#{$_prefix}c-entry__content {
-    @include _content();
+    @include _set-content-level(1);
 
     pre {
-      @include _padding(.5);
-    }
-
-    .aigis-preview + pre {
-      @include _margin-top(.5);
+      @include _set-padding-level(-1);
     }
 
     pre + .aigis-preview {
-      @include _margin-top(1.5);
+      @include _set-margin-top-level(2);
     }
   }
 
   & + .#{$_prefix}c-entry {
-    @include _margin-top(2);
+    @include _set-margin-top-level(2);
   }
 }

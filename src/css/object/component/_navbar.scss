@@ -259,7 +259,7 @@ Navbar component
         }
 
         > a {
-          @include _padding-right(.5);
+          @include _set-padding-right-level(-1);
           max-width: calc(100% - 42px);
         }
 

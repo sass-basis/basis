@@ -10,10 +10,10 @@ Abstract page header component
 ```scss
 .c-page-header {
   @include _page-header();
-  @include _padding(2, 0);
+  @include _set-padding-level(2, 0);
 
   &__title {
-    @include _set-font-size-level(4);
+    @include _set-font-size-level(3);
   }
 }
 ```

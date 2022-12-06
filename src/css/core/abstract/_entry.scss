@@ -12,12 +12,12 @@ Abstract entry component
   @include _entry();
 
   &__header {
-    @include _margin(0, 0, 1);
+    @include _set-margin-bottom-level(1);
     @include _set-font-size-level(3);
   }
 
   &__content {
-    @include _content();
+    @include _set-content-level(1);
   }
 }
 ```

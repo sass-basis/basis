@@ -34,5 +34,5 @@ padding: _space(1, true, true);
     @return calc(var(--_space) * #{ $coefficient });
   }
 
-  @return calc(var(--_base-line-height) * #{ $coefficient } * var(--_margin-coefficient));
+  @return calc(var(--_base-line-height) * #{ $coefficient });
 }

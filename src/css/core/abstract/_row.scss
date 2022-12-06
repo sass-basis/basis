@@ -123,8 +123,8 @@ Sets column width of flexbox based grid system
   } @else if (1 == $width) {
     flex: 1 1 0%;
   } @else {
-    flex: 0 1 $width;
-    max-width: $width;
+    flex: 0 1 auto;
+    width: $width;
   }
 }
 
@@ -170,6 +170,8 @@ name: _row--margin()
 category:
   - core/abstract
   - core/abstract/grid-system/flexbox
+tag:
+  - deprecated
 ---
 Sets row margin of flexbox based grid system
 
@@ -198,6 +200,8 @@ name: _row__col--margin()
 category:
   - core/abstract
   - core/abstract/grid-system/flexbox
+tag:
+  - deprecated
 ---
 Sets column margin of flexbox based grid system
 
@@ -207,9 +211,9 @@ Sets column margin of flexbox based grid system
 // @param  int  $coefficient
 //
 
-.c-row {
-  @include _row();
-  @include _row--margin(1);
+.c-row__col {
+  @include _row__col();
+  @include _row__col--margin(1);
 }
 ```
 */
@@ -218,4 +222,67 @@ Sets column margin of flexbox based grid system
   @include _padding-right($coefficient / 2, true);
   @include _padding-left($coefficient / 2, true);
   @include _margin-bottom($coefficient);
+}
+
+/*
+---
+name: _row--set-margin-level()
+category:
+  - core/abstract
+  - core/abstract/grid-system/flexbox
+---
+Sets row margin level of flexbox based grid system
+
+### scss
+```scss
+//
+// @param  int  $level
+//
+
+.c-row {
+  @include _row();
+  @include _row--set-margin-level(1);
+}
+```
+*/
+
+@mixin _row--set-margin-level($level) {
+  --_margin-right-coefficient: calc(.5 * -1);
+  --_margin-left-coefficient: calc(.5 * -1);
+  --_margin-bottom-coefficient: -1;
+
+  @include _set-margin-right-level($level);
+  @include _set-margin-left-level($level);
+  @include _set-margin-bottom-level($level);
+}
+
+/*
+---
+name: _row__col--set-margin-level()
+category:
+  - core/abstract
+  - core/abstract/grid-system/flexbox
+---
+Sets column margin level of flexbox based grid system
+
+### scss
+```scss
+//
+// @param  int  $level
+//
+
+.c-row__col {
+  @include _row__col();
+  @include _row__col--set-margin-level(1);
+}
+```
+*/
+
+@mixin _row__col--set-margin-level($level) {
+  --_padding-right-coefficient: calc(.5 * var(--_margin-scale));
+  --_padding-left-coefficient: calc(.5 * var(--_margin-scale));
+
+  @include _set-padding-right-level($level);
+  @include _set-padding-left-level($level);
+  @include _set-margin-bottom-level($level);
 }

@@ -57,7 +57,7 @@ Dropdown component
   transition-timing-function: ease-in;
 
   &[aria-hidden="false"] {
-  @include _transition(bottom);
+    @include _transition(bottom);
     transition-timing-function: ease-out;
   }
 
@@ -66,7 +66,7 @@ Dropdown component
     @include _list-unstyled();
 
     > *:not(:first-child) {
-      @include _margin-top(.5, false);
+      @include _set-margin-top-level(-1);
     }
   }
 
@@ -85,7 +85,7 @@ Dropdown component
       }
 
       > a {
-        @include _padding-right(.5);
+        @include _set-padding-right-level(-1);
         max-width: calc(100% - 42px);
       }
 
@@ -102,8 +102,8 @@ Dropdown component
   }
 
   &__submenu {
-    @include _margin-top(.5, false);
-    @include _margin-left(.5, false);
+    @include _set-margin-top-level(-1);
+    @include _set-margin-left-level(-1);
 
     &[aria-hidden="true"] {
       display: none;

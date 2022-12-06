@@ -4,6 +4,8 @@ name: _margin-top()
 category:
   - core/mixin
   - core/mixin/margin
+tag:
+  - deprecated
 ---
 Sets margin-top
 
@@ -22,15 +24,15 @@ Sets margin-top
 
 @mixin _margin-top($coefficient, $apply-margin-scale: true) {
   @if _is-number($coefficient) and 0 != $coefficient {
-    margin-top: calc(var(--_margin-top, 1) * #{ _space($coefficient) });
+    margin-top: _space($coefficient);
 
     @if $apply-margin-scale {
-      margin-top: calc(var(--_margin-top, 1) * #{ _space($coefficient, true, true) });
+      margin-top: _space($coefficient, true, true);
     } @else {
-      margin-top: calc(var(--_margin-top, 1) * #{ _space($coefficient, true) });
+      margin-top: _space($coefficient, true);
     }
   } @else {
-    margin-top: calc(var(--_margin-top, 1) * #{ $coefficient });
+    margin-top: $coefficient;
   }
 }
 
@@ -40,6 +42,8 @@ name: _margin-right()
 category:
   - core/mixin
   - core/mixin/margin
+tag:
+  - deprecated
 ---
 Sets margin-right
 
@@ -76,6 +80,8 @@ name: _margin-bottom()
 category:
   - core/mixin
   - core/mixin/margin
+tag:
+  - deprecated
 ---
 Sets margin-bottom
 
@@ -94,15 +100,15 @@ Sets margin-bottom
 
 @mixin _margin-bottom($coefficient, $apply-margin-scale: true) {
   @if _is-number($coefficient) and 0 != $coefficient {
-    margin-bottom: calc(var(--_margin-bottom, 1) * #{ _space($coefficient) });
+    margin-bottom: _space($coefficient);
 
     @if $apply-margin-scale {
-      margin-bottom: calc(var(--_margin-bottom, 1) * #{ _space($coefficient, true, true) });
+      margin-bottom: _space($coefficient, true, true);
     } @else {
-      margin-bottom: calc(var(--_margin-bottom, 1) * #{ _space($coefficient, true) });
+      margin-bottom: _space($coefficient, true);
     }
   } @else {
-    margin-bottom: calc(var(--_margin-bottom, 1) * #{ $coefficient });
+    margin-bottom: $coefficient;
   }
 }
 
@@ -112,6 +118,8 @@ name: _margin-left()
 category:
   - core/mixin
   - core/mixin/margin
+tag:
+  - deprecated
 ---
 Sets margin-left
 
@@ -148,6 +156,8 @@ name: _margin()
 category:
   - core/mixin
   - core/mixin/margin
+tag:
+  - deprecated
 ---
 Sets margin
 
@@ -191,5 +201,226 @@ Sets margin
     @include _margin-right($coefficient-2, $apply-margin-scale);
     @include _margin-bottom($coefficient-3, $apply-margin-scale);
     @include _margin-left($coefficient-4, $apply-margin-scale);
+  }
+}
+
+/*
+---
+name: _set-margin-top-level()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin-top level.
+
+### scss
+```scss
+//
+// @param  int  $level  Min -2, Max 9
+//
+
+@include _set-margin-top-level(1);
+```
+*/
+
+@mixin _set-margin-top-level($level) {
+  @if -2 == $level {
+    margin-top: calc(var(--_s-2) * var(--_margin-scale) * var(--_margin-top-coefficient));
+  } @else if -1 == $level {
+    margin-top: calc(var(--_s-1) * var(--_margin-scale) * var(--_margin-top-coefficient));
+  } @else if 0 == $level {
+    margin-top: calc(var(--_s0) * var(--_margin-scale) * var(--_margin-top-coefficient));
+  } @else if 1 == $level {
+    margin-top: calc(var(--_s1) * var(--_margin-scale) * var(--_margin-top-coefficient));
+  } @else if 2 == $level {
+    margin-top: calc(var(--_s2) * var(--_margin-scale) * var(--_margin-top-coefficient));
+  } @else if 3 == $level {
+    margin-top: calc(var(--_s3) * var(--_margin-scale) * var(--_margin-top-coefficient));
+  } @else if 4 == $level {
+    margin-top: calc(var(--_s4) * var(--_margin-scale) * var(--_margin-top-coefficient));
+  } @else if 5 == $level {
+    margin-top: calc(var(--_s5) * var(--_margin-scale) * var(--_margin-top-coefficient));
+  } @else if 6 == $level {
+    margin-top: calc(var(--_s6) * var(--_margin-scale) * var(--_margin-top-coefficient));
+  } @else if 7 == $level {
+    margin-top: calc(var(--_s7) * var(--_margin-scale) * var(--_margin-top-coefficient));
+  }
+}
+
+/*
+---
+name: _set-margin-right-level()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin-right level.
+
+### scss
+```scss
+//
+// @param  int  $level  Min -2, Max 7
+//
+
+@include _set-margin-right-level(1);
+```
+*/
+
+@mixin _set-margin-right-level($level) {
+  @if -2 == $level {
+    margin-right: calc(var(--_s-2) * var(--_margin-scale) * var(--_margin-right-coefficient));
+  } @else if -1 == $level {
+    margin-right: calc(var(--_s-1) * var(--_margin-scale) * var(--_margin-right-coefficient));
+  } @else if 0 == $level {
+    margin-right: calc(var(--_s0) * var(--_margin-scale) * var(--_margin-right-coefficient));
+  } @else if 1 == $level {
+    margin-right: calc(var(--_s1) * var(--_margin-scale) * var(--_margin-right-coefficient));
+  } @else if 2 == $level {
+    margin-right: calc(var(--_s2) * var(--_margin-scale) * var(--_margin-right-coefficient));
+  } @else if 3 == $level {
+    margin-right: calc(var(--_s3) * var(--_margin-scale) * var(--_margin-right-coefficient));
+  } @else if 4 == $level {
+    margin-right: calc(var(--_s4) * var(--_margin-scale) * var(--_margin-right-coefficient));
+  } @else if 5 == $level {
+    margin-right: calc(var(--_s5) * var(--_margin-scale) * var(--_margin-right-coefficient));
+  } @else if 6 == $level {
+    margin-right: calc(var(--_s6) * var(--_margin-scale) * var(--_margin-right-coefficient));
+  } @else if 7 == $level {
+    margin-right: calc(var(--_s7) * var(--_margin-scale) * var(--_margin-right-coefficient));
+  }
+}
+
+/*
+---
+name: _set-margin-bottom-level()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin-bottom level.
+
+### scss
+```scss
+//
+// @param  int  $level  Min -2, Max 7
+//
+
+@include _set-margin-bottom-level(1);
+```
+*/
+
+@mixin _set-margin-bottom-level($level) {
+  @if -2 == $level {
+    margin-bottom: calc(var(--_s-2) * var(--_margin-scale) * var(--_margin-bottom-coefficient));
+  } @else if -1 == $level {
+    margin-bottom: calc(var(--_s-1) * var(--_margin-scale) * var(--_margin-bottom-coefficient));
+  } @else if 0 == $level {
+    margin-bottom: calc(var(--_s0) * var(--_margin-scale) * var(--_margin-bottom-coefficient));
+  } @else if 1 == $level {
+    margin-bottom: calc(var(--_s1) * var(--_margin-scale) * var(--_margin-bottom-coefficient));
+  } @else if 2 == $level {
+    margin-bottom: calc(var(--_s2) * var(--_margin-scale) * var(--_margin-bottom-coefficient));
+  } @else if 3 == $level {
+    margin-bottom: calc(var(--_s3) * var(--_margin-scale) * var(--_margin-bottom-coefficient));
+  } @else if 4 == $level {
+    margin-bottom: calc(var(--_s4) * var(--_margin-scale) * var(--_margin-bottom-coefficient));
+  } @else if 5 == $level {
+    margin-bottom: calc(var(--_s5) * var(--_margin-scale) * var(--_margin-bottom-coefficient));
+  } @else if 6 == $level {
+    margin-bottom: calc(var(--_s6) * var(--_margin-scale) * var(--_margin-bottom-coefficient));
+  } @else if 7 == $level {
+    margin-bottom: calc(var(--_s7) * var(--_margin-scale) * var(--_margin-bottom-coefficient));
+  }
+}
+
+/*
+---
+name: _set-margin-left-level()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin-left level.
+
+### scss
+```scss
+//
+// @param  int  $level  Min -2, Max 7
+//
+
+@include _set-margin-left-level(1);
+```
+*/
+
+@mixin _set-margin-left-level($level) {
+  @if -2 == $level {
+    margin-left: calc(var(--_s-2) * var(--_margin-scale) * var(--_margin-left-coefficient));
+  } @else if -1 == $level {
+    margin-left: calc(var(--_s-1) * var(--_margin-scale) * var(--_margin-left-coefficient));
+  } @else if 0 == $level {
+    margin-left: calc(var(--_s0) * var(--_margin-scale) * var(--_margin-left-coefficient));
+  } @else if 1 == $level {
+    margin-left: calc(var(--_s1) * var(--_margin-scale) * var(--_margin-left-coefficient));
+  } @else if 2 == $level {
+    margin-left: calc(var(--_s2) * var(--_margin-scale) * var(--_margin-left-coefficient));
+  } @else if 3 == $level {
+    margin-left: calc(var(--_s3) * var(--_margin-scale) * var(--_margin-left-coefficient));
+  } @else if 4 == $level {
+    margin-left: calc(var(--_s4) * var(--_margin-scale) * var(--_margin-left-coefficient));
+  } @else if 5 == $level {
+    margin-left: calc(var(--_s5) * var(--_margin-scale) * var(--_margin-left-coefficient));
+  } @else if 6 == $level {
+    margin-left: calc(var(--_s6) * var(--_margin-scale) * var(--_margin-left-coefficient));
+  } @else if 7 == $level {
+    margin-left: calc(var(--_s7) * var(--_margin-scale) * var(--_margin-left-coefficient));
+  }
+}
+
+/*
+---
+name: _set-margin-level()
+category:
+  - core/mixin
+  - core/mixin/margin
+---
+Sets margin level.
+
+### scss
+```scss
+//
+// @param  int  $level-1
+// @param  int  $level-2
+// @param  int  $level-3
+// @param  int  $level-4
+//
+
+@include _set-margin-level(1);
+@include _set-margin-level(1, 2);
+@include _set-margin-level(1, 2, -1);
+@include _set-margin-level(1, 2, -1, 2);
+```
+*/
+
+@mixin _set-margin-level($level-1, $level-2: null, $level-3: null, $level-4: null) {
+  @if (_is-null($level-2) and _is-null($level-3) and _is-null($level-4)) {
+    @include _set-margin-top-level($level-1);
+    @include _set-margin-right-level($level-1);
+    @include _set-margin-bottom-level($level-1);
+    @include _set-margin-left-level($level-1);
+  } @else if (_is-null($level-3) and _is-null($level-4)) {
+    @include _set-margin-top-level($level-1);
+    @include _set-margin-right-level($level-2);
+    @include _set-margin-bottom-level($level-1);
+    @include _set-margin-left-level($level-2);
+  } @else if (_is-null($level-4)) {
+    @include _set-margin-top-level($level-1);
+    @include _set-margin-right-level($level-2);
+    @include _set-margin-bottom-level($level-3);
+    @include _set-margin-left-level($level-2);
+  } @else {
+    @include _set-margin-top-level($level-1);
+    @include _set-margin-right-level($level-2);
+    @include _set-margin-bottom-level($level-3);
+    @include _set-margin-left-level($level-4);
   }
 }

@@ -3,6 +3,8 @@
 name: _between-content()
 category:
   - core/mixin
+tag:
+  - deprecated
 ---
 Sets Child elements margin
 
@@ -26,17 +28,12 @@ Sets Child elements margin
 */
 
 @mixin _between-content($coefficient: 1) {
-  > * {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  > *:not(:first-child) {
+  > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
     @include _margin-top($coefficient);
   }
 
-  > *:not(:last-child) {
-    @include _margin-bottom($coefficient);
+  > :first-child {
+    margin-top: 0;
   }
 }
 
@@ -45,6 +42,8 @@ Sets Child elements margin
 name: _content()
 category:
   - core/mixin
+tag:
+  - deprecated
 ---
 Sets Child elements margin
 
@@ -71,32 +70,137 @@ Sets Child elements margin
   @include _between-content($coefficient);
 
   > h1 {
-    --_margin-top: var(--_h1-margin-top);
-    --_margin-bottom: var(--_h1-margin-bottom);
+    @include _margin-top($_h1-margin-top * $coefficient);
+    @include _margin-bottom($_h1-margin-bottom * $coefficient);
   }
 
   > h2 {
-    --_margin-top: var(--_h2-margin-top);
-    --_margin-bottom: var(--_h2-margin-bottom);
+    @include _margin-top($_h2-margin-top * $coefficient);
+    @include _margin-bottom($_h2-margin-bottom * $coefficient);
   }
 
   > h3 {
-    --_margin-top: var(--_h3-margin-top);
-    --_margin-bottom: var(--_h3-margin-bottom);
+    @include _margin-top($_h3-margin-top * $coefficient);
+    @include _margin-bottom($_h3-margin-bottom * $coefficient);
   }
 
   > h4 {
-    --_margin-top: var(--_h4-margin-top);
-    --_margin-bottom: var(--_h4-margin-bottom);
+    @include _margin-top($_h4-margin-top * $coefficient);
+    @include _margin-bottom($_h4-margin-bottom * $coefficient);
   }
 
   > h5 {
-    --_margin-top: var(--_h5-margin-top);
-    --_margin-bottom: var(--_h5-margin-bottom);
+    @include _margin-top($_h5-margin-top * $coefficient);
+    @include _margin-bottom($_h5-margin-bottom * $coefficient);
   }
 
   > h6 {
-    --_margin-top: var(--_h6-margin-top);
-    --_margin-bottom: var(--_h6-margin-bottom);
+    @include _margin-top($_h6-margin-top * $coefficient);
+    @include _margin-bottom($_h6-margin-bottom * $coefficient);
+  }
+}
+
+/*
+---
+name: _set-between-content-level()
+category:
+  - core/mixin
+---
+Sets Child elements margin
+
+### scss
+```scss
+//
+// @param  int  $level
+//
+
+.u-between-content {
+  @include _set-between-content-level(1);
+}
+```
+
+### html
+```ejs
+<div class="u-between-content">
+  ...
+</div>
+```
+*/
+
+@mixin _set-between-content-level($level) {
+  @at-root {
+    :where(#{ & } > *) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  > *:not(:first-child) {
+    @include _set-margin-top-level($level);
+  }
+
+  > *:not(:last-child) {
+    @include _set-margin-bottom-level($level);
+  }
+}
+
+/*
+---
+name: _set-content-level()
+category:
+  - core/mixin
+---
+Sets Child elements margin
+
+### scss
+```scss
+//
+// @param  int  $level
+//
+
+.u-content {
+  @include _set-content-level(1);
+}
+```
+
+### html
+```ejs
+<div class="u-content">
+  ...
+</div>
+```
+*/
+
+@mixin _set-content-level($level) {
+  @include _set-between-content-level($level);
+
+  > h1 {
+    --_margin-top-coefficient: #{ $_h1-margin-top };
+    --_margin-bottom-coefficient: #{ $_h1-margin-bottom };
+  }
+
+  > h2 {
+    --_margin-top-coefficient: #{ $_h2-margin-top };
+    --_margin-bottom-coefficient: #{ $_h2-margin-bottom };
+  }
+
+  > h3 {
+    --_margin-top-coefficient: #{ $_h3-margin-top };
+    --_margin-bottom-coefficient: #{ $_h3-margin-bottom };
+  }
+
+  > h4 {
+    --_margin-top-coefficient: #{ $_h4-margin-top };
+    --_margin-bottom-coefficient: #{ $_h4-margin-bottom };
+  }
+
+  > h5 {
+    --_margin-top-coefficient: #{ $_h5-margin-top };
+    --_margin-bottom-coefficient: #{ $_h5-margin-bottom };
+  }
+
+  > h6 {
+    --_margin-top-coefficient: #{ $_h6-margin-top };
+    --_margin-bottom-coefficient: #{ $_h6-margin-bottom };
   }
 }

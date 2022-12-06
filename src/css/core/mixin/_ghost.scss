@@ -20,7 +20,7 @@ category:
     border-size: 1px,
     color: #fff,
   ));
-  @include _padding(1, 2);
+  @include _set-padding-level(1, 2);
 }
 ```
 

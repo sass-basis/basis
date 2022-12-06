@@ -10,14 +10,14 @@ Abstract hero component
 ```scss
 .c-hero {
   @include _hero();
-  @include _padding(1);
+  @include _set-padding-level(1);
 
   &__header {
-    @include _margin(0, 0, 1);
+    @include _set-margin-bottom-level(1);
   }
 
   &__footer {
-    @include _margin(1, 0, 0);
+    @include _set-margin-top-level(1);
   }
 }
 ```

@@ -54,5 +54,5 @@ Content utility
 */
 
 .#{$_prefix}u-content {
-  @include _content();
+  @include _set-content-level(1);
 }

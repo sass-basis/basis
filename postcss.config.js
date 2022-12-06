@@ -8,9 +8,7 @@ module.exports = {
       sort: true,
     }),
     require('cssnano')({
-      preset: ['default', {
-        calc: false,
-      }],
+      preset: ['default'],
     })
   ]
 }

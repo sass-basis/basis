@@ -10,7 +10,7 @@ Abstract button component
 ```scss
 .c-btn {
   @include _btn();
-  @include _padding(.5, 1);
+  @include _set-padding-level(-2, -1);
   background-color: #fff;
   color: var(--_color-text);
 }

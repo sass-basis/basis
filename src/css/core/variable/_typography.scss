@@ -324,3 +324,11 @@ $_font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 */
 
 $_font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+$_font-size-scale: calc(var(--_harmonic-sequence-base) / (var(--_harmonic-sequence-base) - var(--_font-size-level)));
+$_font-size: calc(#{ $_font-size-scale } * 1rem);
+$_line-height: clamp(
+  1,
+  calc(var(--_line-height-slope) * #{ $_font-size-scale } + 1 + 2 * var(--_half-leading) + -1 * var(--_line-height-slope)),
+  calc(2 * var(--_half-leading) + 1)
+);

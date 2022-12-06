@@ -4,7 +4,7 @@
   padding: 0;
 
   &__item {
-    @include _margin(0, .5, 0, 0);
+    @include _set-margin-level(0, -1, 0, 0);
     display: inline-block;
     padding: 0;
   }

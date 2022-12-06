@@ -44,22 +44,21 @@
   --_base-font-family: #{ $_font-family };
   --_base-line-height: #{ $_base-line-height };
 
-  --_margin-coefficient: #{ $_margin-coefficient };
   --_margin-scale: 1;
-  --_space: calc(var(--_base-line-height) * var(--_margin-coefficient));
+  --_space: var(--_base-line-height);
 
-  --_h1-margin-top: #{ $_h1-margin-top };
-  --_h1-margin-bottom: #{ $_h1-margin-bottom };
-  --_h2-margin-top: #{ $_h2-margin-top };
-  --_h2-margin-bottom: #{ $_h2-margin-bottom };
-  --_h3-margin-top: #{ $_h3-margin-top };
-  --_h3-margin-bottom: #{ $_h3-margin-bottom };
-  --_h4-margin-top: #{ $_h4-margin-top };
-  --_h4-margin-bottom: #{ $_h4-margin-bottom };
-  --_h5-margin-top: #{ $_h5-margin-top };
-  --_h5-margin-bottom: #{ $_h5-margin-bottom };
-  --_h6-margin-top: #{ $_h6-margin-top };
-  --_h6-margin-bottom: #{ $_h6-margin-bottom };
+  // --_h1-margin-top: #{ $_h1-margin-top };
+  // --_h1-margin-bottom: #{ $_h1-margin-bottom };
+  // --_h2-margin-top: #{ $_h2-margin-top };
+  // --_h2-margin-bottom: #{ $_h2-margin-bottom };
+  // --_h3-margin-top: #{ $_h3-margin-top };
+  // --_h3-margin-bottom: #{ $_h3-margin-bottom };
+  // --_h4-margin-top: #{ $_h4-margin-top };
+  // --_h4-margin-bottom: #{ $_h4-margin-bottom };
+  // --_h5-margin-top: #{ $_h5-margin-top };
+  // --_h5-margin-bottom: #{ $_h5-margin-bottom };
+  // --_h6-margin-top: #{ $_h6-margin-top };
+  // --_h6-margin-bottom: #{ $_h6-margin-bottom };
 
   --_page-effect-z-index: #{ $_page-effect-z-index };
 
@@ -81,20 +80,31 @@
    * It is not recommended to override this value with :root in order to have the size determined based on 0.
    */
   --_font-size-level: 0;
+
+  $fibonacci-sequence: 1, 2, 3, 5, 8, 13, 21, 34, 55;
+  --_s-2: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 1) });
+  --_s-1: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 2) });
+  --_s0: 0rem;
+  --_s1: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 3) });
+  --_s2: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 4) });
+  --_s3: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 5) });
+  --_s4: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 6) });
+  --_s5: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 7) });
+  --_s6: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 8) });
+  --_s7: calc(var(--_space) / 3 * #{ nth($fibonacci-sequence, 9) });
 }
 
 * {
-
-  $font-size-scale: calc(var(--_harmonic-sequence-base) / (var(--_harmonic-sequence-base) - var(--_font-size-level)));
-  $font-size: calc(#{ $font-size-scale } * 1rem);
-  $line-height: clamp(
-    1,
-    calc(var(--_line-height-slope) * #{ $font-size-scale } + 1 + 2 * var(--_half-leading) + -1 * var(--_line-height-slope)),
-    calc(2 * var(--_half-leading) + 1)
-  );
-
-  --_font-size: #{ $font-size };
-  --_line-height: #{ $line-height };
+  --_font-size: #{ $_font-size };
+  --_line-height: #{ $_line-height };
+  --_margin-top-coefficient: 1;
+  --_margin-right-coefficient: 1;
+  --_margin-bottom-coefficient: 1;
+  --_margin-left-coefficient: 1;
+  --_padding-top-coefficient: 1;
+  --_padding-right-coefficient: 1;
+  --_padding-bottom-coefficient: 1;
+  --_padding-left-coefficient: 1;
 
   box-sizing: border-box;
 
@@ -170,11 +180,15 @@ body {
   padding: 2px 6px;
 }
 
-pre code {
-  display: block;
-  background-color: transparent;
-  border-radius: 0;
-  padding: 0;
+pre {
+  overflow: auto;
+
+  code {
+    display: block;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
 }
 
 :where(
@@ -227,7 +241,7 @@ video {
 
 figcaption {
   @include _set-font-size-level(-1);
-  @include _margin(.25, 0, 0);
+  @include _set-margin-level(-2, 0, 0);
   caption-side: bottom;
   text-align: left;
 }
