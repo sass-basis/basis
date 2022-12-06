@@ -42,6 +42,8 @@ Abstract row component of inline-block based grid system
 */
 
 @mixin _ib-row() {
+  @warn '_ib-row() is deprecated.';
+
   display: block;
   font-size: 0;
   letter-spacing: 0;
@@ -92,6 +94,8 @@ Abstract column element of inline-block based grid system
 */
 
 @mixin _ib-row__col($columns: null, $max-columns: null) {
+  @warn '_ib-row__col() is deprecated.';
+
   display: inline-block;
   @include _set-font-size-level(0);
   text-align: left;
@@ -134,6 +138,8 @@ Sets column width of inline-block based grid system
 */
 
 @mixin _ib-row__col--width($width) {
+  @warn '_ib-row__col--width() is deprecated.';
+
   @if ('auto' == $width) {
     width: auto;
   } @else {
@@ -171,6 +177,8 @@ Sets column offset of inline-block based grid system
 */
 
 @mixin _ib-row__col--offset($columns: null, $max-columns: null) {
+  @warn '_ib-row__col--offset() is deprecated.';
+
   @include _row__col--offset($columns, $max-columns);
 }
 
@@ -199,6 +207,8 @@ Sets row margin of inline-block based grid system
 */
 
 @mixin _ib-row--margin($coefficient) {
+  @warn '_ib-row--margin() is deprecated.';
+
   @include _row--margin($coefficient);
 }
 
@@ -227,6 +237,8 @@ Sets column margin of inline-block based grid system
 */
 
 @mixin _ib-row__col--margin($coefficient) {
+  @warn '_ib-row__col--margin() is deprecated.';
+
   @include _row__col--margin($coefficient);
 }
 
@@ -255,6 +267,8 @@ Sets row margin of flexbox based grid system
 */
 
 @mixin _row--margin($coefficient) {
+  @warn '_row--margin() is deprecated.';
+
   @include _margin-right($coefficient / 2 * -1);
   @include _margin-left($coefficient / 2 * -1);
   @include _margin-bottom($coefficient * -1);
@@ -285,6 +299,8 @@ Sets column margin of flexbox based grid system
 */
 
 @mixin _row__col--margin($coefficient) {
+  @warn '_row__col--margin() is deprecated.';
+
   @include _padding-right($coefficient / 2, true);
   @include _padding-left($coefficient / 2, true);
   @include _margin-bottom($coefficient);

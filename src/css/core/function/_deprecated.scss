@@ -21,6 +21,8 @@ font-size: _font-size(1); // => 16px
 */
 
 @function _font-size($scale-or-font-size) {
+  @warn '_font-size() is deprecated.';
+
   @if unitless($scale_or_font-size) {
     $scale: $scale-or-font-size;
     @return $scale * 1rem;
@@ -68,6 +70,8 @@ Return line-height for vertical rhythum
 */
 
 @function _line-height($scale-or-font-size) {
+  @warn '_line-height() is deprecated.';
+
   @if unitless($scale-or-font-size) {
     $scale: $scale-or-font-size;
     $new-line-height: calc(.3 + .7 / (1 + #{ $scale } * #{ $scale } / 2.5 - #{ $scale } / 2.5) + var(--_half-leading) * 2);
@@ -120,6 +124,8 @@ padding: _space(1, true, true);
 */
 
 @function _space($coefficient, $apply-space-scale: false, $apply-margin-scale: false) {
+  @warn '_space() is deprecated.';
+
   @if (0 == $coefficient) {
     @return 0;
   }

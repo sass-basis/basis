@@ -28,6 +28,8 @@ Sets Child elements margin
 */
 
 @mixin _between-content($coefficient: 1) {
+  @warn '_between-content() is deprecated.';
+
   > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
     @include _margin-top($coefficient);
   }
@@ -67,6 +69,8 @@ Sets Child elements margin
 */
 
 @mixin _content($coefficient: 1) {
+  @warn '_content() is deprecated.';
+
   @include _between-content($coefficient);
 
   > h1 {
@@ -125,6 +129,8 @@ Sets margin-top
 */
 
 @mixin _margin-top($coefficient, $apply-margin-scale: true) {
+  @warn '_margin-top() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     margin-top: _space($coefficient);
 
@@ -163,6 +169,8 @@ Sets margin-right
 */
 
 @mixin _margin-right($coefficient, $apply-margin-scale: true) {
+  @warn '_margin-right() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     margin-right: _space($coefficient);
 
@@ -201,6 +209,8 @@ Sets margin-bottom
 */
 
 @mixin _margin-bottom($coefficient, $apply-margin-scale: true) {
+  @warn '_margin-bottom() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     margin-bottom: _space($coefficient);
 
@@ -239,6 +249,8 @@ Sets margin-left
 */
 
 @mixin _margin-left($coefficient, $apply-margin-scale: true) {
+  @warn '_margin-left() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     margin-left: _space($coefficient);
 
@@ -283,6 +295,8 @@ Sets margin
 */
 
 @mixin _margin($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null, $apply-margin-scale: true) {
+  @warn '_margin() is deprecated.';
+
   @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
     @include _margin-top($coefficient-1, $apply-margin-scale);
     @include _margin-right($coefficient-1, $apply-margin-scale);
@@ -331,6 +345,8 @@ Sets padding-top
 */
 
 @mixin _padding-top($coefficient, $apply-margin-scale: false) {
+  @warn '_padding-top() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     padding-top: _space($coefficient);
 
@@ -369,6 +385,8 @@ Sets padding-right
 */
 
 @mixin _padding-right($coefficient, $apply-margin-scale: false) {
+  @warn '_padding-right() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     padding-right: _space($coefficient);
 
@@ -407,6 +425,8 @@ Sets padding-bottom
 */
 
 @mixin _padding-bottom($coefficient, $apply-margin-scale: false) {
+  @warn '_padding-bottom() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     padding-bottom: _space($coefficient);
 
@@ -445,6 +465,8 @@ Sets padding-left
 */
 
 @mixin _padding-left($coefficient, $apply-margin-scale: false) {
+  @warn '_padding-left() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     padding-left: _space($coefficient);
 
@@ -489,6 +511,8 @@ Sets padding
 */
 
 @mixin _padding($coefficient-1, $coefficient-2: null, $coefficient-3: null, $coefficient-4: null, $apply-margin-scale: false) {
+  @warn '_padding() is deprecated.';
+
   @if (_is-null($coefficient-2) and _is-null($coefficient-3) and _is-null($coefficient-4)) {
     @include _padding-top($coefficient-1, $apply-margin-scale);
     @include _padding-right($coefficient-1, $apply-margin-scale);
@@ -539,6 +563,8 @@ The position shorthand
 */
 
 @mixin _position($position, $top: null, $right: null, $bottom: null, $left: null, $z-index: null) {
+  @warn '_position() is deprecated.';
+
   position: $position;
 
   @if not _is-null($top) {
@@ -585,6 +611,8 @@ Sets top
 */
 
 @mixin _top($coefficient) {
+  @warn '_top() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     top: calc(var(--_space) * #{ $coefficient });
   } @else {
@@ -615,6 +643,8 @@ Sets right
 */
 
 @mixin _right($coefficient) {
+  @warn '_right() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     right: calc(var(--_space) * #{ $coefficient });
   } @else {
@@ -645,6 +675,8 @@ Sets bottom
 */
 
 @mixin _bottom($coefficient) {
+  @warn '_bottom() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     bottom: calc(var(--_space) * #{ $coefficient });
   } @else {
@@ -675,6 +707,8 @@ Sets left
 */
 
 @mixin _left($coefficient) {
+  @warn '_left() is deprecated.';
+
   @if _is-number($coefficient) and 0 != $coefficient {
     left: calc(var(--_space) * #{ $coefficient });
   } @else {
@@ -706,6 +740,8 @@ Sets rem font-size
 */
 
 @mixin _font-size($scale-or-font-size) {
+  @warn '_font-size() is deprecated.';
+
   font-size: _font-size($scale-or-font-size);
 }
 
@@ -737,6 +773,8 @@ Sets line-height for vertical rhythum
 */
 
 @mixin _line-height($scale-or-font-size) {
+  @warn '_line-height() is deprecated.';
+
   line-height: _line-height($scale-or-font-size);
 }
 
@@ -889,6 +927,8 @@ Sets rem font-size and line-height for vertical rhythum.
 */
 
 @mixin _font-size-line-height($scale-or-font-size) {
+  @warn '_font-size-line-height() is deprecated.';
+
   @if unitless($scale-or-font-size) {
     $scale: $scale-or-font-size;
     @include _font-size($scale);
