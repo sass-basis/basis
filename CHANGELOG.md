@@ -1,5 +1,29 @@
 # Changelog
 
+## December 13, 2022 18.0.0-beta
+* Remove normalize.css
+* Remove: `$_base-margin-bottom`.
+* Deprecated: `var-xxx()`.
+* Deprecated: `$_xxx`.
+* Change `$_container-max-width` `1200px` to `1280px`.
+* Add `_set-font-size-level()`.
+* Remove: `$_h1-font-size-scale` 〜 `$_h6-font-size-scale`.
+* Deprecated: `_between-content()`.
+* Deprecated: `_content()`.
+* Add: `_set-between-content-level()`.
+* Add: `_set-content-level()`.
+* Deprecated: `_margin-top()`, `_margin-right()`, `_margin-bottom()`, `_margin-left()`, `_margin()`.
+* Deprecated: `_font-size()`.
+* Deprecated: `_line-height()`.
+* Deprecated: `_font-size-line-height()`.
+* Add: `--_space-unitless`.
+* Deprecated: `_top()`, `_right()`, `_bottom()`, `_left()`, `_position()`.
+* Remove: `--_container-margin-sm`.
+* Deprecated: `_space()`.
+* Deprecated: `_row--margin()`.
+* Deprecated: `_row__col--margin()`.
+* Add: `--_color-red`.
+
 ## November 7, 2022 17.1.1
 * Fix a bug that c-page-effect does not disappear when page back.
 
