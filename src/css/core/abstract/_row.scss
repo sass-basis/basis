@@ -123,8 +123,8 @@ Sets column width of flexbox based grid system
   } @else if (1 == $width) {
     flex: 1 1 0%;
   } @else {
-    flex: 0 1 auto;
-    width: $width;
+    flex: 0 1 $width;
+    max-width: $width;
   }
 }
 

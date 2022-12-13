@@ -29,18 +29,16 @@ Sets Child elements margin
   --_margin-top: #{ $level };
   --_margin-bottom: #{ $level };
 
-  @at-root {
-    :where(#{ & } > *) {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
+  & > * {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
-  > *:not(:first-child) {
+  & > *:not(:first-child) {
     margin-top: calc(var(--_margin1) * var(--_margin-top));
   }
 
-  > *:not(:last-child) {
+  & > *:not(:last-child) {
     margin-bottom: calc(var(--_margin1) * var(--_margin-bottom));
   }
 }

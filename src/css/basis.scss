@@ -9,47 +9,9 @@
 
 @import 'basis-core';
 
+@import 'foundation/settings';
 @import 'foundation/base';
 
-@import 'object/component/alert';
-@import 'object/component/balloon';
-@import 'object/component/breadcrumbs';
-@import 'object/component/btn';
-@import 'object/component/checkbox';
-@import 'object/component/container';
-@import 'object/component/drawer';
-@import 'object/component/dropdown';
-@import 'object/component/drawer-close-zone';
-@import 'object/component/entries';
-@import 'object/component/entry';
-@import 'object/component/form-control';
-@import 'object/component/hamburger-btn';
-@import 'object/component/hero';
-@import 'object/component/ic';
-@import 'object/component/input-group';
-@import 'object/component/media';
-@import 'object/component/meta';
-@import 'object/component/navbar';
-@import 'object/component/page-effect';
-@import 'object/component/page-header';
-@import 'object/component/pagination';
-@import 'object/component/radio';
-@import 'object/component/responsive-container';
-@import 'object/component/responsive-table';
-@import 'object/component/row';
-@import 'object/component/section';
-@import 'object/component/select';
-@import 'object/component/site-branding';
-@import 'object/component/spinner';
+@import 'object/component/component';
 
-@import 'object/utility/animation';
-@import 'object/utility/clearfix';
-@import 'object/utility/content';
-@import 'object/utility/hidden';
-@import 'object/utility/img';
-@import 'object/utility/noscroll';
-@import 'object/utility/pull';
-@import 'object/utility/text';
-@import 'object/utility/transition';
-@import 'object/utility/visible';
-@import 'object/utility/invisible';
+@import 'object/utility/utility';
