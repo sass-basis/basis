@@ -26,20 +26,44 @@ Sets Child elements margin
 */
 
 @mixin _set-between-content-level($level) {
-  --_margin-top: #{ $level };
-  --_margin-bottom: #{ $level };
+	--_margin-top: 1;
+	--_margin-bottom: 1;
 
   & > * {
     margin-top: 0;
     margin-bottom: 0;
   }
 
+  $margin: var(--_margin1);
+
+  @if -2 == $level {
+    $margin: var(--_margin-2);
+  } @else if -1 == $level {
+    $margin: var(--_margin-1);
+  } @else if 0 == $level {
+    $margin: var(--_margin0);
+  } @else if 1 == $level {
+    $margin: var(--_margin1);
+  } @else if 2 == $level {
+    $margin: var(--_margin2);
+  } @else if 3 == $level {
+    $margin: var(--_margin3);
+  } @else if 4 == $level {
+    $margin: var(--_margin4);
+  } @else if 5 == $level {
+    $margin: var(--_margin5);
+  } @else if 6 == $level {
+    $margin: var(--_margin6);
+  } @else if 7 == $level {
+    $margin: var(--_margin7);
+  }
+
   & > *:not(:first-child) {
-    margin-top: calc(var(--_margin1) * var(--_margin-top));
+    margin-top: calc(#{ $margin } * var(--_margin-top));
   }
 
   & > *:not(:last-child) {
-    margin-bottom: calc(var(--_margin1) * var(--_margin-bottom));
+    margin-bottom: calc(#{ $margin } * var(--_margin-bottom));
   }
 }
 

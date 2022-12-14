@@ -1,5 +1,9 @@
 # Changelog
 
+## December 14, 2022 18.0.0-beta2
+* `_set-between-content-level()` permits only `-2` to `-7`.
+* `_set-content-level()` permits only `-2` to `-7`.
+
 ## December 13, 2022 18.0.0-beta
 * Remove normalize.css
 * Remove: `$_base-margin-bottom`.
