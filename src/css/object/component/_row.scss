@@ -256,7 +256,18 @@ Row component of flexbox based grid system
 */
 
 .#{ $_prefix }c-row {
+  --_gap: 0px;
+
   @include _row();
+  margin-right: calc(var(--_gap) * .5 * -1);
+  margin-left: calc(var(--_gap) * .5 * -1);
+  margin-bottom: calc(var(--_gap) * -1);
+
+  > .#{ $_prefix }c-row__col {
+    padding-right: calc(var(--_gap) * .5);
+    padding-left: calc(var(--_gap) * .5);
+    margin-bottom: var(--_gap);
+  }
 
   &__col {
     @include _row__col(null, null);
@@ -270,95 +281,63 @@ Row component of flexbox based grid system
     @include _media-min($screen-min) {
       $prefix: _size-prefix($size);
 
-      &#{$prefix}-nowrap {
+      &#{ $prefix }-nowrap {
         flex-wrap: nowrap;
       }
 
-      &#{$prefix}-left {
+      &#{ $prefix }-left {
         justify-content: flex-start;
       }
 
-      &#{$prefix}-right {
+      &#{ $prefix }-right {
         justify-content: flex-end;
       }
 
-      &#{$prefix}-center {
+      &#{ $prefix }-center {
         justify-content: center;
       }
 
-      &#{$prefix}-between {
+      &#{ $prefix }-between {
         justify-content: space-between;
       }
 
-      &#{$prefix}-around {
+      &#{ $prefix }-around {
         justify-content: space-around;
       }
 
-      &#{$prefix}-top {
+      &#{ $prefix }-top {
         align-items: flex-start;
       }
 
-      &#{$prefix}-bottom {
+      &#{ $prefix }-bottom {
         align-items: flex-end;
       }
 
-      &#{$prefix}-middle {
+      &#{ $prefix }-middle {
         align-items: center;
       }
 
-      &#{$prefix}-baseline {
+      &#{ $prefix }-baseline {
         align-items: baseline;
       }
 
-      &#{$prefix}-collapse {
-        margin-right: 0;
-        margin-bottom: 0;
-        margin-left: 0;
-
-        > .#{ $_prefix }c-row__col {
-          padding-right: 0;
-          margin-bottom: 0;
-          padding-left: 0;
-        }
+      &#{ $prefix }-collapse {
+        --_gap: 0px;
       }
 
-      &#{$prefix}-margin {
-        margin-right: calc(var(--_margin1) * .5 * -1);
-        margin-left: calc(var(--_margin1) * .5 * -1);
-        margin-bottom: calc(var(--_margin1) * -1);
-
-        > .#{ $_prefix }c-row__col {
-          padding-right: calc(var(--_margin1) * .5);
-          padding-left: calc(var(--_margin1) * .5);
-          margin-bottom: var(--_margin1);
-        }
-
-        &-s {
-          margin-right: calc(var(--_margin-1) * .5 * -1);
-          margin-left: calc(var(--_margin-1) * .5 * -1);
-          margin-bottom: calc(var(--_margin-1) * -1);
-
-          > .#{ $_prefix }c-row__col {
-            padding-right: calc(var(--_margin-1) * .5);
-            padding-left: calc(var(--_margin-1) * .5);
-            margin-bottom: var(--_margin-1);
-          }
-        }
-
-        &-l {
-          margin-right: calc(var(--_margin2) * .5 * -1);
-          margin-left: calc(var(--_margin2) * .5 * -1);
-          margin-bottom: calc(var(--_margin2) * -1);
-
-          > .#{ $_prefix }c-row__col {
-            padding-right: calc(var(--_margin2) * .5);
-            padding-left: calc(var(--_margin2) * .5);
-            margin-bottom: var(--_margin2);
-          }
-        }
+      &#{ $prefix }-margin {
+        --_gap: var(--_margin1);
       }
 
-      &#{$prefix}-fill {
+      &#{ $prefix }-margin-s {
+        --_gap: var(--_margin-1);
+      }
+
+      &#{ $prefix }-margin-l {
+        --_gap: var(--_margin2);
+      }
+
+      &#{ $prefix }-fill {
         > .#{ $_prefix }c-row__col {
           display: flex;
 
@@ -380,27 +359,27 @@ Row component of flexbox based grid system
         $gcd: _gcd($i, $max_columns);
 
         @if (1 == $gcd) {
-          %_bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd} {
+          %_bs-item#{ $prefix }-gcd-#{ $i / $gcd }-#{ $max_columns / $gcd } {
             @include _row__col($i, $max_columns);
           }
         }
       }
     }
 
-    %_bs-item#{$prefix}-full {
+    %_bs-item#{ $prefix }-full {
       @include _row__col--width(100%);
     }
 
     .#{ $_prefix }c-row__col {
-      &#{$prefix}-auto {
+      &#{ $prefix }-auto {
         @include _row__col--width(auto);
       }
 
-      &#{$prefix}-justify {
+      &#{ $prefix }-justify {
         @include _row__col--width(1);
       }
 
-      &#{$prefix}-fit {
+      &#{ $prefix }-fit {
         flex: 0 1 auto;
       }
     }
@@ -416,11 +395,11 @@ Row component of flexbox based grid system
         @for $i from 1 through $max_columns {
           $gcd: _gcd($i, $max_columns);
 
-          &#{$prefix}-#{$i}-#{$max_columns} {
+          &#{ $prefix }-#{ $i }-#{ $max_columns } {
             @if ($max_columns != $i) {
-              @extend %_bs-item#{$prefix}-gcd-#{$i / $gcd}-#{$max_columns / $gcd};
+              @extend %_bs-item#{ $prefix }-gcd-#{ $i / $gcd }-#{ $max_columns / $gcd };
             } @else {
-              @extend %_bs-item#{$prefix}-full;
+              @extend %_bs-item#{ $prefix }-full;
             }
           }
         }

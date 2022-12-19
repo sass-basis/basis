@@ -38,9 +38,10 @@ $_prefix: '';
 @import 'object/project/social-nav';
 @import 'object/project/table-of-contents';
 
-.aigis-preview {
+:where(.aigis-preview) {
   @include _set-content-level(1);
   min-height: 150px;
+  overflow: hidden;
 }
 
 @for $i from 10 through 200 {
