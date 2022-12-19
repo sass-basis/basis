@@ -1,4 +1,6 @@
 .#{ $_prefix }c-btn {
+  --_border-radius: var(--_global--border-radius);
+
   @include _transition(all);
   border: none;
   border-radius: var(--_border-radius);

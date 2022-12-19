@@ -273,6 +273,9 @@ Extend the underline from the center.
 */
 
 @mixin _extend-underline() {
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+
   position: absolute;
   bottom: 0;
   left: 50%;

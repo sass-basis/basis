@@ -2,12 +2,12 @@
   /**
    * Background color.
    */
-  --_background-color: transparent;
+  --_global--background-color: transparent;
 
   /**
    * Border radius.
    */
-  --_border-radius: #{ $_border-radius };
+  --_global--border-radius: #{ $_border-radius };
 
   /**
    * Color: black.
@@ -66,9 +66,9 @@
   /**
    * Transition properties.
    */
-  --_transition-duration: #{ $_transition-duration };
-  --_transition-function-timing: #{ $_transition-function-timing };
-  --_transition-delay: #{ $_transition-delay };
+  --_global--transition-duration: #{ $_transition-duration };
+  --_global--transition-function-timing: #{ $_transition-function-timing };
+  --_global--transition-delay: #{ $_transition-delay };
 
   /**
    * Half leading. em. but no unit.
@@ -78,17 +78,19 @@
   /**
    * Base line height. em. but no unit.
    */
-  --_base-line-height: calc(1 + var(--_half-leading) * 2);
+  --_global--line-height: calc(1 + var(--_half-leading) * 2);
 
   /**
    * Font family.
    */
-  --_base-font-family: #{ $_font-family };
+  --_base-font-family: #{ $_font-family }; // @deprecated
+  --_global--font-family: var(var(--_base-font-family));
 
   /**
    * Font size (px).
    */
-  --_base-font-size-px: #{ $_base-font-size-px };
+  --_base-font-size-px: #{ $_base-font-size-px }; // @deprecated
+  --_global--font-size-px: var(--_base-font-size-px);
 
   /**
    * Scaling factor for margin.
@@ -98,8 +100,8 @@
   /**
    * Base value for spaces. no unit.
    */
-  --_space-unitless: var(--_base-line-height);
-  --_space: calc(var(--_base-line-height) * 1rem);
+  --_space-unitless: var(--_global--line-height);
+  --_space: calc(var(--_global--line-height) * 1rem);
 
   /**
    * z-index for page effect.

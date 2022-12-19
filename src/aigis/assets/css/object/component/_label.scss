@@ -3,8 +3,7 @@
   background-color: var(--_color-gray);
   border-radius: 2px;
   color: var(--_color-white);
-  font-size: calc(var(--_base-font-size-px) - 2px);
-  line-height: 1;
+  @include _set-font-size-level(-1);
   padding: 4px 10px;
   vertical-align: middle;
 }

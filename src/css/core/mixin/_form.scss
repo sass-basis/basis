@@ -39,6 +39,8 @@ select {
 */
 
 @mixin _form-control-base-border() {
+  --_border-radius: var(--_global--border-radius);
+
   border: 1px solid var(--_form-control-border-color);
   border-radius: var(--_border-radius);
   outline: 0;

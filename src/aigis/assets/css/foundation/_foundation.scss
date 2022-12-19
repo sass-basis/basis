@@ -1,6 +1,6 @@
 a {
-  transition: background-color var(--_transition-duration) var(--_transition-function-timing),
-              color var(--_transition-duration) var(--_transition-function-timing);
+  transition: background-color var(--_global--transition-duration) var(--_global--transition-function-timing),
+              color var(--_global--transition-duration) var(--_global--transition-function-timing);
   color: _dark($color-primary);
 }
 

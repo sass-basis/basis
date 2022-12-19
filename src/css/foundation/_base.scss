@@ -47,15 +47,15 @@
 }
 
 html {
-  font-size: var(--_base-font-size-px);
+  font-size: var(--_global--font-size-px);
   line-break: normal;
   hanging-punctuation: allow-end;
 }
 
 :where(body) {
-  background-color: var(--_background-color);
+  background-color: var(--_global--background-color);
   color: var(--_color-text);
-  font-family: var(--_base-font-family);
+  font-family: var(--_global--font-family);
 }
 
 body {
@@ -79,7 +79,7 @@ body {
   kbd
 ) {
   background-color: var(--_lighter-color-gray);
-  border-radius: var(--_border-radius);
+  border-radius: var(--_global--border-radius);
   padding: 2px 6px;
 }
 
@@ -101,7 +101,7 @@ pre {
   select,
   button
 ) {
-  font-family: var(--_base-font-family);
+  font-family: var(--_global--font-family);
 }
 
 :where(

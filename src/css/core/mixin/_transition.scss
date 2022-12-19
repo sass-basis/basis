@@ -26,6 +26,10 @@ a {
 */
 
 @mixin _transition($property: all, $property2...) {
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+  --_transition-delay: var(--_global--transition-delay);
+
   $properties: join($property, $property2);
   $transitions: ();
 

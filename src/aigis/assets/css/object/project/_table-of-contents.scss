@@ -1,4 +1,6 @@
 .#{ $_prefix }p-table-of-contents {
+  --_border-radius: var(--_global--border-radius);
+
   margin-bottom: var(--_margin2);
   @include _list-unstyled();
   padding-right: var(--_padding1);

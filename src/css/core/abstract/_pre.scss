@@ -20,6 +20,8 @@ pre {
 */
 
 @mixin _pre() {
+  --_border-radius: var(--_global--border-radius);
+
   background-color: var(--_lightest-color-gray);
   border: 1px solid var(--_lighter-color-gray);
   border-radius: var(--_border-radius);

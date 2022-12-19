@@ -27,6 +27,8 @@ Abstract input group component
 */
 
 @mixin _input-group() {
+  --_border-radius: var(--_global--border-radius);
+
   display: flex;
   flex-wrap: nowrap;
   border-radius: var(--_border-radius);

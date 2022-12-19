@@ -1,9 +1,9 @@
 @function _var-background-color() {
-  @return var(--_background-color);
+  @return var(--_global--background-color);
 }
 
 @function _var-border-radius() {
-  @return var(--_border-radius);
+  @return var(--_global--border-radius);
 }
 
 @function _var-color-black() {
@@ -109,19 +109,19 @@
 @function _var-transition-duration() {
   @warn '_var-transition-duration() is deprecated.';
 
-  @return var(--_transition-duration);
+  @return var(--_global--transition-duration);
 }
 
 @function _var-transition-function-timing() {
   @warn '_var-transition-function-timing() is deprecated.';
 
-  @return var(--_transition-function-timing);
+  @return var(--_global--transition-function-timing);
 }
 
 @function _var-transition-delay() {
   @warn '_var-transition-delay() is deprecated.';
 
-  @return var(--_transition-delay);
+  @return var(--_global--transition-delay);
 }
 
 @function _var-half-leading() {
@@ -133,11 +133,11 @@
 @function _var-base-font-size-px() {
   @warn '_var-base-font-size-px() is deprecated.';
 
-  @return var(--_base-font-size-px);
+  @return var(--_global--font-size-px);
 }
 
 @function _var-base-font-family() {
   @warn '_var-base-font-family() is deprecated.';
 
-  @return var(--_base-font-family);
+  @return var(--_global--font-family);
 }
