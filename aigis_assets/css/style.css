@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v18.0.0-beta2
+ * Name: Basis v18.0.0-beta3
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -4381,11 +4381,11 @@ Abstract pulse spinner component
   /**
    * Background color.
    */
-  --_background-color: transparent;
+  --_global--background-color: transparent;
   /**
    * Border radius.
    */
-  --_border-radius: 3px;
+  --_global--border-radius: 3px;
   /**
    * Color: black.
    */
@@ -4435,9 +4435,9 @@ Abstract pulse spinner component
   /**
    * Transition properties.
    */
-  --_transition-duration: 0.2s;
-  --_transition-function-timing: ease-out;
-  --_transition-delay: 0s;
+  --_global--transition-duration: 0.2s;
+  --_global--transition-function-timing: ease-out;
+  --_global--transition-delay: 0s;
   /**
    * Half leading. em. but no unit.
    */
@@ -4445,15 +4445,17 @@ Abstract pulse spinner component
   /**
    * Base line height. em. but no unit.
    */
-  --_base-line-height: calc(1 + var(--_half-leading) * 2);
+  --_global--line-height: calc(1 + var(--_half-leading) * 2);
   /**
    * Font family.
    */
   --_base-font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  --_global--font-family: var(var(--_base-font-family));
   /**
    * Font size (px).
    */
   --_base-font-size-px: 16px;
+  --_global--font-size-px: var(--_base-font-size-px);
   /**
    * Scaling factor for margin.
    */
@@ -4461,8 +4463,8 @@ Abstract pulse spinner component
   /**
    * Base value for spaces. no unit.
    */
-  --_space-unitless: var(--_base-line-height);
-  --_space: calc(var(--_base-line-height) * 1rem);
+  --_space-unitless: var(--_global--line-height);
+  --_space: calc(var(--_global--line-height) * 1rem);
   /**
    * z-index for page effect.
    */
@@ -4586,14 +4588,14 @@ h6) {
   padding: 0; }
 
 html {
-  font-size: var(--_base-font-size-px);
+  font-size: var(--_global--font-size-px);
   line-break: normal;
   hanging-punctuation: allow-end; }
 
 :where(body) {
-  background-color: var(--_background-color);
+  background-color: var(--_global--background-color);
   color: var(--_color-text);
-  font-family: var(--_base-font-family); }
+  font-family: var(--_global--font-family); }
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -4615,7 +4617,7 @@ samp) {
 code,
 kbd) {
   background-color: var(--_lighter-color-gray);
-  border-radius: var(--_border-radius);
+  border-radius: var(--_global--border-radius);
   padding: 2px 6px; }
 
 pre {
@@ -4632,7 +4634,7 @@ textarea,
 keygen,
 select,
 button) {
-  font-family: var(--_base-font-family); }
+  font-family: var(--_global--font-family); }
 
 :where(
 input,
@@ -5100,9 +5102,13 @@ Checkbox component
       position: relative;
       display: inline-block;
       cursor: pointer;
+      --_border-radius: var(--_global--border-radius);
       border: 1px solid var(--_form-control-border-color);
       border-radius: var(--_border-radius);
       outline: 0;
+      --_transition-duration: var(--_global--transition-duration);
+      --_transition-function-timing: var(--_global--transition-function-timing);
+      --_transition-delay: var(--_global--transition-delay);
       transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
       background-color: var(--_color-white);
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
@@ -5310,6 +5316,9 @@ Drawer component
   z-index: 10;
   width: min(20rem, 80%);
   visibility: hidden;
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+  --_transition-delay: var(--_global--transition-delay);
   transition: left var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay), right var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay), visibility var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
   transition-timing-function: ease-in;
   backface-visibility: hidden; }
@@ -5345,6 +5354,9 @@ Drawer component
     padding: 0;
     vertical-align: middle; }
   .c-drawer[aria-hidden="false"] {
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
+    --_transition-delay: var(--_global--transition-delay);
     transition: left var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay), right var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
     transition-timing-function: ease-out; }
   .c-drawer__focus-point {
@@ -5453,6 +5465,9 @@ Dropdown component
   left: 0;
   z-index: 10;
   visibility: hidden;
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+  --_transition-delay: var(--_global--transition-delay);
   transition: bottom var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay), visibility var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
   transition-timing-function: ease-in; }
   .c-dropdown[aria-hidden="false"] {
@@ -5481,6 +5496,9 @@ Dropdown component
     padding: 0;
     vertical-align: middle; }
   .c-dropdown[aria-hidden="false"] {
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
+    --_transition-delay: var(--_global--transition-delay);
     transition: bottom var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
     transition-timing-function: ease-out; }
   .c-dropdown__menu, .c-dropdown__submenu {
@@ -5614,9 +5632,13 @@ Form control component
 ```
 */
 .c-form-control {
+  --_border-radius: var(--_global--border-radius);
   border: 1px solid var(--_form-control-border-color);
   border-radius: var(--_border-radius);
   outline: 0;
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+  --_transition-delay: var(--_global--transition-delay);
   transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
   padding: var(--_padding-2);
   background-color: var(--_color-white);
@@ -5702,6 +5724,9 @@ Hamburger button component
     left: 0;
     display: block;
     height: 2px;
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
+    --_transition-delay: var(--_global--transition-delay);
     transition: transform var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
     background-color: currentColor; }
     .c-hamburger-btn__bar:nth-of-type(1) {
@@ -5896,6 +5921,7 @@ Input group component
 ```
 */
 .c-input-group {
+  --_border-radius: var(--_global--border-radius);
   display: flex;
   flex-wrap: nowrap;
   border-radius: var(--_border-radius); }
@@ -5928,9 +5954,13 @@ Input group component
     .c-input-group__field > input[type='tel'],
     .c-input-group__field > input[type='text'],
     .c-input-group__field > input[type='url'] {
+      --_border-radius: var(--_global--border-radius);
       border: 1px solid var(--_form-control-border-color);
       border-radius: var(--_border-radius);
       outline: 0;
+      --_transition-duration: var(--_global--transition-duration);
+      --_transition-function-timing: var(--_global--transition-function-timing);
+      --_transition-delay: var(--_global--transition-delay);
       transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
       padding: var(--_padding-2);
       background-color: var(--_color-white);
@@ -6010,9 +6040,13 @@ Input group component
     text-decoration: none;
     vertical-align: middle;
     white-space: nowrap;
+    --_border-radius: var(--_global--border-radius);
     border: 1px solid var(--_form-control-border-color);
     border-radius: var(--_border-radius);
     outline: 0;
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
+    --_transition-delay: var(--_global--transition-delay);
     transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
     padding: var(--_padding-2);
     background-color: var(--_color-white);
@@ -6345,6 +6379,9 @@ Navbar component
     min-width: 240px;
     opacity: 0;
     visibility: hidden;
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
+    --_transition-delay: var(--_global--transition-delay);
     transition: opacity var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay); }
     .c-navbar__submenu[aria-hidden="false"] {
       visibility: visible;
@@ -6533,9 +6570,13 @@ Radio button component
       position: relative;
       display: inline-block;
       cursor: pointer;
+      --_border-radius: var(--_global--border-radius);
       border: 1px solid var(--_form-control-border-color);
       border-radius: var(--_border-radius);
       outline: 0;
+      --_transition-duration: var(--_global--transition-duration);
+      --_transition-function-timing: var(--_global--transition-function-timing);
+      --_transition-delay: var(--_global--transition-delay);
       transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
       background-color: var(--_color-white);
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
@@ -6924,8 +6965,16 @@ Row component of flexbox based grid system
 ```
 */
 .c-row {
+  --_gap: 0px;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-right: calc(var(--_gap) * .5 * -1);
+  margin-left: calc(var(--_gap) * .5 * -1);
+  margin-bottom: calc(var(--_gap) * -1); }
+  .c-row > .c-row__col {
+    padding-right: calc(var(--_gap) * .5);
+    padding-left: calc(var(--_gap) * .5);
+    margin-bottom: var(--_gap); }
   .c-row__col {
     max-width: 100%;
     flex: 1 1 0%; }
@@ -6952,37 +7001,13 @@ Row component of flexbox based grid system
   .c-row--baseline {
     align-items: baseline; }
   .c-row--collapse {
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0; }
-    .c-row--collapse > .c-row__col {
-      padding-right: 0;
-      margin-bottom: 0;
-      padding-left: 0; }
+    --_gap: 0px; }
   .c-row--margin {
-    margin-right: calc(var(--_margin1) * .5 * -1);
-    margin-left: calc(var(--_margin1) * .5 * -1);
-    margin-bottom: calc(var(--_margin1) * -1); }
-    .c-row--margin > .c-row__col {
-      padding-right: calc(var(--_margin1) * .5);
-      padding-left: calc(var(--_margin1) * .5);
-      margin-bottom: var(--_margin1); }
-    .c-row--margin-s {
-      margin-right: calc(var(--_margin-1) * .5 * -1);
-      margin-left: calc(var(--_margin-1) * .5 * -1);
-      margin-bottom: calc(var(--_margin-1) * -1); }
-      .c-row--margin-s > .c-row__col {
-        padding-right: calc(var(--_margin-1) * .5);
-        padding-left: calc(var(--_margin-1) * .5);
-        margin-bottom: var(--_margin-1); }
-    .c-row--margin-l {
-      margin-right: calc(var(--_margin2) * .5 * -1);
-      margin-left: calc(var(--_margin2) * .5 * -1);
-      margin-bottom: calc(var(--_margin2) * -1); }
-      .c-row--margin-l > .c-row__col {
-        padding-right: calc(var(--_margin2) * .5);
-        padding-left: calc(var(--_margin2) * .5);
-        margin-bottom: var(--_margin2); }
+    --_gap: var(--_margin1); }
+  .c-row--margin-s {
+    --_gap: var(--_margin-1); }
+  .c-row--margin-l {
+    --_gap: var(--_margin2); }
   .c-row--fill > .c-row__col {
     display: flex; }
     .c-row--fill > .c-row__col > * {
@@ -7010,37 +7035,13 @@ Row component of flexbox based grid system
     .c-row--md-baseline {
       align-items: baseline; }
     .c-row--md-collapse {
-      margin-right: 0;
-      margin-bottom: 0;
-      margin-left: 0; }
-      .c-row--md-collapse > .c-row__col {
-        padding-right: 0;
-        margin-bottom: 0;
-        padding-left: 0; }
+      --_gap: 0px; }
     .c-row--md-margin {
-      margin-right: calc(var(--_margin1) * .5 * -1);
-      margin-left: calc(var(--_margin1) * .5 * -1);
-      margin-bottom: calc(var(--_margin1) * -1); }
-      .c-row--md-margin > .c-row__col {
-        padding-right: calc(var(--_margin1) * .5);
-        padding-left: calc(var(--_margin1) * .5);
-        margin-bottom: var(--_margin1); }
-      .c-row--md-margin-s {
-        margin-right: calc(var(--_margin-1) * .5 * -1);
-        margin-left: calc(var(--_margin-1) * .5 * -1);
-        margin-bottom: calc(var(--_margin-1) * -1); }
-        .c-row--md-margin-s > .c-row__col {
-          padding-right: calc(var(--_margin-1) * .5);
-          padding-left: calc(var(--_margin-1) * .5);
-          margin-bottom: var(--_margin-1); }
-      .c-row--md-margin-l {
-        margin-right: calc(var(--_margin2) * .5 * -1);
-        margin-left: calc(var(--_margin2) * .5 * -1);
-        margin-bottom: calc(var(--_margin2) * -1); }
-        .c-row--md-margin-l > .c-row__col {
-          padding-right: calc(var(--_margin2) * .5);
-          padding-left: calc(var(--_margin2) * .5);
-          margin-bottom: var(--_margin2); }
+      --_gap: var(--_margin1); }
+    .c-row--md-margin-s {
+      --_gap: var(--_margin-1); }
+    .c-row--md-margin-l {
+      --_gap: var(--_margin2); }
     .c-row--md-fill > .c-row__col {
       display: flex; }
       .c-row--md-fill > .c-row__col > * {
@@ -7068,37 +7069,13 @@ Row component of flexbox based grid system
     .c-row--lg-baseline {
       align-items: baseline; }
     .c-row--lg-collapse {
-      margin-right: 0;
-      margin-bottom: 0;
-      margin-left: 0; }
-      .c-row--lg-collapse > .c-row__col {
-        padding-right: 0;
-        margin-bottom: 0;
-        padding-left: 0; }
+      --_gap: 0px; }
     .c-row--lg-margin {
-      margin-right: calc(var(--_margin1) * .5 * -1);
-      margin-left: calc(var(--_margin1) * .5 * -1);
-      margin-bottom: calc(var(--_margin1) * -1); }
-      .c-row--lg-margin > .c-row__col {
-        padding-right: calc(var(--_margin1) * .5);
-        padding-left: calc(var(--_margin1) * .5);
-        margin-bottom: var(--_margin1); }
-      .c-row--lg-margin-s {
-        margin-right: calc(var(--_margin-1) * .5 * -1);
-        margin-left: calc(var(--_margin-1) * .5 * -1);
-        margin-bottom: calc(var(--_margin-1) * -1); }
-        .c-row--lg-margin-s > .c-row__col {
-          padding-right: calc(var(--_margin-1) * .5);
-          padding-left: calc(var(--_margin-1) * .5);
-          margin-bottom: var(--_margin-1); }
-      .c-row--lg-margin-l {
-        margin-right: calc(var(--_margin2) * .5 * -1);
-        margin-left: calc(var(--_margin2) * .5 * -1);
-        margin-bottom: calc(var(--_margin2) * -1); }
-        .c-row--lg-margin-l > .c-row__col {
-          padding-right: calc(var(--_margin2) * .5);
-          padding-left: calc(var(--_margin2) * .5);
-          margin-bottom: var(--_margin2); }
+      --_gap: var(--_margin1); }
+    .c-row--lg-margin-s {
+      --_gap: var(--_margin-1); }
+    .c-row--lg-margin-l {
+      --_gap: var(--_margin2); }
     .c-row--lg-fill > .c-row__col {
       display: flex; }
       .c-row--lg-fill > .c-row__col > * {
@@ -7126,37 +7103,13 @@ Row component of flexbox based grid system
     .c-row--xl-baseline {
       align-items: baseline; }
     .c-row--xl-collapse {
-      margin-right: 0;
-      margin-bottom: 0;
-      margin-left: 0; }
-      .c-row--xl-collapse > .c-row__col {
-        padding-right: 0;
-        margin-bottom: 0;
-        padding-left: 0; }
+      --_gap: 0px; }
     .c-row--xl-margin {
-      margin-right: calc(var(--_margin1) * .5 * -1);
-      margin-left: calc(var(--_margin1) * .5 * -1);
-      margin-bottom: calc(var(--_margin1) * -1); }
-      .c-row--xl-margin > .c-row__col {
-        padding-right: calc(var(--_margin1) * .5);
-        padding-left: calc(var(--_margin1) * .5);
-        margin-bottom: var(--_margin1); }
-      .c-row--xl-margin-s {
-        margin-right: calc(var(--_margin-1) * .5 * -1);
-        margin-left: calc(var(--_margin-1) * .5 * -1);
-        margin-bottom: calc(var(--_margin-1) * -1); }
-        .c-row--xl-margin-s > .c-row__col {
-          padding-right: calc(var(--_margin-1) * .5);
-          padding-left: calc(var(--_margin-1) * .5);
-          margin-bottom: var(--_margin-1); }
-      .c-row--xl-margin-l {
-        margin-right: calc(var(--_margin2) * .5 * -1);
-        margin-left: calc(var(--_margin2) * .5 * -1);
-        margin-bottom: calc(var(--_margin2) * -1); }
-        .c-row--xl-margin-l > .c-row__col {
-          padding-right: calc(var(--_margin2) * .5);
-          padding-left: calc(var(--_margin2) * .5);
-          margin-bottom: var(--_margin2); }
+      --_gap: var(--_margin1); }
+    .c-row--xl-margin-s {
+      --_gap: var(--_margin-1); }
+    .c-row--xl-margin-l {
+      --_gap: var(--_margin2); }
     .c-row--xl-fill > .c-row__col {
       display: flex; }
       .c-row--xl-fill > .c-row__col > * {
@@ -8042,9 +7995,13 @@ Select box component
         appearance: none;
         display: inline-block;
         cursor: pointer;
+        --_border-radius: var(--_global--border-radius);
         border: 1px solid var(--_form-control-border-color);
         border-radius: var(--_border-radius);
         outline: 0;
+        --_transition-duration: var(--_global--transition-duration);
+        --_transition-function-timing: var(--_global--transition-function-timing);
+        --_transition-delay: var(--_global--transition-delay);
         transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
         background-color: transparent;
         line-height: 1;
@@ -8436,6 +8393,8 @@ Extend underline utility
 .u-extend-underline {
   position: relative; }
   .u-extend-underline::after {
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -8809,6 +8768,9 @@ Transition utility
 ```
 */
 .u-transition {
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+  --_transition-delay: var(--_global--transition-delay);
   transition: all var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay); }
 
 /*
@@ -8999,7 +8961,7 @@ Invisible utility
     display: none !important; } }
 
 /*!
- * Name: Basis v18.0.0-beta2
+ * Name: Basis v18.0.0-beta3
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -13380,11 +13342,11 @@ Abstract pulse spinner component
   /**
    * Background color.
    */
-  --_background-color: transparent;
+  --_global--background-color: transparent;
   /**
    * Border radius.
    */
-  --_border-radius: 3px;
+  --_global--border-radius: 3px;
   /**
    * Color: black.
    */
@@ -13434,9 +13396,9 @@ Abstract pulse spinner component
   /**
    * Transition properties.
    */
-  --_transition-duration: 0.2s;
-  --_transition-function-timing: ease-out;
-  --_transition-delay: 0s;
+  --_global--transition-duration: 0.2s;
+  --_global--transition-function-timing: ease-out;
+  --_global--transition-delay: 0s;
   /**
    * Half leading. em. but no unit.
    */
@@ -13444,15 +13406,17 @@ Abstract pulse spinner component
   /**
    * Base line height. em. but no unit.
    */
-  --_base-line-height: calc(1 + var(--_half-leading) * 2);
+  --_global--line-height: calc(1 + var(--_half-leading) * 2);
   /**
    * Font family.
    */
   --_base-font-family: Helvetica Neue, Helvetica, sans-serif;
+  --_global--font-family: var(var(--_base-font-family));
   /**
    * Font size (px).
    */
   --_base-font-size-px: 16px;
+  --_global--font-size-px: var(--_base-font-size-px);
   /**
    * Scaling factor for margin.
    */
@@ -13460,8 +13424,8 @@ Abstract pulse spinner component
   /**
    * Base value for spaces. no unit.
    */
-  --_space-unitless: var(--_base-line-height);
-  --_space: calc(var(--_base-line-height) * 1rem);
+  --_space-unitless: var(--_global--line-height);
+  --_space: calc(var(--_global--line-height) * 1rem);
   /**
    * z-index for page effect.
    */
@@ -13585,14 +13549,14 @@ h6) {
   padding: 0; }
 
 html {
-  font-size: var(--_base-font-size-px);
+  font-size: var(--_global--font-size-px);
   line-break: normal;
   hanging-punctuation: allow-end; }
 
 :where(body) {
-  background-color: var(--_background-color);
+  background-color: var(--_global--background-color);
   color: var(--_color-text);
-  font-family: var(--_base-font-family); }
+  font-family: var(--_global--font-family); }
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -13614,7 +13578,7 @@ samp) {
 code,
 kbd) {
   background-color: var(--_lighter-color-gray);
-  border-radius: var(--_border-radius);
+  border-radius: var(--_global--border-radius);
   padding: 2px 6px; }
 
 pre {
@@ -13631,7 +13595,7 @@ textarea,
 keygen,
 select,
 button) {
-  font-family: var(--_base-font-family); }
+  font-family: var(--_global--font-family); }
 
 :where(
 input,
@@ -14099,9 +14063,13 @@ Checkbox component
       position: relative;
       display: inline-block;
       cursor: pointer;
+      --_border-radius: var(--_global--border-radius);
       border: 1px solid var(--_form-control-border-color);
       border-radius: var(--_border-radius);
       outline: 0;
+      --_transition-duration: var(--_global--transition-duration);
+      --_transition-function-timing: var(--_global--transition-function-timing);
+      --_transition-delay: var(--_global--transition-delay);
       transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
       background-color: var(--_color-white);
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
@@ -14309,6 +14277,9 @@ Drawer component
   z-index: 10;
   width: min(20rem, 80%);
   visibility: hidden;
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+  --_transition-delay: var(--_global--transition-delay);
   transition: left var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay), right var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay), visibility var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
   transition-timing-function: ease-in;
   backface-visibility: hidden; }
@@ -14344,6 +14315,9 @@ Drawer component
     padding: 0;
     vertical-align: middle; }
   .c-drawer[aria-hidden="false"] {
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
+    --_transition-delay: var(--_global--transition-delay);
     transition: left var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay), right var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
     transition-timing-function: ease-out; }
   .c-drawer__focus-point {
@@ -14452,6 +14426,9 @@ Dropdown component
   left: 0;
   z-index: 10;
   visibility: hidden;
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+  --_transition-delay: var(--_global--transition-delay);
   transition: bottom var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay), visibility var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
   transition-timing-function: ease-in; }
   .c-dropdown[aria-hidden="false"] {
@@ -14480,6 +14457,9 @@ Dropdown component
     padding: 0;
     vertical-align: middle; }
   .c-dropdown[aria-hidden="false"] {
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
+    --_transition-delay: var(--_global--transition-delay);
     transition: bottom var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
     transition-timing-function: ease-out; }
   .c-dropdown__menu, .c-dropdown__submenu {
@@ -14613,9 +14593,13 @@ Form control component
 ```
 */
 .c-form-control {
+  --_border-radius: var(--_global--border-radius);
   border: 1px solid var(--_form-control-border-color);
   border-radius: var(--_border-radius);
   outline: 0;
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+  --_transition-delay: var(--_global--transition-delay);
   transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
   padding: var(--_padding-2);
   background-color: var(--_color-white);
@@ -14701,6 +14685,9 @@ Hamburger button component
     left: 0;
     display: block;
     height: 2px;
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
+    --_transition-delay: var(--_global--transition-delay);
     transition: transform var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
     background-color: currentColor; }
     .c-hamburger-btn__bar:nth-of-type(1) {
@@ -14895,6 +14882,7 @@ Input group component
 ```
 */
 .c-input-group {
+  --_border-radius: var(--_global--border-radius);
   display: flex;
   flex-wrap: nowrap;
   border-radius: var(--_border-radius); }
@@ -14927,9 +14915,13 @@ Input group component
     .c-input-group__field > input[type='tel'],
     .c-input-group__field > input[type='text'],
     .c-input-group__field > input[type='url'] {
+      --_border-radius: var(--_global--border-radius);
       border: 1px solid var(--_form-control-border-color);
       border-radius: var(--_border-radius);
       outline: 0;
+      --_transition-duration: var(--_global--transition-duration);
+      --_transition-function-timing: var(--_global--transition-function-timing);
+      --_transition-delay: var(--_global--transition-delay);
       transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
       padding: var(--_padding-2);
       background-color: var(--_color-white);
@@ -15009,9 +15001,13 @@ Input group component
     text-decoration: none;
     vertical-align: middle;
     white-space: nowrap;
+    --_border-radius: var(--_global--border-radius);
     border: 1px solid var(--_form-control-border-color);
     border-radius: var(--_border-radius);
     outline: 0;
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
+    --_transition-delay: var(--_global--transition-delay);
     transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
     padding: var(--_padding-2);
     background-color: var(--_color-white);
@@ -15344,6 +15340,9 @@ Navbar component
     min-width: 240px;
     opacity: 0;
     visibility: hidden;
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
+    --_transition-delay: var(--_global--transition-delay);
     transition: opacity var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay); }
     .c-navbar__submenu[aria-hidden="false"] {
       visibility: visible;
@@ -15532,9 +15531,13 @@ Radio button component
       position: relative;
       display: inline-block;
       cursor: pointer;
+      --_border-radius: var(--_global--border-radius);
       border: 1px solid var(--_form-control-border-color);
       border-radius: var(--_border-radius);
       outline: 0;
+      --_transition-duration: var(--_global--transition-duration);
+      --_transition-function-timing: var(--_global--transition-function-timing);
+      --_transition-delay: var(--_global--transition-delay);
       transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
       background-color: var(--_color-white);
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
@@ -15923,8 +15926,16 @@ Row component of flexbox based grid system
 ```
 */
 .c-row {
+  --_gap: 0px;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-right: calc(var(--_gap) * .5 * -1);
+  margin-left: calc(var(--_gap) * .5 * -1);
+  margin-bottom: calc(var(--_gap) * -1); }
+  .c-row > .c-row__col {
+    padding-right: calc(var(--_gap) * .5);
+    padding-left: calc(var(--_gap) * .5);
+    margin-bottom: var(--_gap); }
   .c-row__col {
     max-width: 100%;
     flex: 1 1 0%; }
@@ -15951,37 +15962,13 @@ Row component of flexbox based grid system
   .c-row--baseline {
     align-items: baseline; }
   .c-row--collapse {
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0; }
-    .c-row--collapse > .c-row__col {
-      padding-right: 0;
-      margin-bottom: 0;
-      padding-left: 0; }
+    --_gap: 0px; }
   .c-row--margin {
-    margin-right: calc(var(--_margin1) * .5 * -1);
-    margin-left: calc(var(--_margin1) * .5 * -1);
-    margin-bottom: calc(var(--_margin1) * -1); }
-    .c-row--margin > .c-row__col {
-      padding-right: calc(var(--_margin1) * .5);
-      padding-left: calc(var(--_margin1) * .5);
-      margin-bottom: var(--_margin1); }
-    .c-row--margin-s {
-      margin-right: calc(var(--_margin-1) * .5 * -1);
-      margin-left: calc(var(--_margin-1) * .5 * -1);
-      margin-bottom: calc(var(--_margin-1) * -1); }
-      .c-row--margin-s > .c-row__col {
-        padding-right: calc(var(--_margin-1) * .5);
-        padding-left: calc(var(--_margin-1) * .5);
-        margin-bottom: var(--_margin-1); }
-    .c-row--margin-l {
-      margin-right: calc(var(--_margin2) * .5 * -1);
-      margin-left: calc(var(--_margin2) * .5 * -1);
-      margin-bottom: calc(var(--_margin2) * -1); }
-      .c-row--margin-l > .c-row__col {
-        padding-right: calc(var(--_margin2) * .5);
-        padding-left: calc(var(--_margin2) * .5);
-        margin-bottom: var(--_margin2); }
+    --_gap: var(--_margin1); }
+  .c-row--margin-s {
+    --_gap: var(--_margin-1); }
+  .c-row--margin-l {
+    --_gap: var(--_margin2); }
   .c-row--fill > .c-row__col {
     display: flex; }
     .c-row--fill > .c-row__col > * {
@@ -16009,37 +15996,13 @@ Row component of flexbox based grid system
     .c-row--md-baseline {
       align-items: baseline; }
     .c-row--md-collapse {
-      margin-right: 0;
-      margin-bottom: 0;
-      margin-left: 0; }
-      .c-row--md-collapse > .c-row__col {
-        padding-right: 0;
-        margin-bottom: 0;
-        padding-left: 0; }
+      --_gap: 0px; }
     .c-row--md-margin {
-      margin-right: calc(var(--_margin1) * .5 * -1);
-      margin-left: calc(var(--_margin1) * .5 * -1);
-      margin-bottom: calc(var(--_margin1) * -1); }
-      .c-row--md-margin > .c-row__col {
-        padding-right: calc(var(--_margin1) * .5);
-        padding-left: calc(var(--_margin1) * .5);
-        margin-bottom: var(--_margin1); }
-      .c-row--md-margin-s {
-        margin-right: calc(var(--_margin-1) * .5 * -1);
-        margin-left: calc(var(--_margin-1) * .5 * -1);
-        margin-bottom: calc(var(--_margin-1) * -1); }
-        .c-row--md-margin-s > .c-row__col {
-          padding-right: calc(var(--_margin-1) * .5);
-          padding-left: calc(var(--_margin-1) * .5);
-          margin-bottom: var(--_margin-1); }
-      .c-row--md-margin-l {
-        margin-right: calc(var(--_margin2) * .5 * -1);
-        margin-left: calc(var(--_margin2) * .5 * -1);
-        margin-bottom: calc(var(--_margin2) * -1); }
-        .c-row--md-margin-l > .c-row__col {
-          padding-right: calc(var(--_margin2) * .5);
-          padding-left: calc(var(--_margin2) * .5);
-          margin-bottom: var(--_margin2); }
+      --_gap: var(--_margin1); }
+    .c-row--md-margin-s {
+      --_gap: var(--_margin-1); }
+    .c-row--md-margin-l {
+      --_gap: var(--_margin2); }
     .c-row--md-fill > .c-row__col {
       display: flex; }
       .c-row--md-fill > .c-row__col > * {
@@ -16067,37 +16030,13 @@ Row component of flexbox based grid system
     .c-row--lg-baseline {
       align-items: baseline; }
     .c-row--lg-collapse {
-      margin-right: 0;
-      margin-bottom: 0;
-      margin-left: 0; }
-      .c-row--lg-collapse > .c-row__col {
-        padding-right: 0;
-        margin-bottom: 0;
-        padding-left: 0; }
+      --_gap: 0px; }
     .c-row--lg-margin {
-      margin-right: calc(var(--_margin1) * .5 * -1);
-      margin-left: calc(var(--_margin1) * .5 * -1);
-      margin-bottom: calc(var(--_margin1) * -1); }
-      .c-row--lg-margin > .c-row__col {
-        padding-right: calc(var(--_margin1) * .5);
-        padding-left: calc(var(--_margin1) * .5);
-        margin-bottom: var(--_margin1); }
-      .c-row--lg-margin-s {
-        margin-right: calc(var(--_margin-1) * .5 * -1);
-        margin-left: calc(var(--_margin-1) * .5 * -1);
-        margin-bottom: calc(var(--_margin-1) * -1); }
-        .c-row--lg-margin-s > .c-row__col {
-          padding-right: calc(var(--_margin-1) * .5);
-          padding-left: calc(var(--_margin-1) * .5);
-          margin-bottom: var(--_margin-1); }
-      .c-row--lg-margin-l {
-        margin-right: calc(var(--_margin2) * .5 * -1);
-        margin-left: calc(var(--_margin2) * .5 * -1);
-        margin-bottom: calc(var(--_margin2) * -1); }
-        .c-row--lg-margin-l > .c-row__col {
-          padding-right: calc(var(--_margin2) * .5);
-          padding-left: calc(var(--_margin2) * .5);
-          margin-bottom: var(--_margin2); }
+      --_gap: var(--_margin1); }
+    .c-row--lg-margin-s {
+      --_gap: var(--_margin-1); }
+    .c-row--lg-margin-l {
+      --_gap: var(--_margin2); }
     .c-row--lg-fill > .c-row__col {
       display: flex; }
       .c-row--lg-fill > .c-row__col > * {
@@ -16125,37 +16064,13 @@ Row component of flexbox based grid system
     .c-row--xl-baseline {
       align-items: baseline; }
     .c-row--xl-collapse {
-      margin-right: 0;
-      margin-bottom: 0;
-      margin-left: 0; }
-      .c-row--xl-collapse > .c-row__col {
-        padding-right: 0;
-        margin-bottom: 0;
-        padding-left: 0; }
+      --_gap: 0px; }
     .c-row--xl-margin {
-      margin-right: calc(var(--_margin1) * .5 * -1);
-      margin-left: calc(var(--_margin1) * .5 * -1);
-      margin-bottom: calc(var(--_margin1) * -1); }
-      .c-row--xl-margin > .c-row__col {
-        padding-right: calc(var(--_margin1) * .5);
-        padding-left: calc(var(--_margin1) * .5);
-        margin-bottom: var(--_margin1); }
-      .c-row--xl-margin-s {
-        margin-right: calc(var(--_margin-1) * .5 * -1);
-        margin-left: calc(var(--_margin-1) * .5 * -1);
-        margin-bottom: calc(var(--_margin-1) * -1); }
-        .c-row--xl-margin-s > .c-row__col {
-          padding-right: calc(var(--_margin-1) * .5);
-          padding-left: calc(var(--_margin-1) * .5);
-          margin-bottom: var(--_margin-1); }
-      .c-row--xl-margin-l {
-        margin-right: calc(var(--_margin2) * .5 * -1);
-        margin-left: calc(var(--_margin2) * .5 * -1);
-        margin-bottom: calc(var(--_margin2) * -1); }
-        .c-row--xl-margin-l > .c-row__col {
-          padding-right: calc(var(--_margin2) * .5);
-          padding-left: calc(var(--_margin2) * .5);
-          margin-bottom: var(--_margin2); }
+      --_gap: var(--_margin1); }
+    .c-row--xl-margin-s {
+      --_gap: var(--_margin-1); }
+    .c-row--xl-margin-l {
+      --_gap: var(--_margin2); }
     .c-row--xl-fill > .c-row__col {
       display: flex; }
       .c-row--xl-fill > .c-row__col > * {
@@ -17041,9 +16956,13 @@ Select box component
         appearance: none;
         display: inline-block;
         cursor: pointer;
+        --_border-radius: var(--_global--border-radius);
         border: 1px solid var(--_form-control-border-color);
         border-radius: var(--_border-radius);
         outline: 0;
+        --_transition-duration: var(--_global--transition-duration);
+        --_transition-function-timing: var(--_global--transition-function-timing);
+        --_transition-delay: var(--_global--transition-delay);
         transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
         background-color: transparent;
         line-height: 1;
@@ -17435,6 +17354,8 @@ Extend underline utility
 .u-extend-underline {
   position: relative; }
   .u-extend-underline::after {
+    --_transition-duration: var(--_global--transition-duration);
+    --_transition-function-timing: var(--_global--transition-function-timing);
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -17808,6 +17729,9 @@ Transition utility
 ```
 */
 .u-transition {
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+  --_transition-delay: var(--_global--transition-delay);
   transition: all var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay); }
 
 /*
@@ -17998,7 +17922,7 @@ Invisible utility
     display: none !important; } }
 
 a {
-  transition: background-color var(--_transition-duration) var(--_transition-function-timing), color var(--_transition-duration) var(--_transition-function-timing);
+  transition: background-color var(--_global--transition-duration) var(--_global--transition-function-timing), color var(--_global--transition-duration) var(--_global--transition-function-timing);
   color: #007980; }
 
 .hljs, pre {
@@ -18053,6 +17977,10 @@ pre {
       opacity: 0.5; } }
 
 .c-btn {
+  --_border-radius: var(--_global--border-radius);
+  --_transition-duration: var(--_global--transition-duration);
+  --_transition-function-timing: var(--_global--transition-function-timing);
+  --_transition-delay: var(--_global--transition-delay);
   transition: all var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
   border: none;
   border-radius: var(--_border-radius);
@@ -18185,8 +18113,9 @@ pre {
   background-color: var(--_color-gray);
   border-radius: 2px;
   color: var(--_color-white);
-  font-size: calc(var(--_base-font-size-px) - 2px);
-  line-height: 1;
+  --_font-size-level: -1;
+  font-size: var(--_font-size);
+  line-height: var(--_line-height);
   padding: 4px 10px;
   vertical-align: middle; }
 
@@ -18313,6 +18242,7 @@ pre {
     padding: 0; }
 
 .p-table-of-contents {
+  --_border-radius: var(--_global--border-radius);
   margin-bottom: var(--_margin2);
   list-style: none;
   margin-left: 0;
@@ -18338,33 +18268,34 @@ pre {
         .p-table-of-contents__item > a:hover, .p-table-of-contents__item > a:active, .p-table-of-contents__item > a:focus {
           opacity: .8; } }
 
-.aigis-preview {
+:where(.aigis-preview) {
   --_margin-top: 1;
   --_margin-bottom: 1;
-  min-height: 150px; }
-  .aigis-preview > * {
+  min-height: 150px;
+  overflow: hidden; }
+  :where(.aigis-preview) > * {
     margin-top: 0;
     margin-bottom: 0; }
-  .aigis-preview > *:not(:first-child) {
+  :where(.aigis-preview) > *:not(:first-child) {
     margin-top: calc(var(--_margin1) * var(--_margin-top)); }
-  .aigis-preview > *:not(:last-child) {
+  :where(.aigis-preview) > *:not(:last-child) {
     margin-bottom: calc(var(--_margin1) * var(--_margin-bottom)); }
-  .aigis-preview > h1 {
+  :where(.aigis-preview) > h1 {
     --_margin-top: 0;
     --_margin-bottom: 1; }
-  .aigis-preview > h2 {
+  :where(.aigis-preview) > h2 {
     --_margin-top: 2;
     --_margin-bottom: 1; }
-  .aigis-preview > h3 {
+  :where(.aigis-preview) > h3 {
     --_margin-top: 1.5;
     --_margin-bottom: 1; }
-  .aigis-preview > h4 {
+  :where(.aigis-preview) > h4 {
     --_margin-top: 1.25;
     --_margin-bottom: 1; }
-  .aigis-preview > h5 {
+  :where(.aigis-preview) > h5 {
     --_margin-top: 1;
     --_margin-bottom: 0.5; }
-  .aigis-preview > h6 {
+  :where(.aigis-preview) > h6 {
     --_margin-top: 1;
     --_margin-bottom: 0.5; }
 
