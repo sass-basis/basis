@@ -1,5 +1,6 @@
 # Changelog
 
+## December 19, 2022 18.0.0-beta3
 * Add `--_global--line-height`.
 * Deprecated: `--_base-font-size-px`.
 * Add `--_global--font-size-px`.
@@ -9,6 +10,7 @@
 * Add `--_global--border-radius`.
 * Add `--_global--background-color`.
 * Remove `--_background-color` in `:root`.
+* Change gap of `.c-row` to CSS vars.
 
 ## December 14, 2022 18.0.0-beta2
 * `_set-between-content-level()` permits only `-2` to `-7`.
