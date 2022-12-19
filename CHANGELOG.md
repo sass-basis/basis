@@ -1,5 +1,14 @@
 # Changelog
 
+## December 19, 2022 18.0.0-beta4
+* Refactoring width of `.c-row` and `.c-row__col` CSS.
+* Deprecated: `_lattice()`.
+* Deprecated: `_lattice__col()`.
+* Deprecated: `_lattice__col--width()`.
+* Deprecated: `_lattice__col--width()`.
+* Deprecated: `_row__col()`.
+* Deprecated: `_row__col--width()`.
+
 ## December 19, 2022 18.0.0-beta3
 * Add `--_global--line-height`.
 * Deprecated: `--_base-font-size-px`.

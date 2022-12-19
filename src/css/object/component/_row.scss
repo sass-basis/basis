@@ -257,6 +257,7 @@ Row component of flexbox based grid system
 
 .#{ $_prefix }c-row {
   --_gap: 0px;
+	--_item-width: 100%;
 
   @include _row();
   margin-right: calc(var(--_gap) * .5 * -1);
@@ -269,9 +270,10 @@ Row component of flexbox based grid system
     margin-bottom: var(--_gap);
   }
 
-  &__col {
-    @include _row__col(null, null);
-  }
+	&__col {
+		flex: 0 1 var(--_item-width);
+		max-width: var(--_item-width);
+	}
 
   &--reverse {
     flex-direction: row-reverse;
@@ -340,10 +342,7 @@ Row component of flexbox based grid system
       &#{ $prefix }-fill {
         > .#{ $_prefix }c-row__col {
           display: flex;
-
-          > * {
-            @include _row__col--width(100%);
-          }
+          flex-direction: column;
         }
       }
     }
@@ -360,23 +359,23 @@ Row component of flexbox based grid system
 
         @if (1 == $gcd) {
           %_bs-item#{ $prefix }-gcd-#{ $i / $gcd }-#{ $max_columns / $gcd } {
-            @include _row__col($i, $max_columns);
+            --_item-width: #{ $i / $max_columns * 100%};
           }
         }
       }
     }
 
     %_bs-item#{ $prefix }-full {
-      @include _row__col--width(100%);
+      --_item-width: 100%;
     }
 
     .#{ $_prefix }c-row__col {
       &#{ $prefix }-auto {
-        @include _row__col--width(auto);
+        flex: auto;
       }
 
       &#{ $prefix }-justify {
-        @include _row__col--width(1);
+        flex: 1;
       }
 
       &#{ $prefix }-fit {

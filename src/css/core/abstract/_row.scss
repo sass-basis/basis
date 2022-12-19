@@ -13,14 +13,12 @@ Abstract row component of flexbox based grid system
   @include _row();
 
   &__col {
-    @include _row__col();
+    flex: 0 1 100%;
+    max-width: 100%;
 
     &--1-3 {
-      @include _row__col(1, 3);
-    }
-
-    &--offset-1-3 {
-      @include _row__col--offset(1, 3);
+      flex-basis: 33.33333%;
+      max-width: 33.33333%;
     }
   }
 }
@@ -39,127 +37,4 @@ Abstract row component of flexbox based grid system
 @mixin _row() {
   display: flex;
   flex-wrap: wrap;
-}
-
-/*
----
-name: _row__col()
-category:
-  - core/abstract
-  - core/abstract/grid-system/flexbox
----
-Abstract column element of flexbox based grid system
-
-### scss
-```scss
-//
-// @param  int  $columns      molecule column size
-// @param  int  $max-columns  denominator column size
-//
-
-.c-row {
-  @include _row();
-
-  &__col {
-    @include _row__col();
-
-    &--1-3 {
-      @include _row__col(1, 3);
-    }
-  }
-}
-```
-
-### html
-```ejs
-<div class="c-row">
-  <div class="c-row__col c-row__col--1-3">
-    ...
-  </div>
-</div>
-```
-*/
-
-@mixin _row__col($columns: null, $max-columns: null) {
-  max-width: 100%;
-
-  @if (not _is-null($columns) and not _is-null($max-columns)) {
-    $width: percentage($columns / $max-columns);
-    @include _row__col--width($width);
-  } @else {
-    @include _row__col--width(1);
-  }
-}
-
-/*
----
-name: _row__col--width()
-category:
-  - core/abstract
-  - core/abstract/grid-system/flexbox
----
-Sets column width of flexbox based grid system
-
-### scss
-```scss
-//
-// @param  length  $width
-//
-
-.c-row {
-  @include _row();
-
-  &__col {
-    @include _row__col();
-    @include _row__col--width(auto);
-  }
-}
-```
-*/
-
-@mixin _row__col--width($width) {
-  @if ('auto' == $width) {
-    flex: 1 1 auto;
-  } @else if (1 == $width) {
-    flex: 1 1 0%;
-  } @else {
-    flex: 0 1 $width;
-    max-width: $width;
-  }
-}
-
-/*
----
-name: _row__col--offset()
-category:
-  - core/abstract
-  - core/abstract/grid-system/flexbox
----
-Sets column offset of flexbox based grid system
-
-### scss
-```scss
-//
-// @param  int  $columns      molecule column size
-// @param  int  $max-columns  denominator column size
-//
-
-.c-row {
-  @include _row();
-
-  &__col {
-    @include _row__col();
-    @include _row__col--offset(1, 3);
-  }
-}
-```
-*/
-
-@mixin _row__col--offset($columns: null, $max-columns: null) {
-  @if (not _is-null($columns) and not _is-null($max-columns)) {
-    margin-left: percentage($columns / $max-columns);
-  }
-  @if (0 == $columns) {
-    margin-left: 0;
-  }
 }
