@@ -131,11 +131,35 @@
               </li>
             
               <li class="p-table-of-contents__item">
+                <a href="#_row__col()">_row__col()</a>
+              </li>
+            
+              <li class="p-table-of-contents__item">
+                <a href="#_row__col--width()">_row__col--width()</a>
+              </li>
+            
+              <li class="p-table-of-contents__item">
+                <a href="#_row__col--offset()">_row__col--offset()</a>
+              </li>
+            
+              <li class="p-table-of-contents__item">
                 <a href="#_row--margin()">_row--margin()</a>
               </li>
             
               <li class="p-table-of-contents__item">
                 <a href="#_row__col--margin()">_row__col--margin()</a>
+              </li>
+            
+              <li class="p-table-of-contents__item">
+                <a href="#_lattice()">_lattice()</a>
+              </li>
+            
+              <li class="p-table-of-contents__item">
+                <a href="#_lattice__col()">_lattice__col()</a>
+              </li>
+            
+              <li class="p-table-of-contents__item">
+                <a href="#_lattice__col--width()">_lattice__col--width()</a>
               </li>
             
               <li class="p-table-of-contents__item">
@@ -545,6 +569,105 @@
           
             <article class="c-entry">
               <header class="c-entry__header">
+                <h2 class="c-entry__title" id="_row__col()">_row__col()</h2>
+                <ul class="c-meta">
+                  <li class="c-meta__item">
+                    /src/css/core/abstract/_deprecated.scss
+                  </li>
+                </ul>
+              </header>
+              <div class="c-entry__content">
+                <p>Abstract column element of flexbox based grid system</p>
+<h3 id="scss">scss</h3>
+<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">// @param  int  $columns      molecule column size</span>
+<span class="token comment" spellcheck="true">// @param  int  $max-columns  denominator column size</span>
+<span class="token comment" spellcheck="true">//</span>
+
+<span class="token selector" >.c-row </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+  <span class="token selector" >&amp;__col </span><span class="token punctuation" >{</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+    <span class="token selector" >&amp;--1-3 </span><span class="token punctuation" >{</span>
+      <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >3</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token punctuation" >}</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+<h3 id="html">html</h3>
+<pre><code class="language-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-row<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-row__col c-row__col--1-3<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    ...
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+              </div>
+            </article>
+          
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title" id="_row__col--width()">_row__col--width()</h2>
+                <ul class="c-meta">
+                  <li class="c-meta__item">
+                    /src/css/core/abstract/_deprecated.scss
+                  </li>
+                </ul>
+              </header>
+              <div class="c-entry__content">
+                <p>Sets column width of flexbox based grid system</p>
+<h3 id="scss">scss</h3>
+<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">// @param  length  $width</span>
+<span class="token comment" spellcheck="true">//</span>
+
+<span class="token selector" >.c-row </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+  <span class="token selector" >&amp;__col </span><span class="token punctuation" >{</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col--width</span><span class="token punctuation" >(</span>auto<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+
+              </div>
+            </article>
+          
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title" id="_row__col--offset()">_row__col--offset()</h2>
+                <ul class="c-meta">
+                  <li class="c-meta__item">
+                    /src/css/core/abstract/_deprecated.scss
+                  </li>
+                </ul>
+              </header>
+              <div class="c-entry__content">
+                <p>Sets column offset of flexbox based grid system</p>
+<h3 id="scss">scss</h3>
+<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">// @param  int  $columns      molecule column size</span>
+<span class="token comment" spellcheck="true">// @param  int  $max-columns  denominator column size</span>
+<span class="token comment" spellcheck="true">//</span>
+
+<span class="token selector" >.c-row </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >row</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+  <span class="token selector" >&amp;__col </span><span class="token punctuation" >{</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token keyword" >@include</span> _row__<span class="token function" >col--offset</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >3</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+
+              </div>
+            </article>
+          
+            <article class="c-entry">
+              <header class="c-entry__header">
                 <h2 class="c-entry__title" id="_row--margin()">_row--margin()</h2>
                 <ul class="c-meta">
                   <li class="c-meta__item">
@@ -587,6 +710,131 @@
 <span class="token selector" >.c-row__col </span><span class="token punctuation" >{</span>
   <span class="token keyword" >@include</span> _row__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
   <span class="token keyword" >@include</span> _row__<span class="token function" >col--margin</span><span class="token punctuation" >(</span><span class="token number" >1</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+
+              </div>
+            </article>
+          
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title" id="_lattice()">_lattice()</h2>
+                <ul class="c-meta">
+                  <li class="c-meta__item">
+                    /src/css/core/abstract/_deprecated.scss
+                  </li>
+                </ul>
+              </header>
+              <div class="c-entry__content">
+                <p>Abstract row component of flexbox based grid system</p>
+<h3 id="scss">scss</h3>
+<pre><code class="language-scss"><span class="token selector" >.c-lattice </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >lattice</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+  <span class="token selector" >&amp;__col </span><span class="token punctuation" >{</span>
+    <span class="token keyword" >@include</span> _lattice__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+    <span class="token selector" >&amp;--1-3 </span><span class="token punctuation" >{</span>
+      <span class="token keyword" >@include</span> _lattice__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >3</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token punctuation" >}</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+<h3 id="html">html</h3>
+<div class="aigis-preview">
+  <div class="c-lattice">
+    <div class="c-lattice__col c-lattice__col--1-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+    <div class="c-lattice__col c-lattice__col--1-3"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+</div></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-lattice<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-lattice__col c-lattice__col--1-3<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-lattice__col c-lattice__col--1-3<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+              </div>
+            </article>
+          
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title" id="_lattice__col()">_lattice__col()</h2>
+                <ul class="c-meta">
+                  <li class="c-meta__item">
+                    /src/css/core/abstract/_deprecated.scss
+                  </li>
+                </ul>
+              </header>
+              <div class="c-entry__content">
+                <p>Abstract column element of flexbox based grid system</p>
+<h3 id="scss">scss</h3>
+<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">// @param  int  $columns      molecule column size</span>
+<span class="token comment" spellcheck="true">// @param  int  $max-columns  denominator column size</span>
+<span class="token comment" spellcheck="true">//</span>
+
+<span class="token selector" >.c-lattice </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >lattice</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+  <span class="token selector" >&amp;__col </span><span class="token punctuation" >{</span>
+    <span class="token keyword" >@include</span> _lattice__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+    <span class="token selector" >&amp;--1-3 </span><span class="token punctuation" >{</span>
+      <span class="token keyword" >@include</span> _lattice__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >3</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token punctuation" >}</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+<h3 id="html">html</h3>
+<div class="aigis-preview">
+  <div class="c-lattice">
+    <div class="c-lattice__col c-lattice__col--1-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+    <div class="c-lattice__col c-lattice__col--1-3"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+</div></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-lattice<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-lattice__col c-lattice__col--1-3<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>c-lattice__col c-lattice__col--1-3<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+              </div>
+            </article>
+          
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title" id="_lattice__col--width()">_lattice__col--width()</h2>
+                <ul class="c-meta">
+                  <li class="c-meta__item">
+                    /src/css/core/abstract/_deprecated.scss
+                  </li>
+                </ul>
+              </header>
+              <div class="c-entry__content">
+                <p>Sets column width of flexbox based grid system</p>
+<h3 id="scss">scss</h3>
+<pre><code class="language-scss"><span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">// @param  length  $width</span>
+<span class="token comment" spellcheck="true">//</span>
+
+<span class="token selector" >.c-lattice </span><span class="token punctuation" >{</span>
+  <span class="token keyword" >@include</span> _<span class="token function" >lattice</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+  <span class="token selector" >&amp;__col </span><span class="token punctuation" >{</span>
+    <span class="token keyword" >@include</span> _lattice__<span class="token function" >col</span><span class="token punctuation" >(</span><span class="token number" >1</span>, <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+    <span class="token keyword" >@include</span> _<span class="token function" >media-min</span><span class="token punctuation" >(</span>lg<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+      <span class="token keyword" >@include</span> _lattice__<span class="token function" >col--width</span><span class="token punctuation" >(</span><span class="token number" >1</span> <span class="token operator" >/</span> <span class="token number" >3</span> <span class="token operator" >*</span> <span class="token number" >100%</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token punctuation" >}</span>
+  <span class="token punctuation" >}</span>
 <span class="token punctuation" >}</span>
 </code></pre>
 
