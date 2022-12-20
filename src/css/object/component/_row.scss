@@ -271,7 +271,7 @@ Row component of flexbox based grid system
   }
 
 	&__col {
-		flex: 0 1 var(--_item-width);
+		flex: 0 0 var(--_item-width);
 		max-width: var(--_item-width);
 	}
 
