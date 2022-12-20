@@ -61,10 +61,10 @@ max-width media query
   $sizes-keys: map-keys($_sizes);
   $max-key: nth($sizes-keys, -1);
 
-  @if $max-key == $size {
+  @if (0 == $size or $max-key == $size or false == $size) {
     @content;
   } @else {
-    @media (max-width: _max($size)) {
+    @media not all and (min-width: _min(_next-size-key($size))) {
       @content;
     }
   }

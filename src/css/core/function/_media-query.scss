@@ -60,7 +60,7 @@ Return max size.
 @function _max($size) {
   $next_size: _next-size-key($size);
   @if (false != $next_size) {
-    $max: map-get($_sizes, $next_size) - 1;
+    $max: map-get($_sizes, $next_size) - .001;
     @return $max;
   } @else if ('number' == type-of($size)) {
     @return $size;
