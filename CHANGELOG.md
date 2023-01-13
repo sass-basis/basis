@@ -1,5 +1,8 @@
 # Changelog
 
+## January 13, 2023 18.0.0-beta6
+* Add `--_list-item-indent`.
+
 ## December 20, 2022 18.0.0-beta5
 * Refactoring `_media-min()`、`_media-max()` and `_media-only()`.
 * Fixed a bug that `.c-row__col` sometimes didn't get the intended size.

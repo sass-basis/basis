@@ -124,10 +124,6 @@ label {
     margin-bottom: 0;
     display: table;
   }
-
-  :where(img:not([width]), video:not([width])) {
-    width: 100%;
-  }
 }
 
 img,
@@ -263,7 +259,7 @@ Lists
   ul,
   ol
 ) {
-  padding-left: 1.5em;
+  padding-left: var(--_list-item-indent);
 }
 
 :where(dt) {

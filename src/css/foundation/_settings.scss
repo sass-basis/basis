@@ -57,6 +57,11 @@
   --_container-max-width: #{ $_container-max-width };
 
   /**
+   * List item indent.
+   */
+  --_list-item-indent: 1.5em;
+
+  /**
    * Border color for form controls.
    */
   --_form-control-border-color: var(--_light-color-gray);
