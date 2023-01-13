@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v18.0.0-beta5
+ * Name: Basis v18.0.0-beta6
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -4437,6 +4437,10 @@ Abstract pulse spinner component
    */
   --_container-max-width: 1280px;
   /**
+   * List item indent.
+   */
+  --_list-item-indent: 1.5em;
+  /**
    * Border color for form controls.
    */
   --_form-control-border-color: var(--_light-color-gray);
@@ -4664,9 +4668,6 @@ label {
   margin-bottom: 0;
   display: table; }
 
-:where(figure, picture) :where(img:not([width]), video:not([width])) {
-  width: 100%; }
-
 img, video {
   height: auto;
   max-width: 100%; }
@@ -4800,7 +4801,7 @@ Lists
 :where(
 ul,
 ol) {
-  padding-left: 1.5em; }
+  padding-left: var(--_list-item-indent); }
 
 :where(dt) {
   font-weight: bold; }
