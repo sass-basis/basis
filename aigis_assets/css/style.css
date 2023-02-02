@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v18.0.0
+ * Name: Basis v18.0.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -8131,7 +8131,7 @@ Content utility
 */
 .u-content {
   --_margin-top: 1;
-  --_margin-bottom: 1; }
+  --_margin-bottom: 0; }
   .u-content > * {
     margin-top: 0;
     margin-bottom: 0; }
@@ -8142,21 +8142,33 @@ Content utility
   .u-content > h1 {
     --_margin-top: 0;
     --_margin-bottom: 1; }
+    .u-content > h1 + * {
+      --_margin-top: 0; }
   .u-content > h2 {
     --_margin-top: 2;
     --_margin-bottom: 1; }
+    .u-content > h2 + * {
+      --_margin-top: 0; }
   .u-content > h3 {
     --_margin-top: 1.5;
     --_margin-bottom: 1; }
+    .u-content > h3 + * {
+      --_margin-top: 0; }
   .u-content > h4 {
     --_margin-top: 1.25;
     --_margin-bottom: 1; }
+    .u-content > h4 + * {
+      --_margin-top: 0; }
   .u-content > h5 {
     --_margin-top: 1;
     --_margin-bottom: 0.5; }
+    .u-content > h5 + * {
+      --_margin-top: 0; }
   .u-content > h6 {
     --_margin-top: 1;
     --_margin-bottom: 0.5; }
+    .u-content > h6 + * {
+      --_margin-top: 0; }
 
 /*
 ---
@@ -8722,7 +8734,7 @@ pre {
 
 .l-main > .c-entry .c-entry__content {
   --_margin-top: 1;
-  --_margin-bottom: 1; }
+  --_margin-bottom: 0; }
   .l-main > .c-entry .c-entry__content > * {
     margin-top: 0;
     margin-bottom: 0; }
@@ -8733,21 +8745,33 @@ pre {
   .l-main > .c-entry .c-entry__content > h1 {
     --_margin-top: 0;
     --_margin-bottom: 1; }
+    .l-main > .c-entry .c-entry__content > h1 + * {
+      --_margin-top: 0; }
   .l-main > .c-entry .c-entry__content > h2 {
     --_margin-top: 2;
     --_margin-bottom: 1; }
+    .l-main > .c-entry .c-entry__content > h2 + * {
+      --_margin-top: 0; }
   .l-main > .c-entry .c-entry__content > h3 {
     --_margin-top: 1.5;
     --_margin-bottom: 1; }
+    .l-main > .c-entry .c-entry__content > h3 + * {
+      --_margin-top: 0; }
   .l-main > .c-entry .c-entry__content > h4 {
     --_margin-top: 1.25;
     --_margin-bottom: 1; }
+    .l-main > .c-entry .c-entry__content > h4 + * {
+      --_margin-top: 0; }
   .l-main > .c-entry .c-entry__content > h5 {
     --_margin-top: 1;
     --_margin-bottom: 0.5; }
+    .l-main > .c-entry .c-entry__content > h5 + * {
+      --_margin-top: 0; }
   .l-main > .c-entry .c-entry__content > h6 {
     --_margin-top: 1;
     --_margin-bottom: 0.5; }
+    .l-main > .c-entry .c-entry__content > h6 + * {
+      --_margin-top: 0; }
   .l-main > .c-entry .c-entry__content pre {
     padding: var(--_padding-1); }
   .l-main > .c-entry .c-entry__content pre + .aigis-preview {
@@ -8950,7 +8974,7 @@ pre {
 
 :where(.aigis-preview) {
   --_margin-top: 1;
-  --_margin-bottom: 1;
+  --_margin-bottom: 0;
   min-height: 150px;
   overflow: hidden; }
   :where(.aigis-preview) > * {
@@ -8963,21 +8987,33 @@ pre {
   :where(.aigis-preview) > h1 {
     --_margin-top: 0;
     --_margin-bottom: 1; }
+    :where(.aigis-preview) > h1 + * {
+      --_margin-top: 0; }
   :where(.aigis-preview) > h2 {
     --_margin-top: 2;
     --_margin-bottom: 1; }
+    :where(.aigis-preview) > h2 + * {
+      --_margin-top: 0; }
   :where(.aigis-preview) > h3 {
     --_margin-top: 1.5;
     --_margin-bottom: 1; }
+    :where(.aigis-preview) > h3 + * {
+      --_margin-top: 0; }
   :where(.aigis-preview) > h4 {
     --_margin-top: 1.25;
     --_margin-bottom: 1; }
+    :where(.aigis-preview) > h4 + * {
+      --_margin-top: 0; }
   :where(.aigis-preview) > h5 {
     --_margin-top: 1;
     --_margin-bottom: 0.5; }
+    :where(.aigis-preview) > h5 + * {
+      --_margin-top: 0; }
   :where(.aigis-preview) > h6 {
     --_margin-top: 1;
     --_margin-bottom: 0.5; }
+    :where(.aigis-preview) > h6 + * {
+      --_margin-top: 0; }
 
 .font-size-10px {
   font-size: 0.625rem;
