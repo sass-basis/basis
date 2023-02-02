@@ -1,5 +1,8 @@
 # Changelog
 
+## February 2, 18.0.1
+* `_set-content-level()` add `margin-top` only. Remove `margin-bottom`.
+
 ## January 13, 2023 18.0.0-beta6
 * Add `--_list-item-indent`.
 
