@@ -27,7 +27,7 @@ Sets Child elements margin
 
 @mixin _set-between-content-level($level) {
 	--_margin-top: 1;
-	--_margin-bottom: 1;
+	--_margin-bottom: 0;
 
   & > * {
     margin-top: 0;
@@ -100,30 +100,54 @@ Sets Child elements margin
   > h1 {
     --_margin-top: #{ $_h1-margin-top };
     --_margin-bottom: #{ $_h1-margin-bottom };
+
+    & + * {
+      --_margin-top: 0;
+    }
   }
 
   > h2 {
     --_margin-top: #{ $_h2-margin-top };
     --_margin-bottom: #{ $_h2-margin-bottom };
+
+    & + * {
+      --_margin-top: 0;
+    }
   }
 
   > h3 {
     --_margin-top: #{ $_h3-margin-top };
     --_margin-bottom: #{ $_h3-margin-bottom };
+
+    & + * {
+      --_margin-top: 0;
+    }
   }
 
   > h4 {
     --_margin-top: #{ $_h4-margin-top };
     --_margin-bottom: #{ $_h4-margin-bottom };
+
+    & + * {
+      --_margin-top: 0;
+    }
   }
 
   > h5 {
     --_margin-top: #{ $_h5-margin-top };
     --_margin-bottom: #{ $_h5-margin-bottom };
+
+    & + * {
+      --_margin-top: 0;
+    }
   }
 
   > h6 {
     --_margin-top: #{ $_h6-margin-top };
     --_margin-bottom: #{ $_h6-margin-bottom };
+
+    & + * {
+      --_margin-top: 0;
+    }
   }
 }
