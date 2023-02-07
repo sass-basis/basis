@@ -1,5 +1,8 @@
 # Changelog
 
+## February 7, 18.0.2
+* CSS vars for `font-size` and `line-height`, move to `settings.scss` from `base.scss`.
+
 ## February 2, 18.0.1
 * `_set-content-level()` add `margin-top` only. Remove `margin-bottom`.
 
