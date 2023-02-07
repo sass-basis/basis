@@ -209,3 +209,22 @@
   --_padding6: var(--_s6);
   --_padding7: var(--_s7);
 }
+
+* {
+  /**
+   * Font size formula.
+   */
+  --_font-size: #{ $_font-size };
+
+  /**
+   * Line height formula.
+   */
+  --_line-height: #{ $_line-height };
+
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}

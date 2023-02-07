@@ -34,7 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
-    "@wordpress/browserslist-config": "^5.8.0",
+    "@wordpress/browserslist-config": "^5.9.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
     "browser-sync": "^2.27.11",
