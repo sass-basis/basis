@@ -1,5 +1,8 @@
 # Changelog
 
+## February 8, 18.0.3
+* Fixed a bug that caused the container width to exceed the screen width in landscape mode on the iPhone.
+
 ## February 7, 18.0.2
 * CSS vars for `font-size` and `line-height`, move to `settings.scss` from `base.scss`.
 
