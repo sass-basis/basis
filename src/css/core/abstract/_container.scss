@@ -62,10 +62,14 @@ Abstract container component
 ```
 */
 
-@mixin _container() {
+@mixin _container($use-safe-area: true) {
   @include _fluid-container();
 
   margin-right: auto;
   margin-left: auto;
   width: min(calc(100% - var(--_container-margin) * 2), var(--_container-max-width));
+
+  @if true == $use-safe-area {
+  	width: min(calc(100% - var(--_container-margin) * 2 - env(safe-area-inset-right) - env(safe-area-inset-left)), var(--_container-max-width));
+	}
 }
