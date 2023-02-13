@@ -49,12 +49,12 @@
   /**
    * Container gutter.
    */
-  --_container-margin: var(--_s1);
+  --_global--container-margin: var(--_s1);
 
   /**
    * Container max width.
    */
-  --_container-max-width: #{ $_container-max-width };
+  --_global--container-max-width: #{ $_container-max-width };
 
   /**
    * List item indent.

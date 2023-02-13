@@ -13,10 +13,30 @@ Fluid container component
   ...
 </div>
 ```
+```html
+<div class="c-fluid-container">
+  <div class="c-fluid-container">
+    ...
+  </div>
+</div>
+```
+```html
+<div class="c-fluid-container">
+  <div class="c-container">
+    ...
+  </div>
+</div>
+```
 */
 
 .#{ $_prefix }c-fluid-container {
   @include _fluid-container();
+
+  .#{ $_prefix }c-fluid-container,
+  .#{ $_prefix }c-container {
+    --_container-safe-area-inset-right: 0px;
+    --_container-safe-area-inset-left: 0px;
+  }
 }
 
 /*
@@ -35,8 +55,28 @@ Container component
   ...
 </div>
 ```
+```html
+<div class="c-container">
+  <div class="c-container">
+    ...
+  </div>
+</div>
+```
+```html
+<div class="c-container">
+  <div class="c-fluid-container">
+    ...
+  </div>
+</div>
+```
 */
 
 .#{ $_prefix }c-container {
   @include _container();
+
+  .#{ $_prefix }c-fluid-container,
+  .#{ $_prefix }c-container {
+    --_container-safe-area-inset-right: 0px;
+    --_container-safe-area-inset-left: 0px;
+  }
 }
