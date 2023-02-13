@@ -3,6 +3,7 @@
 ## February 13, 18.1.0
 * Add `--_global--container-margin`.
 * Add `--_global--container-max-width`.
+* Changed the font size so that it does not get larger in landscape mode on iOS.
 
 ## February 8, 18.0.3
 * Fixed a bug that caused the container width to exceed the screen width in landscape mode on the iPhone.
