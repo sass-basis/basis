@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v18.0.3
+ * Name: Basis v18.1.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -4431,11 +4431,11 @@ Abstract pulse spinner component
   /**
    * Container gutter.
    */
-  --_container-margin: var(--_s1);
+  --_global--container-margin: var(--_s1);
   /**
    * Container max width.
    */
-  --_container-max-width: 1280px;
+  --_global--container-max-width: 1280px;
   /**
    * List item indent.
    */
@@ -4604,7 +4604,8 @@ h6) {
 html {
   font-size: var(--_global--font-size-px);
   line-break: normal;
-  hanging-punctuation: allow-end; }
+  hanging-punctuation: allow-end;
+  -webkit-text-size-adjust: 100%; }
 
 :where(body) {
   background-color: var(--_global--background-color);
@@ -5173,14 +5174,35 @@ Fluid container component
   ...
 </div>
 ```
+```html
+<div class="c-fluid-container">
+  <div class="c-fluid-container">
+    ...
+  </div>
+</div>
+```
+```html
+<div class="c-fluid-container">
+  <div class="c-container">
+    ...
+  </div>
+</div>
+```
 */
 .c-fluid-container {
   box-sizing: content-box;
+  --_container-margin: var(--_global--container-margin);
+  --_container-safe-area-inset-right: env(safe-area-inset-right);
+  --_container-safe-area-inset-left: env(safe-area-inset-left);
   padding-right: var(--_container-margin);
   padding-left: var(--_container-margin);
-  padding-right: calc(var(--_container-margin) + env(safe-area-inset-right));
-  padding-left: calc(var(--_container-margin) + env(safe-area-inset-left));
+  padding-right: calc(var(--_container-margin) + var(--_container-safe-area-inset-right));
+  padding-left: calc(var(--_container-margin) + var(--_container-safe-area-inset-left));
   max-width: 100%; }
+  .c-fluid-container .c-fluid-container,
+  .c-fluid-container .c-container {
+    --_container-safe-area-inset-right: 0px;
+    --_container-safe-area-inset-left: 0px; }
 
 /*
 ---
@@ -5198,18 +5220,40 @@ Container component
   ...
 </div>
 ```
+```html
+<div class="c-container">
+  <div class="c-container">
+    ...
+  </div>
+</div>
+```
+```html
+<div class="c-container">
+  <div class="c-fluid-container">
+    ...
+  </div>
+</div>
+```
 */
 .c-container {
+  --_container-max-width: var(--_global--container-max-width);
   box-sizing: content-box;
+  --_container-margin: var(--_global--container-margin);
+  --_container-safe-area-inset-right: env(safe-area-inset-right);
+  --_container-safe-area-inset-left: env(safe-area-inset-left);
   padding-right: var(--_container-margin);
   padding-left: var(--_container-margin);
-  padding-right: calc(var(--_container-margin) + env(safe-area-inset-right));
-  padding-left: calc(var(--_container-margin) + env(safe-area-inset-left));
+  padding-right: calc(var(--_container-margin) + var(--_container-safe-area-inset-right));
+  padding-left: calc(var(--_container-margin) + var(--_container-safe-area-inset-left));
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
   width: min(calc(100% - var(--_container-margin) * 2), var(--_container-max-width));
-  width: min(calc(100% - var(--_container-margin) * 2 - env(safe-area-inset-right) - env(safe-area-inset-left)), var(--_container-max-width)); }
+  width: min(calc(100% - var(--_container-margin) * 2 - var(--_container-safe-area-inset-right) - var(--_container-safe-area-inset-right)), var(--_container-max-width)); }
+  .c-container .c-fluid-container,
+  .c-container .c-container {
+    --_container-safe-area-inset-right: 0px;
+    --_container-safe-area-inset-left: 0px; }
 
 /*
 ---
