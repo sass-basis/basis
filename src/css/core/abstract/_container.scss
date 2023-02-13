@@ -1,14 +1,12 @@
 @mixin _container-padding($use-safe-area: true) {
   --_container-margin: var(--_global--container-margin);
-  --_container-safe-area-inset-right: env(safe-area-inset-right);
-  --_container-safe-area-inset-left: env(safe-area-inset-left);
 
   padding-right: var(--_container-margin);
   padding-left: var(--_container-margin);
 
   @if true == $use-safe-area {
-    padding-right: calc(var(--_container-margin) + var(--_container-safe-area-inset-right));
-    padding-left: calc(var(--_container-margin) + var(--_container-safe-area-inset-left));
+    padding-right: calc(var(--_container-margin) + env(safe-area-inset-right));
+    padding-left: calc(var(--_container-margin) + env(safe-area-inset-left));
   }
 }
 
@@ -76,6 +74,6 @@ Abstract container component
   width: min(calc(100% - var(--_container-margin) * 2), var(--_container-max-width));
 
   @if true == $use-safe-area {
-  	width: min(calc(100% - var(--_container-margin) * 2 - var(--_container-safe-area-inset-right) - var(--_container-safe-area-inset-right)), var(--_container-max-width));
+  	width: min(calc(100% - var(--_container-margin) * 2 - env(safe-area-inset-right) - env(safe-area-inset-left)), var(--_container-max-width));
 	}
 }
