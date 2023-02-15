@@ -1,5 +1,8 @@
 # Changelog
 
+## Februrary 15, 18.1.2
+* Remove `$use-safe-area` argment of `_container-padding()` and `_container()`.
+
 ## February 13, 18.1.1
 * Add `--_global--container-margin`.
 * Add `--_global--container-max-width`.
