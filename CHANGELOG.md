@@ -1,5 +1,8 @@
 # Changelog
 
+## Februrary 15, 18.1.3
+* Some fixes for `_fluid-container()`.
+
 ## Februrary 15, 18.1.2
 * Remove `$use-safe-area` argment of `_container-padding()` and `_container()`.
 
