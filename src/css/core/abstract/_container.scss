@@ -32,6 +32,7 @@ Abstract fluid container component
 */
 
 @mixin _fluid-container() {
+  flex-grow: 1; // To prevent the item from being crushed when it becomes a flex item.
   box-sizing: content-box;
   @include _container-padding();
   width: auto;
