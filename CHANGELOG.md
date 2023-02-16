@@ -1,5 +1,8 @@
 # Changelog
 
+## Februrary 16, 18.1.4
+* Fixed a bug that `.c-container` could be wider than the screen width on iOS and Safari.
+
 ## Februrary 15, 18.1.3
 * Some fixes for `_fluid-container()`.
 
