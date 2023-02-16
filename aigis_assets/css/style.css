@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v18.1.4
+ * Name: Basis v18.1.5
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -5245,7 +5245,7 @@ Container component
   box-sizing: content-box;
   margin-right: auto;
   margin-left: auto;
-  max-width: min(100%-var(--_container-margin-right)-var(--_container-margin-left), var(--_container-max-width)); }
+  max-width: min(100% - var(--_container-margin-right) - var(--_container-margin-left), var(--_container-max-width)); }
 
 /*
 ---
