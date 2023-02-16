@@ -71,5 +71,5 @@ Abstract container component
   box-sizing: content-box;
   margin-right: auto;
   margin-left: auto;
-  max-width: var(--_container-max-width);
+  max-width: min(100% - var(--_container-margin-right) - var(--_container-margin-left), var(--_container-max-width));
 }

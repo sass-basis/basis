@@ -54,7 +54,7 @@
   /**
    * Container max width.
    */
-  --_global--container-max-width: min(100%, #{ $_container-max-width });
+  --_global--container-max-width: #{ $_container-max-width };
 
   /**
    * List item indent.
@@ -89,7 +89,7 @@
    * Font family.
    */
   --_base-font-family: #{ $_font-family }; // @deprecated
-  --_global--font-family: var(var(--_base-font-family));
+  --_global--font-family: var(--_base-font-family);
 
   /**
    * Font size (px).
