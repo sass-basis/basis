@@ -1,5 +1,8 @@
 # Changelog
 
+## Februrary 16, 18.1.5
+* Fix `.c-container` max-width.
+
 ## Februrary 16, 18.1.4
 * Fixed a bug that `.c-container` could be wider than the screen width on iOS and Safari.
 
