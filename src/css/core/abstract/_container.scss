@@ -37,6 +37,7 @@ Abstract fluid container component
   @include _container-padding();
   width: auto;
   max-width: 100%;
+	min-width: 0;
 }
 
 /*
@@ -71,5 +72,5 @@ Abstract container component
   box-sizing: content-box;
   margin-right: auto;
   margin-left: auto;
-  max-width: unquote('min(100% - var(--_container-margin-right) - var(--_container-margin-left), var(--_container-max-width))');
+  max-width: var(--_container-max-width);
 }
