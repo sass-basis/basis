@@ -1,15 +1,18 @@
 # Changelog
 
-## Februrary 16, 18.1.5
+## February 20, 18.1.7
+* Add `data-submenu-visibility` to `.c-navbar__item`.
+
+## February 16, 18.1.5
 * Fix `.c-container` max-width.
 
-## Februrary 16, 18.1.4
+## February 16, 18.1.4
 * Fixed a bug that `.c-container` could be wider than the screen width on iOS and Safari.
 
-## Februrary 15, 18.1.3
+## February 15, 18.1.3
 * Some fixes for `_fluid-container()`.
 
-## Februrary 15, 18.1.2
+## February 15, 18.1.2
 * Remove `$use-safe-area` argment of `_container-padding()` and `_container()`.
 
 ## February 13, 18.1.1
