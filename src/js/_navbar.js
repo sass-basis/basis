@@ -123,6 +123,7 @@ function NavbarHoverItemComponent(element, props) {
 
   this.close = () => {
     if (!! this.submenu) {
+      element.setAttribute('data-submenu-visibility', 'hidden');
       this.submenu.close();
       this.submenu.subitems.forEach((subitem) => subitem.close());
     }
@@ -130,6 +131,7 @@ function NavbarHoverItemComponent(element, props) {
 
   this.open = () => {
     if (!! this.submenu) {
+      element.setAttribute('data-submenu-visibility', 'visible');
       this.submenu.open();
     }
   };
@@ -238,6 +240,7 @@ function NavbarClickItemComponent(element, props) {
 
   this.close = () => {
     if (!! this.toggleBtn && !! this.submenu) {
+      element.setAttribute('data-submenu-visibility', 'hidden');
       this.toggleBtn.close();
       this.submenu.close();
       this.submenu.subitems.forEach((subitem) => subitem.close());
@@ -246,6 +249,7 @@ function NavbarClickItemComponent(element, props) {
 
   this.open = () => {
     if (!! this.toggleBtn && !! this.submenu) {
+      element.setAttribute('data-submenu-visibility', 'visible');
       this.toggleBtn.open();
       this.submenu.open();
     }
