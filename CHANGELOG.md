@@ -1,5 +1,11 @@
 # Changelog
 
+## February 24, 18.2.0
+* Apply fluid typography.
+* Add `--_min-harmonic-sequence-base`.
+* Add `--_max-harmonic-sequence-base`.
+* Add `--_fluid-font-size`.
+
 ## February 20, 18.1.7
 * Add `data-submenu-visibility` to `.c-navbar__item`.
 

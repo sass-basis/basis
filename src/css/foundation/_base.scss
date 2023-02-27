@@ -154,27 +154,27 @@ Headings
 }
 
 h1 {
-  @include _set-font-size-level(4);
+  @include _set-fluid-font-size-level(4);
 }
 
 h2 {
-  @include _set-font-size-level(3);
+  @include _set-fluid-font-size-level(3);
 }
 
 h3 {
-  @include _set-font-size-level(2);
+  @include _set-fluid-font-size-level(2);
 }
 
 h4 {
-  @include _set-font-size-level(1);
+  @include _set-fluid-font-size-level(1);
 }
 
 h5 {
-  @include _set-font-size-level(0);
+  @include _set-fluid-font-size-level(0);
 }
 
 h6 {
-  @include _set-font-size-level(0);
+  @include _set-fluid-font-size-level(0);
 }
 
 /*

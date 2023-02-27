@@ -1,3 +1,7 @@
+$fibonacci-sequence: 1, 2, 3, 5, 8, 13, 21, 34, 55;
+$min-breakpoint: 22.5; // = 360px
+$max-breakpoint: 80;   // = 1280px
+
 /**
  * Font size scale based on the harmonic sequence.
  */
@@ -8,11 +12,18 @@ $_font-size-scale: calc(var(--_harmonic-sequence-base) / (var(--_harmonic-sequen
  */
 $_font-size: calc(#{ $_font-size-scale } * 1rem);
 
+$_max-font-size: calc(var(--_max-harmonic-sequence-base) / (var(--_max-harmonic-sequence-base) - var(--_font-size-level)));
+$_min-font-size: calc(var(--_min-harmonic-sequence-base) / (var(--_min-harmonic-sequence-base) - var(--_font-size-level)));
+$_slope: calc((#{ $_max-font-size } - #{ $_min-font-size }) / (#{ $max-breakpoint - $min-breakpoint }));
+$_yAxis: calc(#{-1 * $min-breakpoint } * #{ $_slope } + #{ $_min-font-size });
+$_preferred-font-size: calc((#{ $_yAxis } * 1rem) + (#{ $_slope } * 100vw));
+$_fluid-font-size: clamp(1rem * #{ $_min-font-size }, #{ $_preferred-font-size }, 1rem * #{ $_max-font-size });
+
 /**
  * Line height formula.
  */
 $_line-height: clamp(
-  1,
+  1.1,
   calc(var(--_line-height-slope) * #{ $_font-size-scale } + 1 + 2 * var(--_half-leading) + -1 * var(--_line-height-slope)),
   calc(2 * var(--_half-leading) + 1)
 );

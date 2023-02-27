@@ -24,6 +24,6 @@ Abstract site branding component
 @mixin _site-branding() {
   &__title {
     margin: 0;
-    @include _set-font-size-level(3);
+    @include _set-fluid-font-size-level(3);
   }
 }

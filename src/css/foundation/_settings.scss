@@ -117,6 +117,8 @@
    * Reference value for harmonic sequences.
    */
   --_harmonic-sequence-base: 8;
+  --_min-harmonic-sequence-base: 9;
+  --_max-harmonic-sequence-base: var(--_harmonic-sequence-base);
 
   /**
    * The line-height slope. If smaller, the line-height is adjusted to a smaller value as the font size increases.
@@ -138,9 +140,6 @@
   /**
    * A set of variables used to generate space variations.
    */
-  $fibonacci-sequence: 1, 2, 3, 5, 8, 13, 21, 34, 55;
-  $min-breakpoint: 22.5; // = 360px
-  $max-breakpoint: 80;   // = 1280px
   $quotient: ($min-breakpoint / $max-breakpoint);
 
   /**
@@ -156,7 +155,7 @@
   /**
    * Modular scales for spaces.
    */
-  --_ms-2: calc(var(  --_space-unitless) / 3 * #{ nth($fibonacci-sequence, 1) });
+  --_ms-2: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 1) });
   --_ms-1: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 2) });
   --_ms0: 0rem;
   --_ms1: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 3) });
@@ -220,6 +219,11 @@
    * Line height formula.
    */
   --_line-height: #{ $_line-height };
+
+  /**
+   * Fluid font size formula.
+   */
+  --_fluid-font-size: #{ $_fluid-font-size };
 
   box-sizing: border-box;
 
