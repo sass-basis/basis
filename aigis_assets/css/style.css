@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v18.1.7
+ * Name: Basis v18.2.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -2363,7 +2363,9 @@ name: _set-font-size-level()
 category:
   - core/mixin
   - core/mixin/typography
+  - core/mixin/typography/_set-font-size-level
   - foundation/typography
+  - foundation/typography/_set-font-size-level
 ---
 Sets font-size and line-height.
 
@@ -2440,10 +2442,6 @@ Sets font-size and line-height.
   あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
 </p>
 
-<p class="font-size-20px">
-  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
-</p>
-
 <p class="font-size-level:2">
   あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
 </p>
@@ -2465,6 +2463,116 @@ Sets font-size and line-height.
 </p>
 
 <p class="font-size-level:7">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+</p>
+```
+*/
+/*
+---
+name: _set-fluid-font-size-level()
+category:
+  - core/mixin
+  - core/mixin/typography
+  - core/mixin/typography/_set-fluid-font-size-level
+  - foundation/typography
+  - foundation/typography/_set-fluid-font-size-level
+---
+Sets fluid font-size and line-height.
+
+### scss
+```scss
+//
+// @param  int  $level  Font size level. Min -2, Max var(--_harmonic-sequence-base) - 1.
+//
+
+.c-foo {
+  @include _set-fluid-font-size-level(1);
+}
+```
+
+### html
+```html
+<h3>English</h3>
+
+<p class="fluid-font-size-level:-2">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+</p>
+
+<p class="fluid-font-size-level:-1">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+</p>
+
+<p class="fluid-font-size-level:0">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+</p>
+
+<p class="fluid-font-size-level:1">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+</p>
+
+<p class="fluid-font-size-level:2">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+</p>
+
+<p class="fluid-font-size-level:3">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+</p>
+
+<p class="fluid-font-size-level:4">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+</p>
+
+<p class="fluid-font-size-level:5">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+</p>
+
+<p class="fluid-font-size-level:6">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+</p>
+
+<p class="fluid-font-size-level:7">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+</p>
+
+<h3>Japanese</h3>
+
+<p class="fluid-font-size-level:-2">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+</p>
+
+<p class="fluid-font-size-level:-1">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+</p>
+
+<p class="fluid-font-size-level:0">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+</p>
+
+<p class="fluid-font-size-level:1">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+</p>
+
+<p class="fluid-font-size-level:2">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+</p>
+
+<p class="fluid-font-size-level:3">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+</p>
+
+<p class="fluid-font-size-level:4">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+</p>
+
+<p class="fluid-font-size-level:5">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+</p>
+
+<p class="fluid-font-size-level:6">
+  あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
+</p>
+
+<p class="fluid-font-size-level:7">
   あともゴーシュ子たり何に向いていまし。夜中は次がしばらくと落ちて狸から舞台のようで来でおかげをしからちょろちょろゴーシュを合わせていです。どうかまげて子をこどもに出でしです。それりんに狸がこってボック
 </p>
 ```
@@ -4487,6 +4595,8 @@ Abstract pulse spinner component
    * Reference value for harmonic sequences.
    */
   --_harmonic-sequence-base: 8;
+  --_min-harmonic-sequence-base: 9;
+  --_max-harmonic-sequence-base: var(--_harmonic-sequence-base);
   /**
    * The line-height slope. If smaller, the line-height is adjusted to a smaller value as the font size increases.
    *
@@ -4511,7 +4621,7 @@ Abstract pulse spinner component
   /**
    * Modular scales for spaces.
    */
-  --_ms-2: calc(var(  --_space-unitless) / 3 * 1);
+  --_ms-2: calc(var(--_space-unitless) / 3 * 1);
   --_ms-1: calc(var(--_space-unitless) / 3 * 2);
   --_ms0: 0rem;
   --_ms1: calc(var(--_space-unitless) / 3 * 3);
@@ -4569,7 +4679,11 @@ Abstract pulse spinner component
   /**
    * Line height formula.
    */
-  --_line-height: clamp(1, calc(var(--_line-height-slope) * calc(var(--_harmonic-sequence-base) / (var(--_harmonic-sequence-base) - var(--_font-size-level))) + 1 + 2 * var(--_half-leading) + -1 * var(--_line-height-slope)), calc(2 * var(--_half-leading) + 1));
+  --_line-height: clamp(1.1, calc(var(--_line-height-slope) * calc(var(--_harmonic-sequence-base) / (var(--_harmonic-sequence-base) - var(--_font-size-level))) + 1 + 2 * var(--_half-leading) + -1 * var(--_line-height-slope)), calc(2 * var(--_half-leading) + 1));
+  /**
+   * Fluid font size formula.
+   */
+  --_fluid-font-size: clamp(1rem * calc(var(--_min-harmonic-sequence-base) / (var(--_min-harmonic-sequence-base) - var(--_font-size-level))), calc((calc(-22.5 * calc((calc(var(--_max-harmonic-sequence-base) / (var(--_max-harmonic-sequence-base) - var(--_font-size-level))) - calc(var(--_min-harmonic-sequence-base) / (var(--_min-harmonic-sequence-base) - var(--_font-size-level)))) / (57.5)) + calc(var(--_min-harmonic-sequence-base) / (var(--_min-harmonic-sequence-base) - var(--_font-size-level)))) * 1rem) + (calc((calc(var(--_max-harmonic-sequence-base) / (var(--_max-harmonic-sequence-base) - var(--_font-size-level))) - calc(var(--_min-harmonic-sequence-base) / (var(--_min-harmonic-sequence-base) - var(--_font-size-level)))) / (57.5)) * 100vw)), 1rem * calc(var(--_max-harmonic-sequence-base) / (var(--_max-harmonic-sequence-base) - var(--_font-size-level))));
   box-sizing: border-box; }
   *:before, *:after {
     box-sizing: inherit; }
@@ -4712,32 +4826,32 @@ h6) {
 
 h1 {
   --_font-size-level: 4;
-  font-size: var(--_font-size);
+  font-size: var(--_fluid-font-size);
   line-height: var(--_line-height); }
 
 h2 {
   --_font-size-level: 3;
-  font-size: var(--_font-size);
+  font-size: var(--_fluid-font-size);
   line-height: var(--_line-height); }
 
 h3 {
   --_font-size-level: 2;
-  font-size: var(--_font-size);
+  font-size: var(--_fluid-font-size);
   line-height: var(--_line-height); }
 
 h4 {
   --_font-size-level: 1;
-  font-size: var(--_font-size);
+  font-size: var(--_fluid-font-size);
   line-height: var(--_line-height); }
 
 h5 {
   --_font-size-level: 0;
-  font-size: var(--_font-size);
+  font-size: var(--_fluid-font-size);
   line-height: var(--_line-height); }
 
 h6 {
   --_font-size-level: 0;
-  font-size: var(--_font-size);
+  font-size: var(--_fluid-font-size);
   line-height: var(--_line-height); }
 
 /*
@@ -7744,7 +7858,7 @@ Site branding component
 .c-site-branding__title {
   margin: 0;
   --_font-size-level: 3;
-  font-size: var(--_font-size);
+  font-size: var(--_fluid-font-size);
   line-height: var(--_line-height); }
 
 /*
@@ -12069,6 +12183,166 @@ pre {
   line-height: var(--_line-height);
   position: relative; }
   .font-size-level\:7::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "level: 7";
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: .25em .5em; }
+
+.fluid-font-size-level\:-2 {
+  --_font-size-level: -2;
+  font-size: var(--_fluid-font-size);
+  line-height: var(--_line-height);
+  position: relative; }
+  .fluid-font-size-level\:-2::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "level: -2";
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: .25em .5em; }
+
+.fluid-font-size-level\:-1 {
+  --_font-size-level: -1;
+  font-size: var(--_fluid-font-size);
+  line-height: var(--_line-height);
+  position: relative; }
+  .fluid-font-size-level\:-1::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "level: -1";
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: .25em .5em; }
+
+.fluid-font-size-level\:0 {
+  --_font-size-level: 0;
+  font-size: var(--_fluid-font-size);
+  line-height: var(--_line-height);
+  position: relative; }
+  .fluid-font-size-level\:0::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "level: 0";
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: .25em .5em; }
+
+.fluid-font-size-level\:1 {
+  --_font-size-level: 1;
+  font-size: var(--_fluid-font-size);
+  line-height: var(--_line-height);
+  position: relative; }
+  .fluid-font-size-level\:1::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "level: 1";
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: .25em .5em; }
+
+.fluid-font-size-level\:2 {
+  --_font-size-level: 2;
+  font-size: var(--_fluid-font-size);
+  line-height: var(--_line-height);
+  position: relative; }
+  .fluid-font-size-level\:2::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "level: 2";
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: .25em .5em; }
+
+.fluid-font-size-level\:3 {
+  --_font-size-level: 3;
+  font-size: var(--_fluid-font-size);
+  line-height: var(--_line-height);
+  position: relative; }
+  .fluid-font-size-level\:3::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "level: 3";
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: .25em .5em; }
+
+.fluid-font-size-level\:4 {
+  --_font-size-level: 4;
+  font-size: var(--_fluid-font-size);
+  line-height: var(--_line-height);
+  position: relative; }
+  .fluid-font-size-level\:4::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "level: 4";
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: .25em .5em; }
+
+.fluid-font-size-level\:5 {
+  --_font-size-level: 5;
+  font-size: var(--_fluid-font-size);
+  line-height: var(--_line-height);
+  position: relative; }
+  .fluid-font-size-level\:5::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "level: 5";
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: .25em .5em; }
+
+.fluid-font-size-level\:6 {
+  --_font-size-level: 6;
+  font-size: var(--_fluid-font-size);
+  line-height: var(--_line-height);
+  position: relative; }
+  .fluid-font-size-level\:6::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "level: 6";
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: .25em .5em; }
+
+.fluid-font-size-level\:7 {
+  --_font-size-level: 7;
+  font-size: var(--_fluid-font-size);
+  line-height: var(--_line-height);
+  position: relative; }
+  .fluid-font-size-level\:7::before {
     position: absolute;
     bottom: 100%;
     left: 0;
