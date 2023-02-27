@@ -37,7 +37,7 @@
     "@wordpress/browserslist-config": "^5.10.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
-    "browser-sync": "^2.27.11",
+    "browser-sync": "^2.27.12",
     "cpy-cli": "^4.2.0",
     "cssnano": "^5.1.15",
     "node-aigis": "^1.4.1",
