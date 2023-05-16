@@ -1,5 +1,9 @@
 # Changelog
 
+## May 16, 18.2.1
+* Update packages.
+* Remove html5shiv.
+
 ## February 24, 18.2.0
 * Apply fluid typography.
 * Add `--_min-harmonic-sequence-base`.
