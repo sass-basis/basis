@@ -4,7 +4,7 @@
 }
 
 @mixin _assert-equals($expected, $actual) {
-	@if ($expected == $actual) {
+	@if $expected == $actual {
 		@debug 'OK!';
 	} @else {
 		@warn 'FAILURES! Expected: #{$expected}  Actual: #{$actual}';

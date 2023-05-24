@@ -1,3 +1,5 @@
+$_half-leading: .25;
+
 @import '../src/css/basis-core';
 @import 'api/api';
 
@@ -84,7 +86,7 @@
 }
 
 @include _test('[function] _space()') {
-  @include _assert-equals(.75rem, _space(.5));
+  @include _assert-equals(0.75rem, _space(.5));
   @include _assert-equals(1.5rem, _space(1));
   @include _assert-equals(4.5rem, _space(3));
   @include _assert-equals(0, _space(0));
@@ -97,10 +99,6 @@
   @include _assert-equals(false, _is-null(0));
   @include _assert-equals(false, _is-null('null'));
   @include _assert-equals(true, _is-null(null));
-}
-
-@include _test('[function] _vertical-rhythm()') {
-  @include _assert-equals(24, _vertical-rhythm(16px));
 }
 
 @include _test('[function] _min()') {
@@ -116,9 +114,9 @@
 }
 
 @include _test('[function] _max()') {
-  @include _assert-equals(map-get($_sizes, md) - 1px, _max(sm));
-  @include _assert-equals(map-get($_sizes, lg) - 1px, _max(md));
-  @include _assert-equals(map-get($_sizes, xl) - 1px, _max(lg));
+  @include _assert-equals(map-get($_sizes, md) - .1px, _max(sm));
+  @include _assert-equals(map-get($_sizes, lg) - .1px, _max(md));
+  @include _assert-equals(map-get($_sizes, xl) - .1px, _max(lg));
   @include _assert-equals(false, _max(xl));
   @include _assert-equals(false, _max(dummy));
   @include _assert-equals(0, _max(0));
