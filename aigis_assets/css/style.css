@@ -8390,7 +8390,7 @@ Hidden utility
     visibility: hidden !important;
     overflow: hidden; } }
 
-@media (min-width: 640px) and (max-width: 1023.999px) {
+@media (min-width: 640px) and (max-width: 1023.9px) {
   .u-hidden-md {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -8404,7 +8404,7 @@ Hidden utility
     visibility: hidden !important;
     overflow: hidden; } }
 
-@media (min-width: 1024px) and (max-width: 1279.999px) {
+@media (min-width: 1024px) and (max-width: 1279.9px) {
   .u-hidden-lg {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -8646,7 +8646,7 @@ Visible utility
     visibility: visible !important;
     overflow: visible; } }
 
-@media (min-width: 640px) and (max-width: 1023.999px) {
+@media (min-width: 640px) and (max-width: 1023.9px) {
   .u-visible-md {
     position: static !important;
     clip: auto !important;
@@ -8660,7 +8660,7 @@ Visible utility
     visibility: visible !important;
     overflow: visible; } }
 
-@media (min-width: 1024px) and (max-width: 1279.999px) {
+@media (min-width: 1024px) and (max-width: 1279.9px) {
   .u-visible-lg {
     position: static !important;
     clip: auto !important;
@@ -8746,7 +8746,7 @@ Invisible utility
   .u-invisible-md-down {
     display: none !important; } }
 
-@media (min-width: 640px) and (max-width: 1023.999px) {
+@media (min-width: 640px) and (max-width: 1023.9px) {
   .u-invisible-md {
     display: none !important; } }
 
@@ -8758,7 +8758,7 @@ Invisible utility
   .u-invisible-lg-down {
     display: none !important; } }
 
-@media (min-width: 1024px) and (max-width: 1279.999px) {
+@media (min-width: 1024px) and (max-width: 1279.9px) {
   .u-invisible-lg {
     display: none !important; } }
 
