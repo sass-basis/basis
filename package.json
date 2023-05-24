@@ -1,10 +1,10 @@
 {
   "engines": {
-    "node": ">=10.0.0",
+    "node": ">=14.0.0 <15",
     "npm": ">=6.9.0 <7"
   },
   "name": "sass-basis",
-  "version": "18.2.1",
+  "version": "18.2.2",
   "main": "src/css/basis.scss",
   "author": "inc2734",
   "contributors": [
@@ -41,17 +41,17 @@
     "@wordpress/browserslist-config": "^5.16.0",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
-    "browser-sync": "^2.29.1",
+    "browser-sync": "^2.29.3",
     "cpy-cli": "^4.2.0",
     "cssnano": "^6.0.1",
     "node-aigis": "^1.4.1",
-    "node-sass": "^8.0.0",
+    "node-sass": "^9.0.0",
     "normalize.css": "^8.0.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.23",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
-    "webpack": "^5.82.1",
+    "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1"
   },
   "scripts": {

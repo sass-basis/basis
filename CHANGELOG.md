@@ -1,5 +1,8 @@
 # Changelog
 
+## May 24, 18.2.2
+* Fixed a bug that the screen width set to the maximum value in `_media-only()` would not be displayed as intended.
+
 ## May 16, 18.2.1
 * Update packages.
 * Remove html5shiv.
