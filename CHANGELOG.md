@@ -1,6 +1,6 @@
 # Changelog
 
-## July 19, 2024 18.2.3
+## July 19, 2024 18.2.4
 * Update form controls.
 
 ## May 24, 2023 18.2.2
