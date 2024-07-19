@@ -1,45 +1,48 @@
 # Changelog
 
-## May 24, 18.2.2
+## July 19, 2024 18.2.3
+* Update form controls.
+
+## May 24, 2023 18.2.2
 * Fixed a bug that the screen width set to the maximum value in `_media-only()` would not be displayed as intended.
 
-## May 16, 18.2.1
+## May 16, 2023 18.2.1
 * Update packages.
 * Remove html5shiv.
 
-## February 24, 18.2.0
+## February 24, 2023 18.2.0
 * Apply fluid typography.
 * Add `--_min-harmonic-sequence-base`.
 * Add `--_max-harmonic-sequence-base`.
 * Add `--_fluid-font-size`.
 
-## February 20, 18.1.7
+## February 20, 2023 18.1.7
 * Add `data-submenu-visibility` to `.c-navbar__item`.
 
-## February 16, 18.1.5
+## February 16, 2023 18.1.5
 * Fix `.c-container` max-width.
 
-## February 16, 18.1.4
+## February 16, 2023 18.1.4
 * Fixed a bug that `.c-container` could be wider than the screen width on iOS and Safari.
 
-## February 15, 18.1.3
+## February 15, 2023 18.1.3
 * Some fixes for `_fluid-container()`.
 
-## February 15, 18.1.2
+## February 15, 2023 18.1.2
 * Remove `$use-safe-area` argment of `_container-padding()` and `_container()`.
 
-## February 13, 18.1.1
+## February 13, 2023 18.1.1
 * Add `--_global--container-margin`.
 * Add `--_global--container-max-width`.
 * Changed the font size so that it does not get larger in landscape mode on iOS.
 
-## February 8, 18.0.3
+## February 8, 2023 18.0.3
 * Fixed a bug that caused the container width to exceed the screen width in landscape mode on the iPhone.
 
-## February 7, 18.0.2
+## February 7, 2023 18.0.2
 * CSS vars for `font-size` and `line-height`, move to `settings.scss` from `base.scss`.
 
-## February 2, 18.0.1
+## February 2, 2023 18.0.1
 * `_set-content-level()` add `margin-top` only. Remove `margin-bottom`.
 
 ## January 13, 2023 18.0.0-beta6
