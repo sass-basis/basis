@@ -28,64 +28,61 @@ Abstract selectbox component
 */
 
 @mixin _select() {
+  position: relative;
   display: inline-block;
 
   &__toggle {
     display: none;
   }
 
-  @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+  &__control {
     position: relative;
+    z-index: 1;
+    appearance: none;
+    display:inline-block;
+    cursor: pointer;
+    @include _form-control-base-border();
+    background-color: transparent;
+    line-height: 1;
+    max-width: 100%;
+    padding: var(--_padding-1) var(--_padding2) var(--_padding-1) var(--_padding-1);
 
-    &__control {
-      position: relative;
-      z-index: 1;
-      appearance: none;
-      display:inline-block;
-      cursor: pointer;
-      @include _form-control-base-border();
-      background-color: transparent;
-      line-height: 1;
-      max-width: 100%;
-      padding: var(--_padding-1) var(--_padding2) var(--_padding-1) var(--_padding-1);
-
-      &:focus {
-        & + .smf-select-control__toggle {
-          &::before {
-            border-color: #3a87fd;
-          }
-        }
-      }
-
-      &:disabled {
-        & + .smf-select-control__toggle {
-          background-color: var(--_lightest-color-gray);
+    &:focus {
+      & + .smf-select-control__toggle {
+        &::before {
+          border-color: #3a87fd;
         }
       }
     }
 
-    &__toggle {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 0;
-      display: block;
-      background-color: var(--_color-white);
-
-      &::before {
-        position: absolute;
-        top: calc(50% - 4px);
-        right: calc(var(--_s-1) - 6px);
-        content: '';
-        display: block;
-        @include _square(6px);
-        border-style: solid;
-        border-color: currentColor;
-        border-width: 0 1px 1px 0;
-        transform: rotate(45deg);
+    &:disabled {
+      & + .smf-select-control__toggle {
+        background-color: var(--_lightest-color-gray);
       }
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+    background-color: var(--_color-white);
+
+    &::before {
+      position: absolute;
+      top: calc(50% - 4px);
+      right: calc(var(--_s-1) - 6px);
+      content: '';
+      display: block;
+      @include _square(6px);
+      border-style: solid;
+      border-color: currentColor;
+      border-width: 0 1px 1px 0;
+      transform: rotate(45deg);
     }
   }
 }

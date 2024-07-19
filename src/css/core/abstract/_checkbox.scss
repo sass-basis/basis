@@ -27,50 +27,51 @@ Abstract checkbox component
 
 @mixin _checkbox() {
   display: inline-flex;
-  align-items: center;
+  gap: var(--_s-2);
 
   &__control {
-    @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
-      appearance: none;
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      @include _form-control-base-border();
-      background-color: var(--_color-white);
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
-      @include _square(16px);
+    flex: 0 0 auto;
+    appearance: none;
+    margin: calc(var(--_half-leading)* 1em) 0 0;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    @include _form-control-base-border();
+    border-radius: 3px;
+    background-color: var(--_color-white);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
+    @include _square(16px);
+
+    &::before {
+      top: calc(50% - 5px);
+      left: calc(50% - 3px);
+      transform: rotate(45deg);
+      margin: 0 !important;
+      height: 8px;
+      width: 6px;
+      border-style: solid;
+      border-color: var(--_color-white);
+      border-width: 0 2px 2px 0;
+      visibility: hidden;
+    }
+
+    &:checked {
+      background-color: #3a87fd;
+      border-color: #3a87fd;
 
       &::before {
-        top: calc(50% - 5px);
-        left: calc(50% - 3px);
-        transform: rotate(45deg);
-        margin: 0 !important;
-        height: 8px;
-        width: 6px;
-        border-style: solid;
-        border-color: var(--_color-white);
-        border-width: 0 2px 2px 0;
-        visibility: hidden;
+        position: absolute;
+        content: '';
+        display: block;
+        visibility: visible;
       }
+    }
 
-      &:checked {
-        background-color: #3a87fd;
-        border-color: #3a87fd;
+    &:disabled {
+      background-color: var(--_lightest-color-gray);
 
-        &::before {
-          position: absolute;
-          content: '';
-          display: block;
-          visibility: visible;
-        }
-      }
-
-      &:disabled {
-        background-color: var(--_lightest-color-gray);
-
-        &::before {
-          border-color: var(--_dark-color-gray);
-        }
+      &::before {
+        border-color: var(--_dark-color-gray);
       }
     }
   }

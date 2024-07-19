@@ -27,47 +27,47 @@ Abstract radio button component
 
 @mixin _radio() {
   display: inline-flex;
-  align-items: center;
+  gap: var(--_s-2);
 
-  @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
-    &__control {
-      appearance: none;
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      @include _form-control-base-border();
+  &__control {
+    flex: 0 0 auto;
+    appearance: none;
+    margin: calc(var(--_half-leading)* 1em) 0 0;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    @include _form-control-base-border();
+    background-color: var(--_color-white);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
+    @include _square(16px);
+    border-radius: 100%;
+
+    &::before {
+      top: calc(50% - 3px);
+      left: calc(50% - 3px);
+      margin: 0 !important;
+      @include _circle(6px);
       background-color: var(--_color-white);
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
-      @include _square(16px);
-      border-radius: 100%;
+      visibility: hidden;
+    }
+
+    &:checked {
+      background-color: #3a87fd;
+      border-color: #3a87fd;
 
       &::before {
-        top: calc(50% - 3px);
-        left: calc(50% - 3px);
-        margin: 0 !important;
-        @include _circle(6px);
-        background-color: var(--_color-white);
-        visibility: hidden;
+        position: absolute;
+        content: '';
+        display: block;
+        visibility: visible;
       }
+    }
 
-      &:checked {
-        background-color: #3a87fd;
-        border-color: #3a87fd;
+    &:disabled {
+      background-color: var(--_lightest-color-gray);
 
-        &::before {
-          position: absolute;
-          content: '';
-          display: block;
-          visibility: visible;
-        }
-      }
-
-      &:disabled {
-        background-color: var(--_lightest-color-gray);
-
-        &::before {
-          background-color: var(--_dark-color-gray);
-        }
+      &::before {
+        background-color: var(--_dark-color-gray);
       }
     }
   }
