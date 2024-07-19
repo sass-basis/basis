@@ -1,11 +1,11 @@
 {
-	"engines": {
-		"node": ">=20.10.0",
-		"npm": ">=10.2.3"
-	},
-	"volta": {
-		"node": "20.11.1"
-	},
+  "engines": {
+    "node": ">=20.10.0",
+    "npm": ">=10.2.3"
+  },
+  "volta": {
+    "node": "20.11.1"
+  },
   "name": "sass-basis",
   "version": "18.2.3",
   "main": "src/css/basis.scss",
