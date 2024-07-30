@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-top-balloon
@@ -16,8 +18,8 @@ Top balloon component
 ```
 */
 
-.#{ $_prefix }c-top-balloon {
-  @include _top-balloon((
+.c-top-balloon {
+  @include abstract.top-balloon((
     background-color: var(--_color-white),
     border-color: var(--_light-color-gray),
     border-size: 1px,
@@ -42,8 +44,8 @@ Right balloon component
 ```
 */
 
-.#{ $_prefix }c-right-balloon {
-  @include _right-balloon((
+.c-right-balloon {
+  @include abstract.right-balloon((
     background-color: var(--_color-white),
     border-color: var(--_light-color-gray),
     border-size: 1px,
@@ -68,8 +70,8 @@ Bottom balloon component
 ```
 */
 
-.#{ $_prefix }c-bottom-balloon {
-  @include _bottom-balloon((
+.c-bottom-balloon {
+  @include abstract.bottom-balloon((
     background-color: var(--_color-white),
     border-color: var(--_light-color-gray),
     border-size: 1px,
@@ -94,8 +96,8 @@ Left balloon component
 ```
 */
 
-.#{ $_prefix }c-left-balloon {
-  @include _left-balloon((
+.c-left-balloon {
+  @include abstract.left-balloon((
     background-color: var(--_color-white),
     border-color: var(--_light-color-gray),
     border-size: 1px,

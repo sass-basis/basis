@@ -1,6 +1,8 @@
+@use "../mixin";
+
 /*
 ---
-name: _radio()
+name: radio()
 category:
   - core/abstract
   - core/abstract/form
@@ -9,8 +11,10 @@ Abstract radio button component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-radio {
-  @include _radio();
+  @include core.radio();
 }
 ```
 
@@ -25,9 +29,13 @@ Abstract radio button component
 ```
 */
 
-@mixin _radio() {
+@mixin radio() {
   display: inline-flex;
   gap: var(--_s-2);
+
+  &__control {
+    @include mixin.form-control-base-border();
+  }
 
   &__control {
     flex: 0 0 auto;
@@ -36,17 +44,16 @@ Abstract radio button component
     position: relative;
     display: inline-block;
     cursor: pointer;
-    @include _form-control-base-border();
     background-color: var(--_color-white);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
-    @include _square(16px);
+    @include mixin.square(16px);
     border-radius: 100%;
 
     &::before {
       top: calc(50% - 3px);
       left: calc(50% - 3px);
       margin: 0 !important;
-      @include _circle(6px);
+      @include mixin.circle(6px);
       background-color: var(--_color-white);
       visibility: hidden;
     }

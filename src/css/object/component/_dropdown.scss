@@ -1,3 +1,6 @@
+@use "../../core/mixin";
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-dropdown
@@ -51,19 +54,22 @@ Dropdown component
 ```
 */
 
-.#{ $_prefix }c-dropdown {
-  @include _dropdown();
-  @include _transition(bottom, visibility);
+.c-dropdown {
+  @include abstract.dropdown();
+}
+
+.c-dropdown {
+  @include mixin.transition(bottom, visibility);
   transition-timing-function: ease-in;
 
   &[aria-hidden="false"] {
-    @include _transition(bottom);
+    @include mixin.transition(bottom);
     transition-timing-function: ease-out;
   }
 
   &__menu,
   &__submenu {
-    @include _list-unstyled();
+    @include mixin.list-unstyled();
 
     > *:not(:first-child) {
       margin-top: var(--_margin-1);
@@ -89,13 +95,13 @@ Dropdown component
         max-width: calc(100% - 42px);
       }
 
-      > .#{ $_prefix }c-dropdown__toggle {
+      > .c-dropdown__toggle {
         flex: 0 0 auto;
         width: 42px;
         overflow: hidden;
       }
 
-      > .#{ $_prefix }c-dropdown__submenu {
+      > .c-dropdown__submenu {
         flex: 1 1 100%;
       }
     }

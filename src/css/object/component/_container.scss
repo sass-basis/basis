@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-fluid-container
@@ -29,8 +31,8 @@ Fluid container component
 ```
 */
 
-.#{ $_prefix }c-fluid-container {
-  @include _fluid-container();
+.c-fluid-container {
+  @include abstract.fluid-container();
 }
 
 /*
@@ -65,6 +67,6 @@ Container component
 ```
 */
 
-.#{ $_prefix }c-container {
-  @include _container();
+.c-container {
+  @include abstract.container();
 }

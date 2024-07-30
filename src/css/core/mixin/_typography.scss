@@ -1,6 +1,6 @@
 /*
 ---
-name: _set-font-size-level()
+name: set-font-size-level()
 category:
   - core/mixin
   - core/mixin/typography
@@ -16,8 +16,10 @@ Sets font-size and line-height.
 // @param  int  $level  Font size level. Min -2, Max var(--_harmonic-sequence-base) - 1.
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _set-font-size-level(1);
+  @include core.set-font-size-level(1);
 }
 ```
 
@@ -108,7 +110,7 @@ Sets font-size and line-height.
 </p>
 ```
 */
-@mixin _set-font-size-level($level) {
+@mixin set-font-size-level($level) {
   --_font-size-level: #{ $level };
 
   font-size: var(--_font-size);
@@ -117,7 +119,7 @@ Sets font-size and line-height.
 
 /*
 ---
-name: _set-fluid-font-size-level()
+name: set-fluid-font-size-level()
 category:
   - core/mixin
   - core/mixin/typography
@@ -133,8 +135,10 @@ Sets fluid font-size and line-height.
 // @param  int  $level  Font size level. Min -2, Max var(--_harmonic-sequence-base) - 1.
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _set-fluid-font-size-level(1);
+  @include core.set-fluid-font-size-level(1);
 }
 ```
 
@@ -225,7 +229,7 @@ Sets fluid font-size and line-height.
 </p>
 ```
 */
-@mixin _set-fluid-font-size-level($level) {
+@mixin set-fluid-font-size-level($level) {
   --_font-size-level: #{ $level };
 
   font-size: var(--_fluid-font-size);

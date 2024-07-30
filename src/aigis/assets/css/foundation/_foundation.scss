@@ -1,7 +1,7 @@
 a {
   transition: background-color var(--_global--transition-duration) var(--_global--transition-function-timing),
               color var(--_global--transition-duration) var(--_global--transition-function-timing);
-  color: _dark($color-primary);
+  color: color-mix(in srgb, var(--color-primary), #000 20%);
 }
 
 .hljs, pre {

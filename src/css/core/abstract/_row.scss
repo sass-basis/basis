@@ -1,6 +1,6 @@
 /*
 ---
-name: _row()
+name: row()
 category:
   - core/abstract
   - core/abstract/grid-system/flexbox
@@ -9,8 +9,10 @@ Abstract row component of flexbox based grid system
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-row {
-  @include _row();
+  @include core.row();
 
   &__col {
     flex: 0 1 100%;
@@ -34,7 +36,7 @@ Abstract row component of flexbox based grid system
 ```
 */
 
-@mixin _row() {
+@mixin row() {
   display: flex;
   flex-wrap: wrap;
 }

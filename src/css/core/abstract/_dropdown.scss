@@ -1,6 +1,8 @@
+@use "sass:map";
+
 /*
 ---
-name: _dropdown()
+name: dropdown()
 category:
   - core/abstract
 ---
@@ -8,12 +10,14 @@ Abstract dropdown component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-dropdown {
-  @include _dropdown();
+  @include core.dropdown();
 
   &__menu,
   &__submenu {
-    @include _list-unstyled();
+    @include core.list-unstyled();
 
     > *:not(:first-child) {
       margin-top: var(--_margin-1);
@@ -39,13 +43,13 @@ Abstract dropdown component
         max-width: calc(100% - 42px);
       }
 
-      > .#{ $_prefix }c-dropdown__toggle {
+      > .c-dropdown__toggle {
         flex: 0 0 auto;
         width: 42px;
         overflow: hidden;
       }
 
-      > .#{ $_prefix }c-dropdown__submenu {
+      > .c-dropdown__submenu {
         flex: 1 1 100%;
       }
     }
@@ -121,8 +125,8 @@ new BasisDrawer({
 ```
 */
 
-@mixin _dropdown($params: ()) {
-  $params: map-merge(
+@mixin dropdown($params: ()) {
+  $params: map.merge(
     (
     ),
     $params

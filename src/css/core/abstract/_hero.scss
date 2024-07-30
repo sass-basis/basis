@@ -1,6 +1,6 @@
 /*
 ---
-name: _hero()
+name: hero()
 category:
   - core/abstract
 ---
@@ -8,8 +8,10 @@ Abstract hero component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-hero {
-  @include _hero();
+  @include core.hero();
   padding: var(--_padding1);
 
   &__header {
@@ -38,29 +40,29 @@ Abstract hero component
 ```
 */
 
-@mixin _hero() {
+@mixin hero() {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   position: relative;
 
   &__header {
-    @include _hero__col();
+    @include hero__col();
     align-self: flex-start;
   }
 
   &__content {
-    @include _hero__col();
+    @include hero__col();
     align-self: center;
   }
 
   &__footer {
-    @include _hero__col();
+    @include hero__col();
     align-self: flex-end;
   }
 }
 
-@mixin _hero__col() {
+@mixin hero__col() {
   flex: none;
   width: 100%;
   position: relative;

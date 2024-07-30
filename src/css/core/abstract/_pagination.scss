@@ -1,6 +1,6 @@
 /*
 ---
-name: _pagination()
+name: pagination()
 category:
   - core/abstract
 ---
@@ -8,8 +8,10 @@ Abstract pagination component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-pagination {
-  @include _pagination();
+  @include core.pagination();
   text-align: center;
   font-size: 0;
 
@@ -18,8 +20,7 @@ Abstract pagination component
   &__item-ellipsis {
     margin: 0 3px;
     display: inline-flex;
-    @include _square(30px);
-    @include _font-size($_base-font-size-px - 2);
+    @include core.square(30px);
     align-items: center;
     justify-content: center;
   }
@@ -38,7 +39,7 @@ Abstract pagination component
 ```
 */
 
-@mixin _pagination() {
+@mixin pagination() {
   &__item,
   &__item-link,
   &__item-ellipsis {

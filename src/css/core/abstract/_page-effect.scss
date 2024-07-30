@@ -1,6 +1,9 @@
+@use "sass:map";
+@use "../function";
+
 /*
 ---
-name: _page-effect()
+name: page-effect()
 category:
   - core/abstract
 ---
@@ -8,8 +11,10 @@ Abstract page effect component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-page-effect {
-  @include _page-effect((
+  @include core.page-effect((
     duration: .2s,
     background-color: #fff,
   ));
@@ -35,8 +40,8 @@ new BasisPageEffect({
 ```
 */
 
-@mixin _page-effect($params: ()) {
-  $params: map-merge(
+@mixin page-effect($params: ()) {
+  $params: map.merge(
     (
       duration: .2s, // Must be the same as js location duration time.
       background-color: var(--_color-white),
@@ -44,10 +49,10 @@ new BasisPageEffect({
     $params
   );
 
-  $duration: map-get($params, 'duration');
+  $duration: map.get($params, 'duration');
 
-  $fadein-animation-name : _sanitize-animation-name(_page-effect-fadein- + zip(map-values($params)));
-  $fadeout-animation-name: _sanitize-animation-name(_page-effect-fadeout- + zip(map-values($params)));
+  $fadein-animation-name : function.sanitize-animation-name(_page-effect-fadein- + zip(map.values($params)));
+  $fadeout-animation-name: function.sanitize-animation-name(_page-effect-fadeout- + zip(map.values($params)));
 
   position: fixed;
   top: 0;
@@ -59,7 +64,7 @@ new BasisPageEffect({
   align-items: center;
   justify-content: center;
 
-  @each $background-color in map-get($params, 'background-color') {
+  @each $background-color in map.get($params, 'background-color') {
     background-color: $background-color;
   }
 

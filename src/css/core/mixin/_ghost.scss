@@ -1,6 +1,8 @@
+@use "sass:map";
+
 /*
 ---
-name: _ghost()
+name: ghost()
 category:
   - core/mixin
 ---
@@ -14,9 +16,11 @@ category:
 //   color        hex
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-ghost-btn {
-  @include _btn();
-  @include _ghost((
+  @include core.btn();
+  @include core.ghost((
     border-size: 1px,
     color: #fff,
   ));
@@ -30,8 +34,8 @@ category:
 ```
 */
 
-@mixin _ghost($params: ()) {
-  $params: map-merge(
+@mixin ghost($params: ()) {
+  $params: map.merge(
     (
       'border-size' : 1px,
       'color'       : var(--_color-white),
@@ -40,9 +44,9 @@ category:
   );
 
   background-color: transparent !important;
-  border: map-get($params, 'border-size') transparent;
+  border: map.get($params, 'border-size') transparent;
 
-  @each $color in map-get($params, 'color') {
+  @each $color in map.get($params, 'color') {
     border-color: $color;
     color: $color;
   }

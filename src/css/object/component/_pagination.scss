@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-pagination
@@ -19,6 +21,6 @@ Paginatiion component
 ```
 */
 
-.#{ $_prefix }c-pagination {
-  @include _pagination();
+.c-pagination {
+  @include abstract.pagination();
 }

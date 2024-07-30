@@ -1,6 +1,6 @@
 /*
 ---
-name: _hover()
+name: hover()
 category:
   - core/mixin
 ---
@@ -8,15 +8,17 @@ Hover event helper
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 img {
-  @include _hover() {
+  @include core.hover() {
     opacity: .8;
   }
 }
 ```
 */
 
-@mixin _hover() {
+@mixin hover() {
   @media (hover: hover) and (pointer: fine) {
     &:hover, &:active, &:focus {
       @content;

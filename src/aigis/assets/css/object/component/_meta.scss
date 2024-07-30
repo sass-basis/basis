@@ -1,5 +1,7 @@
-.#{ $_prefix }c-meta {
-  @include _set-font-size-level(-1);
+@use "../../../../../css/core";
+
+.c-meta {
+  @include core.set-font-size-level(-1);
   color: var(--_color-gray);
 
   a {

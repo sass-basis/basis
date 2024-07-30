@@ -1,6 +1,8 @@
-.#{ $_prefix }p-local-nav {
+@use "../../../../../css/core";
+
+.p-local-nav {
   ul {
-    @include _list-unstyled();
+    @include core.list-unstyled();
   }
 
   li {
@@ -17,7 +19,7 @@
     color: var(--_light-color-text);
     text-decoration: none;
 
-    @include _hover() {
+    @include core.hover() {
       text-decoration: underline;;
     }
   }

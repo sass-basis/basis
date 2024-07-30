@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-entries
@@ -17,6 +19,6 @@ Entries component
 ```
 */
 
-.#{ $_prefix }c-entries {
-  @include _entries();
+.c-entries {
+  @include abstract.entries();
 }

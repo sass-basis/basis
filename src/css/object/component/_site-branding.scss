@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-site-branding
@@ -15,6 +17,6 @@ Site branding component
 ```
 */
 
-.#{ $_prefix }c-site-branding {
-  @include _site-branding();
+.c-site-branding {
+  @include abstract.site-branding();
 }

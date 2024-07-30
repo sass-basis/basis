@@ -1,6 +1,10 @@
+@use "sass:map";
+@use "sass:list";
+@use "../variable";
+
 /*
 ---
-name: _size-prefix()
+name: size-prefix()
 category:
   - core/function
 ---
@@ -14,15 +18,17 @@ Return prefix for the device size
 // @return  string
 //
 
-$prefix: _size-prefix(md); // -> --md
+@use "node_modules/sass-basis/src/css/core";
+
+$prefix: core.size-prefix(md); // -> --md
 ```
 */
 
-@function _size-prefix($size) {
+@function size-prefix($size) {
   $prefix: '-';
 
-  $sizes-keys: map-keys($_sizes);
-  $min-key: nth($sizes-keys, 1);
+  $sizes-keys: map.keys(variable.$sizes);
+  $min-key: list.nth($sizes-keys, 1);
   @if ($min-key != $size) {
     $prefix: '--' + $size;
   }

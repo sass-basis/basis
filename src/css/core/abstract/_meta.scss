@@ -1,6 +1,8 @@
+@use "../mixin";
+
 /*
 ---
-name: _meta()
+name: meta()
 category:
   - core/abstract
 ---
@@ -8,8 +10,10 @@ Abstract meta component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-meta {
-  @include _meta();
+  @include core.meta();
 }
 ```
 
@@ -23,8 +27,8 @@ Abstract meta component
 ```
 */
 
-@mixin _meta() {
-  @include _list-unstyled();
+@mixin meta() {
+  @include mixin.list-unstyled();
 
   &__item {
     display: inline;

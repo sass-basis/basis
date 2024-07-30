@@ -1,6 +1,9 @@
-.#{ $_prefix }c-responsive-container-16-9,
-.#{ $_prefix }c-responsive-container-4-3 {
-  @include _responsive-container();
+@use "sass:math";
+@use "../../core/abstract";
+
+.c-responsive-container-16-9,
+.c-responsive-container-4-3 {
+  @include abstract.responsive-container();
 }
 
 /*
@@ -20,8 +23,8 @@ Responsive container component
 ```
 */
 
-.#{ $_prefix }c-responsive-container-16-9 {
-  padding-bottom: (9 / 16 * 100%);
+.c-responsive-container-16-9 {
+  padding-bottom: (math.div(9, 16) * 100%);
 }
 
 /*
@@ -41,6 +44,6 @@ Responsive container component
 ```
 */
 
-.#{ $_prefix }c-responsive-container-4-3 {
-  padding-bottom: (3 / 4 * 100%);
+.c-responsive-container-4-3 {
+  padding-bottom: (math.div(3, 4) * 100%);
 }

@@ -1,140 +1,103 @@
-$_half-leading: .25;
-
-@import '../src/css/basis-core';
+@use "sass:map";
+@use '../src/css/core';
 @import 'api/api';
 
-@include _test('[function] _size-prefix()') {
-  @include _assert-equals('-', _size-prefix('sm'));
-  @include _assert-equals('--md', _size-prefix('md'));
-  @include _assert-equals('--lg', _size-prefix('lg'));
-  @include _assert-equals('--xl', _size-prefix('xl'));
+@include _test('[function] size-prefix()') {
+  @include _assert-equals('-', core.size-prefix('sm'));
+  @include _assert-equals('--md', core.size-prefix('md'));
+  @include _assert-equals('--lg', core.size-prefix('lg'));
+  @include _assert-equals('--xl', core.size-prefix('xl'));
 }
 
-@include _test('[function] _gcd()') {
-  @include _assert-equals(2, _gcd(2, 12));
-  @include _assert-equals(4, _gcd(4, 12));
-  @include _assert-equals(1, _gcd(1, 12));
-  @include _assert-equals(1, _gcd(5, 12));
+@include _test('[function] gcd()') {
+  @include _assert-equals(2, core.gcd(2, 12));
+  @include _assert-equals(4, core.gcd(4, 12));
+  @include _assert-equals(1, core.gcd(1, 12));
+  @include _assert-equals(1, core.gcd(5, 12));
 }
 
-@include _test('[function] _px2em()') {
-  $em: _px2em(16px, 16px);
-  @include _assert-equals(1em, $em);
-
-  $em: _px2em(16px, 10px);
-  @include _assert-equals(1.6em, $em);
+@include _test('[function] strip-unit()') {
+  @include _assert-equals(1, core.strip-unit(1rem));
+  @include _assert-equals(10, core.strip-unit(10px));
 }
 
-@include _test('[function] _px2rem()') {
-  $rem: _px2rem(16px, 16px);
-  @include _assert-equals(1rem, $rem);
-
-  $rem: _px2rem(16px, 10px);
-  @include _assert-equals(1.6rem, $rem);
+@include _test('[function] is-length()') {
+  @include _assert-equals(true, core.is-length(0));
+  @include _assert-equals(false, core.is-length(1));
+  @include _assert-equals(true, core.is-length(1px));
+  @include _assert-equals(true, core.is-length(1%));
+  @include _assert-equals(true, core.is-length(auto));
+  @include _assert-equals(false, core.is-length('test'));
+  @include _assert-equals(false, core.is-length('1px'));
+  @include _assert-equals(true, core.is-length(calc(50% - 10px)));
 }
 
-@include _test('[function] _rem2px()') {
-  $rem: _rem2px(1rem, 16px);
-  @include _assert-equals(16px, $rem);
-
-  $rem: _rem2px(1rem, 10px);
-  @include _assert-equals(10px, $rem);
+@include _test('[function] is-int()') {
+  @include _assert-equals(true, core.is-int(0));
+  @include _assert-equals(true, core.is-int(1));
+  @include _assert-equals(false, core.is-int(0.5));
+  @include _assert-equals(false, core.is-int(-1));
+  @include _assert-equals(false, core.is-int(1px));
+  @include _assert-equals(false, core.is-int(1%));
+  @include _assert-equals(false, core.is-int('test'));
+  @include _assert-equals(false, core.is-int('1'));
+  @include _assert-equals(false, core.is-int(calc(50% - 10px)));
 }
 
-@include _test('[function] _strip-unit()') {
-  @include _assert-equals(1, _strip-unit(1rem));
-  @include _assert-equals(10, _strip-unit(10px));
+@include _test('[function] is-number()') {
+  @include _assert-equals(true, core.is-number(0));
+  @include _assert-equals(true, core.is-number(1));
+  @include _assert-equals(true, core.is-number(0.5));
+  @include _assert-equals(true, core.is-number(-1));
+  @include _assert-equals(false, core.is-number(1px));
+  @include _assert-equals(false, core.is-number(1%));
+  @include _assert-equals(false, core.is-number('test'));
+  @include _assert-equals(false, core.is-number('1'));
+  @include _assert-equals(false, core.is-number(calc(50% - 10px)));
 }
 
-@include _test('[variable] _transition-duration') {
-  @include _assert-equals($_transition-duration, $_transition-duration);
+@include _test('[function] is-null()') {
+  @include _assert-equals(false, core.is-null(''));
+  @include _assert-equals(false, core.is-null(false));
+  @include _assert-equals(false, core.is-null(0));
+  @include _assert-equals(false, core.is-null('null'));
+  @include _assert-equals(true, core.is-null(null));
 }
 
-@include _test('[function] _is-length()') {
-  @include _assert-equals(true, _is-length(0));
-  @include _assert-equals(false, _is-length(1));
-  @include _assert-equals(true, _is-length(1px));
-  @include _assert-equals(true, _is-length(1%));
-  @include _assert-equals(true, _is-length(auto));
-  @include _assert-equals(false, _is-length('test'));
-  @include _assert-equals(false, _is-length('1px'));
-  @include _assert-equals(true, _is-length(calc(50% - 10px)));
+@include _test('[function] min()') {
+  @include _assert-equals(map.get(core.$sizes, sm), core.min(sm));
+  @include _assert-equals(map.get(core.$sizes, md), core.min(md));
+  @include _assert-equals(map.get(core.$sizes, lg), core.min(lg));
+  @include _assert-equals(map.get(core.$sizes, xl), core.min(xl));
+  @include _assert-equals(false, core.min(dummy));
+  @include _assert-equals(0, core.min(0));
+  @include _assert-equals(10px, core.min(10px));
+  @include _assert-equals(10%, core.min(10%));
+  @include _assert-equals(10em, core.min(10em));
 }
 
-@include _test('[function] _is-int()') {
-  @include _assert-equals(true, _is-int(0));
-  @include _assert-equals(true, _is-int(1));
-  @include _assert-equals(false, _is-int(0.5));
-  @include _assert-equals(false, _is-int(-1));
-  @include _assert-equals(false, _is-int(1px));
-  @include _assert-equals(false, _is-int(1%));
-  @include _assert-equals(false, _is-int('test'));
-  @include _assert-equals(false, _is-int('1'));
-  @include _assert-equals(false, _is-int(calc(50% - 10px)));
+@include _test('[function] max()') {
+  @include _assert-equals(map.get(core.$sizes, md) - .1px, core.max(sm));
+  @include _assert-equals(map.get(core.$sizes, lg) - .1px, core.max(md));
+  @include _assert-equals(map.get(core.$sizes, xl) - .1px, core.max(lg));
+  @include _assert-equals(false, core.max(xl));
+  @include _assert-equals(false, core.max(dummy));
+  @include _assert-equals(0, core.max(0));
+  @include _assert-equals(10px, core.max(10px));
+  @include _assert-equals(10%, core.max(10%));
+  @include _assert-equals(10em, core.max(10em));
 }
 
-@include _test('[function] _is-number()') {
-  @include _assert-equals(true, _is-number(0));
-  @include _assert-equals(true, _is-number(1));
-  @include _assert-equals(true, _is-number(0.5));
-  @include _assert-equals(true, _is-number(-1));
-  @include _assert-equals(false, _is-number(1px));
-  @include _assert-equals(false, _is-number(1%));
-  @include _assert-equals(false, _is-number('test'));
-  @include _assert-equals(false, _is-number('1'));
-  @include _assert-equals(false, _is-number(calc(50% - 10px)));
+@include _test('[function] prev-size-key()') {
+  @include _assert-equals(false, core.prev-size-key(sm));
+  @include _assert-equals(sm, core.prev-size-key(md));
+  @include _assert-equals(md, core.prev-size-key(lg));
+  @include _assert-equals(lg, core.prev-size-key(xl));
 }
 
-@include _test('[function] _space()') {
-  @include _assert-equals(0.75rem, _space(.5));
-  @include _assert-equals(1.5rem, _space(1));
-  @include _assert-equals(4.5rem, _space(3));
-  @include _assert-equals(0, _space(0));
-  @include _assert-equals(-1.5rem, _space(-1));
-}
-
-@include _test('[function] _is-null()') {
-  @include _assert-equals(false, _is-null(''));
-  @include _assert-equals(false, _is-null(false));
-  @include _assert-equals(false, _is-null(0));
-  @include _assert-equals(false, _is-null('null'));
-  @include _assert-equals(true, _is-null(null));
-}
-
-@include _test('[function] _min()') {
-  @include _assert-equals(map-get($_sizes, sm), _min(sm));
-  @include _assert-equals(map-get($_sizes, md), _min(md));
-  @include _assert-equals(map-get($_sizes, lg), _min(lg));
-  @include _assert-equals(map-get($_sizes, xl), _min(xl));
-  @include _assert-equals(false, _min(dummy));
-  @include _assert-equals(0, _min(0));
-  @include _assert-equals(10px, _min(10px));
-  @include _assert-equals(10%, _min(10%));
-  @include _assert-equals(10em, _min(10em));
-}
-
-@include _test('[function] _max()') {
-  @include _assert-equals(map-get($_sizes, md) - .1px, _max(sm));
-  @include _assert-equals(map-get($_sizes, lg) - .1px, _max(md));
-  @include _assert-equals(map-get($_sizes, xl) - .1px, _max(lg));
-  @include _assert-equals(false, _max(xl));
-  @include _assert-equals(false, _max(dummy));
-  @include _assert-equals(0, _max(0));
-  @include _assert-equals(10px, _max(10px));
-  @include _assert-equals(10%, _max(10%));
-  @include _assert-equals(10em, _max(10em));
-}
-
-@include _test('[function] _prev-size-key()') {
-  @include _assert-equals(false, _prev-size-key(sm));
-  @include _assert-equals(sm, _prev-size-key(md));
-  @include _assert-equals(md, _prev-size-key(lg));
-  @include _assert-equals(lg, _prev-size-key(xl));
-}
-
-@include _test('[function] _next-size-key()') {
-  @include _assert-equals(md, _next-size-key(sm));
-  @include _assert-equals(lg, _next-size-key(md));
-  @include _assert-equals(xl, _next-size-key(lg));
-  @include _assert-equals(false, _next-size-key(xl));
+@include _test('[function] next-size-key()') {
+  @include _assert-equals(md, core.next-size-key(sm));
+  @include _assert-equals(lg, core.next-size-key(md));
+  @include _assert-equals(xl, core.next-size-key(lg));
+  @include _assert-equals(false, core.next-size-key(xl));
 }

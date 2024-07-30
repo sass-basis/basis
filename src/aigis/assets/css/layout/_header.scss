@@ -1,6 +1,6 @@
-.#{ $_prefix }l-header {
+.l-header {
   z-index: 1;
-  background-color: #00dae6;
+  background-color: var(--color-primary);
   color: var(--_color-white);
   overflow: hidden;
 
@@ -9,15 +9,15 @@
     text-decoration: none;
   }
 
-  > .#{ $_prefix }c-container {
+  > .c-container {
     position: relative;
   }
 
-  .#{ $_prefix }c-site-branding {
+  .c-site-branding {
     padding: var(--_padding-1) 0;
   }
 
-  .#{ $_prefix }c-hamburger-btn {
+  .c-hamburger-btn {
     position: absolute;
     top: 50%;
     right: var(--_s1);

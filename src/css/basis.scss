@@ -7,11 +7,12 @@
  * License: MIT
  */
 
-@import 'basis-core';
+@forward 'core';
 
-@import 'foundation/settings';
-@import 'foundation/base';
+@use 'core';
 
-@import 'object/component/component';
+@use 'foundation/settings';
+@use 'foundation/base';
 
-@import 'object/utility/utility';
+@use 'object/component';
+@use 'object/utility';

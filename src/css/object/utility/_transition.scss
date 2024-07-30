@@ -1,3 +1,5 @@
+@use "../../core/mixin";
+
 /*
 ---
 name: .u-transition
@@ -19,6 +21,6 @@ Transition utility
 ```
 */
 
-.#{ $_prefix }u-transition {
-  @include _transition(all);
+.u-transition {
+  @include mixin.transition(all);
 }

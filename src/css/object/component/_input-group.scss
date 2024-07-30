@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-input-group
@@ -19,6 +21,6 @@ Input group component
 ```
 */
 
-.#{ $_prefix }c-input-group {
-  @include _input-group();
+.c-input-group {
+  @include abstract.input-group();
 }

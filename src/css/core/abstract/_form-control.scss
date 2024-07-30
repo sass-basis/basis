@@ -1,6 +1,8 @@
+@use "../mixin";
+
 /*
 ---
-name: _form-control()
+name: form-control()
 category:
   - core/abstract
   - core/abstract/form
@@ -9,8 +11,10 @@ Abstract form control component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-form-control {
-  @include _form-control();
+  @include core.form-control();
 }
 ```
 
@@ -20,12 +24,12 @@ Abstract form control component
 ```
 */
 
-@mixin _form-control() {
-  @include _form-control-base-border();
-  @include _form-control-base-padding();
+@mixin form-control() {
   background-color: var(--_color-white);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .035);
   max-width: 100%;
+  @include mixin.form-control-base-padding();
+  @include mixin.form-control-base-border();
 
   &:disabled {
     background-color: var(--_lightest-color-gray);

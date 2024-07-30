@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-breadcrumbs
@@ -16,6 +18,6 @@ Breadcrumbs component
 ```
 */
 
-.#{ $_prefix }c-breadcrumbs {
-  @include _breadcrumbs();
+.c-breadcrumbs {
+  @include abstract.breadcrumbs();
 }

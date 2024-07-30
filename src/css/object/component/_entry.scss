@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-entry
@@ -20,6 +22,6 @@ Entry component
 ```
 */
 
-.#{ $_prefix }c-entry {
-  @include _entry();
+.c-entry {
+  @include abstract.entry();
 }

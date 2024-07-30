@@ -1,6 +1,6 @@
 /*
 ---
-name: _hidden()
+name: hidden()
 category:
   - core/mixin
   - core/mixin/visibility
@@ -12,17 +12,19 @@ Hidden helper
 
 ### scss
 ```scss
-.c-foo {
-  @include _hidden();
+@use "node_modules/sass-basis/src/css/core";
 
-  @include _media-min(md) {
-      @include _visible();
+.c-foo {
+  @include core.hidden();
+
+  @include core.media-min(md) {
+      @include core.visible();
   }
 }
 ```
 */
 
-@mixin _hidden() {
+@mixin hidden() {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   visibility: hidden !important;
@@ -31,7 +33,7 @@ Hidden helper
 
 /*
 ---
-name: _visible()
+name: visible()
 category:
   - core/mixin
   - core/mixin/visibility
@@ -43,17 +45,19 @@ Visible helper
 
 ### scss
 ```scss
-.c-foo {
-  @include _hidden();
+@use "node_modules/sass-basis/src/css/core";
 
-  @include _media-min(md) {
-      @include _visible();
+.c-foo {
+  @include core.hidden();
+
+  @include core.media-min(md) {
+      @include core.visible();
   }
 }
 ```
 */
 
-@mixin _visible() {
+@mixin visible() {
   position: static !important;
   clip: auto !important;
   visibility: visible !important;
@@ -62,7 +66,7 @@ Visible helper
 
 /*
 ---
-name: _invisible()
+name: invisible()
 category:
   - core/mixin
   - core/mixin/visibility
@@ -71,12 +75,14 @@ Invisible helper
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _invisible();
+  @include core.invisible();
 }
 ```
 */
 
-@mixin _invisible() {
+@mixin invisible() {
   display: none !important;
 }

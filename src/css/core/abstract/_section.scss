@@ -1,6 +1,6 @@
 /*
 ---
-name: _section()
+name: section()
 category:
   - core/abstract
 ---
@@ -8,18 +8,20 @@ Abstract section component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-section {
-  @include _section();
+  @include core.section();
   padding: var(--_padding3) 0;
 
   &__title {
     margin-bottom: var(--_margin2);
-    @include _set-font-size-level(3);
+    @include core.set-font-size-level(3);
     text-align: center;
   }
 
   &__content {
-    @include _set-content-level(1);
+    @include core.set-content-level(1);
   }
 }
 ```
@@ -37,7 +39,7 @@ Abstract section component
 ```
 */
 
-@mixin _section() {
+@mixin section() {
   &__title {
     margin-top: 0;
   }

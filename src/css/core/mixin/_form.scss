@@ -1,6 +1,8 @@
+@use "../mixin/transition";
+
 /*
 ---
-name: _form-control-base-padding()
+name: form-control-base-padding()
 category:
   - core/mixin
   - core/mixin/form
@@ -9,20 +11,22 @@ Sets padding for form controls
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 input[type="text"],
 select {
-  @include _form-control-base-padding();
+  @include core.form-control-base-padding();
 }
 ```
 */
 
-@mixin _form-control-base-padding() {
+@mixin form-control-base-padding() {
   padding: var(--_padding-2);
 }
 
 /*
 ---
-name: _form-control-base-border()
+name: form-control-base-border()
 category:
   - core/mixin
   - core/mixin/form
@@ -31,20 +35,22 @@ Sets border for form controls
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 input[type="text"],
 select {
-  @include _form-control-base-border();
+  @include core.form-control-base-border();
 }
 ```
 */
 
-@mixin _form-control-base-border() {
+@mixin form-control-base-border() {
   --_border-radius: var(--_global--border-radius);
 
   border: 1px solid var(--_form-control-border-color);
   border-radius: var(--_border-radius);
   outline: 0;
-  @include _transition(border);
+  @include transition.transition(border);
 
   &:hover {
     border-color: var(--_form-control-border-color-hover);

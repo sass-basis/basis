@@ -1,6 +1,10 @@
+@use "sass:math";
+@use "sass:map";
+@use "../mixin";
+
 /*
 ---
-name: _hamburger-btn()
+name: hamburger-btn()
 category:
   - core/abstract
 ---
@@ -8,8 +12,10 @@ Abstract hamburger button component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-hamburger-btn {
-  @include _hamburger-btn((
+  @include core.hamburger-btn((
     height: 16px,
     width: 22px,
     bar-height: 2px,
@@ -41,8 +47,8 @@ new BasisHamburgerBtn({
 ```
 */
 
-@mixin _hamburger-btn($params: ()) {
-  $params: map-merge(
+@mixin hamburger-btn($params: ()) {
+  $params: map.merge(
     (
       height: 16px,
       width: 22px,
@@ -52,9 +58,9 @@ new BasisHamburgerBtn({
     $params
   );
 
-  $height: map-get($params, 'height');
-  $width: map-get($params, 'width');
-  $bar-height: map-get($params, 'bar-height');
+  $height: map.get($params, 'height');
+  $width: map.get($params, 'width');
+  $bar-height: map.get($params, 'bar-height');
 
   display: inline-block;
   cursor: pointer;
@@ -79,9 +85,9 @@ new BasisHamburgerBtn({
     left: 0;
     display: block;
     height: $bar-height;
-    @include _transition(transform);
+    @include mixin.transition(transform);
 
-    @each $color in map-get($params, 'color') {
+    @each $color in map.get($params, 'color') {
       background-color: $color;
     }
 
@@ -90,7 +96,7 @@ new BasisHamburgerBtn({
     }
 
     &:nth-of-type(2) {
-      top: ($height / 2 - $bar-height / 2);
+      top: (math.div($height, 2) - math.div($bar-height, 2));
     }
 
     &:nth-of-type(3) {

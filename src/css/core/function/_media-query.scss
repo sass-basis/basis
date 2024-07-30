@@ -1,6 +1,10 @@
+@use "sass:map";
+@use "sass:meta";
+@use "../variable";
+
 /*
 ---
-name: _min()
+name: min()
 category:
   - core/function
   - core/function/media-query
@@ -17,16 +21,18 @@ Return min size.
 // @return length|false
 //
 
-@media (min-width: _min(md)) {
+@use "node_modules/sass-basis/src/css/core";
+
+@media (min-width: core.min(md)) {
   ...
 }
 ```
 */
 
-@function _min($size) {
-  @if (null != map-get($_sizes, $size)) {
-    @return map-get($_sizes, $size);
-  } @else if ('number' == type-of($size)) {
+@function min($size) {
+  @if (null != map.get(variable.$sizes, $size)) {
+    @return map.get(variable.$sizes, $size);
+  } @else if ('number' == meta.type-of($size)) {
     @return $size;
   }
   @return false;
@@ -34,7 +40,7 @@ Return min size.
 
 /*
 ---
-name: _max()
+name: max()
 category:
   - core/function
   - core/function/media-query
@@ -51,18 +57,20 @@ Return max size.
 // @return length|false
 //
 
-@media (max-width: _max(md)) {
+@use "node_modules/sass-basis/src/css/core";
+
+@media (max-width: core.max(md)) {
   ...
 }
 ```
 */
 
-@function _max($size) {
-  $next_size: _next-size-key($size);
+@function max($size) {
+  $next_size: next-size-key($size);
   @if (false != $next_size) {
-    $max: map-get($_sizes, $next_size) - .1;
+    $max: map.get(variable.$sizes, $next_size) - .1;
     @return $max;
-  } @else if ('number' == type-of($size)) {
+  } @else if ('number' == meta.type-of($size)) {
     @return $size;
   }
   @return false;
@@ -70,7 +78,7 @@ Return max size.
 
 /*
 ---
-name: _prev-size-key()
+name: prev-size-key()
 category:
   - core/function
   - core/function/media-query
@@ -84,13 +92,15 @@ Return prev key of `$_size`
 // @return size
 //
 
-$prev_size_key: _prev-size-key(md); // => sm
+@use "node_modules/sass-basis/src/css/core";
+
+$prev_size_key: core.prev-size-key(md); // => sm
 ```
 */
 
-@function _prev-size-key($size) {
+@function prev-size-key($size) {
   $prev: false;
-  @each $key, $value in $_sizes {
+  @each $key, $value in variable.$sizes {
     @if ($key == $size) {
       @return $prev;
     }
@@ -101,7 +111,7 @@ $prev_size_key: _prev-size-key(md); // => sm
 
 /*
 ---
-name: _next-size-key()
+name: next-size-key()
 category:
   - core/function
   - core/function/media-query
@@ -115,13 +125,15 @@ Return next key of `$_size`
 // @return size
 //
 
-$next_size_key: _next-size-key(md); // => lg
+@use "node_modules/sass-basis/src/css/core";
+
+$next_size_key: core.next-size-key(md); // => lg
 ```
 */
 
-@function _next-size-key($size) {
+@function next-size-key($size) {
   $next: false;
-  @each $key, $value in $_sizes {
+  @each $key, $value in variable.$sizes {
     @if ($key == $size) {
       $next: $key;
     } @else if (false != $next) {

@@ -1,6 +1,10 @@
+@use "sass:math";
+@use "../function";
+@use "./shape" as *;
+
 /*
 ---
-name: _balloon-triangle()
+name: balloon-triangle()
 category:
   - core/mixin
 ---
@@ -16,8 +20,10 @@ Generate balloon triangle
 // @param  hex     $border-color
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _balloon-triangle(top, 10px, #fff, 1px, #ccc);
+  @include core.balloon-triangle(top, 10px, #fff, 1px, #ccc);
   position: relative;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -25,11 +31,11 @@ Generate balloon triangle
 ```
 */
 
-@mixin _balloon-triangle($position, $size, $background-color, $border-size: null, $border-color: null) {
+@mixin balloon-triangle($position, $size, $background-color, $border-size: null, $border-color: null) {
   $before: ($size * -1);
   $after: $before;
 
-  @if (not _is-null($border-size)) {
+  @if (not function.is-null($border-size)) {
     $after: $after + $border-size + 1;
   }
 
@@ -38,34 +44,34 @@ Generate balloon triangle
     display: block;
 
     @if ('top' == $position or 'bottom' == $position) {
-      margin-left: (($size / 2) * -1);
+      margin-left: (math.div($size, 2) * -1);
     } @else if ('right' == $position or 'left' == $position) {
-      margin-top: (($size / 2) * -1);
+      margin-top: (math.div($size, 2) * -1);
     }
   }
 
-  @if (not _is-null($border-size) and not _is-null($border-color)) {
+  @if (not function.is-null($border-size) and not function.is-null($border-color)) {
     &::before {
       @if ('top' == $position) {
         position: absolute;
         top: $before;
         left: 50%;
-        @include _triangle-top($size, $size, $border-color);
+        @include triangle-top($size, $size, $border-color);
       } @else if ('right' == $position) {
         position: absolute;
         top: 50%;
         right: $before;
-        @include _triangle-right($size, $size, $border-color);
+        @include triangle-right($size, $size, $border-color);
       } @else if ('bottom' == $position) {
         position: absolute;
         bottom: $before;
         left: 50%;
-        @include _triangle-bottom($size, $size, $border-color);
+        @include triangle-bottom($size, $size, $border-color);
       } @else if ('left' == $position) {
         position: absolute;
         top: 50%;
         left: $before;
-        @include _triangle-left($size, $size, $border-color);
+        @include triangle-left($size, $size, $border-color);
       }
     }
   }
@@ -75,22 +81,22 @@ Generate balloon triangle
       position: absolute;
       top: $after;
       left: 50%;
-      @include _triangle-top($size, $size, $background-color);
+      @include triangle-top($size, $size, $background-color);
     } @else if ('right' == $position) {
       position: absolute;
       top: 50%;
       right: $after;
-      @include _triangle-right($size, $size, $background-color);
+      @include triangle-right($size, $size, $background-color);
     } @else if ('bottom' == $position) {
       position: absolute;
       bottom: $after;
       left: 50%;
-      @include _triangle-bottom($size, $size, $background-color);
+      @include triangle-bottom($size, $size, $background-color);
     } @else if ('left' == $position) {
       position: absolute;
       top: 50%;
       left: $after;
-      @include _triangle-left($size, $size, $background-color);
+      @include triangle-left($size, $size, $background-color);
     }
   }
 }

@@ -1,6 +1,8 @@
+@use "../mixin";
+
 /*
 ---
-name: _select()
+name: select()
 category:
   - core/abstract
   - core/abstract/form
@@ -9,8 +11,10 @@ Abstract selectbox component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-select {
-  @include _select();
+  @include core.select();
 }
 ```
 
@@ -27,7 +31,7 @@ Abstract selectbox component
 ```
 */
 
-@mixin _select() {
+@mixin select() {
   position: relative;
   display: inline-block;
 
@@ -41,11 +45,11 @@ Abstract selectbox component
     appearance: none;
     display:inline-block;
     cursor: pointer;
-    @include _form-control-base-border();
     background-color: transparent;
     line-height: 1;
     max-width: 100%;
     padding: var(--_padding-1) var(--_padding2) var(--_padding-1) var(--_padding-1);
+    @include mixin.form-control-base-border();
 
     &:focus {
       & + .smf-select-control__toggle {
@@ -78,7 +82,7 @@ Abstract selectbox component
       right: calc(var(--_s-1) - 6px);
       content: '';
       display: block;
-      @include _square(6px);
+      @include mixin.square(6px);
       border-style: solid;
       border-color: currentColor;
       border-width: 0 1px 1px 0;

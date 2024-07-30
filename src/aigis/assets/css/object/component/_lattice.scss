@@ -1,11 +1,13 @@
+@use "../../../../../css/core";
+
 .c-lattice {
-  @include _lattice();
+  @include core.lattice();
 
   &__col {
-    @include _lattice__col();
+    @include core.lattice__col();
 
     &--1-3 {
-      @include _lattice__col(1, 3);
+      @include core.lattice__col(1, 3);
     }
   }
 }

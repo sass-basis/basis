@@ -1,9 +1,0 @@
-.#{ $_prefix }c-label {
-  display: inline-block;
-  background-color: var(--_color-gray);
-  border-radius: 2px;
-  color: var(--_color-white);
-  @include _set-font-size-level(-1);
-  padding: 4px 10px;
-  vertical-align: middle;
-}

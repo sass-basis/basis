@@ -1,6 +1,8 @@
+@use "sass:list";
+
 /*
 ---
-name: _transition()
+name: transition()
 category:
   - core/mixin
 ---
@@ -12,12 +14,14 @@ Transition helper
 // @param  string  $property
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 a {
-  @include _transition(color, font-size);
+  @include core.transition(color, font-size);
   color: #f00;
   font-size: 12px;
 
-  @include _hover() {
+  @include core.hover() {
     color: #f9c;
     font-size: 14px;
   }
@@ -25,16 +29,16 @@ a {
 ```
 */
 
-@mixin _transition($property: all, $property2...) {
+@mixin transition($property: all, $property2...) {
   --_transition-duration: var(--_global--transition-duration);
   --_transition-function-timing: var(--_global--transition-function-timing);
   --_transition-delay: var(--_global--transition-delay);
 
-  $properties: join($property, $property2);
+  $properties: list.join($property, $property2);
   $transitions: ();
 
   @each $property in $properties {
-    $transitions: append(
+    $transitions: list.append(
       $transitions,
       ($property var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay)),
       comma

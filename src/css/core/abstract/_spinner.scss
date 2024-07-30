@@ -1,6 +1,11 @@
+@use "sass:map";
+@use "sass:list";
+@use "../function";
+@use "../mixin";
+
 /*
 ---
-name: _circle-spinner()
+name: circle-spinner()
 category:
   - core/abstract
   - core/abstract/spinner
@@ -18,8 +23,10 @@ Abstract circle spinner component
 //   duration     seconds
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-circle-spinner {
-  @include _circle-spinner((
+  @include core.circle-spinner((
     size: 20px,
     color: var(--_light-color-gray),
     border-size: 3px,
@@ -35,8 +42,8 @@ Abstract circle spinner component
 ```
 */
 
-@mixin _circle-spinner($params: ()) {
-  $params: map-merge(
+@mixin circle-spinner($params: ()) {
+  $params: map.merge(
     (
       size: 20px,
       color: var(--_light-color-gray),
@@ -48,23 +55,23 @@ Abstract circle spinner component
     $params
   );
 
-  $size: map-get($params, 'size');
-  $border-size: map-get($params, 'border-size');
-  $delay: map-get($params, 'delay');
-  $duration: map-get($params, 'duration');
+  $size: map.get($params, 'size');
+  $border-size: map.get($params, 'border-size');
+  $delay: map.get($params, 'delay');
+  $duration: map.get($params, 'duration');
 
-  $animation-name: _sanitize-animation-name(_circle-spinner- + zip(map-values($params)));
+  $animation-name: function.sanitize-animation-name(_circle-spinner- + list.zip(map.values($params)));
 
   display: inline-block;
-  @include _circle($size);
+  @include mixin.circle($size);
   border: $border-size solid transparent;
   animation: $animation-name $duration linear $delay infinite;
 
-  @each $color in map-get($params, 'color') {
+  @each $color in map.get($params, 'color') {
     border-color: $color;
   }
 
-  @each $accent-color in map-get($params, 'accent-color') {
+  @each $accent-color in map.get($params, 'accent-color') {
     border-top-color: $accent-color;
   }
 
@@ -80,7 +87,7 @@ Abstract circle spinner component
 
 /*
 ---
-name: _dots-spinner()
+name: dots-spinner()
 category:
   - core/abstract
   - core/abstract/spinner
@@ -98,8 +105,10 @@ Abstract dots spinner component
 //   scale        int
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-dots-spinner {
-  @include _dots-spinner((
+  @include core.dots-spinner((
     size: 10px,
     color: var(--_color-gray),
     delay: 0s,
@@ -119,8 +128,8 @@ Abstract dots spinner component
 ```
 */
 
-@mixin _dots-spinner($params: ()) {
-  $params: map-merge(
+@mixin dots-spinner($params: ()) {
+  $params: map.merge(
     (
       size: 10px,
       color: var(--_color-gray),
@@ -131,22 +140,22 @@ Abstract dots spinner component
     $params
   );
 
-  $size: map-get($params, 'size');
-  $delay: map-get($params, 'delay');
-  $duration: map-get($params, 'duration');
-  $scale: map-get($params, 'scale');
+  $size: map.get($params, 'size');
+  $delay: map.get($params, 'delay');
+  $duration: map.get($params, 'duration');
+  $scale: map.get($params, 'scale');
 
-  $animation-name: _sanitize-animation-name(_dots-spinner- + zip(map-values($params)));
+  $animation-name: function.sanitize-animation-name(_dots-spinner- + list.zip(map.values($params)));
 
   display: inline-block;
   font-size: 0;
 
   &__dot {
-    @include _circle($size);
+    @include mixin.circle($size);
     display: inline-block;
     animation: $animation-name $duration ease-in $delay infinite;
 
-    @each $color in map-get($params, 'color') {
+    @each $color in map.get($params, 'color') {
       background-color: $color;
     }
 
@@ -196,8 +205,10 @@ Abstract pulse spinner component
 //   scale     int
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-pulse-spinner {
-  @include _pulse-spinner((
+  @include core.pulse-spinner((
     height: 16px,
     width: 5px,
     color: var(--_color-gray),
@@ -218,8 +229,8 @@ Abstract pulse spinner component
 ```
 */
 
-@mixin _pulse-spinner($params: ()) {
-  $params: map-merge(
+@mixin pulse-spinner($params: ()) {
+  $params: map.merge(
     (
       height: 16px,
       width: 5px,
@@ -231,13 +242,13 @@ Abstract pulse spinner component
     $params
   );
 
-  $height: map-get($params, 'height');
-  $width: map-get($params, 'width');
-  $delay: map-get($params, 'delay');
-  $duration: map-get($params, 'duration');
-  $scale: map-get($params, 'scale');
+  $height: map.get($params, 'height');
+  $width: map.get($params, 'width');
+  $delay: map.get($params, 'delay');
+  $duration: map.get($params, 'duration');
+  $scale: map.get($params, 'scale');
 
-  $animation-name: _sanitize-animation-name(_pulse-spinner- + zip(map-values($params)));
+  $animation-name: function.sanitize-animation-name(_pulse-spinner- + list.zip(map.values($params)));
 
   display: inline-flex;
   justify-content: space-between;
@@ -248,7 +259,7 @@ Abstract pulse spinner component
     display: block;
     animation: $animation-name $duration ease-in $delay infinite;
 
-    @each $color in map-get($params, 'color') {
+    @each $color in map.get($params, 'color') {
       background-color: $color;
     }
 

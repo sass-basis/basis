@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-meta
@@ -17,6 +19,6 @@ Meta component
 ```
 */
 
-.#{ $_prefix }c-meta {
-  @include _meta();
+.c-meta {
+  @include abstract.meta();
 }

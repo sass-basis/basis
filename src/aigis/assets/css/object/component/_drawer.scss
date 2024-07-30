@@ -1,4 +1,6 @@
-.#{ $_prefix }l-body > .#{ $_prefix }c-drawer {
+@use "../../../../../css/core";
+
+.l-body > .c-drawer {
   background-color: var(--_color-text);
   padding: var(--_padding-1);
   color: var(--_color-white);
@@ -11,7 +13,7 @@
   }
 
   ul {
-    @include _list-unstyled();
+    @include core.list-unstyled();
   }
 
   li {

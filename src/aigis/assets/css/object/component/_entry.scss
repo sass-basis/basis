@@ -1,15 +1,17 @@
-.#{ $_prefix }l-main > .#{ $_prefix }c-entry {
-  .#{ $_prefix }c-entry__header {
+@use "../../../../../css/core";
+
+.l-main > .c-entry {
+  .c-entry__header {
     margin-bottom: var(--_margin1);
   }
 
-  .#{ $_prefix }c-entry__title {
+  .c-entry__title {
     border-bottom: 1px solid var(--_light-color-gray);
     padding-bottom: var(--_padding-2);
   }
 
-  .#{ $_prefix }c-entry__content {
-    @include _set-content-level(1);
+  .c-entry__content {
+    @include core.set-content-level(1);
 
     pre {
       padding: var(--_padding-1);
@@ -20,7 +22,7 @@
     }
   }
 
-  & + .#{ $_prefix }c-entry {
+  & + .c-entry {
     margin-top: var(--_margin2);
   }
 }

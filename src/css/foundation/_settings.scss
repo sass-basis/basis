@@ -1,3 +1,7 @@
+@use "sass:math";
+@use "../core/function";
+@use "../core/variable";
+
 :root {
   /**
    * Background color.
@@ -7,43 +11,48 @@
   /**
    * Border radius.
    */
-  --_global--border-radius: #{ $_border-radius };
+  --_global--border-radius: 3px;
 
   /**
    * Color: black.
    */
+  $_color-black: #111;
   --_color-black: #{ $_color-black };
 
   /**
    * Color: gray.
    */
+  $_color-gray: #999;
   --_color-gray: #{ $_color-gray };
-  --_dark-color-gray: #{ _dark($_color-gray) };
-  --_darker-color-gray: #{ _darker($_color-gray) };
-  --_darkest-color-gray: #{ _darkest($_color-gray) };
-  --_light-color-gray: #{ _light($_color-gray) };
-  --_lighter-color-gray: #{ _lighter($_color-gray) };
-  --_lightest-color-gray: #{ _lightest($_color-gray) };
+  --_dark-color-gray: #{ function.dark($_color-gray) };
+  --_darker-color-gray: #{ function.darker($_color-gray) };
+  --_darkest-color-gray: #{ function.darkest($_color-gray) };
+  --_light-color-gray: #{ function.light($_color-gray) };
+  --_lighter-color-gray: #{ function.lighter($_color-gray) };
+  --_lightest-color-gray: #{ function.lightest($_color-gray) };
 
   /**
    * Color: text.
    */
+  $_color-text: #333;
   --_color-text: #{ $_color-text };
-  --_dark-color-text: #{ _dark($_color-text) };
-  --_darker-color-text: #{ _darker($_color-text) };
-  --_darkest-color-text: #{ _darkest($_color-text) };
-  --_light-color-text: #{ _light($_color-text) };
-  --_lighter-color-text: #{ _lighter($_color-text) };
-  --_lightest-color-text: #{ _lightest($_color-text) };
+  --_dark-color-text: #{ function.dark($_color-text) };
+  --_darker-color-text: #{ function.darker($_color-text) };
+  --_darkest-color-text: #{ function.darkest($_color-text) };
+  --_light-color-text: #{ function.light($_color-text) };
+  --_lighter-color-text: #{ function.lighter($_color-text) };
+  --_lightest-color-text: #{ function.lightest($_color-text) };
 
   /**
    * Color: white.
    */
+  $_color-white: #fff;
   --_color-white: #{ $_color-white };
 
   /**
    * Color: red.
    */
+  $_color-red: #e74c3c;
   --_color-red: #{ $_color-red };
 
   /**
@@ -54,7 +63,7 @@
   /**
    * Container max width.
    */
-  --_global--container-max-width: #{ $_container-max-width };
+  --_global--container-max-width: 1280px;
 
   /**
    * List item indent.
@@ -71,14 +80,14 @@
   /**
    * Transition properties.
    */
-  --_global--transition-duration: #{ $_transition-duration };
-  --_global--transition-function-timing: #{ $_transition-function-timing };
-  --_global--transition-delay: #{ $_transition-delay };
+  --_global--transition-duration: .2s;
+  --_global--transition-function-timing: ease-out;
+  --_global--transition-delay: 0s;
 
   /**
    * Half leading. em. but no unit.
    */
-  --_half-leading: #{ $_half-leading };
+  --_half-leading: 0.3;
 
   /**
    * Base line height. em. but no unit.
@@ -88,19 +97,79 @@
   /**
    * Font family.
    */
-  --_base-font-family: #{ $_font-family }; // @deprecated
+  --_base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; // @deprecated
   --_global--font-family: var(--_base-font-family);
 
   /**
    * Font size (px).
    */
-  --_base-font-size-px: #{ $_base-font-size-px }; // @deprecated
+  --_base-font-size-px: 16px; // @deprecated
   --_global--font-size-px: var(--_base-font-size-px);
 
   /**
    * Scaling factor for margin.
    */
   --_margin-scale: 1;
+
+  /**
+   * Scaling factor for h1 margin top.
+   */
+  --_h1-margin-top: 0;
+
+  /**
+   * Scaling factor for h1 margin bottom.
+   */
+  --_h1-margin-bottom: 1;
+
+  /**
+   * Scaling factor for h2 margin top.
+   */
+  --_h2-margin-top: 2;
+
+  /**
+   * Scaling factor for h2 margin bottom.
+   */
+  --_h2-margin-bottom: 1;
+
+  /**
+   * Scaling factor for h3 margin top.
+   */
+  --_h3-margin-top: 1.5;
+
+  /**
+   * Scaling factor for h3 margin bottom.
+   */
+  --_h3-margin-bottom: 1;
+
+  /**
+   * Scaling factor for h4 margin top.
+   */
+  --_h4-margin-top: 1.25;
+
+  /**
+   * Scaling factor for h4 margin bottom.
+   */
+  --_h4-margin-bottom: 1;
+
+  /**
+   * Scaling factor for h5 margin top.
+   */
+  --_h5-margin-top: 1;
+
+  /**
+   * Scaling factor for h5 margin bottom.
+   */
+  --_h5-margin-bottom: .5;
+
+  /**
+   * Scaling factor for h6 margin top.
+   */
+  --_h6-margin-top: 1;
+
+  /**
+   * Scaling factor for h6 margin bottom.
+   */
+  --_h6-margin-bottom: .5;
 
   /**
    * Base value for spaces. no unit.
@@ -111,7 +180,7 @@
   /**
    * z-index for page effect.
    */
-  --_page-effect-z-index: #{ $_page-effect-z-index };
+  --_page-effect-z-index: 1000000;
 
   /**
    * Reference value for harmonic sequences.
@@ -140,14 +209,14 @@
   /**
    * A set of variables used to generate space variations.
    */
-  $quotient: ($min-breakpoint / $max-breakpoint);
+  $quotient: math.div(variable.$min-breakpoint, variable.$max-breakpoint);
 
   /**
    * Function for quiescing fluid spaces.
    */
   @function _generate-fluid-spacing($min, $max) {
-    $slope: calc((#{ $max } - #{ $min }) / (#{ $max-breakpoint - $min-breakpoint }));
-    $yAxis: calc(#{ -1 * $min-breakpoint } * #{ $slope } + #{ $min });
+    $slope: calc((#{ $max } - #{ $min }) / (#{ variable.$max-breakpoint - variable.$min-breakpoint }));
+    $yAxis: calc(#{ -1 * variable.$min-breakpoint } * #{ $slope } + #{ $min });
     $preferredValue: calc(#{ $yAxis } * 1rem + #{ $slope } * 100vw);
     @return clamp(#{ $min } * 1rem, #{ $preferredValue }, #{ $max } * 1rem);
   }
@@ -155,16 +224,16 @@
   /**
    * Modular scales for spaces.
    */
-  --_ms-2: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 1) });
-  --_ms-1: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 2) });
+  --_ms-2: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 1) });
+  --_ms-1: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 2) });
   --_ms0: 0rem;
-  --_ms1: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 3) });
-  --_ms2: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 4) });
-  --_ms3: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 5) });
-  --_ms4: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 6) });
-  --_ms5: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 7) });
-  --_ms6: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 8) });
-  --_ms7: calc(var(--_space-unitless) / 3 * #{ nth($fibonacci-sequence, 9) });
+  --_ms1: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 3) });
+  --_ms2: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 4) });
+  --_ms3: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 5) });
+  --_ms4: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 6) });
+  --_ms5: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 7) });
+  --_ms6: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 8) });
+  --_ms7: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 9) });
 
   /**
    * Modular scales for spaces. rem.
@@ -213,17 +282,17 @@
   /**
    * Font size formula.
    */
-  --_font-size: #{ $_font-size };
+  --_font-size: #{ variable.$font-size };
 
   /**
    * Line height formula.
    */
-  --_line-height: #{ $_line-height };
+  --_line-height: #{ variable.$line-height };
 
   /**
    * Fluid font size formula.
    */
-  --_fluid-font-size: #{ $_fluid-font-size };
+  --_fluid-font-size: #{ variable.$fluid-font-size };
 
   box-sizing: border-box;
 

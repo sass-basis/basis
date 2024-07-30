@@ -1,6 +1,8 @@
+@use "../mixin";
+
 /*
 ---
-name: _navbar()
+name: navbar()
 category:
   - core/abstract
 ---
@@ -8,8 +10,10 @@ Abstract navbar component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-navbar {
-  @include _navbar();
+  @include core.navbar();
 
   &__item > a {
     color: inherit;
@@ -117,8 +121,8 @@ new BasisNavbar({
 ```
 */
 
-@mixin _navbar() {
-  @include _list-unstyled();
+@mixin navbar() {
+  @include mixin.list-unstyled();
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -170,11 +174,11 @@ new BasisNavbar({
   }
 
   &__submenu {
-    @include _list-unstyled();
+    @include mixin.list-unstyled();
     min-width: 240px;
     opacity: 0;
     visibility: hidden;
-    @include _transition(opacity);
+    @include mixin.transition(opacity);
 
     &[aria-hidden="false"] {
       visibility: visible;

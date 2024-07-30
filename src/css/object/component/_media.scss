@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-media
@@ -20,15 +22,15 @@ Media component
 ```
 */
 
-.#{ $_prefix }c-media {
-  @include _media();
+.c-media {
+  @include abstract.media();
 
   &--middle {
     align-items: center;
   }
 
   &--reverse {
-    .#{ $_prefix }c-media__figure {
+    .c-media__figure {
       order: 1;
     }
   }

@@ -1,6 +1,11 @@
+@use "sass:list";
+@use "sass:string";
+@use "sass:meta";
+@use "./condition" as *;
+
 /*
 ---
-name: _replace()
+name: replace()
 category:
   - core/function
 ---
@@ -15,33 +20,35 @@ Replace in a string
 // @return  string
 //
 
-$value: _replace('p', 'a', 'apple'); // => aaale
+@use "node_modules/sass-basis/src/css/core";
+
+$value: function.replace('p', 'a', 'apple'); // => aaale
 ```
 */
 
-@function _replace($substr, $newsubstr, $string) {
-  @if ('list' == type-of($substr)) {
+@function replace($substr, $newsubstr, $string) {
+  @if ('list' == meta.type-of($substr)) {
     @each $_s in $substr {
-      $string: _replace($_s, $newsubstr, $string);
+      $string: replace($_s, $newsubstr, $string);
     }
     @return $string;
   } @else {
-    $position-found: str-index($string, $substr);
+    $position-found: string.index($string, $substr);
     $processed: ();
 
-    @if (_is-null($position-found)) {
+    @if (is-null($position-found)) {
       @return $string;
     }
 
-    @while (not _is-null($position-found) and $position-found > 0) {
-      $length-substr: str-length($substr);
-      $processed: append($processed, str-slice($string, 0, $position-found - 1));
-      $processed: append($processed, $newsubstr);
-      $string: str-slice($string, $position-found + $length-substr);
-      $position-found: str-index($string, $substr);
+    @while (not is-null($position-found) and $position-found > 0) {
+      $length-substr: string.length($substr);
+      $processed: list.append($processed, string.slice($string, 0, $position-found - 1));
+      $processed: list.append($processed, $newsubstr);
+      $string: string.slice($string, $position-found + $length-substr);
+      $position-found: string.index($string, $substr);
     }
 
-    $processed: append($processed, $string);
+    $processed: list.append($processed, $string);
     $string: "";
 
     @each $s in $processed {
@@ -50,8 +57,4 @@ $value: _replace('p', 'a', 'apple'); // => aaale
 
     @return $string;
   }
-}
-
-@function replace($substr, $newsubstr, $string) {
-  @return _replace($substr, $newsubstr, $string);
 }

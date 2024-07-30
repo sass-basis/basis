@@ -1,6 +1,8 @@
+@use "../mixin";
+
 /*
 ---
-name: _breadcrumbs()
+name: breadcrumbs()
 category:
   - core/abstract
 ---
@@ -8,8 +10,10 @@ Abstract breadcrumbs component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-breadcrumbs {
-  @include _breadcrumbs();
+  @include core.breadcrumbs();
 }
 ```
 
@@ -22,8 +26,8 @@ Abstract breadcrumbs component
 ```
 */
 
-@mixin _breadcrumbs() {
-  @include _list-unstyled();
+@mixin breadcrumbs() {
+  @include mixin.list-unstyled();
 
   &__item {
     display: inline;

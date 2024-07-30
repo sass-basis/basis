@@ -1,3 +1,6 @@
+@use "../../core/mixin";
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-responsive-table
@@ -26,8 +29,8 @@ Responsive table component
 ```
 */
 
-.#{ $_prefix }c-responsive-table {
-  @include _media-max(sm) {
-    @include _responsive-table();
+.c-responsive-table {
+  @include mixin.media-max(sm) {
+    @include abstract.responsive-table();
   }
 }

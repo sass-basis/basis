@@ -1,3 +1,5 @@
+@use "../../core/mixin";
+
 /*
 ---
 name: .u-shake-vertical
@@ -14,9 +16,9 @@ Shake vertical utility
 ```
 */
 
-.#{ $_prefix }u-shake-vertical {
-  @include _hover() {
-    @include _shake-vertical();
+.u-shake-vertical {
+  @include mixin.hover() {
+    @include mixin.shake-vertical();
   }
 }
 
@@ -36,9 +38,9 @@ Vibrate vertical utility
 ```
 */
 
-.#{ $_prefix }u-vibrate-vertical {
-  @include _hover() {
-    @include _vibrate-vertical();
+.u-vibrate-vertical {
+  @include mixin.hover() {
+    @include mixin.vibrate-vertical();
   }
 }
 
@@ -58,9 +60,9 @@ Shake horizontal utility
 ```
 */
 
-.#{ $_prefix }u-shake-horizontal {
-  @include _hover() {
-    @include _shake-horizontal();
+.u-shake-horizontal {
+  @include mixin.hover() {
+    @include mixin.shake-horizontal();
   }
 }
 
@@ -80,9 +82,9 @@ Vibrate horizontal utility
 ```
 */
 
-.#{ $_prefix }u-vibrate-horizontal {
-  @include _hover() {
-    @include _vibrate-horizontal();
+.u-vibrate-horizontal {
+  @include mixin.hover() {
+    @include mixin.vibrate-horizontal();
   }
 }
 
@@ -102,9 +104,9 @@ Shake scale utility
 ```
 */
 
-.#{ $_prefix }u-shake-scale {
-  @include _hover() {
-    @include _shake-scale();
+.u-shake-scale {
+  @include mixin.hover() {
+    @include mixin.shake-scale();
   }
 }
 
@@ -124,9 +126,9 @@ Vibrate scale utility
 ```
 */
 
-.#{ $_prefix }u-vibrate-scale {
-  @include _hover() {
-    @include _vibrate-scale();
+.u-vibrate-scale {
+  @include mixin.hover() {
+    @include mixin.vibrate-scale();
   }
 }
 
@@ -146,14 +148,14 @@ Extend underline utility
 ```
 */
 
-.#{ $_prefix }u-extend-underline {
+.u-extend-underline {
   position: relative;
 
   &::after {
-    @include _extend-underline();
+    @include mixin.extend-underline();
   }
 
-  @include _hover() {
+  @include mixin.hover() {
     &::after {
       width: 100%;
     }

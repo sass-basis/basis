@@ -16,7 +16,7 @@ Centering text utility
 ```
 */
 
-.#{ $_prefix }u-text-center {
+.u-text-center {
   text-align: center !important;
 }
 
@@ -38,7 +38,7 @@ Right justified text utility
 ```
 */
 
-.#{ $_prefix }u-text-right {
+.u-text-right {
   text-align: right !important;
 }
 
@@ -60,6 +60,6 @@ Left justified text utility
 ```
 */
 
-.#{ $_prefix }u-text-left {
+.u-text-left {
   text-align: left !important;
 }

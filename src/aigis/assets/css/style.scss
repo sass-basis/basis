@@ -1,69 +1,41 @@
-$color-primary: #00DAE6;
-$_font-family : "Helvetica Neue", Helvetica, sans-serif;
-$_color-text  : #444;
-$_prefix: '';
+@use '../../../css/basis';
 
-@import '../../../css/basis';
+@use 'foundation/foundation';
 
-@import 'core/mixin/font-basis';
+@use 'layout/contents';
+@use 'layout/footer';
+@use 'layout/header';
+@use 'layout/layout';
 
-@import 'foundation/foundation';
+@use 'object/component/btn';
+@use 'object/component/copyright';
+@use 'object/component/drawer';
+@use 'object/component/dummy-image';
+@use 'object/component/entry';
+@use 'object/component/ib-row';
+@use 'object/component/lattice';
+@use 'object/component/meta';
+@use 'object/component/page-header';
+@use 'object/component/site-branding';
 
-@import 'layout/contents';
-@import 'layout/footer';
-@import 'layout/header';
-@import 'layout/layout';
+@use 'object/project/global-nav';
+@use 'object/project/local-nav';
+@use 'object/project/social-nav';
+@use 'object/project/table-of-contents';
 
-@import 'object/component/animate-image';
-@import 'object/component/btn';
-@import 'object/component/copyright';
-@import 'object/component/drawer';
-@import 'object/component/dummy-image';
-@import 'object/component/entry';
-@import 'object/component/fade-image';
-@import 'object/component/ib-row';
-@import 'object/component/label';
-@import 'object/component/lattice';
-@import 'object/component/meta';
-@import 'object/component/page-header';
-@import 'object/component/site-branding';
-@import 'object/component/table';
-
-@import 'object/project/global-nav';
-@import 'object/project/local-nav';
-@import 'object/project/scroll-top';
-@import 'object/project/show-grid';
-@import 'object/project/social-nav';
-@import 'object/project/table-of-contents';
-
-:where(.aigis-preview) {
-  @include _set-content-level(1);
-  min-height: 150px;
-  overflow: hidden;
+:root {
+  --color-primary: #00DAE6;
 }
 
-@for $i from 10 through 200 {
-  .font-size-#{ $i }px {
-    @include _font-size-line-height(_strip-unit($i / $_base-font-size-px));
-
-    position: relative;
-    &::before {
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-      content: '#{ $i }px';
-      display: inline-block;
-      background-color: #111;
-      color: #fff;
-      font-size: 12px;
-      padding: .25em .5em;
-    }
-  }
+:where(.aigis-preview) {
+  min-height: 150px;
+  overflow: hidden;
+  @include basis.set-content-level(1);
 }
 
 @for $i from -2 through 7 {
   .font-size-level\:#{ $i } {
-    @include _set-font-size-level($i);
+    @include basis.set-font-size-level($i);
 
     position: relative;
     &::before {
@@ -82,7 +54,7 @@ $_prefix: '';
 
 @for $i from -2 through 7 {
   .fluid-font-size-level\:#{ $i } {
-    @include _set-fluid-font-size-level($i);
+    @include basis.set-fluid-font-size-level($i);
 
     position: relative;
     &::before {

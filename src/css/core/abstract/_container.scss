@@ -9,7 +9,7 @@
 
 /*
 ---
-name: _fluid-container()
+name: fluid-container()
 category:
   - core/abstract
   - core/abstract/container
@@ -18,8 +18,10 @@ Abstract fluid container component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-fluid-container {
-  @include _fluid-container();
+  @include core.fluid-container();
 }
 ```
 
@@ -31,7 +33,7 @@ Abstract fluid container component
 ```
 */
 
-@mixin _fluid-container() {
+@mixin fluid-container() {
   flex-grow: 1; // To prevent the item from being crushed when it becomes a flex item.
   box-sizing: content-box;
   @include _container-padding();
@@ -42,7 +44,7 @@ Abstract fluid container component
 
 /*
 ---
-name: _container()
+name: container()
 category:
   - core/abstract
   - core/abstract/container
@@ -51,8 +53,10 @@ Abstract container component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-container {
-  @include _container();
+  @include core.container();
 }
 ```
 
@@ -64,10 +68,10 @@ Abstract container component
 ```
 */
 
-@mixin _container() {
+@mixin container() {
   --_container-max-width: var(--_global--container-max-width);
 
-  @include _fluid-container();
+  @include fluid-container();
 
   box-sizing: content-box;
   margin-right: auto;

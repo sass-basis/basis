@@ -1,6 +1,9 @@
+@use "sass:math";
+@use "./condition" as *;
+
 /*
 ---
-name: _strip-unit()
+name: strip-unit()
 category:
   - core/function
 ---
@@ -13,13 +16,15 @@ Return numeric value that doesn't have the unit.
 // @return  int
 //
 
-$value: _strip-unit(10px); // => 10
+@use "node_modules/sass-basis/src/css/core";
+
+$value: core.strip-unit(10px); // => 10
 ```
 */
 
-@function _strip-unit($value) {
-  @if (_is-null($value)) {
+@function strip-unit($value) {
+  @if (is-null($value)) {
     @return $value;
   }
-  @return ($value / ($value * 0 + 1));
+  @return math.div($value, ($value * 0 + 1));
 }

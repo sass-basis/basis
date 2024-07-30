@@ -1,6 +1,6 @@
 /*
 ---
-name: _responsive-container()
+name: responsive-container()
 category:
   - core/abstract
 ---
@@ -8,8 +8,10 @@ Abstract responsive container component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-responsive-container-16-9 {
-  @include _responsive-container();
+  @include core.responsive-container();
   padding-bottom: (9 / 16 * 100%);
 }
 ```
@@ -22,7 +24,7 @@ Abstract responsive container component
 ```
 */
 
-@mixin _responsive-container() {
+@mixin responsive-container() {
   position: relative;
   height: 0;
 

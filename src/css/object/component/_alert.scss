@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-alert
@@ -15,6 +17,6 @@ Alert component
 ```
 */
 
-.#{ $_prefix }c-alert {
-  @include _alert();
+.c-alert {
+  @include abstract.alert();
 }

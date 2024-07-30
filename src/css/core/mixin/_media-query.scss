@@ -1,6 +1,11 @@
+@use "sass:map";
+@use "sass:list";
+@use "../function";
+@use "../variable";
+
 /*
 ---
-name: _media-min()
+name: media-min()
 category:
   - core/mixin
   - core/mixin/media-query
@@ -13,22 +18,24 @@ min-width media query
 // @param  size|length  $size  width
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _media-min(md) {
+  @include core.media-min(md) {
     ...
   }
 }
 ```
 */
 
-@mixin _media-min($size) {
-  $sizes-keys: map-keys($_sizes);
-  $min-key: nth($sizes-keys, 1);
+@mixin media-min($size) {
+  $sizes-keys: map.keys(variable.$sizes);
+  $min-key: list.nth($sizes-keys, 1);
 
   @if (0 == $size or $min-key == $size or false == $size) {
     @content;
   } @else {
-    @media (min-width: _min($size)) {
+    @media (min-width: function.min($size)) {
       @content;
     }
   }
@@ -36,7 +43,7 @@ min-width media query
 
 /*
 ---
-name: _media-max()
+name: media-max()
 category:
   - core/mixin
   - core/mixin/media-query
@@ -49,22 +56,24 @@ max-width media query
 // @param  size|length  $size  width
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _media-max(md) {
+  @include core.media-max(md) {
     ...
   }
 }
 ```
 */
 
-@mixin _media-max($size) {
-  $sizes-keys: map-keys($_sizes);
-  $max-key: nth($sizes-keys, -1);
+@mixin media-max($size) {
+  $sizes-keys: map.keys(variable.$sizes);
+  $max-key: list.nth($sizes-keys, -1);
 
   @if (0 == $size or $max-key == $size or false == $size) {
     @content;
   } @else {
-    @media not all and (min-width: _min(_next-size-key($size))) {
+    @media not all and (min-width: function.min(function.next-size-key($size))) {
       @content;
     }
   }
@@ -72,7 +81,7 @@ max-width media query
 
 /*
 ---
-name: _media-only()
+name: media-only()
 category:
   - core/mixin
   - core/mixin/media-query
@@ -85,29 +94,31 @@ Specific size only media query
 // @param  size|length  $size  width
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _media-only(md) {
+  @include core.media-only(md) {
     ...
   }
 }
 ```
 */
 
-@mixin _media-only($size) {
-  $sizes-keys: map-keys($_sizes);
-  $min-key: nth($sizes-keys, 1);
-  $max-key: nth($sizes-keys, -1);
+@mixin media-only($size) {
+  $sizes-keys: map.keys(variable.$sizes);
+  $min-key: list.nth($sizes-keys, 1);
+  $max-key: list.nth($sizes-keys, -1);
 
   @if $min-key == $size {
-    @include _media-max($size) {
+    @include media-max($size) {
       @content;
     }
   } @else if $max-key == $size {
-    @include _media-min($size) {
+    @include media-min($size) {
       @content;
     }
   } @else {
-    @media (min-width: _min($size)) and (max-width: _max($size)) {
+    @media (min-width: function.min($size)) and (max-width: function.max($size)) {
       @content;
     }
   }

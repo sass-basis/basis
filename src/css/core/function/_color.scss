@@ -1,6 +1,8 @@
+@use 'sass:color';
+
 /*
 ---
-name: _light()
+name: light()
 category:
   - core/function
   - core/function/color
@@ -14,17 +16,19 @@ A little brighten
 // @return  hex
 //
 
-color: _light(#000);
+@use "node_modules/sass-basis/src/css/core";
+
+color: core.light(#000);
 ```
 */
 
-@function _light($hex) {
-  @return lighten($hex, 20%);
+@function light($hex) {
+  @return color.adjust($hex, $lightness: 20%);
 }
 
 /*
 ---
-name: _lighter()
+name: lighter()
 category:
   - core/function
   - core/function/color
@@ -38,17 +42,19 @@ Brighten
 // @return  hex
 //
 
-color: _lighter(#000);
+@use "node_modules/sass-basis/src/css/core";
+
+color: core.lighter(#000);
 ```
 */
 
-@function _lighter($hex) {
-  @return lighten($hex, 33.5%);
+@function lighter($hex) {
+  @return color.adjust($hex, $lightness: 33.5%);
 }
 
 /*
 ---
-name: _lightest()
+name: lightest()
 category:
   - core/function
   - core/function/color
@@ -62,17 +68,20 @@ To very brighten
 // @return  hex
 //
 
-color: _lightest(#000);
+
+@use "node_modules/sass-basis/src/css/core";
+
+color: core.lightest(#000);
 ```
 */
 
-@function _lightest($hex) {
-  @return lighten($hex, 37%);
+@function lightest($hex) {
+  @return color.adjust($hex, $lightness: 37%);
 }
 
 /*
 ---
-name: _dark()
+name: dark()
 category:
   - core/function
   - core/function/color
@@ -86,17 +95,19 @@ A little darken
 // @return  hex
 //
 
-color: _dark(#fff);
+@use "node_modules/sass-basis/src/css/core";
+
+color: core.dark(#fff);
 ```
 */
 
-@function _dark($hex) {
-  @return darken($hex, 20%);
+@function dark($hex) {
+  @return color.adjust($hex, $lightness: -20%);
 }
 
 /*
 ---
-name: _darker()
+name: darker()
 category:
   - core/function
   - core/function/color
@@ -110,17 +121,19 @@ Darken
 // @return  hex
 //
 
-color: _darker(#fff);
+@use "node_modules/sass-basis/src/css/core";
+
+color: core.darker(#fff);
 ```
 */
 
-@function _darker($hex) {
-  @return darken($hex, 33.5%);
+@function darker($hex) {
+  @return color.adjust($hex, $lightness: -33.5%);
 }
 
 /*
 ---
-name: _darkest()
+name: darkest()
 category:
   - core/function
   - core/function/color
@@ -134,10 +147,12 @@ To very darken
 // @return  hex
 //
 
-color: _darkest(#fff);
+@use "node_modules/sass-basis/src/css/core";
+
+color: core.darkest(#fff);
 ```
 */
 
-@function _darkest($hex) {
-  @return darken($hex, 37%);
+@function darkest($hex) {
+  @return color.adjust($hex, $lightness: -37%);
 }

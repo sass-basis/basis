@@ -1,7 +1,9 @@
-.#{ $_prefix }c-btn {
+@use "../../../../../css/core";
+
+.c-btn {
   --_border-radius: var(--_global--border-radius);
 
-  @include _transition(all);
+  @include core.transition(all);
   border: none;
   border-radius: var(--_border-radius);
   padding: var(--_padding-2) var(--_padding-1);
@@ -16,10 +18,10 @@
   }
 
   &--launch, &--download, &--buy {
-    background-color: $color-primary;
+    background-color: var(--color-primary);
     color: var(--_color-white);
 
-    @include _hover() {
+    @include core.hover() {
       opacity: .8;
     }
 

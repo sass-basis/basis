@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-navbar
@@ -210,19 +212,19 @@ Navbar component
 ```
 */
 
-.#{ $_prefix }c-navbar {
-  @include _navbar();
+.c-navbar {
+  @include abstract.navbar();
 
   &--center {
     justify-content: center;
 
-    .#{ $_prefix }c-navbar__item {
+    .c-navbar__item {
       flex: 0 1 auto;
     }
   }
 
   &--left {
-    .#{ $_prefix }c-navbar__item {
+    .c-navbar__item {
       flex: 0 1 auto;
     }
   }
@@ -230,10 +232,10 @@ Navbar component
   &--right {
     justify-content: flex-end;
 
-    .#{ $_prefix }c-navbar__item {
+    .c-navbar__item {
       flex: 0 1 auto;
 
-      > .#{ $_prefix }c-navbar__submenu {
+      > .c-navbar__submenu {
         position: absolute;
         top: 100%;
         right: 0;
@@ -241,8 +243,8 @@ Navbar component
       }
     }
 
-    .#{ $_prefix }c-navbar__subitem {
-      > .#{ $_prefix }c-navbar__submenu {
+    .c-navbar__subitem {
+      > .c-navbar__submenu {
         position: absolute;
         top: 0;
         right: 100%;
@@ -252,8 +254,8 @@ Navbar component
   }
 
   &[data-popup-mode="click"] {
-    .#{ $_prefix }c-navbar__item,
-    .#{ $_prefix }c-navbar__subitem {
+    .c-navbar__item,
+    .c-navbar__subitem {
       position: relative;
 
       &[aria-haspopup="true"] {
@@ -269,13 +271,13 @@ Navbar component
           max-width: calc(100% - 42px);
         }
 
-        > .#{ $_prefix }c-navbar__toggle {
+        > .c-navbar__toggle {
           flex: 0 0 auto;
           width: 42px;
           overflow: hidden;
         }
 
-        > .#{ $_prefix }c-navbar__submenu {
+        > .c-navbar__submenu {
           flex: 1 1 100%;
         }
       }

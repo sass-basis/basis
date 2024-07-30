@@ -14,20 +14,7 @@ A lightweight responsive Sass/CSS framework based on flexible box.
 * Basis has incorporated the concept of vertical rhythm. So you can be a good-balanced design.
 * Basis has many mixins. Usufule mixins and abstract mixin of compornents.
 
-## Demo ( HTML5 Templates )
-* integrity: https://sass-basis.github.io/integrity/
-* improve: https://sass-basis.github.io/improve/
-* affinity: https://sass-basis.github.io/affinity/
-
 ## Get started
-
-### Using Basis Project (Starter Kit)
-```
-$ git clone https://github.com/sass-basis/starter-kit.git
-$ cd starter-kit
-$ npm install
-$ npm start
-```
 
 ### Using NPM
 
@@ -57,10 +44,10 @@ Download the basis from https://github.com/sass-basis/basis/releases
 Imports Basis your Sass/SCSS.
 ```
 /* If you want to use Basis classes */
-@import basis/src/css/basis;
+@use "node_modules/sass-basis/src/css/basis;"
 
 /* If you want to use Basis mixins only */
-@import basis/src/css/basis-core;
+@use "node_modules/sass-basis/core";
 ```
 
 or Just this link.
@@ -83,8 +70,10 @@ https://cdn.jsdelivr.net/npm/sass-basis@latest/dist/
 
 ### Sample for using abstracts
 ```
+@use "node_modules/sass-basis/core";
+
 .c-btn {
-  @include _c-btn();
+  @include core.btn();
 
   &--block {
     display: block;

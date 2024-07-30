@@ -1,3 +1,5 @@
+@use "../../core/mixin";
+
 /*
 ---
 name: .u-content
@@ -53,6 +55,6 @@ Content utility
 ```
 */
 
-.#{ $_prefix }u-content {
-  @include _set-content-level(1);
+.u-content {
+  @include mixin.set-content-level(1);
 }

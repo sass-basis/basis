@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-select
@@ -30,8 +32,8 @@ Select box component
 ```
 */
 
-.#{ $_prefix }c-select {
-  @include _select();
+.c-select {
+  @include abstract.select();
 
   &--block {
     display: block;

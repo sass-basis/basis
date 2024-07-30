@@ -1,6 +1,9 @@
+@use "sass:math";
+@use "../function";
+
 /*
 ---
-name: _bounce-vertical()
+name: bounce-vertical()
 category:
   - core/mixin
   - core/mixin/animation
@@ -14,31 +17,33 @@ Bounce vertical
 // @param   second|milisecond  $delay: 0  animate time
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _hover() {
-    @include _bounce-vertical(4px, .5s);
+  @include core.hover() {
+    @include core.bounce-vertical(4px, .5s);
   }
 }
 ```
 */
 
-@mixin _bounce-vertical($px, $delay: 0) {
-  $keyframe-name: _sanitize-animation-name(_bounce-vertical- + $px);
+@mixin bounce-vertical($px, $delay: 0) {
+  $keyframe-name: function.sanitize-animation-name(_bounce-vertical- + $px);
   position: relative;
   animation: $keyframe-name $delay;
 
   @keyframes #{$keyframe-name} {
     0%   { top: ($px * -1); }
     25%  { top: $px; }
-    50%  { top: ($px / 2 * -1); }
-    75%  { top: ($px / 2); }
+    50%  { top: (math.div($px, 2) * -1); }
+    75%  { top: math.div($px, 2); }
     100% { top: 0; }
   }
 }
 
 /*
 ---
-name: _shake-vertical()
+name: shake-vertical()
 category:
   - core/mixin
   - core/mixin/animation
@@ -47,21 +52,23 @@ Shake vertical
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _hover() {
-    @include _shake-vertical();
+  @include core.hover() {
+    @include core.shake-vertical();
   }
 }
 ```
 */
 
-@mixin _shake-vertical() {
-  @include _bounce-vertical(4px, .5s);
+@mixin shake-vertical() {
+  @include bounce-vertical(4px, .5s);
 }
 
 /*
 ---
-name: _vibrate-vertical()
+name: vibrate-vertical()
 category:
   - core/mixin
   - core/mixin/animation
@@ -70,21 +77,23 @@ Vibrate vertical
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _hover() {
-    @include _vibrate-vertical();
+  @include core.hover() {
+    @include core.vibrate-vertical();
   }
 }
 ```
 */
 
-@mixin _vibrate-vertical() {
-  @include _bounce-vertical(2px, .2s);
+@mixin vibrate-vertical() {
+  @include bounce-vertical(2px, .2s);
 }
 
 /*
 ---
-name: _bounce-horizontal()
+name: bounce-horizontal()
 category:
   - core/mixin
   - core/mixin/animation
@@ -98,31 +107,33 @@ Bounce horizontal
 // @param   second|milisecond  $delay: 0  animate time
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _hover() {
-    @include _bounce-horizontal(4px, .5s);
+  @include core.hover() {
+    @include core.bounce-horizontal(4px, .5s);
   }
 }
 ```
 */
 
-@mixin _bounce-horizontal($px, $delay: 0) {
-  $keyframe-name: _sanitize-animation-name(_bounce-horizontal- + $px);
+@mixin bounce-horizontal($px, $delay: 0) {
+  $keyframe-name: function.sanitize-animation-name(_bounce-horizontal- + $px);
   position: relative;
   animation: $keyframe-name $delay;
 
   @keyframes #{$keyframe-name} {
     0%   { left: ($px * -1); }
     25%  { left: $px; }
-    50%  { left: ($px / 2 * -1); }
-    75%  { left: ($px / 2); }
+    50%  { left: (math.div($px, 2) * -1); }
+    75%  { left: math.div($px, 2); }
     100% { left: 0; }
   }
 }
 
 /*
 ---
-name: _shake-horizontal()
+name: shake-horizontal()
 category:
   - core/mixin
   - core/mixin/animation
@@ -131,21 +142,23 @@ Shake horizontal
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _hover() {
-    @include _shake-horizontal();
+  @include core.hover() {
+    @include core.shake-horizontal();
   }
 }
 ```
 */
 
-@mixin _shake-horizontal() {
-  @include _bounce-horizontal(4px, .5s);
+@mixin shake-horizontal() {
+  @include bounce-horizontal(4px, .5s);
 }
 
 /*
 ---
-name: _vibrate-horizontal()
+name: vibrate-horizontal()
 category:
   - core/mixin
   - core/mixin/animation
@@ -154,21 +167,23 @@ Vibrate horizontal
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _hover() {
-    @include _vibrate-horizontal();
+  @include core.hover() {
+    @include core.vibrate-horizontal();
   }
 }
 ```
 */
 
-@mixin _vibrate-horizontal() {
-  @include _bounce-horizontal(2px, .2s);
+@mixin vibrate-horizontal() {
+  @include bounce-horizontal(2px, .2s);
 }
 
 /*
 ---
-name: _bounce-scale()
+name: bounce-scale()
 category:
   - core/mixin
   - core/mixin/animation
@@ -182,30 +197,32 @@ Bounce scale
 // @param   second|milisecond  $delay: 0  animate time
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _hover() {
-    @include _bounce-scale(1.2, .5s);
+  @include core.hover() {
+    @include core.bounce-scale(1.2, .5s);
   }
 }
 ```
 */
-@mixin _bounce-scale($float, $delay: 0) {
-  $suffix: _strip-unit(percentage($float));
-  $keyframe-name: _sanitize-animation-name(_bounce-scale- + $suffix);
+@mixin bounce-scale($float, $delay: 0) {
+  $suffix: function.strip-unit(percentage($float));
+  $keyframe-name: function.sanitize-animation-name(_bounce-scale- + $suffix);
   animation: $keyframe-name $delay ease-out;
 
   @keyframes #{$keyframe-name} {
     0%   { transform: scale(1); }
     25%  { transform: scale($float); }
     50%  { transform: scale(1); }
-    75%  { transform: scale((1 + ($float - 1) / 2)); }
+    75%  { transform: scale(1 + math.div($float - 1, 2)); }
     100% { transform: scale(1); }
   }
 }
 
 /*
 ---
-name: _shake-scale()
+name: shake-scale()
 category:
   - core/mixin
   - core/mixin/animation
@@ -214,21 +231,23 @@ Shake scale
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _hover() {
-    @include _shake-scale();
+  @include core.hover() {
+    @include core.shake-scale();
   }
 }
 ```
 */
 
-@mixin _shake-scale() {
-  @include _bounce-scale(1.2, .5s);
+@mixin shake-scale() {
+  @include bounce-scale(1.2, .5s);
 }
 
 /*
 ---
-name: _vibrate-scale()
+name: vibrate-scale()
 category:
   - core/mixin
   - core/mixin/animation
@@ -237,21 +256,23 @@ Vibrate scale
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _hover() {
-    @include _vibrate-scale();
+  @include core.hover() {
+    @include core.vibrate-scale();
   }
 }
 ```
 */
 
-@mixin _vibrate-scale() {
-  @include _bounce-scale(1.1, .2s);
+@mixin vibrate-scale() {
+  @include bounce-scale(1.1, .2s);
 }
 
 /*
 ---
-name: _extend-underline()
+name: extend-underline()
 category:
   - core/mixin
   - core/mixin/animation
@@ -262,17 +283,19 @@ Extend the underline from the center.
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo a {
-  @include _hover() {
+  @include core.hover() {
     &::after {
-      @include _extend-underline();
+      @include core.extend-underline();
     }
   }
 }
 ```
 */
 
-@mixin _extend-underline() {
+@mixin extend-underline() {
   --_transition-duration: var(--_global--transition-duration);
   --_transition-function-timing: var(--_global--transition-function-timing);
 

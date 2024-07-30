@@ -1,3 +1,6 @@
+@use "../../core/mixin";
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-drawer
@@ -109,14 +112,17 @@ Drawer component
 ```
 */
 
-.#{ $_prefix }c-drawer {
-  @include _drawer();
-  @include _transition(left, right, visibility);
+.c-drawer {
+  @include abstract.drawer();
+}
+
+.c-drawer {
+  @include mixin.transition(left, right, visibility);
   transition-timing-function: ease-in;
   backface-visibility: hidden;
 
   &[aria-hidden="false"] {
-    @include _transition(left, right);
+    @include mixin.transition(left, right);
     transition-timing-function: ease-out;
   }
 
@@ -128,7 +134,7 @@ Drawer component
 
   &__menu,
   &__submenu {
-    @include _list-unstyled();
+    @include mixin.list-unstyled();
 
     > *:not(:first-child) {
       margin-top: var(--_margin-1);
@@ -154,13 +160,13 @@ Drawer component
         max-width: calc(100% - 42px);
       }
 
-      > .#{ $_prefix }c-drawer__toggle {
+      > .c-drawer__toggle {
         flex: 0 0 auto;
         width: 42px;
         overflow: hidden;
       }
 
-      > .#{ $_prefix }c-drawer__submenu {
+      > .c-drawer__submenu {
         flex: 1 1 100%;
       }
     }

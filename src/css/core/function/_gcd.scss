@@ -1,6 +1,6 @@
 /*
 ---
-name: _gcd()
+name: gcd()
 category:
   - core/function
 ---
@@ -14,11 +14,13 @@ Return greatest common divisor
 // @return  int  The number of the remainder
 //
 
-$gcd: _gcd(4, 8);
+@use "node_modules/sass-basis/src/css/core";
+
+$gcd: core.gcd(4, 8);
 ```
 */
 
-@function _gcd($a, $b) {
+@function gcd($a, $b) {
   $r: $a % $b;
   @while $r != 0 {
     $a: $b;

@@ -1,3 +1,9 @@
+@use "sass:math";
+@use "../../core/function";
+@use "../../core/variable";
+@use "../../core/mixin";
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-row
@@ -255,16 +261,16 @@ Row component of flexbox based grid system
 ```
 */
 
-.#{ $_prefix }c-row {
+.c-row {
   --_gap: 0px;
 	--_item-width: 100%;
 
-  @include _row();
+  @include abstract.row();
   margin-right: calc(var(--_gap) * .5 * -1);
   margin-left: calc(var(--_gap) * .5 * -1);
   margin-bottom: calc(var(--_gap) * -1);
 
-  > .#{ $_prefix }c-row__col {
+  > .c-row__col {
     padding-right: calc(var(--_gap) * .5);
     padding-left: calc(var(--_gap) * .5);
     margin-bottom: var(--_gap);
@@ -279,9 +285,9 @@ Row component of flexbox based grid system
     flex-direction: row-reverse;
   }
 
-  @each $size, $screen-min in $_sizes {
-    @include _media-min($screen-min) {
-      $prefix: _size-prefix($size);
+  @each $size, $screen-min in variable.$sizes {
+    @include mixin.media-min($screen-min) {
+      $prefix: function.size-prefix($size);
 
       &#{ $prefix }-nowrap {
         flex-wrap: nowrap;
@@ -340,7 +346,7 @@ Row component of flexbox based grid system
       }
 
       &#{ $prefix }-fill {
-        > .#{ $_prefix }c-row__col {
+        > .c-row__col {
           display: flex;
           flex-direction: column;
         }
@@ -349,17 +355,17 @@ Row component of flexbox based grid system
   }
 }
 
-@each $size, $screen-min in $_sizes {
-  @include _media-min($screen-min) {
-    $prefix: _size-prefix($size);
+@each $size, $screen-min in variable.$sizes {
+  @include mixin.media-min($screen-min) {
+    $prefix: function.size-prefix($size);
 
-    @for $max_columns from 1 through $_max-columns {
+    @for $max_columns from 1 through variable.$max-columns {
       @for $i from 1 through $max_columns {
-        $gcd: _gcd($i, $max_columns);
+        $gcd: function.gcd($i, $max_columns);
 
         @if (1 == $gcd) {
-          %_bs-item#{ $prefix }-gcd-#{ $i / $gcd }-#{ $max_columns / $gcd } {
-            --_item-width: #{ $i / $max_columns * 100%};
+          %_bs-item#{ $prefix }-gcd-#{ math.div($i, $gcd) }-#{ math.div($max_columns, $gcd) } {
+            --_item-width: #{ math.div($i, $max_columns) * 100%};
           }
         }
       }
@@ -369,9 +375,10 @@ Row component of flexbox based grid system
       --_item-width: 100%;
     }
 
-    .#{ $_prefix }c-row__col {
+    .c-row__col {
       &#{ $prefix }-auto {
         flex: auto;
+        --_item-width: auto;
       }
 
       &#{ $prefix }-justify {
@@ -385,18 +392,18 @@ Row component of flexbox based grid system
   }
 }
 
-.#{ $_prefix }c-row__col {
-  @each $size, $screen-min in $_sizes {
-    @include _media-min($screen-min) {
-      $prefix: _size-prefix($size);
+.c-row__col {
+  @each $size, $screen-min in variable.$sizes {
+    @include mixin.media-min($screen-min) {
+      $prefix: function.size-prefix($size);
 
-      @for $max_columns from $_min-columns through $_max-columns {
+      @for $max_columns from variable.$min-columns through variable.$max-columns {
         @for $i from 1 through $max_columns {
-          $gcd: _gcd($i, $max_columns);
+          $gcd: function.gcd($i, $max_columns);
 
           &#{ $prefix }-#{ $i }-#{ $max_columns } {
             @if ($max_columns != $i) {
-              @extend %_bs-item#{ $prefix }-gcd-#{ $i / $gcd }-#{ $max_columns / $gcd };
+              @extend %_bs-item#{ $prefix }-gcd-#{ math.div($i, $gcd) }-#{ math.div($max_columns, $gcd) };
             } @else {
               @extend %_bs-item#{ $prefix }-full;
             }

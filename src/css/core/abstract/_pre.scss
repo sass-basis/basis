@@ -1,6 +1,6 @@
 /*
 ---
-name: _pre()
+name: pre()
 category:
   - core/abstract
 ---
@@ -8,8 +8,10 @@ Abstract pre component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 pre {
-  @include _pre();
+  @include core.pre();
 }
 ```
 
@@ -19,7 +21,7 @@ pre {
 ```
 */
 
-@mixin _pre() {
+@mixin pre() {
   --_border-radius: var(--_global--border-radius);
 
   background-color: var(--_lightest-color-gray);

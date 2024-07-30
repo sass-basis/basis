@@ -1,6 +1,6 @@
 /*
 ---
-name: _clearfix()
+name: clearfix()
 category:
   - core/mixin
 ---
@@ -8,8 +8,10 @@ Clearfix helper
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .clerfix {
-  @include _clearfix();
+  @include core.clearfix();
 }
 ```
 
@@ -22,7 +24,7 @@ Clearfix helper
 ```
 */
 
-@mixin _clearfix() {
+@mixin clearfix() {
   &:before, &:after {
     content: " ";
     display: table;

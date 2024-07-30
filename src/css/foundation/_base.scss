@@ -1,3 +1,5 @@
+@use "../core/mixin";
+
 :where(
   html,
   body,
@@ -43,7 +45,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smooting: grayscale; // White out elements will activate this.
-  @include _set-font-size-level(0);
+  @include mixin.set-font-size-level(0);
 }
 
 :where(
@@ -52,7 +54,7 @@ body {
   pre,
   samp
 ) {
-  @include _set-font-size-level(-1);
+  @include mixin.set-font-size-level(-1);
   font-family: '_', monospace;
 }
 
@@ -93,7 +95,7 @@ pre {
   select,
   button
 ) {
-  @include _set-font-size-level(0);
+  @include mixin.set-font-size-level(0);
 }
 
 label {
@@ -116,7 +118,7 @@ video {
 }
 
 figcaption {
-  @include _set-font-size-level(-1);
+  @include mixin.set-font-size-level(-1);
   margin: var(--_margin-2) 0 0;
   caption-side: bottom;
   text-align: left;
@@ -154,27 +156,27 @@ Headings
 }
 
 h1 {
-  @include _set-fluid-font-size-level(4);
+  @include mixin.set-fluid-font-size-level(4);
 }
 
 h2 {
-  @include _set-fluid-font-size-level(3);
+  @include mixin.set-fluid-font-size-level(3);
 }
 
 h3 {
-  @include _set-fluid-font-size-level(2);
+  @include mixin.set-fluid-font-size-level(2);
 }
 
 h4 {
-  @include _set-fluid-font-size-level(1);
+  @include mixin.set-fluid-font-size-level(1);
 }
 
 h5 {
-  @include _set-fluid-font-size-level(0);
+  @include mixin.set-fluid-font-size-level(0);
 }
 
 h6 {
-  @include _set-fluid-font-size-level(0);
+  @include mixin.set-fluid-font-size-level(0);
 }
 
 /*

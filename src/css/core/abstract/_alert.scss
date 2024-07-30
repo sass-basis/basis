@@ -1,6 +1,6 @@
 /*
 ---
-name: _alert()
+name: alert()
 category:
   - core/abstract
 ---
@@ -8,8 +8,10 @@ Abstract alert component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-alert {
-  @include _alert();
+  @include core.alert();
   padding: var(--_padding1);
   background-color: #4b9ad8;
   color: #fff;
@@ -24,6 +26,6 @@ Abstract alert component
 ```
 */
 
-@mixin _alert() {
+@mixin alert() {
   display: block;
 }

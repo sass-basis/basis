@@ -1,6 +1,8 @@
+@use "../variable";
+
 /*
 ---
-name: _set-between-content-level()
+name: set-between-content-level()
 category:
   - core/mixin
 ---
@@ -12,8 +14,10 @@ Sets Child elements margin
 // @param  int  $level
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .u-between-content {
-  @include _set-between-content-level(1);
+  @include core.set-between-content-level(1);
 }
 ```
 
@@ -25,7 +29,7 @@ Sets Child elements margin
 ```
 */
 
-@mixin _set-between-content-level($level) {
+@mixin set-between-content-level($level) {
 	--_margin-top: 1;
 	--_margin-bottom: 0;
 
@@ -69,7 +73,7 @@ Sets Child elements margin
 
 /*
 ---
-name: _set-content-level()
+name: set-content-level()
 category:
   - core/mixin
 ---
@@ -81,8 +85,10 @@ Sets Child elements margin
 // @param  int  $level
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .u-content {
-  @include _set-content-level(1);
+  @include core.set-content-level(1);
 }
 ```
 
@@ -94,12 +100,12 @@ Sets Child elements margin
 ```
 */
 
-@mixin _set-content-level($level) {
-  @include _set-between-content-level($level);
+@mixin set-content-level($level) {
+  @include set-between-content-level($level);
 
   > h1 {
-    --_margin-top: #{ $_h1-margin-top };
-    --_margin-bottom: #{ $_h1-margin-bottom };
+    --_margin-top: var(--_h1-margin-top);
+    --_margin-bottom: var(--_h1-margin-bottom);
 
     & + * {
       --_margin-top: 0;
@@ -107,8 +113,8 @@ Sets Child elements margin
   }
 
   > h2 {
-    --_margin-top: #{ $_h2-margin-top };
-    --_margin-bottom: #{ $_h2-margin-bottom };
+    --_margin-top: var(--_h2-margin-top);
+    --_margin-bottom: var(--_h2-margin-bottom);
 
     & + * {
       --_margin-top: 0;
@@ -116,8 +122,8 @@ Sets Child elements margin
   }
 
   > h3 {
-    --_margin-top: #{ $_h3-margin-top };
-    --_margin-bottom: #{ $_h3-margin-bottom };
+    --_margin-top: var(--_h3-margin-top);
+    --_margin-bottom: var(--_h3-margin-bottom);
 
     & + * {
       --_margin-top: 0;
@@ -125,8 +131,8 @@ Sets Child elements margin
   }
 
   > h4 {
-    --_margin-top: #{ $_h4-margin-top };
-    --_margin-bottom: #{ $_h4-margin-bottom };
+    --_margin-top: var(--_h4-margin-top);
+    --_margin-bottom: var(--_h4-margin-bottom);
 
     & + * {
       --_margin-top: 0;
@@ -134,8 +140,8 @@ Sets Child elements margin
   }
 
   > h5 {
-    --_margin-top: #{ $_h5-margin-top };
-    --_margin-bottom: #{ $_h5-margin-bottom };
+    --_margin-top: var(--_h5-margin-top);
+    --_margin-bottom: var(--_h5-margin-bottom);
 
     & + * {
       --_margin-top: 0;
@@ -143,8 +149,8 @@ Sets Child elements margin
   }
 
   > h6 {
-    --_margin-top: #{ $_h6-margin-top };
-    --_margin-bottom: #{ $_h6-margin-bottom };
+    --_margin-top: var(--_h6-margin-top);
+    --_margin-bottom: var(--_h6-margin-bottom);
 
     & + * {
       --_margin-top: 0;

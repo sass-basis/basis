@@ -1,3 +1,6 @@
+@use "../../core/mixin";
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-hero
@@ -23,24 +26,24 @@ Hero component
 ```
 */
 
-.#{ $_prefix }c-hero {
-  @include _hero();
+.c-hero {
+  @include abstract.hero();
 
   &--full {
     height: 100vh;
   }
 
   &--cover {
-    @include _background-image-cover();
+    @include mixin.background-image-cover();
   }
 
   &--overlay {
-    @include _overlay(#000, .7);
+    @include mixin.overlay(#000, .7);
   }
 
   &--fixed {
-    @include _media-min(lg) {
-      @include _background-image-fixed();
+    @include mixin.media-min(lg) {
+      @include mixin.background-image-fixed();
     }
   }
 }

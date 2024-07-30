@@ -1,6 +1,10 @@
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+
 /*
 ---
-name: _is-int()
+name: is-int()
 category:
   - core/function
   - core/function/condition
@@ -14,13 +18,15 @@ Checks for a valid int
 // @return  bool
 //
 
-@if (_is-int($value)) {
+@use "node_modules/sass-basis/src/css/core";
+
+@if (core.is-int($value)) {
   z-index: $value;
 }
 ```
 */
-@function _is-int($value) {
-  @if ('number' == type-of($value) and '' == unit($value) and $value == ceil($value) and $value == abs($value)) {
+@function is-int($value) {
+  @if ('number' == meta.type-of($value) and '' == math.unit($value) and $value == math.ceil($value) and $value == math.abs($value)) {
     @return true;
   }
 
@@ -29,7 +35,7 @@ Checks for a valid int
 
 /*
 ---
-name: _is-length()
+name: is-length()
 category:
   - core/function
   - core/function/condition
@@ -43,25 +49,27 @@ Checks for a valid CSS length
 // @return  bool
 //
 
-@if (_is-length($value)) {
+@use "node_modules/sass-basis/src/css/core";
+
+@if (core.is-length($value)) {
   width: $value;
 }
 ```
 */
 
-@function _is-length($value) {
+@function is-length($value) {
   @if ('auto' == $value) {
     @return true;
   }
 
-  @if ('number' == type-of($value)) {
-    @if ('' != unit($value) or 0 == $value) {
+  @if ('number' == meta.type-of($value)) {
+    @if ('' != math.unit($value) or 0 == $value) {
       @return true;
     }
   }
 
-  @if ('string' == type-of($value)) {
-    @if (1 == str-index($value, 'calc')) {
+  @if ('string' == meta.type-of($value)) {
+    @if (1 == string.index($value, 'calc')) {
       @return true;
     }
   }
@@ -71,7 +79,7 @@ Checks for a valid CSS length
 
 /*
 ---
-name: _is-null()
+name: is-null()
 category:
   - core/function
   - core/function/condition
@@ -85,14 +93,16 @@ Checks for a valid null
 // @return  bool
 //
 
-@if (not _is-null($value)) {
+@use "node_modules/sass-basis/src/css/core";
+
+@if (not core.is-null($value)) {
   width: $value;
 }
 ```
 */
 
-@function _is-null($value) {
-  @if ('null' == type-of($value)) {
+@function is-null($value) {
+  @if ('null' == meta.type-of($value)) {
     @return true;
   }
 
@@ -101,7 +111,7 @@ Checks for a valid null
 
 /*
 ---
-name: _is-number()
+name: is-number()
 category:
   - core/function
   - core/function/condition
@@ -115,14 +125,16 @@ Checks for a valid number
 // @return  bool
 //
 
-@if (_is-number($value)) {
+@use "node_modules/sass-basis/src/css/core";
+
+@if (core.is-number($value)) {
   z-index: $value;
 }
 ```
 */
 
-@function _is-number($value) {
-  @if ('number' == type-of($value) and '' == unit($value)) {
+@function is-number($value) {
+  @if ('number' == meta.type-of($value) and '' == math.unit($value)) {
     @return true;
   }
 

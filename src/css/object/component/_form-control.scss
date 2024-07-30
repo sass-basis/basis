@@ -1,3 +1,5 @@
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-form-control
@@ -30,8 +32,8 @@ Form control component
 ```
 */
 
-.#{ $_prefix }c-form-control {
-  @include _form-control();
+.c-form-control {
+  @include abstract.form-control();
 
   &--has-icon {
     display: flex;
@@ -42,7 +44,7 @@ Form control component
       flex: 1 1 0%;
     }
 
-    > .#{ $_prefix }c-form-control__icon {
+    > .c-form-control__icon {
       flex: 0 0 0%;
       margin-right: .5em;
     }

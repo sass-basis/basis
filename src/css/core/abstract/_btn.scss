@@ -1,6 +1,6 @@
 /*
 ---
-name: _btn()
+name: btn()
 category:
   - core/abstract
 ---
@@ -8,8 +8,10 @@ Abstract button component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-btn {
-  @include _btn();
+  @include core.btn();
   padding: var(--_padding-2) var(--_padding-1);
   background-color: #fff;
   color: var(--_color-text);
@@ -22,7 +24,7 @@ Abstract button component
 ```
 */
 
-@mixin _btn() {
+@mixin btn() {
   display: inline-block;
   cursor: pointer;
   line-height: 1;

@@ -1,6 +1,6 @@
 /*
 ---
-name: _overlay()
+name: overlay()
 category:
   - core/mixin
 ---
@@ -13,13 +13,15 @@ Overlay helper
 // @param  int  $opacity
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _overlay(#fff, .5);
+  @include core.overlay(#fff, .5);
 }
 ```
 */
 
-@mixin _overlay($hex, $opacity: 1) {
+@mixin overlay($hex, $opacity: 1) {
   position: relative;
 
   &::before {

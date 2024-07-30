@@ -1,6 +1,10 @@
+@use "sass:map";
+@use "../function";
+@use "./balloon-triangle" as *;
+
 /*
 ---
-name: _balloon()
+name: balloon()
 category:
   - core/mixin
 ---
@@ -13,8 +17,10 @@ Generate balloon
 // @param  hash    $params  properties for decoration
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _balloon(top, (
+  @include core.balloon(top, (
     background-color: #fff,
     border-color: #ccc,
     border-size: 1px,
@@ -24,8 +30,8 @@ Generate balloon
 ```
 */
 
-@mixin _balloon($angle, $params: ()) {
-  $params: map-merge(
+@mixin balloon($angle, $params: ()) {
+  $params: map.merge(
     (
       background-color: null,
       border-color: null,
@@ -37,16 +43,16 @@ Generate balloon
 
   position: relative;
 
-  $background-colors: map-get($params, 'background-color');
-  @if (not _is-null($background-colors)) {
+  $background-colors: map.get($params, 'background-color');
+  @if (not function.is-null($background-colors)) {
     @each $background-color in $background-colors {
       background-color: $background-color;
     }
   }
 
-  $border-size: map-get($params, 'border-size');
-  $border-colors: map-get($params, 'border-color');
-  @if (not _is-null($border-size) and not _is-null($border-colors)) {
+  $border-size: map.get($params, 'border-size');
+  $border-colors: map.get($params, 'border-color');
+  @if (not function.is-null($border-size) and not function.is-null($border-colors)) {
     border: $border-size solid transparent;
 
     @each $border-color in $border-colors {
@@ -54,9 +60,9 @@ Generate balloon
     }
   }
 
-  $triangle-size: map-get($params, 'triangle-size');
+  $triangle-size: map.get($params, 'triangle-size');
 
-  @include _balloon-triangle(
+  @include balloon-triangle(
     $angle,
     $triangle-size,
     $background-colors,

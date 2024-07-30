@@ -1,6 +1,6 @@
 /*
 ---
-name: _responsive-table()
+name: responsive-table()
 category:
   - core/abstract
 ---
@@ -8,9 +8,11 @@ Abstract responsive table component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .responsive-table {
-  @include _media-max(sm) {
-    @include _responsive-table();
+  @include core.media-max(sm) {
+    @include core.responsive-table();
   }
 }
 ```
@@ -34,7 +36,7 @@ Abstract responsive table component
 ```
 */
 
-@mixin _responsive-table() {
+@mixin responsive-table() {
   overflow: auto;
   white-space: nowrap;
 

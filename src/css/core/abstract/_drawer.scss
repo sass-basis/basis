@@ -1,6 +1,8 @@
+@use "sass:map";
+
 /*
 ---
-name: _drawer()
+name: drawer()
 category:
   - core/abstract
 ---
@@ -14,8 +16,10 @@ Abstract drawer component
 //   max-width  length
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-drawer {
-  @include _drawer();
+  @include core.drawer();
 
   &__focus-point {
     height: 0px !important;
@@ -25,7 +29,7 @@ Abstract drawer component
 
   &__menu,
   &__submenu {
-    @include _list-unstyled();
+    @include core.list-unstyled();
 
     > *:not(:first-child) {
       margin-top: var(--_margin-1);
@@ -51,13 +55,13 @@ Abstract drawer component
         max-width: calc(100% - 42px);
       }
 
-      > .#{ $_prefix }c-drawer__toggle {
+      > .c-drawer__toggle {
         flex: 0 0 auto;
         width: 42px;
         overflow: hidden;
       }
 
-      > .#{ $_prefix }c-drawer__submenu {
+      > .c-drawer__submenu {
         flex: 1 1 100%;
       }
     }
@@ -189,8 +193,8 @@ new BasisDrawer({
 ```
 */
 
-@mixin _drawer($params: ()) {
-  $params: map-merge(
+@mixin drawer($params: ()) {
+  $params: map.merge(
     (
       width: 20rem,
       max-width: 80%,
@@ -198,8 +202,8 @@ new BasisDrawer({
     $params
   );
 
-  $width: map-get($params, 'width');
-  $max-width: map-get($params, 'max-width');
+  $width: map.get($params, 'width');
+  $max-width: map.get($params, 'max-width');
 
   position: absolute;
   top: 0;

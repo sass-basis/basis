@@ -1,6 +1,6 @@
 /*
 ---
-name: _background-image-cover()
+name: background-image-cover()
 category:
   - core/mixin
   - core/mixin/background-image
@@ -9,14 +9,16 @@ Background image cover + centering
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _background-image-cover();
+  @include core.background-image-cover();
   background-image: url(...);
 }
 ```
 */
 
-@mixin _background-image-cover() {
+@mixin background-image-cover() {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -24,7 +26,7 @@ Background image cover + centering
 
 /*
 ---
-name: _background-image-fixed()
+name: background-image-fixed()
 category:
   - core/mixin
   - core/mixin/background-image
@@ -33,13 +35,15 @@ Background image fixed
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _background-image-fixed();
+  @include core.background-image-fixed();
   background-image: url(...);
 }
 ```
 */
 
-@mixin _background-image-fixed() {
+@mixin background-image-fixed() {
   background-attachment: fixed;
 }

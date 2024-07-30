@@ -1,6 +1,6 @@
 /*
 ---
-name: _page-header()
+name: page-header()
 category:
   - core/abstract
 ---
@@ -8,12 +8,14 @@ Abstract page header component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-page-header {
-  @include _page-header();
+  @include core.page-header();
   padding: var(--_padding2) 0;
 
   &__title {
-    @include _set-font-size-level(3);
+    @include core.set-font-size-level(3);
   }
 }
 ```
@@ -26,7 +28,7 @@ Abstract page header component
 ```
 */
 
-@mixin _page-header() {
+@mixin page-header() {
   &__title {
     margin: 0;
     max-width: 100%; // For IE11

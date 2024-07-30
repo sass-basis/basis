@@ -1,6 +1,9 @@
+@use "../function";
+@use "../mixin";
+
 /*
 ---
-name: _top-balloon()
+name: top-balloon()
 category:
   - core/abstract
   - core/abstract/balloon
@@ -17,8 +20,10 @@ Abstract top balloon component
 //   triangle-size     length
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-top-balloon {
-  @include _top-balloon((
+  @include core.top-balloon((
     background-color: #fff,
     border-color: null,
     border-size: null,
@@ -36,13 +41,13 @@ Abstract top balloon component
 ```
 */
 
-@mixin _top-balloon($params: ()) {
-  @include _balloon(top, $params);
+@mixin top-balloon($params: ()) {
+  @include mixin.balloon(top, $params);
 }
 
 /*
 ---
-name: _right-balloon()
+name: right-balloon()
 category:
   - core/abstract
   - core/abstract/balloon
@@ -59,8 +64,10 @@ Abstract right balloon component
 //   triangle-size     length
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-right-balloon {
-  @include _right-balloon((
+  @include core.right-balloon((
     background-color: #fff,
     border-color: null,
     border-size: null,
@@ -78,13 +85,13 @@ Abstract right balloon component
 ```
 */
 
-@mixin _right-balloon($params: ()) {
-  @include _balloon(right, $params);
+@mixin right-balloon($params: ()) {
+  @include mixin.balloon(right, $params);
 }
 
 /*
 ---
-name: _bottom-balloon()
+name: bottom-balloon()
 category:
   - core/abstract
   - core/abstract/balloon
@@ -101,8 +108,10 @@ Abstract bottom balloon component
 //   triangle-size     length
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-bottom-balloon {
-  @include _bottom-balloon((
+  @include core.bottom-balloon((
     background-color: #fff,
     border-color: null,
     border-size: null,
@@ -120,13 +129,13 @@ Abstract bottom balloon component
 ```
 */
 
-@mixin _bottom-balloon($params: ()) {
-  @include _balloon(bottom, $params);
+@mixin bottom-balloon($params: ()) {
+  @include mixin.balloon(bottom, $params);
 }
 
 /*
 ---
-name: _left-balloon()
+name: left-balloon()
 category:
   - core/abstract
   - core/abstract/balloon
@@ -143,8 +152,10 @@ Abstract left balloon component
 //   triangle-size     length
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-left-balloon {
-  @include _left-balloon((
+  @include core.left-balloon((
     background-color: #fff,
     border-color: null,
     border-size: null,
@@ -162,6 +173,6 @@ Abstract left balloon component
 ```
 */
 
-@mixin _left-balloon($params: ()) {
-  @include _balloon(left, $params);
+@mixin left-balloon($params: ()) {
+  @include mixin.balloon(left, $params);
 }

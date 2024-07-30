@@ -1,6 +1,10 @@
+@use "../mixin";
+@use "./form-control" as *;
+@use "./btn" as *;
+
 /*
 ---
-name: _input-group()
+name: input-group()
 category:
   - core/abstract
   - core/abstract/form
@@ -9,8 +13,10 @@ Abstract input group component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-input-group {
-  @include _input-group();
+  @include core.input-group();
 }
 ```
 
@@ -26,7 +32,7 @@ Abstract input group component
 ```
 */
 
-@mixin _input-group() {
+@mixin input-group() {
   --_border-radius: var(--_global--border-radius);
 
   display: flex;
@@ -58,7 +64,7 @@ Abstract input group component
   &__addon {
     background-color: var(--_color-white);
     border: 1px solid var(--_form-control-border-color);
-    @include _form-control-base-padding();
+    @include mixin.form-control-base-padding();
     flex: none;
   }
 
@@ -73,21 +79,21 @@ Abstract input group component
     > input[type='tel'],
     > input[type='text'],
     > input[type='url'] {
-      @include _form-control();
-      -webkit-appearance: none;
+      appearance: none;
       border-radius: 0;
       flex: 1 1 0%;
       width: 100%;
+      @include form-control();
     }
   }
 
   &__btn {
-    @include _btn();
-    @include _form-control-base-border();
-    @include _form-control-base-padding();
+    @include btn();
     background-color: var(--_color-white);
     color: currentColor;
     flex: none;
     overflow: visible;
+    @include mixin.form-control-base-padding();
+    @include mixin.form-control-base-border();
   }
 }

@@ -1,6 +1,8 @@
+@use "../mixin";
+
 /*
 ---
-name: _entries()
+name: entries()
 category:
   - core/abstract
 ---
@@ -8,8 +10,10 @@ Abstract entries component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-entries {
-  @include _entries();
+  @include core.entries();
   boder-top: 1px solid var(--_light-color-gray);
 
   &__item {
@@ -29,6 +33,6 @@ Abstract entries component
 ```
 */
 
-@mixin _entries() {
-  @include _list-unstyled();
+@mixin entries() {
+  @include mixin.list-unstyled();
 }

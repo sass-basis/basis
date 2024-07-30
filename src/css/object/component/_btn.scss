@@ -1,3 +1,6 @@
+@use "../../core/mixin";
+@use "../../core/abstract";
+
 /*
 ---
 name: .c-btn
@@ -19,8 +22,8 @@ Button component
 ```
 */
 
-.#{ $_prefix }c-btn {
-  @include _btn();
+.c-btn {
+  @include abstract.btn();
 
   &--block {
     display: block;
@@ -28,6 +31,6 @@ Button component
   }
 
   &--ghost {
-    @include _ghost();
+    @include mixin.ghost();
   }
 }

@@ -1,7 +1,10 @@
-.#{ $_prefix }l-header .#{ $_prefix }c-site-branding {
+@use "../../../../../css/core";
+@use "../../core/mixin/font-basis" as *;
+
+.l-header .c-site-branding {
   &__title {
     @include font-basis();
-    @include _set-font-size-level(4);
+    @include core.set-font-size-level(4);
     margin: 0;
 
     a {

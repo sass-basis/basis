@@ -1,6 +1,8 @@
+@use "../mixin";
+
 /*
 ---
-name: _media()
+name: media()
 category:
   - core/abstract
 ---
@@ -8,8 +10,10 @@ Abstract media component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-media {
-  @include _media();
+  @include core.media();
 
   &__figure {
     margin-right: var(--_margin1);
@@ -30,12 +34,12 @@ Abstract media component
 ```
 */
 
-@mixin _media() {
+@mixin media() {
   display: flex;
 
   &__figure {
     flex: none;
-    @include _background-image-cover();
+    @include mixin.background-image-cover();
 
     > * {
       vertical-align: top;

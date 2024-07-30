@@ -1,6 +1,6 @@
 /*
 ---
-name: _entry()
+name: entry()
 category:
   - core/abstract
 ---
@@ -8,16 +8,18 @@ Abstract entry component
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-entry {
-  @include _entry();
+  @include core.entry();
 
   &__header {
     margin-bottom: var(--_margin1);
-    @include _set-font-size-level(3);
+    @include core.set-font-size-level(3);
   }
 
   &__content {
-    @include _set-content-level(1);
+    @include core.set-content-level(1);
   }
 }
 ```
@@ -35,7 +37,7 @@ Abstract entry component
 ```
 */
 
-@mixin _entry() {
+@mixin entry() {
   &__title {
     margin-top: 0;
   }

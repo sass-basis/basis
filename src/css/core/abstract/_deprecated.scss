@@ -1,6 +1,11 @@
+@use "sass:math";
+@use "../function";
+@use "../mixin";
+@use "./row" as *;
+
 /*
 ---
-name: _ib-row()
+name: ib-row()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
@@ -11,18 +16,20 @@ Abstract row component of inline-block based grid system
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-ib-row {
-  @include _ib-row();
+  @include core.ib-row();
 
   &__col {
-    @include _ib-row__col();
+    @include core.ib-row__col();
 
     &--1-3 {
-      @include _ib-row__col(1, 3);
+      @include core.ib-row__col(1, 3);
     }
 
     &--offset-1-3 {
-      @include _ib-row__col--offset(1, 3);
+      @include core.ib-row__col--offset(1, 3);
     }
   }
 }
@@ -41,8 +48,8 @@ Abstract row component of inline-block based grid system
 ```
 */
 
-@mixin _ib-row() {
-  @warn '_ib-row() is deprecated.';
+@mixin ib-row() {
+  @warn 'ib-row() is deprecated.';
 
   display: block;
   font-size: 0;
@@ -51,7 +58,7 @@ Abstract row component of inline-block based grid system
 
 /*
 ---
-name: _ib-row__col()
+name: ib-row__col()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
@@ -67,14 +74,16 @@ Abstract column element of inline-block based grid system
 // @param  int  $max-columns  denominator column size
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-ib-row {
-  @include _ib-row();
+  @include core.ib-row();
 
   &__col {
-    @include _ib-row__col();
+    @include core.ib-row__col();
 
     &--1-3 {
-      @include _ib-row__col(1, 3);
+      @include core.ib-row__col(1, 3);
     }
   }
 }
@@ -93,25 +102,25 @@ Abstract column element of inline-block based grid system
 ```
 */
 
-@mixin _ib-row__col($columns: null, $max-columns: null) {
-  @warn '_ib-row__col() is deprecated.';
+@mixin ib-row__col($columns: null, $max-columns: null) {
+  @warn 'ib-row__col() is deprecated.';
 
   display: inline-block;
-  @include _set-font-size-level(0);
+  @include mixin.set-font-size-level(0);
   text-align: left;
   vertical-align: top;
 
-  @if (not _is-null($columns) and not _is-null($max-columns)) {
-    $width: percentage($columns / $max-columns);
-    @include _ib-row__col--width($width);
+  @if (not function.is-null($columns) and not function.is-null($max-columns)) {
+    $width: math.percentage($columns / $max-columns);
+    @include ib-row__col--width($width);
   } @else {
-    @include _ib-row__col--width(100%);
+    @include ib-row__col--width(100%);
   }
 }
 
 /*
 ---
-name: _ib-row__col--width()
+name: ib-row__col--width()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
@@ -126,19 +135,21 @@ Sets column width of inline-block based grid system
 // @param  length  $width
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-ib-row {
-  @include _ib-row();
+  @include core.ib-row();
 
   &__col {
-    @include _ib-row__col();
-    @include _ib-row__col--width(auto);
+    @include core.ib-row__col();
+    @include core.ib-row__col--width(auto);
   }
 }
 ```
 */
 
-@mixin _ib-row__col--width($width) {
-  @warn '_ib-row__col--width() is deprecated.';
+@mixin ib-row__col--width($width) {
+  @warn 'ib-row__col--width() is deprecated.';
 
   @if ('auto' == $width) {
     width: auto;
@@ -149,7 +160,7 @@ Sets column width of inline-block based grid system
 
 /*
 ---
-name: _ib-row__col--offset()
+name: ib-row__col--offset()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
@@ -165,26 +176,28 @@ Sets column offset of inline-block based grid system
 // @param  int  $max-columns  denominator column size
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-ib-row {
-  @include _ib-row();
+  @include core.ib-row();
 
   &__col {
-    @include _ib-row__col();
-    @include _ib-row__col--offset(1, 3);
+    @include core.ib-row__col();
+    @include core.ib-row__col--offset(1, 3);
   }
 }
 ```
 */
 
-@mixin _ib-row__col--offset($columns: null, $max-columns: null) {
-  @warn '_ib-row__col--offset() is deprecated.';
+@mixin ib-row__col--offset($columns: null, $max-columns: null) {
+  @warn 'ib-row__col--offset() is deprecated.';
 
-  @include _row__col--offset($columns, $max-columns);
+  @include row__col--offset($columns, $max-columns);
 }
 
 /*
 ---
-name: _ib-row--margin()
+name: ib-row--margin()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
@@ -199,22 +212,24 @@ Sets row margin of inline-block based grid system
 // @param  int  $coefficient
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-ib-row {
-  @include _ib-row();
-  @include _ib-row--margin(1);
+  @include core.ib-row();
+  @include core.ib-row--margin(1);
 }
 ```
 */
 
-@mixin _ib-row--margin($coefficient) {
-  @warn '_ib-row--margin() is deprecated.';
+@mixin ib-row--margin($coefficient) {
+  @warn 'ib-row--margin() is deprecated.';
 
-  @include _row--margin($coefficient);
+  @include core.row--margin($coefficient);
 }
 
 /*
 ---
-name: _ib-row__col--margin()
+name: ib-row__col--margin()
 category:
   - core/abstract
   - core/abstract/grid-system/inline-block
@@ -229,22 +244,24 @@ Sets column margin of inline-block based grid system
 // @param  int  $coefficient
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-ib-row {
-  @include _ib-row();
-  @include _ib-row--margin(1);
+  @include core.ib-row();
+  @include core.ib-row--margin(1);
 }
 ```
 */
 
-@mixin _ib-row__col--margin($coefficient) {
-  @warn '_ib-row__col--margin() is deprecated.';
+@mixin ib-row__col--margin($coefficient) {
+  @warn 'ib-row__col--margin() is deprecated.';
 
-  @include _row__col--margin($coefficient);
+  @include core.row__col--margin($coefficient);
 }
 
 /*
 ---
-name: _row__col()
+name: row__col()
 category:
   - core/abstract
   - core/abstract/grid-system/flexbox
@@ -260,14 +277,16 @@ Abstract column element of flexbox based grid system
 // @param  int  $max-columns  denominator column size
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-row {
-  @include _row();
+  @include core.row();
 
   &__col {
-    @include _row__col();
+    @include core.row__col();
 
     &--1-3 {
-      @include _row__col(1, 3);
+      @include core.row__col(1, 3);
     }
   }
 }
@@ -283,22 +302,22 @@ Abstract column element of flexbox based grid system
 ```
 */
 
-@mixin _row__col($columns: null, $max-columns: null) {
-  @warn '_row__col() is deprecated.';
+@mixin row__col($columns: null, $max-columns: null) {
+  @warn 'row__col() is deprecated.';
 
   max-width: 100%;
 
-  @if (not _is-null($columns) and not _is-null($max-columns)) {
-    $width: percentage($columns / $max-columns);
-    @include _row__col--width($width);
+  @if (not function.is-null($columns) and not function.is-null($max-columns)) {
+    $width: math.percentage(math.div($columns, $max-columns));
+    @include row__col--width($width);
   } @else {
-    @include _row__col--width(1);
+    @include row__col--width(1);
   }
 }
 
 /*
 ---
-name: _row__col--width()
+name: row__col--width()
 category:
   - core/abstract
   - core/abstract/grid-system/flexbox
@@ -313,19 +332,21 @@ Sets column width of flexbox based grid system
 // @param  length  $width
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-row {
-  @include _row();
+  @include core.row();
 
   &__col {
-    @include _row__col();
-    @include _row__col--width(auto);
+    @include core.row__col();
+    @include core.row__col--width(auto);
   }
 }
 ```
 */
 
-@mixin _row__col--width($width) {
-  @warn '_row__col--width() is deprecated.';
+@mixin row__col--width($width) {
+  @warn 'row__col--width() is deprecated.';
 
   @if ('auto' == $width) {
     flex: 1 1 auto;
@@ -339,7 +360,7 @@ Sets column width of flexbox based grid system
 
 /*
 ---
-name: _row__col--offset()
+name: row__col--offset()
 category:
   - core/abstract
   - core/abstract/grid-system/flexbox
@@ -355,22 +376,24 @@ Sets column offset of flexbox based grid system
 // @param  int  $max-columns  denominator column size
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-row {
-  @include _row();
+  @include core.row();
 
   &__col {
-    @include _row__col();
-    @include _row__col--offset(1, 3);
+    @include core.row__col();
+    @include core.row__col--offset(1, 3);
   }
 }
 ```
 */
 
-@mixin _row__col--offset($columns: null, $max-columns: null) {
-  @warn '_row__col--offset() is deprecated.';
+@mixin row__col--offset($columns: null, $max-columns: null) {
+  @warn 'row__col--offset() is deprecated.';
 
-  @if (not _is-null($columns) and not _is-null($max-columns)) {
-    margin-left: percentage($columns / $max-columns);
+  @if (not function.is-null($columns) and not function.is-null($max-columns)) {
+    margin-left: math.percentage(math.div($columns, $max-columns));
   }
   @if (0 == $columns) {
     margin-left: 0;
@@ -379,7 +402,7 @@ Sets column offset of flexbox based grid system
 
 /*
 ---
-name: _row--margin()
+name: row--margin()
 category:
   - core/abstract
   - core/abstract/grid-system/flexbox
@@ -394,24 +417,26 @@ Sets row margin of flexbox based grid system
 // @param  int  $coefficient
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-row {
-  @include _row();
-  @include _row--margin(1);
+  @include core.row();
+  @include core.row--margin(1);
 }
 ```
 */
 
-@mixin _row--margin($coefficient) {
-  @warn '_row--margin() is deprecated.';
+@mixin row--margin($coefficient) {
+  @warn 'row--margin() is deprecated.';
 
-  @include _margin-right($coefficient / 2 * -1);
-  @include _margin-left($coefficient / 2 * -1);
-  @include _margin-bottom($coefficient * -1);
+  margin-right: calc((var(--_space) * var(--_margin-scale) * #{ $coefficient } / 2) * -1);
+  margin-left: calc((var(--_space) * var(--_margin-scale) * #{ $coefficient } / 2) * -1);
+  margin-bottom: calc(var(--_space) * var(--_margin-scale) * #{ $coefficient } * -1);
 }
 
 /*
 ---
-name: _row__col--margin()
+name: row__col--margin()
 category:
   - core/abstract
   - core/abstract/grid-system/flexbox
@@ -426,24 +451,26 @@ Sets column margin of flexbox based grid system
 // @param  int  $coefficient
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-row__col {
-  @include _row__col();
-  @include _row__col--margin(1);
+  @include core.row__col();
+  @include core.row__col--margin(1);
 }
 ```
 */
 
-@mixin _row__col--margin($coefficient) {
-  @warn '_row__col--margin() is deprecated.';
+@mixin row__col--margin($coefficient) {
+  @warn 'row__col--margin() is deprecated.';
 
-  @include _padding-right($coefficient / 2, true);
-  @include _padding-left($coefficient / 2, true);
-  @include _margin-bottom($coefficient);
+  padding-right: calc((var(--_space) * var(--_margin-scale) * #{ $coefficient } / 2));
+  padding-left: calc((var(--_space) * var(--_margin-scale) * #{ $coefficient } / 2));
+  margin-bottom: calc(var(--_space) * var(--_margin-scale) * #{ $coefficient } * -1);
 }
 
 /*
 ---
-name: _lattice()
+name: lattice()
 category:
   - core/abstract
   - core/abstract/grid-system/lattice
@@ -454,14 +481,16 @@ Abstract row component of flexbox based grid system
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 .c-lattice {
-  @include _lattice();
+  @include core.lattice();
 
   &__col {
-    @include _lattice__col();
+    @include core.lattice__col();
 
     &--1-3 {
-      @include _lattice__col(1, 3);
+      @include core.lattice__col(1, 3);
     }
   }
 }
@@ -480,10 +509,10 @@ Abstract row component of flexbox based grid system
 ```
 */
 
-@mixin _lattice() {
-  @warn '_lattice() is deprecated.';
+@mixin lattice() {
+  @warn 'lattice() is deprecated.';
 
-  @include _row();
+  @include row();
   margin-right: calc(var(--_margin1) * .5 * -1);
   margin-left: calc(var(--_margin1) * .5 * -1);
   margin-bottom: calc(var(--_margin1) -1);
@@ -491,7 +520,7 @@ Abstract row component of flexbox based grid system
 
 /*
 ---
-name: _lattice__col()
+name: lattice__col()
 category:
   - core/abstract
   - core/abstract/grid-system/lattice
@@ -507,14 +536,16 @@ Abstract column element of flexbox based grid system
 // @param  int  $max-columns  denominator column size
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-lattice {
-  @include _lattice();
+  @include core.lattice();
 
   &__col {
-    @include _lattice__col();
+    @include core.lattice__col();
 
     &--1-3 {
-      @include _lattice__col(1, 3);
+      @include core.lattice__col(1, 3);
     }
   }
 }
@@ -533,10 +564,10 @@ Abstract column element of flexbox based grid system
 ```
 */
 
-@mixin _lattice__col($columns: null, $max-columns: null) {
-  @warn '_lattice__col() is deprecated.';
+@mixin lattice__col($columns: null, $max-columns: null) {
+  @warn 'lattice__col() is deprecated.';
 
-  @include _row__col($columns, $max-columns);
+  @include row__col($columns, $max-columns);
   padding-right: calc(var(--_margin1) * .5);
   padding-left: calc(var(--_margin1) * .5);
   margin-bottom: var(--_margin1);
@@ -544,7 +575,7 @@ Abstract column element of flexbox based grid system
 
 /*
 ---
-name: _lattice__col--width()
+name: lattice__col--width()
 category:
   - core/abstract
   - core/abstract/grid-system/lattice
@@ -559,23 +590,25 @@ Sets column width of flexbox based grid system
 // @param  length  $width
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-lattice {
-  @include _lattice();
+  @include core.lattice();
 
   &__col {
-    @include _lattice__col(1, 2);
+    @include core.lattice__col(1, 2);
 
-    @include _media-min(lg) {
-      @include _lattice__col--width(1 / 3 * 100%);
+    @include core.media-min(lg) {
+      @include core.lattice__col--width(1 / 3 * 100%);
     }
   }
 }
 ```
 */
 
-@mixin _lattice__col--width($width) {
-  @warn '_lattice__col--width() is deprecated.';
+@mixin lattice__col--width($width) {
+  @warn 'lattice__col--width() is deprecated.';
 
-  @include _row__col--width($width);
+  @include row__col--width($width);
 }
 

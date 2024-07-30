@@ -1,3 +1,8 @@
+@use "sass:map";
+@use "sass:list";
+@use "../../core/variable";
+@use "../../core/mixin";
+
 /*
 ---
 name: .u-invisible
@@ -56,31 +61,31 @@ Invisible utility
 ```
 */
 
-.#{ $_prefix }u-invisible {
-  @include _invisible();
+.u-invisible {
+  @include mixin.invisible();
 }
 
-$sizes-keys: map-keys($_sizes);
-$min-key: nth($sizes-keys, 1);
-$max-key: nth($sizes-keys, -1);
-@each $size, $screen-min in $_sizes {
-  @if $size != $min-key and $size != $max-key {
-    .#{ $_prefix }u-invisible-#{ $size }-up {
-      @include _media-min($size) {
-        @include _invisible();
+$_sizes-keys: map.keys(variable.$sizes);
+$_min-key: list.nth($_sizes-keys, 1);
+$_max-key: list.nth($_sizes-keys, -1);
+@each $size, $screen-min in variable.$sizes {
+  @if $size != $_min-key and $size != $_max-key {
+    .u-invisible-#{ $size }-up {
+      @include mixin.media-min($size) {
+        @include mixin.invisible();
       }
     }
 
-    .#{ $_prefix }u-invisible-#{ $size }-down {
-      @include _media-max($size) {
-        @include _invisible();
+    .u-invisible-#{ $size }-down {
+      @include mixin.media-max($size) {
+        @include mixin.invisible();
       }
     }
   }
 
-  .#{ $_prefix }u-invisible-#{ $size } {
-    @include _media-only($size) {
-      @include _invisible();
+  .u-invisible-#{ $size } {
+    @include mixin.media-only($size) {
+      @include mixin.invisible();
     }
   }
 }

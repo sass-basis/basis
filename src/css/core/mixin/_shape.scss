@@ -1,6 +1,9 @@
+@use "sass:math";
+@use "../function";
+
 /*
 ---
-name: _circle()
+name: circle()
 category:
   - core/mixin
   - core/mixin/shape
@@ -13,13 +16,15 @@ Create circle object
 // @param  length  $size
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _circle(30px);
+  @include core.circle(30px);
 }
 ```
 */
 
-@mixin _circle($size) {
+@mixin circle($size) {
   border-radius: 100%;
   height: $size;
   width: $size;
@@ -28,7 +33,7 @@ Create circle object
 
 /*
 ---
-name: _square()
+name: square()
 category:
   - core/mixin
   - core/mixin/shape
@@ -39,27 +44,24 @@ Creating square
 ```scss
 //
 // @param  length  $size
-// @param  length  $border-radius
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-foo {
-  @include _square(30px);
+  @include core.square(30px);
 }
 ```
 */
 
-@mixin _square($size, $border-radius: null) {
+@mixin square($size) {
   height: $size;
   width: $size;
-
-  @if (_is-length($border-radius)) {
-    border-radius: $border-radius;
-  }
 }
 
 /*
 ---
-name: _triangle-top()
+name: triangle-top()
 category:
   - core/mixin
   - core/mixin/shape
@@ -74,16 +76,18 @@ Generate top triangle style
 // @param  hex     $colors
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-triangle-top {
-  @include _triangle-top(10px, 10px, #000);
+  @include core.triangle-top(10px, 10px, #000);
 }
 ```
 */
 
-@mixin _triangle-top($width, $height, $colors) {
-  @include _square(0);
+@mixin triangle-top($width, $height, $colors) {
+  @include square(0);
   border-style: solid;
-  border-width: 0 ($width / 2) $height ($width / 2);
+  border-width: 0 math.div($width, 2) $height math.div($width, 2);
   border-color: transparent;
 
   @each $color in $colors {
@@ -93,7 +97,7 @@ Generate top triangle style
 
 /*
 ---
-name: _triangle-right()
+name: triangle-right()
 category:
   - core/mixin
   - core/mixin/shape
@@ -107,16 +111,18 @@ category:
 // @param  hex     $colors
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-triangle-right {
-  _triangle-right(10px, 10px, #000);
+  core.triangle-right(10px, 10px, #000);
 }
 ```
 */
 
-@mixin _triangle-right($width, $height, $colors) {
-  @include _square(0);
+@mixin triangle-right($width, $height, $colors) {
+  @include square(0);
   border-style: solid;
-  border-width: ($height / 2) 0 ($height / 2) $width;
+  border-width: math.div($height, 2) 0 math.div($height, 2) $width;
   border-color: transparent;
 
   @each $color in $colors {
@@ -126,7 +132,7 @@ category:
 
 /*
 ---
-name: _triangle-bottom()
+name: triangle-bottom()
 category:
   - core/mixin
   - core/mixin/shape
@@ -140,16 +146,18 @@ category:
 // @param  hex     $colors
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-triangle-bottom {
-  @include _triangle-bottom(10px, 10px, #000);
+  @include triangle-bottom(10px, 10px, #000);
 }
 ```
 */
 
-@mixin _triangle-bottom($width, $height, $colors) {
-  @include _square(0);
+@mixin triangle-bottom($width, $height, $colors) {
+  @include square(0);
   border-style: solid;
-  border-width: $height ($width / 2) 0 ($width / 2);
+  border-width: $height math.div($width, 2) 0 math.div($width, 2);
   border-color: transparent;
 
   @each $color in $colors {
@@ -159,7 +167,7 @@ category:
 
 /*
 ---
-name: _triangle-left()
+name: triangle-left()
 category:
   - core/mixin
   - core/mixin/shape
@@ -173,16 +181,18 @@ category:
 // @param  hex     $colors
 //
 
+@use "node_modules/sass-basis/src/css/core";
+
 .c-triangle-left {
-  @include _triangle-left(10px, 10px, #000);
+  @include core.triangle-left(10px, 10px, #000);
 }
 ```
 */
 
-@mixin _triangle-left($width, $height, $colors) {
-  @include _square(0);
+@mixin triangle-left($width, $height, $colors) {
+  @include square(0);
   border-style: solid;
-  border-width: ($height / 2) $width ($height / 2) 0;
+  border-width: math.div($height, 2) $width math.div($height, 2) 0;
   border-color: transparent;
 
   @each $color in $colors {

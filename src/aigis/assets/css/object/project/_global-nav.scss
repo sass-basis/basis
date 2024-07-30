@@ -1,7 +1,9 @@
-.#{ $_prefix }p-global-nav {
-  @include _set-font-size-level(-1);
+@use "../../../../../css/core";
 
-  .#{ $_prefix }c-navbar__item a {
+.p-global-nav {
+  @include core.set-font-size-level(-1);
+
+  .c-navbar__item a {
     padding: var(--_padding-2) var(--_padding-1);
   }
 }

@@ -1,3 +1,5 @@
+@use "../../core/mixin";
+
 /*
 ---
 name: .u-clearfix
@@ -17,6 +19,6 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 ```
 */
 
-.#{ $_prefix }u-clearfix {
-  @include _clearfix();
+.u-clearfix {
+  @include mixin.clearfix();
 }

@@ -1,6 +1,6 @@
 /*
 ---
-name: _list-unstyled()
+name: list-unstyled()
 category:
   - core/mixin
   - core/mixin/list
@@ -9,13 +9,15 @@ Unstyled list
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 ul.u-unstyled-list {
-  @include _list-unstyled();
+  @include core.list-unstyled();
 }
 ```
 */
 
-@mixin _list-unstyled() {
+@mixin list-unstyled() {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
@@ -23,7 +25,7 @@ ul.u-unstyled-list {
 
 /*
 ---
-name: _list-inline()
+name: list-inline()
 category:
   - core/mixin
   - core/mixin/list
@@ -32,14 +34,16 @@ Inline list
 
 ### scss
 ```scss
+@use "node_modules/sass-basis/src/css/core";
+
 ul.u-inline-list {
-  @include _list-inline();
+  @include core.list-inline();
 }
 ```
 */
 
-@mixin _list-inline() {
-  @include _list-unstyled();
+@mixin list-inline() {
+  @include list-unstyled();
 
   > li {
     display: inline-block;
