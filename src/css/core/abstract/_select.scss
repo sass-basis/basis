@@ -46,9 +46,9 @@ Abstract selectbox component
     display:inline-block;
     cursor: pointer;
     background-color: transparent;
-    line-height: 1;
     max-width: 100%;
-    padding: var(--_padding-1) var(--_padding2) var(--_padding-1) var(--_padding-1);
+    @include mixin.form-control-base-padding();
+    padding-right: var(--_s1);
     @include mixin.form-control-base-border();
 
     &:focus {

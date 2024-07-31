@@ -21,7 +21,7 @@ select {
 */
 
 @mixin form-control-base-padding() {
-  padding: var(--_padding-1);
+  padding: .75rem 1rem;
 }
 
 /*

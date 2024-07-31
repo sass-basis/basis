@@ -1,4 +1,8 @@
 # Changelog
+
+## July 31, 2024 19.0.1
+* Update form control styles.
+
 ## July 31, 2024 19.0.0
 * node-sass to sass. More details: https://github.com/sass-basis/basis/issues/123
 
