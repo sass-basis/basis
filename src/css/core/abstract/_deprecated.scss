@@ -111,7 +111,7 @@ Abstract column element of inline-block based grid system
   vertical-align: top;
 
   @if (not function.is-null($columns) and not function.is-null($max-columns)) {
-    $width: math.percentage($columns / $max-columns);
+    $width: math.percentage(math.div($columns, $max-columns));
     @include ib-row__col--width($width);
   } @else {
     @include ib-row__col--width(100%);
