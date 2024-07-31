@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v19.0.0
+ * Name: Basis v19.0.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -3505,7 +3505,7 @@ Abstract pulse spinner component
 ```
 */
 /*!
- * Name: Basis v19.0.0
+ * Name: Basis v19.0.1
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -4982,7 +4982,7 @@ Form control component
   background-color: var(--_color-white);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
   max-width: 100%;
-  padding: var(--_padding-1);
+  padding: 0.75rem 1rem;
   --_border-radius: var(--_global--border-radius);
   --_border-color: var(--_form-control-border-color);
   border: 1px solid var(--_border-color);
@@ -5335,7 +5335,7 @@ Input group component
 .c-input-group__addon {
   background-color: var(--_color-white);
   border: 1px solid var(--_form-control-border-color);
-  padding: var(--_padding-1);
+  padding: 0.75rem 1rem;
   flex: none;
 }
 .c-input-group__field {
@@ -5356,7 +5356,7 @@ Input group component
   background-color: var(--_color-white);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035);
   max-width: 100%;
-  padding: var(--_padding-1);
+  padding: 0.75rem 1rem;
   --_border-radius: var(--_global--border-radius);
   --_border-color: var(--_form-control-border-color);
   border: 1px solid var(--_border-color);
@@ -5447,7 +5447,7 @@ textarea.c-input-group__field > input[type=email], .c-input-group__field > input
   color: currentColor;
   flex: none;
   overflow: visible;
-  padding: var(--_padding-1);
+  padding: 0.75rem 1rem;
   --_border-radius: var(--_global--border-radius);
   --_border-color: var(--_form-control-border-color);
   border: 1px solid var(--_border-color);
@@ -7367,9 +7367,9 @@ Select box component
   display: inline-block;
   cursor: pointer;
   background-color: transparent;
-  line-height: 1;
   max-width: 100%;
-  padding: var(--_padding-1) var(--_padding2) var(--_padding-1) var(--_padding-1);
+  padding: 0.75rem 1rem;
+  padding-right: var(--_s1);
   --_border-radius: var(--_global--border-radius);
   --_border-color: var(--_form-control-border-color);
   border: 1px solid var(--_border-color);
