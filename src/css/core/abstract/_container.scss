@@ -1,4 +1,4 @@
-@mixin _container-padding() {
+@mixin container-padding() {
   --_container-margin: var(--_global--container-margin);
   --_container-margin-right: calc(var(--_container-margin) + env(safe-area-inset-right));
   --_container-margin-left: calc(var(--_container-margin) + env(safe-area-inset-left));
@@ -36,7 +36,7 @@ Abstract fluid container component
 @mixin fluid-container() {
   flex-grow: 1; // To prevent the item from being crushed when it becomes a flex item.
   box-sizing: content-box;
-  @include _container-padding();
+  @include container-padding();
   width: auto;
   max-width: 100%;
 	min-width: 0;
