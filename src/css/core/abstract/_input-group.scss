@@ -80,10 +80,13 @@ Abstract input group component
     > input[type='text'],
     > input[type='url'] {
       appearance: none;
-      border-radius: 0;
       flex: 1 1 0%;
       width: 100%;
       @include form-control();
+
+      & {
+        --_border-radius: 0;
+      }
     }
   }
 
