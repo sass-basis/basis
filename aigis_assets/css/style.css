@@ -5350,7 +5350,6 @@ Input group component
 .c-input-group__field > input[type=text],
 .c-input-group__field > input[type=url] {
   appearance: none;
-  border-radius: 0;
   flex: 1 1 0%;
   width: 100%;
   background-color: var(--_color-white);
@@ -5434,6 +5433,15 @@ textarea.c-input-group__field > input[type=email], .c-input-group__field > input
   width: 100%;
 }
 
+.c-input-group__field > input[type=email],
+.c-input-group__field > input[type=number],
+.c-input-group__field > input[type=password],
+.c-input-group__field > input[type=search],
+.c-input-group__field > input[type=tel],
+.c-input-group__field > input[type=text],
+.c-input-group__field > input[type=url] {
+  --_border-radius: 0;
+}
 .c-input-group__btn {
   display: inline-block;
   cursor: pointer;
