@@ -1,3 +1,4 @@
+@use "sass:list";
 @use "sass:math";
 @use "../core/function";
 @use "../core/variable";
@@ -224,16 +225,16 @@
   /**
    * Modular scales for spaces.
    */
-  --_ms-2: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 1) });
-  --_ms-1: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 2) });
+  --_ms-2: calc(var(--_space-unitless) / 3 * #{ list.nth(variable.$fibonacci-sequence, 1) });
+  --_ms-1: calc(var(--_space-unitless) / 3 * #{ list.nth(variable.$fibonacci-sequence, 2) });
   --_ms0: 0rem;
-  --_ms1: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 3) });
-  --_ms2: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 4) });
-  --_ms3: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 5) });
-  --_ms4: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 6) });
-  --_ms5: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 7) });
-  --_ms6: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 8) });
-  --_ms7: calc(var(--_space-unitless) / 3 * #{ nth(variable.$fibonacci-sequence, 9) });
+  --_ms1: calc(var(--_space-unitless) / 3 * #{ list.nth(variable.$fibonacci-sequence, 3) });
+  --_ms2: calc(var(--_space-unitless) / 3 * #{ list.nth(variable.$fibonacci-sequence, 4) });
+  --_ms3: calc(var(--_space-unitless) / 3 * #{ list.nth(variable.$fibonacci-sequence, 5) });
+  --_ms4: calc(var(--_space-unitless) / 3 * #{ list.nth(variable.$fibonacci-sequence, 6) });
+  --_ms5: calc(var(--_space-unitless) / 3 * #{ list.nth(variable.$fibonacci-sequence, 7) });
+  --_ms6: calc(var(--_space-unitless) / 3 * #{ list.nth(variable.$fibonacci-sequence, 8) });
+  --_ms7: calc(var(--_space-unitless) / 3 * #{ list.nth(variable.$fibonacci-sequence, 9) });
 
   /**
    * Modular scales for spaces. rem.

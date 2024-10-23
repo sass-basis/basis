@@ -1,3 +1,4 @@
+@use "sass:list";
 @use "sass:map";
 @use "../function";
 
@@ -51,8 +52,8 @@ new BasisPageEffect({
 
   $duration: map.get($params, 'duration');
 
-  $fadein-animation-name : function.sanitize-animation-name(_page-effect-fadein- + zip(map.values($params)));
-  $fadeout-animation-name: function.sanitize-animation-name(_page-effect-fadeout- + zip(map.values($params)));
+  $fadein-animation-name : function.sanitize-animation-name(_page-effect-fadein- + list.zip(map.values($params)));
+  $fadeout-animation-name: function.sanitize-animation-name(_page-effect-fadeout- + list.zip(map.values($params)));
 
   position: fixed;
   top: 0;

@@ -207,7 +207,7 @@ Bounce scale
 ```
 */
 @mixin bounce-scale($float, $delay: 0) {
-  $suffix: function.strip-unit(percentage($float));
+  $suffix: function.strip-unit(math.percentage($float));
   $keyframe-name: function.sanitize-animation-name(_bounce-scale- + $suffix);
   animation: $keyframe-name $delay ease-out;
 

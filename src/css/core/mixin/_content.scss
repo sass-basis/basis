@@ -62,11 +62,11 @@ Sets Child elements margin
     $margin: var(--_margin7);
   }
 
-  & > *:not(:first-child) {
+  & > :where(:not(:first-child)) {
     margin-top: calc(#{ $margin } * var(--_margin-top));
   }
 
-  & > *:not(:last-child) {
+  & > :where(:not(:last-child)) {
     margin-bottom: calc(#{ $margin } * var(--_margin-bottom));
   }
 }
