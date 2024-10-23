@@ -1,5 +1,8 @@
 # Changelog
 
+## October 23, 2024 19.0.4
+* Reduce the level of detail of the inter-element margins in `set-between-content-level()`.
+
 ## September 14, 2024 19.0.3
 * Fix `input-group()` layout.
 
