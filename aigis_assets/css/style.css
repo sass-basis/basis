@@ -3530,21 +3530,21 @@ Abstract pulse spinner component
    */
   --_color-gray: #999;
   --_dark-color-gray: #666666;
-  --_darker-color-gray: #444444;
-  --_darkest-color-gray: #3b3b3b;
+  --_darker-color-gray: rgb(67.575, 67.575, 67.575);
+  --_darkest-color-gray: rgb(58.65, 58.65, 58.65);
   --_light-color-gray: #cccccc;
-  --_lighter-color-gray: #eeeeee;
-  --_lightest-color-gray: #f7f7f7;
+  --_lighter-color-gray: rgb(238.425, 238.425, 238.425);
+  --_lightest-color-gray: rgb(247.35, 247.35, 247.35);
   /**
    * Color: text.
    */
   --_color-text: #333;
   --_dark-color-text: black;
-  --_darker-color-text: black;
-  --_darkest-color-text: black;
+  --_darker-color-text: hsl(0, 0%, -13.5%);
+  --_darkest-color-text: hsl(0, 0%, -17%);
   --_light-color-text: #666666;
-  --_lighter-color-text: #888888;
-  --_lightest-color-text: #919191;
+  --_lighter-color-text: rgb(136.425, 136.425, 136.425);
+  --_lightest-color-text: rgb(145.35, 145.35, 145.35);
   /**
    * Color: white.
    */
@@ -7961,10 +7961,10 @@ Content utility
   margin-top: 0;
   margin-bottom: 0;
 }
-.u-content > *:not(:first-child) {
+.u-content > :where(:not(:first-child)) {
   margin-top: calc(var(--_margin1) * var(--_margin-top));
 }
-.u-content > *:not(:last-child) {
+.u-content > :where(:not(:last-child)) {
   margin-bottom: calc(var(--_margin1) * var(--_margin-bottom));
 }
 .u-content > h1 {
@@ -8650,10 +8650,10 @@ pre {
   margin-top: 0;
   margin-bottom: 0;
 }
-.l-main > .c-entry .c-entry__content > *:not(:first-child) {
+.l-main > .c-entry .c-entry__content > :where(:not(:first-child)) {
   margin-top: calc(var(--_margin1) * var(--_margin-top));
 }
-.l-main > .c-entry .c-entry__content > *:not(:last-child) {
+.l-main > .c-entry .c-entry__content > :where(:not(:last-child)) {
   margin-bottom: calc(var(--_margin1) * var(--_margin-bottom));
 }
 .l-main > .c-entry .c-entry__content > h1 {
@@ -8882,10 +8882,10 @@ pre {
   margin-top: 0;
   margin-bottom: 0;
 }
-:where(.aigis-preview) > *:not(:first-child) {
+:where(.aigis-preview) > :where(:not(:first-child)) {
   margin-top: calc(var(--_margin1) * var(--_margin-top));
 }
-:where(.aigis-preview) > *:not(:last-child) {
+:where(.aigis-preview) > :where(:not(:last-child)) {
   margin-bottom: calc(var(--_margin1) * var(--_margin-bottom));
 }
 :where(.aigis-preview) > h1 {
