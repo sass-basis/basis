@@ -72,20 +72,30 @@ Abstract input group component
     display: flex;
     flex: 1;
 
-    > input[type='email'],
-    > input[type='number'],
-    > input[type='password'],
-    > input[type='search'],
-    > input[type='tel'],
-    > input[type='text'],
-    > input[type='url'] {
+    > input {
       appearance: none;
       flex: 1 1 0%;
       width: 100%;
       @include form-control();
+    }
 
-      & {
-        --_border-radius: 0;
+    &:first-child:not(:last-child) {
+      > input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    &:last-child:not(:first-child) {
+      > input {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+
+    &:not(:first-child):not(:last-child) {
+      > input {
+        border-radius: 0;
       }
     }
   }
