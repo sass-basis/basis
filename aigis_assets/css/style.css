@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Name: Basis v19.0.4
+ * Name: Basis v19.0.5
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -3505,7 +3505,7 @@ Abstract pulse spinner component
 ```
 */
 /*!
- * Name: Basis v19.0.4
+ * Name: Basis v19.0.5
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -5342,13 +5342,7 @@ Input group component
   display: flex;
   flex: 1;
 }
-.c-input-group__field > input[type=email],
-.c-input-group__field > input[type=number],
-.c-input-group__field > input[type=password],
-.c-input-group__field > input[type=search],
-.c-input-group__field > input[type=tel],
-.c-input-group__field > input[type=text],
-.c-input-group__field > input[type=url] {
+.c-input-group__field > input {
   appearance: none;
   flex: 1 1 0%;
   width: 100%;
@@ -5366,81 +5360,35 @@ Input group component
   --_transition-delay: var(--_global--transition-delay);
   transition: border var(--_transition-duration) var(--_transition-function-timing) var(--_transition-delay);
 }
-.c-input-group__field > input[type=email]:hover,
-.c-input-group__field > input[type=number]:hover,
-.c-input-group__field > input[type=password]:hover,
-.c-input-group__field > input[type=search]:hover,
-.c-input-group__field > input[type=tel]:hover,
-.c-input-group__field > input[type=text]:hover,
-.c-input-group__field > input[type=url]:hover {
+.c-input-group__field > input:hover {
   --_border-color: var(--_form-control-border-color-hover);
 }
-.c-input-group__field > input[type=email]:active, .c-input-group__field > input[type=email]:focus, .c-input-group__field > input[type=email]:focus-within, .c-input-group__field > input[type=email][aria-selected=true],
-.c-input-group__field > input[type=number]:active,
-.c-input-group__field > input[type=number]:focus,
-.c-input-group__field > input[type=number]:focus-within,
-.c-input-group__field > input[type=number][aria-selected=true],
-.c-input-group__field > input[type=password]:active,
-.c-input-group__field > input[type=password]:focus,
-.c-input-group__field > input[type=password]:focus-within,
-.c-input-group__field > input[type=password][aria-selected=true],
-.c-input-group__field > input[type=search]:active,
-.c-input-group__field > input[type=search]:focus,
-.c-input-group__field > input[type=search]:focus-within,
-.c-input-group__field > input[type=search][aria-selected=true],
-.c-input-group__field > input[type=tel]:active,
-.c-input-group__field > input[type=tel]:focus,
-.c-input-group__field > input[type=tel]:focus-within,
-.c-input-group__field > input[type=tel][aria-selected=true],
-.c-input-group__field > input[type=text]:active,
-.c-input-group__field > input[type=text]:focus,
-.c-input-group__field > input[type=text]:focus-within,
-.c-input-group__field > input[type=text][aria-selected=true],
-.c-input-group__field > input[type=url]:active,
-.c-input-group__field > input[type=url]:focus,
-.c-input-group__field > input[type=url]:focus-within,
-.c-input-group__field > input[type=url][aria-selected=true] {
+.c-input-group__field > input:active, .c-input-group__field > input:focus, .c-input-group__field > input:focus-within, .c-input-group__field > input[aria-selected=true] {
   --_border-color: var(--_form-control-border-color-focus);
 }
-.c-input-group__field > input[type=email] > input,
-.c-input-group__field > input[type=email] > textarea,
-.c-input-group__field > input[type=number] > input,
-.c-input-group__field > input[type=number] > textarea,
-.c-input-group__field > input[type=password] > input,
-.c-input-group__field > input[type=password] > textarea,
-.c-input-group__field > input[type=search] > input,
-.c-input-group__field > input[type=search] > textarea,
-.c-input-group__field > input[type=tel] > input,
-.c-input-group__field > input[type=tel] > textarea,
-.c-input-group__field > input[type=text] > input,
-.c-input-group__field > input[type=text] > textarea,
-.c-input-group__field > input[type=url] > input,
-.c-input-group__field > input[type=url] > textarea {
+.c-input-group__field > input > input,
+.c-input-group__field > input > textarea {
   border: none;
   outline: none;
 }
-.c-input-group__field > input[type=email]:disabled,
-.c-input-group__field > input[type=number]:disabled,
-.c-input-group__field > input[type=password]:disabled,
-.c-input-group__field > input[type=search]:disabled,
-.c-input-group__field > input[type=tel]:disabled,
-.c-input-group__field > input[type=text]:disabled,
-.c-input-group__field > input[type=url]:disabled {
+.c-input-group__field > input:disabled {
   background-color: var(--_lightest-color-gray);
 }
-textarea.c-input-group__field > input[type=email], .c-input-group__field > input[type=number], .c-input-group__field > input[type=password], .c-input-group__field > input[type=search], .c-input-group__field > input[type=tel], .c-input-group__field > input[type=text], .c-input-group__field > input[type=url] {
+textarea.c-input-group__field > input {
   height: auto;
   width: 100%;
 }
 
-.c-input-group__field > input[type=email],
-.c-input-group__field > input[type=number],
-.c-input-group__field > input[type=password],
-.c-input-group__field > input[type=search],
-.c-input-group__field > input[type=tel],
-.c-input-group__field > input[type=text],
-.c-input-group__field > input[type=url] {
-  --_border-radius: 0;
+.c-input-group__field:first-child:not(:last-child) > input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.c-input-group__field:last-child:not(:first-child) > input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.c-input-group__field:not(:first-child):not(:last-child) > input {
+  border-radius: 0;
 }
 .c-input-group__btn {
   display: inline-block;
