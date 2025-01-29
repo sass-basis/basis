@@ -19,9 +19,13 @@ img {
 */
 
 @mixin hover() {
-  @media (hover: hover) and (pointer: fine) {
-    &:hover, &:active, &:focus {
+  @media (any-hover: hover) {
+    &:hover {
       @content;
     }
+  }
+
+  &:focus-visible {
+    @content;
   }
 }
