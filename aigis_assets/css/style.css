@@ -7566,8 +7566,8 @@ Shake vertical utility
 <div class="u-shake-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (hover: hover) and (pointer: fine) {
-  .u-shake-vertical:hover, .u-shake-vertical:active, .u-shake-vertical:focus {
+@media (any-hover: hover) {
+  .u-shake-vertical:hover {
     position: relative;
     animation: _bounce_vertical_4px 0.5s;
   }
@@ -7589,6 +7589,27 @@ Shake vertical utility
     }
   }
 }
+.u-shake-vertical:focus-visible {
+  position: relative;
+  animation: _bounce_vertical_4px 0.5s;
+}
+@keyframes _bounce_vertical_4px {
+  0% {
+    top: -4px;
+  }
+  25% {
+    top: 4px;
+  }
+  50% {
+    top: -2px;
+  }
+  75% {
+    top: 2px;
+  }
+  100% {
+    top: 0;
+  }
+}
 
 /*
 ---
@@ -7605,8 +7626,8 @@ Vibrate vertical utility
 <div class="u-vibrate-vertical" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (hover: hover) and (pointer: fine) {
-  .u-vibrate-vertical:hover, .u-vibrate-vertical:active, .u-vibrate-vertical:focus {
+@media (any-hover: hover) {
+  .u-vibrate-vertical:hover {
     position: relative;
     animation: _bounce_vertical_2px 0.2s;
   }
@@ -7628,6 +7649,27 @@ Vibrate vertical utility
     }
   }
 }
+.u-vibrate-vertical:focus-visible {
+  position: relative;
+  animation: _bounce_vertical_2px 0.2s;
+}
+@keyframes _bounce_vertical_2px {
+  0% {
+    top: -2px;
+  }
+  25% {
+    top: 2px;
+  }
+  50% {
+    top: -1px;
+  }
+  75% {
+    top: 1px;
+  }
+  100% {
+    top: 0;
+  }
+}
 
 /*
 ---
@@ -7644,8 +7686,8 @@ Shake horizontal utility
 <div class="u-shake-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (hover: hover) and (pointer: fine) {
-  .u-shake-horizontal:hover, .u-shake-horizontal:active, .u-shake-horizontal:focus {
+@media (any-hover: hover) {
+  .u-shake-horizontal:hover {
     position: relative;
     animation: _bounce_horizontal_4px 0.5s;
   }
@@ -7667,6 +7709,27 @@ Shake horizontal utility
     }
   }
 }
+.u-shake-horizontal:focus-visible {
+  position: relative;
+  animation: _bounce_horizontal_4px 0.5s;
+}
+@keyframes _bounce_horizontal_4px {
+  0% {
+    left: -4px;
+  }
+  25% {
+    left: 4px;
+  }
+  50% {
+    left: -2px;
+  }
+  75% {
+    left: 2px;
+  }
+  100% {
+    left: 0;
+  }
+}
 
 /*
 ---
@@ -7683,8 +7746,8 @@ Vibrate horizontal utility
 <div class="u-vibrate-horizontal" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (hover: hover) and (pointer: fine) {
-  .u-vibrate-horizontal:hover, .u-vibrate-horizontal:active, .u-vibrate-horizontal:focus {
+@media (any-hover: hover) {
+  .u-vibrate-horizontal:hover {
     position: relative;
     animation: _bounce_horizontal_2px 0.2s;
   }
@@ -7706,6 +7769,27 @@ Vibrate horizontal utility
     }
   }
 }
+.u-vibrate-horizontal:focus-visible {
+  position: relative;
+  animation: _bounce_horizontal_2px 0.2s;
+}
+@keyframes _bounce_horizontal_2px {
+  0% {
+    left: -2px;
+  }
+  25% {
+    left: 2px;
+  }
+  50% {
+    left: -1px;
+  }
+  75% {
+    left: 1px;
+  }
+  100% {
+    left: 0;
+  }
+}
 
 /*
 ---
@@ -7722,8 +7806,8 @@ Shake scale utility
 <div class="u-shake-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (hover: hover) and (pointer: fine) {
-  .u-shake-scale:hover, .u-shake-scale:active, .u-shake-scale:focus {
+@media (any-hover: hover) {
+  .u-shake-scale:hover {
     animation: _bounce_scale_120 0.5s ease-out;
   }
   @keyframes _bounce_scale_120 {
@@ -7744,6 +7828,26 @@ Shake scale utility
     }
   }
 }
+.u-shake-scale:focus-visible {
+  animation: _bounce_scale_120 0.5s ease-out;
+}
+@keyframes _bounce_scale_120 {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 /*
 ---
@@ -7760,8 +7864,8 @@ Vibrate scale utility
 <div class="u-vibrate-scale" style="background-color: #333; width: 40px; height: 40px;"></div>
 ```
 */
-@media (hover: hover) and (pointer: fine) {
-  .u-vibrate-scale:hover, .u-vibrate-scale:active, .u-vibrate-scale:focus {
+@media (any-hover: hover) {
+  .u-vibrate-scale:hover {
     animation: _bounce_scale_110 0.2s ease-out;
   }
   @keyframes _bounce_scale_110 {
@@ -7780,6 +7884,26 @@ Vibrate scale utility
     100% {
       transform: scale(1);
     }
+  }
+}
+.u-vibrate-scale:focus-visible {
+  animation: _bounce_scale_110 0.2s ease-out;
+}
+@keyframes _bounce_scale_110 {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -7815,10 +7939,13 @@ Extend underline utility
   transform: translateX(-50%);
   background-color: currentColor;
 }
-@media (hover: hover) and (pointer: fine) {
-  .u-extend-underline:hover::after, .u-extend-underline:active::after, .u-extend-underline:focus::after {
+@media (any-hover: hover) {
+  .u-extend-underline:hover::after {
     width: 100%;
   }
+}
+.u-extend-underline:focus-visible::after {
+  width: 100%;
 }
 
 /*
@@ -8531,10 +8658,13 @@ pre {
   background-color: var(--color-primary);
   color: var(--_color-white);
 }
-@media (hover: hover) and (pointer: fine) {
-  .c-btn--launch:hover, .c-btn--launch:active, .c-btn--launch:focus, .c-btn--download:hover, .c-btn--download:active, .c-btn--download:focus, .c-btn--buy:hover, .c-btn--buy:active, .c-btn--buy:focus {
+@media (any-hover: hover) {
+  .c-btn--launch:hover, .c-btn--download:hover, .c-btn--buy:hover {
     opacity: 0.8;
   }
+}
+.c-btn--launch:focus-visible, .c-btn--download:focus-visible, .c-btn--buy:focus-visible {
+  opacity: 0.8;
 }
 .c-btn--launch .fa, .c-btn--download .fa, .c-btn--buy .fa {
   margin-right: 8px;
@@ -8761,10 +8891,13 @@ pre {
   color: var(--_light-color-text);
   text-decoration: none;
 }
-@media (hover: hover) and (pointer: fine) {
-  .p-local-nav a[href]:hover, .p-local-nav a[href]:active, .p-local-nav a[href]:focus {
+@media (any-hover: hover) {
+  .p-local-nav a[href]:hover {
     text-decoration: underline;
   }
+}
+.p-local-nav a[href]:focus-visible {
+  text-decoration: underline;
 }
 .p-local-nav a:not([href]) {
   color: var(--_lightest-color-text);
@@ -8810,10 +8943,13 @@ pre {
   color: inherit;
   text-decoration: none;
 }
-@media (hover: hover) and (pointer: fine) {
-  .p-table-of-contents__item > a:hover, .p-table-of-contents__item > a:active, .p-table-of-contents__item > a:focus {
+@media (any-hover: hover) {
+  .p-table-of-contents__item > a:hover {
     opacity: 0.8;
   }
+}
+.p-table-of-contents__item > a:focus-visible {
+  opacity: 0.8;
 }
 
 :root {
