@@ -1,5 +1,8 @@
 # Changelog
 
+## January 29, 2025 20.0.0
+* Fix `input-group()` layout.
+
 ## November 5, 2024 19.0.5
 * Fix `input-group()` layout.
 
