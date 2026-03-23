@@ -45,7 +45,7 @@ Abstract selectbox component
     appearance: none;
     display:inline-block;
     cursor: pointer;
-    background-color: transparent;
+    background-color: var(--_color-white);
     max-width: 100%;
     @include mixin.form-control-base-padding();
     padding-right: var(--_s1);
@@ -60,9 +60,7 @@ Abstract selectbox component
     }
 
     &:disabled {
-      & + .smf-select-control__toggle {
-        background-color: var(--_lightest-color-gray);
-      }
+      background-color: var(--_lightest-color-gray);
     }
   }
 
@@ -72,9 +70,9 @@ Abstract selectbox component
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 0;
+    z-index: 1;
     display: block;
-    background-color: var(--_color-white);
+    pointer-events: none;
 
     &::before {
       position: absolute;
