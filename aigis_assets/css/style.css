@@ -7322,7 +7322,7 @@ Select box component
   appearance: none;
   display: inline-block;
   cursor: pointer;
-  background-color: transparent;
+  background-color: var(--_color-white);
   max-width: 100%;
   padding: 0.75rem 1rem;
   padding-right: var(--_s1);
@@ -7350,7 +7350,7 @@ Select box component
 .c-select__control:focus + .smf-select-control__toggle::before {
   border-color: #3a87fd;
 }
-.c-select__control:disabled + .smf-select-control__toggle {
+.c-select__control:disabled {
   background-color: var(--_lightest-color-gray);
 }
 .c-select__toggle {
@@ -7359,9 +7359,9 @@ Select box component
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 0;
+  z-index: 1;
   display: block;
-  background-color: var(--_color-white);
+  pointer-events: none;
 }
 .c-select__toggle::before {
   position: absolute;
