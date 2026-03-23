@@ -1,5 +1,8 @@
 # Changelog
 
+## March 23, 2025 20.0.1
+* Fix `select()` styles.
+
 ## January 29, 2025 20.0.0
 * Fix `input-group()` layout.
 
