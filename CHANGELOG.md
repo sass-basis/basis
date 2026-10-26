@@ -1,5 +1,11 @@
 # Changelog
 
+## October 26, 2026 20.0.2
+* Update Node.js requirements to 24.22.1 and npm requirements to 11.19.1.
+* Fix `is-length()` handling of Sass `calc()` values.
+* Migrate Sass tests to the module system and make assertion failures exit with an error.
+* Update GitHub Actions build and release workflows.
+
 ## March 23, 2025 20.0.1
 * Fix `select()` styles.
 
