@@ -1,12 +1,12 @@
-@mixin _test($message) {
+@mixin test($message) {
 	@debug $message;
 	@content;
 }
 
-@mixin _assert-equals($expected, $actual) {
+@mixin assert-equals($expected, $actual) {
 	@if $expected == $actual {
 		@debug 'OK!';
 	} @else {
-		@warn 'FAILURES! Expected: #{$expected}  Actual: #{$actual}';
+		@error 'FAILURES! Expected: #{$expected}  Actual: #{$actual}';
 	}
 }

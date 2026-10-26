@@ -68,6 +68,10 @@ Checks for a valid CSS length
     }
   }
 
+  @if ('calculation' == meta.type-of($value) and 'calc' == meta.calc-name($value)) {
+    @return true;
+  }
+
   @if ('string' == meta.type-of($value)) {
     @if (1 == string.index($value, 'calc')) {
       @return true;
